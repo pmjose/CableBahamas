@@ -6,6 +6,7 @@ import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
 import { DomainGrid, PriorityList, WatchList, AgendaList } from '../../components/ExecCockpit'
 import NET from './_network_facts'
+import { ISLANDS } from '../../data/islands'
 import { MOBILE_KPIS, MNO_BENCHMARK, VOICE_QUALITY } from './_mobile_data'
 import {
   Cpu, Smartphone, Radio, Cable, Server, Layers, Gauge, Network,
@@ -31,15 +32,14 @@ const stP = (s: string) =>
     : 'bg-red-100 text-red-700'
 
 // ─── RAN & Mobile data ───────────────────────────────────────────────────────
-const ranRegions = [
-  { region: 'Nassau',         cov5g: 96, dl5g: 168, dl4g: 42, sites: 3840, nps: 42, drop: 0.28 },
-  { region: 'Freeport',           cov5g: 94, dl5g: 154, dl4g: 38, sites: 2940, nps: 40, drop: 0.32 },
-  { region: 'Abaco',          cov5g: 88, dl5g: 140, dl4g: 36, sites: 2580, nps: 37, drop: 0.48 },
-  { region: 'Eleuthera',          cov5g: 91, dl5g: 158, dl4g: 40, sites: 1840, nps: 41, drop: 0.36 },
-  { region: 'Long Island',           cov5g: 92, dl5g: 152, dl4g: 39, sites: 1020, nps: 39, drop: 0.34 },
-  { region: 'Exuma',         cov5g: 82, dl5g: 128, dl4g: 34, sites:  980, nps: 35, drop: 0.54 },
-  { region: 'Andros',        cov5g: 78, dl5g: 118, dl4g: 32, sites:  640, nps: 33, drop: 0.60 },
-]
+// Built from the shared island split so sites sum to the 220-site network.
+const RAN_EXTRA: Record<string, { dl5g: number; dl4g: number; nps: number; drop: number }> = {
+  'New Providence': { dl5g: 168, dl4g: 42, nps: 42, drop: 0.28 }, 'Grand Bahama': { dl5g: 154, dl4g: 38, nps: 40, drop: 0.32 },
+  Abaco: { dl5g: 140, dl4g: 36, nps: 37, drop: 0.48 }, Eleuthera: { dl5g: 138, dl4g: 36, nps: 38, drop: 0.44 },
+  Exuma: { dl5g: 128, dl4g: 34, nps: 35, drop: 0.54 }, Andros: { dl5g: 118, dl4g: 32, nps: 33, drop: 0.60 },
+  'Other Family Islands': { dl5g: 112, dl4g: 30, nps: 34, drop: 0.62 },
+}
+const ranRegions = ISLANDS.map(i => ({ region: i.island, cov5g: i.cov5g, sites: i.sites, ...RAN_EXTRA[i.island] }))
 
 const ranVendorMix = [
   { name: 'Ericsson',  value: 38, color: BLUE },
@@ -59,7 +59,7 @@ const throughputTrend = [
 
 // ─── 5G Core ─────────────────────────────────────────────────────────────────
 const coreNodes = [
-  { nf: 'AMF', instances: 8,  cpu: 48, mem: 62, sessions: '14.2M', sla: 99.97, status: 'Healthy' },
+  { nf: 'AMF', instances: 8,  cpu: 48, mem: 62, sessions: '186K', sla: 99.97, status: 'Healthy' },
   { nf: 'SMF', instances: 8,  cpu: 52, mem: 58, sessions: '13.8M', sla: 99.97, status: 'Healthy' },
   { nf: 'UPF', instances: 16, cpu: 68, mem: 71, sessions: '13.8M', sla: 99.94, status: 'Watch'   },
   { nf: 'PCF', instances: 4,  cpu: 34, mem: 44, sessions: '—',     sla: 99.98, status: 'Healthy' },
@@ -117,14 +117,14 @@ const spectrumBands = [
 ]
 
 // ─── Fixed Access (PON) ──────────────────────────────────────────────────────
-const ponBuild = [
-  { region: 'Nassau',    passed: 412_000, target: 480_000, take: 41, xgsPct: 38, olts: 42 },
-  { region: 'Freeport',      passed: 142_000, target: 200_000, take: 38, xgsPct: 22, olts: 18 },
-  { region: 'Abaco',     passed:  84_000, target: 120_000, take: 34, xgsPct: 41, olts: 12 },
-  { region: 'Eleuthera',     passed:  72_000, target: 110_000, take: 32, xgsPct: 18, olts:  8 },
-  { region: 'Long Island',      passed:  64_000, target:  80_000, take: 36, xgsPct: 28, olts:  6 },
-  { region: 'Bimini',   passed:  28_000, target:  45_000, take: 28, xgsPct: 12, olts:  4 },
-]
+// Derived from the canonical island split (src/data/islands.ts).
+const PON_XGS: Record<string, number> = {
+  'New Providence': 38, 'Grand Bahama': 22, 'Abaco': 41, 'Eleuthera': 18, 'Exuma': 15, 'Andros': 12, 'Other Family Islands': 10,
+}
+const ponBuild = ISLANDS.map(i => ({
+  region: i.island, passed: i.homesPassed, target: Math.round(i.homesPassed * 1.07 / 500) * 500,
+  take: Math.round(i.fixedSubs / i.homesPassed * 100), xgsPct: PON_XGS[i.island], olts: Math.max(2, Math.round(i.homesPassed / 1200)),
+}))
 
 const ponTrend = [
   { m: 'Jun', take: 33, xgs: 24 }, { m: 'Jul', take: 34, xgs: 26 },
@@ -162,22 +162,22 @@ const capacityHotspots = [
 
 // ─── Roadmap & Tech Debt data ─────────────────────────────────────────────────
 const roadmapInitiatives = [
-  { initiative: '5G SA nationwide rollout',          horizon: 'H2-26',  invest: 'BSD 84M',  benefit: '5G latency SLA + enterprise slicing',  status: 'Active',    techDebt: 0  },
-  { initiative: 'Open RAN GA (2 regions)',            horizon: 'H1-27',  invest: 'BSD 32M',  benefit: 'vendor diversity + opex −18%',         status: 'At-risk',   techDebt: 2  },
-  { initiative: 'XGS-PON build 2.1M premises',       horizon: 'H2-26',  invest: 'BSD 120M', benefit: 'take-rate +8 pp · churn −15%',         status: 'Active',    techDebt: 0  },
-  { initiative: 'Network cloud migration (vRAN)',     horizon: 'H1-27',  invest: 'BSD 48M',  benefit: 'opex −24% · energy −18%',              status: 'Planning',  techDebt: 3  },
-  { initiative: 'AI-native NOC (AIOps v2)',           horizon: 'H2-26',  invest: 'BSD 12M',  benefit: 'MTTD −40% · false-positive −50%',      status: 'Active',    techDebt: 1  },
-  { initiative: '400G transport upgrade',             horizon: 'Q1-27',  invest: 'BSD 28M',  benefit: 'headroom + resilience',                status: 'Active',    techDebt: 0  },
-  { initiative: 'Network digital twin',               horizon: 'H1-27',  invest: 'BSD 8M',   benefit: 'planning accuracy +30%',               status: 'Planning',  techDebt: 1  },
+  { initiative: '5G SA nationwide rollout',          horizon: 'H2-26',  invest: 'BSD 5.8M',  benefit: '5G latency SLA + enterprise slicing',  status: 'Active',    techDebt: 0  },
+  { initiative: 'Open RAN GA (2 regions)',            horizon: 'H1-27',  invest: 'BSD 1.4M',  benefit: 'vendor diversity + opex −18%',         status: 'At-risk',   techDebt: 2  },
+  { initiative: 'XGS-PON build 150K premises',       horizon: 'H2-26',  invest: 'BSD 13M' , benefit: 'take-rate +8 pp · churn −15%',         status: 'Active',    techDebt: 0  },
+  { initiative: 'Network cloud migration (vRAN)',     horizon: 'H1-27',  invest: 'BSD 1.6M',  benefit: 'opex −24% · energy −18%',              status: 'Planning',  techDebt: 3  },
+  { initiative: 'AI-native NOC (AIOps v2)',           horizon: 'H2-26',  invest: 'BSD 0.6M',  benefit: 'MTTD −40% · false-positive −50%',      status: 'Active',    techDebt: 1  },
+  { initiative: '400G transport upgrade',             horizon: 'Q1-27',  invest: 'BSD 2.4M',  benefit: 'headroom + resilience',                status: 'Active',    techDebt: 0  },
+  { initiative: 'Network digital twin',               horizon: 'H1-27',  invest: 'BSD 0.3M',   benefit: 'planning accuracy +30%',               status: 'Planning',  techDebt: 1  },
 ]
 
 const techDebtRegister = [
-  { domain: 'RAN OSS (Ericsson ENM)',  severity: 'High',   age: 36, remMoM: 'BSD 2.1M/yr',  effort: 'Large', plan: 'Migrate to cloud-native SON by Q4-27'        },
-  { domain: '2G/3G legacy core',       severity: 'High',   age: 48, remMoM: 'BSD 1.8M/yr',  effort: 'Large', plan: '2G/3G sunset programme — target Dec-27'       },
-  { domain: 'DOCSIS 3.0 nodes',        severity: 'High',   age: 24, remMoM: 'BSD 1.2M/yr',  effort: 'Med',   plan: 'DOCSIS 3.1 upgrade — Rural Out Islands done Q3'          },
-  { domain: 'Monolithic BSS',          severity: 'Medium', age: 60, remMoM: 'BSD 0.9M/yr',  effort: 'Large', plan: 'Cerillion microservices migration — H1-28'     },
-  { domain: 'IPv4-only MPLS nodes',    severity: 'Medium', age: 18, remMoM: 'BSD 0.4M/yr',  effort: 'Med',   plan: 'SRv6 rollout with Nokia upgrade Q2-27'          },
-  { domain: 'IPTV CDN legacy SW',      severity: 'Low',    age: 12, remMoM: 'BSD 0.2M/yr',  effort: 'Small', plan: 'CDN vendor refresh RFP in Q1-27'                },
+  { domain: 'RAN OSS (Ericsson ENM)',  severity: 'High',   age: 36, remMoM: 'BSD 0.5M/yr',  effort: 'Large', plan: 'Migrate to cloud-native SON by Q4-27'        },
+  { domain: '2G/3G legacy core',       severity: 'High',   age: 48, remMoM: 'BSD 0.45M/yr',  effort: 'Large', plan: '2G/3G sunset programme — target Dec-27'       },
+  { domain: 'DOCSIS 3.0 nodes',        severity: 'High',   age: 24, remMoM: 'BSD 0.3M/yr',  effort: 'Med',   plan: 'DOCSIS 3.1 upgrade — Rural Out Islands done Q3'          },
+  { domain: 'Monolithic BSS',          severity: 'Medium', age: 60, remMoM: 'BSD 0.25M/yr',  effort: 'Large', plan: 'Cerillion microservices migration — H1-28'     },
+  { domain: 'IPv4-only MPLS nodes',    severity: 'Medium', age: 18, remMoM: 'BSD 0.1M/yr',  effort: 'Med',   plan: 'SRv6 rollout with Nokia upgrade Q2-27'          },
+  { domain: 'IPTV CDN legacy SW',      severity: 'Low',    age: 12, remMoM: 'BSD 0.05M/yr',  effort: 'Small', plan: 'CDN vendor refresh RFP in Q1-27'                },
 ]
 
 const techDebtTrend = [
@@ -192,11 +192,11 @@ const techDebtTrend = [
 ]
 
 const investAlloc = [
-  { cat: '5G / RAN',     pct: 38, color: BLUE   },
-  { cat: 'Fixed/PON',    pct: 28, color: NAVY   },
-  { cat: 'Transport',    pct: 14, color: GREEN  },
-  { cat: 'IT/Platform',  pct: 12, color: AMBER  },
-  { cat: 'Tech debt',    pct:  8, color: PURPLE },
+  { cat: 'Fixed/PON',    pct: 54, color: NAVY   },
+  { cat: '5G / RAN',     pct: 24, color: BLUE   },
+  { cat: 'Transport',    pct: 10, color: GREEN  },
+  { cat: 'IT/Platform',  pct:  7, color: AMBER  },
+  { cat: 'Tech debt',    pct:  5, color: PURPLE },
 ]
 
 // ─── Tabs ─────────────────────────────────────────────────────────────────────
@@ -349,7 +349,7 @@ export default function CTOPage() {
               { to: 'core-5g',      label: '5G Core Health',        metric: tt('AMF/SMF/UPF · slices'),             icon: Cpu       },
               { to: 'transport',    label: 'Transport & Backbone',   metric: `${NET.coreCapacityTbps} Tbps ${tt('core')}`, icon: Cable },
               { to: 'spectrum',     label: 'Spectrum Portfolio',     metric: tt('690 MHz sub-6 + mmWave'),           icon: Radio     },
-              { to: 'fixed-access', label: 'Fixed Access (PON)',     metric: tt('XGS-PON build · 1.74M passed'),    icon: Server    },
+              { to: 'fixed-access', label: 'Fixed Access (PON)',     metric: tt('XGS-PON build · 140K passed'),    icon: Server    },
               { to: 'slicing',      label: '5G Slicing & MEC',       metric: tt('Enterprise slices · edge'),         icon: Layers    },
               { to: 'ran-energy',   label: 'RAN Energy & ESG',       metric: `${NET.kwhPerGb} kWh/GB`,              icon: Leaf      },
               { to: 'capacity-capex', label: 'Capacity & Capex',    metric: tt('Headroom · build pipeline'),         icon: Gauge     },
@@ -365,7 +365,7 @@ export default function CTOPage() {
                 { name: '95% 5G pop coverage (DSS + SA)',      owner: tt('CTO Mobile · J. Adderley'), pct: 76, status: 'on-track' },
                 { name: '5G SA rollout — Nassau + Freeport',  owner: tt('Core Engineering'),         pct: 88, status: 'on-track' },
                 { name: 'Open RAN GA in 2 regions',            owner: tt('RAN Engineering'),          pct: 38, status: 'at-risk'  },
-                { name: 'XGS-PON build — 2.1M premises',       owner: tt('Fixed Access'),             pct: 78, status: 'on-track' },
+                { name: 'XGS-PON build — 150K premises',       owner: tt('Fixed Access'),             pct: 78, status: 'on-track' },
                 { name: 'Network energy efficiency −20%',       owner: tt('Energy & ESG'),             pct: 48, status: 'on-track' },
               ]}
             />
@@ -498,7 +498,7 @@ export default function CTOPage() {
               </div>
               <div className="mt-3 flex items-center justify-between">
                 <Link to="/portal/mobile-ran" className="text-xs font-bold text-vfes-dark hover:underline">{tt('Open Mobile RAN →')}</Link>
-                <span className="text-[10px] text-vfes-dark/40">{tt('Andros & Long Island below 90% — permit acceleration in progress')}</span>
+                <span className="text-[10px] text-vfes-dark/40">{tt('Andros & Family Islands below 90% — permit acceleration in progress')}</span>
               </div>
             </Panel>
           </div>
@@ -569,7 +569,7 @@ export default function CTOPage() {
       {tab === 'core5g' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Core uptime')}          value={`${NET.coreUptimePct}%`} delta={tt('30-day SLA')}                 trend="up"   icon={ShieldCheck} accent />
-          <KpiCard label={tt('Active sessions')}       value="14.2M"                   delta="+8% YoY"                          trend="up"   icon={Activity} />
+          <KpiCard label={tt('Active sessions')}       value="186K"                   delta="+8% YoY"                          trend="up"   icon={Activity} />
           <KpiCard label={tt('5G slices active')}      value="4"                        delta={tt('eMBB · URLLC · MIoT · B2B')} trend="flat" icon={Layers} />
           <KpiCard label={tt('UPF peak throughput')}   value="0.42 Tbps"               delta="+18% YoY"                         trend="up"   icon={Zap} />
         </div>
@@ -834,9 +834,9 @@ export default function CTOPage() {
       {/* ══════════════ FIXED ACCESS ══════════════════════════════════════════ */}
       {tab === 'fixed' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Premises passed')}   value="1.74M"    delta={tt('vs 2.10M EOY target')} trend="up"   icon={Server}    accent />
-          <KpiCard label={tt('Fixed subscribers')} value="1.06M"    delta="+4.2K QoQ"                  trend="up"   icon={Activity}  />
-          <KpiCard label={tt('Take rate')}          value="38%"      delta="+2 pp QoQ"                  trend="up"   icon={TrendingUp}/>
+          <KpiCard label={tt('Premises passed')}   value="140K"     delta={tt('vs 150K EOY target')} trend="up"   icon={Server}    accent />
+          <KpiCard label={tt('Fixed subscribers')} value="74.4K"    delta="+0.6K QoQ"                  trend="up"   icon={Activity}  />
+          <KpiCard label={tt('Take rate')}          value="53%"      delta="+2 pp QoQ"                  trend="up"   icon={TrendingUp}/>
           <KpiCard label={tt('XGS-PON share')}      value="28%"      delta="+4 pp YoY"                  trend="up"   icon={Zap}       />
         </div>
 
@@ -1004,11 +1004,11 @@ export default function CTOPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
           <KpiCard label={tt('Active initiatives')} value="4"        delta={tt('of 7 on-track')}           trend="up"   icon={TrendingUp}   accent />
           <KpiCard label={tt('Tech-debt score')}    value="34 / 100" delta={tt('−14 pts YTD')}              trend="up"   icon={AlertTriangle}/>
-          <KpiCard label={tt('Debt remediation')}   value="BSD 6.6M/yr" delta={tt('carrying cost')}           trend="down" icon={Gauge}        />
-          <KpiCard label={tt('FY26 CapEx total')}   value="BSD 332M"    delta={tt('board approved')}          trend="flat" icon={Activity}     />
+          <KpiCard label={tt('Debt remediation')}   value="BSD 1.7M/yr" delta={tt('carrying cost')}           trend="down" icon={Gauge}        />
+          <KpiCard label={tt('FY26 CapEx total')}   value="BSD 24M"    delta={tt('board approved')}          trend="flat" icon={Activity}     />
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-          <KpiCard label={tt('Largest investment')} value="5G / RAN" delta={tt('38% of CapEx — BSD 126M')}   trend="flat" icon={Signal}       />
+          <KpiCard label={tt('Largest investment')} value="Fixed / PON" delta={tt('54% of CapEx — BSD 13M')}   trend="flat" icon={Signal}       />
           <KpiCard label={tt('Open RAN risk')}       value="At-risk"  delta={tt('interop delays')}          trend="down" icon={ShieldCheck}  />
           <KpiCard label={tt('Items resolved Q2')}  value="7"        delta={tt('vs 5 new items')}          trend="up"   icon={ShieldCheck}  />
         </div>
@@ -1067,7 +1067,7 @@ export default function CTOPage() {
             <div className="text-[11px] text-vfes-dark/55 mt-2">{tt('Debt score dropping consistently — 8 items resolved in Q3-26, only 1 new. Target score ≤20 by Q2-28.')}</div>
           </Panel>
 
-          <Panel title={tt('CapEx allocation by category — FY2026 (BSD 332M)')} insight={{ insight: 'RAN modernisation claims the largest share at over 35% of the BSD 332M envelope, consistent with the 5G mid-band build priority.', action: 'Review the fixed access allocation to confirm the fibre build envelope is sufficient to close the 360K premises-passed gap to the EOY target.', impact: 'Shifting 5 percentage points from RAN to fibre closes the premises-passed shortfall without increasing total spend.' }}>
+          <Panel title={tt('CapEx allocation by category — FY2026 (BSD 24M)')} insight={{ insight: 'Fixed access (XGS-PON) claims the largest share at 54% of the BSD 24M envelope, consistent with the fibre take-up priority; mobile RAN is second.', action: 'Review the fixed access allocation to confirm the fibre build envelope is sufficient to close the 10K premises-passed gap to the EOY target.', impact: 'Shifting 5 percentage points from RAN to fibre closes the premises-passed shortfall without increasing total spend.' }}>
             <div className="h-64">
               <ResponsiveContainer>
                 <PieChart>
