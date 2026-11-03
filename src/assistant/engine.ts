@@ -150,8 +150,8 @@ const INTENTS: Intent[] = [
     id: 'overview',
     kw: [[/how are we doing|overview|summary|snapshot|headline|kpis|brief me|briefing|status of the business|performance|dashboard|state of the business/, 4]],
     run: () => {
-      // Rank by customers lost, not rate, so the briefing names the island that moves revenue.
-      const worst = [...ISLANDS].sort((a, b) => b.fixedSubs * b.churnPct - a.fixedSubs * a.churnPct)[0]
+      // Rank by losses above the national churn rate, so the briefing names the island that is a problem.
+      const worst = [...ISLANDS].sort((a, b) => b.fixedSubs * (b.churnPct - KPI.churnRatePct) - a.fixedSubs * (a.churnPct - KPI.churnRatePct))[0]
       return {
         title: 'Executive briefing · 31 Oct 2026',
         reasoning: 'Pulling headline KPIs across finance, customers, network and risk for the latest closed month.',
