@@ -150,7 +150,8 @@ const INTENTS: Intent[] = [
     id: 'overview',
     kw: [[/how are we doing|overview|summary|snapshot|headline|kpis|brief me|briefing|status of the business|performance|dashboard|state of the business/, 4]],
     run: () => {
-      const worst = [...ISLANDS].sort((a, b) => b.churnPct - a.churnPct)[0]
+      // Rank by customers lost, not rate, so the briefing names the island that moves revenue.
+      const worst = [...ISLANDS].sort((a, b) => b.fixedSubs * b.churnPct - a.fixedSubs * a.churnPct)[0]
       return {
         title: 'Executive briefing · 31 Oct 2026',
         reasoning: 'Pulling headline KPIs across finance, customers, network and risk for the latest closed month.',
@@ -161,7 +162,7 @@ const INTENTS: Intent[] = [
           { kind: 'kpis', items: [{ label: 'Churn / mo', value: pct(KPI.churnRatePct) }, { label: 'NPS', value: `+${KPI.nps}` }, { label: 'Uptime 30d', value: pct(KPI.uptime30dPct, 2) }, { label: 'Open P1s', value: '2' }] },
           { kind: 'chart', type: 'line', label: 'Monthly revenue vs plan (BSD M)', x: 'm', y: ['revenue', 'plan'], data: FINANCE_TREND.map(m => ({ m: m.m, revenue: m.revenue, plan: m.plan })) },
         ],
-        summary: `October revenue was **${bsdM(FINANCE.monthlyRevenueM)}** at a **${pct(KPI.ebitdaMarginPct)} EBITDA margin**, with +${CUST.netAddsMo} net adds. Three things need attention: **${worst.island} churn at ${pct(worst.churnPct)}**, **2 open P1 incidents** (1,140 households in Nassau East), and **generator and fuel gaps on Grand Bahama and Abaco** before the storm season ends.`,
+        summary: `October revenue was **${bsdM(FINANCE.monthlyRevenueM)}** at a **${pct(KPI.ebitdaMarginPct)} EBITDA margin**, with +${CUST.netAddsMo} net adds. Three things need attention: **${worst.island} churn at ${pct(worst.churnPct)}** (${n(Math.round(worst.fixedSubs * worst.churnPct / 100))} losses a month, mostly to BTC's fibre promotion), **2 open P1 incidents** (1,140 households in Nassau East), and **generator and fuel gaps on Grand Bahama and Abaco** before the storm season ends.`,
         actions: [flow('outage', 'Run proactive-care agent for Nassau East'), flow('hurricane', 'Run hurricane response agent'), go('Open CEO dashboard', 'executive')],
         followUps: [`What is driving churn in ${worst.island}?`, 'Are there any outages right now?', 'What was revenue this quarter vs plan?'],
       }
