@@ -32,21 +32,21 @@ const stP = (s: string) =>
 
 // ─── MAU / DAU trend ─────────────────────────────────────────────────────────
 const ENGAGE = [
-  { m: 'Jan', mau: 6.2, dau: 2.1, wau: 3.8 },
-  { m: 'Feb', mau: 6.5, dau: 2.2, wau: 4.0 },
-  { m: 'Mar', mau: 6.9, dau: 2.4, wau: 4.3 },
-  { m: 'Apr', mau: 7.3, dau: 2.7, wau: 4.6 },
-  { m: 'May', mau: 7.8, dau: 3.0, wau: 5.0 },
-  { m: 'Jun', mau: 8.2, dau: 3.3, wau: 5.3 },
+  { m: 'Jun', mau: 6.2, dau: 2.1, wau: 3.8 },
+  { m: 'Jul', mau: 6.5, dau: 2.2, wau: 4.0 },
+  { m: 'Aug', mau: 6.9, dau: 2.4, wau: 4.3 },
+  { m: 'Sep', mau: 7.3, dau: 2.7, wau: 4.6 },
+  { m: 'Oct', mau: 7.8, dau: 3.0, wau: 5.0 },
+  { m: 'Nov', mau: 8.2, dau: 3.3, wau: 5.3 },
 ]
 
 const SESSION_TREND = [
-  { m: 'Jan', avgSessions: 4.2, avgDurMin: 3.1 },
-  { m: 'Feb', avgSessions: 4.4, avgDurMin: 3.2 },
-  { m: 'Mar', avgSessions: 4.6, avgDurMin: 3.3 },
-  { m: 'Apr', avgSessions: 4.8, avgDurMin: 3.5 },
-  { m: 'May', avgSessions: 5.1, avgDurMin: 3.7 },
-  { m: 'Jun', avgSessions: 5.3, avgDurMin: 3.9 },
+  { m: 'Jun', avgSessions: 4.2, avgDurMin: 3.1 },
+  { m: 'Jul', avgSessions: 4.4, avgDurMin: 3.2 },
+  { m: 'Aug', avgSessions: 4.6, avgDurMin: 3.3 },
+  { m: 'Sep', avgSessions: 4.8, avgDurMin: 3.5 },
+  { m: 'Oct', avgSessions: 5.1, avgDurMin: 3.7 },
+  { m: 'Nov', avgSessions: 5.3, avgDurMin: 3.9 },
 ]
 
 // ─── In-app journeys ─────────────────────────────────────────────────────────
@@ -62,12 +62,12 @@ const JOURNEYS = [
 ]
 
 const JOURNEY_TREND = [
-  { m: 'Jan', bill: 88, plan: 65, support: 56 },
-  { m: 'Feb', bill: 89, plan: 67, support: 58 },
-  { m: 'Mar', bill: 90, plan: 68, support: 59 },
-  { m: 'Apr', bill: 91, plan: 70, support: 61 },
-  { m: 'May', bill: 91, plan: 71, support: 62 },
-  { m: 'Jun', bill: 92, plan: 71, support: 63 },
+  { m: 'Jun', bill: 88, plan: 65, support: 56 },
+  { m: 'Jul', bill: 89, plan: 67, support: 58 },
+  { m: 'Aug', bill: 90, plan: 68, support: 59 },
+  { m: 'Sep', bill: 91, plan: 70, support: 61 },
+  { m: 'Oct', bill: 91, plan: 71, support: 62 },
+  { m: 'Nov', bill: 92, plan: 71, support: 63 },
 ]
 
 // ─── Feature adoption ─────────────────────────────────────────────────────────
@@ -83,12 +83,12 @@ const FEATURES = [
 ]
 
 const FEATURE_LAUNCH = [
-  { m: 'Jan', biometric: 72, ebill: 68, chat: 48, gifting: 22 },
-  { m: 'Feb', biometric: 74, ebill: 69, chat: 50, gifting: 28 },
-  { m: 'Mar', biometric: 77, ebill: 71, chat: 52, gifting: 34 },
-  { m: 'Apr', biometric: 79, ebill: 72, chat: 54, gifting: 38 },
-  { m: 'May', biometric: 81, ebill: 73, chat: 56, gifting: 40 },
-  { m: 'Jun', biometric: 82, ebill: 74, chat: 58, gifting: 42 },
+  { m: 'Jun', biometric: 72, ebill: 68, chat: 48, gifting: 22 },
+  { m: 'Jul', biometric: 74, ebill: 69, chat: 50, gifting: 28 },
+  { m: 'Aug', biometric: 77, ebill: 71, chat: 52, gifting: 34 },
+  { m: 'Sep', biometric: 79, ebill: 72, chat: 54, gifting: 38 },
+  { m: 'Oct', biometric: 81, ebill: 73, chat: 56, gifting: 40 },
+  { m: 'Nov', biometric: 82, ebill: 74, chat: 58, gifting: 42 },
 ]
 
 // ─── Digital adoption funnel ──────────────────────────────────────────────────
@@ -109,12 +109,12 @@ const RATINGS = [
 ]
 
 const RATING_TREND = [
-  { m: 'Jan', ios: 4.0, android: 3.8 },
-  { m: 'Feb', ios: 4.1, android: 3.9 },
-  { m: 'Mar', ios: 4.1, android: 4.0 },
-  { m: 'Apr', ios: 4.2, android: 4.0 },
-  { m: 'May', ios: 4.2, android: 4.1 },
-  { m: 'Jun', ios: 4.3, android: 4.2 },
+  { m: 'Jun', ios: 4.0, android: 3.8 },
+  { m: 'Jul', ios: 4.1, android: 3.9 },
+  { m: 'Aug', ios: 4.1, android: 4.0 },
+  { m: 'Sep', ios: 4.2, android: 4.0 },
+  { m: 'Oct', ios: 4.2, android: 4.1 },
+  { m: 'Nov', ios: 4.3, android: 4.2 },
 ]
 
 const REVIEW_TOPICS = [
@@ -137,22 +137,22 @@ const CAMPAIGNS = [
 ]
 
 const PUSH_TREND = [
-  { m: 'Jan', openRate: 30.2, ctr: 7.4 },
-  { m: 'Feb', openRate: 31.4, ctr: 7.8 },
-  { m: 'Mar', openRate: 32.1, ctr: 8.0 },
-  { m: 'Apr', openRate: 33.2, ctr: 8.4 },
-  { m: 'May', openRate: 34.0, ctr: 8.8 },
-  { m: 'Jun', openRate: 34.8, ctr: 9.1 },
+  { m: 'Jun', openRate: 30.2, ctr: 7.4 },
+  { m: 'Jul', openRate: 31.4, ctr: 7.8 },
+  { m: 'Aug', openRate: 32.1, ctr: 8.0 },
+  { m: 'Sep', openRate: 33.2, ctr: 8.4 },
+  { m: 'Oct', openRate: 34.0, ctr: 8.8 },
+  { m: 'Nov', openRate: 34.8, ctr: 9.1 },
 ]
 
 // ─── Performance & crash data ─────────────────────────────────────────────────
 const PERF_TREND = [
-  { m: 'Jan', crashRate: 0.82, startupMs: 2400, apiP95: 380 },
-  { m: 'Feb', crashRate: 0.78, startupMs: 2280, apiP95: 360 },
-  { m: 'Mar', crashRate: 0.74, startupMs: 2180, apiP95: 340 },
-  { m: 'Apr', crashRate: 0.70, startupMs: 2080, apiP95: 320 },
-  { m: 'May', crashRate: 0.66, startupMs: 1980, apiP95: 300 },
-  { m: 'Jun', crashRate: 0.62, startupMs: 1860, apiP95: 284 },
+  { m: 'Jun', crashRate: 0.82, startupMs: 2400, apiP95: 380 },
+  { m: 'Jul', crashRate: 0.78, startupMs: 2280, apiP95: 360 },
+  { m: 'Aug', crashRate: 0.74, startupMs: 2180, apiP95: 340 },
+  { m: 'Sep', crashRate: 0.70, startupMs: 2080, apiP95: 320 },
+  { m: 'Oct', crashRate: 0.66, startupMs: 1980, apiP95: 300 },
+  { m: 'Nov', crashRate: 0.62, startupMs: 1860, apiP95: 284 },
 ]
 
 const CRASH_BY_OS = [
@@ -360,7 +360,7 @@ export default function DigitalAppEngagementPage() {
                 { name: 'AI assistant GA (beta → 50% of users)',                 owner: tt('AI Platform · Digital'),       pct: 28, status: 'on-track' },
                 { name: 'Android 12 crash remediation',                          owner: tt('Mobile Engineering'),          pct: 70, status: 'at-risk'  },
                 { name: 'Push infra upgrade (delivery lag fix)',                  owner: tt('Platform · DevOps'),           pct: 85, status: 'on-track' },
-                { name: 'MAU target 10M by Q4-26',                               owner: tt('Digital · CMO office'),        pct: 62, status: 'on-track' },
+                { name: 'MAU target 10M by Q2-27',                               owner: tt('Digital · CMO office'),        pct: 62, status: 'on-track' },
               ]}
             />
           </div>
@@ -574,7 +574,7 @@ export default function DigitalAppEngagementPage() {
           <KpiCard label={tt('Top feature')}      value="Biometric login" delta="82% adoption"              trend="up"   icon={ShieldCheck} accent />
           <KpiCard label={tt('Highest NPS')}       value="Data gifting"    delta="NPS 71"                    trend="up"   icon={Star}        />
           <KpiCard label={tt('Features in beta')} value="2"               delta={tt('AI assistant + map')}  trend="flat" icon={Zap}         />
-          <KpiCard label={tt('New GA target')}     value="Network map"     delta={tt('Q3-26')}               trend="up"   icon={Wifi}        />
+          <KpiCard label={tt('New GA target')}     value="Network map"     delta={tt('Q1-27')}               trend="up"   icon={Wifi}        />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">

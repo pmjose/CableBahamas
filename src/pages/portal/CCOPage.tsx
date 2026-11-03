@@ -26,12 +26,12 @@ const C1 = '#FF4438', C2 = '#11567F', C3 = '#10B981', C4 = '#F59E0B', C5 = '#7C3
 
 // ─── Revenue data ──────────────────────────────────────────────────────────────
 const revByLane = [
-  { mo: 'Jan', fixed: 20.8, mobile: 15.6, conv: 7.2, wholesale: 1.4 },
-  { mo: 'Feb', fixed: 21.1, mobile: 15.9, conv: 7.6, wholesale: 1.4 },
-  { mo: 'Mar', fixed: 21.4, mobile: 16.2, conv: 7.9, wholesale: 1.5 },
-  { mo: 'Apr', fixed: 21.2, mobile: 16.1, conv: 8.2, wholesale: 1.5 },
-  { mo: 'May', fixed: 21.6, mobile: 16.4, conv: 8.6, wholesale: 1.6 },
-  { mo: 'Jun', fixed: 21.8, mobile: 16.6, conv: 9.0, wholesale: 1.6 },
+  { mo: 'Jun', fixed: 20.8, mobile: 15.6, conv: 7.2, wholesale: 1.4 },
+  { mo: 'Jul', fixed: 21.1, mobile: 15.9, conv: 7.6, wholesale: 1.4 },
+  { mo: 'Aug', fixed: 21.4, mobile: 16.2, conv: 7.9, wholesale: 1.5 },
+  { mo: 'Sep', fixed: 21.2, mobile: 16.1, conv: 8.2, wholesale: 1.5 },
+  { mo: 'Oct', fixed: 21.6, mobile: 16.4, conv: 8.6, wholesale: 1.6 },
+  { mo: 'Nov', fixed: 21.8, mobile: 16.6, conv: 9.0, wholesale: 1.6 },
 ]
 
 const revenueByProduct = [
@@ -88,8 +88,8 @@ const arpuTrend = [
   { mo: 'Q2 24', mobile: 61.8, fixed: 40.2, conv: 95.8 },
   { mo: 'Q3 24', mobile: 62.4, fixed: 40.6, conv: 96.8 },
   { mo: 'Q4 24', mobile: 62.8, fixed: 40.8, conv: 97.6 },
-  { mo: 'Q1 25', mobile: 63.2, fixed: 41.2, conv: 98.4 },
-  { mo: 'Q2 25', mobile: 63.8, fixed: 41.6, conv: 99.2 },
+  { mo: 'Q3 25', mobile: 63.2, fixed: 41.2, conv: 98.4 },
+  { mo: 'Q4 25', mobile: 63.8, fixed: 41.6, conv: 99.2 },
 ]
 
 type CompRow = { comp: string; m100: number | null; m250: number | null; m500: number | null; m1gb: number | null }
@@ -102,11 +102,11 @@ const competitorPricing: CompRow[] = [
 ]
 
 const priceHistory = [
-  { mo: 'Jan', m250: 33.99, m500: 42.99, m1gb: 54.99 },
-  { mo: 'Mar', m250: 33.99, m500: 44.99, m1gb: 55.99 },
-  { mo: 'Jun', m250: 34.99, m500: 44.99, m1gb: 56.99 },
-  { mo: 'Sep', m250: 34.99, m500: 44.99, m1gb: 56.99 },
-  { mo: 'Dec', m250: 34.99, m500: 44.99, m1gb: 56.99 },
+  { mo: 'Jun', m250: 33.99, m500: 42.99, m1gb: 54.99 },
+  { mo: 'Aug', m250: 33.99, m500: 44.99, m1gb: 55.99 },
+  { mo: 'Nov', m250: 34.99, m500: 44.99, m1gb: 56.99 },
+  { mo: 'Feb', m250: 34.99, m500: 44.99, m1gb: 56.99 },
+  { mo: 'May', m250: 34.99, m500: 44.99, m1gb: 56.99 },
   { mo: 'Mar+', m250: 34.99, m500: 44.99, m1gb: 56.99 },
 ]
 
@@ -121,12 +121,12 @@ const bundles = [
 ]
 
 const bundleAttachTrend = [
-  { mo: 'Jan', volt: 58, mega: 48, tvBasic: 34 },
-  { mo: 'Feb', volt: 59, mega: 49, tvBasic: 35 },
-  { mo: 'Mar', volt: 60, mega: 51, tvBasic: 36 },
-  { mo: 'Apr', volt: 61, mega: 52, tvBasic: 37 },
-  { mo: 'May', volt: 62, mega: 54, tvBasic: 38 },
-  { mo: 'Jun', volt: 62, mega: 55, tvBasic: 38 },
+  { mo: 'Jun', volt: 58, mega: 48, tvBasic: 34 },
+  { mo: 'Jul', volt: 59, mega: 49, tvBasic: 35 },
+  { mo: 'Aug', volt: 60, mega: 51, tvBasic: 36 },
+  { mo: 'Sep', volt: 61, mega: 52, tvBasic: 37 },
+  { mo: 'Oct', volt: 62, mega: 54, tvBasic: 38 },
+  { mo: 'Nov', volt: 62, mega: 55, tvBasic: 38 },
 ]
 
 const bundleMargin = [
@@ -170,12 +170,12 @@ const mvnoPartners = [
 ]
 
 const wholesaleTrend = [
-  { mo: 'Jan', mvno: 1.56, neutral: 0.24, roaming: 0.18 },
-  { mo: 'Feb', mvno: 1.58, neutral: 0.26, roaming: 0.20 },
-  { mo: 'Mar', mvno: 1.60, neutral: 0.28, roaming: 0.22 },
-  { mo: 'Apr', mvno: 1.62, neutral: 0.30, roaming: 0.24 },
-  { mo: 'May', mvno: 1.64, neutral: 0.32, roaming: 0.26 },
-  { mo: 'Jun', mvno: 1.66, neutral: 0.34, roaming: 0.28 },
+  { mo: 'Jun', mvno: 1.56, neutral: 0.24, roaming: 0.18 },
+  { mo: 'Jul', mvno: 1.58, neutral: 0.26, roaming: 0.20 },
+  { mo: 'Aug', mvno: 1.60, neutral: 0.28, roaming: 0.22 },
+  { mo: 'Sep', mvno: 1.62, neutral: 0.30, roaming: 0.24 },
+  { mo: 'Oct', mvno: 1.64, neutral: 0.32, roaming: 0.26 },
+  { mo: 'Nov', mvno: 1.66, neutral: 0.34, roaming: 0.28 },
 ]
 
 // ─── Devices ──────────────────────────────────────────────────────────────────
@@ -196,12 +196,12 @@ const deviceBrands = [
 ]
 
 const tradeInTrend = [
-  { mo: 'Jan', tradeIns: 8400,  avgResidual: 142 },
-  { mo: 'Feb', tradeIns: 8800,  avgResidual: 146 },
-  { mo: 'Mar', tradeIns: 9200,  avgResidual: 148 },
-  { mo: 'Apr', tradeIns: 9600,  avgResidual: 152 },
-  { mo: 'May', tradeIns: 10000, avgResidual: 156 },
-  { mo: 'Jun', tradeIns: 10200, avgResidual: 158 },
+  { mo: 'Jun', tradeIns: 8400,  avgResidual: 142 },
+  { mo: 'Jul', tradeIns: 8800,  avgResidual: 146 },
+  { mo: 'Aug', tradeIns: 9200,  avgResidual: 148 },
+  { mo: 'Sep', tradeIns: 9600,  avgResidual: 152 },
+  { mo: 'Oct', tradeIns: 10000, avgResidual: 156 },
+  { mo: 'Nov', tradeIns: 10200, avgResidual: 158 },
 ]
 
 // ─── Win/Loss & Competitive ────────────────────────────────────────────────────
@@ -214,12 +214,12 @@ const winLossReasons = [
   { reason: 'B2B contractual SLA',      won: 22, lost: 18 },
 ]
 const winRateTrend = [
-  { mo: 'Jan', winRate: 28.4, targetWin: 35 },
-  { mo: 'Feb', winRate: 29.2, targetWin: 35 },
-  { mo: 'Mar', winRate: 30.1, targetWin: 35 },
-  { mo: 'Apr', winRate: 31.4, targetWin: 35 },
-  { mo: 'May', winRate: 32.4, targetWin: 35 },
-  { mo: 'Jun', winRate: 32.4, targetWin: 35 },
+  { mo: 'Jun', winRate: 28.4, targetWin: 35 },
+  { mo: 'Jul', winRate: 29.2, targetWin: 35 },
+  { mo: 'Aug', winRate: 30.1, targetWin: 35 },
+  { mo: 'Sep', winRate: 31.4, targetWin: 35 },
+  { mo: 'Oct', winRate: 32.4, targetWin: 35 },
+  { mo: 'Nov', winRate: 32.4, targetWin: 35 },
 ]
 const competitiveThreats = [
   { competitor: 'Rival ISP B',    threat: '1Gb at BSD 30/mo — pressure on M250/M500',     severity: 'high',   segment: 'Consumer',   impact: '-BSD 2.4M ARR' },

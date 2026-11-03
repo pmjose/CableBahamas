@@ -36,14 +36,14 @@ const headline = {
 }
 
 const realisedTrend = [
-  { m: 'Jan', baseline: 0.8, ai: 1.2 },
-  { m: 'Feb', baseline: 0.9, ai: 1.6 },
-  { m: 'Mar', baseline: 0.9, ai: 1.9 },
-  { m: 'Apr', baseline: 1.0, ai: 2.4 },
-  { m: 'May', baseline: 1.0, ai: 2.8 },
-  { m: 'Jun', baseline: 1.1, ai: 3.4 },
-  { m: 'Jul', baseline: 1.1, ai: 4.1 },
-  { m: 'Aug', baseline: 1.2, ai: 4.8 },
+  { m: 'Jun', baseline: 0.8, ai: 1.2 },
+  { m: 'Jul', baseline: 0.9, ai: 1.6 },
+  { m: 'Aug', baseline: 0.9, ai: 1.9 },
+  { m: 'Sep', baseline: 1.0, ai: 2.4 },
+  { m: 'Oct', baseline: 1.0, ai: 2.8 },
+  { m: 'Nov', baseline: 1.1, ai: 3.4 },
+  { m: 'Dec', baseline: 1.1, ai: 4.1 },
+  { m: 'Jan', baseline: 1.2, ai: 4.8 },
 ]
 
 const aiPortfolio = [
@@ -201,9 +201,9 @@ const npsWeekly = [
   { wk: 'W8', nps: 44, detractors: 17, promoters: 61 },
 ]
 const csat12m = [
-  { m: 'Jan', csat: 74 }, { m: 'Feb', csat: 76 }, { m: 'Mar', csat: 75 },
-  { m: 'Apr', csat: 77 }, { m: 'May', csat: 79 }, { m: 'Jun', csat: 78 },
-  { m: 'Jul', csat: 80 }, { m: 'Aug', csat: 82 },
+  { m: 'Jun', csat: 74 }, { m: 'Jul', csat: 76 }, { m: 'Aug', csat: 75 },
+  { m: 'Sep', csat: 77 }, { m: 'Oct', csat: 79 }, { m: 'Nov', csat: 78 },
+  { m: 'Dec', csat: 80 }, { m: 'Jan', csat: 82 },
 ]
 const voiceChannelMix = [
   { channel: 'Calls', vol: 42400, aiResolved: 61 },
@@ -220,12 +220,12 @@ const topCxComplaints = [
   { complaint: 'TV EPG glitch', vol: 880, dWk: '+21%', estCost: 'BSD 14K' },
 ]
 const modelRegistry = [
-  { name: 'Churn Propensity V3.7', area: 'Retention', auc: 0.924, precision: 0.81, recall: 0.76, f1: 0.785, drift: 0.02, lastRetrain: '2025-08-01', status: 'Healthy' },
-  { name: 'Cross-sell Propensity V2.1', area: 'Sales', auc: 0.881, precision: 0.74, recall: 0.68, f1: 0.709, drift: 0.04, lastRetrain: '2025-07-15', status: 'Healthy' },
-  { name: 'Fraud Detection V4.2', area: 'Risk', auc: 0.962, precision: 0.94, recall: 0.88, f1: 0.909, drift: 0.01, lastRetrain: '2025-07-28', status: 'Healthy' },
-  { name: 'ARPU Forecast V1.8', area: 'Finance', auc: 0, precision: 0, recall: 0, f1: 0, drift: 0.08, lastRetrain: '2025-06-10', status: 'Drift Alert' },
-  { name: 'Upsell Likelihood V2.3', area: 'Sales', auc: 0.856, precision: 0.71, recall: 0.64, f1: 0.673, drift: 0.03, lastRetrain: '2025-08-05', status: 'Healthy' },
-  { name: 'Network Anomaly V3.1', area: 'Ops', auc: 0.948, precision: 0.91, recall: 0.84, f1: 0.874, drift: 0.02, lastRetrain: '2025-07-20', status: 'Healthy' },
+  { name: 'Churn Propensity V3.7', area: 'Retention', auc: 0.924, precision: 0.81, recall: 0.76, f1: 0.785, drift: 0.02, lastRetrain: '2026-01-01', status: 'Healthy' },
+  { name: 'Cross-sell Propensity V2.1', area: 'Sales', auc: 0.881, precision: 0.74, recall: 0.68, f1: 0.709, drift: 0.04, lastRetrain: '2025-12-15', status: 'Healthy' },
+  { name: 'Fraud Detection V4.2', area: 'Risk', auc: 0.962, precision: 0.94, recall: 0.88, f1: 0.909, drift: 0.01, lastRetrain: '2025-12-28', status: 'Healthy' },
+  { name: 'ARPU Forecast V1.8', area: 'Finance', auc: 0, precision: 0, recall: 0, f1: 0, drift: 0.08, lastRetrain: '2025-11-10', status: 'Drift Alert' },
+  { name: 'Upsell Likelihood V2.3', area: 'Sales', auc: 0.856, precision: 0.71, recall: 0.64, f1: 0.673, drift: 0.03, lastRetrain: '2026-01-05', status: 'Healthy' },
+  { name: 'Network Anomaly V3.1', area: 'Ops', auc: 0.948, precision: 0.91, recall: 0.84, f1: 0.874, drift: 0.02, lastRetrain: '2025-12-20', status: 'Healthy' },
 ]
 const modelDriftTrend = [
   { d: 'Wk-6', churn: 0.018, fraud: 0.009, upsell: 0.024 },
@@ -246,11 +246,11 @@ const networkAnomalies = [
   { ts: '12:55', site: 'Eleuthera-POP-02', signal: 'IP core jitter spike 18ms', severity: 'Low', prediction: 'Monitor only', action: 'Auto-ticket raised' },
 ]
 const predMaintenanceSavings = [
-  { month: 'Apr', reactive: 48, predictive: 12 },
-  { month: 'May', reactive: 42, predictive: 10 },
-  { month: 'Jun', reactive: 38, predictive: 9 },
-  { month: 'Jul', reactive: 44, predictive: 11 },
-  { month: 'Aug', reactive: 36, predictive: 8 },
+  { month: 'Sep', reactive: 48, predictive: 12 },
+  { month: 'Oct', reactive: 42, predictive: 10 },
+  { month: 'Nov', reactive: 38, predictive: 9 },
+  { month: 'Dec', reactive: 44, predictive: 11 },
+  { month: 'Jan', reactive: 36, predictive: 8 },
 ]
 const networkKpis = [
   { kpi: 'AI-predicted outages caught early', value: '84%', trend: '+6 pp QoQ' },

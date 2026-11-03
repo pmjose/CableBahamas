@@ -28,12 +28,12 @@ const EIP_AGING = [
 ]
 
 const SUBSIDY = [
-  { m: 'Jan', subsidy: 4.2, recovered: 3.1 },
-  { m: 'Feb', subsidy: 3.8, recovered: 2.9 },
-  { m: 'Mar', subsidy: 4.6, recovered: 3.4 },
-  { m: 'Apr', subsidy: 5.1, recovered: 4.0 },
-  { m: 'May', subsidy: 4.4, recovered: 3.6 },
-  { m: 'Jun', subsidy: 4.0, recovered: 3.5 },
+  { m: 'Jun', subsidy: 4.2, recovered: 3.1 },
+  { m: 'Jul', subsidy: 3.8, recovered: 2.9 },
+  { m: 'Aug', subsidy: 4.6, recovered: 3.4 },
+  { m: 'Sep', subsidy: 5.1, recovered: 4.0 },
+  { m: 'Oct', subsidy: 4.4, recovered: 3.6 },
+  { m: 'Nov', subsidy: 4.0, recovered: 3.5 },
 ]
 
 const TRADE_IN = [
@@ -76,22 +76,22 @@ const ATTACH = [
 
 // ─── EIP book monthly trend ──────────────────────────────────────────────────
 const EIP_BOOK_TREND = [
-  { m: 'Jan', book: 88.4,  defaultPct: 2.8, writeoff: 0.8 },
-  { m: 'Feb', book: 90.2,  defaultPct: 2.6, writeoff: 0.7 },
-  { m: 'Mar', book: 93.8,  defaultPct: 2.5, writeoff: 0.7 },
-  { m: 'Apr', book: 96.2,  defaultPct: 2.4, writeoff: 0.6 },
-  { m: 'May', book: 98.8,  defaultPct: 2.2, writeoff: 0.6 },
-  { m: 'Jun', book: 100.7, defaultPct: 2.1, writeoff: 0.5 },
+  { m: 'Jun', book: 88.4,  defaultPct: 2.8, writeoff: 0.8 },
+  { m: 'Jul', book: 90.2,  defaultPct: 2.6, writeoff: 0.7 },
+  { m: 'Aug', book: 93.8,  defaultPct: 2.5, writeoff: 0.7 },
+  { m: 'Sep', book: 96.2,  defaultPct: 2.4, writeoff: 0.6 },
+  { m: 'Oct', book: 98.8,  defaultPct: 2.2, writeoff: 0.6 },
+  { m: 'Nov', book: 100.7, defaultPct: 2.1, writeoff: 0.5 },
 ]
 
 // ─── Residual value depreciation ────────────────────────────────────────────
 const RESIDUAL_TREND = [
-  { m: 'Jan', flagship: 48, mid: 28, value: 12 },
-  { m: 'Feb', flagship: 46, mid: 27, value: 11 },
-  { m: 'Mar', flagship: 44, mid: 26, value: 11 },
-  { m: 'Apr', flagship: 43, mid: 25, value: 10 },
-  { m: 'May', flagship: 42, mid: 24, value: 10 },
-  { m: 'Jun', flagship: 40, mid: 23, value:  9 },
+  { m: 'Jun', flagship: 48, mid: 28, value: 12 },
+  { m: 'Jul', flagship: 46, mid: 27, value: 11 },
+  { m: 'Aug', flagship: 44, mid: 26, value: 11 },
+  { m: 'Sep', flagship: 43, mid: 25, value: 10 },
+  { m: 'Oct', flagship: 42, mid: 24, value: 10 },
+  { m: 'Nov', flagship: 40, mid: 23, value:  9 },
 ]
 
 // ─── Device catalog ──────────────────────────────────────────────────────────
@@ -125,31 +125,31 @@ const CREDIT_SCORE_DIST = [
 ]
 
 const DELINQUENCY_TREND = [
-  { m: 'Jan', dq30: 4.2, dq60: 2.1, dq90: 1.4 },
-  { m: 'Feb', dq30: 4.0, dq60: 2.0, dq90: 1.3 },
-  { m: 'Mar', dq30: 3.8, dq60: 1.9, dq90: 1.2 },
-  { m: 'Apr', dq30: 3.6, dq60: 1.8, dq90: 1.1 },
-  { m: 'May', dq30: 3.4, dq60: 1.7, dq90: 1.1 },
-  { m: 'Jun', dq30: 3.2, dq60: 1.6, dq90: 1.0 },
+  { m: 'Jun', dq30: 4.2, dq60: 2.1, dq90: 1.4 },
+  { m: 'Jul', dq30: 4.0, dq60: 2.0, dq90: 1.3 },
+  { m: 'Aug', dq30: 3.8, dq60: 1.9, dq90: 1.2 },
+  { m: 'Sep', dq30: 3.6, dq60: 1.8, dq90: 1.1 },
+  { m: 'Oct', dq30: 3.4, dq60: 1.7, dq90: 1.1 },
+  { m: 'Nov', dq30: 3.2, dq60: 1.6, dq90: 1.0 },
 ]
 
 const CREDIT_DECISIONS = [
-  { month: 'Jan', approved:  9820, conditional: 1240, declined: 940 },
-  { month: 'Feb', approved: 10200, conditional: 1180, declined: 860 },
-  { month: 'Mar', approved: 11400, conditional: 1320, declined: 780 },
-  { month: 'Apr', approved: 12100, conditional: 1100, declined: 720 },
-  { month: 'May', approved: 11800, conditional:  980, declined: 680 },
-  { month: 'Jun', approved: 12800, conditional: 1040, declined: 640 },
+  { month: 'Jun', approved:  9820, conditional: 1240, declined: 940 },
+  { month: 'Jul', approved: 10200, conditional: 1180, declined: 860 },
+  { month: 'Aug', approved: 11400, conditional: 1320, declined: 780 },
+  { month: 'Sep', approved: 12100, conditional: 1100, declined: 720 },
+  { month: 'Oct', approved: 11800, conditional:  980, declined: 680 },
+  { month: 'Nov', approved: 12800, conditional: 1040, declined: 640 },
 ]
 
 // ─── Insurance trend ─────────────────────────────────────────────────────────
 const INSURANCE_TREND = [
-  { m: 'Jan', attach: 28, claimsPct: 54, premiumE: 7.20 },
-  { m: 'Feb', attach: 29, claimsPct: 53, premiumE: 7.40 },
-  { m: 'Mar', attach: 30, claimsPct: 52, premiumE: 7.60 },
-  { m: 'Apr', attach: 31, claimsPct: 51, premiumE: 7.80 },
-  { m: 'May', attach: 33, claimsPct: 52, premiumE: 7.90 },
-  { m: 'Jun', attach: 34, claimsPct: 52, premiumE: 7.99 },
+  { m: 'Jun', attach: 28, claimsPct: 54, premiumE: 7.20 },
+  { m: 'Jul', attach: 29, claimsPct: 53, premiumE: 7.40 },
+  { m: 'Aug', attach: 30, claimsPct: 52, premiumE: 7.60 },
+  { m: 'Sep', attach: 31, claimsPct: 51, premiumE: 7.80 },
+  { m: 'Oct', attach: 33, claimsPct: 52, premiumE: 7.90 },
+  { m: 'Nov', attach: 34, claimsPct: 52, premiumE: 7.99 },
 ]
 
 // ─── Attach by channel ───────────────────────────────────────────────────────
@@ -163,12 +163,12 @@ const ATTACH_BY_CHANNEL = [
 
 // ─── Attach rate trend ───────────────────────────────────────────────────────
 const ATTACH_TREND = [
-  { m: 'Jan', financing: 62, insurance: 28, tradein: 14 },
-  { m: 'Feb', financing: 63, insurance: 29, tradein: 15 },
-  { m: 'Mar', financing: 65, insurance: 30, tradein: 16 },
-  { m: 'Apr', financing: 66, insurance: 31, tradein: 17 },
-  { m: 'May', financing: 67, insurance: 33, tradein: 17 },
-  { m: 'Jun', financing: 68, insurance: 34, tradein: 18 },
+  { m: 'Jun', financing: 62, insurance: 28, tradein: 14 },
+  { m: 'Jul', financing: 63, insurance: 29, tradein: 15 },
+  { m: 'Aug', financing: 65, insurance: 30, tradein: 16 },
+  { m: 'Sep', financing: 66, insurance: 31, tradein: 17 },
+  { m: 'Oct', financing: 67, insurance: 33, tradein: 17 },
+  { m: 'Nov', financing: 68, insurance: 34, tradein: 18 },
 ]
 
 // ─── Margin by channel ───────────────────────────────────────────────────────
@@ -1013,7 +1013,7 @@ export default function DeviceFinancingPage() {
 
       <Panel title={tt('KPI summary \u2014 device financing at a glance')}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <KpiCard label={tt('Total EIP book')}      value={`\u20ac${totalEip.toFixed(0)}M`}     delta={tt('Jun 2026')}            trend="up"   icon={Smartphone} accent />
+          <KpiCard label={tt('Total EIP book')}      value={`\u20ac${totalEip.toFixed(0)}M`}     delta={tt('Nov 2026')}            trend="up"   icon={Smartphone} accent />
           <KpiCard label={tt('Avg attach items')}    value="2.1"                            delta={tt('insur + tradein / sale')} trend="up"   icon={TrendingUp}  />
           <KpiCard label={tt('Buy-back units Q')}    value="4.8K"                           delta={tt('via 4 channels')}         trend="up"   icon={RefreshCw}   />
           <KpiCard label={tt('EIP write-off rate')}  value="0.6%"                           delta={tt('-0.2 pp YoY')}            trend="up"   icon={ShieldCheck} />
@@ -1021,7 +1021,7 @@ export default function DeviceFinancingPage() {
       </Panel>
 
       {/* \u2500\u2500 Instalment plan comparison table \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 */}
-      <Panel title={tt('EIP book by tariff tier \u2014 Jun 2026 snapshot')}>
+      <Panel title={tt('EIP book by tariff tier \u2014 Nov 2026 snapshot')}>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>

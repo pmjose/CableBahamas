@@ -74,17 +74,17 @@ const PIPELINE_STATUS = [
 
 const TASK_RUNS = [
   { name: 'TASK_BUILD_CUSTOMER_360', schedule: 'every 30m', status: 'WARN', last: '14:07:18',         dur_s: 84,  lag_m: 14, owner: 'data-eng' },
-  { name: 'TASK_CHURN_SCORE_DAILY',  schedule: '01:00 UTC', status: 'OK',   last: '2025-05-22 01:00', dur_s: 242, lag_m: 0,  owner: 'ml-team' },
-  { name: 'TASK_BILLING_RECONCILE',  schedule: '00:30 UTC', status: 'OK',   last: '2025-05-22 00:30', dur_s: 184, lag_m: 0,  owner: 'finance' },
+  { name: 'TASK_CHURN_SCORE_DAILY',  schedule: '01:00 UTC', status: 'OK',   last: '2025-10-22 01:00', dur_s: 242, lag_m: 0,  owner: 'ml-team' },
+  { name: 'TASK_BILLING_RECONCILE',  schedule: '00:30 UTC', status: 'OK',   last: '2025-10-22 00:30', dur_s: 184, lag_m: 0,  owner: 'finance' },
   { name: 'TASK_NETWORK_KPI_ROLL',   schedule: 'every 15m', status: 'OK',   last: '14:00:00',         dur_s: 18,  lag_m: 0,  owner: 'noc' },
   { name: 'TASK_AGENT_LOG_ARCHIVE',  schedule: 'every 1h',  status: 'OK',   last: '14:00:00',         dur_s: 12,  lag_m: 0,  owner: 'platform' },
-  { name: 'TASK_COMPLIANCE_SCAN',    schedule: '04:00 UTC', status: 'OK',   last: '2025-05-22 04:00', dur_s: 94,  lag_m: 0,  owner: 'governance' },
+  { name: 'TASK_COMPLIANCE_SCAN',    schedule: '04:00 UTC', status: 'OK',   last: '2025-10-22 04:00', dur_s: 94,  lag_m: 0,  owner: 'governance' },
 ]
 
 const DT_RUNS = [
   { dt: 'FACT_NETWORK_KPI',    lag: 'target 5m',  last: '14:02:54',         rows: '4,820',  dur_ms: 1400,   mode: 'incremental', status: 'OK' },
   { dt: 'FACT_CUSTOMER_360',   lag: 'target 15m', last: '13:58:40',         rows: '14,280', dur_ms: 8400,   mode: 'incremental', status: 'WARN' },
-  { dt: 'AGG_CHURN_RISK',      lag: 'target 24h', last: '2025-05-22 01:04', rows: '1.04M',  dur_ms: 184000, mode: 'full',        status: 'OK' },
+  { dt: 'AGG_CHURN_RISK',      lag: 'target 24h', last: '2025-10-22 01:04', rows: '1.04M',  dur_ms: 184000, mode: 'full',        status: 'OK' },
   { dt: 'DIM_CUSTOMER_ENRICH', lag: 'target 30m', last: '13:42:00',         rows: '18.4M',  dur_ms: 24000,  mode: 'incremental', status: 'LATE' },
   { dt: 'FACT_BILLING_EVENTS', lag: 'target 15m', last: '14:05:00',         rows: '28,400', dur_ms: 12000,  mode: 'incremental', status: 'OK' },
 ]

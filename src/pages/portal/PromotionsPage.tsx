@@ -36,17 +36,17 @@ const PROMOS = [
 
 // ─── ROI trend ───────────────────────────────────────────────────────────────
 const ROI_TREND = [
-  { m: 'Jan', avgROI: 1.8, bestROI: 2.8, worstROI: 0.8 },
-  { m: 'Feb', avgROI: 1.9, bestROI: 2.9, worstROI: 0.8 },
-  { m: 'Mar', avgROI: 2.0, bestROI: 3.0, worstROI: 0.9 },
-  { m: 'Apr', avgROI: 2.1, bestROI: 3.1, worstROI: 0.9 },
-  { m: 'May', avgROI: 2.2, bestROI: 3.2, worstROI: 1.0 },
-  { m: 'Jun', avgROI: 2.3, bestROI: 3.4, worstROI: 1.2 },
+  { m: 'Jun', avgROI: 1.8, bestROI: 2.8, worstROI: 0.8 },
+  { m: 'Jul', avgROI: 1.9, bestROI: 2.9, worstROI: 0.8 },
+  { m: 'Aug', avgROI: 2.0, bestROI: 3.0, worstROI: 0.9 },
+  { m: 'Sep', avgROI: 2.1, bestROI: 3.1, worstROI: 0.9 },
+  { m: 'Oct', avgROI: 2.2, bestROI: 3.2, worstROI: 1.0 },
+  { m: 'Nov', avgROI: 2.3, bestROI: 3.4, worstROI: 1.2 },
 ]
 
 // ─── Give-away trend ─────────────────────────────────────────────────────────
 const GIVEAWAY_TREND = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'][i],
+  m: ['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'][i],
   givePct: 8.4 - i * 0.18 + (i === 3 ? 2.2 : 0),
   target: 7.0,
 }))
@@ -82,17 +82,17 @@ const AB_TESTS = [
   { test: 'Fibre promo: -BSD 10 vs -BSD 15',   status: 'Concluded', winner: '-BSD 10 / 12mo', liftPct: 4.2,  uplift: '+BSD 0.18M/yr margin' },
   { test: 'Bundle: device vs services',   status: 'Concluded', winner: 'Services',    liftPct: 8.1,  uplift: '+BSD 0.34M/yr margin' },
   { test: 'Cliff: email vs push',          status: 'Live',      winner: 'TBD',         liftPct: null, uplift: '20K subs in test'  },
-  { test: 'SME: -15% vs free month',      status: 'Planned',   winner: '—',           liftPct: null, uplift: 'Start Aug 2026'    },
+  { test: 'SME: -15% vs free month',      status: 'Planned',   winner: '—',           liftPct: null, uplift: 'Start Jan 2027'    },
 ]
 
 // ─── Calendar ────────────────────────────────────────────────────────────────
 const CALENDAR = [
-  { month: 'Jul', event: 'Roaming summer push',     segment: 'Mobile',    budget: 'BSD 380K',  status: 'live'    },
-  { month: 'Aug', event: 'Back to School device',   segment: 'Device',    budget: 'BSD 220K',  status: 'live'    },
-  { month: 'Sep', event: 'Convergent autumn promo', segment: 'Convergent',budget: 'BSD 640K',  status: 'planned' },
-  { month: 'Oct', event: 'SME quarter-end offer',   segment: 'B2B SME',   budget: 'BSD 180K',  status: 'planned' },
-  { month: 'Nov', event: 'Black Friday 2026',        segment: 'Mass market',budget: 'BSD 1.1M', status: 'planned' },
-  { month: 'Dec', event: 'Christmas bundle',         segment: 'Convergent',budget: 'BSD 820K', status: 'planned' },
+  { month: 'Dec', event: 'Roaming summer push',     segment: 'Mobile',    budget: 'BSD 380K',  status: 'live'    },
+  { month: 'Jan', event: 'Back to School device',   segment: 'Device',    budget: 'BSD 220K',  status: 'live'    },
+  { month: 'Feb', event: 'Convergent autumn promo', segment: 'Convergent',budget: 'BSD 640K',  status: 'planned' },
+  { month: 'Mar', event: 'SME quarter-end offer',   segment: 'B2B SME',   budget: 'BSD 180K',  status: 'planned' },
+  { month: 'Apr', event: 'Black Friday 2026',        segment: 'Mass market',budget: 'BSD 1.1M', status: 'planned' },
+  { month: 'May', event: 'Christmas bundle',         segment: 'Convergent',budget: 'BSD 820K', status: 'planned' },
 ]
 
 // ─── Governance ──────────────────────────────────────────────────────────────
@@ -462,7 +462,7 @@ export default function PromotionsPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Apr cliff cohort')} value="31,200" delta={tt('subs at 22% cliff churn')} trend="down" icon={AlertTriangle} accent />
           <KpiCard label={tt('Step-down lift')}   value="−7.3pp" delta={tt('outbound call treatment')}  trend="up"   icon={TrendingUp}        />
-          <KpiCard label={tt('Cohorts on watch')} value="4"       delta={tt('rolling off H2 2026')}     trend="flat" icon={Calendar}          />
+          <KpiCard label={tt('Cohorts on watch')} value="4"       delta={tt('rolling off H1 2027')}     trend="flat" icon={Calendar}          />
           <KpiCard label={tt('Treated subs')}     value="18,200" delta={tt('receiving step-down')}      trend="up"   icon={ShieldCheck}       />
         </div>
 
@@ -592,8 +592,8 @@ export default function PromotionsPage() {
       {/* ══ CALENDAR ═════════════════════════════════════════════════════════ */}
       {tab === 'calendar' && (<>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Live campaigns')}    value="2"      delta={tt('Jul–Aug 2026')}           trend="flat" icon={Calendar}   accent />
-          <KpiCard label={tt('Planned campaigns')} value="4"      delta={tt('Sep–Dec 2026')}           trend="flat" icon={Calendar}        />
+          <KpiCard label={tt('Live campaigns')}    value="2"      delta={tt('Jul–Jan 2027')}           trend="flat" icon={Calendar}   accent />
+          <KpiCard label={tt('Planned campaigns')} value="4"      delta={tt('Sep–May 2027')}           trend="flat" icon={Calendar}        />
           <KpiCard label={tt('H2 budget')}          value="BSD 2.7M" delta={tt('approved')}               trend="flat" icon={Percent}        />
           <KpiCard label={tt('Black Friday budget')} value="BSD 1.1M" delta={tt('largest campaign')}     trend="flat" icon={Tag}            />
         </div>
@@ -608,7 +608,7 @@ export default function PromotionsPage() {
           ))}
         </div>
 
-        <Panel title={tt('Promotional calendar — H2 2026')}>
+        <Panel title={tt('Promotional calendar — H1 2027')}>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -918,7 +918,7 @@ export default function PromotionsPage() {
 
       {/* ── Promo calendar table ────────────────────────────────────────────── */}
       <div className="mt-6">
-        <Panel title={tt('Promotional calendar — H2 2026 all events')}>
+        <Panel title={tt('Promotional calendar — H1 2027 all events')}>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>

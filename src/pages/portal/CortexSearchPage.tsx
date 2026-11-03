@@ -646,7 +646,7 @@ export default function CortexSearchPage() {
               </div>
               <div className="p-3 rounded-lg bg-blue-50 border border-blue-200">
                 <div className="font-bold text-blue-900 mb-1">{tt('Upcoming: arctic-embed-xl-v3.0')}</div>
-                <div>{tt('1,536 dimensions. Pilot on KB_LEGAL_CONTRACTS — projected +6 pp Recall@5. GA in Q3-26. Will require full re-index (~4h per service).')}</div>
+                <div>{tt('1,536 dimensions. Pilot on KB_LEGAL_CONTRACTS — projected +6 pp Recall@5. GA in Q1-27. Will require full re-index (~4h per service).')}</div>
               </div>
               <div className="mt-3">
                 <Link to="/portal/ml-registry"   className="text-xs font-semibold text-sky-700 hover:underline block">{tt('→ ML Registry')}</Link>
@@ -1031,12 +1031,12 @@ export default function CortexSearchPage() {
               </thead>
               <tbody>
                 {[
-                  { date: '2026-06-24', svc: 'KB_CUSTOMER_KB',       change: 'Re-index after schema migration',        by: 'AI Platform',  result: 'Recall@5 +2 pp'   },
-                  { date: '2026-06-20', svc: 'KB_PRODUCT_CATALOG',   change: 'Added 120 new SKU documents',             by: 'Product DS',   result: 'Docs 704 → 824'    },
-                  { date: '2026-06-18', svc: 'KB_NETWORK_RUNBOOKS',  change: 'Added DOCSIS 4.0 runbook chapter',       by: 'Network Eng',  result: 'Docs +48'           },
-                  { date: '2026-06-14', svc: 'KB_REGULATORY_FILINGS',change: 'URCA M4 filing indexed',                 by: 'Compliance',   result: 'New doc available'  },
-                  { date: '2026-06-10', svc: 'KB_LEGAL_CONTRACTS',   change: 'Commonwealth Bank (demo) renewal contract added',             by: 'B2B Sales',    result: 'Docs +1'            },
-                  { date: '2026-06-05', svc: 'KB_POLICIES_DOCS',     change: 'HR policy v3.1 uploaded',                by: 'HR-BP',        result: 'Docs updated'       },
+                  { date: '2026-11-24', svc: 'KB_CUSTOMER_KB',       change: 'Re-index after schema migration',        by: 'AI Platform',  result: 'Recall@5 +2 pp'   },
+                  { date: '2026-11-20', svc: 'KB_PRODUCT_CATALOG',   change: 'Added 120 new SKU documents',             by: 'Product DS',   result: 'Docs 704 → 824'    },
+                  { date: '2026-11-18', svc: 'KB_NETWORK_RUNBOOKS',  change: 'Added DOCSIS 4.0 runbook chapter',       by: 'Network Eng',  result: 'Docs +48'           },
+                  { date: '2026-11-14', svc: 'KB_REGULATORY_FILINGS',change: 'URCA M4 filing indexed',                 by: 'Compliance',   result: 'New doc available'  },
+                  { date: '2026-11-10', svc: 'KB_LEGAL_CONTRACTS',   change: 'Commonwealth Bank (demo) renewal contract added',             by: 'B2B Sales',    result: 'Docs +1'            },
+                  { date: '2026-11-05', svc: 'KB_POLICIES_DOCS',     change: 'HR policy v3.1 uploaded',                by: 'HR-BP',        result: 'Docs updated'       },
                 ].map(r => (
                   <tr key={r.date + r.svc} className="border-b border-black/5">
                     <td className="py-1.5 font-mono text-[10px]">{r.date}</td>

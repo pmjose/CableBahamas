@@ -17,47 +17,47 @@ const ENV_TABS = ['Environments', 'Deploy History', 'CI/CD', 'Schema Changes', '
 type EnvTab = typeof ENV_TABS[number]
 
 const ENVS = [
-  { e: 'DEV',     account: 'Cable Bahamas-DATA_DEV',  role: 'SYSADMIN_DEV',  warehouses: 4, dbs: 6,  dbt_target: 'dev',     branch: 'feature/*',     lastDeploy: '2025-05-22 14:08' },
-  { e: 'STAGE',   account: 'Cable Bahamas-DATA_STG',  role: 'SYSADMIN_STG',  warehouses: 5, dbs: 6,  dbt_target: 'staging', branch: 'main',          lastDeploy: '2025-05-22 02:30' },
-  { e: 'PROD',    account: 'Cable Bahamas-DATA_PROD', role: 'SYSADMIN_PROD', warehouses: 7, dbs: 6,  dbt_target: 'prod',    branch: 'release/*',     lastDeploy: '2025-05-21 02:30' },
+  { e: 'DEV',     account: 'Cable Bahamas-DATA_DEV',  role: 'SYSADMIN_DEV',  warehouses: 4, dbs: 6,  dbt_target: 'dev',     branch: 'feature/*',     lastDeploy: '2025-10-22 14:08' },
+  { e: 'STAGE',   account: 'Cable Bahamas-DATA_STG',  role: 'SYSADMIN_STG',  warehouses: 5, dbs: 6,  dbt_target: 'staging', branch: 'main',          lastDeploy: '2025-10-22 02:30' },
+  { e: 'PROD',    account: 'Cable Bahamas-DATA_PROD', role: 'SYSADMIN_PROD', warehouses: 7, dbs: 6,  dbt_target: 'prod',    branch: 'release/*',     lastDeploy: '2025-10-21 02:30' },
   { e: 'DR',      account: 'Cable Bahamas-DATA_DR',   role: 'SYSADMIN_DR',   warehouses: 3, dbs: 6,  dbt_target: '—',       branch: '—',             lastDeploy: 'continuous (replication)' },
 ]
 
 const DEPLOYS = [
-  { d: '2025-05-22 14:08', target: 'DEV',   project: 'cbl_core',     status: 'success', author: 'pieter.claes',  changes: '14 models · 4 tests',   commit: 'a8f12b' },
-  { d: '2025-05-22 02:30', target: 'STAGE', project: 'cbl_core',     status: 'success', author: 'CI/CD',         changes: '2 models · 0 breaking', commit: '3c01ac' },
-  { d: '2025-05-21 02:30', target: 'PROD',  project: 'cbl_core',     status: 'success', author: 'CI/CD',         changes: '8 models · 0 breaking', commit: '14b842' },
-  { d: '2025-05-20 18:42', target: 'PROD',  project: 'cbl_ml',       status: 'success', author: 'CI/CD',         changes: 'churn_xgb v3.1',         commit: '88a014' },
-  { d: '2025-05-20 14:14', target: 'STAGE', project: 'cbl_governance', status: 'success', author: 'leen.jacobs', changes: '2 masking policies',     commit: '76210a' },
-  { d: '2025-05-19 09:00', target: 'PROD',  project: 'cbl_apps',     status: 'success', author: 'CI/CD',         changes: 'portal v1.4.2',          commit: '4c01b8' },
-  { d: '2025-05-18 11:24', target: 'STAGE', project: 'cbl_core',     status: 'failed',  author: 'pedro.jose',   changes: 'failed contract test',   commit: '8a4c12' },
-  { d: '2025-05-17 02:30', target: 'PROD',  project: 'cbl_core',     status: 'success', author: 'CI/CD',         changes: '4 models',                commit: '02ab84' },
+  { d: '2025-10-22 14:08', target: 'DEV',   project: 'cbl_core',     status: 'success', author: 'pieter.claes',  changes: '14 models · 4 tests',   commit: 'a8f12b' },
+  { d: '2025-10-22 02:30', target: 'STAGE', project: 'cbl_core',     status: 'success', author: 'CI/CD',         changes: '2 models · 0 breaking', commit: '3c01ac' },
+  { d: '2025-10-21 02:30', target: 'PROD',  project: 'cbl_core',     status: 'success', author: 'CI/CD',         changes: '8 models · 0 breaking', commit: '14b842' },
+  { d: '2025-10-20 18:42', target: 'PROD',  project: 'cbl_ml',       status: 'success', author: 'CI/CD',         changes: 'churn_xgb v3.1',         commit: '88a014' },
+  { d: '2025-10-20 14:14', target: 'STAGE', project: 'cbl_governance', status: 'success', author: 'leen.jacobs', changes: '2 masking policies',     commit: '76210a' },
+  { d: '2025-10-19 09:00', target: 'PROD',  project: 'cbl_apps',     status: 'success', author: 'CI/CD',         changes: 'portal v1.4.2',          commit: '4c01b8' },
+  { d: '2025-10-18 11:24', target: 'STAGE', project: 'cbl_core',     status: 'failed',  author: 'pedro.jose',   changes: 'failed contract test',   commit: '8a4c12' },
+  { d: '2025-10-17 02:30', target: 'PROD',  project: 'cbl_core',     status: 'success', author: 'CI/CD',         changes: '4 models',                commit: '02ab84' },
 ]
 
 const DCM = [
-  { p: 'CBL_DCM_CORE',       desc: 'CORE schema · 184 dbt models',         envs: 'DEV/STG/PROD', files: 248, last_apply: '2025-05-22' },
-  { p: 'CBL_DCM_GOVERNANCE', desc: 'masking · RLS · tags',                 envs: 'DEV/STG/PROD', files: 64,  last_apply: '2025-05-20' },
-  { p: 'CBL_DCM_ML',          desc: 'ML registry · feature views',          envs: 'DEV/STG/PROD', files: 38,  last_apply: '2025-05-20' },
-  { p: 'CBL_DCM_AGENTS',      desc: 'Cortex agents · semantic views · KBs', envs: 'DEV/STG/PROD', files: 42,  last_apply: '2025-05-19' },
-  { p: 'CBL_DCM_APPS',        desc: 'Streamlit apps · SPCS services',       envs: 'DEV/STG/PROD', files: 22,  last_apply: '2025-05-19' },
+  { p: 'CBL_DCM_CORE',       desc: 'CORE schema · 184 dbt models',         envs: 'DEV/STG/PROD', files: 248, last_apply: '2025-10-22' },
+  { p: 'CBL_DCM_GOVERNANCE', desc: 'masking · RLS · tags',                 envs: 'DEV/STG/PROD', files: 64,  last_apply: '2025-10-20' },
+  { p: 'CBL_DCM_ML',          desc: 'ML registry · feature views',          envs: 'DEV/STG/PROD', files: 38,  last_apply: '2025-10-20' },
+  { p: 'CBL_DCM_AGENTS',      desc: 'Cortex agents · semantic views · KBs', envs: 'DEV/STG/PROD', files: 42,  last_apply: '2025-10-19' },
+  { p: 'CBL_DCM_APPS',        desc: 'Streamlit apps · SPCS services',       envs: 'DEV/STG/PROD', files: 22,  last_apply: '2025-10-19' },
 ]
 
 const CI_CD_RUNS = [
-  { id: 'run-2841', branch: 'main',         project: 'cbl_core',       stage: 'PROD',  status: 'success', author: 'CI/CD',        dur_s: 284, tests: '142/142', ts: '2025-05-22 02:30' },
-  { id: 'run-2840', branch: 'main',         project: 'cbl_core',       stage: 'STAGE', status: 'success', author: 'CI/CD',        dur_s: 198, tests: '142/142', ts: '2025-05-22 02:15' },
-  { id: 'run-2839', branch: 'feature/churn', project: 'cbl_ml',        stage: 'DEV',   status: 'success', author: 'leen.jacobs',  dur_s: 142, tests: '38/38',   ts: '2025-05-21 18:42' },
-  { id: 'run-2838', branch: 'feature/rbac',  project: 'cbl_governance', stage: 'DEV',  status: 'failed',  author: 'pedro.jose',   dur_s: 48,  tests: '14/18',   ts: '2025-05-21 14:22' },
-  { id: 'run-2837', branch: 'main',         project: 'cbl_apps',       stage: 'PROD',  status: 'success', author: 'CI/CD',        dur_s: 168, tests: '56/56',   ts: '2025-05-20 02:30' },
-  { id: 'run-2836', branch: 'release/1.4.2', project: 'cbl_apps',      stage: 'STAGE', status: 'success', author: 'CI/CD',        dur_s: 124, tests: '56/56',   ts: '2025-05-19 22:10' },
+  { id: 'run-2841', branch: 'main',         project: 'cbl_core',       stage: 'PROD',  status: 'success', author: 'CI/CD',        dur_s: 284, tests: '142/142', ts: '2025-10-22 02:30' },
+  { id: 'run-2840', branch: 'main',         project: 'cbl_core',       stage: 'STAGE', status: 'success', author: 'CI/CD',        dur_s: 198, tests: '142/142', ts: '2025-10-22 02:15' },
+  { id: 'run-2839', branch: 'feature/churn', project: 'cbl_ml',        stage: 'DEV',   status: 'success', author: 'leen.jacobs',  dur_s: 142, tests: '38/38',   ts: '2025-10-21 18:42' },
+  { id: 'run-2838', branch: 'feature/rbac',  project: 'cbl_governance', stage: 'DEV',  status: 'failed',  author: 'pedro.jose',   dur_s: 48,  tests: '14/18',   ts: '2025-10-21 14:22' },
+  { id: 'run-2837', branch: 'main',         project: 'cbl_apps',       stage: 'PROD',  status: 'success', author: 'CI/CD',        dur_s: 168, tests: '56/56',   ts: '2025-10-20 02:30' },
+  { id: 'run-2836', branch: 'release/1.4.2', project: 'cbl_apps',      stage: 'STAGE', status: 'success', author: 'CI/CD',        dur_s: 124, tests: '56/56',   ts: '2025-10-19 22:10' },
 ]
 
 const SCHEMA_CHANGES = [
-  { id: 'SC-0188', db: 'CBL_CORE',       obj: 'CUSTOMER_360',       type: 'ADD COLUMN',    env: 'PROD',  author: 'pieter.claes',  ts: '2025-05-22 02:30', breaking: false },
-  { id: 'SC-0187', db: 'CBL_ML',         obj: 'FEATURE_VIEW_CHURN', type: 'ALTER TABLE',   env: 'PROD',  author: 'leen.jacobs',  ts: '2025-05-20 18:42', breaking: false },
-  { id: 'SC-0186', db: 'CBL_GOVERNANCE', obj: 'MASKING_PII_V2',     type: 'CREATE POLICY', env: 'PROD',  author: 'CI/CD',        ts: '2025-05-20 14:14', breaking: false },
-  { id: 'SC-0185', db: 'CBL_CORE',       obj: 'FACT_BILLING_EVENTS', type: 'DROP COLUMN',   env: 'STAGE', author: 'pedro.jose',   ts: '2025-05-18 11:24', breaking: true  },
-  { id: 'SC-0184', db: 'CBL_AGENTS',     obj: 'CUSTOMER_360_SV',    type: 'ALTER SV',      env: 'PROD',  author: 'CI/CD',        ts: '2025-05-17 02:30', breaking: false },
-  { id: 'SC-0183', db: 'CBL_CORE',       obj: 'DIM_CUSTOMER',       type: 'ADD INDEX',     env: 'PROD',  author: 'CI/CD',        ts: '2025-05-16 02:30', breaking: false },
+  { id: 'SC-0188', db: 'CBL_CORE',       obj: 'CUSTOMER_360',       type: 'ADD COLUMN',    env: 'PROD',  author: 'pieter.claes',  ts: '2025-10-22 02:30', breaking: false },
+  { id: 'SC-0187', db: 'CBL_ML',         obj: 'FEATURE_VIEW_CHURN', type: 'ALTER TABLE',   env: 'PROD',  author: 'leen.jacobs',  ts: '2025-10-20 18:42', breaking: false },
+  { id: 'SC-0186', db: 'CBL_GOVERNANCE', obj: 'MASKING_PII_V2',     type: 'CREATE POLICY', env: 'PROD',  author: 'CI/CD',        ts: '2025-10-20 14:14', breaking: false },
+  { id: 'SC-0185', db: 'CBL_CORE',       obj: 'FACT_BILLING_EVENTS', type: 'DROP COLUMN',   env: 'STAGE', author: 'pedro.jose',   ts: '2025-10-18 11:24', breaking: true  },
+  { id: 'SC-0184', db: 'CBL_AGENTS',     obj: 'CUSTOMER_360_SV',    type: 'ALTER SV',      env: 'PROD',  author: 'CI/CD',        ts: '2025-10-17 02:30', breaking: false },
+  { id: 'SC-0183', db: 'CBL_CORE',       obj: 'DIM_CUSTOMER',       type: 'ADD INDEX',     env: 'PROD',  author: 'CI/CD',        ts: '2025-10-16 02:30', breaking: false },
 ]
 
 const ENV_DRIFT = [
@@ -69,17 +69,17 @@ const ENV_DRIFT = [
 ]
 
 const CLONE_OPS = [
-  { name: 'DEV_SNAPSHOT_2025_05_22', source: 'Cable Bahamas-DATA_PROD', target: 'Cable Bahamas-DATA_DEV', type: 'zero-copy', size_tb: 7.4, ts: '2025-05-22 00:01', author: 'CI/CD',       status: 'ok' },
-  { name: 'STAGE_SYNC_2025_05_22',   source: 'Cable Bahamas-DATA_PROD', target: 'Cable Bahamas-DATA_STG', type: 'zero-copy', size_tb: 7.4, ts: '2025-05-22 00:30', author: 'CI/CD',       status: 'ok' },
-  { name: 'ADHOC_TEST_LIAM',         source: 'Cable Bahamas-DATA_STG',  target: 'Cable Bahamas-DATA_DEV', type: 'schema',    size_tb: 0.2, ts: '2025-05-21 09:12', author: 'pieter.claes', status: 'ok' },
-  { name: 'ML_FEATURE_CLONE',        source: 'Cable Bahamas-DATA_PROD', target: 'Cable Bahamas-DATA_DEV', type: 'zero-copy', size_tb: 0.9, ts: '2025-05-20 14:00', author: 'leen.jacobs', status: 'ok' },
+  { name: 'DEV_SNAPSHOT_2025_05_22', source: 'Cable Bahamas-DATA_PROD', target: 'Cable Bahamas-DATA_DEV', type: 'zero-copy', size_tb: 7.4, ts: '2025-10-22 00:01', author: 'CI/CD',       status: 'ok' },
+  { name: 'STAGE_SYNC_2025_05_22',   source: 'Cable Bahamas-DATA_PROD', target: 'Cable Bahamas-DATA_STG', type: 'zero-copy', size_tb: 7.4, ts: '2025-10-22 00:30', author: 'CI/CD',       status: 'ok' },
+  { name: 'ADHOC_TEST_LIAM',         source: 'Cable Bahamas-DATA_STG',  target: 'Cable Bahamas-DATA_DEV', type: 'schema',    size_tb: 0.2, ts: '2025-10-21 09:12', author: 'pieter.claes', status: 'ok' },
+  { name: 'ML_FEATURE_CLONE',        source: 'Cable Bahamas-DATA_PROD', target: 'Cable Bahamas-DATA_DEV', type: 'zero-copy', size_tb: 0.9, ts: '2025-10-20 14:00', author: 'leen.jacobs', status: 'ok' },
 ]
 
 const RELEASE_CALENDAR = [
-  { release: 'v1.5.0',  date: '2025-06-04', env: 'PROD',  scope: 'cbl_core · churn v4 · B2B 360',        risk: 'med',  rc_ready: true },
-  { release: 'v1.4.3',  date: '2025-05-28', env: 'STAGE', scope: 'cbl_governance · new masking policies', risk: 'low',  rc_ready: true },
-  { release: 'v1.5.1',  date: '2025-06-11', env: 'PROD',  scope: 'cbl_agents · semantic-view refactor',   risk: 'high', rc_ready: false },
-  { release: 'v1.6.0',  date: '2025-06-25', env: 'PROD',  scope: 'cbl_ml · GPU pipeline + features v2',  risk: 'high', rc_ready: false },
+  { release: 'v1.5.0',  date: '2025-11-04', env: 'PROD',  scope: 'cbl_core · churn v4 · B2B 360',        risk: 'med',  rc_ready: true },
+  { release: 'v1.4.3',  date: '2025-10-28', env: 'STAGE', scope: 'cbl_governance · new masking policies', risk: 'low',  rc_ready: true },
+  { release: 'v1.5.1',  date: '2025-11-11', env: 'PROD',  scope: 'cbl_agents · semantic-view refactor',   risk: 'high', rc_ready: false },
+  { release: 'v1.6.0',  date: '2025-11-25', env: 'PROD',  scope: 'cbl_ml · GPU pipeline + features v2',  risk: 'high', rc_ready: false },
 ]
 
 const DEPLOY_TREND = Array.from({ length: 14 }, (_, i) => ({
@@ -250,7 +250,7 @@ export default function EnvironmentsPage() {
           </div>
           <div className="rounded-lg bg-violet-50 border border-violet-200 p-3">
             <div className="text-[10px] uppercase tracking-widest text-violet-700 font-bold">{tt('Next PROD release')}</div>
-            <div className="text-2xl font-extrabold text-violet-700 mt-1">2025-05-28</div>
+            <div className="text-2xl font-extrabold text-violet-700 mt-1">2025-10-28</div>
             <div className="text-[10px] text-violet-600 mt-0.5">{tt('v1.4.3 · LOW risk · RC ready')}</div>
           </div>
         </div>
@@ -896,7 +896,7 @@ export default function EnvironmentsPage() {
           </div>
           <div className="bg-white border border-black/5 rounded-lg p-3">
             <div className="text-[10px] uppercase tracking-widest text-vfes-dark/45 font-bold mb-1">{tt('Next PROD window')}</div>
-            <div className="text-2xl font-extrabold mt-1 text-[16px]">2025-05-28</div>
+            <div className="text-2xl font-extrabold mt-1 text-[16px]">2025-10-28</div>
             <div className="text-[10px] text-vfes-dark/55">{tt('v1.4.3 governance policies · LOW risk')}</div>
           </div>
           <div className="bg-white border border-black/5 rounded-lg p-3">
@@ -996,7 +996,7 @@ export default function EnvironmentsPage() {
           </div>
           <div className="bg-white border border-black/5 rounded-lg p-3">
             <div className="text-[10px] uppercase tracking-widest text-vfes-dark/45 font-bold mb-1">{tt('Last DCM apply')}</div>
-            <div className="text-2xl font-extrabold mt-1 text-[16px]">2025-05-22</div>
+            <div className="text-2xl font-extrabold mt-1 text-[16px]">2025-10-22</div>
             <div className="text-[10px] text-vfes-dark/55">{tt('CBL_DCM_CORE · PROD env · all clean')}</div>
           </div>
           <div className="bg-white border border-black/5 rounded-lg p-3">

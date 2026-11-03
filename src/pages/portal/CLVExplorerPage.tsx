@@ -825,7 +825,7 @@ export default function CLVExplorerPage() {
         <Panel title={tt('Snowflake Intelligence — Ask the data')} action={<Sparkles className="w-4 h-4 text-vfes-dark" />}>
           <div className="space-y-2 text-sm">
             {[
-              'What is the average 3-year CLV for Gig1 customers acquired in Q1 2025?',
+              'What is the average 3-year CLV for Gig1 customers acquired in Q3 2025?',
               'How much CLV is at risk from customers with churn score above 0.8?',
               'Which acquisition channel has the highest CLV-to-CAC ratio?',
               'Show CLV uplift if we reduce Bronze tier churn by 3% — and the retention budget needed.',

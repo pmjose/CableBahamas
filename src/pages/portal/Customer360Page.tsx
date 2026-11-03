@@ -63,17 +63,17 @@ const PORTFOLIO_SEGMENTS = [
   { seg: 'B2B / Business',     customers:  26200, arpu: 184, churn: 0.41, clv: 8420, color: '#7C3AED' },
 ]
 const PORTFOLIO_CLV_TREND = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'][i],
+  m: ['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'][i],
   clv: 1780 + i * 5,
   nps: 32 + i * 0.8,
 }))
 const USAGE_TREND = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'][i],
+  m: ['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'][i],
   dataGB:       +(48 + i * 1.2).toFixed(1),
   streamingHrs: +(22 + i * 0.6).toFixed(1),
 }))
 const CARE_VOLUME = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'][i],
+  m: ['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'][i],
   calls:    42000 - i * 280,
   chats:    18000 + i * 400,
   resolved: +(88 + i * 0.2).toFixed(1),

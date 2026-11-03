@@ -304,10 +304,10 @@ const slaBreachRisk = [
 ]
 
 const pirList = [
-  { id: 'INC-2026', title: 'Mobile signaling spike Nassau Central', closed: '2026-08-08', mttr: '1h 22m', findings: 4, owner: 'Jonas Adderley', status: 'In Review' },
-  { id: 'INC-2025', title: 'CMTS reboot loop Freeport-12', closed: '2026-08-08', mttr: '3h 18m', findings: 6, owner: 'NetOps', status: 'Open' },
-  { id: 'INC-2024', title: 'Mi Cable Bahamas login errors', closed: '2026-08-07', mttr: '2h 02m', findings: 3, owner: 'IT', status: 'Approved' },
-  { id: 'INC-2019', title: 'Eleuthera 4G coverage gap (RRH swap)', closed: '2026-08-04', mttr: '4h 44m', findings: 5, owner: 'Field Ops South', status: 'Approved' },
+  { id: 'INC-2026', title: 'Mobile signaling spike Nassau Central', closed: '2027-01-08', mttr: '1h 22m', findings: 4, owner: 'Jonas Adderley', status: 'In Review' },
+  { id: 'INC-2025', title: 'CMTS reboot loop Freeport-12', closed: '2027-01-08', mttr: '3h 18m', findings: 6, owner: 'NetOps', status: 'Open' },
+  { id: 'INC-2024', title: 'Mi Cable Bahamas login errors', closed: '2027-01-07', mttr: '2h 02m', findings: 3, owner: 'IT', status: 'Approved' },
+  { id: 'INC-2019', title: 'Eleuthera 4G coverage gap (RRH swap)', closed: '2027-01-04', mttr: '4h 44m', findings: 5, owner: 'Field Ops South', status: 'Approved' },
 ]
 
 const mttrByDomain = [

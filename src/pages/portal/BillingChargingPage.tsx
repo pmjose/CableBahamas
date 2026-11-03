@@ -29,9 +29,9 @@ const PIPELINE = [
   { stage: 'Billed', value: 1748, fill: '#57c4ec' },
 ]
 const BILLRUN = [
-  { m: 'Jan', invoices: 1.21, accuracy: 99.2 }, { m: 'Feb', invoices: 1.22, accuracy: 99.3 },
-  { m: 'Mar', invoices: 1.23, accuracy: 99.1 }, { m: 'Apr', invoices: 1.24, accuracy: 99.4 },
-  { m: 'May', invoices: 1.25, accuracy: 99.5 }, { m: 'Jun', invoices: 1.26, accuracy: 99.6 },
+  { m: 'Jun', invoices: 1.21, accuracy: 99.2 }, { m: 'Jul', invoices: 1.22, accuracy: 99.3 },
+  { m: 'Aug', invoices: 1.23, accuracy: 99.1 }, { m: 'Sep', invoices: 1.24, accuracy: 99.4 },
+  { m: 'Oct', invoices: 1.25, accuracy: 99.5 }, { m: 'Nov', invoices: 1.26, accuracy: 99.6 },
 ]
 const CHARGING = [
   { name: 'Postpaid (monthly)', value: 64, color: NAVY },
@@ -64,9 +64,9 @@ const PAYMETHODS = [
   { method: 'Bank transfer', share: 3, success: 99.5 },
 ]
 const RECOVERY = [
-  { m: 'Jan', smart: 68, baseline: 41 }, { m: 'Feb', smart: 70, baseline: 41 },
-  { m: 'Mar', smart: 71, baseline: 42 }, { m: 'Apr', smart: 72, baseline: 41 },
-  { m: 'May', smart: 73, baseline: 42 }, { m: 'Jun', smart: 75, baseline: 42 },
+  { m: 'Jun', smart: 68, baseline: 41 }, { m: 'Jul', smart: 70, baseline: 41 },
+  { m: 'Aug', smart: 71, baseline: 42 }, { m: 'Sep', smart: 72, baseline: 41 },
+  { m: 'Oct', smart: 73, baseline: 42 }, { m: 'Nov', smart: 75, baseline: 42 },
 ]
 const PROPENSITY = [
   { seg: 'High propensity', accounts: 38200, action: 'Soft reminder (SMS)', risk: 'low' },
@@ -91,9 +91,9 @@ const MODELS = [
 
 // ---- Rating & tariff accuracy ---
 const RATING_ACCURACY = [
-  { m: 'Jan', rated: 99.1, revenue: 142.2 }, { m: 'Feb', rated: 99.2, revenue: 143.8 },
-  { m: 'Mar', rated: 99.0, revenue: 142.6 }, { m: 'Apr', rated: 99.3, revenue: 145.1 },
-  { m: 'May', rated: 99.4, revenue: 146.0 }, { m: 'Jun', rated: 99.5, revenue: 147.4 },
+  { m: 'Jun', rated: 99.1, revenue: 142.2 }, { m: 'Jul', rated: 99.2, revenue: 143.8 },
+  { m: 'Aug', rated: 99.0, revenue: 142.6 }, { m: 'Sep', rated: 99.3, revenue: 145.1 },
+  { m: 'Oct', rated: 99.4, revenue: 146.0 }, { m: 'Nov', rated: 99.5, revenue: 147.4 },
 ]
 
 // ---- Dunning channel effectiveness ----
@@ -107,12 +107,12 @@ const DUNNING_CHANNELS = [
 
 // ---- Bill run SLA / quality ----
 const BILLRUN_SLA = [
-  { m: 'Jan', onTime: 99.8, errors: 1840, credits: 220 },
-  { m: 'Feb', onTime: 99.9, errors: 1640, credits: 198 },
-  { m: 'Mar', onTime: 99.7, errors: 1980, credits: 241 },
-  { m: 'Apr', onTime: 99.9, errors: 1540, credits: 187 },
-  { m: 'May', onTime: 100,  errors: 1320, credits: 162 },
-  { m: 'Jun', onTime: 100,  errors: 1180, credits: 148 },
+  { m: 'Jun', onTime: 99.8, errors: 1840, credits: 220 },
+  { m: 'Jul', onTime: 99.9, errors: 1640, credits: 198 },
+  { m: 'Aug', onTime: 99.7, errors: 1980, credits: 241 },
+  { m: 'Sep', onTime: 99.9, errors: 1540, credits: 187 },
+  { m: 'Oct', onTime: 100,  errors: 1320, credits: 162 },
+  { m: 'Nov', onTime: 100,  errors: 1180, credits: 148 },
 ]
 
 // ---- OCS real-time charging latency ----
@@ -135,9 +135,9 @@ const EVENT_MIX = [
 
 // ---- Invoice accuracy trend & dispute reduction ----
 const ACCURACY_DISPUTE = [
-  { m: 'Jan', accuracy: 99.2, disputes: 4840 }, { m: 'Feb', accuracy: 99.3, disputes: 4620 },
-  { m: 'Mar', accuracy: 99.1, disputes: 4980 }, { m: 'Apr', accuracy: 99.4, disputes: 4180 },
-  { m: 'May', accuracy: 99.5, disputes: 3840 }, { m: 'Jun', accuracy: 99.6, disputes: 3480 },
+  { m: 'Jun', accuracy: 99.2, disputes: 4840 }, { m: 'Jul', accuracy: 99.3, disputes: 4620 },
+  { m: 'Aug', accuracy: 99.1, disputes: 4980 }, { m: 'Sep', accuracy: 99.4, disputes: 4180 },
+  { m: 'Oct', accuracy: 99.5, disputes: 3840 }, { m: 'Nov', accuracy: 99.6, disputes: 3480 },
 ]
 
 // ---- Mediation pipeline health (hourly samples) ----
@@ -823,12 +823,12 @@ export default function BillingChargingPage() {
                 </thead>
                 <tbody>
                   {[
-                    { plane: 'Postpaid consumer', rules: 1842, changed: '2026-06-01', accuracy: 99.7, status: 'OK' },
-                    { plane: 'Prepaid OCS',        rules:  980, changed: '2026-06-14', accuracy: 99.5, status: 'OK' },
-                    { plane: 'Convergent (FMC)',   rules:  648, changed: '2026-06-20', accuracy: 99.2, status: 'Watch' },
-                    { plane: 'B2B / wholesale',    rules:  420, changed: '2026-05-28', accuracy: 99.8, status: 'OK' },
-                    { plane: 'Roaming / HAS',      rules:  364, changed: '2026-06-10', accuracy: 98.9, status: 'Watch' },
-                    { plane: 'IoT flat-rate',       rules:  128, changed: '2026-04-15', accuracy: 99.9, status: 'OK' },
+                    { plane: 'Postpaid consumer', rules: 1842, changed: '2026-11-01', accuracy: 99.7, status: 'OK' },
+                    { plane: 'Prepaid OCS',        rules:  980, changed: '2026-11-14', accuracy: 99.5, status: 'OK' },
+                    { plane: 'Convergent (FMC)',   rules:  648, changed: '2026-11-20', accuracy: 99.2, status: 'Watch' },
+                    { plane: 'B2B / wholesale',    rules:  420, changed: '2026-10-28', accuracy: 99.8, status: 'OK' },
+                    { plane: 'Roaming / HAS',      rules:  364, changed: '2026-11-10', accuracy: 98.9, status: 'Watch' },
+                    { plane: 'IoT flat-rate',       rules:  128, changed: '2026-09-15', accuracy: 99.9, status: 'OK' },
                   ].map(r => (
                     <tr key={r.plane} className="border-b border-black/5 hover:bg-[#fafbfc]">
                       <td className="px-3 py-2 font-semibold">{tt(r.plane)}</td>
@@ -1019,8 +1019,8 @@ export default function BillingChargingPage() {
               <thead>
                 <tr className="text-left text-[10px] uppercase tracking-widest text-vfes-dark/55 border-b border-black/5">
                   <th className="px-3 py-2">{tt('KPI')}</th>
-                  <th className="px-3 py-2 text-right">{tt('Q1-26')}</th>
-                  <th className="px-3 py-2 text-right">{tt('Q2-26')}</th>
+                  <th className="px-3 py-2 text-right">{tt('Q3-26')}</th>
+                  <th className="px-3 py-2 text-right">{tt('Q4-26')}</th>
                   <th className="px-3 py-2 text-right">{tt('Target')}</th>
                   <th className="px-3 py-2">{tt('Trend')}</th>
                   <th className="px-3 py-2">{tt('Status')}</th>

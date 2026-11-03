@@ -55,72 +55,72 @@ const PARTITION_STATS = [
 ]
 
 const QUERY_PERF = [
-  { m: 'Jan', avg_s: 4.2, p99_s: 18.4, pruning_gain: 72 },
-  { m: 'Feb', avg_s: 3.9, p99_s: 16.8, pruning_gain: 74 },
-  { m: 'Mar', avg_s: 3.6, p99_s: 15.2, pruning_gain: 77 },
-  { m: 'Apr', avg_s: 3.4, p99_s: 14.0, pruning_gain: 80 },
-  { m: 'May', avg_s: 3.1, p99_s: 12.6, pruning_gain: 83 },
-  { m: 'Jun', avg_s: 2.8, p99_s: 11.4, pruning_gain: 86 },
+  { m: 'Jun', avg_s: 4.2, p99_s: 18.4, pruning_gain: 72 },
+  { m: 'Jul', avg_s: 3.9, p99_s: 16.8, pruning_gain: 74 },
+  { m: 'Aug', avg_s: 3.6, p99_s: 15.2, pruning_gain: 77 },
+  { m: 'Sep', avg_s: 3.4, p99_s: 14.0, pruning_gain: 80 },
+  { m: 'Oct', avg_s: 3.1, p99_s: 12.6, pruning_gain: 83 },
+  { m: 'Nov', avg_s: 2.8, p99_s: 11.4, pruning_gain: 86 },
 ]
 
 const REFRESH_HISTORY = [
-  { ts: '2025-06-22 02:04', catalog: 'CBL_POLARIS_CAT',    table: 'CMTS_EVENTS_ICE',   duration: '2m 18s', snapshots: 48, status: 'success' },
-  { ts: '2025-06-22 02:01', catalog: 'CBL_POLARIS_CAT',    table: 'MODEL_FEATURES_ICE',duration: '1m 44s', snapshots: 24, status: 'success' },
-  { ts: '2025-06-22 02:00', catalog: 'CBL_POLARIS_CAT',    table: 'AUDIT_LOG_ICE',     duration: '0m 52s', snapshots: 12, status: 'success' },
-  { ts: '2025-06-21 06:00', catalog: 'CBL_GLUE_CAT',       table: 'NETSUITE_GL_ICE',   duration: '4m 22s', snapshots: 6,  status: 'success' },
-  { ts: '2025-06-21 05:45', catalog: 'CBL_DATABRICKS_UC',  table: 'DATABRICKS_USAGE_ICE', duration: '2m 08s', snapshots: 18, status: 'success' },
-  { ts: '2025-06-20 14:12', catalog: 'CBL_FABRIC_ONELAKE', table: 'FABRIC_FINANCE_ICE',duration: '1m 30s', snapshots: 4,  status: 'success' },
-  { ts: '2025-06-20 08:00', catalog: 'CBL_GLUE_CAT',       table: 'NETSUITE_GL_ICE',   duration: '8m 44s', snapshots: 0,  status: 'timeout' },
+  { ts: '2025-11-22 02:04', catalog: 'CBL_POLARIS_CAT',    table: 'CMTS_EVENTS_ICE',   duration: '2m 18s', snapshots: 48, status: 'success' },
+  { ts: '2025-11-22 02:01', catalog: 'CBL_POLARIS_CAT',    table: 'MODEL_FEATURES_ICE',duration: '1m 44s', snapshots: 24, status: 'success' },
+  { ts: '2025-11-22 02:00', catalog: 'CBL_POLARIS_CAT',    table: 'AUDIT_LOG_ICE',     duration: '0m 52s', snapshots: 12, status: 'success' },
+  { ts: '2025-11-21 06:00', catalog: 'CBL_GLUE_CAT',       table: 'NETSUITE_GL_ICE',   duration: '4m 22s', snapshots: 6,  status: 'success' },
+  { ts: '2025-11-21 05:45', catalog: 'CBL_DATABRICKS_UC',  table: 'DATABRICKS_USAGE_ICE', duration: '2m 08s', snapshots: 18, status: 'success' },
+  { ts: '2025-11-20 14:12', catalog: 'CBL_FABRIC_ONELAKE', table: 'FABRIC_FINANCE_ICE',duration: '1m 30s', snapshots: 4,  status: 'success' },
+  { ts: '2025-11-20 08:00', catalog: 'CBL_GLUE_CAT',       table: 'NETSUITE_GL_ICE',   duration: '8m 44s', snapshots: 0,  status: 'timeout' },
 ]
 
 const REFRESH_LAG_TREND = [
-  { m: 'Jan', polaris: 4.2, glue: 11.8, databricks: 14.2, fabric: 16.8 },
-  { m: 'Feb', polaris: 4.0, glue: 11.4, databricks: 13.8, fabric: 16.2 },
-  { m: 'Mar', polaris: 3.8, glue: 10.8, databricks: 13.2, fabric: 15.6 },
-  { m: 'Apr', polaris: 3.6, glue: 10.2, databricks: 12.8, fabric: 15.0 },
-  { m: 'May', polaris: 3.4, glue: 9.8,  databricks: 12.4, fabric: 14.4 },
-  { m: 'Jun', polaris: 3.2, glue: 9.4,  databricks: 12.0, fabric: 14.0 },
+  { m: 'Jun', polaris: 4.2, glue: 11.8, databricks: 14.2, fabric: 16.8 },
+  { m: 'Jul', polaris: 4.0, glue: 11.4, databricks: 13.8, fabric: 16.2 },
+  { m: 'Aug', polaris: 3.8, glue: 10.8, databricks: 13.2, fabric: 15.6 },
+  { m: 'Sep', polaris: 3.6, glue: 10.2, databricks: 12.8, fabric: 15.0 },
+  { m: 'Oct', polaris: 3.4, glue: 9.8,  databricks: 12.4, fabric: 14.4 },
+  { m: 'Nov', polaris: 3.2, glue: 9.4,  databricks: 12.0, fabric: 14.0 },
 ]
 
 const STORAGE_GROWTH = [
-  { m: 'Jan', cmts: 3.2, features: 0.48, gl: 0.12, other: 0.18 },
-  { m: 'Feb', cmts: 3.5, features: 0.50, gl: 0.12, other: 0.20 },
-  { m: 'Mar', cmts: 3.8, features: 0.53, gl: 0.13, other: 0.22 },
-  { m: 'Apr', cmts: 4.0, features: 0.56, gl: 0.13, other: 0.24 },
-  { m: 'May', cmts: 4.3, features: 0.58, gl: 0.14, other: 0.26 },
-  { m: 'Jun', cmts: 4.6, features: 0.61, gl: 0.14, other: 0.28 },
+  { m: 'Jun', cmts: 3.2, features: 0.48, gl: 0.12, other: 0.18 },
+  { m: 'Jul', cmts: 3.5, features: 0.50, gl: 0.12, other: 0.20 },
+  { m: 'Aug', cmts: 3.8, features: 0.53, gl: 0.13, other: 0.22 },
+  { m: 'Sep', cmts: 4.0, features: 0.56, gl: 0.13, other: 0.24 },
+  { m: 'Oct', cmts: 4.3, features: 0.58, gl: 0.14, other: 0.26 },
+  { m: 'Nov', cmts: 4.6, features: 0.61, gl: 0.14, other: 0.28 },
 ]
 
 const COMPACTION_JOBS = [
-  { table: 'CMTS_EVENTS_ICE',      last_run: '2025-06-22 02:00', duration: '18m 42s', files_before: 142400, files_after: 128400, savings_pct: 9.8  },
-  { table: 'MODEL_FEATURES_ICE',   last_run: '2025-06-22 02:00', duration: '6m 14s',  files_before: 72800,  files_after: 62400,  savings_pct: 14.3 },
-  { table: 'NETSUITE_GL_ICE',      last_run: '2025-06-22 02:00', duration: '2m 08s',  files_before: 26400,  files_after: 24800,  savings_pct: 6.1  },
-  { table: 'AUDIT_LOG_ICE',        last_run: '2025-06-22 02:00', duration: '1m 22s',  files_before: 5200,   files_after: 4800,   savings_pct: 7.7  },
+  { table: 'CMTS_EVENTS_ICE',      last_run: '2025-11-22 02:00', duration: '18m 42s', files_before: 142400, files_after: 128400, savings_pct: 9.8  },
+  { table: 'MODEL_FEATURES_ICE',   last_run: '2025-11-22 02:00', duration: '6m 14s',  files_before: 72800,  files_after: 62400,  savings_pct: 14.3 },
+  { table: 'NETSUITE_GL_ICE',      last_run: '2025-11-22 02:00', duration: '2m 08s',  files_before: 26400,  files_after: 24800,  savings_pct: 6.1  },
+  { table: 'AUDIT_LOG_ICE',        last_run: '2025-11-22 02:00', duration: '1m 22s',  files_before: 5200,   files_after: 4800,   savings_pct: 7.7  },
 ]
 
 const EXTERNAL_TABLE_FRESHNESS = [
-  { table: 'NETSUITE_GL_ICE',     last_refresh: '2025-06-22 06:00', lag_min: 9,   scan_tb: 0.14, rows_delta: '1.2M',  status: 'fresh'  },
-  { table: 'DATABRICKS_USAGE_ICE',last_refresh: '2025-06-22 05:45', lag_min: 12,  scan_tb: 0.04, rows_delta: '420K',  status: 'fresh'  },
-  { table: 'FABRIC_FINANCE_ICE',  last_refresh: '2025-06-21 22:00', lag_min: 480, scan_tb: 0.02, rows_delta: '92K',   status: 'stale'  },
-  { table: 'AUDIT_LOG_ICE',       last_refresh: '2025-06-22 02:00', lag_min: 0,   scan_tb: 0.01, rows_delta: '142K',  status: 'fresh'  },
+  { table: 'NETSUITE_GL_ICE',     last_refresh: '2025-11-22 06:00', lag_min: 9,   scan_tb: 0.14, rows_delta: '1.2M',  status: 'fresh'  },
+  { table: 'DATABRICKS_USAGE_ICE',last_refresh: '2025-11-22 05:45', lag_min: 12,  scan_tb: 0.04, rows_delta: '420K',  status: 'fresh'  },
+  { table: 'FABRIC_FINANCE_ICE',  last_refresh: '2025-11-21 22:00', lag_min: 480, scan_tb: 0.02, rows_delta: '92K',   status: 'stale'  },
+  { table: 'AUDIT_LOG_ICE',       last_refresh: '2025-11-22 02:00', lag_min: 0,   scan_tb: 0.01, rows_delta: '142K',  status: 'fresh'  },
 ]
 
 const COST_TREND_ICE = [
-  { m: 'Jan', scan: 420,  compact: 84,  refresh: 48 },
-  { m: 'Feb', scan: 448,  compact: 88,  refresh: 52 },
-  { m: 'Mar', scan: 464,  compact: 92,  refresh: 54 },
-  { m: 'Apr', scan: 480,  compact: 94,  refresh: 56 },
-  { m: 'May', scan: 496,  compact: 98,  refresh: 58 },
-  { m: 'Jun', scan: 512,  compact: 102, refresh: 60 },
+  { m: 'Jun', scan: 420,  compact: 84,  refresh: 48 },
+  { m: 'Jul', scan: 448,  compact: 88,  refresh: 52 },
+  { m: 'Aug', scan: 464,  compact: 92,  refresh: 54 },
+  { m: 'Sep', scan: 480,  compact: 94,  refresh: 56 },
+  { m: 'Oct', scan: 496,  compact: 98,  refresh: 58 },
+  { m: 'Nov', scan: 512,  compact: 102, refresh: 60 },
 ]
 
 const WRITE_PERF = [
-  { m: 'Jan', rows_per_sec: 28400, mb_per_sec: 84, commit_lag_ms: 420 },
-  { m: 'Feb', rows_per_sec: 30200, mb_per_sec: 88, commit_lag_ms: 408 },
-  { m: 'Mar', rows_per_sec: 32800, mb_per_sec: 94, commit_lag_ms: 394 },
-  { m: 'Apr', rows_per_sec: 34400, mb_per_sec: 98, commit_lag_ms: 380 },
-  { m: 'May', rows_per_sec: 36200, mb_per_sec: 104, commit_lag_ms: 368 },
-  { m: 'Jun', rows_per_sec: 38400, mb_per_sec: 112, commit_lag_ms: 354 },
+  { m: 'Jun', rows_per_sec: 28400, mb_per_sec: 84, commit_lag_ms: 420 },
+  { m: 'Jul', rows_per_sec: 30200, mb_per_sec: 88, commit_lag_ms: 408 },
+  { m: 'Aug', rows_per_sec: 32800, mb_per_sec: 94, commit_lag_ms: 394 },
+  { m: 'Sep', rows_per_sec: 34400, mb_per_sec: 98, commit_lag_ms: 380 },
+  { m: 'Oct', rows_per_sec: 36200, mb_per_sec: 104, commit_lag_ms: 368 },
+  { m: 'Nov', rows_per_sec: 38400, mb_per_sec: 112, commit_lag_ms: 354 },
 ]
 
 type TabId = 'overview' | 'catalogs' | 'volumes' | 'tables' | 'partitions' | 'freshness' | 'performance' | 'lakehouse'

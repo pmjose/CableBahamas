@@ -50,7 +50,7 @@ const RETENTION_ROI = [
 ]
 
 const CHURN_TREND = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'][i],
+  m: ['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'][i],
   churn: 1.78 - i * 0.033 + (i === 7 ? 0.12 : 0),
 }))
 
@@ -69,17 +69,17 @@ const CHURN_PRED = CHURN_TREND.map((d, i) => ({
 }))
 
 const COHORT_DATA = [
-  { cohort: 'Q1 2023', m3: 4.8, m6: 3.9, m12: 2.8, m24: 1.7 },
-  { cohort: 'Q2 2023', m3: 4.5, m6: 3.6, m12: 2.6, m24: 1.6 },
-  { cohort: 'Q3 2023', m3: 4.2, m6: 3.4, m12: 2.4, m24: 1.5 },
-  { cohort: 'Q4 2023', m3: 3.9, m6: 3.1, m12: 2.2, m24: null },
-  { cohort: 'Q1 2024', m3: 3.6, m6: 2.9, m12: 2.0, m24: null },
-  { cohort: 'Q2 2024', m3: 3.4, m6: 2.7, m12: null, m24: null },
-  { cohort: 'Q3 2024', m3: 3.1, m6: null, m12: null, m24: null },
+  { cohort: 'Q3 2023', m3: 4.8, m6: 3.9, m12: 2.8, m24: 1.7 },
+  { cohort: 'Q4 2023', m3: 4.5, m6: 3.6, m12: 2.6, m24: 1.6 },
+  { cohort: 'Q1 2024', m3: 4.2, m6: 3.4, m12: 2.4, m24: 1.5 },
+  { cohort: 'Q2 2024', m3: 3.9, m6: 3.1, m12: 2.2, m24: null },
+  { cohort: 'Q3 2024', m3: 3.6, m6: 2.9, m12: 2.0, m24: null },
+  { cohort: 'Q4 2024', m3: 3.4, m6: 2.7, m12: null, m24: null },
+  { cohort: 'Q1 2025', m3: 3.1, m6: null, m12: null, m24: null },
 ]
 
 const SAVE_BY_MONTH = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'][i],
+  m: ['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'][i],
   flagged: 3820 - i * 12 + (i === 7 ? 400 : 0),
   saved: 1840 - i * 8 + (i === 7 ? 120 : 0),
   rate: +(48 + i * 0.4 + (i === 7 ? -4 : 0)).toFixed(1),
@@ -108,10 +108,10 @@ const RECOVERY_CURVE = Array.from({ length: 12 }, (_, i) => ({
 }))
 
 const MODEL_METRICS = [
-  { version: 'v3.5', auc: 0.82, precision: 0.71, recall: 0.68, f1: 0.69, date: '2024-08' },
-  { version: 'v3.8', auc: 0.84, precision: 0.74, recall: 0.71, f1: 0.72, date: '2024-11' },
-  { version: 'v4.0', auc: 0.87, precision: 0.78, recall: 0.74, f1: 0.76, date: '2025-02' },
-  { version: 'v4.2', auc: 0.89, precision: 0.81, recall: 0.77, f1: 0.79, date: '2025-05' },
+  { version: 'v3.5', auc: 0.82, precision: 0.71, recall: 0.68, f1: 0.69, date: '2025-01' },
+  { version: 'v3.8', auc: 0.84, precision: 0.74, recall: 0.71, f1: 0.72, date: '2025-04' },
+  { version: 'v4.0', auc: 0.87, precision: 0.78, recall: 0.74, f1: 0.76, date: '2025-07' },
+  { version: 'v4.2', auc: 0.89, precision: 0.81, recall: 0.77, f1: 0.79, date: '2025-10' },
 ]
 
 const SEGMENT_RISK: { seg: string; customers: number; risk: number; arpu: number; action: string }[] = [
@@ -834,7 +834,7 @@ export default function ChurnRetentionPage() {
             </div>
           </Panel>
 
-          <Panel title={tt('Churn reduction roadmap \u2014 Q3 2025 priorities')}>
+          <Panel title={tt('Churn reduction roadmap \u2014 Q1 2026 priorities')}>
             <div className="space-y-3">
               {[
                 { priority: '1', action: tt('Accelerate contract-end book routing — reduce flagged→offered latency from 4.2d to 1d'), impact: tt('\u20ac180K/mo'), owner: tt('Save Desk') },

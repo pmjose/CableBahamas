@@ -40,7 +40,7 @@ const LEAKAGE = [
 ]
 
 const LEAK_TREND = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'][i],
+  m: ['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'][i],
   leakPct: 2.1 - i * 0.09 + (i === 5 ? 0.3 : 0),
   recoveredK: 180 + i * 18,
 }))
@@ -82,9 +82,9 @@ const INTERCONNECT = [
 
 // ---- RA margin trend ----
 const MARGIN_TREND = [
-  { m: 'Jan', margin: 37.8, leakage: 2.1 }, { m: 'Feb', margin: 38.2, leakage: 2.4 },
-  { m: 'Mar', margin: 38.6, leakage: 1.9 }, { m: 'Apr', margin: 39.1, leakage: 1.6 },
-  { m: 'May', margin: 39.4, leakage: 1.4 }, { m: 'Jun', margin: 39.8, leakage: 1.3 },
+  { m: 'Jun', margin: 37.8, leakage: 2.1 }, { m: 'Jul', margin: 38.2, leakage: 2.4 },
+  { m: 'Aug', margin: 38.6, leakage: 1.9 }, { m: 'Sep', margin: 39.1, leakage: 1.6 },
+  { m: 'Oct', margin: 39.4, leakage: 1.4 }, { m: 'Nov', margin: 39.8, leakage: 1.3 },
 ]
 
 // ---- RA ML model outputs ----
@@ -109,12 +109,12 @@ const CDR_REGIONS = [
 
 // ---- Recovery cases pipeline ----
 const RECOVERY_PIPELINE = [
-  { m: 'Jan', opened: 42, closed: 38, recovered: 168 },
-  { m: 'Feb', opened: 48, closed: 44, recovered: 196 },
-  { m: 'Mar', opened: 38, closed: 42, recovered: 184 },
-  { m: 'Apr', opened: 52, closed: 46, recovered: 212 },
-  { m: 'May', opened: 44, closed: 48, recovered: 224 },
-  { m: 'Jun', opened: 36, closed: 52, recovered: 248 },
+  { m: 'Jun', opened: 42, closed: 38, recovered: 168 },
+  { m: 'Jul', opened: 48, closed: 44, recovered: 196 },
+  { m: 'Aug', opened: 38, closed: 42, recovered: 184 },
+  { m: 'Sep', opened: 52, closed: 46, recovered: 212 },
+  { m: 'Oct', opened: 44, closed: 48, recovered: 224 },
+  { m: 'Nov', opened: 36, closed: 52, recovered: 248 },
 ]
 
 const TS = { background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, fontSize: 12, color: '#111' }
@@ -565,7 +565,7 @@ export default function RevenueAssurancePage() {
                 </ResponsiveContainer>
               </div>
               <div className="mt-3 flex justify-between text-xs">
-                <span className="text-vfes-dark/55">{tt('Target: below 1.0% by Q4-26')}</span>
+                <span className="text-vfes-dark/55">{tt('Target: below 1.0% by Q2-27')}</span>
                 <Link to="/portal/cfo" className="font-semibold text-vfes-dark hover:underline">{tt('CFO →')}</Link>
               </div>
             </Panel>
@@ -630,7 +630,7 @@ export default function RevenueAssurancePage() {
               </table>
             </div>
             <div className="mt-3 flex justify-between text-xs">
-              <span className="text-vfes-dark/55">{tt('Roaming below threshold — BICS contract renegotiation Q3-26')}</span>
+              <span className="text-vfes-dark/55">{tt('Roaming below threshold — BICS contract renegotiation Q1-27')}</span>
               <Link to="/portal/capital-treasury" className="font-semibold text-vfes-dark hover:underline">{tt('Capital & Treasury →')}</Link>
             </div>
           </Panel>
@@ -921,8 +921,8 @@ export default function RevenueAssurancePage() {
               <thead>
                 <tr className="text-left text-[10px] uppercase tracking-widest text-vfes-dark/55 border-b border-black/5">
                   <th className="px-3 py-2">{tt('KPI')}</th>
-                  <th className="px-3 py-2 text-right">{tt('Q1-26')}</th>
-                  <th className="px-3 py-2 text-right">{tt('Q2-26')}</th>
+                  <th className="px-3 py-2 text-right">{tt('Q3-26')}</th>
+                  <th className="px-3 py-2 text-right">{tt('Q4-26')}</th>
                   <th className="px-3 py-2 text-right">{tt('Target')}</th>
                   <th className="px-3 py-2">{tt('Trend')}</th>
                   <th className="px-3 py-2">{tt('Status')}</th>

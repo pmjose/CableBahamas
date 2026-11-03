@@ -22,29 +22,29 @@ const BLUE = '#FF4438', NAVY = '#11567F', GREEN = '#10B981', AMBER = '#F59E0B', 
 const TS = { background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, fontSize: 12 }
 
 const MODELS = [
-  { name: 'churn_xgb',          versions: 12, prod: 'v3.1', target: 'WAREHOUSE', task: 'classification', auc: 0.86,  drift_psi: 0.06, last_train: '2025-05-20', owner: 'Ann Vermeulen',  stage: 'prod',    inferences_day: 1200000, framework: 'XGBoost'    },
-  { name: 'clv_lgbm',           versions:  8, prod: 'v2.4', target: 'WAREHOUSE', task: 'regression',     mape: 0.084,drift_psi: 0.04, last_train: '2025-05-14', owner: 'Ann Vermeulen',  stage: 'prod',    inferences_day:  840000, framework: 'LightGBM'   },
-  { name: 'bundle_lgbm',        versions:  6, prod: 'v1.6', target: 'WAREHOUSE', task: 'multiclass',     auc: 0.82,  drift_psi: 0.08, last_train: '2025-05-12', owner: 'Niels Bodart',   stage: 'prod',    inferences_day:  620000, framework: 'LightGBM'   },
-  { name: 'nbo_ranker',         versions:  4, prod: 'v1.2', target: 'SPCS',      task: 'ranking',        ndcg: 0.74, drift_psi: 0.05, last_train: '2025-05-08', owner: 'Niels Bodart',   stage: 'prod',    inferences_day:  380000, framework: 'XGBoost'    },
-  { name: 'fraud_detect_iso',   versions:  3, prod: 'v0.9', target: 'WAREHOUSE', task: 'anomaly',        auc: 0.91,  drift_psi: 0.12, last_train: '2025-05-22', owner: 'Lars Bethel',     stage: 'staging', inferences_day:  240000, framework: 'IsolForest' },
-  { name: 'arpu_forecast_ts',   versions:  5, prod: 'v1.4', target: 'WAREHOUSE', task: 'forecast',       smape: 0.062,drift_psi:0.03, last_train: '2025-05-18', owner: 'Thomas Knowles', stage: 'prod',    inferences_day:  180000, framework: 'Snowflake'  },
-  { name: 'network_alarm_clu',  versions:  2, prod: 'v0.6', target: 'SPCS',      task: 'cluster',        sil: 0.42,  drift_psi: 0.07, last_train: '2025-05-16', owner: 'Network DS',    stage: 'staging', inferences_day:  120000, framework: 'sklearn'    },
-  { name: 'doc_extract_arctic', versions:  4, prod: 'v2.1', target: 'WAREHOUSE', task: 'extraction',     f1: 0.93,   drift_psi: 0.04, last_train: '2025-04-30', owner: 'Pieter Knowles',    stage: 'prod',    inferences_day:   84000, framework: 'Snowflake'  },
-  { name: 'agent_eval_judge',   versions:  2, prod: 'v1.0', target: 'WAREHOUSE', task: 'llm-judge',      faithfulness: 0.88, drift_psi: 0.02, last_train: '2025-05-02', owner: 'AI platform', stage: 'prod', inferences_day: 24820, framework: 'Snowflake' },
-  { name: 'sentiment_arctic',   versions:  3, prod: 'v1.1', target: 'WAREHOUSE', task: 'classification', f1: 0.89,   drift_psi: 0.03, last_train: '2025-05-09', owner: 'CX DS',         stage: 'prod',    inferences_day:   62000, framework: 'Snowflake'  },
-  { name: 'churn_xgb_next',     versions:  1, prod: '—',    target: '—',         task: 'classification', auc: 0.88,  drift_psi: 0.00, last_train: '2025-05-22', owner: 'Ann Vermeulen',  stage: 'shadow',  inferences_day:   12000, framework: 'XGBoost'    },
-  { name: 'pricing_elasticity', versions:  6, prod: 'v3.2', target: 'WAREHOUSE', task: 'regression',     mape: 0.071,drift_psi: 0.05, last_train: '2025-05-12', owner: 'Pricing DS',    stage: 'prod',    inferences_day:   48000, framework: 'LightGBM'   },
-  { name: 'voice_intent_nlu',   versions:  2, prod: 'v0.8', target: 'SPCS',      task: 'classification', f1: 0.91,   drift_psi: 0.06, last_train: '2025-05-04', owner: 'CX DS',         stage: 'prod',    inferences_day:   96000, framework: 'sklearn'    },
-  { name: 'b2b_propensity',     versions:  4, prod: 'v1.3', target: 'WAREHOUSE', task: 'classification', auc: 0.79,  drift_psi: 0.09, last_train: '2025-05-15', owner: 'B2B DS',        stage: 'prod',    inferences_day:   36000, framework: 'XGBoost'    },
-  { name: 'nps_predictor',      versions:  3, prod: 'v1.1', target: 'WAREHOUSE', task: 'regression',     mape: 0.092,drift_psi: 0.05, last_train: '2025-05-10', owner: 'CX DS',         stage: 'prod',    inferences_day:   28000, framework: 'LightGBM'   },
-  { name: 'network_clv_upsell', versions:  2, prod: 'v0.4', target: 'WAREHOUSE', task: 'classification', auc: 0.77,  drift_psi: 0.11, last_train: '2025-05-17', owner: 'Network DS',    stage: 'staging', inferences_day:   18000, framework: 'XGBoost'    },
-  { name: 'tariff_recommender', versions:  5, prod: 'v2.0', target: 'WAREHOUSE', task: 'ranking',        ndcg: 0.81, drift_psi: 0.04, last_train: '2025-05-11', owner: 'Product DS',    stage: 'prod',    inferences_day:  220000, framework: 'LightGBM'   },
-  { name: 'call_drop_predict',  versions:  2, prod: 'v0.7', target: 'SPCS',      task: 'classification', auc: 0.84,  drift_psi: 0.08, last_train: '2025-05-19', owner: 'Network DS',    stage: 'staging', inferences_day:   44000, framework: 'XGBoost'    },
-  { name: 'csat_regressor',     versions:  3, prod: 'v1.2', target: 'WAREHOUSE', task: 'regression',     mape: 0.078,drift_psi: 0.03, last_train: '2025-05-13', owner: 'CX DS',         stage: 'prod',    inferences_day:   32000, framework: 'sklearn'    },
-  { name: 'fraud_graph_gnn',    versions:  1, prod: '—',    target: '—',         task: 'classification', auc: 0.94,  drift_psi: 0.00, last_train: '2025-05-21', owner: 'Lars Bethel',     stage: 'shadow',  inferences_day:    8000, framework: 'PyG'        },
-  { name: 'energy_optimizer',   versions:  2, prod: 'v0.5', target: 'SPCS',      task: 'optimisation',   mape: 0.055,drift_psi: 0.02, last_train: '2025-05-06', owner: 'Network DS',    stage: 'staging', inferences_day:   14000, framework: 'scipy'      },
-  { name: 'handset_upsell',     versions:  4, prod: 'v1.4', target: 'WAREHOUSE', task: 'classification', auc: 0.83,  drift_psi: 0.06, last_train: '2025-05-08', owner: 'Product DS',    stage: 'prod',    inferences_day:  180000, framework: 'XGBoost'    },
-  { name: 'contract_value',     versions:  3, prod: 'v1.0', target: 'WAREHOUSE', task: 'regression',     mape: 0.063,drift_psi: 0.04, last_train: '2025-05-15', owner: 'B2B DS',        stage: 'prod',    inferences_day:   22000, framework: 'LightGBM'   },
+  { name: 'churn_xgb',          versions: 12, prod: 'v3.1', target: 'WAREHOUSE', task: 'classification', auc: 0.86,  drift_psi: 0.06, last_train: '2025-10-20', owner: 'Ann Vermeulen',  stage: 'prod',    inferences_day: 1200000, framework: 'XGBoost'    },
+  { name: 'clv_lgbm',           versions:  8, prod: 'v2.4', target: 'WAREHOUSE', task: 'regression',     mape: 0.084,drift_psi: 0.04, last_train: '2025-10-14', owner: 'Ann Vermeulen',  stage: 'prod',    inferences_day:  840000, framework: 'LightGBM'   },
+  { name: 'bundle_lgbm',        versions:  6, prod: 'v1.6', target: 'WAREHOUSE', task: 'multiclass',     auc: 0.82,  drift_psi: 0.08, last_train: '2025-10-12', owner: 'Niels Bodart',   stage: 'prod',    inferences_day:  620000, framework: 'LightGBM'   },
+  { name: 'nbo_ranker',         versions:  4, prod: 'v1.2', target: 'SPCS',      task: 'ranking',        ndcg: 0.74, drift_psi: 0.05, last_train: '2025-10-08', owner: 'Niels Bodart',   stage: 'prod',    inferences_day:  380000, framework: 'XGBoost'    },
+  { name: 'fraud_detect_iso',   versions:  3, prod: 'v0.9', target: 'WAREHOUSE', task: 'anomaly',        auc: 0.91,  drift_psi: 0.12, last_train: '2025-10-22', owner: 'Lars Bethel',     stage: 'staging', inferences_day:  240000, framework: 'IsolForest' },
+  { name: 'arpu_forecast_ts',   versions:  5, prod: 'v1.4', target: 'WAREHOUSE', task: 'forecast',       smape: 0.062,drift_psi:0.03, last_train: '2025-10-18', owner: 'Thomas Knowles', stage: 'prod',    inferences_day:  180000, framework: 'Snowflake'  },
+  { name: 'network_alarm_clu',  versions:  2, prod: 'v0.6', target: 'SPCS',      task: 'cluster',        sil: 0.42,  drift_psi: 0.07, last_train: '2025-10-16', owner: 'Network DS',    stage: 'staging', inferences_day:  120000, framework: 'sklearn'    },
+  { name: 'doc_extract_arctic', versions:  4, prod: 'v2.1', target: 'WAREHOUSE', task: 'extraction',     f1: 0.93,   drift_psi: 0.04, last_train: '2025-09-30', owner: 'Pieter Knowles',    stage: 'prod',    inferences_day:   84000, framework: 'Snowflake'  },
+  { name: 'agent_eval_judge',   versions:  2, prod: 'v1.0', target: 'WAREHOUSE', task: 'llm-judge',      faithfulness: 0.88, drift_psi: 0.02, last_train: '2025-10-02', owner: 'AI platform', stage: 'prod', inferences_day: 24820, framework: 'Snowflake' },
+  { name: 'sentiment_arctic',   versions:  3, prod: 'v1.1', target: 'WAREHOUSE', task: 'classification', f1: 0.89,   drift_psi: 0.03, last_train: '2025-10-09', owner: 'CX DS',         stage: 'prod',    inferences_day:   62000, framework: 'Snowflake'  },
+  { name: 'churn_xgb_next',     versions:  1, prod: '—',    target: '—',         task: 'classification', auc: 0.88,  drift_psi: 0.00, last_train: '2025-10-22', owner: 'Ann Vermeulen',  stage: 'shadow',  inferences_day:   12000, framework: 'XGBoost'    },
+  { name: 'pricing_elasticity', versions:  6, prod: 'v3.2', target: 'WAREHOUSE', task: 'regression',     mape: 0.071,drift_psi: 0.05, last_train: '2025-10-12', owner: 'Pricing DS',    stage: 'prod',    inferences_day:   48000, framework: 'LightGBM'   },
+  { name: 'voice_intent_nlu',   versions:  2, prod: 'v0.8', target: 'SPCS',      task: 'classification', f1: 0.91,   drift_psi: 0.06, last_train: '2025-10-04', owner: 'CX DS',         stage: 'prod',    inferences_day:   96000, framework: 'sklearn'    },
+  { name: 'b2b_propensity',     versions:  4, prod: 'v1.3', target: 'WAREHOUSE', task: 'classification', auc: 0.79,  drift_psi: 0.09, last_train: '2025-10-15', owner: 'B2B DS',        stage: 'prod',    inferences_day:   36000, framework: 'XGBoost'    },
+  { name: 'nps_predictor',      versions:  3, prod: 'v1.1', target: 'WAREHOUSE', task: 'regression',     mape: 0.092,drift_psi: 0.05, last_train: '2025-10-10', owner: 'CX DS',         stage: 'prod',    inferences_day:   28000, framework: 'LightGBM'   },
+  { name: 'network_clv_upsell', versions:  2, prod: 'v0.4', target: 'WAREHOUSE', task: 'classification', auc: 0.77,  drift_psi: 0.11, last_train: '2025-10-17', owner: 'Network DS',    stage: 'staging', inferences_day:   18000, framework: 'XGBoost'    },
+  { name: 'tariff_recommender', versions:  5, prod: 'v2.0', target: 'WAREHOUSE', task: 'ranking',        ndcg: 0.81, drift_psi: 0.04, last_train: '2025-10-11', owner: 'Product DS',    stage: 'prod',    inferences_day:  220000, framework: 'LightGBM'   },
+  { name: 'call_drop_predict',  versions:  2, prod: 'v0.7', target: 'SPCS',      task: 'classification', auc: 0.84,  drift_psi: 0.08, last_train: '2025-10-19', owner: 'Network DS',    stage: 'staging', inferences_day:   44000, framework: 'XGBoost'    },
+  { name: 'csat_regressor',     versions:  3, prod: 'v1.2', target: 'WAREHOUSE', task: 'regression',     mape: 0.078,drift_psi: 0.03, last_train: '2025-10-13', owner: 'CX DS',         stage: 'prod',    inferences_day:   32000, framework: 'sklearn'    },
+  { name: 'fraud_graph_gnn',    versions:  1, prod: '—',    target: '—',         task: 'classification', auc: 0.94,  drift_psi: 0.00, last_train: '2025-10-21', owner: 'Lars Bethel',     stage: 'shadow',  inferences_day:    8000, framework: 'PyG'        },
+  { name: 'energy_optimizer',   versions:  2, prod: 'v0.5', target: 'SPCS',      task: 'optimisation',   mape: 0.055,drift_psi: 0.02, last_train: '2025-10-06', owner: 'Network DS',    stage: 'staging', inferences_day:   14000, framework: 'scipy'      },
+  { name: 'handset_upsell',     versions:  4, prod: 'v1.4', target: 'WAREHOUSE', task: 'classification', auc: 0.83,  drift_psi: 0.06, last_train: '2025-10-08', owner: 'Product DS',    stage: 'prod',    inferences_day:  180000, framework: 'XGBoost'    },
+  { name: 'contract_value',     versions:  3, prod: 'v1.0', target: 'WAREHOUSE', task: 'regression',     mape: 0.063,drift_psi: 0.04, last_train: '2025-10-15', owner: 'B2B DS',        stage: 'prod',    inferences_day:   22000, framework: 'LightGBM'   },
 ]
 
 const FEATURE_VIEWS = [
@@ -574,7 +574,7 @@ export default function MLRegistryPage() {
         <div className="grid md:grid-cols-3 gap-4 mb-6">
           <KpiCard label={tt('Active A/B tests')} value="3" delta={tt('churn · b2b · nbo')} trend="flat" icon={GitBranch} accent />
           <KpiCard label={tt('Winner identified')} value="churn_xgb_next" delta={tt('AUC +2 pp')} trend="up" icon={TrendingUp} />
-          <KpiCard label={tt('Promotion ETA')}    value="Q3-26"          delta={tt('post UAT')} trend="flat" icon={Clock} />
+          <KpiCard label={tt('Promotion ETA')}    value="Q1-27"          delta={tt('post UAT')} trend="flat" icon={Clock} />
         </div>
         <Panel title={tt('churn_xgb v3.0 vs churn_xgb_next v3.1 — AUC over 8 weeks')}>
           <ResponsiveContainer width="100%" height={240}>
@@ -693,7 +693,7 @@ export default function MLRegistryPage() {
         <div className="grid md:grid-cols-3 gap-4 mb-6">
           <KpiCard label={tt('Models with model card')} value={String(MODELS.filter(x => x.stage === 'prod').length)} delta={tt('all prod models')} trend="up" icon={ShieldCheck} accent />
           <KpiCard label={tt('DPA-compliant')}         value="100%"  delta={tt('PII features masked')}   trend="up"   icon={CheckCircle2} />
-          <KpiCard label={tt('Risk review due')}        value="2"     delta={tt('Q3-26 review cycle')}    trend="flat" icon={AlertTriangle} />
+          <KpiCard label={tt('Risk review due')}        value="2"     delta={tt('Q1-27 review cycle')}    trend="flat" icon={AlertTriangle} />
         </div>
         <Panel title={tt('Model governance register')}>
           <table className="w-full text-[11px]">
@@ -714,7 +714,7 @@ export default function MLRegistryPage() {
                   <td className="text-[10px]">{tt(x.owner)}</td>
                   <td><span className={`text-[9px] font-bold uppercase px-1.5 py-0.5 rounded ${x.drift_psi > 0.08 ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'}`}>{x.drift_psi > 0.08 ? tt('Medium') : tt('Low')}</span></td>
                   <td className="text-[10px] text-vfes-dark/70">Art. 6(1)(f)</td>
-                  <td className="font-mono text-[10px]">2026-Q1</td>
+                  <td className="font-mono text-[10px]">2026-Q3</td>
                   <td><CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" /></td>
                 </tr>
               ))}
@@ -873,12 +873,12 @@ export default function MLRegistryPage() {
               </thead>
               <tbody>
                 {[
-                  { d: '2026-06-20', model: 'fraud_detect_iso',   trigger: 'Drift alert PSI 0.12', before: 0.12, after: 0.04, result: 'Success — queued' },
-                  { d: '2026-06-12', model: 'network_clv_upsell', trigger: 'Drift alert PSI 0.11', before: 0.11, after: null, result: 'In progress'        },
-                  { d: '2026-05-28', model: 'bundle_lgbm',        trigger: 'Scheduled (monthly)',  before: 0.07, after: 0.03, result: 'Success'            },
-                  { d: '2026-05-14', model: 'churn_xgb',          trigger: 'Scheduled (monthly)',  before: 0.05, after: 0.02, result: 'Success'            },
-                  { d: '2026-04-30', model: 'b2b_propensity',     trigger: 'Drift alert PSI 0.10', before: 0.10, after: 0.05, result: 'Success'            },
-                  { d: '2026-04-15', model: 'voice_intent_nlu',   trigger: 'Scheduled (quarterly)',before: 0.08, after: 0.03, result: 'Success'            },
+                  { d: '2026-11-20', model: 'fraud_detect_iso',   trigger: 'Drift alert PSI 0.12', before: 0.12, after: 0.04, result: 'Success — queued' },
+                  { d: '2026-11-12', model: 'network_clv_upsell', trigger: 'Drift alert PSI 0.11', before: 0.11, after: null, result: 'In progress'        },
+                  { d: '2026-10-28', model: 'bundle_lgbm',        trigger: 'Scheduled (monthly)',  before: 0.07, after: 0.03, result: 'Success'            },
+                  { d: '2026-10-14', model: 'churn_xgb',          trigger: 'Scheduled (monthly)',  before: 0.05, after: 0.02, result: 'Success'            },
+                  { d: '2026-09-30', model: 'b2b_propensity',     trigger: 'Drift alert PSI 0.10', before: 0.10, after: 0.05, result: 'Success'            },
+                  { d: '2026-09-15', model: 'voice_intent_nlu',   trigger: 'Scheduled (quarterly)',before: 0.08, after: 0.03, result: 'Success'            },
                 ].map(r => (
                   <tr key={r.d + r.model} className="border-b border-black/5">
                     <td className="py-1.5 font-mono text-[10px]">{r.d}</td>
@@ -933,7 +933,7 @@ export default function MLRegistryPage() {
             <div className="space-y-3 text-xs text-vfes-dark/70">
               <div className="p-3 rounded-lg bg-purple-50 border border-purple-200">
                 <div className="font-bold text-purple-900 mb-1">{tt('Art. 6(1)(f) — Legitimate Interest')}</div>
-                <div>{tt('Churn prediction models process subscriber data under legitimate interest basis. A DPIA was completed Q4-25. Data retention: 13 months rolling.')}</div>
+                <div>{tt('Churn prediction models process subscriber data under legitimate interest basis. A DPIA was completed Q2-26. Data retention: 13 months rolling.')}</div>
               </div>
               <div className="p-3 rounded-lg bg-sky-50 border border-sky-200">
                 <div className="font-bold text-sky-900 mb-1">{tt('URCA M4 — Roaming fairness')}</div>
@@ -958,12 +958,12 @@ export default function MLRegistryPage() {
               </thead>
               <tbody>
                 {[
-                  { d: '2026-06-24', model: 'churn_xgb',        action: 'Version v3.1 registered',  by: 'Ann Vermeulen'  },
-                  { d: '2026-06-22', model: 'fraud_detect_iso',  action: 'Drift alert raised',       by: 'Model Monitor' },
-                  { d: '2026-06-20', model: 'bundle_lgbm',       action: 'Deployed to production',   by: 'Niels Bodart'   },
-                  { d: '2026-06-18', model: 'doc_extract_arctic',action: 'Model card updated',       by: 'Pieter Knowles'    },
-                  { d: '2026-06-14', model: 'agent_eval_judge',  action: 'Eval run completed',       by: 'AI platform'   },
-                  { d: '2026-06-10', model: 'pricing_elasticity',action: 'Governance review passed', by: 'Pricing DS'    },
+                  { d: '2026-11-24', model: 'churn_xgb',        action: 'Version v3.1 registered',  by: 'Ann Vermeulen'  },
+                  { d: '2026-11-22', model: 'fraud_detect_iso',  action: 'Drift alert raised',       by: 'Model Monitor' },
+                  { d: '2026-11-20', model: 'bundle_lgbm',       action: 'Deployed to production',   by: 'Niels Bodart'   },
+                  { d: '2026-11-18', model: 'doc_extract_arctic',action: 'Model card updated',       by: 'Pieter Knowles'    },
+                  { d: '2026-11-14', model: 'agent_eval_judge',  action: 'Eval run completed',       by: 'AI platform'   },
+                  { d: '2026-11-10', model: 'pricing_elasticity',action: 'Governance review passed', by: 'Pricing DS'    },
                 ].map(r => (
                   <tr key={r.d + r.model} className="border-b border-black/5">
                     <td className="py-1.5 font-mono text-[10px]">{r.d}</td>
@@ -996,7 +996,7 @@ export default function MLRegistryPage() {
                 <div>FROM CBL_AI.FEATURE_STORE.CHURN_SIGNALS_FV fv</div>
                 <div>JOIN CBL_ANALYTICS.CHURN.LABELS label</div>
                 <div className="text-amber-300">  ON fv.CUSTOMER_ID = label.CUSTOMER_ID</div>
-                <div>WHERE label.PERIOD = 'Q1-26';</div>
+                <div>WHERE label.PERIOD = 'Q3-26';</div>
               </div>
             </div>
             <div className="mt-3 flex items-center gap-4 text-xs">

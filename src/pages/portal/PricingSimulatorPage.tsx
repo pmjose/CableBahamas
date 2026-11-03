@@ -2072,9 +2072,9 @@ export default function PricingSimulatorPage() {
             <Panel title={tt('Scenario library')}>
               <div className="space-y-2">
                 {[
-                  { name: 'CPI +3.0% portfolio rise',  ebitda: '+BSD 6.4M', risk: 'Med', date: '2026-04-01' },
-                  { name: 'Loyalty win-back (>24mo)',  ebitda: '+BSD 2.1M', risk: 'Low', date: '2026-Q2' },
-                  { name: 'REVConnect 2P promo deepening',   ebitda: '+BSD 3.8M', risk: 'Low', date: '2026-Q3' },
+                  { name: 'CPI +3.0% portfolio rise',  ebitda: '+BSD 6.4M', risk: 'Med', date: '2026-09-01' },
+                  { name: 'Loyalty win-back (>24mo)',  ebitda: '+BSD 2.1M', risk: 'Low', date: '2026-Q4' },
+                  { name: 'REVConnect 2P promo deepening',   ebitda: '+BSD 3.8M', risk: 'Low', date: '2027-Q1' },
                   { name: 'Mobile −BSD 3 vs Rival ISP C',       ebitda: '+BSD 1.2M', risk: 'Med', date: 'Tactical' },
                   { name: 'BB SVR +BSD 2 back-book',      ebitda: '+BSD 4.6M', risk: 'High',date: 'Pending' },
                 ].map((s, i) => (

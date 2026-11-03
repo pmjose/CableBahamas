@@ -98,12 +98,12 @@ const ingestionTrend = Array.from({ length: 14 }, (_, i) => ({
 
 // ── Storage growth ──────────────────────────────────────────────────────────
 const storageGrowth = [
-  { m: 'Jan', raw: 5.1, core: 1.4, analytics: 0.6 },
-  { m: 'Feb', raw: 5.4, core: 1.5, analytics: 0.6 },
-  { m: 'Mar', raw: 5.8, core: 1.6, analytics: 0.7 },
-  { m: 'Apr', raw: 6.1, core: 1.7, analytics: 0.7 },
-  { m: 'May', raw: 6.6, core: 1.8, analytics: 0.8 },
-  { m: 'Jun', raw: 7.0, core: 2.0, analytics: 0.8 },
+  { m: 'Jun', raw: 5.1, core: 1.4, analytics: 0.6 },
+  { m: 'Jul', raw: 5.4, core: 1.5, analytics: 0.6 },
+  { m: 'Aug', raw: 5.8, core: 1.6, analytics: 0.7 },
+  { m: 'Sep', raw: 6.1, core: 1.7, analytics: 0.7 },
+  { m: 'Oct', raw: 6.6, core: 1.8, analytics: 0.8 },
+  { m: 'Nov', raw: 7.0, core: 2.0, analytics: 0.8 },
 ]
 
 // ── Transform pipeline latency ──────────────────────────────────────────────
@@ -125,12 +125,12 @@ const queryPerf = Array.from({ length: 7 }, (_, i) => ({
 
 // ── Cortex calls trend ──────────────────────────────────────────────────────
 const cortexCallsTrend = [
-  { m: 'Jan', analyst: 280, search: 120, agents: 40 },
-  { m: 'Feb', analyst: 320, search: 160, agents: 60 },
-  { m: 'Mar', analyst: 380, search: 210, agents: 90 },
-  { m: 'Apr', analyst: 440, search: 280, agents: 130 },
-  { m: 'May', analyst: 510, search: 360, agents: 180 },
-  { m: 'Jun', analyst: 590, search: 440, agents: 240 },
+  { m: 'Jun', analyst: 280, search: 120, agents: 40 },
+  { m: 'Jul', analyst: 320, search: 160, agents: 60 },
+  { m: 'Aug', analyst: 380, search: 210, agents: 90 },
+  { m: 'Sep', analyst: 440, search: 280, agents: 130 },
+  { m: 'Oct', analyst: 510, search: 360, agents: 180 },
+  { m: 'Nov', analyst: 590, search: 440, agents: 240 },
 ]
 
 // ── Marketplace / integration share ────────────────────────────────────────
@@ -165,12 +165,12 @@ const icebergTables = [
 
 // ── Security posture trend ──────────────────────────────────────────────────
 const securityTrend = [
-  { m: 'Jan', score: 74, violations: 8 },
-  { m: 'Feb', score: 76, violations: 6 },
-  { m: 'Mar', score: 79, violations: 5 },
-  { m: 'Apr', score: 82, violations: 4 },
-  { m: 'May', score: 85, violations: 2 },
-  { m: 'Jun', score: 88, violations: 1 },
+  { m: 'Jun', score: 74, violations: 8 },
+  { m: 'Jul', score: 76, violations: 6 },
+  { m: 'Aug', score: 79, violations: 5 },
+  { m: 'Sep', score: 82, violations: 4 },
+  { m: 'Oct', score: 85, violations: 2 },
+  { m: 'Nov', score: 88, violations: 1 },
 ]
 
 function Icon({ Cmp, color }: { Cmp: any; color: string }) {

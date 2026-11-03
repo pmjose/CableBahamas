@@ -38,29 +38,29 @@ const TIER_COLORS: Record<string, string> = {
 }
 
 const ROADMAP = [
-  { p: 'CX 360',                state: 'design',    eta: 'Q3-2025', owner: 'CX',        invest: 'BSD 840K',  consumers_est: 12 },
-  { p: 'Marketing Attribution', state: 'build',     eta: 'Q3-2025', owner: 'Marketing', invest: 'BSD 1.2M',  consumers_est: 8  },
-  { p: 'Field-ops 360',         state: 'pilot',     eta: 'Q3-2025', owner: 'Field ops', invest: 'BSD 620K',  consumers_est: 6  },
-  { p: 'Wholesale Settlement',  state: 'design',    eta: 'Q4-2025', owner: 'B2B',       invest: 'BSD 480K',  consumers_est: 4  },
-  { p: 'Sustainability 360',    state: 'discovery', eta: 'Q1-2026', owner: 'CRO',       invest: 'BSD 380K',  consumers_est: 8  },
+  { p: 'CX 360',                state: 'design',    eta: 'Q1-2026', owner: 'CX',        invest: 'BSD 840K',  consumers_est: 12 },
+  { p: 'Marketing Attribution', state: 'build',     eta: 'Q1-2026', owner: 'Marketing', invest: 'BSD 1.2M',  consumers_est: 8  },
+  { p: 'Field-ops 360',         state: 'pilot',     eta: 'Q1-2026', owner: 'Field ops', invest: 'BSD 620K',  consumers_est: 6  },
+  { p: 'Wholesale Settlement',  state: 'design',    eta: 'Q2-2026', owner: 'B2B',       invest: 'BSD 480K',  consumers_est: 4  },
+  { p: 'Sustainability 360',    state: 'discovery', eta: 'Q3-2026', owner: 'CRO',       invest: 'BSD 380K',  consumers_est: 8  },
 ]
 
 const HEALTH_TREND = [
-  { m: 'Jan', slo: 99.6, freshness: 99.8, incidents: 1 },
-  { m: 'Feb', slo: 99.7, freshness: 99.9, incidents: 0 },
-  { m: 'Mar', slo: 99.4, freshness: 99.7, incidents: 2 },
-  { m: 'Apr', slo: 99.8, freshness: 99.9, incidents: 0 },
-  { m: 'May', slo: 99.3, freshness: 99.6, incidents: 3 },
-  { m: 'Jun', slo: 99.4, freshness: 99.8, incidents: 1 },
+  { m: 'Jun', slo: 99.6, freshness: 99.8, incidents: 1 },
+  { m: 'Jul', slo: 99.7, freshness: 99.9, incidents: 0 },
+  { m: 'Aug', slo: 99.4, freshness: 99.7, incidents: 2 },
+  { m: 'Sep', slo: 99.8, freshness: 99.9, incidents: 0 },
+  { m: 'Oct', slo: 99.3, freshness: 99.6, incidents: 3 },
+  { m: 'Nov', slo: 99.4, freshness: 99.8, incidents: 1 },
 ]
 
 const COST_TREND = [
-  { m: 'Jan', compute: 8400,  storage: 2100, ingestion: 1200, total: 11700 },
-  { m: 'Feb', compute: 8800,  storage: 2200, ingestion: 1240, total: 12240 },
-  { m: 'Mar', compute: 9200,  storage: 2300, ingestion: 1280, total: 12780 },
-  { m: 'Apr', compute: 9600,  storage: 2350, ingestion: 1300, total: 13250 },
-  { m: 'May', compute: 10100, storage: 2400, ingestion: 1320, total: 13820 },
-  { m: 'Jun', compute: 10400, storage: 2450, ingestion: 1340, total: 14190 },
+  { m: 'Jun', compute: 8400,  storage: 2100, ingestion: 1200, total: 11700 },
+  { m: 'Jul', compute: 8800,  storage: 2200, ingestion: 1240, total: 12240 },
+  { m: 'Aug', compute: 9200,  storage: 2300, ingestion: 1280, total: 12780 },
+  { m: 'Sep', compute: 9600,  storage: 2350, ingestion: 1300, total: 13250 },
+  { m: 'Oct', compute: 10100, storage: 2400, ingestion: 1320, total: 13820 },
+  { m: 'Nov', compute: 10400, storage: 2450, ingestion: 1340, total: 14190 },
 ]
 
 const DOMAIN_CONSUMERS = [
@@ -75,12 +75,12 @@ const DOMAIN_CONSUMERS = [
 ]
 
 const CONTRACTS = [
-  { product: 'Customer 360',   consumer: 'CDO Analytics',   sla: '99.9%', freshness: '<4h',    signed: '2024-01-15', status: 'active',  breakClause: 'CDO → CDO team'    },
-  { product: 'Customer 360',   consumer: 'CX Team',          sla: '99.9%', freshness: '<4h',    signed: '2024-02-20', status: 'active',  breakClause: 'CDO → CX'          },
-  { product: 'Network KPI',    consumer: 'NOC Operations',   sla: '99.5%', freshness: '<10 min',signed: '2024-03-01', status: 'active',  breakClause: 'CTO → NOC'         },
-  { product: 'Finance Ledger', consumer: 'CFO Reporting',    sla: '99.9%', freshness: '<8h',    signed: '2024-04-10', status: 'active',  breakClause: 'CFO → CFO team'    },
-  { product: 'B2B 360',        consumer: 'B2B Sales',        sla: '99.5%', freshness: '<6h',    signed: '2024-05-15', status: 'active',  breakClause: 'CCO → B2B Sales'   },
-  { product: 'Risk / ESG 360', consumer: 'Compliance',       sla: '99%',   freshness: '<24h',   signed: '2024-06-01', status: 'pending', breakClause: 'CRO → Compliance'  },
+  { product: 'Customer 360',   consumer: 'CDO Analytics',   sla: '99.9%', freshness: '<4h',    signed: '2024-06-15', status: 'active',  breakClause: 'CDO → CDO team'    },
+  { product: 'Customer 360',   consumer: 'CX Team',          sla: '99.9%', freshness: '<4h',    signed: '2024-07-20', status: 'active',  breakClause: 'CDO → CX'          },
+  { product: 'Network KPI',    consumer: 'NOC Operations',   sla: '99.5%', freshness: '<10 min',signed: '2024-08-01', status: 'active',  breakClause: 'CTO → NOC'         },
+  { product: 'Finance Ledger', consumer: 'CFO Reporting',    sla: '99.9%', freshness: '<8h',    signed: '2024-09-10', status: 'active',  breakClause: 'CFO → CFO team'    },
+  { product: 'B2B 360',        consumer: 'B2B Sales',        sla: '99.5%', freshness: '<6h',    signed: '2024-10-15', status: 'active',  breakClause: 'CCO → B2B Sales'   },
+  { product: 'Risk / ESG 360', consumer: 'Compliance',       sla: '99%',   freshness: '<24h',   signed: '2024-11-01', status: 'pending', breakClause: 'CRO → Compliance'  },
 ]
 
 const CONSUMERS_LIST = [
@@ -95,12 +95,12 @@ const CONSUMERS_LIST = [
 ]
 
 const CONSUMER_GROWTH = [
-  { m: 'Jan', consumers: 88,  queries: 12400 },
-  { m: 'Feb', consumers: 96,  queries: 13800 },
-  { m: 'Mar', consumers: 102, queries: 14200 },
-  { m: 'Apr', consumers: 108, queries: 15600 },
-  { m: 'May', consumers: 114, queries: 17200 },
-  { m: 'Jun', consumers: 120, queries: 18400 },
+  { m: 'Jun', consumers: 88,  queries: 12400 },
+  { m: 'Jul', consumers: 96,  queries: 13800 },
+  { m: 'Aug', consumers: 102, queries: 14200 },
+  { m: 'Sep', consumers: 108, queries: 15600 },
+  { m: 'Oct', consumers: 114, queries: 17200 },
+  { m: 'Nov', consumers: 120, queries: 18400 },
 ]
 
 const INVEST_ALLOC = [
@@ -235,7 +235,7 @@ export default function DataProductsPage() {
             <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
             <div className="flex-1">
               <div className="font-bold text-amber-900 text-sm">
-                {tt('Risk/ESG 360 and Procurement 360 not yet certified · 3 SLO breaches in May')}
+                {tt('Risk/ESG 360 and Procurement 360 not yet certified · 3 SLO breaches in Oct')}
               </div>
               <div className="text-xs text-amber-800 mt-1">
                 {tt('Certification unblocks 16 consumers. May incidents were caused by upstream CMTS feed latency — mitigation now applied.')}

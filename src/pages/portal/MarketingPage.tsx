@@ -46,14 +46,14 @@ const channelROAS = [
 ]
 
 const merTrend = [
-  { m: 'Jan', mer: 3.1, payback: 9.4 },
-  { m: 'Feb', mer: 3.3, payback: 9.0 },
-  { m: 'Mar', mer: 3.4, payback: 8.6 },
-  { m: 'Apr', mer: 3.6, payback: 8.2 },
-  { m: 'May', mer: 3.5, payback: 8.4 },
-  { m: 'Jun', mer: 3.8, payback: 7.9 },
-  { m: 'Jul', mer: 3.9, payback: 7.6 },
-  { m: 'Aug', mer: 4.1, payback: 7.2 },
+  { m: 'Jun', mer: 3.1, payback: 9.4 },
+  { m: 'Jul', mer: 3.3, payback: 9.0 },
+  { m: 'Aug', mer: 3.4, payback: 8.6 },
+  { m: 'Sep', mer: 3.6, payback: 8.2 },
+  { m: 'Oct', mer: 3.5, payback: 8.4 },
+  { m: 'Nov', mer: 3.8, payback: 7.9 },
+  { m: 'Dec', mer: 3.9, payback: 7.6 },
+  { m: 'Jan', mer: 4.1, payback: 7.2 },
 ]
 
 const workingNonWorking = [
@@ -77,14 +77,14 @@ const brandHealth = [
 ]
 
 const sovTrend = [
-  { m: 'Jan', us: 28, btc: 24, digi: 31, cablebahamas: 17 },
-  { m: 'Feb', us: 30, btc: 23, digi: 29, cablebahamas: 18 },
-  { m: 'Mar', us: 32, btc: 22, digi: 28, cablebahamas: 18 },
-  { m: 'Apr', us: 31, btc: 25, digi: 27, cablebahamas: 17 },
-  { m: 'May', us: 33, btc: 24, digi: 26, cablebahamas: 17 },
-  { m: 'Jun', us: 35, btc: 23, digi: 25, cablebahamas: 17 },
-  { m: 'Jul', us: 37, btc: 22, digi: 24, cablebahamas: 17 },
-  { m: 'Aug', us: 36, btc: 23, digi: 24, cablebahamas: 17 },
+  { m: 'Jun', us: 28, btc: 24, digi: 31, cablebahamas: 17 },
+  { m: 'Jul', us: 30, btc: 23, digi: 29, cablebahamas: 18 },
+  { m: 'Aug', us: 32, btc: 22, digi: 28, cablebahamas: 18 },
+  { m: 'Sep', us: 31, btc: 25, digi: 27, cablebahamas: 17 },
+  { m: 'Oct', us: 33, btc: 24, digi: 26, cablebahamas: 17 },
+  { m: 'Nov', us: 35, btc: 23, digi: 25, cablebahamas: 17 },
+  { m: 'Dec', us: 37, btc: 22, digi: 24, cablebahamas: 17 },
+  { m: 'Jan', us: 36, btc: 23, digi: 24, cablebahamas: 17 },
 ]
 
 const sentimentByTopic = [
@@ -124,9 +124,9 @@ const abTests = [
 ]
 
 const promoOwn = [
-  { name: '500Mb @ BSD 35 — 12 mo',     status: 'Live',   live: 'May 02', end: 'Jun 30', incMRR: 178, marginHit: -22, redempt: 12480 },
-  { name: 'BSD 65 Bill Credit',          status: 'Live',   live: 'Apr 18', end: 'Jul 31', incMRR: 142, marginHit: -16, redempt: 6480 },
-  { name: 'REVConnect — BB + Mobile BSD 84',   status: 'Live',   live: 'Mar 01', end: 'Aug 31', incMRR: 96,  marginHit: -8,  redempt: 8120 },
+  { name: '500Mb @ BSD 35 — 12 mo',     status: 'Live',   live: 'May 02', end: 'Nov 30', incMRR: 178, marginHit: -22, redempt: 12480 },
+  { name: 'BSD 65 Bill Credit',          status: 'Live',   live: 'Apr 18', end: 'Dec 31', incMRR: 142, marginHit: -16, redempt: 6480 },
+  { name: 'REVConnect — BB + Mobile BSD 84',   status: 'Live',   live: 'Mar 01', end: 'Jan 32', incMRR: 96,  marginHit: -8,  redempt: 8120 },
   { name: '5 Gb Beta Nassau',         status: 'Live',   live: 'May 15', end: 'Jun 14', incMRR: 38,  marginHit: -3,  redempt: 1240 },
   { name: 'Max add-on',        status: 'Paused', live: 'Apr 01', end: 'May 12', incMRR: 14,  marginHit: -9,  redempt: 1480 },
 ]
@@ -135,7 +135,7 @@ const promoCompet = [
   { name: 'Sports add-on BSD 30/mo (12 mo intro)',     start: 'May 04', threat: 'High',   ourResp: '500Mb @ BSD 35 hero' },
   { name: 'BTC Fibre 1 Gb BSD 40 + BSD 100 voucher',   start: 'May 10', threat: 'High',   ourResp: 'BSD 65 Bill Credit' },
   { name: 'Rival ISP C Mobile + BB bundle BSD 70',            start: 'May 21', threat: 'Medium', ourResp: 'REVConnect repositioning' },
-  { name: 'Cable Bahamas Pro II at BSD 45',              start: 'Apr 28', threat: 'Medium', ourResp: 'Match via win-back' },
+  { name: 'Cable Bahamas Pro II at BSD 45',              start: 'Sep 28', threat: 'Medium', ourResp: 'Match via win-back' },
   { name: 'Rival ISP B Mobile add-on free 12mo',         start: 'May 18', threat: 'Low',    ourResp: 'Monitor' },
 ]
 
@@ -290,20 +290,20 @@ const contentPieces = [
 ]
 
 const seoVsPaidTrend = [
-  { m: 'Jan', seo: 3200, paid: 8400 }, { m: 'Feb', seo: 3600, paid: 8200 },
-  { m: 'Mar', seo: 4100, paid: 8800 }, { m: 'Apr', seo: 4600, paid: 9200 },
-  { m: 'May', seo: 5200, paid: 9600 }, { m: 'Jun', seo: 5800, paid: 9400 },
-  { m: 'Jul', seo: 6400, paid: 9800 }, { m: 'Aug', seo: 7200, paid: 10200 },
+  { m: 'Jun', seo: 3200, paid: 8400 }, { m: 'Jul', seo: 3600, paid: 8200 },
+  { m: 'Aug', seo: 4100, paid: 8800 }, { m: 'Sep', seo: 4600, paid: 9200 },
+  { m: 'Oct', seo: 5200, paid: 9600 }, { m: 'Nov', seo: 5800, paid: 9400 },
+  { m: 'Dec', seo: 6400, paid: 9800 }, { m: 'Jan', seo: 7200, paid: 10200 },
 ]
 
 // ───────── lifecycle data ─────────
 const lifecycleMrr = [
-  { m: 'Jan', newMRR: 142, expansionMRR: 68, contractionMRR: -24, churnMRR: -38 },
-  { m: 'Feb', newMRR: 156, expansionMRR: 72, contractionMRR: -22, churnMRR: -36 },
-  { m: 'Mar', newMRR: 168, expansionMRR: 78, contractionMRR: -20, churnMRR: -34 },
-  { m: 'Apr', newMRR: 184, expansionMRR: 84, contractionMRR: -18, churnMRR: -32 },
-  { m: 'May', newMRR: 196, expansionMRR: 88, contractionMRR: -16, churnMRR: -30 },
-  { m: 'Jun', newMRR: 208, expansionMRR: 92, contractionMRR: -14, churnMRR: -28 },
+  { m: 'Jun', newMRR: 142, expansionMRR: 68, contractionMRR: -24, churnMRR: -38 },
+  { m: 'Jul', newMRR: 156, expansionMRR: 72, contractionMRR: -22, churnMRR: -36 },
+  { m: 'Aug', newMRR: 168, expansionMRR: 78, contractionMRR: -20, churnMRR: -34 },
+  { m: 'Sep', newMRR: 184, expansionMRR: 84, contractionMRR: -18, churnMRR: -32 },
+  { m: 'Oct', newMRR: 196, expansionMRR: 88, contractionMRR: -16, churnMRR: -30 },
+  { m: 'Nov', newMRR: 208, expansionMRR: 92, contractionMRR: -14, churnMRR: -28 },
 ]
 
 const retentionCurve: { m: string; jan: number | null; feb: number | null; mar: number | null; apr: number | null }[] = [

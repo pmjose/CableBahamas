@@ -214,14 +214,14 @@ const energyKpis = {
 }
 
 const energyTrend = [
-  { m: 'Jan', kwh: 1.84 },
-  { m: 'Feb', kwh: 1.78 },
-  { m: 'Mar', kwh: 1.74 },
-  { m: 'Apr', kwh: 1.69 },
-  { m: 'May', kwh: 1.64 },
-  { m: 'Jun', kwh: 1.62 },
-  { m: 'Jul', kwh: 1.58 },
-  { m: 'Aug', kwh: 1.54 },
+  { m: 'Jun', kwh: 1.84 },
+  { m: 'Jul', kwh: 1.78 },
+  { m: 'Aug', kwh: 1.74 },
+  { m: 'Sep', kwh: 1.69 },
+  { m: 'Oct', kwh: 1.64 },
+  { m: 'Nov', kwh: 1.62 },
+  { m: 'Dec', kwh: 1.58 },
+  { m: 'Jan', kwh: 1.54 },
 ]
 
 // Compliance
@@ -260,14 +260,14 @@ const cortexPrompts = [
 ]
 
 const vendorSlaTrend = [
-  { m: 'Jan', voo: 99.0, cisco: 99.4, nokia: 99.1, nttz: 99.8 },
-  { m: 'Feb', voo: 99.2, cisco: 99.5, nokia: 99.2, nttz: 99.9 },
-  { m: 'Mar', voo: 98.8, cisco: 99.3, nokia: 99.0, nttz: 99.8 },
-  { m: 'Apr', voo: 99.1, cisco: 99.6, nokia: 99.4, nttz: 99.9 },
-  { m: 'May', voo: 99.3, cisco: 99.6, nokia: 99.3, nttz: 99.9 },
-  { m: 'Jun', voo: 99.2, cisco: 99.5, nokia: 99.4, nttz: 99.9 },
-  { m: 'Jul', voo: 99.4, cisco: 99.7, nokia: 99.5, nttz: 100  },
-  { m: 'Aug', voo: 99.2, cisco: 99.6, nokia: 99.4, nttz: 99.9 },
+  { m: 'Jun', voo: 99.0, cisco: 99.4, nokia: 99.1, nttz: 99.8 },
+  { m: 'Jul', voo: 99.2, cisco: 99.5, nokia: 99.2, nttz: 99.9 },
+  { m: 'Aug', voo: 98.8, cisco: 99.3, nokia: 99.0, nttz: 99.8 },
+  { m: 'Sep', voo: 99.1, cisco: 99.6, nokia: 99.4, nttz: 99.9 },
+  { m: 'Oct', voo: 99.3, cisco: 99.6, nokia: 99.3, nttz: 99.9 },
+  { m: 'Nov', voo: 99.2, cisco: 99.5, nokia: 99.4, nttz: 99.9 },
+  { m: 'Dec', voo: 99.4, cisco: 99.7, nokia: 99.5, nttz: 100  },
+  { m: 'Jan', voo: 99.2, cisco: 99.6, nokia: 99.4, nttz: 99.9 },
 ]
 
 // ───────── tabs ─────────

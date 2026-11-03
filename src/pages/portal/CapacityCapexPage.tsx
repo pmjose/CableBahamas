@@ -112,7 +112,7 @@ const BUILD_PLAN = [
   { milestone: 'Peering upgrade — +2 Tbps CDN PIX',     qTarget: 'Q3 24', capexM: 8,  domain: 'CDN/Peering',status: 'pending'   },
   { milestone: 'RAN densification — 480 new small cells',qTarget: 'Q3 24', capexM: 24, domain: 'RAN',        status: 'funded'    },
   { milestone: 'FTTH passings +420K homes',              qTarget: 'Q4 24', capexM: 32, domain: 'Fixed',      status: 'pending'   },
-  { milestone: 'Edge MEC pilot — 4 cities',              qTarget: 'Q2 25', capexM: 8,  domain: 'Edge/MEC',   status: 'hold'      },
+  { milestone: 'Edge MEC pilot — 4 cities',              qTarget: 'Q4 25', capexM: 8,  domain: 'Edge/MEC',   status: 'hold'      },
   { milestone: 'Rural coverage Phase 2 — 180 sites',    qTarget: 'Q4 24', capexM: 14, domain: 'RAN Rural',  status: 'mandate'   },
 ]
 

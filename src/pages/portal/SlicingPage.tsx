@@ -44,12 +44,12 @@ const SLA_RADAR = [
 ]
 
 const SLICE_REVENUE_TREND = [
-  { m: 'Jan', embb: 4.1, urllc: 2.4, mmtc: 1.4, stadium: 0.7 },
-  { m: 'Feb', embb: 4.1, urllc: 2.5, mmtc: 1.5, stadium: 0.7 },
-  { m: 'Mar', embb: 4.2, urllc: 2.6, mmtc: 1.5, stadium: 0.8 },
-  { m: 'Apr', embb: 4.2, urllc: 2.7, mmtc: 1.6, stadium: 0.9 },
-  { m: 'May', embb: 4.2, urllc: 2.8, mmtc: 1.6, stadium: 0.9 },
-  { m: 'Jun', embb: 4.2, urllc: 2.8, mmtc: 1.6, stadium: 0.9 },
+  { m: 'Jun', embb: 4.1, urllc: 2.4, mmtc: 1.4, stadium: 0.7 },
+  { m: 'Jul', embb: 4.1, urllc: 2.5, mmtc: 1.5, stadium: 0.7 },
+  { m: 'Aug', embb: 4.2, urllc: 2.6, mmtc: 1.5, stadium: 0.8 },
+  { m: 'Sep', embb: 4.2, urllc: 2.7, mmtc: 1.6, stadium: 0.9 },
+  { m: 'Oct', embb: 4.2, urllc: 2.8, mmtc: 1.6, stadium: 0.9 },
+  { m: 'Nov', embb: 4.2, urllc: 2.8, mmtc: 1.6, stadium: 0.9 },
 ]
 
 const SLICE_CATALOG = [
@@ -77,12 +77,12 @@ const SLA_24H = [
 ]
 
 const MEC_CPU_TREND = [
-  { m: 'Jan', ant: 58, gnt: 64, brg: 44, lvn: 32 },
-  { m: 'Feb', ant: 60, gnt: 66, brg: 46, lvn: 34 },
-  { m: 'Mar', ant: 61, gnt: 68, brg: 48, lvn: 36 },
-  { m: 'Apr', ant: 62, gnt: 70, brg: 50, lvn: 37 },
-  { m: 'May', ant: 63, gnt: 71, brg: 52, lvn: 38 },
-  { m: 'Jun', ant: 64, gnt: 71, brg: 52, lvn: 38 },
+  { m: 'Jun', ant: 58, gnt: 64, brg: 44, lvn: 32 },
+  { m: 'Jul', ant: 60, gnt: 66, brg: 46, lvn: 34 },
+  { m: 'Aug', ant: 61, gnt: 68, brg: 48, lvn: 36 },
+  { m: 'Sep', ant: 62, gnt: 70, brg: 50, lvn: 37 },
+  { m: 'Oct', ant: 63, gnt: 71, brg: 52, lvn: 38 },
+  { m: 'Nov', ant: 64, gnt: 71, brg: 52, lvn: 38 },
 ]
 
 const B2B_PIPELINE = [

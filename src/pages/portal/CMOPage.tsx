@@ -39,12 +39,12 @@ const campaignChannels = [
 ]
 
 const brandTracker = [
-  { mo: 'Jan', awareness: 72, consideration: 41, preference: 28, nps: 36 },
-  { mo: 'Feb', awareness: 73, consideration: 42, preference: 29, nps: 37 },
-  { mo: 'Mar', awareness: 73, consideration: 43, preference: 30, nps: 37 },
-  { mo: 'Apr', awareness: 74, consideration: 44, preference: 31, nps: 38 },
-  { mo: 'May', awareness: 74, consideration: 44, preference: 31, nps: 38 },
-  { mo: 'Jun', awareness: 75, consideration: 45, preference: 32, nps: 38 },
+  { mo: 'Jun', awareness: 72, consideration: 41, preference: 28, nps: 36 },
+  { mo: 'Jul', awareness: 73, consideration: 42, preference: 29, nps: 37 },
+  { mo: 'Aug', awareness: 73, consideration: 43, preference: 30, nps: 37 },
+  { mo: 'Sep', awareness: 74, consideration: 44, preference: 31, nps: 38 },
+  { mo: 'Oct', awareness: 74, consideration: 44, preference: 31, nps: 38 },
+  { mo: 'Nov', awareness: 75, consideration: 45, preference: 32, nps: 38 },
 ]
 
 const activeCampaigns = [
@@ -96,12 +96,12 @@ const funnelData: Record<Exclude<FunnelProd, 'All'>, FunnelRow[]> = {
 }
 
 const funnelTrend = [
-  { mo: 'Jan', visits: 580000, leads: 48000, orders: 22400, cr: 3.86 },
-  { mo: 'Feb', visits: 596000, leads: 50400, orders: 23200, cr: 3.89 },
-  { mo: 'Mar', visits: 612000, leads: 52800, orders: 24400, cr: 3.99 },
-  { mo: 'Apr', visits: 628000, leads: 54000, orders: 25200, cr: 4.01 },
-  { mo: 'May', visits: 641000, leads: 55200, orders: 26000, cr: 4.06 },
-  { mo: 'Jun', visits: 658000, leads: 56800, orders: 26400, cr: 4.01 },
+  { mo: 'Jun', visits: 580000, leads: 48000, orders: 22400, cr: 3.86 },
+  { mo: 'Jul', visits: 596000, leads: 50400, orders: 23200, cr: 3.89 },
+  { mo: 'Aug', visits: 612000, leads: 52800, orders: 24400, cr: 3.99 },
+  { mo: 'Sep', visits: 628000, leads: 54000, orders: 25200, cr: 4.01 },
+  { mo: 'Oct', visits: 641000, leads: 55200, orders: 26000, cr: 4.06 },
+  { mo: 'Nov', visits: 658000, leads: 56800, orders: 26400, cr: 4.01 },
 ]
 
 // ─── Promotions ───────────────────────────────────────────────────────────────
@@ -114,22 +114,22 @@ const promos = [
 ]
 
 const promoMarginTrend = [
-  { mo: 'Jan', discountBudget: 2.4, revUplift: 3.8, roi: 1.58 },
-  { mo: 'Feb', discountBudget: 2.6, revUplift: 4.1, roi: 1.58 },
-  { mo: 'Mar', discountBudget: 2.8, revUplift: 4.6, roi: 1.64 },
-  { mo: 'Apr', discountBudget: 2.6, revUplift: 4.2, roi: 1.62 },
-  { mo: 'May', discountBudget: 2.8, revUplift: 4.8, roi: 1.71 },
-  { mo: 'Jun', discountBudget: 3.0, revUplift: 5.2, roi: 1.73 },
+  { mo: 'Jun', discountBudget: 2.4, revUplift: 3.8, roi: 1.58 },
+  { mo: 'Jul', discountBudget: 2.6, revUplift: 4.1, roi: 1.58 },
+  { mo: 'Aug', discountBudget: 2.8, revUplift: 4.6, roi: 1.64 },
+  { mo: 'Sep', discountBudget: 2.6, revUplift: 4.2, roi: 1.62 },
+  { mo: 'Oct', discountBudget: 2.8, revUplift: 4.8, roi: 1.71 },
+  { mo: 'Nov', discountBudget: 3.0, revUplift: 5.2, roi: 1.73 },
 ]
 
 // ─── Loyalty & Consent ────────────────────────────────────────────────────────
 const loyaltyTrend = [
-  { mo: 'Jan', members: 2800000, activeRedeemers: 420000, pointsLiabM: 16.8, redemptionPct: 28 },
-  { mo: 'Feb', members: 2840000, activeRedeemers: 436000, pointsLiabM: 17.2, redemptionPct: 30 },
-  { mo: 'Mar', members: 2880000, activeRedeemers: 452000, pointsLiabM: 17.6, redemptionPct: 32 },
-  { mo: 'Apr', members: 2900000, activeRedeemers: 464000, pointsLiabM: 17.8, redemptionPct: 33 },
-  { mo: 'May', members: 2920000, activeRedeemers: 480000, pointsLiabM: 18.2, redemptionPct: 34 },
-  { mo: 'Jun', members: 2940000, activeRedeemers: 498000, pointsLiabM: 18.6, redemptionPct: 34 },
+  { mo: 'Jun', members: 2800000, activeRedeemers: 420000, pointsLiabM: 16.8, redemptionPct: 28 },
+  { mo: 'Jul', members: 2840000, activeRedeemers: 436000, pointsLiabM: 17.2, redemptionPct: 30 },
+  { mo: 'Aug', members: 2880000, activeRedeemers: 452000, pointsLiabM: 17.6, redemptionPct: 32 },
+  { mo: 'Sep', members: 2900000, activeRedeemers: 464000, pointsLiabM: 17.8, redemptionPct: 33 },
+  { mo: 'Oct', members: 2920000, activeRedeemers: 480000, pointsLiabM: 18.2, redemptionPct: 34 },
+  { mo: 'Nov', members: 2940000, activeRedeemers: 498000, pointsLiabM: 18.6, redemptionPct: 34 },
 ]
 
 const consentChannels = [
@@ -153,8 +153,8 @@ const npsTrend = [
   { mo: 'Q2 24', b2c: 35, b2b: 43, nps: 37 },
   { mo: 'Q3 24', b2c: 36, b2b: 44, nps: 37 },
   { mo: 'Q4 24', b2c: 37, b2b: 45, nps: 38 },
-  { mo: 'Q1 25', b2c: 37, b2b: 46, nps: 38 },
-  { mo: 'Q2 25', b2c: 38, b2b: 47, nps: 38 },
+  { mo: 'Q3 25', b2c: 37, b2b: 46, nps: 38 },
+  { mo: 'Q4 25', b2c: 38, b2b: 47, nps: 38 },
 ]
 
 const vocThemes = [
@@ -186,12 +186,12 @@ const brandBenchmark = [
 ]
 
 const consentTrend = [
-  { mo: 'Jan', email: 64, sms: 80, push: 52, whatsapp: 28 },
-  { mo: 'Feb', email: 65, sms: 81, push: 53, whatsapp: 30 },
-  { mo: 'Mar', email: 67, sms: 82, push: 54, whatsapp: 32 },
-  { mo: 'Apr', email: 68, sms: 83, push: 55, whatsapp: 34 },
-  { mo: 'May', email: 70, sms: 83, push: 57, whatsapp: 36 },
-  { mo: 'Jun', email: 71, sms: 84, push: 58, whatsapp: 38 },
+  { mo: 'Jun', email: 64, sms: 80, push: 52, whatsapp: 28 },
+  { mo: 'Jul', email: 65, sms: 81, push: 53, whatsapp: 30 },
+  { mo: 'Aug', email: 67, sms: 82, push: 54, whatsapp: 32 },
+  { mo: 'Sep', email: 68, sms: 83, push: 55, whatsapp: 34 },
+  { mo: 'Oct', email: 70, sms: 83, push: 57, whatsapp: 36 },
+  { mo: 'Nov', email: 71, sms: 84, push: 58, whatsapp: 38 },
 ]
 
 // ─── Attribution & MMM ───────────────────────────────────────────────────────────────
@@ -204,20 +204,20 @@ const mmmContrib = [
   { ch: 'TV/OOH',    contrib: 240, baseline: 180, incremental: 60,  roi: 1.8 },
 ]
 const attributionTrend = [
-  { mo: 'Jan', firstTouch: 38, lastTouch: 44, datadriven: 18 },
-  { mo: 'Feb', firstTouch: 37, lastTouch: 43, datadriven: 20 },
-  { mo: 'Mar', firstTouch: 36, lastTouch: 42, datadriven: 22 },
-  { mo: 'Apr', firstTouch: 35, lastTouch: 41, datadriven: 24 },
-  { mo: 'May', firstTouch: 34, lastTouch: 40, datadriven: 26 },
-  { mo: 'Jun', firstTouch: 33, lastTouch: 38, datadriven: 29 },
+  { mo: 'Jun', firstTouch: 38, lastTouch: 44, datadriven: 18 },
+  { mo: 'Jul', firstTouch: 37, lastTouch: 43, datadriven: 20 },
+  { mo: 'Aug', firstTouch: 36, lastTouch: 42, datadriven: 22 },
+  { mo: 'Sep', firstTouch: 35, lastTouch: 41, datadriven: 24 },
+  { mo: 'Oct', firstTouch: 34, lastTouch: 40, datadriven: 26 },
+  { mo: 'Nov', firstTouch: 33, lastTouch: 38, datadriven: 29 },
 ]
 const mmmROASbyMonth = [
-  { mo: 'Jan', roas: 3.8, spend: 6.2 },
-  { mo: 'Feb', roas: 3.9, spend: 6.6 },
-  { mo: 'Mar', roas: 4.0, spend: 7.1 },
-  { mo: 'Apr', roas: 4.1, spend: 6.8 },
-  { mo: 'May', roas: 4.2, spend: 7.4 },
-  { mo: 'Jun', roas: 4.2, spend: 7.7 },
+  { mo: 'Jun', roas: 3.8, spend: 6.2 },
+  { mo: 'Jul', roas: 3.9, spend: 6.6 },
+  { mo: 'Aug', roas: 4.0, spend: 7.1 },
+  { mo: 'Sep', roas: 4.1, spend: 6.8 },
+  { mo: 'Oct', roas: 4.2, spend: 7.4 },
+  { mo: 'Nov', roas: 4.2, spend: 7.7 },
 ]
 const mmmBudgetAlloc = [
   { ch: 'Search',    current: 24.8, recommended: 28.4, color: C1 },
@@ -230,12 +230,12 @@ const mmmBudgetAlloc = [
 
 // ─── App Engagement ───────────────────────────────────────────────────────────
 const appEngagement = [
-  { mo: 'Jan', mau: 4200000, dau: 840000, dauMau: 20.0, sessions: 18400000, crashRate: 0.42 },
-  { mo: 'Feb', mau: 4280000, dau: 864000, dauMau: 20.2, sessions: 18800000, crashRate: 0.40 },
-  { mo: 'Mar', mau: 4360000, dau: 892000, dauMau: 20.5, sessions: 19400000, crashRate: 0.38 },
-  { mo: 'Apr', mau: 4420000, dau: 912000, dauMau: 20.6, sessions: 19800000, crashRate: 0.36 },
-  { mo: 'May', mau: 4480000, dau: 936000, dauMau: 20.9, sessions: 20400000, crashRate: 0.34 },
-  { mo: 'Jun', mau: 4540000, dau: 964000, dauMau: 21.2, sessions: 21000000, crashRate: 0.32 },
+  { mo: 'Jun', mau: 4200000, dau: 840000, dauMau: 20.0, sessions: 18400000, crashRate: 0.42 },
+  { mo: 'Jul', mau: 4280000, dau: 864000, dauMau: 20.2, sessions: 18800000, crashRate: 0.40 },
+  { mo: 'Aug', mau: 4360000, dau: 892000, dauMau: 20.5, sessions: 19400000, crashRate: 0.38 },
+  { mo: 'Sep', mau: 4420000, dau: 912000, dauMau: 20.6, sessions: 19800000, crashRate: 0.36 },
+  { mo: 'Oct', mau: 4480000, dau: 936000, dauMau: 20.9, sessions: 20400000, crashRate: 0.34 },
+  { mo: 'Nov', mau: 4540000, dau: 964000, dauMau: 21.2, sessions: 21000000, crashRate: 0.32 },
 ]
 
 const appFeatures = [
@@ -893,7 +893,7 @@ export default function CMOPage() {
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="mt-2 text-[10px] text-vfes-dark/55">{tt('Churn/retention (3.2) and technical support (3.6) have the largest gap vs target. Both have an improvement roadmap in H2 2025.')}</div>
+            <div className="mt-2 text-[10px] text-vfes-dark/55">{tt('Churn/retention (3.2) and technical support (3.6) have the largest gap vs target. Both have an improvement roadmap in H1 2026.')}</div>
           </Panel>
         </div>
       </>)}

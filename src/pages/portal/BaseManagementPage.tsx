@@ -44,7 +44,7 @@ const ARPU_MIGRATION = [
 ]
 
 const NRR_TREND = Array.from({ length: 8 }, (_, i) => ({
-  q: ['Q1-25','Q2-25','Q3-25','Q4-25','Q1-26','Q2-26','Q3-26','Q4-26'][i],
+  q: ['Q3-25','Q4-25','Q1-26','Q2-26','Q3-26','Q4-26','Q1-27','Q2-27'][i],
   nrr: 99.2 + i * 0.42,
 }))
 
@@ -58,7 +58,7 @@ const WINBACK = [
 // ─── Extended data ────────────────────────────────────────────────────────────
 
 const UPSELL_TREND = Array.from({ length: 8 }, (_, i) => ({
-  q: ['Q1-25','Q2-25','Q3-25','Q4-25','Q1-26','Q2-26','Q3-26','Q4-26'][i],
+  q: ['Q3-25','Q4-25','Q1-26','Q2-26','Q3-26','Q4-26','Q1-27','Q2-27'][i],
   upsell: 38400 + i * 2200,
   xsell: 12600 + i * 1800,
   target: 52000,
@@ -467,7 +467,7 @@ export default function BaseManagementPage() {
               <div className="h-52">
                 <ResponsiveContainer>
                   <ComposedChart data={Array.from({ length: 12 }, (_, i) => ({
-                    m: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][i],
+                    m: ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May'][i],
                     activ: 7800 + Math.round(Math.sin(i / 2.5) * 1200 + i * 140),
                     target: 9600,
                     cost: 46 + i * 1.8,
@@ -545,7 +545,7 @@ export default function BaseManagementPage() {
                   </ComposedChart>
                 </ResponsiveContainer>
               </div>
-              <div className="mt-2 text-xs text-vfes-dark/55">{tt('Upsell consistently above target; cross-sell accelerating in H1-26.')}</div>
+              <div className="mt-2 text-xs text-vfes-dark/55">{tt('Upsell consistently above target; cross-sell accelerating in H2-26.')}</div>
             </Panel>
 
             <Panel title={tt('Upsell eligibility funnel')}>
@@ -569,7 +569,7 @@ export default function BaseManagementPage() {
           </div>
 
           <div className="mt-4">
-            <Panel title={tt('Upsell campaign calendar — Q3-Q4 2026')}>
+            <Panel title={tt('Upsell campaign calendar — Q3-Q2 2027')}>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
@@ -673,7 +673,7 @@ export default function BaseManagementPage() {
               <div className="h-52">
                 <ResponsiveContainer>
                   <AreaChart data={Array.from({ length: 12 }, (_, i) => ({
-                    m: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][i],
+                    m: ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May'][i],
                     converg: Math.round(6800 + i * 420 + Math.sin(i) * 480),
                     bbTv:    Math.round(5200 + i * 280 + Math.sin(i + 1) * 360),
                     bbMob:   Math.round(3100 + i * 180 + Math.sin(i + 2) * 240),
@@ -1016,8 +1016,8 @@ export default function BaseManagementPage() {
             </Panel>
             <div className="space-y-3">
               <div className="grid grid-cols-2 gap-3">
-                <KpiCard label={tt('Total upsell Q2-26')} value="55.2K" delta={tt('+5.2K vs Q1')} trend="up" icon={TrendingUp} />
-                <KpiCard label={tt('Total cross-sell Q2-26')} value="25.8K" delta={tt('+3.4K vs Q1')} trend="up" icon={Layers} />
+                <KpiCard label={tt('Total upsell Q4-26')} value="55.2K" delta={tt('+5.2K vs Q1')} trend="up" icon={TrendingUp} />
+                <KpiCard label={tt('Total cross-sell Q4-26')} value="25.8K" delta={tt('+3.4K vs Q1')} trend="up" icon={Layers} />
               </div>
               <div className="p-4 rounded-xl border border-black/5 bg-[#fafbfc]">
                 <div className="text-[10px] uppercase tracking-widest font-bold text-vfes-dark/55 mb-2">{tt('Recommended next actions')}</div>

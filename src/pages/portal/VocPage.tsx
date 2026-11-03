@@ -67,12 +67,12 @@ const NPS_DRIVERS = [
 
 // ─── NPS trend ────────────────────────────────────────────────────────────────
 const NPS_TREND = [
-  { m: 'Jan', nps: 22, promoters: 48, detractors: 26, passives: 26 },
-  { m: 'Feb', nps: 24, promoters: 49, detractors: 25, passives: 26 },
-  { m: 'Mar', nps: 23, promoters: 48, detractors: 25, passives: 27 },
-  { m: 'Apr', nps: 26, promoters: 50, detractors: 24, passives: 26 },
-  { m: 'May', nps: 28, promoters: 52, detractors: 24, passives: 24 },
-  { m: 'Jun', nps: 30, promoters: 54, detractors: 24, passives: 22 },
+  { m: 'Jun', nps: 22, promoters: 48, detractors: 26, passives: 26 },
+  { m: 'Jul', nps: 24, promoters: 49, detractors: 25, passives: 26 },
+  { m: 'Aug', nps: 23, promoters: 48, detractors: 25, passives: 27 },
+  { m: 'Sep', nps: 26, promoters: 50, detractors: 24, passives: 26 },
+  { m: 'Oct', nps: 28, promoters: 52, detractors: 24, passives: 24 },
+  { m: 'Nov', nps: 30, promoters: 54, detractors: 24, passives: 22 },
 ]
 
 // ─── Theme trends (weekly) ────────────────────────────────────────────────────
@@ -124,12 +124,12 @@ const DETRACTOR_JOURNEY = [
 
 // ─── Survey response rate trend ───────────────────────────────────────────────
 const SURVEY_TREND = [
-  { m: 'Jan', response: 18, completion: 84, nps: 22 },
-  { m: 'Feb', response: 19, completion: 85, nps: 24 },
-  { m: 'Mar', response: 20, completion: 86, nps: 23 },
-  { m: 'Apr', response: 21, completion: 87, nps: 26 },
-  { m: 'May', response: 22, completion: 88, nps: 28 },
-  { m: 'Jun', response: 23, completion: 89, nps: 30 },
+  { m: 'Jun', response: 18, completion: 84, nps: 22 },
+  { m: 'Jul', response: 19, completion: 85, nps: 24 },
+  { m: 'Aug', response: 20, completion: 86, nps: 23 },
+  { m: 'Sep', response: 21, completion: 87, nps: 26 },
+  { m: 'Oct', response: 22, completion: 88, nps: 28 },
+  { m: 'Nov', response: 23, completion: 89, nps: 30 },
 ]
 
 // ─── Topic sentiment scatter data ────────────────────────────────────────────

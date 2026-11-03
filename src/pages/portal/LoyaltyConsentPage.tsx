@@ -37,17 +37,17 @@ const TIERS = [
 ]
 
 const TIER_TREND = [
-  { m: 'Jan', bronze: 1540, silver: 870, gold: 390, platinum: 118 },
-  { m: 'Feb', bronze: 1520, silver: 878, gold: 396, platinum: 120 },
-  { m: 'Mar', bronze: 1510, silver: 885, gold: 400, platinum: 122 },
-  { m: 'Apr', bronze: 1500, silver: 895, gold: 405, platinum: 124 },
-  { m: 'May', bronze: 1490, silver: 905, gold: 410, platinum: 126 },
-  { m: 'Jun', bronze: 1480, silver: 920, gold: 412, platinum: 128 },
+  { m: 'Jun', bronze: 1540, silver: 870, gold: 390, platinum: 118 },
+  { m: 'Jul', bronze: 1520, silver: 878, gold: 396, platinum: 120 },
+  { m: 'Aug', bronze: 1510, silver: 885, gold: 400, platinum: 122 },
+  { m: 'Sep', bronze: 1500, silver: 895, gold: 405, platinum: 124 },
+  { m: 'Oct', bronze: 1490, silver: 905, gold: 410, platinum: 126 },
+  { m: 'Nov', bronze: 1480, silver: 920, gold: 412, platinum: 128 },
 ]
 
 // ─── Points liability data ───────────────────────────────────────────────────
 const LIABILITY = Array.from({ length: 8 }, (_, i) => ({
-  q: ['Q1-25','Q2-25','Q3-25','Q4-25','Q1-26','Q2-26','Q3-26','Q4-26'][i],
+  q: ['Q3-25','Q4-25','Q1-26','Q2-26','Q3-26','Q4-26','Q1-27','Q2-27'][i],
   liabilityM: parseFloat((14.2 + i * 0.62).toFixed(2)),
   redeemed:   parseFloat((28   + i * 0.90).toFixed(1)),
   earned:     parseFloat((42   + i * 1.10).toFixed(1)),
@@ -78,12 +78,12 @@ const REWARDS = [
 ]
 
 const REDEMPTION_TREND = [
-  { m: 'Jan', rate: 24.2, digital: 68 },
-  { m: 'Feb', rate: 25.1, digital: 69 },
-  { m: 'Mar', rate: 26.0, digital: 71 },
-  { m: 'Apr', rate: 27.2, digital: 73 },
-  { m: 'May', rate: 28.4, digital: 75 },
-  { m: 'Jun', rate: 29.8, digital: 77 },
+  { m: 'Jun', rate: 24.2, digital: 68 },
+  { m: 'Jul', rate: 25.1, digital: 69 },
+  { m: 'Aug', rate: 26.0, digital: 71 },
+  { m: 'Sep', rate: 27.2, digital: 73 },
+  { m: 'Oct', rate: 28.4, digital: 75 },
+  { m: 'Nov', rate: 29.8, digital: 77 },
 ]
 
 const REDEMPTION_BY_TIER = [
@@ -123,12 +123,12 @@ const CONTACTABLE = [
 ]
 
 const CONSENT_TREND = [
-  { m: 'Jan', sms: 70, email: 64, push: 52, wa: 30 },
-  { m: 'Feb', sms: 71, email: 65, push: 54, wa: 32 },
-  { m: 'Mar', sms: 72, email: 66, push: 55, wa: 34 },
-  { m: 'Apr', sms: 72, email: 67, push: 56, wa: 36 },
-  { m: 'May', sms: 73, email: 67, push: 57, wa: 37 },
-  { m: 'Jun', sms: 74, email: 68, push: 58, wa: 38 },
+  { m: 'Jun', sms: 70, email: 64, push: 52, wa: 30 },
+  { m: 'Jul', sms: 71, email: 65, push: 54, wa: 32 },
+  { m: 'Aug', sms: 72, email: 66, push: 55, wa: 34 },
+  { m: 'Sep', sms: 72, email: 67, push: 56, wa: 36 },
+  { m: 'Oct', sms: 73, email: 67, push: 57, wa: 37 },
+  { m: 'Nov', sms: 74, email: 68, push: 58, wa: 38 },
 ]
 
 const OPT_IN_FUNNEL = [
@@ -160,24 +160,24 @@ const DPA_PURPOSES = [
 ]
 
 const DSAR_TREND = [
-  { m: 'Jan', received: 42, resolved: 40, pending: 2 },
-  { m: 'Feb', received: 38, resolved: 37, pending: 1 },
-  { m: 'Mar', received: 51, resolved: 48, pending: 3 },
-  { m: 'Apr', received: 46, resolved: 45, pending: 1 },
-  { m: 'May', received: 55, resolved: 52, pending: 3 },
-  { m: 'Jun', received: 49, resolved: 48, pending: 1 },
+  { m: 'Jun', received: 42, resolved: 40, pending: 2 },
+  { m: 'Jul', received: 38, resolved: 37, pending: 1 },
+  { m: 'Aug', received: 51, resolved: 48, pending: 3 },
+  { m: 'Sep', received: 46, resolved: 45, pending: 1 },
+  { m: 'Oct', received: 55, resolved: 52, pending: 3 },
+  { m: 'Nov', received: 49, resolved: 48, pending: 1 },
 ]
 
 // ─── Consent audit log ────────────────────────────────────────────────────────
 const AUDIT_LOG = [
-  { id: 'A-4421', event: 'Consent withdrawn — marketing SMS',    channel: 'App',   ts: '2026-06-28 14:32', status: 'Processed',   impact: 'Removed from 3 campaigns'  },
-  { id: 'A-4420', event: 'DSAR: data access request filed',      channel: 'Web',   ts: '2026-06-28 11:18', status: 'In progress', impact: '30-day response window'     },
-  { id: 'A-4419', event: 'New consent collected via IVR',        channel: 'IVR',   ts: '2026-06-27 09:44', status: 'Recorded',    impact: 'Push campaign eligible'     },
-  { id: 'A-4418', event: 'Bulk opt-in refresh — loyalty app',    channel: 'App',   ts: '2026-06-26 16:02', status: 'Processed',   impact: '+2,840 opt-ins SMS'         },
-  { id: 'A-4417', event: 'Purpose expiry — analytics consent',   channel: 'CRM',   ts: '2026-06-25 08:30', status: 'Expired',     impact: 'Re-permission queue'        },
-  { id: 'A-4416', event: 'Right to erasure request',             channel: 'Web',   ts: '2026-06-24 17:55', status: 'Completed',   impact: 'PII purged within SLA'      },
-  { id: 'A-4415', event: 'Consent renewed — email marketing',    channel: 'Email', ts: '2026-06-23 12:10', status: 'Processed',   impact: 'Email list updated'         },
-  { id: 'A-4414', event: 'Opt-out request — all channels',       channel: 'Web',   ts: '2026-06-22 09:05', status: 'Completed',   impact: 'Suppressed from all lists'  },
+  { id: 'A-4421', event: 'Consent withdrawn — marketing SMS',    channel: 'App',   ts: '2026-11-28 14:32', status: 'Processed',   impact: 'Removed from 3 campaigns'  },
+  { id: 'A-4420', event: 'DSAR: data access request filed',      channel: 'Web',   ts: '2026-11-28 11:18', status: 'In progress', impact: '30-day response window'     },
+  { id: 'A-4419', event: 'New consent collected via IVR',        channel: 'IVR',   ts: '2026-11-27 09:44', status: 'Recorded',    impact: 'Push campaign eligible'     },
+  { id: 'A-4418', event: 'Bulk opt-in refresh — loyalty app',    channel: 'App',   ts: '2026-11-26 16:02', status: 'Processed',   impact: '+2,840 opt-ins SMS'         },
+  { id: 'A-4417', event: 'Purpose expiry — analytics consent',   channel: 'CRM',   ts: '2026-11-25 08:30', status: 'Expired',     impact: 'Re-permission queue'        },
+  { id: 'A-4416', event: 'Right to erasure request',             channel: 'Web',   ts: '2026-11-24 17:55', status: 'Completed',   impact: 'PII purged within SLA'      },
+  { id: 'A-4415', event: 'Consent renewed — email marketing',    channel: 'Email', ts: '2026-11-23 12:10', status: 'Processed',   impact: 'Email list updated'         },
+  { id: 'A-4414', event: 'Opt-out request — all channels',       channel: 'Web',   ts: '2026-11-22 09:05', status: 'Completed',   impact: 'Suppressed from all lists'  },
 ]
 
 // ─── Tabs ─────────────────────────────────────────────────────────────────────

@@ -61,13 +61,13 @@ const buildVelocity = [
 ]
 
 const programmes = [
-  { p: 'Abaco West XGS-PON',           r: 'Abaco',   hh: 24_000, pct: 78, gl: 'Q3 2026', rag: 'Green',  capex: 18.4 },
-  { p: 'Nassau Docklands 10G overlay',  r: 'Nassau',  hh: 8_000,  pct: 92, gl: 'Q2 2026', rag: 'Green',  capex: 9.2 },
-  { p: 'Freeport Suburban Build',           r: 'Freeport',    hh: 36_000, pct: 54, gl: 'Q4 2026', rag: 'Amber',  capex: 28.6 },
-  { p: 'Eleuthera FTTH Phase 2',            r: 'Eleuthera',   hh: 12_000, pct: 28, gl: 'Q1 2027', rag: 'Amber',  capex: 14.2 },
-  { p: 'DOCSIS 4.0 trial · Central',     r: 'Nassau',  hh: 1_200,  pct: 64, gl: 'Q3 2026', rag: 'Green',  capex: 4.8 },
-  { p: 'Long Island Fibre overlay',            r: 'Long Island',    hh: 18_000, pct: 18, gl: 'Q2 2027', rag: 'Red',    capex: 12.4 },
-  { p: 'Mid-split rollout',            r: 'National',   hh: 380_000, pct: 42, gl: 'Q4 2027', rag: 'Amber', capex: 22.6 },
+  { p: 'Abaco West XGS-PON',           r: 'Abaco',   hh: 24_000, pct: 78, gl: 'Q1 2027', rag: 'Green',  capex: 18.4 },
+  { p: 'Nassau Docklands 10G overlay',  r: 'Nassau',  hh: 8_000,  pct: 92, gl: 'Q4 2026', rag: 'Green',  capex: 9.2 },
+  { p: 'Freeport Suburban Build',           r: 'Freeport',    hh: 36_000, pct: 54, gl: 'Q2 2027', rag: 'Amber',  capex: 28.6 },
+  { p: 'Eleuthera FTTH Phase 2',            r: 'Eleuthera',   hh: 12_000, pct: 28, gl: 'Q3 2027', rag: 'Amber',  capex: 14.2 },
+  { p: 'DOCSIS 4.0 trial · Central',     r: 'Nassau',  hh: 1_200,  pct: 64, gl: 'Q1 2027', rag: 'Green',  capex: 4.8 },
+  { p: 'Long Island Fibre overlay',            r: 'Long Island',    hh: 18_000, pct: 18, gl: 'Q4 2027', rag: 'Red',    capex: 12.4 },
+  { p: 'Mid-split rollout',            r: 'National',   hh: 380_000, pct: 42, gl: 'Q2 2028', rag: 'Amber', capex: 22.6 },
 ]
 
 const buildPipeline = [
@@ -251,14 +251,14 @@ const securityKpis = [
 
 // Roadmap
 const roadmap = [
-  { prog: 'DOCSIS 4.0 (FDX)',    rag: 'Green',  pct: 22, eta: 'Q4 2027', capex: 48, owner: 'Access' },
-  { prog: 'XGS-PON full overlay', rag: 'Amber',  pct: 38, eta: 'Q2 2028', capex: 124, owner: 'Access' },
-  { prog: '400G backbone refresh', rag: 'Green', pct: 64, eta: 'Q4 2026', capex: 38, owner: 'Backbone' },
-  { prog: 'IPv6 dual-stack 100%',  rag: 'Amber', pct: 41, eta: 'Q2 2027', capex: 6,  owner: 'IP eng' },
-  { prog: 'RPKI-only routing',     rag: 'Green', pct: 94, eta: 'Q3 2026', capex: 1,  owner: 'IP eng' },
-  { prog: 'Wi-Fi 7 CPE',           rag: 'Amber', pct: 12, eta: 'Q1 2027', capex: 22, owner: 'CPE' },
-  { prog: 'Open RAN trial',        rag: 'Red',   pct: 8,  eta: 'Q4 2027', capex: 14, owner: 'Mobile' },
-  { prog: '25G PON pilot',         rag: 'Green', pct: 28, eta: 'Q3 2026', capex: 8,  owner: 'Access' },
+  { prog: 'DOCSIS 4.0 (FDX)',    rag: 'Green',  pct: 22, eta: 'Q2 2028', capex: 48, owner: 'Access' },
+  { prog: 'XGS-PON full overlay', rag: 'Amber',  pct: 38, eta: 'Q4 2028', capex: 124, owner: 'Access' },
+  { prog: '400G backbone refresh', rag: 'Green', pct: 64, eta: 'Q2 2027', capex: 38, owner: 'Backbone' },
+  { prog: 'IPv6 dual-stack 100%',  rag: 'Amber', pct: 41, eta: 'Q4 2027', capex: 6,  owner: 'IP eng' },
+  { prog: 'RPKI-only routing',     rag: 'Green', pct: 94, eta: 'Q1 2027', capex: 1,  owner: 'IP eng' },
+  { prog: 'Wi-Fi 7 CPE',           rag: 'Amber', pct: 12, eta: 'Q3 2027', capex: 22, owner: 'CPE' },
+  { prog: 'Open RAN trial',        rag: 'Red',   pct: 8,  eta: 'Q2 2028', capex: 14, owner: 'Mobile' },
+  { prog: '25G PON pilot',         rag: 'Green', pct: 28, eta: 'Q1 2027', capex: 8,  owner: 'Access' },
 ]
 
 const capexBreakdown = [
@@ -272,11 +272,11 @@ const capexBreakdown = [
 ]
 
 const vendorLifecycle = [
-  { v: 'Cisco cBR-8 (CMTS)',         eos: 'Q4 2027', plan: 'Move to virtualised CMTS',    risk: 'Medium' },
+  { v: 'Cisco cBR-8 (CMTS)',         eos: 'Q2 2028', plan: 'Move to virtualised CMTS',    risk: 'Medium' },
   { v: 'Nokia 7750 SR',              eos: '—',       plan: 'Generation refresh planned',  risk: 'Low' },
   { v: 'Adtran SDX 6320 (OLT)',      eos: '—',       plan: 'Steady-state',                 risk: 'Low' },
-  { v: 'CommScope ARRIS Hub 4',      eos: 'Q2 2026', plan: 'Migrate to Wi-Fi 6 Pro',           risk: 'Medium' },
-  { v: 'Casa Systems CMTS (legacy)', eos: 'Q3 2025', plan: 'Decommission Q3',             risk: 'High' },
+  { v: 'CommScope ARRIS Hub 4',      eos: 'Q4 2026', plan: 'Migrate to Wi-Fi 6 Pro',           risk: 'Medium' },
+  { v: 'Casa Systems CMTS (legacy)', eos: 'Q1 2026', plan: 'Decommission Q3',             risk: 'High' },
 ]
 
 const cortexPrompts = [
@@ -308,7 +308,7 @@ const sustainInitiatives = [
   { prog: 'Solar PV at 12 headends',    saving: '22% site', status: 'In build',    capex: 8.2, co2: -2_800 },
   { prog: 'Free-air cooling (DC)',       saving: '18% PUE',  status: 'Approved',    capex: 3.6, co2: -960 },
   { prog: '100% green tariff contract', saving: '—',        status: 'Negotiating', capex: 0,   co2: -18_000 },
-  { prog: 'Legacy CMTS decommission',   saving: '8% kWh',   status: 'Q3 2025',     capex: 0,   co2: -640 },
+  { prog: 'Legacy CMTS decommission',   saving: '8% kWh',   status: 'Q1 2026',     capex: 0,   co2: -640 },
   { prog: 'LED lighting · all sites',   saving: '3% kWh',   status: 'Complete',    capex: 1.2, co2: -240 },
 ]
 
@@ -1241,7 +1241,7 @@ export default function NetworkPage() {
           <KpiCard label={tt('Scope 2 CO₂ · tCO₂e/mo')}  value="8.1K t"    delta="-31% YoY"              trend="up"   icon={Globe} />
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('SBTi pathway')}             value="1.5°C"     delta={tt('on track Q3 2026')} trend="up"  icon={ShieldCheck} />
+          <KpiCard label={tt('SBTi pathway')}             value="1.5°C"     delta={tt('on track Q1 2027')} trend="up"  icon={ShieldCheck} />
           <KpiCard label={tt('Sleep-mode cells active')}  value="840"       delta={tt('+360 this month')}  trend="up"  icon={Sparkles} />
           <KpiCard label={tt('Solar PV installed')}       value="2.4 MWp"   delta={tt('12 headend sites')} trend="up"  icon={Zap} />
           <KpiCard label={tt('Energy cost · BSD M/mo')}      value="BSD 3.2M"     delta="-BSD 0.8M YoY"            trend="up"  icon={ArrowUpRight} />

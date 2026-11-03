@@ -49,12 +49,12 @@ const ranVendorMix = [
 ]
 
 const throughputTrend = [
-  { m: 'Jan', dl5g: 148, dl4g: 40, ul5g: 42 },
-  { m: 'Feb', dl5g: 152, dl4g: 39, ul5g: 44 },
-  { m: 'Mar', dl5g: 156, dl4g: 38, ul5g: 46 },
-  { m: 'Apr', dl5g: 160, dl4g: 37, ul5g: 47 },
-  { m: 'May', dl5g: 164, dl4g: 36, ul5g: 48 },
-  { m: 'Jun', dl5g: 168, dl4g: 35, ul5g: 50 },
+  { m: 'Jun', dl5g: 148, dl4g: 40, ul5g: 42 },
+  { m: 'Jul', dl5g: 152, dl4g: 39, ul5g: 44 },
+  { m: 'Aug', dl5g: 156, dl4g: 38, ul5g: 46 },
+  { m: 'Sep', dl5g: 160, dl4g: 37, ul5g: 47 },
+  { m: 'Oct', dl5g: 164, dl4g: 36, ul5g: 48 },
+  { m: 'Nov', dl5g: 168, dl4g: 35, ul5g: 50 },
 ]
 
 // ─── 5G Core ─────────────────────────────────────────────────────────────────
@@ -127,9 +127,9 @@ const ponBuild = [
 ]
 
 const ponTrend = [
-  { m: 'Jan', take: 33, xgs: 24 }, { m: 'Feb', take: 34, xgs: 26 },
-  { m: 'Mar', take: 35, xgs: 28 }, { m: 'Apr', take: 36, xgs: 30 },
-  { m: 'May', take: 37, xgs: 34 }, { m: 'Jun', take: 38, xgs: 38 },
+  { m: 'Jun', take: 33, xgs: 24 }, { m: 'Jul', take: 34, xgs: 26 },
+  { m: 'Aug', take: 35, xgs: 28 }, { m: 'Sep', take: 36, xgs: 30 },
+  { m: 'Oct', take: 37, xgs: 34 }, { m: 'Nov', take: 38, xgs: 38 },
 ]
 
 // ─── Capacity & Energy ───────────────────────────────────────────────────────
@@ -140,9 +140,9 @@ const congestionForecast = Array.from({ length: 12 }, (_, i) => ({
 }))
 
 const energyTrend = [
-  { m: 'Jan', kwh: 0.118, target: 0.100 }, { m: 'Feb', kwh: 0.114, target: 0.100 },
-  { m: 'Mar', kwh: 0.112, target: 0.100 }, { m: 'Apr', kwh: 0.108, target: 0.100 },
-  { m: 'May', kwh: 0.104, target: 0.100 }, { m: 'Jun', kwh: NET.kwhPerGb, target: 0.100 },
+  { m: 'Jun', kwh: 0.118, target: 0.100 }, { m: 'Jul', kwh: 0.114, target: 0.100 },
+  { m: 'Aug', kwh: 0.112, target: 0.100 }, { m: 'Sep', kwh: 0.108, target: 0.100 },
+  { m: 'Oct', kwh: 0.104, target: 0.100 }, { m: 'Nov', kwh: NET.kwhPerGb, target: 0.100 },
 ]
 
 const energyByTech = [
@@ -162,33 +162,33 @@ const capacityHotspots = [
 
 // ─── Roadmap & Tech Debt data ─────────────────────────────────────────────────
 const roadmapInitiatives = [
-  { initiative: '5G SA nationwide rollout',          horizon: 'H1-26',  invest: 'BSD 84M',  benefit: '5G latency SLA + enterprise slicing',  status: 'Active',    techDebt: 0  },
-  { initiative: 'Open RAN GA (2 regions)',            horizon: 'H2-26',  invest: 'BSD 32M',  benefit: 'vendor diversity + opex −18%',         status: 'At-risk',   techDebt: 2  },
-  { initiative: 'XGS-PON build 2.1M premises',       horizon: 'H1-26',  invest: 'BSD 120M', benefit: 'take-rate +8 pp · churn −15%',         status: 'Active',    techDebt: 0  },
-  { initiative: 'Network cloud migration (vRAN)',     horizon: 'H2-26',  invest: 'BSD 48M',  benefit: 'opex −24% · energy −18%',              status: 'Planning',  techDebt: 3  },
-  { initiative: 'AI-native NOC (AIOps v2)',           horizon: 'H1-26',  invest: 'BSD 12M',  benefit: 'MTTD −40% · false-positive −50%',      status: 'Active',    techDebt: 1  },
-  { initiative: '400G transport upgrade',             horizon: 'Q3-26',  invest: 'BSD 28M',  benefit: 'headroom + resilience',                status: 'Active',    techDebt: 0  },
-  { initiative: 'Network digital twin',               horizon: 'H2-26',  invest: 'BSD 8M',   benefit: 'planning accuracy +30%',               status: 'Planning',  techDebt: 1  },
+  { initiative: '5G SA nationwide rollout',          horizon: 'H2-26',  invest: 'BSD 84M',  benefit: '5G latency SLA + enterprise slicing',  status: 'Active',    techDebt: 0  },
+  { initiative: 'Open RAN GA (2 regions)',            horizon: 'H1-27',  invest: 'BSD 32M',  benefit: 'vendor diversity + opex −18%',         status: 'At-risk',   techDebt: 2  },
+  { initiative: 'XGS-PON build 2.1M premises',       horizon: 'H2-26',  invest: 'BSD 120M', benefit: 'take-rate +8 pp · churn −15%',         status: 'Active',    techDebt: 0  },
+  { initiative: 'Network cloud migration (vRAN)',     horizon: 'H1-27',  invest: 'BSD 48M',  benefit: 'opex −24% · energy −18%',              status: 'Planning',  techDebt: 3  },
+  { initiative: 'AI-native NOC (AIOps v2)',           horizon: 'H2-26',  invest: 'BSD 12M',  benefit: 'MTTD −40% · false-positive −50%',      status: 'Active',    techDebt: 1  },
+  { initiative: '400G transport upgrade',             horizon: 'Q1-27',  invest: 'BSD 28M',  benefit: 'headroom + resilience',                status: 'Active',    techDebt: 0  },
+  { initiative: 'Network digital twin',               horizon: 'H1-27',  invest: 'BSD 8M',   benefit: 'planning accuracy +30%',               status: 'Planning',  techDebt: 1  },
 ]
 
 const techDebtRegister = [
-  { domain: 'RAN OSS (Ericsson ENM)',  severity: 'High',   age: 36, remMoM: 'BSD 2.1M/yr',  effort: 'Large', plan: 'Migrate to cloud-native SON by Q2-27'        },
+  { domain: 'RAN OSS (Ericsson ENM)',  severity: 'High',   age: 36, remMoM: 'BSD 2.1M/yr',  effort: 'Large', plan: 'Migrate to cloud-native SON by Q4-27'        },
   { domain: '2G/3G legacy core',       severity: 'High',   age: 48, remMoM: 'BSD 1.8M/yr',  effort: 'Large', plan: '2G/3G sunset programme — target Dec-27'       },
   { domain: 'DOCSIS 3.0 nodes',        severity: 'High',   age: 24, remMoM: 'BSD 1.2M/yr',  effort: 'Med',   plan: 'DOCSIS 3.1 upgrade — Rural Out Islands done Q3'          },
-  { domain: 'Monolithic BSS',          severity: 'Medium', age: 60, remMoM: 'BSD 0.9M/yr',  effort: 'Large', plan: 'Cerillion microservices migration — H2-27'     },
-  { domain: 'IPv4-only MPLS nodes',    severity: 'Medium', age: 18, remMoM: 'BSD 0.4M/yr',  effort: 'Med',   plan: 'SRv6 rollout with Nokia upgrade Q4-26'          },
-  { domain: 'IPTV CDN legacy SW',      severity: 'Low',    age: 12, remMoM: 'BSD 0.2M/yr',  effort: 'Small', plan: 'CDN vendor refresh RFP in Q3-26'                },
+  { domain: 'Monolithic BSS',          severity: 'Medium', age: 60, remMoM: 'BSD 0.9M/yr',  effort: 'Large', plan: 'Cerillion microservices migration — H1-28'     },
+  { domain: 'IPv4-only MPLS nodes',    severity: 'Medium', age: 18, remMoM: 'BSD 0.4M/yr',  effort: 'Med',   plan: 'SRv6 rollout with Nokia upgrade Q2-27'          },
+  { domain: 'IPTV CDN legacy SW',      severity: 'Low',    age: 12, remMoM: 'BSD 0.2M/yr',  effort: 'Small', plan: 'CDN vendor refresh RFP in Q1-27'                },
 ]
 
 const techDebtTrend = [
   { q: 'Q3-24', debtScore: 48, resolved: 4,  newItems: 2 },
   { q: 'Q4-24', debtScore: 46, resolved: 5,  newItems: 3 },
-  { q: 'Q1-25', debtScore: 44, resolved: 6,  newItems: 2 },
-  { q: 'Q2-25', debtScore: 42, resolved: 5,  newItems: 1 },
-  { q: 'Q3-25', debtScore: 40, resolved: 7,  newItems: 2 },
-  { q: 'Q4-25', debtScore: 38, resolved: 6,  newItems: 2 },
-  { q: 'Q1-26', debtScore: 36, resolved: 8,  newItems: 1 },
-  { q: 'Q2-26', debtScore: 34, resolved: 7,  newItems: 1 },
+  { q: 'Q3-25', debtScore: 44, resolved: 6,  newItems: 2 },
+  { q: 'Q4-25', debtScore: 42, resolved: 5,  newItems: 1 },
+  { q: 'Q1-26', debtScore: 40, resolved: 7,  newItems: 2 },
+  { q: 'Q2-26', debtScore: 38, resolved: 6,  newItems: 2 },
+  { q: 'Q3-26', debtScore: 36, resolved: 8,  newItems: 1 },
+  { q: 'Q4-26', debtScore: 34, resolved: 7,  newItems: 1 },
 ]
 
 const investAlloc = [
@@ -285,8 +285,8 @@ export default function CTOPage() {
           xKey: 'm',
           unit: '%',
           data: [
-            { m: 'Jan', cov: 84 }, { m: 'Feb', cov: 85 }, { m: 'Mar', cov: 86.5 },
-            { m: 'Apr', cov: 87.8 }, { m: 'May', cov: MOBILE_KPIS.cov5gPop }, { m: 'Jun', cov: 90.6 },
+            { m: 'Jun', cov: 84 }, { m: 'Jul', cov: 85 }, { m: 'Aug', cov: 86.5 },
+            { m: 'Sep', cov: 87.8 }, { m: 'Oct', cov: MOBILE_KPIS.cov5gPop }, { m: 'Nov', cov: 90.6 },
           ],
           series: [{ key: 'cov', name: '5G pop coverage', color: BLUE }],
           note: 'On the curve to the 95% Q4 target — Out Islands permits are the swing factor.',
@@ -1048,7 +1048,7 @@ export default function CTOPage() {
         </Panel>
 
         <div className="grid lg:grid-cols-2 gap-6 mt-6">
-          <Panel title={tt('Tech-debt score trend — quarterly (lower is better)')} insight={{ insight: 'Tech-debt score has declined from 48 to 36 over four quarters, with 8 items resolved in Q1-26 against only 1 new item added.', action: 'Ring-fence BSD 4M of the FY2026 cloud budget exclusively for debt clearance to maintain the current remediation velocity.', impact: 'Sustained pace achieves the target score of 20 by Q4-27 and is projected to reduce annual operational risk cost by BSD 6M.' }}>
+          <Panel title={tt('Tech-debt score trend — quarterly (lower is better)')} insight={{ insight: 'Tech-debt score has declined from 48 to 36 over four quarters, with 8 items resolved in Q3-26 against only 1 new item added.', action: 'Ring-fence BSD 4M of the FY2026 cloud budget exclusively for debt clearance to maintain the current remediation velocity.', impact: 'Sustained pace achieves the target score of 20 by Q2-28 and is projected to reduce annual operational risk cost by BSD 6M.' }}>
             <div className="h-64">
               <ResponsiveContainer>
                 <ComposedChart data={techDebtTrend}>
@@ -1064,7 +1064,7 @@ export default function CTOPage() {
                 </ComposedChart>
               </ResponsiveContainer>
             </div>
-            <div className="text-[11px] text-vfes-dark/55 mt-2">{tt('Debt score dropping consistently — 8 items resolved in Q1-26, only 1 new. Target score ≤20 by Q4-27.')}</div>
+            <div className="text-[11px] text-vfes-dark/55 mt-2">{tt('Debt score dropping consistently — 8 items resolved in Q3-26, only 1 new. Target score ≤20 by Q2-28.')}</div>
           </Panel>
 
           <Panel title={tt('CapEx allocation by category — FY2026 (BSD 332M)')} insight={{ insight: 'RAN modernisation claims the largest share at over 35% of the BSD 332M envelope, consistent with the 5G mid-band build priority.', action: 'Review the fixed access allocation to confirm the fibre build envelope is sufficient to close the 360K premises-passed gap to the EOY target.', impact: 'Shifting 5 percentage points from RAN to fibre closes the premises-passed shortfall without increasing total spend.' }}>

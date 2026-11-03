@@ -75,32 +75,32 @@ const comregQos = [
 ]
 
 const smpMarkets = [
-  { market: 'M1 (WLR-equiv Voice)',     status: 'Compliant',  risk: 'Low',    nextMilestone: '2026-09 review', evidence: 'EoI report Q2' },
-  { market: 'M3a (FTTC wholesale)',     status: 'Compliant',  risk: 'Low',    nextMilestone: '2026-12 EoI test', evidence: 'KPI dashboard live' },
-  { market: 'M3b (FTTH wholesale)',     status: 'On track',   risk: 'Medium', nextMilestone: '2026-08 margin-squeeze', evidence: 'Internal model' },
+  { market: 'M1 (WLR-equiv Voice)',     status: 'Compliant',  risk: 'Low',    nextMilestone: '2027-02 review', evidence: 'EoI report Q2' },
+  { market: 'M3a (FTTC wholesale)',     status: 'Compliant',  risk: 'Low',    nextMilestone: '2027-05 EoI test', evidence: 'KPI dashboard live' },
+  { market: 'M3b (FTTH wholesale)',     status: 'On track',   risk: 'Medium', nextMilestone: '2027-01 margin-squeeze', evidence: 'Internal model' },
   { market: 'M4 (Leased lines)',        status: 'At risk',    risk: 'High',   nextMilestone: 'URCA case 26-04', evidence: 'Submission filed' },
-  { market: 'USO claim',                status: 'On track',   risk: 'Medium', nextMilestone: '2026-10 decision',  evidence: 'BSD 8.2M claim' },
+  { market: 'USO claim',                status: 'On track',   risk: 'Medium', nextMilestone: '2027-03 decision',  evidence: 'BSD 8.2M claim' },
 ]
 
 const spectrum = [
-  { band: '700 MHz',     mhz: 60, expiry: '2037-04', annualFee: 4.2, coverage: '95% pop', use: 0.78 },
-  { band: '800 MHz',     mhz: 60, expiry: '2030-12', annualFee: 3.8, coverage: '99% pop', use: 0.92 },
-  { band: '900 MHz',     mhz: 70, expiry: '2030-12', annualFee: 2.6, coverage: '99% pop', use: 0.88 },
-  { band: '1800 MHz',    mhz: 70, expiry: '2030-12', annualFee: 2.4, coverage: '90% pop', use: 0.84 },
-  { band: '2.1 GHz',     mhz: 60, expiry: '2030-12', annualFee: 2.2, coverage: '85% pop', use: 0.74 },
-  { band: '2.6 GHz',     mhz: 110, expiry: '2030-12', annualFee: 1.8, coverage: '70% pop', use: 0.62 },
-  { band: '3.6 GHz (5G)', mhz: 100, expiry: '2032-12', annualFee: 5.4, coverage: '74% pop', use: 0.56 },
-  { band: '26 GHz (mmWave)', mhz: 800, expiry: '2034-06', annualFee: 1.2, coverage: 'Urban hotspots', use: 0.18 },
+  { band: '700 MHz',     mhz: 60, expiry: '2037-09', annualFee: 4.2, coverage: '95% pop', use: 0.78 },
+  { band: '800 MHz',     mhz: 60, expiry: '2031-05', annualFee: 3.8, coverage: '99% pop', use: 0.92 },
+  { band: '900 MHz',     mhz: 70, expiry: '2031-05', annualFee: 2.6, coverage: '99% pop', use: 0.88 },
+  { band: '1800 MHz',    mhz: 70, expiry: '2031-05', annualFee: 2.4, coverage: '90% pop', use: 0.84 },
+  { band: '2.1 GHz',     mhz: 60, expiry: '2031-05', annualFee: 2.2, coverage: '85% pop', use: 0.74 },
+  { band: '2.6 GHz',     mhz: 110, expiry: '2031-05', annualFee: 1.8, coverage: '70% pop', use: 0.62 },
+  { band: '3.6 GHz (5G)', mhz: 100, expiry: '2033-05', annualFee: 5.4, coverage: '74% pop', use: 0.56 },
+  { band: '26 GHz (mmWave)', mhz: 800, expiry: '2034-11', annualFee: 1.2, coverage: 'Urban hotspots', use: 0.18 },
 ]
 
 const euTelcoStack = [
-  { reg: 'Communications Act 2009', status: 'Compliant',    nextDeadline: '2026-06 audit', owner: 'Reg Affairs', evidence: 'Contract summaries live' },
+  { reg: 'Communications Act 2009', status: 'Compliant',    nextDeadline: '2026-11 audit', owner: 'Reg Affairs', evidence: 'Contract summaries live' },
   { reg: 'Roam-Like-At-Home (Reg 2022/612)', status: 'Compliant',   nextDeadline: 'Ongoing',       owner: 'Reg Affairs', evidence: 'Roaming policy' },
-  { reg: 'Open Internet (Reg 2015/2120)',    status: 'Compliant',   nextDeadline: '2026-12 BEREC report', owner: 'Reg Affairs', evidence: 'Annual transparency' },
-  { reg: 'eIDAS 2.0 (digital identity)',     status: 'On track',    nextDeadline: '2027-05 wallet ready', owner: 'Identity team', evidence: 'POC live' },
-  { reg: 'Data Act (IoT/CPE data sharing)',  status: 'On track',    nextDeadline: '2025-09 in force',     owner: 'Data team',     evidence: 'API roadmap' },
-  { reg: 'CER Directive (critical infra)',   status: 'On track',    nextDeadline: '2026-10 register',     owner: 'Resilience',    evidence: 'Asset list submitted' },
-  { reg: 'CRA (Cyber Resilience Act CPE)',   status: 'At risk',     nextDeadline: '2027-12 in force',     owner: 'Product',       evidence: 'Gap assessment Q3' },
+  { reg: 'Open Internet (Reg 2015/2120)',    status: 'Compliant',   nextDeadline: '2027-05 BEREC report', owner: 'Reg Affairs', evidence: 'Annual transparency' },
+  { reg: 'eIDAS 2.0 (digital identity)',     status: 'On track',    nextDeadline: '2027-10 wallet ready', owner: 'Identity team', evidence: 'POC live' },
+  { reg: 'Data Act (IoT/CPE data sharing)',  status: 'On track',    nextDeadline: '2026-02 in force',     owner: 'Data team',     evidence: 'API roadmap' },
+  { reg: 'CER Directive (critical infra)',   status: 'On track',    nextDeadline: '2027-03 register',     owner: 'Resilience',    evidence: 'Asset list submitted' },
+  { reg: 'CRA (Cyber Resilience Act CPE)',   status: 'At risk',     nextDeadline: '2028-05 in force',     owner: 'Product',       evidence: 'Gap assessment Q3' },
   { reg: 'DSA (Digital Services Act)',       status: 'Compliant',   nextDeadline: 'Annual',                owner: 'Legal',         evidence: 'Trust & safety report' },
 ]
 
@@ -122,10 +122,10 @@ const dpcRights = [
 ]
 
 const breachRegister = [
-  { id: 'BR-26-001', date: '2026-04-12', sev: 'Low', records: 142,  type: 'Misdirected email', dpc72h: true,  status: 'Closed' },
-  { id: 'BR-26-002', date: '2026-04-22', sev: 'Medium', records: 4200, type: 'Vendor processor leak', dpc72h: true, status: 'Investigating' },
-  { id: 'BR-26-003', date: '2026-05-04', sev: 'Low', records: 28,   type: 'Internal mis-routing', dpc72h: false, status: 'Closed' },
-  { id: 'BR-26-004', date: '2026-05-18', sev: 'Low', records: 6,    type: 'Loss of device', dpc72h: false, status: 'Closed' },
+  { id: 'BR-26-001', date: '2026-09-12', sev: 'Low', records: 142,  type: 'Misdirected email', dpc72h: true,  status: 'Closed' },
+  { id: 'BR-26-002', date: '2026-09-22', sev: 'Medium', records: 4200, type: 'Vendor processor leak', dpc72h: true, status: 'Investigating' },
+  { id: 'BR-26-003', date: '2026-10-04', sev: 'Low', records: 28,   type: 'Internal mis-routing', dpc72h: false, status: 'Closed' },
+  { id: 'BR-26-004', date: '2026-10-18', sev: 'Low', records: 6,    type: 'Loss of device', dpc72h: false, status: 'Closed' },
 ]
 
 const dpiaPipeline = [
@@ -138,11 +138,11 @@ const dpiaPipeline = [
 ]
 
 const transferPosture = [
-  { country: 'United States',    mechanism: 'Cross-border transfer clauses', tia: 'Done', volume: 'High',   review: '2026-12' },
-  { country: 'United Kingdom',   mechanism: 'Adequacy',          tia: 'N/A',  volume: 'High',   review: '2027-06' },
-  { country: 'India',            mechanism: 'SCCs + supplementary', tia: 'Done', volume: 'Medium', review: '2026-10' },
-  { country: 'Switzerland',      mechanism: 'Adequacy',          tia: 'N/A',  volume: 'Low',    review: '2027-06' },
-  { country: 'Israel',           mechanism: 'Adequacy',          tia: 'N/A',  volume: 'Low',    review: '2027-06' },
+  { country: 'United States',    mechanism: 'Cross-border transfer clauses', tia: 'Done', volume: 'High',   review: '2027-05' },
+  { country: 'United Kingdom',   mechanism: 'Adequacy',          tia: 'N/A',  volume: 'High',   review: '2027-11' },
+  { country: 'India',            mechanism: 'SCCs + supplementary', tia: 'Done', volume: 'Medium', review: '2027-03' },
+  { country: 'Switzerland',      mechanism: 'Adequacy',          tia: 'N/A',  volume: 'Low',    review: '2027-11' },
+  { country: 'Israel',           mechanism: 'Adequacy',          tia: 'N/A',  volume: 'Low',    review: '2027-11' },
 ]
 
 const cookieConsent = [
@@ -160,12 +160,12 @@ const nis2Incidents = [
 ]
 
 const cyberPosture = {
-  pentest: { last: '2026-03-18', critOpen: 0, highOpen: 4, mediumOpen: 22, vendor: 'KPMG' },
+  pentest: { last: '2026-08-18', critOpen: 0, highOpen: 4, mediumOpen: 22, vendor: 'KPMG' },
   vuln: { p1Backlog: 2, p2Backlog: 18, p3Backlog: 142, mttrP1Days: 4 },
   phish: { simRate: 0.082, trainComplete: 0.94, repeatOffenders: 38 },
   secScore: 786, // /1000
-  bcDrill: '2026-02-18',
-  isoCert: { iso27001: '2027-04', iso22301: '2026-11', soc2: '2026-09' },
+  bcDrill: '2026-07-18',
+  isoCert: { iso27001: '2027-09', iso22301: '2027-04', soc2: '2027-02' },
 }
 
 const aiSystems = [
@@ -309,54 +309,54 @@ const doubleMateriality = [
 
 // Cases & audits
 const openCases = [
-  { id: 'CR-26-04', body: 'URCA', title: 'Margin-squeeze test M4 leased lines', sev: 'High',   filed: '2026-03-12', target: '2026-09-30', owner: 'Reg Affairs' },
-  { id: 'ODPC-26-12',body: 'ODPC',    title: 'Cookie consent dark-pattern review',   sev: 'Medium', filed: '2026-04-02', target: '2026-08-15', owner: 'DPO' },
-  { id: 'CR-26-09', body: 'URCA', title: 'Switching code number-transfer complaint volume', sev: 'Low',    filed: '2026-05-10', target: '2026-07-31', owner: 'Reg Affairs' },
-  { id: 'CCPC-26-02',body: 'URCA',  title: 'Bundle-pricing transparency review',   sev: 'Medium', filed: '2026-02-18', target: '2026-09-15', owner: 'Legal' },
-  { id: 'URCA-C-26-01',body: 'URCA',  title: 'URCA cyber attestation evidence pack',       sev: 'Medium', filed: '2026-04-22', target: '2026-10-31', owner: 'CISO' },
-  { id: 'FSPO-26-03',body: 'Ombudsman',  title: 'B2B billing dispute (SMB)',            sev: 'Low',    filed: '2026-05-22', target: '2026-08-22', owner: 'Legal' },
+  { id: 'CR-26-04', body: 'URCA', title: 'Margin-squeeze test M4 leased lines', sev: 'High',   filed: '2026-08-12', target: '2027-02-28', owner: 'Reg Affairs' },
+  { id: 'ODPC-26-12',body: 'ODPC',    title: 'Cookie consent dark-pattern review',   sev: 'Medium', filed: '2026-09-02', target: '2027-01-15', owner: 'DPO' },
+  { id: 'CR-26-09', body: 'URCA', title: 'Switching code number-transfer complaint volume', sev: 'Low',    filed: '2026-10-10', target: '2026-12-31', owner: 'Reg Affairs' },
+  { id: 'CCPC-26-02',body: 'URCA',  title: 'Bundle-pricing transparency review',   sev: 'Medium', filed: '2026-07-18', target: '2027-02-15', owner: 'Legal' },
+  { id: 'URCA-C-26-01',body: 'URCA',  title: 'URCA cyber attestation evidence pack',       sev: 'Medium', filed: '2026-09-22', target: '2027-03-31', owner: 'CISO' },
+  { id: 'FSPO-26-03',body: 'Ombudsman',  title: 'B2B billing dispute (SMB)',            sev: 'Low',    filed: '2026-10-22', target: '2027-01-22', owner: 'Legal' },
 ]
 const finesPaid = [
-  { date: '2025-09-12', body: 'URCA', amt: 0.018, reason: 'Late QoS submission' },
-  { date: '2025-11-04', body: 'ODPC',    amt: 0.085, reason: 'DSAR SLA breach (cohort)' },
-  { date: '2026-02-22', body: 'JEP',   amt: 0.012, reason: 'Misleading speed claim' },
-  { date: '2026-04-08', body: 'URCA',    amt: 0.024, reason: 'Auto-renewal disclosure' },
+  { date: '2026-02-12', body: 'URCA', amt: 0.018, reason: 'Late QoS submission' },
+  { date: '2026-04-04', body: 'ODPC',    amt: 0.085, reason: 'DSAR SLA breach (cohort)' },
+  { date: '2026-07-22', body: 'JEP',   amt: 0.012, reason: 'Misleading speed claim' },
+  { date: '2026-09-08', body: 'URCA',    amt: 0.024, reason: 'Auto-renewal disclosure' },
 ]
 const audits = [
-  { audit: 'ISO 27001 surveillance',   auditor: 'BSI',     date: '2026-09-14', status: 'Scheduled', findingsOpen: 2 },
-  { audit: 'PCI DSS 4.0 ROC',          auditor: 'Verizon', date: '2026-10-22', status: 'In flight', findingsOpen: 6 },
-  { audit: 'Sustainability limited assurance',   auditor: 'PwC',     date: '2026-12-01', status: 'In flight', findingsOpen: 18 },
-  { audit: 'SOC 2 Type II',            auditor: 'EY',      date: '2026-09-08', status: 'In flight', findingsOpen: 4 },
-  { audit: 'DPA external review',     auditor: 'Higgs & Johnson', date: '2026-11-12', status: 'Scheduled', findingsOpen: 0 },
-  { audit: 'URCA cyber readiness',           auditor: 'Deloitte',date: '2026-08-20', status: 'In flight', findingsOpen: 8 },
+  { audit: 'ISO 27001 surveillance',   auditor: 'BSI',     date: '2027-02-14', status: 'Scheduled', findingsOpen: 2 },
+  { audit: 'PCI DSS 4.0 ROC',          auditor: 'Verizon', date: '2027-03-22', status: 'In flight', findingsOpen: 6 },
+  { audit: 'Sustainability limited assurance',   auditor: 'PwC',     date: '2027-05-01', status: 'In flight', findingsOpen: 18 },
+  { audit: 'SOC 2 Type II',            auditor: 'EY',      date: '2027-02-08', status: 'In flight', findingsOpen: 4 },
+  { audit: 'DPA external review',     auditor: 'Higgs & Johnson', date: '2027-04-12', status: 'Scheduled', findingsOpen: 0 },
+  { audit: 'URCA cyber readiness',           auditor: 'Deloitte',date: '2027-01-20', status: 'In flight', findingsOpen: 8 },
 ]
 
 // Reporting calendar
 const calendar = [
-  { name: 'Annual Report (FY26)',          due: '2026-09-30', owner: 'IR',     status: 'On track' },
-  { name: 'Sustainability/Sustainability report Report',    due: '2026-09-30', owner: 'CSO',    status: 'On track' },
-  { name: 'TCFD disclosures',              due: '2026-09-30', owner: 'CSO',    status: 'On track' },
-  { name: 'CDP Climate response',          due: '2026-07-31', owner: 'CSO',    status: 'In flight' },
-  { name: 'Gender Pay Gap (The Bahamas)',      due: '2026-12-23', owner: 'CHRO',   status: 'On track' },
-  { name: 'Modern Slavery statement',      due: '2027-03-31', owner: 'Legal',  status: 'Tracking' },
-  { name: 'Tax Transparency Report',       due: '2026-12-15', owner: 'CFO',    status: 'On track' },
-  { name: 'URCA QoS submission',         due: '2026-07-31', owner: 'RegA',   status: 'On track' },
-  { name: 'URCA cyber register update',          due: '2026-10-31', owner: 'CISO',   status: 'In flight' },
-  { name: 'Climate-resilience capex share',         due: '2026-09-30', owner: 'CFO',    status: 'In flight' },
+  { name: 'Annual Report (FY26)',          due: '2027-02-28', owner: 'IR',     status: 'On track' },
+  { name: 'Sustainability/Sustainability report Report',    due: '2027-02-28', owner: 'CSO',    status: 'On track' },
+  { name: 'TCFD disclosures',              due: '2027-02-28', owner: 'CSO',    status: 'On track' },
+  { name: 'CDP Climate response',          due: '2026-12-31', owner: 'CSO',    status: 'In flight' },
+  { name: 'Gender Pay Gap (The Bahamas)',      due: '2027-05-23', owner: 'CHRO',   status: 'On track' },
+  { name: 'Modern Slavery statement',      due: '2027-08-31', owner: 'Legal',  status: 'Tracking' },
+  { name: 'Tax Transparency Report',       due: '2027-05-15', owner: 'CFO',    status: 'On track' },
+  { name: 'URCA QoS submission',         due: '2026-12-31', owner: 'RegA',   status: 'On track' },
+  { name: 'URCA cyber register update',          due: '2027-03-31', owner: 'CISO',   status: 'In flight' },
+  { name: 'Climate-resilience capex share',         due: '2027-02-28', owner: 'CFO',    status: 'In flight' },
 ]
 
 // Regulation 360 catalog
 const regCatalog = [
-  { code: 'URCA cyber',  name: 'URCA Cybersecurity Guidelines',        body: 'URCA',   inForce: '2024-10', status: 'On track', owner: 'CISO' },
-  { code: 'Sustainability report',  name: 'ISSB / BISX',                    body: 'ISSB',inForce: '2025-01', status: 'On track', owner: 'CSO' },
-  { code: 'DPA',  name: 'Data Protection Act 2003',           body: 'ODPC',   inForce: '2003-04', status: 'Compliant', owner: 'DPO' },
-  { code: 'AIACT', name: 'AI governance policy',                      body: 'Board',     inForce: '2026-08', status: 'On track', owner: 'AI Governance' },
-  { code: 'CBOB IT risk',  name: 'CBOB IT risk guidelines (bank customers)',     body: 'CBOB',     inForce: '2025-01', status: 'On track', owner: 'CISO' },
-  { code: 'Comms Act 2009',  name: 'Communications Act 2009', body: 'URCA', inForce: '2022-06', status: 'Compliant', owner: 'Reg Affairs' },
-  { code: 'CPE',   name: 'URCA type approval (CPE)',       body: 'URCA',   inForce: '2027-12', status: 'At risk',  owner: 'Product' },
-  { code: 'NEMA',  name: 'Critical infrastructure & hurricane resilience', body: 'NEMA',   inForce: '2026-10', status: 'On track', owner: 'Resilience' },
-  { code: 'TAX',   name: 'Climate resilience',                    body: 'BISX',     inForce: '2022-01', status: 'On track', owner: 'CFO' },
-  { code: 'ETA',   name:'Electronic Communications & Transactions Act', body: 'Govt',     inForce: '2025-09', status: 'On track', owner: 'Data team' },
+  { code: 'URCA cyber',  name: 'URCA Cybersecurity Guidelines',        body: 'URCA',   inForce: '2025-03', status: 'On track', owner: 'CISO' },
+  { code: 'Sustainability report',  name: 'ISSB / BISX',                    body: 'ISSB',inForce: '2025-06', status: 'On track', owner: 'CSO' },
+  { code: 'DPA',  name: 'Data Protection Act 2003',           body: 'ODPC',   inForce: '2003', status: 'Compliant', owner: 'DPO' },
+  { code: 'AIACT', name: 'AI governance policy',                      body: 'Board',     inForce: '2027-01', status: 'On track', owner: 'AI Governance' },
+  { code: 'CBOB IT risk',  name: 'CBOB IT risk guidelines (bank customers)',     body: 'CBOB',     inForce: '2025-06', status: 'On track', owner: 'CISO' },
+  { code: 'Comms Act 2009',  name: 'Communications Act 2009', body: 'URCA', inForce: '2009', status: 'Compliant', owner: 'Reg Affairs' },
+  { code: 'CPE',   name: 'URCA type approval (CPE)',       body: 'URCA',   inForce: '2028-05', status: 'At risk',  owner: 'Product' },
+  { code: 'NEMA',  name: 'Critical infrastructure & hurricane resilience', body: 'NEMA',   inForce: '2027-03', status: 'On track', owner: 'Resilience' },
+  { code: 'TAX',   name: 'Climate resilience',                    body: 'BISX',     inForce: '2022-06', status: 'On track', owner: 'CFO' },
+  { code: 'ETA',   name:'Electronic Communications & Transactions Act', body: 'Govt',     inForce: '2026-02', status: 'On track', owner: 'Data team' },
 ]
 
 const regControls: Record<string, { control: string; status: 'Pass' | 'Watch' | 'Fail'; evidence: string; owner: string }[]> = {
@@ -365,13 +365,13 @@ const regControls: Record<string, { control: string; status: 'Pass' | 'Watch' | 
     { control: 'Incident reporting <24h / <72h',  status: 'Pass',  evidence: '4/4 met YTD',        owner: 'SOC' },
     { control: 'Supply-chain security',           status: 'Watch', evidence: '38 vendors pending', owner: 'Procure' },
     { control: 'Vulnerability handling',          status: 'Pass',  evidence: 'P1 MTTR 4d',         owner: 'CISO' },
-    { control: 'BCM & crisis management',         status: 'Pass',  evidence: 'Drill 2026-02',      owner: 'Resilience' },
-    { control: 'Encryption & access control',     status: 'Pass',  evidence: 'Audit 2026-03',      owner: 'CISO' },
+    { control: 'BCM & crisis management',         status: 'Pass',  evidence: 'Drill 2026-07',      owner: 'Resilience' },
+    { control: 'Encryption & access control',     status: 'Pass',  evidence: 'Audit 2026-08',      owner: 'CISO' },
     { control: 'Training & awareness',            status: 'Pass',  evidence: '94% complete',       owner: 'CISO' },
     { control: 'Board reporting',                 status: 'Pass',  evidence: 'Quarterly',          owner: 'CISO' },
   ],
   'Sustainability report': [
-    { control: 'Double-materiality assessment',   status: 'Pass',  evidence: 'Approved 2025-12',   owner: 'CSO' },
+    { control: 'Double-materiality assessment',   status: 'Pass',  evidence: 'Approved 2026-05',   owner: 'CSO' },
     { control: 'ISSB E1 datapoints (220)',        status: 'Watch', evidence: '198/220 collected',  owner: 'CSO' },
     { control: 'Limited assurance (PwC)',         status: 'Watch', evidence: '18 findings open',   owner: 'CSO' },
     { control: 'Climate-resilience capex share',           status: 'Pass',  evidence: '62% capex aligned',  owner: 'CFO' },
@@ -380,7 +380,7 @@ const regControls: Record<string, { control: string; status: 'Pass' | 'Watch' | 
     { control: 'Digital tagging (XBRL)',          status: 'Pass',  evidence: 'Test pack ready',    owner: 'CSO' },
   ],
   DPA: [
-    { control: 'RoPA up-to-date',                 status: 'Pass',  evidence: '2026-Q2 refresh',    owner: 'DPO' },
+    { control: 'RoPA up-to-date',                 status: 'Pass',  evidence: '2026-Q4 refresh',    owner: 'DPO' },
     { control: 'DPIA pipeline',                   status: 'Pass',  evidence: '6 in flight',        owner: 'DPO' },
     { control: 'DSAR SLA <30 days',               status: 'Watch', evidence: '3 breaches YTD',     owner: 'DPO' },
     { control: 'Breach reporting <72h',           status: 'Pass',  evidence: '4/4 met',            owner: 'DPO' },
@@ -678,7 +678,7 @@ function UrcaTab() {
         <KpiCard label={tt('QoS KPIs passing')} value={`${passes}/${comregQos.length}`} delta="13 pass · 2 watch" trend="up" icon={CheckCircle} accent />
         <KpiCard label={tt('SMP markets')} value={`${smpMarkets.length}`} delta={`${smpMarkets.filter((s) => s.status === 'At risk').length} at risk`} trend="flat" icon={Scale} />
         <KpiCard label={tt('Spectrum held')} value={`${totalSpectrumMhz} MHz`} delta="8 bands" trend="flat" icon={Radio} />
-        <KpiCard label={tt('Spectrum fees / yr')} value={`BSD ${spectrum.reduce((s, x) => s + x.annualFee, 0).toFixed(1)}M`} delta="paid Jul 2026" trend="flat" icon={FileWarning} />
+        <KpiCard label={tt('Spectrum fees / yr')} value={`BSD ${spectrum.reduce((s, x) => s + x.annualFee, 0).toFixed(1)}M`} delta="paid Dec 2026" trend="flat" icon={FileWarning} />
       </div>
 
       <Panel title={tt('URCA QoS scorecard (15 KPIs)')}>

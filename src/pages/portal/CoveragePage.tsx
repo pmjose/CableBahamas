@@ -46,10 +46,10 @@ type DeviceType = 'CMTS' | 'OLT' | 'BNG' | 'P-router' | 'PE-router' | 'Switch' |
 type DeviceStatus = 'In service' | 'Maintenance' | 'Spare' | 'Planned' | 'Decom'
 
 const devices = [
-  { id: 'DEV-00142', name: 'CMTS-ANT-CW-01',  type: 'CMTS' as DeviceType,        vendor: 'Cisco',   model: 'cBR-8',           serial: 'FOC2541AB12', site: 'SITE-ANT-CW', rack: 'A4',  ru: 12, ipMgmt: '10.42.1.12',   firmware: 'IOS-XE 17.9.5', license: '2 yr · expires 2027', util: 76, downstream: '32 chan', upstream: '8 chan',  ports: '24× 100G', status: 'In service' as DeviceStatus, eos: '2027-12', subs: 38_400 },
-  { id: 'DEV-00143', name: 'CMTS-ANT-CW-02',  type: 'CMTS' as DeviceType,        vendor: 'Cisco',   model: 'cBR-8',           serial: 'FOC2541AB18', site: 'SITE-ANT-CW', rack: 'A5',  ru: 12, ipMgmt: '10.42.1.13',   firmware: 'IOS-XE 17.9.5', license: '2 yr · expires 2027', util: 84, downstream: '32 chan', upstream: '8 chan',  ports: '24× 100G', status: 'In service' as DeviceStatus, eos: '2027-12', subs: 42_100 },
-  { id: 'DEV-00188', name: 'CMTS-GNT-MH-01',  type: 'CMTS' as DeviceType,        vendor: 'Cisco',   model: 'cBR-8',           serial: 'FOC2611BC22', site: 'SITE-GNT-MH', rack: 'B2',  ru: 12, ipMgmt: '10.44.1.12',   firmware: 'IOS-XE 17.9.5', license: 'Active',              util: 71, downstream: '24 chan', upstream: '8 chan',  ports: '16× 100G', status: 'In service' as DeviceStatus, eos: '2027-12', subs: 28_400 },
-  { id: 'DEV-00204', name: 'CMTS-BRG-PM-01',  type: 'CMTS' as DeviceType,        vendor: 'Casa',    model: 'C100G',          serial: 'CAS18A2412',  site: 'SITE-BRG-PM', rack: 'C1',  ru: 8,  ipMgmt: '10.46.1.12',   firmware: 'CASA 5.6.2',   license: 'Expiring 90d',         util: 92, downstream: '16 chan', upstream: '4 chan',  ports: '8× 100G',  status: 'Maintenance' as DeviceStatus, eos: '2025-09', subs: 16_800 },
+  { id: 'DEV-00142', name: 'CMTS-ANT-CW-01',  type: 'CMTS' as DeviceType,        vendor: 'Cisco',   model: 'cBR-8',           serial: 'FOC2541AB12', site: 'SITE-ANT-CW', rack: 'A4',  ru: 12, ipMgmt: '10.42.1.12',   firmware: 'IOS-XE 17.9.5', license: '2 yr · expires 2027', util: 76, downstream: '32 chan', upstream: '8 chan',  ports: '24× 100G', status: 'In service' as DeviceStatus, eos: '2028-05', subs: 38_400 },
+  { id: 'DEV-00143', name: 'CMTS-ANT-CW-02',  type: 'CMTS' as DeviceType,        vendor: 'Cisco',   model: 'cBR-8',           serial: 'FOC2541AB18', site: 'SITE-ANT-CW', rack: 'A5',  ru: 12, ipMgmt: '10.42.1.13',   firmware: 'IOS-XE 17.9.5', license: '2 yr · expires 2027', util: 84, downstream: '32 chan', upstream: '8 chan',  ports: '24× 100G', status: 'In service' as DeviceStatus, eos: '2028-05', subs: 42_100 },
+  { id: 'DEV-00188', name: 'CMTS-GNT-MH-01',  type: 'CMTS' as DeviceType,        vendor: 'Cisco',   model: 'cBR-8',           serial: 'FOC2611BC22', site: 'SITE-GNT-MH', rack: 'B2',  ru: 12, ipMgmt: '10.44.1.12',   firmware: 'IOS-XE 17.9.5', license: 'Active',              util: 71, downstream: '24 chan', upstream: '8 chan',  ports: '16× 100G', status: 'In service' as DeviceStatus, eos: '2028-05', subs: 28_400 },
+  { id: 'DEV-00204', name: 'CMTS-BRG-PM-01',  type: 'CMTS' as DeviceType,        vendor: 'Casa',    model: 'C100G',          serial: 'CAS18A2412',  site: 'SITE-BRG-PM', rack: 'C1',  ru: 8,  ipMgmt: '10.46.1.12',   firmware: 'CASA 5.6.2',   license: 'Expiring 90d',         util: 92, downstream: '16 chan', upstream: '4 chan',  ports: '8× 100G',  status: 'Maintenance' as DeviceStatus, eos: '2026-02', subs: 16_800 },
   { id: 'DEV-00301', name: 'OLT-ANT-PW-01',   type: 'OLT' as DeviceType,         vendor: 'Nokia',   model: '7360 ISAM FX-16', serial: 'NK7360A8412', site: 'SITE-ANT-PW', rack: 'D2',  ru: 9,  ipMgmt: '10.42.2.21',   firmware: 'TWP 100.2',    license: 'Active',              util: 58, downstream: 'XGS-PON',  upstream: 'GPON',     ports: '128× PON', status: 'In service' as DeviceStatus, eos: '—',       subs: 24_000 },
   { id: 'DEV-00302', name: 'OLT-MEC-CN-01',   type: 'OLT' as DeviceType,         vendor: 'Adtran',  model: 'SDX 6320',        serial: 'AD6320B441',  site: 'SITE-MEC-CN', rack: 'E1',  ru: 6,  ipMgmt: '10.48.2.21',   firmware: 'AOS 6.4',      license: 'Active',              util: 41, downstream: 'XGS-PON',  upstream: 'GPON',     ports: '64× PON',  status: 'In service' as DeviceStatus, eos: '—',       subs: 12_000 },
   { id: 'DEV-00303', name: 'OLT-HAS-HY-01',   type: 'OLT' as DeviceType,         vendor: 'Adtran',  model: 'SDX 6320',        serial: 'AD6320C188',  site: 'SITE-HAS-HY', rack: 'F1',  ru: 6,  ipMgmt: '10.50.2.21',   firmware: 'AOS 6.4',      license: 'Active',              util: 36, downstream: 'XGS-PON',  upstream: 'GPON',     ports: '32× PON',  status: 'In service' as DeviceStatus, eos: '—',       subs: 6_000 },
@@ -61,9 +61,9 @@ const devices = [
   { id: 'DEV-00710', name: 'ROADM-ANT-CW-01', type: 'ROADM' as DeviceType,        vendor: 'Ciena',   model: '6500 D7',         serial: 'CN6500G3318', site: 'SITE-ANT-CW', rack: 'A6',  ru: 7,  ipMgmt: '10.42.9.10',   firmware: 'WaveServer 21.4', license: 'Active',           util: 58, downstream: '—',        upstream: '—',         ports: '88λ',      status: 'In service' as DeviceStatus, eos: '—',       subs: 0 },
   { id: 'DEV-00810', name: 'SBC-ANT-CW-01',   type: 'SBC' as DeviceType,         vendor: 'Oracle',  model: 'AP 6300',          serial: 'OR6300H4421', site: 'SITE-ANT-CW', rack: 'A8',  ru: 2,  ipMgmt: '10.42.5.10',   firmware: 'ECZ 9.1',      license: 'Active',              util: 42, downstream: '—',        upstream: '—',         ports: '4× 10G',   status: 'In service' as DeviceStatus, eos: '—',       subs: 96_000 },
   { id: 'DEV-00811', name: 'FW-CORE-ANT-01',  type: 'Firewall' as DeviceType,     vendor: 'Palo Alto', model: 'PA-5450',       serial: 'PA5450I8821', site: 'SITE-ANT-CW', rack: 'A9',  ru: 3,  ipMgmt: '10.42.6.10',   firmware: 'PAN-OS 11.1',  license: 'Threat-prev active', util: 38, downstream: '—',        upstream: '—',         ports: '16× 100G', status: 'In service' as DeviceStatus, eos: '—',       subs: 0 },
-  { id: 'DEV-00910', name: 'CMTS-LEG-ANT-04', type: 'CMTS' as DeviceType,         vendor: 'Casa',    model: 'C100G',           serial: 'CAS17A0014',  site: 'SITE-ANT-CW', rack: 'A12', ru: 8,  ipMgmt: '10.42.1.18',   firmware: 'CASA 5.4.0',   license: 'Expired',              util: 0,  downstream: '—',        upstream: '—',         ports: '8× 100G',  status: 'Decom' as DeviceStatus, eos: '2025-09', subs: 0 },
+  { id: 'DEV-00910', name: 'CMTS-LEG-ANT-04', type: 'CMTS' as DeviceType,         vendor: 'Casa',    model: 'C100G',           serial: 'CAS17A0014',  site: 'SITE-ANT-CW', rack: 'A12', ru: 8,  ipMgmt: '10.42.1.18',   firmware: 'CASA 5.4.0',   license: 'Expired',              util: 0,  downstream: '—',        upstream: '—',         ports: '8× 100G',  status: 'Decom' as DeviceStatus, eos: '2026-02', subs: 0 },
   { id: 'DEV-01010', name: 'OLT-GNT-CW-01',   type: 'OLT' as DeviceType,         vendor: 'Adtran',  model: 'SDX 6320',         serial: '—',           site: 'SITE-GNT-CW', rack: '—',   ru: 6,  ipMgmt: '—',            firmware: '—',           license: '—',                    util: 0,  downstream: 'XGS-PON',  upstream: 'GPON',     ports: '64× PON',  status: 'Planned' as DeviceStatus, eos: '—', subs: 0 },
-  { id: 'DEV-01100', name: 'CMTS-SPARE-01',   type: 'CMTS' as DeviceType,         vendor: 'Cisco',   model: 'cBR-8',            serial: 'FOC2611BC44', site: 'SITE-ANT-DC', rack: 'SP', ru: 12, ipMgmt: '—',            firmware: 'IOS-XE 17.9.5', license: 'Unallocated',         util: 0,  downstream: '—',        upstream: '—',         ports: '24× 100G', status: 'Spare' as DeviceStatus, eos: '2028-04', subs: 0 },
+  { id: 'DEV-01100', name: 'CMTS-SPARE-01',   type: 'CMTS' as DeviceType,         vendor: 'Cisco',   model: 'cBR-8',            serial: 'FOC2611BC44', site: 'SITE-ANT-DC', rack: 'SP', ru: 12, ipMgmt: '—',            firmware: 'IOS-XE 17.9.5', license: 'Unallocated',         util: 0,  downstream: '—',        upstream: '—',         ports: '24× 100G', status: 'Spare' as DeviceStatus, eos: '2028-09', subs: 0 },
 ]
 
 // Connectivity / topology
@@ -123,9 +123,9 @@ const lifecycle = [
 ]
 
 const eolDevices = [
-  { equip: 'Casa C100G CMTS',          count: 12, eos: '2025-09', risk: 'High',   plan: 'Migrate to Cisco cBR-8' },
-  { equip: 'CommScope ARRIS Hub 4 (CPE)', count: 124_000, eos: '2026-Q2', risk: 'Medium', plan: 'Swap to Wi-Fi 6 Pro by 2027' },
-  { equip: 'Cisco cBR-8 (legacy line cards)', count: 22, eos: '2027-Q4', risk: 'Medium', plan: 'Refresh CapEx locked' },
+  { equip: 'Casa C100G CMTS',          count: 12, eos: '2026-02', risk: 'High',   plan: 'Migrate to Cisco cBR-8' },
+  { equip: 'CommScope ARRIS Hub 4 (CPE)', count: 124_000, eos: '2026-Q4', risk: 'Medium', plan: 'Swap to Wi-Fi 6 Pro by 2027' },
+  { equip: 'Cisco cBR-8 (legacy line cards)', count: 22, eos: '2028-Q2', risk: 'Medium', plan: 'Refresh CapEx locked' },
   { equip: 'Adtran SDX 6320 (legacy fw)', count: 8,  eos: '—',       risk: 'Low',    plan: 'Steady-state' },
 ]
 
@@ -186,12 +186,12 @@ const coverageByRegion = [
 ]
 
 const coverageTrend = [
-  { month: 'Jan', pop4g: 95.8, pop5g: 52.1 },
-  { month: 'Feb', pop4g: 96.1, pop5g: 54.3 },
-  { month: 'Mar', pop4g: 96.4, pop5g: 57.8 },
-  { month: 'Apr', pop4g: 96.7, pop5g: 61.2 },
-  { month: 'May', pop4g: 97.1, pop5g: 64.9 },
-  { month: 'Jun', pop4g: 97.4, pop5g: 68.1 },
+  { month: 'Jun', pop4g: 95.8, pop5g: 52.1 },
+  { month: 'Jul', pop4g: 96.1, pop5g: 54.3 },
+  { month: 'Aug', pop4g: 96.4, pop5g: 57.8 },
+  { month: 'Sep', pop4g: 96.7, pop5g: 61.2 },
+  { month: 'Oct', pop4g: 97.1, pop5g: 64.9 },
+  { month: 'Nov', pop4g: 97.4, pop5g: 68.1 },
 ]
 
 const techCoverageMix = [
@@ -403,7 +403,7 @@ export default function CoveragePage() {
         <div className="flex items-start gap-3">
           <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
           <div className="flex-1">
-            <div className="font-bold text-amber-900 text-sm">{tt('EoS · 12 Casa C100G CMTS reaching End-of-Support 2025-09')}</div>
+            <div className="font-bold text-amber-900 text-sm">{tt('EoS · 12 Casa C100G CMTS reaching End-of-Support 2026-02')}</div>
             <div className="text-xs text-amber-800 mt-1">
               Migration to Cisco cBR-8 in progress · 8 of 12 staged ·
               <span className="ml-2 font-mono bg-white/70 px-1.5 py-0.5 rounded">{tt('CapEx BSD 4.8M locked')}</span>

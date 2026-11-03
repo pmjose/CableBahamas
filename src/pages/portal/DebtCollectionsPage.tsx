@@ -29,10 +29,10 @@ const AGING = [
 ]
 
 const WRITEOFF_COHORT = [
-  { m: 'Jan', postpaid: 1.2, prepaid: 0.3 }, { m: 'Feb', postpaid: 1.1, prepaid: 0.3 },
-  { m: 'Mar', postpaid: 1.4, prepaid: 0.4 }, { m: 'Apr', postpaid: 1.0, prepaid: 0.3 },
-  { m: 'May', postpaid: 0.9, prepaid: 0.2 }, { m: 'Jun', postpaid: 0.8, prepaid: 0.2 },
-  { m: 'Jul', postpaid: 0.7, prepaid: 0.2 }, { m: 'Aug', postpaid: 0.6, prepaid: 0.2 },
+  { m: 'Jun', postpaid: 1.2, prepaid: 0.3 }, { m: 'Jul', postpaid: 1.1, prepaid: 0.3 },
+  { m: 'Aug', postpaid: 1.4, prepaid: 0.4 }, { m: 'Sep', postpaid: 1.0, prepaid: 0.3 },
+  { m: 'Oct', postpaid: 0.9, prepaid: 0.2 }, { m: 'Nov', postpaid: 0.8, prepaid: 0.2 },
+  { m: 'Dec', postpaid: 0.7, prepaid: 0.2 }, { m: 'Jan', postpaid: 0.6, prepaid: 0.2 },
 ]
 
 const DUNNING = [
@@ -70,16 +70,16 @@ const ROUTING_ECON = [
 
 // Prepaid top-up health
 const PREPAID = [
-  { m: 'Mar', topupRate: 78, dormancyPct: 9 }, { m: 'Apr', topupRate: 79, dormancyPct: 9 },
-  { m: 'May', topupRate: 81, dormancyPct: 8 }, { m: 'Jun', topupRate: 82, dormancyPct: 8 },
-  { m: 'Jul', topupRate: 83, dormancyPct: 7 }, { m: 'Aug', topupRate: 84, dormancyPct: 7 },
+  { m: 'Aug', topupRate: 78, dormancyPct: 9 }, { m: 'Sep', topupRate: 79, dormancyPct: 9 },
+  { m: 'Oct', topupRate: 81, dormancyPct: 8 }, { m: 'Nov', topupRate: 82, dormancyPct: 8 },
+  { m: 'Dec', topupRate: 83, dormancyPct: 7 }, { m: 'Jan', topupRate: 84, dormancyPct: 7 },
 ]
 
 // ---- DSO & AR trend ----
 const DSO_TREND = [
-  { m: 'Jan', dso: 44, badDebt: 1.8 }, { m: 'Feb', dso: 43, badDebt: 1.7 },
-  { m: 'Mar', dso: 42, badDebt: 1.6 }, { m: 'Apr', dso: 41, badDebt: 1.5 },
-  { m: 'May', dso: 39, badDebt: 1.4 }, { m: 'Jun', dso: 38, badDebt: 1.4 },
+  { m: 'Jun', dso: 44, badDebt: 1.8 }, { m: 'Jul', dso: 43, badDebt: 1.7 },
+  { m: 'Aug', dso: 42, badDebt: 1.6 }, { m: 'Sep', dso: 41, badDebt: 1.5 },
+  { m: 'Oct', dso: 39, badDebt: 1.4 }, { m: 'Nov', dso: 38, badDebt: 1.4 },
 ]
 
 // ---- Collections team performance ----
@@ -93,12 +93,12 @@ const TEAM_PERF = [
 
 // ---- Payment plan performance ----
 const PAYMENT_PLANS = [
-  { m: 'Jan', active: 2840, completed: 480, defaulted: 220 },
-  { m: 'Feb', active: 3020, completed: 510, defaulted: 198 },
-  { m: 'Mar', active: 2980, completed: 540, defaulted: 184 },
-  { m: 'Apr', active: 3140, completed: 580, defaulted: 172 },
-  { m: 'May', active: 3260, completed: 620, defaulted: 156 },
-  { m: 'Jun', active: 3380, completed: 660, defaulted: 142 },
+  { m: 'Jun', active: 2840, completed: 480, defaulted: 220 },
+  { m: 'Jul', active: 3020, completed: 510, defaulted: 198 },
+  { m: 'Aug', active: 2980, completed: 540, defaulted: 184 },
+  { m: 'Sep', active: 3140, completed: 580, defaulted: 172 },
+  { m: 'Oct', active: 3260, completed: 620, defaulted: 156 },
+  { m: 'Nov', active: 3380, completed: 660, defaulted: 142 },
 ]
 
 // ---- Risk score distribution ----
@@ -112,9 +112,9 @@ const RISK_DIST = [
 
 // ---- Monthly cash recovery (BSD M) ----
 const CASH_RECOVERY = [
-  { m: 'Jan', collected: 6.2, writeoff: 1.4 }, { m: 'Feb', collected: 6.4, writeoff: 1.3 },
-  { m: 'Mar', collected: 6.8, writeoff: 1.5 }, { m: 'Apr', collected: 7.2, writeoff: 1.2 },
-  { m: 'May', collected: 7.6, writeoff: 1.0 }, { m: 'Jun', collected: 8.1, writeoff: 0.9 },
+  { m: 'Jun', collected: 6.2, writeoff: 1.4 }, { m: 'Jul', collected: 6.4, writeoff: 1.3 },
+  { m: 'Aug', collected: 6.8, writeoff: 1.5 }, { m: 'Sep', collected: 7.2, writeoff: 1.2 },
+  { m: 'Oct', collected: 7.6, writeoff: 1.0 }, { m: 'Nov', collected: 8.1, writeoff: 0.9 },
 ]
 
 // ---- Provision by segment ----
@@ -369,7 +369,7 @@ export default function DebtCollectionsPage() {
                 </ResponsiveContainer>
               </div>
               <div className="mt-3 flex justify-between text-xs">
-                <span className="text-vfes-dark/55">{tt('DSO target 35 days by Q4-26 — on track')}</span>
+                <span className="text-vfes-dark/55">{tt('DSO target 35 days by Q2-27 — on track')}</span>
                 <Link to="/portal/capital-treasury" className="font-semibold text-vfes-dark hover:underline">{tt('Capital & Treasury →')}</Link>
               </div>
             </Panel>
@@ -818,7 +818,7 @@ export default function DebtCollectionsPage() {
             <KpiCard label={tt('Total provision')} value="BSD 7.8M" delta={tt('-BSD 0.6M vs budget')} trend="up" icon={Wallet} accent />
             <KpiCard label={tt('DSO (Jun)')} value="38 d" delta={tt('-6 d YoY')} trend="up" icon={Activity} />
             <KpiCard label={tt('Provision rate (consumer)')} value="3.2%" delta={tt('-0.4 pp YoY')} trend="up" icon={TrendingDown} />
-            <KpiCard label={tt('Target DSO')} value="35 d" delta={tt('Q4-26')} trend="flat" icon={Gauge} />
+            <KpiCard label={tt('Target DSO')} value="35 d" delta={tt('Q2-27')} trend="flat" icon={Gauge} />
           </div>
 
           <Panel title={tt('DSO trend & bad-debt ratio — 6 months')}>
@@ -838,7 +838,7 @@ export default function DebtCollectionsPage() {
               </ResponsiveContainer>
             </div>
             <div className="mt-3 flex justify-between text-xs">
-              <span className="text-vfes-dark/55">{tt('Green line = 35-day DSO target — 3 days to close by Q4-26')}</span>
+              <span className="text-vfes-dark/55">{tt('Green line = 35-day DSO target — 3 days to close by Q2-27')}</span>
               <Link to="/portal/capital-treasury" className="font-semibold text-vfes-dark hover:underline">{tt('Capital & Treasury →')}</Link>
             </div>
           </Panel>
@@ -927,8 +927,8 @@ export default function DebtCollectionsPage() {
               <thead>
                 <tr className="text-left text-[10px] uppercase tracking-widest text-vfes-dark/55 border-b border-black/5">
                   <th className="px-3 py-2">{tt('KPI')}</th>
-                  <th className="px-3 py-2 text-right">{tt('Q1-26')}</th>
-                  <th className="px-3 py-2 text-right">{tt('Q2-26')}</th>
+                  <th className="px-3 py-2 text-right">{tt('Q3-26')}</th>
+                  <th className="px-3 py-2 text-right">{tt('Q4-26')}</th>
                   <th className="px-3 py-2 text-right">{tt('Target')}</th>
                   <th className="px-3 py-2">{tt('Trend')}</th>
                   <th className="px-3 py-2">{tt('Status')}</th>
@@ -1076,5 +1076,5 @@ export default function DebtCollectionsPage() {
 // Static Links (≥10): revenue-assurance, billing-charging, finance, capital-treasury, cfo,
 //   customer-360, churn-retention, fraud, ai-insights, ma-simulator, b2b, cost
 // End of DebtCollectionsPage.tsx — Cable Bahamas C360 Bahamian telco demo
-// Version: FY2026 deepened build · June 2026
+// Version: FY2026 deepened build · November 2026
 

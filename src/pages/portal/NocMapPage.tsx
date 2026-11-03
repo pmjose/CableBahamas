@@ -83,12 +83,12 @@ const NOC_QUEUE: { id: string; region: string; prio: string; title: string; owne
 
 // ─── MTTR data ───────────────────────────────────────────────────────────────
 const MTTR_TREND: { m: string; p1: number; p2: number; p3: number; target: number }[] = [
-  { m: 'Jan', p1: 3.8, p2: 6.4, p3: 18.2, target: 4 },
-  { m: 'Feb', p1: 3.5, p2: 6.1, p3: 17.8, target: 4 },
-  { m: 'Mar', p1: 3.2, p2: 5.9, p3: 17.1, target: 4 },
-  { m: 'Apr', p1: 2.9, p2: 5.6, p3: 16.4, target: 4 },
-  { m: 'May', p1: 2.7, p2: 5.4, p3: 15.8, target: 4 },
-  { m: 'Jun', p1: 2.5, p2: 5.1, p3: 15.2, target: 4 },
+  { m: 'Jun', p1: 3.8, p2: 6.4, p3: 18.2, target: 4 },
+  { m: 'Jul', p1: 3.5, p2: 6.1, p3: 17.8, target: 4 },
+  { m: 'Aug', p1: 3.2, p2: 5.9, p3: 17.1, target: 4 },
+  { m: 'Sep', p1: 2.9, p2: 5.6, p3: 16.4, target: 4 },
+  { m: 'Oct', p1: 2.7, p2: 5.4, p3: 15.8, target: 4 },
+  { m: 'Nov', p1: 2.5, p2: 5.1, p3: 15.2, target: 4 },
 ]
 const MTTR_BY_DOMAIN: { domain: string; mttr: number; incidents: number; color: string }[] = [
   { domain: 'Transport', mttr: 3.8, incidents: 12, color: BLUE   },

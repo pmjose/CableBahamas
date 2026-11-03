@@ -46,11 +46,11 @@ const SPCS = [
 ]
 
 const NOTEBOOKS = [
-  { nb: 'churn_xgb_v3_train.ipynb',     owner: 'Emma Rolle',  schedule: 'monthly · 1st 02:00 UTC', last_run: '2025-05-01', state: 'success' },
-  { nb: 'clv_lgbm_train.ipynb',          owner: 'Emma Rolle',  schedule: 'monthly · 1st 03:00 UTC', last_run: '2025-05-01', state: 'success' },
-  { nb: 'eda_customer_360.ipynb',        owner: 'Lars Willems',  schedule: 'on-demand',                 last_run: '2025-05-22', state: 'success' },
-  { nb: 'fraud_eval.ipynb',              owner: 'Lars Willems',  schedule: 'weekly · Mon 06:00 UTC',    last_run: '2025-05-19', state: 'success' },
-  { nb: 'doc_extract_finetune.ipynb',    owner: 'Pieter Knowles',    schedule: 'monthly',                    last_run: '2025-04-30', state: 'success' },
+  { nb: 'churn_xgb_v3_train.ipynb',     owner: 'Emma Rolle',  schedule: 'monthly · 1st 02:00 UTC', last_run: '2025-10-01', state: 'success' },
+  { nb: 'clv_lgbm_train.ipynb',          owner: 'Emma Rolle',  schedule: 'monthly · 1st 03:00 UTC', last_run: '2025-10-01', state: 'success' },
+  { nb: 'eda_customer_360.ipynb',        owner: 'Lars Willems',  schedule: 'on-demand',                 last_run: '2025-10-22', state: 'success' },
+  { nb: 'fraud_eval.ipynb',              owner: 'Lars Willems',  schedule: 'weekly · Mon 06:00 UTC',    last_run: '2025-10-19', state: 'success' },
+  { nb: 'doc_extract_finetune.ipynb',    owner: 'Pieter Knowles',    schedule: 'monthly',                    last_run: '2025-09-30', state: 'success' },
 ]
 
 const COMPUTE_POOLS = [
@@ -62,21 +62,21 @@ const COMPUTE_POOLS = [
 ]
 
 const SESSION_TREND = [
-  { m: 'Jan', sis: 3840, native: 320, spcs: 180 },
-  { m: 'Feb', sis: 3920, native: 380, spcs: 210 },
-  { m: 'Mar', sis: 4120, native: 420, spcs: 248 },
-  { m: 'Apr', sis: 4380, native: 480, spcs: 284 },
-  { m: 'May', sis: 4620, native: 520, spcs: 312 },
-  { m: 'Jun', sis: 4840, native: 580, spcs: 348 },
+  { m: 'Jun', sis: 3840, native: 320, spcs: 180 },
+  { m: 'Jul', sis: 3920, native: 380, spcs: 210 },
+  { m: 'Aug', sis: 4120, native: 420, spcs: 248 },
+  { m: 'Sep', sis: 4380, native: 480, spcs: 284 },
+  { m: 'Oct', sis: 4620, native: 520, spcs: 312 },
+  { m: 'Nov', sis: 4840, native: 580, spcs: 348 },
 ]
 
 const CREDIT_TREND = [
-  { m: 'Jan', gpu: 2200, sis: 120, native: 42 },
-  { m: 'Feb', gpu: 2380, sis: 128, native: 46 },
-  { m: 'Mar', gpu: 2540, sis: 138, native: 51 },
-  { m: 'Apr', gpu: 2680, sis: 146, native: 54 },
-  { m: 'May', gpu: 2760, sis: 152, native: 58 },
-  { m: 'Jun', gpu: 2840, sis: 160, native: 62 },
+  { m: 'Jun', gpu: 2200, sis: 120, native: 42 },
+  { m: 'Jul', gpu: 2380, sis: 128, native: 46 },
+  { m: 'Aug', gpu: 2540, sis: 138, native: 51 },
+  { m: 'Sep', gpu: 2680, sis: 146, native: 54 },
+  { m: 'Oct', gpu: 2760, sis: 152, native: 58 },
+  { m: 'Nov', gpu: 2840, sis: 160, native: 62 },
 ]
 
 const SPCS_CPU_TREND = [
@@ -106,12 +106,12 @@ const APP_REVENUE = [
 ]
 
 const REVENUE_TREND = [
-  { m: 'Jan', ai: 182, ops: 94,  analytics: 68 },
-  { m: 'Feb', ai: 196, ops: 102, analytics: 72 },
-  { m: 'Mar', ai: 214, ops: 112, analytics: 78 },
-  { m: 'Apr', ai: 228, ops: 124, analytics: 84 },
-  { m: 'May', ai: 248, ops: 136, analytics: 92 },
-  { m: 'Jun', ai: 264, ops: 148, analytics: 98 },
+  { m: 'Jun', ai: 182, ops: 94,  analytics: 68 },
+  { m: 'Jul', ai: 196, ops: 102, analytics: 72 },
+  { m: 'Aug', ai: 214, ops: 112, analytics: 78 },
+  { m: 'Sep', ai: 228, ops: 124, analytics: 84 },
+  { m: 'Oct', ai: 248, ops: 136, analytics: 92 },
+  { m: 'Nov', ai: 264, ops: 148, analytics: 98 },
 ]
 
 const CONSUMER_ORGS = [
@@ -124,32 +124,32 @@ const CONSUMER_ORGS = [
 ]
 
 const CONSUMER_TREND = [
-  { m: 'Jan', internal: 680, external: 8  },
-  { m: 'Feb', internal: 720, external: 10 },
-  { m: 'Mar', internal: 762, external: 11 },
-  { m: 'Apr', internal: 810, external: 12 },
-  { m: 'May', internal: 858, external: 12 },
-  { m: 'Jun', internal: 892, external: 14 },
+  { m: 'Jun', internal: 680, external: 8  },
+  { m: 'Jul', internal: 720, external: 10 },
+  { m: 'Aug', internal: 762, external: 11 },
+  { m: 'Sep', internal: 810, external: 12 },
+  { m: 'Oct', internal: 858, external: 12 },
+  { m: 'Nov', internal: 892, external: 14 },
 ]
 
 const DEPLOYMENT_LOG = [
-  { ts: '2025-06-22 14:32', app: 'CableBahamas Portal',      version: 'v2.8.1 → v2.8.2', env: 'PROD',  by: 'Pieter Knowles',    result: 'success', duration: '4m 12s'  },
-  { ts: '2025-06-21 09:18', app: 'agent_runtime_a',      version: 'v1.4.1 → v1.4.2', env: 'PROD',  by: 'CI/CD',         result: 'success', duration: '7m 48s'  },
-  { ts: '2025-06-20 22:04', app: 'doc_parser_arctic',    version: 'v2.0.8 → v2.1.0', env: 'PROD',  by: 'CI/CD',         result: 'warning', duration: '9m 02s'  },
-  { ts: '2025-06-19 16:44', app: 'CLV Explorer',         version: 'v1.2.3 → v1.3.0', env: 'PROD',  by: 'Emma Rolle',  result: 'success', duration: '2m 58s'  },
-  { ts: '2025-06-18 11:20', app: 'Procurement insights', version: 'v0.9.0 → v0.9.1', env: 'STAGE', by: 'Procurement',   result: 'success', duration: '2m 10s'  },
-  { ts: '2025-06-17 08:55', app: 'rag_indexer',          version: 'v0.8.4 → v0.9.1', env: 'PROD',  by: 'CI/CD',         result: 'success', duration: '11m 24s' },
-  { ts: '2025-06-16 15:12', app: 'Field-ops dispatch',   version: 'v3.1.2 → v3.2.0', env: 'PROD',  by: 'Field Ops',     result: 'success', duration: '3m 32s'  },
-  { ts: '2025-06-15 19:38', app: 'B2B deal closer',      version: 'v2.4.1 → v2.5.0', env: 'PROD',  by: 'B2B Sales Ops', result: 'success', duration: '3m 08s'  },
+  { ts: '2025-11-22 14:32', app: 'CableBahamas Portal',      version: 'v2.8.1 → v2.8.2', env: 'PROD',  by: 'Pieter Knowles',    result: 'success', duration: '4m 12s'  },
+  { ts: '2025-11-21 09:18', app: 'agent_runtime_a',      version: 'v1.4.1 → v1.4.2', env: 'PROD',  by: 'CI/CD',         result: 'success', duration: '7m 48s'  },
+  { ts: '2025-11-20 22:04', app: 'doc_parser_arctic',    version: 'v2.0.8 → v2.1.0', env: 'PROD',  by: 'CI/CD',         result: 'warning', duration: '9m 02s'  },
+  { ts: '2025-11-19 16:44', app: 'CLV Explorer',         version: 'v1.2.3 → v1.3.0', env: 'PROD',  by: 'Emma Rolle',  result: 'success', duration: '2m 58s'  },
+  { ts: '2025-11-18 11:20', app: 'Procurement insights', version: 'v0.9.0 → v0.9.1', env: 'STAGE', by: 'Procurement',   result: 'success', duration: '2m 10s'  },
+  { ts: '2025-11-17 08:55', app: 'rag_indexer',          version: 'v0.8.4 → v0.9.1', env: 'PROD',  by: 'CI/CD',         result: 'success', duration: '11m 24s' },
+  { ts: '2025-11-16 15:12', app: 'Field-ops dispatch',   version: 'v3.1.2 → v3.2.0', env: 'PROD',  by: 'Field Ops',     result: 'success', duration: '3m 32s'  },
+  { ts: '2025-11-15 19:38', app: 'B2B deal closer',      version: 'v2.4.1 → v2.5.0', env: 'PROD',  by: 'B2B Sales Ops', result: 'success', duration: '3m 08s'  },
 ]
 
 const DEPLOY_TREND = [
-  { m: 'Jan', success: 28, warnings: 3, failures: 1 },
-  { m: 'Feb', success: 32, warnings: 2, failures: 0 },
-  { m: 'Mar', success: 36, warnings: 4, failures: 2 },
-  { m: 'Apr', success: 38, warnings: 2, failures: 0 },
-  { m: 'May', success: 42, warnings: 3, failures: 1 },
-  { m: 'Jun', success: 44, warnings: 2, failures: 0 },
+  { m: 'Jun', success: 28, warnings: 3, failures: 1 },
+  { m: 'Jul', success: 32, warnings: 2, failures: 0 },
+  { m: 'Aug', success: 36, warnings: 4, failures: 2 },
+  { m: 'Sep', success: 38, warnings: 2, failures: 0 },
+  { m: 'Oct', success: 42, warnings: 3, failures: 1 },
+  { m: 'Nov', success: 44, warnings: 2, failures: 0 },
 ]
 
 const VERSION_HISTORY = [
@@ -169,12 +169,12 @@ const COST_BREAKDOWN = [
 ]
 
 const COST_TREND = [
-  { m: 'Jan', gpu: 2200, cpu: 940,  wh: 620, lic: 180 },
-  { m: 'Feb', gpu: 2380, cpu: 980,  wh: 640, lic: 180 },
-  { m: 'Mar', gpu: 2540, cpu: 1020, wh: 652, lic: 180 },
-  { m: 'Apr', gpu: 2680, cpu: 1060, wh: 664, lic: 180 },
-  { m: 'May', gpu: 2760, cpu: 1094, wh: 672, lic: 180 },
-  { m: 'Jun', gpu: 2840, cpu: 1120, wh: 680, lic: 180 },
+  { m: 'Jun', gpu: 2200, cpu: 940,  wh: 620, lic: 180 },
+  { m: 'Jul', gpu: 2380, cpu: 980,  wh: 640, lic: 180 },
+  { m: 'Aug', gpu: 2540, cpu: 1020, wh: 652, lic: 180 },
+  { m: 'Sep', gpu: 2680, cpu: 1060, wh: 664, lic: 180 },
+  { m: 'Oct', gpu: 2760, cpu: 1094, wh: 672, lic: 180 },
+  { m: 'Nov', gpu: 2840, cpu: 1120, wh: 680, lic: 180 },
 ]
 
 type TabId = 'overview' | 'streamlit' | 'spcs' | 'native' | 'notebooks' | 'deployments' | 'consumers' | 'costs'

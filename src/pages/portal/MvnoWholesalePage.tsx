@@ -50,10 +50,10 @@ const TOWER = [
 ]
 
 const ONBOARDING_PIPELINE = [
-  { partner: 'MovesTel',   stage: 'Contracting',      daysElapsed: 18, eta: 'Q3 2026', it: 'pending',     risk: 'low' },
-  { partner: 'SuriMobile', stage: 'IT Integration',   daysElapsed: 34, eta: 'Q3 2026', it: 'in-progress', risk: 'medium' },
-  { partner: 'VivaVoice',  stage: 'UAT',              daysElapsed: 52, eta: 'Q2 2026', it: 'complete',    risk: 'low' },
-  { partner: 'NetFlex',    stage: 'Commercial launch', daysElapsed: 67, eta: 'Q2 2026', it: 'complete',    risk: 'low' },
+  { partner: 'MovesTel',   stage: 'Contracting',      daysElapsed: 18, eta: 'Q1 2027', it: 'pending',     risk: 'low' },
+  { partner: 'SuriMobile', stage: 'IT Integration',   daysElapsed: 34, eta: 'Q1 2027', it: 'in-progress', risk: 'medium' },
+  { partner: 'VivaVoice',  stage: 'UAT',              daysElapsed: 52, eta: 'Q4 2026', it: 'complete',    risk: 'low' },
+  { partner: 'NetFlex',    stage: 'Commercial launch', daysElapsed: 67, eta: 'Q4 2026', it: 'complete',    risk: 'low' },
 ]
 
 const ONBOARDING_MILESTONES = [
@@ -73,9 +73,9 @@ const SLA_METRICS = [
 ]
 
 const SLA_TREND = [
-  { m: 'Jan', ok: 4, warn: 1, breach: 0 }, { m: 'Feb', ok: 4, warn: 1, breach: 0 },
-  { m: 'Mar', ok: 3, warn: 2, breach: 0 }, { m: 'Apr', ok: 3, warn: 1, breach: 1 },
-  { m: 'May', ok: 3, warn: 1, breach: 1 }, { m: 'Jun', ok: 3, warn: 1, breach: 1 },
+  { m: 'Jun', ok: 4, warn: 1, breach: 0 }, { m: 'Jul', ok: 4, warn: 1, breach: 0 },
+  { m: 'Aug', ok: 3, warn: 2, breach: 0 }, { m: 'Sep', ok: 3, warn: 1, breach: 1 },
+  { m: 'Oct', ok: 3, warn: 1, breach: 1 }, { m: 'Nov', ok: 3, warn: 1, breach: 1 },
 ]
 
 const REVENUE_SHARE_DATA = [
@@ -87,8 +87,8 @@ const REVENUE_SHARE_DATA = [
 ]
 
 const REVENUE_SHARE_QUARTERLY = [
-  { q: 'Q3 2025', total: 15.2, margin: 34 }, { q: 'Q4 2025', total: 16.8, margin: 35 },
-  { q: 'Q1 2026', total: 17.4, margin: 36 }, { q: 'Q2 2026', total: 18.4, margin: 37 },
+  { q: 'Q1 2026', total: 15.2, margin: 34 }, { q: 'Q2 2026', total: 16.8, margin: 35 },
+  { q: 'Q3 2026', total: 17.4, margin: 36 }, { q: 'Q4 2026', total: 18.4, margin: 37 },
 ]
 
 const TARIFF_SCHEDULE = [
@@ -101,12 +101,12 @@ const TARIFF_SCHEDULE = [
 ]
 
 const TRAFFIC_MONTHLY = [
-  { m: 'Jan', litech: 42.1, ibconn: 28.6, eco: 18.2, talkhog: 12.4, budget: 8.1 },
-  { m: 'Feb', litech: 43.8, ibconn: 29.4, eco: 17.9, talkhog: 13.1, budget: 7.8 },
-  { m: 'Mar', litech: 46.2, ibconn: 31.2, eco: 18.4, talkhog: 14.0, budget: 7.4 },
-  { m: 'Apr', litech: 48.7, ibconn: 32.8, eco: 18.1, talkhog: 14.8, budget: 7.1 },
-  { m: 'May', litech: 51.3, ibconn: 34.6, eco: 17.6, talkhog: 15.7, budget: 6.8 },
-  { m: 'Jun', litech: 53.9, ibconn: 36.1, eco: 17.2, talkhog: 16.4, budget: 6.4 },
+  { m: 'Jun', litech: 42.1, ibconn: 28.6, eco: 18.2, talkhog: 12.4, budget: 8.1 },
+  { m: 'Jul', litech: 43.8, ibconn: 29.4, eco: 17.9, talkhog: 13.1, budget: 7.8 },
+  { m: 'Aug', litech: 46.2, ibconn: 31.2, eco: 18.4, talkhog: 14.0, budget: 7.4 },
+  { m: 'Sep', litech: 48.7, ibconn: 32.8, eco: 18.1, talkhog: 14.8, budget: 7.1 },
+  { m: 'Oct', litech: 51.3, ibconn: 34.6, eco: 17.6, talkhog: 15.7, budget: 6.8 },
+  { m: 'Nov', litech: 53.9, ibconn: 36.1, eco: 17.2, talkhog: 16.4, budget: 6.4 },
 ]
 
 const TRAFFIC_MIX = [
@@ -116,18 +116,18 @@ const TRAFFIC_MIX = [
 ]
 
 const ARPU_TREND = [
-  { m: 'Jan', arpu: 3.9 }, { m: 'Feb', arpu: 4.0 }, { m: 'Mar', arpu: 4.1 },
-  { m: 'Apr', arpu: 4.1 }, { m: 'May', arpu: 4.2 }, { m: 'Jun', arpu: 4.2 },
+  { m: 'Jun', arpu: 3.9 }, { m: 'Jul', arpu: 4.0 }, { m: 'Aug', arpu: 4.1 },
+  { m: 'Sep', arpu: 4.1 }, { m: 'Oct', arpu: 4.2 }, { m: 'Nov', arpu: 4.2 },
 ]
 
 const TOWER_TENANCY = [
-  { q: 'Q3 25', rev: 9.8, tenancy: 1.54 }, { q: 'Q4 25', rev: 10.1, tenancy: 1.57 },
-  { q: 'Q1 26', rev: 10.3, tenancy: 1.59 }, { q: 'Q2 26', rev: 10.8, tenancy: 1.62 },
+  { q: 'Q1 26', rev: 9.8, tenancy: 1.54 }, { q: 'Q2 26', rev: 10.1, tenancy: 1.57 },
+  { q: 'Q3 26', rev: 10.3, tenancy: 1.59 }, { q: 'Q4 26', rev: 10.8, tenancy: 1.62 },
 ]
 
 const ONBOARD_TTL = [
-  { cohort: 'H1 2025', days: 71 }, { cohort: 'H2 2025', days: 65 },
-  { cohort: 'Q1 2026', days: 62 }, { cohort: 'Q2 2026', days: 58 },
+  { cohort: 'H2 2025', days: 71 }, { cohort: 'H1 2026', days: 65 },
+  { cohort: 'Q3 2026', days: 62 }, { cohort: 'Q4 2026', days: 58 },
 ]
 
 const ML_MARGIN_PRED = [
@@ -498,10 +498,10 @@ export default function MvnoWholesalePage() {
             <div className="h-56">
               <ResponsiveContainer>
                 <AreaChart data={[
-                  { q: 'Q3 25', neba: 16.8, dark: 11.4, duct: 5.9, back: 8.6 },
-                  { q: 'Q4 25', neba: 17.2, dark: 11.8, duct: 6.1, back: 9.0 },
-                  { q: 'Q1 26', neba: 17.8, dark: 12.2, duct: 6.2, back: 9.4 },
-                  { q: 'Q2 26', neba: 18.2, dark: 12.6, duct: 6.4, back: 9.8 },
+                  { q: 'Q1 26', neba: 16.8, dark: 11.4, duct: 5.9, back: 8.6 },
+                  { q: 'Q2 26', neba: 17.2, dark: 11.8, duct: 6.1, back: 9.0 },
+                  { q: 'Q3 26', neba: 17.8, dark: 12.2, duct: 6.2, back: 9.4 },
+                  { q: 'Q4 26', neba: 18.2, dark: 12.6, duct: 6.4, back: 9.8 },
                 ]}>
                   <CartesianGrid stroke="#eee" strokeDasharray="3 3" />
                   <XAxis dataKey="q" stroke="#999" fontSize={11} />
@@ -655,7 +655,7 @@ export default function MvnoWholesalePage() {
                 </ResponsiveContainer>
               </div>
               <div className="mt-3 text-xs text-vfes-dark/55">
-                {tt('Improving cohort over cohort — target sub-50 days by Q4 2026 via portal self-serve onboarding.')}
+                {tt('Improving cohort over cohort — target sub-50 days by Q2 2027 via portal self-serve onboarding.')}
               </div>
             </Panel>
           </div>
@@ -779,7 +779,7 @@ export default function MvnoWholesalePage() {
             <KpiCard label={tt('Lowest share rate')}          value="18%"   delta={tt('BudgetCall — review')} trend="down" icon={AlertTriangle} />
           </div>
 
-          <Panel title={tt('Q2 2026 revenue share by partner')}>
+          <Panel title={tt('Q4 2026 revenue share by partner')}>
             <div className="h-72">
               <ResponsiveContainer>
                 <BarChart data={REVENUE_SHARE_DATA}>
@@ -795,7 +795,7 @@ export default function MvnoWholesalePage() {
             </div>
           </Panel>
 
-          <Panel title={tt('Revenue share settlement — Q2 2026')}>
+          <Panel title={tt('Revenue share settlement — Q4 2026')}>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
@@ -852,7 +852,7 @@ export default function MvnoWholesalePage() {
             <KpiCard label={tt('Active tariff lines')}  value="6"        delta={tt('URCA regulated')}         trend="flat" icon={FileText}   accent />
             <KpiCard label={tt('Avg tariff margin')}    value="30.5%"    delta={tt('+0.8 pp YoY')}           trend="up"   icon={TrendingUp} />
             <KpiCard label={tt('Floor vs current gap')} value="+38%"     delta={tt('avg premium over floor')} trend="up"   icon={BarChart2} />
-            <KpiCard label={tt('Next URCA review')}     value="Q4 2026"  delta={tt('scheduled')}             trend="flat" icon={Clock} />
+            <KpiCard label={tt('Next URCA review')}     value="Q2 2027"  delta={tt('scheduled')}             trend="flat" icon={Clock} />
           </div>
 
           {/* interactive tariff sort — useMemo depends on this */}
@@ -992,7 +992,7 @@ export default function MvnoWholesalePage() {
           </Panel>
 
           <div className="grid lg:grid-cols-2 gap-4 mt-4">
-            <Panel title={tt('Traffic mix (Jun 2026)')}>
+            <Panel title={tt('Traffic mix (Nov 2026)')}>
               <div className="h-56">
                 <ResponsiveContainer>
                   <PieChart>
@@ -1021,8 +1021,8 @@ export default function MvnoWholesalePage() {
                     <YAxis stroke="#999" fontSize={11} unit=" TB" />
                     <Tooltip contentStyle={{ fontSize: 12 }} />
                     <Legend wrapperStyle={{ fontSize: 11 }} />
-                    <Bar dataKey="q1" fill={SLATE} radius={[6, 6, 0, 0]} name={tt('Q1 2026')} />
-                    <Bar dataKey="q2" fill={BLUE}  radius={[6, 6, 0, 0]} name={tt('Q2 2026')} />
+                    <Bar dataKey="q1" fill={SLATE} radius={[6, 6, 0, 0]} name={tt('Q3 2026')} />
+                    <Bar dataKey="q2" fill={BLUE}  radius={[6, 6, 0, 0]} name={tt('Q4 2026')} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -1036,7 +1036,7 @@ export default function MvnoWholesalePage() {
             <Link to="/portal/digital-app"  className="text-vfes-dark font-semibold hover:underline">{tt('→ Digital app')}</Link>
           </div>
 
-          <Panel title={tt('Traffic share by MVNO — Jun 2026')}>
+          <Panel title={tt('Traffic share by MVNO — Nov 2026')}>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>

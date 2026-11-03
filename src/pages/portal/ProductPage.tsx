@@ -227,7 +227,7 @@ export default function ProductPage() {
             <div className="text-[10px] uppercase tracking-widest text-vfes-dark/55 font-semibold mb-1">{tt('Quarter')}</div>
             <select value={filters.quarter} onChange={(e) => setF({ quarter: e.target.value as any })}
               className="w-full bg-[#f3f4f7] border border-transparent rounded-lg px-3 py-2 text-sm font-semibold">
-              <option value="q1">{tt('Q1 2026')}</option><option value="q2">{tt('Q2 2026')}</option><option value="q3">{tt('Q3 2026')}</option><option value="q4">{tt('Q4 2026')}</option>
+              <option value="q1">{tt('Q3 2026')}</option><option value="q2">{tt('Q4 2026')}</option><option value="q3">{tt('Q1 2027')}</option><option value="q4">{tt('Q2 2027')}</option>
             </select>
           </div>
         </div>
@@ -486,7 +486,7 @@ function PortfolioTab({ skuList, drillInto }: { skuList: SKU[]; drillInto: (c: s
           </table>
           <div className="mt-4 p-3 rounded-lg bg-vfes-red/5 border border-vfes-red/15">
             <div className="text-xs font-bold text-vfes-dark mb-1">{tt('PM recommendation')}</div>
-            <div className="text-xs">{tt('3 SKUs flagged for sunset (BB_250, TV_360, PHONE) — combined BSD 4.8M annualised savings if migrated to growth SKUs over Q3-Q4 2026.')}</div>
+            <div className="text-xs">{tt('3 SKUs flagged for sunset (BB_250, TV_360, PHONE) — combined BSD 4.8M annualised savings if migrated to growth SKUs over Q3-Q2 2027.')}</div>
           </div>
         </Panel>
       </div>
@@ -571,7 +571,7 @@ function LifecycleTab({ skuList, drillInto }: { skuList: SKU[]; drillInto: (c: s
             </thead>
             <tbody>
               {[...skuList].sort((a, b) => a.refreshDate.localeCompare(b.refreshDate)).slice(0, 8).map((s) => {
-                const monthsAgo = Math.round((new Date('2026-05-01').getTime() - new Date(s.refreshDate + '-01').getTime()) / (30 * 86400 * 1000))
+                const monthsAgo = Math.round((new Date('2026-10-01').getTime() - new Date(s.refreshDate + '-01').getTime()) / (30 * 86400 * 1000))
                 return (
                   <tr key={s.code} className="border-t border-black/5">
                     <td className="py-2 font-semibold text-xs">{tt(s.name)}</td>
@@ -718,7 +718,7 @@ function ContentTab({ renewalWindow }: { renewalWindow: number }) {
   const totalAttribSubs = content.reduce((a, c) => a + c.attributedSubs, 0)
   const totalViewerHours = content.reduce((a, c) => a + c.viewerHours, 0)
   const renewalsAtRisk = content.filter((c) => {
-    const months = (new Date(c.renewalDate).getTime() - new Date('2026-05-01').getTime()) / (30 * 86400 * 1000)
+    const months = (new Date(c.renewalDate).getTime() - new Date('2026-10-01').getTime()) / (30 * 86400 * 1000)
     return months <= renewalWindow
   })
   const costPerHour = (totalSpend * 1e6) / (totalViewerHours * 1e6)
@@ -743,7 +743,7 @@ function ContentTab({ renewalWindow }: { renewalWindow: number }) {
               {content.map((c) => {
                 const cph = (c.cost * 1e6) / (c.viewerHours * 1e6)
                 const cps = c.attributedSubs > 0 ? (c.cost * 1e6) / c.attributedSubs : 0
-                const monthsToRenew = Math.round((new Date(c.renewalDate).getTime() - new Date('2026-05-01').getTime()) / (30 * 86400 * 1000))
+                const monthsToRenew = Math.round((new Date(c.renewalDate).getTime() - new Date('2026-10-01').getTime()) / (30 * 86400 * 1000))
                 return (
                   <tr key={tt(c.name)} className="border-t border-black/5">
                     <td className="py-2 font-semibold text-xs">{tt(c.name)}</td>
@@ -771,7 +771,7 @@ function ContentTab({ renewalWindow }: { renewalWindow: number }) {
         <Panel title={`Renewal calendar · next ${renewalWindow} months`}>
           <div className="space-y-2">
             {[...content].sort((a, b) => a.renewalDate.localeCompare(b.renewalDate)).slice(0, 8).map((c) => {
-              const months = Math.round((new Date(c.renewalDate).getTime() - new Date('2026-05-01').getTime()) / (30 * 86400 * 1000))
+              const months = Math.round((new Date(c.renewalDate).getTime() - new Date('2026-10-01').getTime()) / (30 * 86400 * 1000))
               const pct = Math.min(100, (months / 36) * 100)
               return (
                 <div key={tt(c.name)}>

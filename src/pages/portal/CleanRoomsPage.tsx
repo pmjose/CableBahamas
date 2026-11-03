@@ -38,11 +38,11 @@ const TEMPLATES = [
 ]
 
 const DEALS = [
-  { deal: 'Retailer co-marketing Q3',    partner: 'National Retailer', value: 'BSD 1.4M', status: 'active',  lift: '+22%', expiry: '2026-09-30' },
-  { deal: 'Media attribution bundle',    partner: 'Media Network',     value: 'BSD 0.8M', status: 'active',  lift: '+18%', expiry: '2026-12-31' },
-  { deal: 'Bank propensity programme',   partner: 'Island Bank (demo)',         value: 'BSD 1.1M', status: 'review',  lift: '+31%', expiry: '2026-11-30' },
-  { deal: 'Auto OEM data exchange',      partner: 'Auto OEM',          value: 'BSD 0.5M', status: 'active',  lift: '+14%', expiry: '2026-06-30' },
-  { deal: 'Rival ISP B bundle attribution',     partner: 'Rival ISP B The Bahamas',       value: 'BSD 0.3M', status: 'active',  lift: '+9%',  expiry: '2026-08-31' },
+  { deal: 'Retailer co-marketing Q3',    partner: 'National Retailer', value: 'BSD 1.4M', status: 'active',  lift: '+22%', expiry: '2027-02-28' },
+  { deal: 'Media attribution bundle',    partner: 'Media Network',     value: 'BSD 0.8M', status: 'active',  lift: '+18%', expiry: '2027-05-31' },
+  { deal: 'Bank propensity programme',   partner: 'Island Bank (demo)',         value: 'BSD 1.1M', status: 'review',  lift: '+31%', expiry: '2027-04-30' },
+  { deal: 'Auto OEM data exchange',      partner: 'Auto OEM',          value: 'BSD 0.5M', status: 'active',  lift: '+14%', expiry: '2026-11-30' },
+  { deal: 'Rival ISP B bundle attribution',     partner: 'Rival ISP B The Bahamas',       value: 'BSD 0.3M', status: 'active',  lift: '+9%',  expiry: '2027-01-31' },
 ]
 
 const ACTIVATION_JOBS = [
@@ -54,46 +54,46 @@ const ACTIVATION_JOBS = [
 ]
 
 const PRIVACY_EVENTS = [
-  { date: '2026-06-28', event: 'k-anon threshold enforced — 2 cells suppressed (< 50)',   room: 'Retailer DCR',  severity: 'info'   },
-  { date: '2026-06-27', event: 'ε budget 62% consumed for Q2 — alert at 80%',             room: 'Retailer DCR',  severity: 'watch'  },
-  { date: '2026-06-25', event: 'Row egress attempt blocked — co-modelled propensity query',room: 'Island Bank (demo) DCR', severity: 'blocked'},
-  { date: '2026-06-20', event: 'Analysis template approved by DPO',                       room: 'Media DCR',     severity: 'info'   },
-  { date: '2026-06-18', event: 'Auto-renewal triggered for Retailer clean room contract', room: 'Retailer DCR',  severity: 'info'   },
+  { date: '2026-11-28', event: 'k-anon threshold enforced — 2 cells suppressed (< 50)',   room: 'Retailer DCR',  severity: 'info'   },
+  { date: '2026-11-27', event: 'ε budget 62% consumed for Q2 — alert at 80%',             room: 'Retailer DCR',  severity: 'watch'  },
+  { date: '2026-11-25', event: 'Row egress attempt blocked — co-modelled propensity query',room: 'Island Bank (demo) DCR', severity: 'blocked'},
+  { date: '2026-11-20', event: 'Analysis template approved by DPO',                       room: 'Media DCR',     severity: 'info'   },
+  { date: '2026-11-18', event: 'Auto-renewal triggered for Retailer clean room contract', room: 'Retailer DCR',  severity: 'info'   },
 ]
 
 const GOVERNANCE_CHECKS = [
-  { check: 'PII row-egress controls',             result: 'Pass',  last: '2026-06-28', owner: 'CDO Office'  },
-  { check: 'k-anonymity threshold enforcement',   result: 'Pass',  last: '2026-06-28', owner: 'Privacy Eng' },
-  { check: 'Differential privacy budget audit',   result: 'Watch', last: '2026-06-27', owner: 'Privacy Eng' },
-  { check: 'Partner contract validity',           result: 'Pass',  last: '2026-06-01', owner: 'Legal'       },
-  { check: 'Data residency (Bahamas / US-East)',        result: 'Pass',  last: '2026-06-01', owner: 'DPO'         },
-  { check: 'Analysis template approval pipeline', result: 'Pass',  last: '2026-05-31', owner: 'Data Gov'    },
+  { check: 'PII row-egress controls',             result: 'Pass',  last: '2026-11-28', owner: 'CDO Office'  },
+  { check: 'k-anonymity threshold enforcement',   result: 'Pass',  last: '2026-11-28', owner: 'Privacy Eng' },
+  { check: 'Differential privacy budget audit',   result: 'Watch', last: '2026-11-27', owner: 'Privacy Eng' },
+  { check: 'Partner contract validity',           result: 'Pass',  last: '2026-11-01', owner: 'Legal'       },
+  { check: 'Data residency (Bahamas / US-East)',        result: 'Pass',  last: '2026-11-01', owner: 'DPO'         },
+  { check: 'Analysis template approval pipeline', result: 'Pass',  last: '2026-10-31', owner: 'Data Gov'    },
 ]
 
 const RUNS_TREND = [
-  { m: 'Jan', runs: 168, analyses: 22 }, { m: 'Feb', runs: 192, analyses: 26 },
-  { m: 'Mar', runs: 218, analyses: 31 }, { m: 'Apr', runs: 244, analyses: 35 },
-  { m: 'May', runs: 268, analyses: 38 }, { m: 'Jun', runs: 285, analyses: 42 },
+  { m: 'Jun', runs: 168, analyses: 22 }, { m: 'Jul', runs: 192, analyses: 26 },
+  { m: 'Aug', runs: 218, analyses: 31 }, { m: 'Sep', runs: 244, analyses: 35 },
+  { m: 'Oct', runs: 268, analyses: 38 }, { m: 'Nov', runs: 285, analyses: 42 },
 ]
 
 const REVENUE_ATTR = [
-  { m: 'Jan', rev: 2.8 }, { m: 'Feb', rev: 3.0 }, { m: 'Mar', rev: 3.2 },
-  { m: 'Apr', rev: 3.4 }, { m: 'May', rev: 3.6 }, { m: 'Jun', rev: 3.8 },
+  { m: 'Jun', rev: 2.8 }, { m: 'Jul', rev: 3.0 }, { m: 'Aug', rev: 3.2 },
+  { m: 'Sep', rev: 3.4 }, { m: 'Oct', rev: 3.6 }, { m: 'Nov', rev: 3.8 },
 ]
 
 const OVERLAP_TREND = [
-  { m: 'Jan', retailer: 0.82, media: 0.38, bank: 0.14 },
-  { m: 'Feb', retailer: 0.85, media: 0.40, bank: 0.16 },
-  { m: 'Mar', retailer: 0.88, media: 0.42, bank: 0.17 },
-  { m: 'Apr', retailer: 0.90, media: 0.44, bank: 0.17 },
-  { m: 'May', retailer: 0.92, media: 0.46, bank: 0.18 },
-  { m: 'Jun', retailer: 0.92, media: 0.48, bank: 0.18 },
+  { m: 'Jun', retailer: 0.82, media: 0.38, bank: 0.14 },
+  { m: 'Jul', retailer: 0.85, media: 0.40, bank: 0.16 },
+  { m: 'Aug', retailer: 0.88, media: 0.42, bank: 0.17 },
+  { m: 'Sep', retailer: 0.90, media: 0.44, bank: 0.17 },
+  { m: 'Oct', retailer: 0.92, media: 0.46, bank: 0.18 },
+  { m: 'Nov', retailer: 0.92, media: 0.48, bank: 0.18 },
 ]
 
 const PRIVACY_BUDGET_SERIES = [
-  { m: 'Jan', used: 0.22, remaining: 0.78 }, { m: 'Feb', used: 0.28, remaining: 0.72 },
-  { m: 'Mar', used: 0.35, remaining: 0.65 }, { m: 'Apr', used: 0.44, remaining: 0.56 },
-  { m: 'May', used: 0.55, remaining: 0.45 }, { m: 'Jun', used: 0.62, remaining: 0.38 },
+  { m: 'Jun', used: 0.22, remaining: 0.78 }, { m: 'Jul', used: 0.28, remaining: 0.72 },
+  { m: 'Aug', used: 0.35, remaining: 0.65 }, { m: 'Sep', used: 0.44, remaining: 0.56 },
+  { m: 'Oct', used: 0.55, remaining: 0.45 }, { m: 'Nov', used: 0.62, remaining: 0.38 },
 ]
 
 const SEGMENT_OVERLAP = [
@@ -104,9 +104,9 @@ const SEGMENT_OVERLAP = [
 ]
 
 const ACTIVATION_PERF = [
-  { m: 'Jan', recs: 820, latency: 5.2 }, { m: 'Feb', recs: 950, latency: 4.8 },
-  { m: 'Mar', recs: 1100, latency: 4.4 }, { m: 'Apr', recs: 1250, latency: 4.2 },
-  { m: 'May', recs: 1560, latency: 4.0 }, { m: 'Jun', recs: 1808, latency: 3.9 },
+  { m: 'Jun', recs: 820, latency: 5.2 }, { m: 'Jul', recs: 950, latency: 4.8 },
+  { m: 'Aug', recs: 1100, latency: 4.4 }, { m: 'Sep', recs: 1250, latency: 4.2 },
+  { m: 'Oct', recs: 1560, latency: 4.0 }, { m: 'Nov', recs: 1808, latency: 3.9 },
 ]
 
 const PARTNER_PERF = [
@@ -241,7 +241,7 @@ export default function CleanRoomsPage() {
                 {tt('ε privacy budget 62% consumed — alert at 80% · Island Bank (demo) DCR row-egress attempt blocked · MOBILE_VIKINGS_x_CBL awaiting partner sign-off')}
               </div>
               <div className="text-xs text-amber-800 mt-1">
-                {tt('Auto OEM deal expires 2026-06-30 — renewal outstanding.')}
+                {tt('Auto OEM deal expires 2026-11-30 — renewal outstanding.')}
               </div>
             </div>
             <div className="flex items-center gap-2 shrink-0">
@@ -651,7 +651,7 @@ export default function CleanRoomsPage() {
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="text-[10px] text-vfes-dark/45 mt-2">{tt('Red line = 80% alert threshold. Q3 budget resets 2026-07-01.')}</div>
+            <div className="text-[10px] text-vfes-dark/45 mt-2">{tt('Red line = 80% alert threshold. Q3 budget resets 2026-12-01.')}</div>
           </Panel>
 
           <Panel title={tt('Privacy events log — blocked queries & alerts')}>
@@ -1010,7 +1010,7 @@ export default function CleanRoomsPage() {
           <KpiCard label={tt('Active deals')}     value="4"     delta={tt('1 in review')}            trend="up"   icon={DollarSign}  accent />
           <KpiCard label={tt('Total deal value')} value="BSD 4.1M" delta="+BSD 0.5M QoQ"                   trend="up"   icon={TrendingUp} />
           <KpiCard label={tt('Avg deal lift')}    value="21%"   delta={tt('incremental attribution')} trend="up"   icon={Activity}  />
-          <KpiCard label={tt('Renewals due')}     value="1"     delta={tt('Auto OEM — Jun 30')}       trend="down" icon={AlertTriangle} />
+          <KpiCard label={tt('Renewals due')}     value="1"     delta={tt('Auto OEM — Nov 30')}       trend="down" icon={AlertTriangle} />
         </div>
 
         <Panel title={tt('Co-marketing & data deals — pipeline')}>

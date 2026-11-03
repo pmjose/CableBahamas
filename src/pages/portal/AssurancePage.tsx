@@ -37,7 +37,7 @@ const CIM_BY_SERVICE = [
 ]
 
 const MTTR_TREND = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'][i],
+  m: ['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'][i],
   mttr: 52 - i * 1.3 + (i === 4 ? 8 : 0),
   mtta: 7.2 - i * 0.26,
 }))
@@ -95,9 +95,9 @@ const PROACTIVE_ACTIONS = [
 ]
 
 const PROACTIVE_TREND = [
-  { m: 'Jan', prevented: 4,  reactive: 12 }, { m: 'Feb', prevented: 6,  reactive: 10 },
-  { m: 'Mar', prevented: 8,  reactive: 9  }, { m: 'Apr', prevented: 10, reactive: 8  },
-  { m: 'May', prevented: 12, reactive: 7  }, { m: 'Jun', prevented: 14, reactive: 6  },
+  { m: 'Jun', prevented: 4,  reactive: 12 }, { m: 'Jul', prevented: 6,  reactive: 10 },
+  { m: 'Aug', prevented: 8,  reactive: 9  }, { m: 'Sep', prevented: 10, reactive: 8  },
+  { m: 'Oct', prevented: 12, reactive: 7  }, { m: 'Nov', prevented: 14, reactive: 6  },
 ]
 
 // ─── Customer impact breakdown ────────────────────────────────────────────────
@@ -112,10 +112,10 @@ const CIM_REGION = [
 
 // ─── Problem management ──────────────────────────────────────────────────────
 const KNOWN_PROBLEMS = [
-  { id: 'PRB-0098', title: 'Local peering peering intermittent micro-congestion', sev: 'P2', cim: 1840, workaround: 'Traffic pre-shift to AMS-IX', rootCause: 'port scheduler firmware bug', eta: '2026-07-18' },
-  { id: 'PRB-0092', title: 'UPF session affinity drop under geo-redundancy failover', sev: 'P2', cim: 1230, workaround: 'Forced UPF primary-only mode', rootCause: 'SMF N4 race condition',   eta: '2026-08-01' },
-  { id: 'PRB-0085', title: 'Freeport PON ONT serial-number collision on MDU sites', sev: 'P3', cim: 640,  workaround: 'Manual re-provision on collision', rootCause: 'BSS provisioning API bug', eta: '2026-07-25' },
-  { id: 'PRB-0077', title: 'VoLTE MOS degradation on 2100 MHz under load',          sev: 'P3', cim: 480,  workaround: 'CSFB fallback on trigger',         rootCause: 'eRAB QCI misconfiguration', eta: '2026-08-15' },
+  { id: 'PRB-0098', title: 'Local peering peering intermittent micro-congestion', sev: 'P2', cim: 1840, workaround: 'Traffic pre-shift to AMS-IX', rootCause: 'port scheduler firmware bug', eta: '2026-12-18' },
+  { id: 'PRB-0092', title: 'UPF session affinity drop under geo-redundancy failover', sev: 'P2', cim: 1230, workaround: 'Forced UPF primary-only mode', rootCause: 'SMF N4 race condition',   eta: '2027-01-01' },
+  { id: 'PRB-0085', title: 'Freeport PON ONT serial-number collision on MDU sites', sev: 'P3', cim: 640,  workaround: 'Manual re-provision on collision', rootCause: 'BSS provisioning API bug', eta: '2026-12-25' },
+  { id: 'PRB-0077', title: 'VoLTE MOS degradation on 2100 MHz under load',          sev: 'P3', cim: 480,  workaround: 'CSFB fallback on trigger',         rootCause: 'eRAB QCI misconfiguration', eta: '2027-01-15' },
 ]
 
 // ─── Tab definition ──────────────────────────────────────────────────────────

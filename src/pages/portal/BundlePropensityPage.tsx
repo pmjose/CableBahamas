@@ -123,10 +123,10 @@ const b2bBundles = [
 ]
 
 const networkUnlock = [
-  { quarter: 'Q3 25', premises: 84000,  unlock: 6.2 },
-  { quarter: 'Q4 25', premises: 142000, unlock: 10.4 },
-  { quarter: 'Q1 26', premises: 196000, unlock: 14.8 },
-  { quarter: 'Q2 26', premises: 248000, unlock: 18.6 },
+  { quarter: 'Q1 26', premises: 84000,  unlock: 6.2 },
+  { quarter: 'Q2 26', premises: 142000, unlock: 10.4 },
+  { quarter: 'Q3 26', premises: 196000, unlock: 14.8 },
+  { quarter: 'Q4 26', premises: 248000, unlock: 18.6 },
 ]
 
 // Top action queue — replaces old customers table
@@ -157,7 +157,7 @@ const REGION_PROPENSITY = [
 ]
 
 const CAMPAIGN_PERF = Array.from({ length: 8 }, (_, i) => ({
-  q: ['Q1-25','Q2-25','Q3-25','Q4-25','Q1-26','Q2-26','Q3-26','Q4-26'][i],
+  q: ['Q3-25','Q4-25','Q1-26','Q2-26','Q3-26','Q4-26','Q1-27','Q2-27'][i],
   roi:       2.4 + i * 0.28,
   conv:      0.11 + i * 0.012,
   contacted: 120000 + i * 8000,
@@ -948,10 +948,10 @@ export default function BundlePropensityPage() {
       {/* ══ PERFORMANCE ════════════════════════════════════════════════════════ */}
       {tab === 'performance' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Campaign Q2-26 ROI')} value="3.8×" delta={tt('+0.4× vs Q1')} trend="up" icon={ArrowUpRight} accent />
-          <KpiCard label={tt('Conv. rate Q2-26')} value="23.2%" delta={tt('+2.1 pp vs Q1')} trend="up" icon={Target} />
-          <KpiCard label={tt('Contacted Q2-26')} value="182K" delta={tt('+8K vs plan')} trend="up" icon={Users} />
-          <KpiCard label={tt('Converted Q2-26')} value="42.2K" delta={tt('margin +BSD 5.8/cust')} trend="up" icon={Sparkles} />
+          <KpiCard label={tt('Campaign Q4-26 ROI')} value="3.8×" delta={tt('+0.4× vs Q1')} trend="up" icon={ArrowUpRight} accent />
+          <KpiCard label={tt('Conv. rate Q4-26')} value="23.2%" delta={tt('+2.1 pp vs Q1')} trend="up" icon={Target} />
+          <KpiCard label={tt('Contacted Q4-26')} value="182K" delta={tt('+8K vs plan')} trend="up" icon={Users} />
+          <KpiCard label={tt('Converted Q4-26')} value="42.2K" delta={tt('margin +BSD 5.8/cust')} trend="up" icon={Sparkles} />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">

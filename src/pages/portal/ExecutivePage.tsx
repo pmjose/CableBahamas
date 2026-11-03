@@ -55,7 +55,7 @@ const inbox = [
   { p: 'P1', t: 'Approve BSD 18M Rival ISP B content renewal — board pack ready', due: '2d', icon: AlertTriangle, color: 'red', to: '/portal/procurement' },
   { p: 'P1', t: 'Q3 pricing review — BSD 5 increase on M250 (margin +BSD 2.8M)', due: '5d', icon: TrendingUp, color: 'red', to: '/portal/pricing-simulator' },
   { p: 'P2', t: 'URCA quarterly filing — sign-off required', due: '1w', icon: ShieldCheck, color: 'amber', to: '/portal/regulatory' },
-  { p: 'P2', t: 'Approve REVConnect+ launch (Q1 2027)', due: '2w', icon: Sparkles, color: 'amber', to: '/portal/product' },
+  { p: 'P2', t: 'Approve REVConnect+ launch (Q3 2027)', due: '2w', icon: Sparkles, color: 'amber', to: '/portal/product' },
   { p: 'P3', t: 'CFO succession plan — interview shortlist', due: '3w', icon: Users, color: 'blue', to: '/portal/people' },
 ]
 
@@ -153,10 +153,10 @@ const guidanceAccuracy = [
   { q: 'Q2-24', rev:  0.4, ebitda:  1.4, fcf:  0.8 },
   { q: 'Q3-24', rev: -0.8, ebitda: -0.6, fcf:  1.2 },
   { q: 'Q4-24', rev:  0.2, ebitda:  0.4, fcf: -0.4 },
-  { q: 'Q1-25', rev:  1.6, ebitda:  1.2, fcf:  2.2 },
-  { q: 'Q2-25', rev:  0.8, ebitda:  0.6, fcf:  0.4 },
-  { q: 'Q3-25', rev: -1.2, ebitda: -0.8, fcf: -1.4 },
-  { q: 'Q4-25', rev:  0.4, ebitda:  0.2, fcf:  0.6 },
+  { q: 'Q3-25', rev:  1.6, ebitda:  1.2, fcf:  2.2 },
+  { q: 'Q4-25', rev:  0.8, ebitda:  0.6, fcf:  0.4 },
+  { q: 'Q1-26', rev: -1.2, ebitda: -0.8, fcf: -1.4 },
+  { q: 'Q2-26', rev:  0.4, ebitda:  0.2, fcf:  0.6 },
 ]
 const consensus = { rev: 184.2, our: 182.4, eps: 0.86, ourEps: 0.84, callDays: 18 }
 const analysts = { buy: 8, hold: 4, sell: 1, target: 28.40, current: 26.20 }
@@ -175,21 +175,21 @@ const credit = [
   { agency: 'Fitch',   rating: 'BBB',  outlook: 'Positive', headroom: '1.6x' },
 ]
 const boardCommitments = [
-  { topic: '5G-SA national rollout',  due: 'Q4-26', status: 'On-track', rag: 'green' },
-  { topic: 'B2B revenue BSD 100M run-rate', due: 'Q2-27', status: 'Behind 4%', rag: 'amber' },
-  { topic: 'NPS +45 by Q4',            due: 'Q4-26', status: 'Stretch · current +38', rag: 'amber' },
+  { topic: '5G-SA national rollout',  due: 'Q2-27', status: 'On-track', rag: 'green' },
+  { topic: 'B2B revenue BSD 100M run-rate', due: 'Q4-27', status: 'Behind 4%', rag: 'amber' },
+  { topic: 'NPS +45 by Q4',            due: 'Q2-27', status: 'Stretch · current +38', rag: 'amber' },
   { topic: 'Net Zero Scope 1+2 -50%', due: '2030',  status: 'Off-glide', rag: 'red' },
-  { topic: 'CFO succession ready-now', due: 'Q3-26', status: 'Shortlist of 3', rag: 'green' },
+  { topic: 'CFO succession ready-now', due: 'Q1-27', status: 'Shortlist of 3', rag: 'green' },
 ]
 
 // COMPETITIVE
 const shareEvo = [
-  { q: 'Q1-25', vmie: 26, BTC: 36, three: 14, sky: 9, other: 15 },
-  { q: 'Q2-25', vmie: 27, BTC: 35, three: 14, sky: 9, other: 15 },
-  { q: 'Q3-25', vmie: 27, BTC: 35, three: 14, sky: 9, other: 15 },
-  { q: 'Q4-25', vmie: 28, BTC: 34, three: 14, sky: 9, other: 15 },
-  { q: 'Q1-26', vmie: 28, BTC: 34, three: 14, sky: 8, other: 16 },
-  { q: 'Q2-26', vmie: 29, BTC: 33, three: 14, sky: 8, other: 16 },
+  { q: 'Q3-25', vmie: 26, BTC: 36, three: 14, sky: 9, other: 15 },
+  { q: 'Q4-25', vmie: 27, BTC: 35, three: 14, sky: 9, other: 15 },
+  { q: 'Q1-26', vmie: 27, BTC: 35, three: 14, sky: 9, other: 15 },
+  { q: 'Q2-26', vmie: 28, BTC: 34, three: 14, sky: 9, other: 15 },
+  { q: 'Q3-26', vmie: 28, BTC: 34, three: 14, sky: 8, other: 16 },
+  { q: 'Q4-26', vmie: 29, BTC: 33, three: 14, sky: 8, other: 16 },
 ]
 const winRate = [
   { vs: 'BTC',  enterprise: 0.48, smb: 0.42, consumer: 0.36 },
@@ -296,11 +296,11 @@ const reputationVoice = [
   { week: 'Now', positive: 68, neutral: 24, negative:  8 },
 ]
 const govEngagement = [
-  { who: 'Minister Comms', last: '2026-05-08', topic: 'Gigabit The Bahamas rollout', tone: 'Constructive' },
-  { who: 'URCA Chair',  last: '2026-04-22', topic: 'M4 review', tone: 'Tense' },
-  { who: 'VLAIO',   last: '2026-05-12', topic: 'B2B FDI',  tone: 'Warm' },
-  { who: 'Ministry of Economic Affairs', last: '2026-03-18', topic: 'Gigabit Act', tone: 'Constructive' },
-  { who: 'Dept Finance',  last: '2026-04-04', topic: 'Pre-budget', tone: 'Warm' },
+  { who: 'Minister Comms', last: '2026-10-08', topic: 'Gigabit The Bahamas rollout', tone: 'Constructive' },
+  { who: 'URCA Chair',  last: '2026-09-22', topic: 'M4 review', tone: 'Tense' },
+  { who: 'VLAIO',   last: '2026-10-12', topic: 'B2B FDI',  tone: 'Warm' },
+  { who: 'Ministry of Economic Affairs', last: '2026-08-18', topic: 'Gigabit Act', tone: 'Constructive' },
+  { who: 'Dept Finance',  last: '2026-09-04', topic: 'Pre-budget', tone: 'Warm' },
 ]
 
 // CEO BRIEFING
@@ -316,7 +316,7 @@ const decisionLog = [
   { id: 'CEO-D-042', topic: 'Approve BSD 18M Rival ISP B content renewal',  owner: 'CEO',  status: 'Awaiting CEO sign-off', due: '2d' },
   { id: 'CEO-D-041', topic: 'M250 BSD 5 price increase',            owner: 'CFO',  status: 'Awaiting CEO sign-off', due: '5d' },
   { id: 'CEO-D-040', topic: 'CFO successor selection',           owner: 'CHRO', status: 'Interview shortlist',    due: '3w' },
-  { id: 'CEO-D-039', topic: 'REVConnect+ Q1 2027 launch GA',           owner: 'CMO',  status: 'Investment paper ready', due: '2w' },
+  { id: 'CEO-D-039', topic: 'REVConnect+ Q3 2027 launch GA',           owner: 'CMO',  status: 'Investment paper ready', due: '2w' },
   { id: 'CEO-D-038', topic: 'Diversify Cisco — RFP authorisation',owner: 'CPO', status: 'Vendor list approved',   due: '1w' },
   { id: 'CEO-D-037', topic: 'URCA cyber attestation board sign-off',   owner: 'CISO', status: 'Final review',           due: '1w' },
 ]
@@ -334,11 +334,11 @@ export default function ExecutivePage() {
 
   // Period scaling — figures build up from canonical monthly run-rates so the
   // displayed value matches its label (e.g. QTD reconciles to KPI.revenueQtrM).
-  // Latest reported month is May → YTD covers 5 months (Jan–May).
+  // Latest reported month is Oct → YTD covers 10 months (Jan–Oct), QTD 1 (Oct).
   const fmtM = (v: number) => `BSD ${(v).toFixed(1)}M`
   // Period figures build from canonical monthly run-rates; memoised on period.
   const { m, revenuePeriod, ebitdaPeriod, fcfPeriod, ebitdaMarginPct, planRevenuePeriod, planEbitdaPeriod } = useMemo(() => {
-    const periodMonths: Record<Period, number> = { MTD: 1, QTD: 2, YTD: 5, TTM: 12 }
+    const periodMonths: Record<Period, number> = { MTD: 1, QTD: 1, YTD: 10, TTM: 12 }
     const mm = periodMonths[period]
     const rows = FINANCE_TREND.slice(-mm)
     const rev = rows.reduce((sum, row) => sum + row.revenue, 0)
@@ -364,7 +364,7 @@ export default function ExecutivePage() {
     <div className="p-8 board-pack">
       <PageHeader
         title={tt('CEO Dashboard')}
-        subtitle={`Synthetic baseline at 31 May 2026 · ${period} · QTD covers April–May`}
+        subtitle={`Synthetic baseline at 31 October 2026 · ${period} · QTD covers April–May`}
         actions={
           <div className="flex items-center gap-3">
             <div className="flex bg-[#f3f4f7] rounded-lg p-1">
@@ -418,10 +418,10 @@ export default function ExecutivePage() {
         chart={{
           kind: 'line', title: 'Revenue — actual vs ML forecast (BSD M)', xKey: 'm', unit: 'M',
           data: [
-            { m: 'Jan', actual: 44.2, forecast: 44.0 }, { m: 'Feb', actual: 44.8, forecast: 44.6 },
-            { m: 'Mar', actual: 45.1, forecast: 45.0 }, { m: 'Apr', actual: 45.4, forecast: 45.3 },
-            { m: 'May', actual: 45.6, forecast: 45.5 }, { m: 'Jun', actual: null, forecast: 45.9 },
-            { m: 'Jul', actual: null, forecast: 46.3 }, { m: 'Aug', actual: null, forecast: 46.8 },
+            { m: 'Jun', actual: 44.2, forecast: 44.0 }, { m: 'Jul', actual: 44.8, forecast: 44.6 },
+            { m: 'Aug', actual: 45.1, forecast: 45.0 }, { m: 'Sep', actual: 45.4, forecast: 45.3 },
+            { m: 'Oct', actual: 45.6, forecast: 45.5 }, { m: 'Nov', actual: null, forecast: 45.9 },
+            { m: 'Dec', actual: null, forecast: 46.3 }, { m: 'Jan', actual: null, forecast: 46.8 },
           ],
           series: [{ key: 'actual', name: 'Actual', color: '#FF4438' }, { key: 'forecast', name: 'ML forecast', color: '#11567F', dashed: true }],
           note: 'Forecaster projects BSD 46.8M by August — on track to the top half of guidance.',
@@ -793,7 +793,7 @@ export default function ExecutivePage() {
           </div>
         </Panel>
 
-        <Panel title={tt('Market Share — The Bahamas (May 2026)')} insight={{ insight: 'Cable Bahamas holds #2 share at ~23%, about two points behind the leader.', action: 'Concentrate FTTH overbuild where the share gap is closing fastest.', impact: 'Each share point is ~BSD 11M of annualised access revenue.' }} action={<Link to="/portal/coverage" className="text-xs font-bold text-vfes-dark hover:underline">{tt('Open Coverage →')}</Link>}>
+        <Panel title={tt('Market Share — The Bahamas (October 2026)')} insight={{ insight: 'Cable Bahamas holds #2 share at ~23%, about two points behind the leader.', action: 'Concentrate FTTH overbuild where the share gap is closing fastest.', impact: 'Each share point is ~BSD 11M of annualised access revenue.' }} action={<Link to="/portal/coverage" className="text-xs font-bold text-vfes-dark hover:underline">{tt('Open Coverage →')}</Link>}>
           <div className="h-40">
             <ResponsiveContainer>
               <PieChart>
@@ -843,11 +843,11 @@ export default function ExecutivePage() {
             <ResponsiveContainer>
               <LineChart data={[
                 { q: 'Q4-24', "Cable Bahamas": 26.4, BTC: 35.8, "Rival ISP B": 13.1, "Rival ISP A": 12.6, Other: 12.1 },
-                { q: 'Q1-25', "Cable Bahamas": 26.8, BTC: 35.2, "Rival ISP B": 13.0, "Rival ISP A": 12.6, Other: 12.4 },
-                { q: 'Q2-25', "Cable Bahamas": 27.2, BTC: 34.9, "Rival ISP B": 12.8, "Rival ISP A": 12.5, Other: 12.6 },
-                { q: 'Q3-25', "Cable Bahamas": 27.6, BTC: 34.5, "Rival ISP B": 12.7, "Rival ISP A": 12.4, Other: 12.8 },
-                { q: 'Q4-25', "Cable Bahamas": 27.8, BTC: 34.2, "Rival ISP B": 12.6, "Rival ISP A": 12.3, Other: 13.1 },
-                { q: 'Q1-26', "Cable Bahamas": 28.0, BTC: 34.0, "Rival ISP B": 12.5, "Rival ISP A": 12.0, Other: 13.5 },
+                { q: 'Q3-25', "Cable Bahamas": 26.8, BTC: 35.2, "Rival ISP B": 13.0, "Rival ISP A": 12.6, Other: 12.4 },
+                { q: 'Q4-25', "Cable Bahamas": 27.2, BTC: 34.9, "Rival ISP B": 12.8, "Rival ISP A": 12.5, Other: 12.6 },
+                { q: 'Q1-26', "Cable Bahamas": 27.6, BTC: 34.5, "Rival ISP B": 12.7, "Rival ISP A": 12.4, Other: 12.8 },
+                { q: 'Q2-26', "Cable Bahamas": 27.8, BTC: 34.2, "Rival ISP B": 12.6, "Rival ISP A": 12.3, Other: 13.1 },
+                { q: 'Q3-26', "Cable Bahamas": 28.0, BTC: 34.0, "Rival ISP B": 12.5, "Rival ISP A": 12.0, Other: 13.5 },
               ]}>
                 <CartesianGrid stroke="#f0f0f0" />
                 <XAxis dataKey="q" tick={{ fontSize: 11 }} />
@@ -1984,7 +1984,7 @@ function CapitalTab({ period, m }: TabProps) {
               </Bar>
             </BarChart>
           </ResponsiveContainer>
-          <div className="text-[10px] text-vfes-dark/55 text-center mt-1">{tt('2028 wall BSD 320M — refinancing window opens Q3-27')}</div>
+          <div className="text-[10px] text-vfes-dark/55 text-center mt-1">{tt('2028 wall BSD 320M — refinancing window opens Q1-28')}</div>
         </Panel>
         <Panel title={tt('FX exposure (BSD M net · hedge %)')}>
           <table className="w-full text-sm">
@@ -2121,7 +2121,7 @@ function BriefingTab({ period, m }: TabProps) {
           <div className="rounded-lg border border-black/5 p-3 bg-[#fafbfc]">
             <div className="text-[10px] uppercase tracking-widest font-bold text-vfes-dark flex items-center gap-1.5 mb-1"><Radio className="w-3 h-3" />{tt('5G coverage')}</div>
             <div className="text-2xl font-extrabold">89.4%</div>
-            <div className="text-[10px] text-emerald-600">+3.4 pp · {tt('on-track to 95% by Q4 2026')}</div>
+            <div className="text-[10px] text-emerald-600">+3.4 pp · {tt('on-track to 95% by Q2 2027')}</div>
           </div>
           <div className="rounded-lg border border-black/5 p-3 bg-[#fafbfc]">
             <div className="text-[10px] uppercase tracking-widest font-bold text-vfes-dark flex items-center gap-1.5 mb-1"><BarChart3 className="w-3 h-3" />{tt('Mobile NPS')}</div>
@@ -2131,7 +2131,7 @@ function BriefingTab({ period, m }: TabProps) {
           <div className="rounded-lg border border-black/5 p-3 bg-[#fafbfc]">
             <div className="text-[10px] uppercase tracking-widest font-bold text-vfes-dark flex items-center gap-1.5 mb-1"><ShieldCheck className="w-3 h-3" />{tt('Open RAN posture')}</div>
             <div className="text-2xl font-extrabold">28%</div>
-            <div className="text-[10px] text-amber-600">{tt('Out Islands pilot · GA target Q2 2027')}</div>
+            <div className="text-[10px] text-amber-600">{tt('Out Islands pilot · GA target Q4 2027')}</div>
           </div>
         </div>
       </Panel>

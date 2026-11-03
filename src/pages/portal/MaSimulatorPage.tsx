@@ -94,7 +94,7 @@ const DD_WORKSTREAMS = [
   { stream: 'Financial (VDD)',    lead: 'EY',              complete: 92, status: 'Active',   eta: 'Jul 15' },
   { stream: 'Legal / Regulatory', lead: 'Higgs & Johnson (demo)',complete: 78, status: 'Active',   eta: 'Jul 22' },
   { stream: 'Commercial / IMS',   lead: 'McKinsey',       complete: 88, status: 'Active',   eta: 'Jul 12' },
-  { stream: 'Tax & Structures',   lead: 'Deloitte',       complete: 65, status: 'Active',   eta: 'Jul 28' },
+  { stream: 'Tax & Structures',   lead: 'Deloitte',       complete: 65, status: 'Active',   eta: 'Dec 28' },
   { stream: 'IT / Network',       lead: 'Internal CTO',   complete: 70, status: 'Watch',    eta: 'Aug 5'  },
   { stream: 'Leaseback pricing',  lead: 'Internal Tsy',   complete: 55, status: 'Planning', eta: 'Aug 10' },
 ]
@@ -393,14 +393,14 @@ export default function MaSimulatorPage() {
                   {[
                     { ms: 'Board M&A mandate approved',          date: 'Apr 15',    owner: 'Board',          status: 'Done',    note: 'Unanimous — carve-out + JV approved' },
                     { ms: 'EY VDD commenced',                    date: 'May 2',     owner: 'EY',             status: 'Done',    note: 'Financial vendor DD in progress'     },
-                    { ms: 'LOI signed — FTTH JV',               date: 'May 28',    owner: 'CEO',            status: 'Done',    note: 'Exclusivity period 90d'              },
+                    { ms: 'LOI signed — FTTH JV',               date: 'Oct 28',    owner: 'CEO',            status: 'Done',    note: 'Exclusivity period 90d'              },
                     { ms: 'McKinsey commercial DD',              date: 'Jun 1',     owner: 'McKinsey',       status: 'Done',    note: '88% complete'                        },
                     { ms: 'Higgs & Johnson legal sign-off',     date: 'Jul 22',    owner: 'Higgs & Johnson',status: 'Active',  note: '78% complete'                        },
-                    { ms: 'Deloitte tax structure final',        date: 'Jul 28',    owner: 'Deloitte',       status: 'Active',  note: 'Transfer pricing at risk'            },
+                    { ms: 'Deloitte tax structure final',        date: 'Dec 28',    owner: 'Deloitte',       status: 'Active',  note: 'Transfer pricing at risk'            },
                     { ms: 'Capital committee exclusivity vote',  date: 'Jul 10',    owner: 'CFO / Tsy',      status: 'Active',  note: 'Board pre-approved'                  },
                     { ms: 'IT/network red lines agreed',         date: 'Aug 5',     owner: 'CTO',            status: 'Watch',   note: 'Leaseback RAN sharing terms'         },
                     { ms: 'Final bid submitted',                 date: 'Aug 22',    owner: 'CEO / CFO',      status: 'Planned', note: 'Subject to DD sign-off'              },
-                    { ms: 'Transaction close',                   date: 'Sep 30',    owner: 'Board',          status: 'Planned', note: 'Regulatory clearance 6–8w'           },
+                    { ms: 'Transaction close',                   date: 'Feb 31',    owner: 'Board',          status: 'Planned', note: 'Regulatory clearance 6–8w'           },
                   ].map(row => (
                     <tr key={row.ms} className="border-b border-black/5 hover:bg-[#fafbfc]">
                       <td className="py-2 font-semibold text-xs">{tt(row.ms)}</td>

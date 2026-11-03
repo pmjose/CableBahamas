@@ -71,7 +71,7 @@ const WEEKLY_TREND = Array.from({ length: 12 }, (_, i) => ({
 }))
 
 const MONTHLY_TREND = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][i],
+  m: ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May'][i],
   portIn:  12400 + i * 320 + Math.round(Math.sin(i / 2) * 840),
   portOut: 11200 + i * 80  + Math.round(Math.cos(i / 2.5) * 640),
 }))
@@ -94,7 +94,7 @@ const SAVE_FUNNEL = [
 ]
 
 const WIN_BACK_TREND = Array.from({ length: 8 }, (_, i) => ({
-  q: ['Q1-25','Q2-25','Q3-25','Q4-25','Q1-26','Q2-26','Q3-26','Q4-26'][i],
+  q: ['Q3-25','Q4-25','Q1-26','Q2-26','Q3-26','Q4-26','Q1-27','Q2-27'][i],
   contacted:   68000 + i * 2400,
   responded:   18400 + i * 820,
   reactivated:  9600 + i * 480,

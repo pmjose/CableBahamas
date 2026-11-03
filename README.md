@@ -39,7 +39,7 @@ Typical demonstration flow:
 4. In the separate Snowflake Intelligence interface, ask a supported fixed-services question.
 5. Review the tool-backed answer, period, BSD units, source and chart before drawing conclusions.
 
-All records, prices, forecasts, benchmarks and operational metrics are **synthetic**, not company disclosures. The reference date is **31 May 2026**. The website's independent planning panels are not an additive company-wide model. Regulatory workflows are illustrative, not legal advice. REVConnect and REVHome are fictional bundle labels, not official offers. This is an independent demonstration, not an official Cable Bahamas application.
+All records, prices, forecasts, benchmarks and operational metrics are **synthetic**, not company disclosures. The web demo reference date is **31 October 2026**; the separate Snowflake agent dataset still ends **31 May 2026**. The website's independent planning panels are not an additive company-wide model. Regulatory workflows are illustrative, not legal advice. REVConnect and REVHome are fictional bundle labels, not official offers. This is an independent demonstration, not an official Cable Bahamas application.
 
 ## Screenshots
 

@@ -76,9 +76,9 @@ const PORTF_ARR_TREND = [
   { q: 'Q2-24', arr: 80.8 }, { q: 'Q3-24', arr: 82.5 }, { q: 'Q4-24', arr: 84.0 },
 ]
 const PORTF_SLA = [
-  { m: 'Jan', uptime: 99.97, p1: 2, credits: 8  }, { m: 'Feb', uptime: 99.98, p1: 1, credits:  4 },
-  { m: 'Mar', uptime: 99.96, p1: 3, credits: 12 }, { m: 'Apr', uptime: 99.95, p1: 4, credits: 18 },
-  { m: 'May', uptime: 99.97, p1: 2, credits:  6 }, { m: 'Jun', uptime: 99.99, p1: 0, credits:  0 },
+  { m: 'Jun', uptime: 99.97, p1: 2, credits: 8  }, { m: 'Jul', uptime: 99.98, p1: 1, credits:  4 },
+  { m: 'Aug', uptime: 99.96, p1: 3, credits: 12 }, { m: 'Sep', uptime: 99.95, p1: 4, credits: 18 },
+  { m: 'Oct', uptime: 99.97, p1: 2, credits:  6 }, { m: 'Nov', uptime: 99.99, p1: 0, credits:  0 },
 ]
 const PORTF_CHURN_DIST = [
   { band: '≥80', count: 14 }, { band: '60–79', count: 7 },

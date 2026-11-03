@@ -41,23 +41,23 @@ const slaByService = [
 const npsTrend = [
   { q: 'Q3-24', nps: 32 },
   { q: 'Q4-24', nps: 34 },
-  { q: 'Q1-25', nps: 35 },
-  { q: 'Q2-25', nps: 36 },
-  { q: 'Q3-25', nps: 36 },
-  { q: 'Q4-25', nps: 37 },
-  { q: 'Q1-26', nps: 38 },
-  { q: 'Q2-26', nps: KPI.nps },
+  { q: 'Q3-25', nps: 35 },
+  { q: 'Q4-25', nps: 36 },
+  { q: 'Q1-26', nps: 36 },
+  { q: 'Q2-26', nps: 37 },
+  { q: 'Q3-26', nps: 38 },
+  { q: 'Q4-26', nps: KPI.nps },
 ]
 
 const csatTrend = [
   { q: 'Q3-24', csat: 74.2 },
   { q: 'Q4-24', csat: 75.8 },
-  { q: 'Q1-25', csat: 76.4 },
-  { q: 'Q2-25', csat: 77.2 },
-  { q: 'Q3-25', csat: 77.6 },
-  { q: 'Q4-25', csat: 78.4 },
-  { q: 'Q1-26', nps: 79.2 },
-  { q: 'Q2-26', csat: 79.8 },
+  { q: 'Q3-25', csat: 76.4 },
+  { q: 'Q4-25', csat: 77.2 },
+  { q: 'Q1-26', csat: 77.6 },
+  { q: 'Q2-26', csat: 78.4 },
+  { q: 'Q3-26', nps: 79.2 },
+  { q: 'Q4-26', csat: 79.8 },
 ]
 
 // ─── network-ops data ────────────────────────────────────────────────────────
@@ -93,14 +93,14 @@ const uptimeTrend = [
 
 // ─── field & provisioning data ────────────────────────────────────────────────
 const ftfTrend = [
-  { m: 'Nov', ftf: 79.2, target: 85 },
-  { m: 'Dec', ftf: 80.4, target: 85 },
-  { m: 'Jan', ftf: 81.8, target: 85 },
-  { m: 'Feb', ftf: 82.6, target: 85 },
-  { m: 'Mar', ftf: 83.4, target: 85 },
-  { m: 'Apr', ftf: 84.2, target: 85 },
-  { m: 'May', ftf: 84.8, target: 85 },
-  { m: 'Jun', ftf: 85.2, target: 85 },
+  { m: 'Apr', ftf: 79.2, target: 85 },
+  { m: 'May', ftf: 80.4, target: 85 },
+  { m: 'Jun', ftf: 81.8, target: 85 },
+  { m: 'Jul', ftf: 82.6, target: 85 },
+  { m: 'Aug', ftf: 83.4, target: 85 },
+  { m: 'Sep', ftf: 84.2, target: 85 },
+  { m: 'Oct', ftf: 84.8, target: 85 },
+  { m: 'Nov', ftf: 85.2, target: 85 },
 ]
 
 const jobsByType = [
@@ -113,12 +113,12 @@ const jobsByType = [
 ]
 
 const orderFallout = [
-  { m: 'Jan', residential: 4.8, b2b: 7.2, target: 4.0 },
-  { m: 'Feb', residential: 4.6, b2b: 6.8, target: 4.0 },
-  { m: 'Mar', residential: 4.4, b2b: 6.4, target: 4.0 },
-  { m: 'Apr', residential: 4.2, b2b: 6.2, target: 4.0 },
-  { m: 'May', residential: 4.0, b2b: 5.8, target: 4.0 },
-  { m: 'Jun', residential: 3.8, b2b: 5.4, target: 4.0 },
+  { m: 'Jun', residential: 4.8, b2b: 7.2, target: 4.0 },
+  { m: 'Jul', residential: 4.6, b2b: 6.8, target: 4.0 },
+  { m: 'Aug', residential: 4.4, b2b: 6.4, target: 4.0 },
+  { m: 'Sep', residential: 4.2, b2b: 6.2, target: 4.0 },
+  { m: 'Oct', residential: 4.0, b2b: 5.8, target: 4.0 },
+  { m: 'Nov', residential: 3.8, b2b: 5.4, target: 4.0 },
 ]
 
 // ─── capacity data ───────────────────────────────────────────────────────────
@@ -136,22 +136,22 @@ const capacityNodes = [
 const headroomQtly = [
   { q: 'Q3-24', core: 28, docsis: 18, mobile: 24 },
   { q: 'Q4-24', core: 26, docsis: 16, mobile: 22 },
-  { q: 'Q1-25', core: 25, docsis: 14, mobile: 20 },
-  { q: 'Q2-25', core: 23, docsis: 12, mobile: 18 },
-  { q: 'Q3-25', core: 21, docsis: 10, mobile: 16 },
-  { q: 'Q4-25', core: 20, docsis:  9, mobile: 14 },
-  { q: 'Q1-26', core: 18, docsis:  8, mobile: 12 },
-  { q: 'Q2-26', core: 16, docsis:  9, mobile: 12 },
+  { q: 'Q3-25', core: 25, docsis: 14, mobile: 20 },
+  { q: 'Q4-25', core: 23, docsis: 12, mobile: 18 },
+  { q: 'Q1-26', core: 21, docsis: 10, mobile: 16 },
+  { q: 'Q2-26', core: 20, docsis:  9, mobile: 14 },
+  { q: 'Q3-26', core: 18, docsis:  8, mobile: 12 },
+  { q: 'Q4-26', core: 16, docsis:  9, mobile: 12 },
 ]
 
 // ─── incident / SLA data ──────────────────────────────────────────────────────
 const incidentTrend = [
-  { m: 'Jan', p1: 4, p2: 12, p3: 38 },
-  { m: 'Feb', p1: 3, p2: 10, p3: 32 },
-  { m: 'Mar', p1: 5, p2: 14, p3: 42 },
-  { m: 'Apr', p1: 3, p2: 11, p3: 36 },
-  { m: 'May', p1: 2, p2:  9, p3: 28 },
-  { m: 'Jun', p1: 2, p2:  8, p3: 24 },
+  { m: 'Jun', p1: 4, p2: 12, p3: 38 },
+  { m: 'Jul', p1: 3, p2: 10, p3: 32 },
+  { m: 'Aug', p1: 5, p2: 14, p3: 42 },
+  { m: 'Sep', p1: 3, p2: 11, p3: 36 },
+  { m: 'Oct', p1: 2, p2:  9, p3: 28 },
+  { m: 'Nov', p1: 2, p2:  8, p3: 24 },
 ]
 
 const slaCreditExposure = [
@@ -162,11 +162,11 @@ const slaCreditExposure = [
 ]
 
 const pirLog = [
-  { inc: 'INC-2031', date: '28 Jun 26', service: 'Transport ring · Freeport', impact: '38K CIM', mttr: 184, root: 'Degraded WDM transponder', pir: 'Pending'  },
-  { inc: 'INC-2018', date: '14 Jun 26', service: '5G Core AMF · national',     impact: '12K CIM', mttr:  92, root: 'AMF SW bug · vendor patch', pir: 'Complete' },
-  { inc: 'INC-1994', date: '22 May 26', service: 'DOCSIS · Rural Out Islands',           impact: '8K CIM',  mttr: 124, root: 'CMTS fan failure · overtemp', pir: 'Complete' },
-  { inc: 'INC-1976', date: '8 May 26',  service: 'Broadband · Nassau North',   impact: '6K CIM',  mttr:  68, root: 'Fibre cut · contractor dig',  pir: 'Complete' },
-  { inc: 'INC-1958', date: '21 Apr 26', service: 'Mobile · 700 MHz Freeport',        impact: '4K CIM',  mttr:  44, root: 'Backhaul congestion · peak',  pir: 'Complete' },
+  { inc: 'INC-2031', date: '28 Nov 26', service: 'Transport ring · Freeport', impact: '38K CIM', mttr: 184, root: 'Degraded WDM transponder', pir: 'Pending'  },
+  { inc: 'INC-2018', date: '14 Nov 26', service: '5G Core AMF · national',     impact: '12K CIM', mttr:  92, root: 'AMF SW bug · vendor patch', pir: 'Complete' },
+  { inc: 'INC-1994', date: '22 Oct 26', service: 'DOCSIS · Rural Out Islands',           impact: '8K CIM',  mttr: 124, root: 'CMTS fan failure · overtemp', pir: 'Complete' },
+  { inc: 'INC-1976', date: '8 Oct 26',  service: 'Broadband · Nassau North',   impact: '6K CIM',  mttr:  68, root: 'Fibre cut · contractor dig',  pir: 'Complete' },
+  { inc: 'INC-1958', date: '21 Sep 26', service: 'Mobile · 700 MHz Freeport',        impact: '4K CIM',  mttr:  44, root: 'Backhaul congestion · peak',  pir: 'Complete' },
 ]
 
 // ─── productivity data ────────────────────────────────────────────────────────
@@ -190,31 +190,31 @@ const teamUtil = [
 ]
 
 const changeSuccessRate = [
-  { m: 'Jan', success: 94.2, failed: 5.8 },
-  { m: 'Feb', success: 94.8, failed: 5.2 },
-  { m: 'Mar', success: 95.4, failed: 4.6 },
-  { m: 'Apr', success: 95.8, failed: 4.2 },
-  { m: 'May', success: 96.2, failed: 3.8 },
-  { m: 'Jun', success: 96.6, failed: 3.4 },
+  { m: 'Jun', success: 94.2, failed: 5.8 },
+  { m: 'Jul', success: 94.8, failed: 5.2 },
+  { m: 'Aug', success: 95.4, failed: 4.6 },
+  { m: 'Sep', success: 95.8, failed: 4.2 },
+  { m: 'Oct', success: 96.2, failed: 3.8 },
+  { m: 'Nov', success: 96.6, failed: 3.4 },
 ]
 
 // ─── vendor & SLA data ─────────────────────────────────────────────────────
 const vendorContracts = [
-  { vendor: 'Ericsson',   domain: 'RAN / 5G SA',      value: 'BSD 42M', renewal: 'Q4-27', slaUptime: 99.95, actual: 99.94, nps: 72, rag: 'Amber' },
-  { vendor: 'Nokia',      domain: 'Transport / IP',   value: 'BSD 28M', renewal: 'Q2-27', slaUptime: 99.99, actual: 99.99, nps: 68, rag: 'Green' },
-  { vendor: 'Cisco',      domain: 'DOCSIS / CMTS',    value: 'BSD 18M', renewal: 'Q1-26', slaUptime: 99.90, actual: 99.87, nps: 54, rag: 'Red'   },
-  { vendor: 'Huawei',     domain: 'RAN legacy',       value: 'BSD 12M', renewal: 'Q3-27', slaUptime: 99.90, actual: 99.92, nps: 60, rag: 'Green' },
-  { vendor: 'Cerillion',  domain: 'BSS / Billing',    value: 'BSD 8M',  renewal: 'Q2-28', slaUptime: 99.95, actual: 99.94, nps: 62, rag: 'Amber' },
-  { vendor: 'ServiceNow', domain: 'ITSM / Platform',  value: 'BSD 4M',  renewal: 'Q4-27', slaUptime: 99.99, actual: 99.99, nps: 76, rag: 'Green' },
+  { vendor: 'Ericsson',   domain: 'RAN / 5G SA',      value: 'BSD 42M', renewal: 'Q2-28', slaUptime: 99.95, actual: 99.94, nps: 72, rag: 'Amber' },
+  { vendor: 'Nokia',      domain: 'Transport / IP',   value: 'BSD 28M', renewal: 'Q4-27', slaUptime: 99.99, actual: 99.99, nps: 68, rag: 'Green' },
+  { vendor: 'Cisco',      domain: 'DOCSIS / CMTS',    value: 'BSD 18M', renewal: 'Q3-26', slaUptime: 99.90, actual: 99.87, nps: 54, rag: 'Red'   },
+  { vendor: 'Huawei',     domain: 'RAN legacy',       value: 'BSD 12M', renewal: 'Q1-28', slaUptime: 99.90, actual: 99.92, nps: 60, rag: 'Green' },
+  { vendor: 'Cerillion',  domain: 'BSS / Billing',    value: 'BSD 8M',  renewal: 'Q4-28', slaUptime: 99.95, actual: 99.94, nps: 62, rag: 'Amber' },
+  { vendor: 'ServiceNow', domain: 'ITSM / Platform',  value: 'BSD 4M',  renewal: 'Q2-28', slaUptime: 99.99, actual: 99.99, nps: 76, rag: 'Green' },
 ]
 
 const vendorNpsTrend = [
-  { m: 'Jan', ericsson: 74, nokia: 70, cisco: 58, cerillion: 64 },
-  { m: 'Feb', ericsson: 74, nokia: 71, cisco: 56, cerillion: 62 },
-  { m: 'Mar', ericsson: 75, nokia: 72, cisco: 55, cerillion: 64 },
-  { m: 'Apr', ericsson: 75, nokia: 70, cisco: 56, cerillion: 66 },
-  { m: 'May', ericsson: 76, nokia: 71, cisco: 55, cerillion: 64 },
-  { m: 'Jun', ericsson: 72, nokia: 68, cisco: 54, cerillion: 62 },
+  { m: 'Jun', ericsson: 74, nokia: 70, cisco: 58, cerillion: 64 },
+  { m: 'Jul', ericsson: 74, nokia: 71, cisco: 56, cerillion: 62 },
+  { m: 'Aug', ericsson: 75, nokia: 72, cisco: 55, cerillion: 64 },
+  { m: 'Sep', ericsson: 75, nokia: 70, cisco: 56, cerillion: 66 },
+  { m: 'Oct', ericsson: 76, nokia: 71, cisco: 55, cerillion: 64 },
+  { m: 'Nov', ericsson: 72, nokia: 68, cisco: 54, cerillion: 62 },
 ]
 
 const vendorCreditPenalty = [
@@ -341,7 +341,7 @@ export default function COOPage() {
           <KpiCard label={tt('SLA credit exposure')}  value={`BSD ${NET.slaCreditExposureK}K`}     delta="this month"        trend="down" icon={ShieldCheck} />
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('NPS')}                  value={String(KPI.nps)}                  delta="+2 vs Q2-25"       trend="up"   icon={Target}      />
+          <KpiCard label={tt('NPS')}                  value={String(KPI.nps)}                  delta="+2 vs Q4-25"       trend="up"   icon={Target}      />
           <KpiCard label={tt('CIM this month')}       value={`${totalCim}K`}                   delta="target ≤ 80K"      trend="down" icon={AlertTriangle}/>
           <KpiCard label={tt('First-time fix')}       value="85.2%"                             delta="just hit target"   trend="up"   icon={CheckCircle} />
           <KpiCard label={tt('Capacity at-risk')}     value={`${nodesAtRisk} nodes`}            delta="above 85% threshold" trend="down" icon={Gauge}     />
@@ -404,7 +404,7 @@ export default function COOPage() {
       {/* ═══════ SERVICE HEALTH ═══════ */}
       {tab === 'svchealth' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('NPS Q2-26')}            value={String(KPI.nps)}   delta="+2 pts vs Q2-25"   trend="up"   icon={Target}       accent />
+          <KpiCard label={tt('NPS Q4-26')}            value={String(KPI.nps)}   delta="+2 pts vs Q4-25"   trend="up"   icon={Target}       accent />
           <KpiCard label={tt('CSAT (residential)')}   value="79.8%"             delta="+0.6 pp QoQ"        trend="up"   icon={CheckCircle}  />
           <KpiCard label={tt('SLA compliance avg')}   value="99.92%"            delta="4 of 6 services ✓" trend="up"   icon={ShieldCheck}  />
           <KpiCard label={tt('CIM (month)')}          value={`${totalCim}K`}    delta="target ≤ 80K"       trend="down" icon={AlertTriangle} />
@@ -419,7 +419,7 @@ export default function COOPage() {
 
         <div className="grid lg:grid-cols-3 gap-6 mb-6">
           <div className="lg:col-span-2">
-            <Panel title={tt('NPS & CSAT Trend · Quarterly')} insight={{ insight: 'NPS has reached an all-time high of 38 in Q2 2026, with CSAT improving to 79.8% driven by first-time-fix gains.', action: 'Protect the service delivery improvements driving FTF gains to sustain the NPS trajectory into H2.', impact: 'Continued NPS growth reduces churn risk and lowers cost-to-serve through fewer repeat-contact volumes.' }}>
+            <Panel title={tt('NPS & CSAT Trend · Quarterly')} insight={{ insight: 'NPS has reached an all-time high of 38 in Q4 2026, with CSAT improving to 79.8% driven by first-time-fix gains.', action: 'Protect the service delivery improvements driving FTF gains to sustain the NPS trajectory into H2.', impact: 'Continued NPS growth reduces churn risk and lowers cost-to-serve through fewer repeat-contact volumes.' }}>
               <div className="h-72">
                 <ResponsiveContainer>
                   <ComposedChart data={npsTrend}>
@@ -434,7 +434,7 @@ export default function COOPage() {
                   </ComposedChart>
                 </ResponsiveContainer>
               </div>
-              <div className="text-[11px] text-vfes-dark/55 mt-3">{tt('NPS at all-time high of 38. CSAT 79.8% improving steadily driven by first-time-fix gains and INC improvements in H2-25.')}</div>
+              <div className="text-[11px] text-vfes-dark/55 mt-3">{tt('NPS at all-time high of 38. CSAT 79.8% improving steadily driven by first-time-fix gains and INC improvements in H1-26.')}</div>
             </Panel>
           </div>
 
@@ -459,7 +459,7 @@ export default function COOPage() {
           </Panel>
         </div>
 
-        <Panel title={tt('SLA Performance by Service · Q2 2026')}>
+        <Panel title={tt('SLA Performance by Service · Q4 2026')}>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="text-left text-vfes-dark/55 text-[10px] uppercase tracking-widest">
@@ -767,11 +767,11 @@ export default function COOPage() {
         <Panel title={tt('Capacity Actions & Build Pipeline')}>
           <div className="space-y-2">
             {[
-              { node: 'DOCSIS Rural Out Islands — CMTS upgrade', action: tt('Approved Q3 CapEx BSD 4.8M · order placed with Cisco'), rag: 'Amber', eta: tt('Sep 2026') },
-              { node: 'Mobile 700 MHz — capacity pooling', action: tt('Carrier aggregation + Open RAN on 3 cells planned'), rag: 'Amber', eta: tt('Aug 2026') },
-              { node: 'Core Freeport — ROADM expansion', action: tt('400G wavelength provisioned · 16% headroom post-work'), rag: 'Green', eta: tt('Jul 2026') },
-              { node: 'OLT Nassau West — PON splitter add', action: tt('Works scheduled week of 7 Jul — low complexity'), rag: 'Green', eta: tt('Jul 2026') },
-              { node: 'FTTH South Ring — OLT pre-provision', action: tt('10G XGS-PON line cards ordered · fibre footprint build ahead'), rag: 'Green', eta: tt('Oct 2026') },
+              { node: 'DOCSIS Rural Out Islands — CMTS upgrade', action: tt('Approved Q3 CapEx BSD 4.8M · order placed with Cisco'), rag: 'Amber', eta: tt('Feb 2027') },
+              { node: 'Mobile 700 MHz — capacity pooling', action: tt('Carrier aggregation + Open RAN on 3 cells planned'), rag: 'Amber', eta: tt('Jan 2027') },
+              { node: 'Core Freeport — ROADM expansion', action: tt('400G wavelength provisioned · 16% headroom post-work'), rag: 'Green', eta: tt('Dec 2026') },
+              { node: 'OLT Nassau West — PON splitter add', action: tt('Works scheduled week of 7 Jul — low complexity'), rag: 'Green', eta: tt('Dec 2026') },
+              { node: 'FTTH South Ring — OLT pre-provision', action: tt('10G XGS-PON line cards ordered · fibre footprint build ahead'), rag: 'Green', eta: tt('Mar 2027') },
             ].map((a, i) => (
               <div key={i} className="border border-black/5 rounded-lg p-3 flex items-start gap-3">
                 <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded shrink-0 mt-0.5 ${ragColor(a.rag)}`}>{tt(a.rag)}</span>
@@ -815,7 +815,7 @@ export default function COOPage() {
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
-              <div className="text-[11px] text-vfes-dark/55 mt-3">{tt('Incident count declining trend H1 2026 — P3 down 37%, P2 down 33%, P1 down 50% vs Jan. AIOps alarm correlation and change-freeze discipline credited.')}</div>
+              <div className="text-[11px] text-vfes-dark/55 mt-3">{tt('Incident count declining trend H2 2026 — P3 down 37%, P2 down 33%, P1 down 50% vs Jan. AIOps alarm correlation and change-freeze discipline credited.')}</div>
             </Panel>
           </div>
 
@@ -980,7 +980,7 @@ export default function COOPage() {
           <KpiCard label={tt('Contracts active')}     value="6"      delta={tt('BSD 112M TCV')}              trend="flat" icon={ClipboardList}  accent />
           <KpiCard label={tt('SLA breaches (30d)')}   value="3"      delta={tt('Cisco CMTS dominant')}    trend="down" icon={AlertTriangle}  />
           <KpiCard label={tt('Credit exposure')}       value="BSD 120K"  delta={tt('Cisco + Ericsson')}       trend="down" icon={ShieldCheck}    />
-          <KpiCard label={tt('Renewals in 12mo')}      value="2"      delta={tt('Cisco Q1-26 critical')}   trend="flat" icon={Target}         />
+          <KpiCard label={tt('Renewals in 12mo')}      value="2"      delta={tt('Cisco Q3-26 critical')}   trend="flat" icon={Target}         />
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           <KpiCard label={tt('On-time deliveries')}    value="94%"    delta={tt('vs 95% SLA target')}      trend="up"   icon={CheckCircle}   />
@@ -1063,7 +1063,7 @@ export default function COOPage() {
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="mt-2 text-[10px] text-vfes-dark/55">{tt('Cisco at BSD 84K accrued — remediation plan requested. Renewal negotiation starts Q4-25.')}</div>
+            <div className="mt-2 text-[10px] text-vfes-dark/55">{tt('Cisco at BSD 84K accrued — remediation plan requested. Renewal negotiation starts Q2-26.')}</div>
           </Panel>
         </div>
 
@@ -1072,9 +1072,9 @@ export default function COOPage() {
             <div className="space-y-3">
               {[
                 { vendor: 'Cisco',      action: tt('Invoke SLA remedy clause — formal letter issued 28 Jun'), risk: 'High',   due: 'Jul 10' },
-                { vendor: 'Ericsson',   action: tt('5G SA augmentation order — pending board sign-off'),       risk: 'Medium', due: 'Jun 28' },
+                { vendor: 'Ericsson',   action: tt('5G SA augmentation order — pending board sign-off'),       risk: 'Medium', due: 'Nov 28' },
                 { vendor: 'Cerillion',  action: tt('BSS migration go/no-go gate review'),                      risk: 'Medium', due: 'Jul 19' },
-                { vendor: 'Nokia',      action: tt('400G ROADM expansion — works confirmed Jul 2026'),         risk: 'Low',    due: 'Jul 14' },
+                { vendor: 'Nokia',      action: tt('400G ROADM expansion — works confirmed Dec 2026'),         risk: 'Low',    due: 'Jul 14' },
                 { vendor: 'ServiceNow', action: tt('ITSM upgrade change-freeze window scheduled'),              risk: 'Low',    due: 'Aug 4'  },
               ].map((a, i) => (
                 <div key={i} className="border border-black/5 rounded-lg p-3 flex items-start gap-3">

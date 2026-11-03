@@ -172,9 +172,9 @@ const competitive = [
 const servicefails = [
   { region: 'Nassau North',  fails: 1240, ftthEta: 'Live',     pct: 4 },
   { region: 'Nassau South',  fails:  860, ftthEta: 'Live',     pct: 3 },
-  { region: 'Freeport',          fails: 2480, ftthEta: 'Q3 26',    pct: 14 },
-  { region: 'Abaco',         fails: 1840, ftthEta: 'Q4 26',    pct: 18 },
-  { region: 'Eleuthera',         fails: 1120, ftthEta: 'Q3 26',    pct: 16 },
+  { region: 'Freeport',          fails: 2480, ftthEta: 'Q1 27',    pct: 14 },
+  { region: 'Abaco',         fails: 1840, ftthEta: 'Q2 27',    pct: 18 },
+  { region: 'Eleuthera',         fails: 1120, ftthEta: 'Q1 27',    pct: 16 },
   { region: 'Exuma',        fails:  640, ftthEta: 'Live',     pct: 8 },
   { region: 'Rural Exuma',  fails: 4280, ftthEta: '2027+',    pct: 42 },
   { region: 'Rural Out Islands', fails: 3640, ftthEta: '2027+',    pct: 38 },
@@ -213,7 +213,7 @@ const actionQueue = [
   { type: 'Pause',       priority: 'P1', title: 'TikTok prospecting campaign',          impact: 'BSD 3.2K saved', why: 'CAC BSD 46 vs BSD 14 paid search · 0.62% conv', play: 'Pause until creative refresh', owner: 'Performance', cta: 'Pause now' },
   { type: 'Match',       priority: 'P0', title: 'Rival ISP B 12-mo BSD 39 deal',                  impact: 'BSD 420K LTV/Q', why: 'Lost 38% of 500Mb price-sensitive prospects', play: 'Launch 12-mo BSD 42 + BSD 0 install', owner: 'Pricing', cta: 'Brief approval' },
   { type: 'Retarget',    priority: 'P1', title: '4,820 high-CLV cart abandoners',       impact: 'BSD 220K MRR/Q', why: 'CLV propensity > 0.7 · last 7d', play: 'Send personalised email + SMS reminder', owner: 'CRM', cta: 'Push to Marketing Cloud' },
-  { type: 'Defer',       priority: 'P2', title: 'Abaco / Freeport SEM spend',              impact: 'BSD 8K saved/wk', why: '14-18% serviceability fail · FTTH not until Q3-Q4 26', play: 'Reduce bids until coverage live', owner: 'Performance', cta: 'Adjust bids' },
+  { type: 'Defer',       priority: 'P2', title: 'Abaco / Freeport SEM spend',              impact: 'BSD 8K saved/wk', why: '14-18% serviceability fail · FTTH not until Q3-Q2 27', play: 'Reduce bids until coverage live', owner: 'Performance', cta: 'Adjust bids' },
   { type: 'Promote',     priority: 'P1', title: 'Postcode autocomplete v2 rollout',      impact: '+18.4% conv', why: '99% sig · winning experiment', play: 'Roll to 100% of traffic', owner: 'Web', cta: 'Promote variant' },
   { type: 'Stop',        priority: 'P0', title: 'MEGADEAL promo code',                  impact: 'BSD 280K margin', why: '−12.4BSD  margin/cust · 22% Day-90 churn', play: 'Retire code, replace with NEWCUST10', owner: 'CRM', cta: 'Retire code' },
 ]
@@ -256,12 +256,12 @@ const ATTRIBUTION_COMPARE = [
 ]
 
 const CHANNEL_EFFICIENCY = [
-  { m: 'Jan', email: 4.2, paid: 2.8, organic: 9.4, social: 1.4 },
-  { m: 'Feb', email: 4.4, paid: 2.9, organic: 9.6, social: 1.5 },
-  { m: 'Mar', email: 4.6, paid: 3.0, organic: 9.8, social: 1.4 },
-  { m: 'Apr', email: 4.8, paid: 2.7, organic: 10.2, social: 1.6 },
-  { m: 'May', email: 5.0, paid: 2.6, organic: 10.4, social: 1.5 },
-  { m: 'Jun', email: 5.2, paid: 2.5, organic: 10.6, social: 1.3 },
+  { m: 'Jun', email: 4.2, paid: 2.8, organic: 9.4, social: 1.4 },
+  { m: 'Jul', email: 4.4, paid: 2.9, organic: 9.6, social: 1.5 },
+  { m: 'Aug', email: 4.6, paid: 3.0, organic: 9.8, social: 1.4 },
+  { m: 'Sep', email: 4.8, paid: 2.7, organic: 10.2, social: 1.6 },
+  { m: 'Oct', email: 5.0, paid: 2.6, organic: 10.4, social: 1.5 },
+  { m: 'Nov', email: 5.2, paid: 2.5, organic: 10.6, social: 1.3 },
 ]
 
 // ---------------------------- Page ---------------------------- //

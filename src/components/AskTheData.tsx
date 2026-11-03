@@ -35,7 +35,7 @@ const SUGGESTIONS: Record<string, string[]> = {
     'Which Mobile-only customers are highest propensity to upgrade Convergent?',
   ],
   clv: [
-    'What is the average 3-year CLV for Gig1 customers acquired in Q1 2025?',
+    'What is the average 3-year CLV for Gig1 customers acquired in Q3 2025?',
     'How much CLV is at risk from customers with churn score above 0.8?',
     'Which product tier has the highest CLV-to-CAC ratio?',
     'Compare CLV between Mobile-only, Fixed-only and Convergent',
@@ -112,14 +112,14 @@ const ANSWERS: Record<string, Answer> = {
     summary: `Synthetic trailing-three-month revenue is **BSD ${QUARTER_REVENUE_M}M**. May revenue is **BSD ${FINANCE.monthlyRevenueM}M**. Bundled service revenue is allocated to fixed and mobile lanes, not counted a second time.`,
   },
   clv_gig1_q1: {
-    reasoning: 'Detected: metric=CLV, product=Gig1, cohort=Q1 2025 acquisition. Routing to CLV semantic view.',
+    reasoning: 'Detected: metric=CLV, product=Gig1, cohort=Q3 2025 acquisition. Routing to CLV semantic view.',
     mart: { db: 'CBL_ANALYTICS', schema: 'ML_OUTPUTS', view: 'CLV_FORECAST_36M', columns: ['CUSTOMER_ID', 'PRODUCT', 'ACQUISITION_QUARTER', 'PREDICTED_CLV_36M', 'CLV_TIER', 'CHURN_ADJUSTED_CLV'] },
     sql: `SELECT
   AVG(predicted_clv_36m) AS avg_clv,
   COUNT(*) AS customers
 FROM CBL_ANALYTICS.ML_OUTPUTS.CLV_FORECAST_36M
 WHERE product = 'GIG1'
-  AND acquisition_quarter = '2025-Q1';`,
+  AND acquisition_quarter = '2025-Q3';`,
     result: { type: 'table', columns: ['Metric', 'Value'], rows: [['Avg 3-yr CLV', 'BSD 2,684'], ['Customers in cohort', '8,420'], ['Churn-adjusted CLV', 'BSD 2,118'], ['Confidence interval', 'BSD 2,520 – BSD 2,848']] },
     chart: {
       type: 'bar',
@@ -133,7 +133,7 @@ WHERE product = 'GIG1'
         { q: '2025 Q1', clv: 2684 },
       ],
     },
-    summary: 'Average 3-year CLV for Gig1 customers acquired in **Q1 2025** is **BSD 2,684** across 8,420 customers, the highest of any recent cohort. Churn-adjusted CLV is BSD 2,118.',
+    summary: 'Average 3-year CLV for Gig1 customers acquired in **Q3 2025** is **BSD 2,684** across 8,420 customers, the highest of any recent cohort. Churn-adjusted CLV is BSD 2,118.',
   },
   clv_at_risk: {
     reasoning: 'Detected: at-risk CLV with threshold churn_score > 0.8. Joining CLV forecast with churn model outputs.',

@@ -82,12 +82,12 @@ const SLICE_UTIL = [
 ]
 
 const SIGNALLING_TREND = [
-  { m: 'Jan', amfTPS: 12400, smfTPS: 11800, peak: 14200 },
-  { m: 'Feb', amfTPS: 12800, smfTPS: 12200, peak: 14600 },
-  { m: 'Mar', amfTPS: 13200, smfTPS: 12600, peak: 15200 },
-  { m: 'Apr', amfTPS: 13600, smfTPS: 13000, peak: 15800 },
-  { m: 'May', amfTPS: 14000, smfTPS: 13400, peak: 16200 },
-  { m: 'Jun', amfTPS: 14200, smfTPS: 13800, peak: 16800 },
+  { m: 'Jun', amfTPS: 12400, smfTPS: 11800, peak: 14200 },
+  { m: 'Jul', amfTPS: 12800, smfTPS: 12200, peak: 14600 },
+  { m: 'Aug', amfTPS: 13200, smfTPS: 12600, peak: 15200 },
+  { m: 'Sep', amfTPS: 13600, smfTPS: 13000, peak: 15800 },
+  { m: 'Oct', amfTPS: 14000, smfTPS: 13400, peak: 16200 },
+  { m: 'Nov', amfTPS: 14200, smfTPS: 13800, peak: 16800 },
 ]
 
 const CAPACITY_HEADROOM = [
@@ -98,19 +98,19 @@ const CAPACITY_HEADROOM = [
 ]
 
 const INCIDENT_LOG = [
-  { ts: '2026-06-14 14:02', nf: 'UPF', region: 'BRU', severity: 'P2', duration: '4 min',  impact: '14K sessions',  rca: 'Memory pressure — autoscale triggered' },
-  { ts: '2026-05-28 08:22', nf: 'AMF', region: 'GNT', severity: 'P3', duration: '2 min',  impact: '800 regs',      rca: 'Transport link flap — BGP reconverge'  },
-  { ts: '2026-05-12 21:45', nf: 'PCF', region: 'NAT', severity: 'P3', duration: '6 min',  impact: '2K policy miss', rca: 'Config push rollback delay'             },
-  { ts: '2026-04-30 10:12', nf: 'SMF', region: 'BRU', severity: 'P3', duration: '3 min',  impact: '1K sessions',   rca: 'DB failover — secondary activated'      },
+  { ts: '2026-11-14 14:02', nf: 'UPF', region: 'BRU', severity: 'P2', duration: '4 min',  impact: '14K sessions',  rca: 'Memory pressure — autoscale triggered' },
+  { ts: '2026-10-28 08:22', nf: 'AMF', region: 'GNT', severity: 'P3', duration: '2 min',  impact: '800 regs',      rca: 'Transport link flap — BGP reconverge'  },
+  { ts: '2026-10-12 21:45', nf: 'PCF', region: 'NAT', severity: 'P3', duration: '6 min',  impact: '2K policy miss', rca: 'Config push rollback delay'             },
+  { ts: '2026-09-30 10:12', nf: 'SMF', region: 'BRU', severity: 'P3', duration: '3 min',  impact: '1K sessions',   rca: 'DB failover — secondary activated'      },
 ]
 
 const CORE_ROADMAP = [
-  { initiative: '5G SA nationwide rollout',     horizon: 'H1-2026', invest: 'BSD 84M', benefit: '5G latency SLA + enterprise slicing', status: 'Active',   pct: 72 },
-  { initiative: 'UPF scale-out (summer peak)',  horizon: 'Q3-2026', invest: 'BSD 2.4M', benefit: 'Prevents P2 during roaming surge',   status: 'Active',   pct: 80 },
-  { initiative: 'EPC sunset (2G/3G core)',      horizon: 'Q4-2028', invest: 'BSD 18M', benefit: 'OpEx −BSD 1.8M/yr · simplify core',     status: 'Planning', pct: 18 },
-  { initiative: 'Cloud-native NF migration',    horizon: 'H2-2026', invest: 'BSD 48M', benefit: 'OpEx −24% · energy −18%',             status: 'Active',   pct: 44 },
-  { initiative: 'VoNR rollout (IMS-on-5GC)',    horizon: 'Q4-2026', invest: 'BSD 12M', benefit: 'HD voice · VoNR adoption to 60%',    status: 'Active',   pct: 34 },
-  { initiative: 'Open RAN CU/DU cloud-native',  horizon: 'H2-2027', invest: 'BSD 32M', benefit: 'Vendor diversity + OpEx −18%',        status: 'Planning', pct: 12 },
+  { initiative: '5G SA nationwide rollout',     horizon: 'H2-2026', invest: 'BSD 84M', benefit: '5G latency SLA + enterprise slicing', status: 'Active',   pct: 72 },
+  { initiative: 'UPF scale-out (summer peak)',  horizon: 'Q1-2027', invest: 'BSD 2.4M', benefit: 'Prevents P2 during roaming surge',   status: 'Active',   pct: 80 },
+  { initiative: 'EPC sunset (2G/3G core)',      horizon: 'Q2-2029', invest: 'BSD 18M', benefit: 'OpEx −BSD 1.8M/yr · simplify core',     status: 'Planning', pct: 18 },
+  { initiative: 'Cloud-native NF migration',    horizon: 'H1-2027', invest: 'BSD 48M', benefit: 'OpEx −24% · energy −18%',             status: 'Active',   pct: 44 },
+  { initiative: 'VoNR rollout (IMS-on-5GC)',    horizon: 'Q2-2027', invest: 'BSD 12M', benefit: 'HD voice · VoNR adoption to 60%',    status: 'Active',   pct: 34 },
+  { initiative: 'Open RAN CU/DU cloud-native',  horizon: 'H1-2028', invest: 'BSD 32M', benefit: 'Vendor diversity + OpEx −18%',        status: 'Planning', pct: 12 },
 ]
 
 type TabId = 'health' | 'registration' | 'voice' | 'migration' | 'slicing' | 'capacity' | 'incidents' | 'roadmap'
@@ -590,7 +590,7 @@ export default function Core5GPage() {
             <div>
               <div className="text-xs uppercase tracking-widest font-bold text-vfes-dark mb-1">{tt('Voice strategy')}</div>
               <div className="text-sm text-vfes-dark/80">
-                {tt('VoNR is the 5G HD-voice cornerstone. Reaching 60% adoption by Q4-2026 requires IMS-on-5GC rollout to 80% of 5G SA cells. VoWiFi offload absorbs indoor-coverage gaps while rollout continues.')}</div>
+                {tt('VoNR is the 5G HD-voice cornerstone. Reaching 60% adoption by Q2-2027 requires IMS-on-5GC rollout to 80% of 5G SA cells. VoWiFi offload absorbs indoor-coverage gaps while rollout continues.')}</div>
             </div>
             <Link to="/portal/slicing" className="bg-vfes-red text-vfes-dark text-sm font-bold px-4 py-2 rounded-full hover:bg-vfes-red-dark flex items-center gap-2 shrink-0 ml-4">
               <Layers className="w-4 h-4" />{tt('Open Slicing →')}</Link>
@@ -816,7 +816,7 @@ export default function Core5GPage() {
             <KpiCard label={tt('P1 incidents MTD')}    value="0"    delta={tt('no critical core events')} trend="up"   icon={ShieldCheck} accent />
             <KpiCard label={tt('P2 incidents MTD')}    value="1"    delta={tt('UPF memory spike — 4 min')} trend="down" icon={AlertTriangle} />
             <KpiCard label={tt('P3 incidents MTD')}    value="3"    delta={tt('auto-resolved')} trend="flat" icon={Activity} />
-            <KpiCard label={tt('MTTD avg (minutes)')}  value="2.4"  delta={tt('−40% vs Q4-2025')} trend="up"   icon={TrendingUp} />
+            <KpiCard label={tt('MTTD avg (minutes)')}  value="2.4"  delta={tt('−40% vs Q2-2026')} trend="up"   icon={TrendingUp} />
           </div>
 
           <Panel title={tt('5G core incident log — last 90 days')}>
@@ -863,8 +863,8 @@ export default function Core5GPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             <KpiCard label={tt('Active initiatives')}    value="4"     delta={tt('of 6 programmes')} trend="up"   icon={Signal} accent />
             <KpiCard label={tt('Cloud-native NF progress')} value="44%" delta={tt('OpEx −24% target')} trend="up" icon={Cpu} />
-            <KpiCard label={tt('VoNR rollout progress')} value="34%"   delta={tt('target 60% by Q4-26')} trend="up" icon={Phone} />
-            <KpiCard label={tt('EPC sunset budget')}     value="BSD 18M"  delta={tt('Q4-2028 target')} trend="flat" icon={TrendingUp} />
+            <KpiCard label={tt('VoNR rollout progress')} value="34%"   delta={tt('target 60% by Q2-27')} trend="up" icon={Phone} />
+            <KpiCard label={tt('EPC sunset budget')}     value="BSD 18M"  delta={tt('Q2-2029 target')} trend="flat" icon={TrendingUp} />
           </div>
 
           <Panel title={tt('5G Core programme roadmap — FY2026–2027')}>

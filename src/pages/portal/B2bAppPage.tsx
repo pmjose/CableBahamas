@@ -36,17 +36,17 @@ const PRODUCTS = [
 ]
 
 const ADOPTION = [
-  { m: 'Jan', installs: 24, revM: 4.2, dau: 180 }, { m: 'Feb', installs: 28, revM: 4.8, dau: 212 },
-  { m: 'Mar', installs: 33, revM: 5.4, dau: 248 }, { m: 'Apr', installs: 39, revM: 6.1, dau: 294 },
-  { m: 'May', installs: 44, revM: 7.0, dau: 332 }, { m: 'Jun', installs: 49, revM: 8.2, dau: 372 },
+  { m: 'Jun', installs: 24, revM: 4.2, dau: 180 }, { m: 'Jul', installs: 28, revM: 4.8, dau: 212 },
+  { m: 'Aug', installs: 33, revM: 5.4, dau: 248 }, { m: 'Sep', installs: 39, revM: 6.1, dau: 294 },
+  { m: 'Oct', installs: 44, revM: 7.0, dau: 332 }, { m: 'Nov', installs: 49, revM: 8.2, dau: 372 },
 ]
 
 const VERSIONS = [
-  { ver: 'v3.2.0', date: '2026-06-01', note: 'Added presence insights · row-access policies',    consumers: 49 },
-  { ver: 'v3.1.0', date: '2026-04-12', note: 'SLA feed GA · usage-based metering',                consumers: 41 },
-  { ver: 'v3.0.0', date: '2026-02-20', note: 'Native App repackage · auto-fulfilment',            consumers: 33 },
-  { ver: 'v2.8.0', date: '2025-12-01', note: 'Multi-region support · SAML SSO',                  consumers: 24 },
-  { ver: 'v2.6.0', date: '2025-09-14', note: 'First public release · coverage data only',         consumers: 14 },
+  { ver: 'v3.2.0', date: '2026-11-01', note: 'Added presence insights · row-access policies',    consumers: 49 },
+  { ver: 'v3.1.0', date: '2026-09-12', note: 'SLA feed GA · usage-based metering',                consumers: 41 },
+  { ver: 'v3.0.0', date: '2026-07-20', note: 'Native App repackage · auto-fulfilment',            consumers: 33 },
+  { ver: 'v2.8.0', date: '2026-05-01', note: 'Multi-region support · SAML SSO',                  consumers: 24 },
+  { ver: 'v2.6.0', date: '2026-02-14', note: 'First public release · coverage data only',         consumers: 14 },
 ]
 
 const ORDERS = [
@@ -59,12 +59,12 @@ const ORDERS = [
 ]
 
 const TICKETS = [
-  { m: 'Jan', opened: 42, deflected: 28, resolved: 38, sla: 94 },
-  { m: 'Feb', opened: 38, deflected: 30, resolved: 35, sla: 95 },
-  { m: 'Mar', opened: 44, deflected: 34, resolved: 40, sla: 93 },
-  { m: 'Apr', opened: 31, deflected: 26, resolved: 29, sla: 97 },
-  { m: 'May', opened: 27, deflected: 22, resolved: 25, sla: 98 },
-  { m: 'Jun', opened: 22, deflected: 19, resolved: 21, sla: 99 },
+  { m: 'Jun', opened: 42, deflected: 28, resolved: 38, sla: 94 },
+  { m: 'Jul', opened: 38, deflected: 30, resolved: 35, sla: 95 },
+  { m: 'Aug', opened: 44, deflected: 34, resolved: 40, sla: 93 },
+  { m: 'Sep', opened: 31, deflected: 26, resolved: 29, sla: 97 },
+  { m: 'Oct', opened: 27, deflected: 22, resolved: 25, sla: 98 },
+  { m: 'Nov', opened: 22, deflected: 19, resolved: 21, sla: 99 },
 ]
 
 const NPS_BY_FEATURE = [
@@ -77,8 +77,8 @@ const NPS_BY_FEATURE = [
 ]
 
 const NPS_TREND = [
-  { m: 'Jan', nps: 58 }, { m: 'Feb', nps: 60 }, { m: 'Mar', nps: 62 },
-  { m: 'Apr', nps: 65 }, { m: 'May', nps: 68 }, { m: 'Jun', nps: 71 },
+  { m: 'Jun', nps: 58 }, { m: 'Jul', nps: 60 }, { m: 'Aug', nps: 62 },
+  { m: 'Sep', nps: 65 }, { m: 'Oct', nps: 68 }, { m: 'Nov', nps: 71 },
 ]
 
 const API_USAGE = [
@@ -96,12 +96,12 @@ const SSO_ADOPTION = [
 ]
 
 const FEATURE_USAGE = [
-  { m: 'Jan', coverage: 420, mobility: 280, sla: 96, iot: 42 },
-  { m: 'Feb', coverage: 480, mobility: 312, sla: 108, iot: 48 },
-  { m: 'Mar', coverage: 544, mobility: 360, sla: 124, iot: 58 },
-  { m: 'Apr', coverage: 612, mobility: 412, sla: 138, iot: 68 },
-  { m: 'May', coverage: 684, mobility: 468, sla: 152, iot: 82 },
-  { m: 'Jun', coverage: 762, mobility: 524, sla: 168, iot: 96 },
+  { m: 'Jun', coverage: 420, mobility: 280, sla: 96, iot: 42 },
+  { m: 'Jul', coverage: 480, mobility: 312, sla: 108, iot: 48 },
+  { m: 'Aug', coverage: 544, mobility: 360, sla: 124, iot: 58 },
+  { m: 'Sep', coverage: 612, mobility: 412, sla: 138, iot: 68 },
+  { m: 'Oct', coverage: 684, mobility: 468, sla: 152, iot: 82 },
+  { m: 'Nov', coverage: 762, mobility: 524, sla: 168, iot: 96 },
 ]
 
 const TICKET_TYPES = [
@@ -368,7 +368,7 @@ export default function B2bAppPage() {
               ],
               note: tt('+BSD 3.2M ARR if both beta products GA and usage model adopted'),
             }}
-            impact={tt('+BSD 3.2M ARR if roadmap executed in H2 2026')}
+            impact={tt('+BSD 3.2M ARR if roadmap executed in H1 2027')}
             risk={tt('IoT early GA may surface data quality issues — ensure QA')}
             linkTo="/portal/pricing-simulator"
             linkLabel={tt('Open Pricing simulator')}
@@ -381,7 +381,7 @@ export default function B2bAppPage() {
         <>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             <KpiCard label={tt('Cumulative installs')}   value="49"     delta={tt('+8 this quarter')}  trend="up" icon={Download}    accent />
-            <KpiCard label={tt('ARR (Jun 2026)')}        value="BSD 8.2M"  delta={tt('+96% YoY')}        trend="up" icon={TrendingUp} />
+            <KpiCard label={tt('ARR (Nov 2026)')}        value="BSD 8.2M"  delta={tt('+96% YoY')}        trend="up" icon={TrendingUp} />
             <KpiCard label={tt('Daily active users')}    value="372"    delta={tt('+40% QoQ')}         trend="up" icon={Users} />
             <KpiCard label={tt('Time-to-onboard')}       value="<15min" delta={tt('auto-fulfilment')}  trend="up" icon={Zap} />
           </div>
@@ -523,9 +523,9 @@ export default function B2bAppPage() {
             <div className="h-56">
               <ResponsiveContainer>
                 <BarChart data={[
-                  { q: 'Q4 25', selfServe: 14, api: 2, assisted: 6 },
-                  { q: 'Q1 26', selfServe: 21, api: 4, assisted: 5 },
-                  { q: 'Q2 26', selfServe: 38, api: 7, assisted: 4 },
+                  { q: 'Q2 26', selfServe: 14, api: 2, assisted: 6 },
+                  { q: 'Q3 26', selfServe: 21, api: 4, assisted: 5 },
+                  { q: 'Q4 26', selfServe: 38, api: 7, assisted: 4 },
                 ]}>
                   <CartesianGrid stroke="#eee" strokeDasharray="3 3" />
                   <XAxis dataKey="q" stroke="#999" fontSize={11} />
@@ -609,7 +609,7 @@ export default function B2bAppPage() {
               </ResponsiveContainer>
             </div>
             <div className="mt-3 text-xs text-vfes-dark/55">
-              {tt('Ticket volume trending down as portal self-service improves — target zero-touch resolution for 90%+ by Q4 2026.')}
+              {tt('Ticket volume trending down as portal self-service improves — target zero-touch resolution for 90%+ by Q2 2027.')}
             </div>
           </Panel>
 
@@ -750,7 +750,7 @@ export default function B2bAppPage() {
       {tab === 'sso-api' && (
         <>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <KpiCard label={tt('API calls (Jun 2026)')} value={`${(totalApiCalls / 1e6).toFixed(1)}M`} delta={tt('+28% MoM')} trend="up"   icon={Key}        accent />
+            <KpiCard label={tt('API calls (Nov 2026)')} value={`${(totalApiCalls / 1e6).toFixed(1)}M`} delta={tt('+28% MoM')} trend="up"   icon={Key}        accent />
             <KpiCard label={tt('SAML SSO adoption')}   value="62%"                                     delta={tt('of consumers')} trend="up"   icon={CheckCircle} />
             <KpiCard label={tt('API p99 latency')}     value="186ms"                                   delta={tt('mobility endpoint')} trend="flat" icon={Zap} />
             <KpiCard label={tt('API error rate')}      value="0.15%"                                   delta={tt('avg all endpoints')} trend="up" icon={Activity} />
@@ -759,7 +759,7 @@ export default function B2bAppPage() {
             <KpiCard label={tt('Active API keys')}     value="142"   delta={tt('across 49 consumers')} trend="up"   icon={Key} />
             <KpiCard label={tt('OAuth2 consumers')}    value="14"    delta={tt('29% of total')}         trend="up"   icon={CheckCircle} />
             <KpiCard label={tt('Password-only users')} value="5"     delta={tt('migration in progress')} trend="down" icon={AlertTriangle} />
-            <KpiCard label={tt('API SLA uptime')}      value="99.97%" delta={tt('Jun 2026')}           trend="up"   icon={TrendingUp} />
+            <KpiCard label={tt('API SLA uptime')}      value="99.97%" delta={tt('Nov 2026')}           trend="up"   icon={TrendingUp} />
           </div>
 
           <div className="flex items-center gap-3 mb-4">
@@ -848,8 +848,8 @@ export default function B2bAppPage() {
             <div className="h-56">
               <ResponsiveContainer>
                 <LineChart data={[
-                  { m: 'Jan', calls: 1240 }, { m: 'Feb', calls: 1480 }, { m: 'Mar', calls: 1820 },
-                  { m: 'Apr', calls: 2140 }, { m: 'May', calls: 2480 }, { m: 'Jun', calls: (totalApiCalls / 1000).toFixed(0) as any },
+                  { m: 'Jun', calls: 1240 }, { m: 'Jul', calls: 1480 }, { m: 'Aug', calls: 1820 },
+                  { m: 'Sep', calls: 2140 }, { m: 'Oct', calls: 2480 }, { m: 'Nov', calls: (totalApiCalls / 1000).toFixed(0) as any },
                 ]}>
                   <CartesianGrid stroke="#eee" strokeDasharray="3 3" />
                   <XAxis dataKey="m" stroke="#999" fontSize={11} />
@@ -876,9 +876,9 @@ export default function B2bAppPage() {
             <KpiCard label={tt('Feature drop-off rate')} value="8.4%"      delta={tt('–2.1 pp QoQ')}     trend="up"   icon={CheckCircle} />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <KpiCard label={tt('Coverage sessions')}    value="762"  delta={tt('Jun 2026')}           trend="up"   icon={Boxes} />
-            <KpiCard label={tt('Mobility sessions')}    value="524"  delta={tt('Jun 2026')}           trend="up"   icon={Activity} />
-            <KpiCard label={tt('SLA feed sessions')}    value="168"  delta={tt('Jun 2026')}           trend="up"   icon={BarChart2} />
+            <KpiCard label={tt('Coverage sessions')}    value="762"  delta={tt('Nov 2026')}           trend="up"   icon={Boxes} />
+            <KpiCard label={tt('Mobility sessions')}    value="524"  delta={tt('Nov 2026')}           trend="up"   icon={Activity} />
+            <KpiCard label={tt('SLA feed sessions')}    value="168"  delta={tt('Nov 2026')}           trend="up"   icon={BarChart2} />
             <KpiCard label={tt('IoT sessions')}         value="96"   delta={tt('+24% QoQ')}           trend="up"   icon={Zap} />
           </div>
 
@@ -939,7 +939,7 @@ export default function B2bAppPage() {
             </div>
           </Panel>
 
-          <Panel title={tt('Feature usage session growth — Jun 2026 totals')}>
+          <Panel title={tt('Feature usage session growth — Nov 2026 totals')}>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
@@ -974,7 +974,7 @@ export default function B2bAppPage() {
       {tab === 'versions' && (
         <>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <KpiCard label={tt('Current version')}     value="v3.2.0" delta={tt('Jun 2026')}           trend="up"   icon={Download}    accent />
+            <KpiCard label={tt('Current version')}     value="v3.2.0" delta={tt('Nov 2026')}           trend="up"   icon={Download}    accent />
             <KpiCard label={tt('Consumers on latest')} value="49"     delta={tt('all upgraded')}        trend="up"   icon={CheckCircle} />
             <KpiCard label={tt('Release cadence')}     value="6–8wk"  delta={tt('regular')}            trend="flat" icon={Clock} />
             <KpiCard label={tt('Versions in support')} value="3"      delta={tt('v3.0+ supported')}    trend="flat" icon={Download} />

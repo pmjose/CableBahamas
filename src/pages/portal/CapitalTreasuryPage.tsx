@@ -31,7 +31,7 @@ const DEBT_LADDER = [
 ]
 
 const LEVERAGE_TREND = Array.from({ length: 8 }, (_, i) => ({
-  q: ['Q1-25','Q2-25','Q3-25','Q4-25','Q1-26','Q2-26','Q3-26','Q4-26'][i],
+  q: ['Q3-25','Q4-25','Q1-26','Q2-26','Q3-26','Q4-26','Q1-27','Q2-27'][i],
   leverage: +(3.47 - i * 0.06).toFixed(2),
   covenant: 3.5,
 }))
@@ -62,15 +62,15 @@ const CASH_POOL = [
 ]
 
 const CASH_FORECAST = [
-  { m: 'Jan', actual: 22.5 as number | null, forecast: 22.8 },
-  { m: 'Feb', actual: 21.8 as number | null, forecast: 22.0 },
-  { m: 'Mar', actual: 23.4 as number | null, forecast: 23.2 },
-  { m: 'Apr', actual: 22.9 as number | null, forecast: 23.3 },
-  { m: 'May', actual: 23.6 as number | null, forecast: 23.9 },
-  { m: 'Jun', actual: 24.0 as number | null, forecast: 24.0 },
-  { m: 'Jul', actual: null,                  forecast: 24.6 },
-  { m: 'Aug', actual: null,                  forecast: 25.8 },
-  { m: 'Sep', actual: null,                  forecast: 25.1 },
+  { m: 'Jun', actual: 22.5 as number | null, forecast: 22.8 },
+  { m: 'Jul', actual: 21.8 as number | null, forecast: 22.0 },
+  { m: 'Aug', actual: 23.4 as number | null, forecast: 23.2 },
+  { m: 'Sep', actual: 22.9 as number | null, forecast: 23.3 },
+  { m: 'Oct', actual: 23.6 as number | null, forecast: 23.9 },
+  { m: 'Nov', actual: 24.0 as number | null, forecast: 24.0 },
+  { m: 'Dec', actual: null,                  forecast: 24.6 },
+  { m: 'Jan', actual: null,                  forecast: 25.8 },
+  { m: 'Feb', actual: null,                  forecast: 25.1 },
 ]
 
 const LIQUIDITY_WATERFALL = [
@@ -80,23 +80,23 @@ const LIQUIDITY_WATERFALL = [
   { item: 'Dividend payment',   value:    -6, type: 'neg' },
   { item: '2026 bond maturity', value:    -8, type: 'neg' },
   { item: 'Available RCF',      value:    35, type: 'rcf' },
-  { item: 'Planned bond Q3-26', value:    50, type: 'pos' },
+  { item: 'Planned bond Q1-27', value:    50, type: 'pos' },
 ]
 
 // ─── FX hedging book ──────────────────────────────────────────────────────────
 const FX_BOOK = [
   { pair: 'BSD/USD', notional: 18.0, hedgedRate: 1.000,  marketRate: 1.000,  mtm:  0.00, maturity: 'Peg',   type: 'Fixed peg' },
-  { pair: 'USD/GBP', notional:  1.2, hedgedRate: 0.791,  marketRate: 0.797,  mtm:  0.02, maturity: 'Q3-26', type: 'Forward' },
-  { pair: 'USD/CAD', notional:  0.8, hedgedRate: 1.362,  marketRate: 1.371,  mtm:  0.01, maturity: 'Q4-26', type: 'Forward' },
+  { pair: 'USD/GBP', notional:  1.2, hedgedRate: 0.791,  marketRate: 0.797,  mtm:  0.02, maturity: 'Q1-27', type: 'Forward' },
+  { pair: 'USD/CAD', notional:  0.8, hedgedRate: 1.362,  marketRate: 1.371,  mtm:  0.01, maturity: 'Q2-27', type: 'Forward' },
 ]
 
 const FX_PNL_TREND = [
-  { m: 'Jan', hedged: 0.04, unhedged: -0.12 },
-  { m: 'Feb', hedged: 0.03, unhedged: -0.08 },
-  { m: 'Mar', hedged: 0.05, unhedged:  0.14 },
-  { m: 'Apr', hedged: 0.07, unhedged: -0.06 },
-  { m: 'May', hedged: 0.06, unhedged:  0.18 },
-  { m: 'Jun', hedged: 0.08, unhedged: -0.14 },
+  { m: 'Jun', hedged: 0.04, unhedged: -0.12 },
+  { m: 'Jul', hedged: 0.03, unhedged: -0.08 },
+  { m: 'Aug', hedged: 0.05, unhedged:  0.14 },
+  { m: 'Sep', hedged: 0.07, unhedged: -0.06 },
+  { m: 'Oct', hedged: 0.06, unhedged:  0.18 },
+  { m: 'Nov', hedged: 0.08, unhedged: -0.14 },
 ]
 
 const IR_SENSITIVITY = [
@@ -119,20 +119,20 @@ const COVENANTS = [
 ]
 
 const COVENANT_TREND = [
-  { q: 'Q1-25', leverage: 3.47, icr: 4.1, ceiling: 3.5 },
-  { q: 'Q2-25', leverage: 3.41, icr: 4.2, ceiling: 3.5 },
-  { q: 'Q3-25', leverage: 3.35, icr: 4.3, ceiling: 3.5 },
-  { q: 'Q4-25', leverage: 3.29, icr: 4.4, ceiling: 3.5 },
-  { q: 'Q1-26', leverage: 3.23, icr: 4.5, ceiling: 3.5 },
-  { q: 'Q2-26', leverage: 3.17, icr: 4.6, ceiling: 3.5 },
+  { q: 'Q3-25', leverage: 3.47, icr: 4.1, ceiling: 3.5 },
+  { q: 'Q4-25', leverage: 3.41, icr: 4.2, ceiling: 3.5 },
+  { q: 'Q1-26', leverage: 3.35, icr: 4.3, ceiling: 3.5 },
+  { q: 'Q2-26', leverage: 3.29, icr: 4.4, ceiling: 3.5 },
+  { q: 'Q3-26', leverage: 3.23, icr: 4.5, ceiling: 3.5 },
+  { q: 'Q4-26', leverage: 3.17, icr: 4.6, ceiling: 3.5 },
 ]
 
 // ─── Funding plan ─────────────────────────────────────────────────────────────
 const FUNDING_PLAN = [
-  { instrument: 'BISX-listed green bond 7yr', amount:   50, purpose: 'Pre-finance 2030 bond wall',      timing: 'Q3-26', status: 'Planned'  },
-  { instrument: 'Bank term loan 5yr — CIBC FirstCaribbean (demo)', amount: 15, purpose: 'URCA spectrum fees / capex',                timing: 'Q4-26', status: 'Mandated' },
-  { instrument: 'RCF renewal BSD 35M (3+2) — RBC (demo)', amount: 35, purpose: 'Liquidity backstop renewal',      timing: 'Q1-27', status: 'Planning' },
-  { instrument: 'Private-placement bond 10yr', amount:   25, purpose: 'Residual 2030 need / extend tenor',  timing: 'H2-27', status: 'Planning' },
+  { instrument: 'BISX-listed green bond 7yr', amount:   50, purpose: 'Pre-finance 2030 bond wall',      timing: 'Q1-27', status: 'Planned'  },
+  { instrument: 'Bank term loan 5yr — CIBC FirstCaribbean (demo)', amount: 15, purpose: 'URCA spectrum fees / capex',                timing: 'Q2-27', status: 'Mandated' },
+  { instrument: 'RCF renewal BSD 35M (3+2) — RBC (demo)', amount: 35, purpose: 'Liquidity backstop renewal',      timing: 'Q3-27', status: 'Planning' },
+  { instrument: 'Private-placement bond 10yr', amount:   25, purpose: 'Residual 2030 need / extend tenor',  timing: 'H1-28', status: 'Planning' },
 ]
 
 const DEBT_PROFILE_TARGET = [
@@ -146,9 +146,9 @@ const DEBT_PROFILE_TARGET = [
 
 // ─── Rating agencies ──────────────────────────────────────────────────────────
 const RATING_AGENCIES = [
-  { agency: "S&P",    rating: 'BB',   outlook: 'Stable',   date: 'Mar 2026', keyMetric: 'Net debt/EBITDA 3.17×', triggerUp: 'Net debt/EBITDA < 2.75× sustained', triggerDown: 'Net debt/EBITDA > 3.75×'   },
-  { agency: 'Moodys', rating: 'Ba2',  outlook: 'Stable',   date: 'Feb 2026', keyMetric: 'FCF / debt 6.6%',       triggerUp: 'FCF / debt > 9% sustained',          triggerDown: 'FCF / debt < 4%'           },
-  { agency: 'Fitch',  rating: 'BB',   outlook: 'Stable',   date: 'Jan 2026', keyMetric: 'EBITDA margin 37.5%',   triggerUp: 'Upgrade if leverage < 2.75×',        triggerDown: 'Downgrade if leverage > 3.75×' },
+  { agency: "S&P",    rating: 'BB',   outlook: 'Stable',   date: 'Aug 2026', keyMetric: 'Net debt/EBITDA 3.17×', triggerUp: 'Net debt/EBITDA < 2.75× sustained', triggerDown: 'Net debt/EBITDA > 3.75×'   },
+  { agency: 'Moodys', rating: 'Ba2',  outlook: 'Stable',   date: 'Jul 2026', keyMetric: 'FCF / debt 6.6%',       triggerUp: 'FCF / debt > 9% sustained',          triggerDown: 'FCF / debt < 4%'           },
+  { agency: 'Fitch',  rating: 'BB',   outlook: 'Stable',   date: 'Jun 2026', keyMetric: 'EBITDA margin 37.5%',   triggerUp: 'Upgrade if leverage < 2.75×',        triggerDown: 'Downgrade if leverage > 3.75×' },
 ]
 
 const RATING_PEER = [
@@ -276,7 +276,7 @@ export default function CapitalTreasuryPage() {
         ]}
         agentBlurb="One treasury data model — cash, FX, debt, covenants — means the AI sees the full exposure picture before recommending any financing action."
         decision={{
-          title: 'Pre-finance the 2030 maturity wall with a BISX-listed green bond in Q3-26',
+          title: 'Pre-finance the 2030 maturity wall with a BISX-listed green bond in Q1-27',
           detail: 'The 2030 bond wall (BSD 70M) coincides with the URCA spectrum licence renewal. Pre-financing BSD 50M with a Q3 BISX-listed green bond while local pension and insurance demand is strong locks in an all-in cost near Bahamas Prime + 200bps, avoids a double-draw in 2030 and supports the stable BB rating.',
           impact: 'locks in cost · avoids 2030 double-draw · supports stable BB rating',
           risk: 'rate window — spreads have tightened only 7bps since Jan; act before local institutional allocations are committed',
@@ -307,7 +307,7 @@ export default function CapitalTreasuryPage() {
                 {tt('2030 maturity wall BSD 70M · BSD/USD at 1:1 peg (no FX risk) · residual GBP/CAD forwards MTM +BSD 0.03M · Fitch: BB Stable')}
               </div>
               <div className="text-xs text-amber-800 mt-1">
-                {tt('BISX-listed green bond Q3-26 mandate in progress — local investor roadshow booked. CIBC FirstCaribbean term loan BSD 15M (demo) approved by treasury committee.')}
+                {tt('BISX-listed green bond Q1-27 mandate in progress — local investor roadshow booked. CIBC FirstCaribbean term loan BSD 15M (demo) approved by treasury committee.')}
               </div>
             </div>
             <button onClick={() => setAlertDismissed(true)} className="text-[10px] text-amber-600 hover:underline shrink-0">
@@ -405,8 +405,8 @@ export default function CapitalTreasuryPage() {
                 <thead>
                   <tr className="text-left text-[10px] uppercase tracking-widest text-vfes-dark/55 border-b border-black/5">
                     <th className="py-2">{tt('Metric')}</th>
-                    <th className="text-right">{tt('Q2-26')}</th>
-                    <th className="text-right">{tt('Q2-25')}</th>
+                    <th className="text-right">{tt('Q4-26')}</th>
+                    <th className="text-right">{tt('Q4-25')}</th>
                     <th className="text-right">{tt('YoY change')}</th>
                     <th>{tt('Direction')}</th>
                   </tr>
@@ -449,7 +449,7 @@ export default function CapitalTreasuryPage() {
       {tab === 'liquidity' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Cash & equivalents')} value="BSD 24M" delta={tt('+BSD 1M QoQ')} trend="up" icon={DollarSign} accent />
-          <KpiCard label={tt('Undrawn RCF')} value="BSD 35M" delta={tt('expires Q1-27 · renewal planning')} trend="flat" icon={Lock} />
+          <KpiCard label={tt('Undrawn RCF')} value="BSD 35M" delta={tt('expires Q3-27 · renewal planning')} trend="flat" icon={Lock} />
           <KpiCard label={tt('Total liquidity')} value="BSD 59M" delta={tt('7.4× 12-month maturities')} trend="up" icon={PiggyBank} />
           <KpiCard label={tt('12m maturities')} value="BSD 8M" delta={tt('2026 bond only')} trend="flat" icon={AlertTriangle} />
         </div>
@@ -536,7 +536,7 @@ export default function CapitalTreasuryPage() {
           <KpiCard label={tt('Total gross debt')} value={`BSD ${totalDebt}M`} delta={tt('6 tranches · avg 5.4yr')} trend="flat" icon={Landmark} accent />
           <KpiCard label={tt('Avg coupon')} value="6.1%" delta={tt('blended all-in')} trend="flat" icon={Percent} />
           <KpiCard label={tt('2030 maturity wall')} value="BSD 70M" delta={tt('largest single tranche')} trend="down" icon={AlertTriangle} />
-          <KpiCard label={tt('Pre-financing status')} value="In progress" delta={tt('Q3-26 BISX bond mandate')} trend="up" icon={Target} />
+          <KpiCard label={tt('Pre-financing status')} value="In progress" delta={tt('Q1-27 BISX bond mandate')} trend="up" icon={Target} />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
@@ -594,7 +594,7 @@ export default function CapitalTreasuryPage() {
                     <td className={`text-right font-bold ${d.amt >= 60 ? 'text-amber-600' : 'text-vfes-dark'}`}>BSD {d.amt}M</td>
                     <td className="text-right font-mono text-sm">{d.coupon}%</td>
                     <td><span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded ${d.type === 'bond' ? 'bg-blue-100 text-blue-700' : 'bg-purple-100 text-purple-700'}`}>{tt(d.type)}</span></td>
-                    <td className="text-xs text-vfes-dark/65">{d.amt >= 60 ? tt('Pre-finance recommended') : d.year === '2026' ? tt('Q3-26 BISX bond in progress') : tt('Monitor — no action')}</td>
+                    <td className="text-xs text-vfes-dark/65">{d.amt >= 60 ? tt('Pre-finance recommended') : d.year === '2026' ? tt('Q1-27 BISX bond in progress') : tt('Monitor — no action')}</td>
                   </tr>
                 ))}
               </tbody>
@@ -609,7 +609,7 @@ export default function CapitalTreasuryPage() {
 
         <div className="mt-4 p-4 rounded-xl bg-gradient-to-br from-[#11567F]/10 to-transparent border border-[#11567F]/20">
           <div className="text-[10px] font-bold uppercase tracking-widest text-[#11567F] mb-1">{tt('Treasury alert')}</div>
-          <div className="text-sm text-vfes-dark/75">{tt('2030 wall (BSD 70M bond) coincides with the next URCA spectrum renewal cycle. Pre-financing BSD 50M with the Q3-26 BISX-listed green bond removes most of the refinancing risk and locks in current spreads (358bps over US Treasuries). Act before local institutional allocations close in August.')}</div>
+          <div className="text-sm text-vfes-dark/75">{tt('2030 wall (BSD 70M bond) coincides with the next URCA spectrum renewal cycle. Pre-financing BSD 50M with the Q1-27 BISX-listed green bond removes most of the refinancing risk and locks in current spreads (358bps over US Treasuries). Act before local institutional allocations close in August.')}</div>
           <div className="mt-2 flex items-center gap-3">
             <Link to="/portal/finance" className="text-xs font-bold text-[#11567F] hover:underline">{tt('Finance overview →')}</Link>
             <Link to="/portal/ma-simulator" className="text-xs font-bold text-[#11567F] hover:underline">{tt('M&A Simulator →')}</Link>
@@ -814,7 +814,7 @@ export default function CapitalTreasuryPage() {
           <KpiCard label={tt('Covenants passing')} value="6 / 6" delta={tt('all green · no breach risk')} trend="up" icon={Shield} accent />
           <KpiCard label={tt('Tightest headroom')} value="0.33×" delta={tt('leverage vs 3.5× ceiling')} trend="up" icon={AlertTriangle} />
           <KpiCard label={tt('Interest cover')} value="4.6×" delta={tt('vs 3.0× floor · +1.6× buffer')} trend="up" icon={Scale} />
-          <KpiCard label={tt('Next test date')} value="Q3-26" delta={tt('semi-annual covenant test')} trend="flat" icon={Activity} />
+          <KpiCard label={tt('Next test date')} value="Q1-27" delta={tt('semi-annual covenant test')} trend="flat" icon={Activity} />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
@@ -884,7 +884,7 @@ export default function CapitalTreasuryPage() {
           </div>
           <div className="text-[10px] text-vfes-dark/45 mt-2">{tt('Spread tightened 7bps in last 2 quarters — favourable window for Q3 BISX green bond issuance.')}</div>
         </Panel>
-        <div className="mt-3 text-[10px] text-vfes-dark/40">{tt('Last rating review: Apr 2026 · Next covenant test: Sep 2026 · BB Stable · BISX-listed')}</div>
+        <div className="mt-3 text-[10px] text-vfes-dark/40">{tt('Last rating review: Sep 2026 · Next covenant test: Feb 2027 · BB Stable · BISX-listed')}</div>
         <div className="mt-1 flex items-center gap-3 text-xs text-vfes-dark/50">
           <Link to="/portal/finance" className="font-semibold text-vfes-dark hover:underline">{tt('Finance →')}</Link>
           <span>·</span>
@@ -897,8 +897,8 @@ export default function CapitalTreasuryPage() {
       {/* ══════════════ FUNDING PLAN ══════════════════════════════════════════ */}
       {tab === 'funding-plan' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Planned issuances')} value="4" delta={tt('Q3-26 through H2-27')} trend="flat" icon={Zap} accent />
-          <KpiCard label={tt('Mandate in hand')} value="BSD 15M" delta={tt('CIBC FirstCaribbean term loan Q4-26 (demo)')} trend="up" icon={TrendingUp} />
+          <KpiCard label={tt('Planned issuances')} value="4" delta={tt('Q1-27 through H1-28')} trend="flat" icon={Zap} accent />
+          <KpiCard label={tt('Mandate in hand')} value="BSD 15M" delta={tt('CIBC FirstCaribbean term loan Q2-27 (demo)')} trend="up" icon={TrendingUp} />
           <KpiCard label={tt('Q3 BISX bond target')} value={`BSD ${newIssuanceAmt}M`} delta={tt('adjust with slider below')} trend="flat" icon={DollarSign} />
           <KpiCard label={tt('Residual 2030 need')} value={fundingNeed2030 === 0 ? tt('Fully covered') : `BSD ${fundingNeed2030}M`} delta={fundingNeed2030 === 0 ? tt('Pre-financed ✓') : tt('Still to fund')} trend={fundingNeed2030 === 0 ? 'up' : 'down'} icon={AlertTriangle} />
         </div>

@@ -48,18 +48,18 @@ const TOKEN_TIME = Array.from({ length: 30 }, (_, i) => ({
 }))
 
 const SPEND_TREND = [
-  { m: 'Jan', actual: 4200, forecast: undefined as number | undefined, budget: 12000 },
-  { m: 'Feb', actual: 4980, forecast: undefined, budget: 12000 },
-  { m: 'Mar', actual: 5760, forecast: undefined, budget: 12000 },
-  { m: 'Apr', actual: 6540, forecast: undefined, budget: 12000 },
-  { m: 'May', actual: 7320, forecast: undefined, budget: 12000 },
-  { m: 'Jun', actual: 8040, forecast: 8040,      budget: 12000 },
-  { m: 'Jul', actual: undefined, forecast: 8960,  budget: 12000 },
-  { m: 'Aug', actual: undefined, forecast: 9880,  budget: 12000 },
-  { m: 'Sep', actual: undefined, forecast: 10800, budget: 12000 },
-  { m: 'Oct', actual: undefined, forecast: 11720, budget: 12000 },
-  { m: 'Nov', actual: undefined, forecast: 12640, budget: 12000 },
-  { m: 'Dec', actual: undefined, forecast: 13560, budget: 12000 },
+  { m: 'Jun', actual: 4200, forecast: undefined as number | undefined, budget: 12000 },
+  { m: 'Jul', actual: 4980, forecast: undefined, budget: 12000 },
+  { m: 'Aug', actual: 5760, forecast: undefined, budget: 12000 },
+  { m: 'Sep', actual: 6540, forecast: undefined, budget: 12000 },
+  { m: 'Oct', actual: 7320, forecast: undefined, budget: 12000 },
+  { m: 'Nov', actual: 8040, forecast: 8040,      budget: 12000 },
+  { m: 'Dec', actual: undefined, forecast: 8960,  budget: 12000 },
+  { m: 'Jan', actual: undefined, forecast: 9880,  budget: 12000 },
+  { m: 'Feb', actual: undefined, forecast: 10800, budget: 12000 },
+  { m: 'Mar', actual: undefined, forecast: 11720, budget: 12000 },
+  { m: 'Apr', actual: undefined, forecast: 12640, budget: 12000 },
+  { m: 'May', actual: undefined, forecast: 13560, budget: 12000 },
 ]
 
 const FORECAST_30 = Array.from({ length: 30 }, (_, i) => ({

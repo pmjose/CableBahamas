@@ -53,9 +53,9 @@ const DATA_PRODUCTS = [
 ]
 
 const READER_ACCOUNTS = [
-  { account: 'MediaCo-Viewer',   created: '2024-01', tables: 4, refreshes: 180, cost: 'BSD 1.2K/mo', status: 'active' },
-  { account: 'RetailPartner-RO', created: '2024-03', tables: 2, refreshes: 90,  cost: 'BSD 0.8K/mo', status: 'active' },
-  { account: 'Regulator-URCA',   created: '2023-11', tables: 8, refreshes: 12,  cost: '—',         status: 'active' },
+  { account: 'MediaCo-Viewer',   created: '2024-06', tables: 4, refreshes: 180, cost: 'BSD 1.2K/mo', status: 'active' },
+  { account: 'RetailPartner-RO', created: '2024-08', tables: 2, refreshes: 90,  cost: 'BSD 0.8K/mo', status: 'active' },
+  { account: 'Regulator-URCA',   created: '2024-04', tables: 8, refreshes: 12,  cost: '—',         status: 'active' },
 ]
 
 const ICEBERG_SHARES = [
@@ -66,30 +66,30 @@ const ICEBERG_SHARES = [
 ]
 
 const GOVERNANCE_CHECKS = [
-  { check: 'PII scan — all outbound listings',    result: 'Pass',  last: '2026-06-28', owner: 'CDO Office' },
-  { check: 'Secure share encryption audit',        result: 'Pass',  last: '2026-06-20', owner: 'Security'   },
-  { check: 'Marketplace T&C compliance',           result: 'Pass',  last: '2026-05-31', owner: 'Legal'      },
-  { check: 'Data residency (Bahamas / US-East)',             result: 'Pass',  last: '2026-06-01', owner: 'DPO'        },
-  { check: 'Consumer access review (semi-annual)', result: 'Pass',  last: '2026-04-30', owner: 'Data Gov'   },
-  { check: 'Reader account activity audit',        result: 'Watch', last: '2026-06-15', owner: 'Ops'        },
+  { check: 'PII scan — all outbound listings',    result: 'Pass',  last: '2026-11-28', owner: 'CDO Office' },
+  { check: 'Secure share encryption audit',        result: 'Pass',  last: '2026-11-20', owner: 'Security'   },
+  { check: 'Marketplace T&C compliance',           result: 'Pass',  last: '2026-10-31', owner: 'Legal'      },
+  { check: 'Data residency (Bahamas / US-East)',             result: 'Pass',  last: '2026-11-01', owner: 'DPO'        },
+  { check: 'Consumer access review (semi-annual)', result: 'Pass',  last: '2026-09-30', owner: 'Data Gov'   },
+  { check: 'Reader account activity audit',        result: 'Watch', last: '2026-11-15', owner: 'Ops'        },
 ]
 
 const MRR_TREND = [
-  { m: 'Jan', mrr: 42, target: 50 }, { m: 'Feb', mrr: 46, target: 52 },
-  { m: 'Mar', mrr: 50, target: 54 }, { m: 'Apr', mrr: 54, target: 56 },
-  { m: 'May', mrr: 57, target: 58 }, { m: 'Jun', mrr: 60, target: 60 },
+  { m: 'Jun', mrr: 42, target: 50 }, { m: 'Jul', mrr: 46, target: 52 },
+  { m: 'Aug', mrr: 50, target: 54 }, { m: 'Sep', mrr: 54, target: 56 },
+  { m: 'Oct', mrr: 57, target: 58 }, { m: 'Nov', mrr: 60, target: 60 },
 ]
 
 const CONSUMER_GROWTH = [
-  { m: 'Jan', total: 162, paid: 21 }, { m: 'Feb', total: 171, paid: 20 },
-  { m: 'Mar', total: 182, paid: 20 }, { m: 'Apr', total: 191, paid: 21 },
-  { m: 'May', total: 200, paid: 22 }, { m: 'Jun', total: 207, paid: 23 },
+  { m: 'Jun', total: 162, paid: 21 }, { m: 'Jul', total: 171, paid: 20 },
+  { m: 'Aug', total: 182, paid: 20 }, { m: 'Sep', total: 191, paid: 21 },
+  { m: 'Oct', total: 200, paid: 22 }, { m: 'Nov', total: 207, paid: 23 },
 ]
 
 const SHARE_VOL_TREND = [
-  { m: 'Jan', out: 5, inb: 4 }, { m: 'Feb', out: 5, inb: 5 },
-  { m: 'Mar', out: 5, inb: 5 }, { m: 'Apr', out: 5, inb: 6 },
-  { m: 'May', out: 5, inb: 6 }, { m: 'Jun', out: 5, inb: 6 },
+  { m: 'Jun', out: 5, inb: 4 }, { m: 'Jul', out: 5, inb: 5 },
+  { m: 'Aug', out: 5, inb: 5 }, { m: 'Sep', out: 5, inb: 6 },
+  { m: 'Oct', out: 5, inb: 6 }, { m: 'Nov', out: 5, inb: 6 },
 ]
 
 const REVENUE_BY_TYPE = [
@@ -98,8 +98,8 @@ const REVENUE_BY_TYPE = [
 ]
 
 const INBOUND_COST_TREND = [
-  { m: 'Jan', cost: 4.2 }, { m: 'Feb', cost: 4.8 }, { m: 'Mar', cost: 4.9 },
-  { m: 'Apr', cost: 5.0 }, { m: 'May', cost: 5.1 }, { m: 'Jun', cost: 5.2 },
+  { m: 'Jun', cost: 4.2 }, { m: 'Jul', cost: 4.8 }, { m: 'Aug', cost: 4.9 },
+  { m: 'Sep', cost: 5.0 }, { m: 'Oct', cost: 5.1 }, { m: 'Nov', cost: 5.2 },
 ]
 
 const CONSUMER_REGIONS = [
@@ -109,12 +109,12 @@ const CONSUMER_REGIONS = [
 ]
 
 const REVENUE_FORECAST = [
-  { m: 'Jan', mrr: 42, fcast: null }, { m: 'Feb', mrr: 46, fcast: null },
-  { m: 'Mar', mrr: 50, fcast: null }, { m: 'Apr', mrr: 54, fcast: null },
-  { m: 'May', mrr: 57, fcast: null }, { m: 'Jun', mrr: 60, fcast: 60  },
-  { m: 'Jul', mrr: null, fcast: 64 }, { m: 'Aug', mrr: null, fcast: 68 },
-  { m: 'Sep', mrr: null, fcast: 72 }, { m: 'Oct', mrr: null, fcast: 76 },
-  { m: 'Nov', mrr: null, fcast: 80 }, { m: 'Dec', mrr: null, fcast: 85 },
+  { m: 'Jun', mrr: 42, fcast: null }, { m: 'Jul', mrr: 46, fcast: null },
+  { m: 'Aug', mrr: 50, fcast: null }, { m: 'Sep', mrr: 54, fcast: null },
+  { m: 'Oct', mrr: 57, fcast: null }, { m: 'Nov', mrr: 60, fcast: 60  },
+  { m: 'Dec', mrr: null, fcast: 64 }, { m: 'Jan', mrr: null, fcast: 68 },
+  { m: 'Feb', mrr: null, fcast: 72 }, { m: 'Mar', mrr: null, fcast: 76 },
+  { m: 'Apr', mrr: null, fcast: 80 }, { m: 'May', mrr: null, fcast: 85 },
 ]
 
 const MARKETPLACE_DL = [

@@ -175,7 +175,7 @@ export default function PortalLayout() {
         </header>
 
         <div className="px-4 py-2 text-xs bg-amber-50 text-amber-950 border-b border-amber-200">
-          Synthetic demo data · baseline 31 May 2026. CEO snapshot, finance headlines and shared subscription/site totals use one baseline. Other panels are independent planning scenarios, not additive company results. No live data or legal guidance.
+          Synthetic demo data · baseline 31 October 2026. CEO snapshot, finance headlines and shared subscription/site totals use one baseline. Other panels are independent planning scenarios, not additive company results. No live data or legal guidance.
         </div>
         <main className="flex-1 overflow-y-auto scrollbar-thin">
           <ErrorBoundary key={location.pathname}>

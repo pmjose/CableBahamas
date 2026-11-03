@@ -1,4 +1,4 @@
-export const SCENARIO_DATE = '2026-05-31'
+export const SCENARIO_DATE = '2026-10-31'
 export const round = (value: number, decimals = 2) => Number(value.toFixed(decimals))
 
 export const COMMERCIAL_BASE = {
@@ -35,7 +35,7 @@ export const FINANCE = {
   cashM: 24,
 } as const
 
-export const FINANCE_TREND = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'].map((month, index) => {
+export const FINANCE_TREND = ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'].map((month, index) => {
   const revenue = round(FINANCE.monthlyRevenueM * (0.89 + index * 0.01))
   const ebitda = round(revenue * 0.375)
   return { m: month, revenue, ebitda, plan: round(revenue * 1.02), ocf: round(3.2 * revenue / 12), capex: -2, fcf: round(3.2 * revenue / 12 - 2) }

@@ -81,12 +81,12 @@ const IMPACT = [
 ]
 
 const COVERAGE_TREND = [
-  { m: 'Jan', coverage: 72, edges: 34200, objects: 1180 },
-  { m: 'Feb', coverage: 74, edges: 35100, objects: 1200 },
-  { m: 'Mar', coverage: 76, edges: 35800, objects: 1220 },
-  { m: 'Apr', coverage: 77, edges: 36400, objects: 1244 },
-  { m: 'May', coverage: 79, edges: 37200, objects: 1264 },
-  { m: 'Jun', coverage: 81, edges: 38412, objects: 1284 },
+  { m: 'Jun', coverage: 72, edges: 34200, objects: 1180 },
+  { m: 'Jul', coverage: 74, edges: 35100, objects: 1200 },
+  { m: 'Aug', coverage: 76, edges: 35800, objects: 1220 },
+  { m: 'Sep', coverage: 77, edges: 36400, objects: 1244 },
+  { m: 'Oct', coverage: 79, edges: 37200, objects: 1264 },
+  { m: 'Nov', coverage: 81, edges: 38412, objects: 1284 },
 ]
 
 const FRESHNESS_DATA = [

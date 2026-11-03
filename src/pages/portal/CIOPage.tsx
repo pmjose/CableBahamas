@@ -72,18 +72,18 @@ const slos = [
 ]
 
 const errorBudget = [
-  { m: 'Jan', burn: 24, budget: 100 }, { m: 'Feb', burn: 18, budget: 100 },
-  { m: 'Mar', burn: 12, budget: 100 }, { m: 'Apr', burn: 8,  budget: 100 },
-  { m: 'May', burn: 14, budget: 100 }, { m: 'Jun', burn: 12.4, budget: 100 },
+  { m: 'Jun', burn: 24, budget: 100 }, { m: 'Jul', burn: 18, budget: 100 },
+  { m: 'Aug', burn: 12, budget: 100 }, { m: 'Sep', burn: 8,  budget: 100 },
+  { m: 'Oct', burn: 14, budget: 100 }, { m: 'Nov', burn: 12.4, budget: 100 },
 ]
 
 const incidentTrend = [
-  { m: 'Jan', p1: 2, p2: 8,  p3: 24, mttr: 42 },
-  { m: 'Feb', p1: 1, p2: 6,  p3: 20, mttr: 38 },
-  { m: 'Mar', p1: 2, p2: 7,  p3: 18, mttr: 36 },
-  { m: 'Apr', p1: 0, p2: 5,  p3: 14, mttr: 32 },
-  { m: 'May', p1: 1, p2: 6,  p3: 16, mttr: 34 },
-  { m: 'Jun', p1: 0, p2: 4,  p3: 12, mttr: 28 },
+  { m: 'Jun', p1: 2, p2: 8,  p3: 24, mttr: 42 },
+  { m: 'Jul', p1: 1, p2: 6,  p3: 20, mttr: 38 },
+  { m: 'Aug', p1: 2, p2: 7,  p3: 18, mttr: 36 },
+  { m: 'Sep', p1: 0, p2: 5,  p3: 14, mttr: 32 },
+  { m: 'Oct', p1: 1, p2: 6,  p3: 16, mttr: 34 },
+  { m: 'Nov', p1: 0, p2: 4,  p3: 12, mttr: 28 },
 ]
 
 // ─── Data Engineering ─────────────────────────────────────────────────────────
@@ -139,12 +139,12 @@ const creditsByTeam = [
 ]
 
 const creditsTrend = [
-  { m: 'Jan', actual: 9.8,  budget: 10.2, optimised: 9.8  },
-  { m: 'Feb', actual: 10.4, budget: 10.2, optimised: 8.6  },
-  { m: 'Mar', actual: 11.1, budget: 10.5, optimised: 8.9  },
-  { m: 'Apr', actual: 10.7, budget: 10.5, optimised: 8.4  },
-  { m: 'May', actual: 9.6,  budget: 10.8, optimised: 7.8  },
-  { m: 'Jun', actual: 8.4,  budget: 10.8, optimised: 7.2  },
+  { m: 'Jun', actual: 9.8,  budget: 10.2, optimised: 9.8  },
+  { m: 'Jul', actual: 10.4, budget: 10.2, optimised: 8.6  },
+  { m: 'Aug', actual: 11.1, budget: 10.5, optimised: 8.9  },
+  { m: 'Sep', actual: 10.7, budget: 10.5, optimised: 8.4  },
+  { m: 'Oct', actual: 9.6,  budget: 10.8, optimised: 7.8  },
+  { m: 'Nov', actual: 8.4,  budget: 10.8, optimised: 7.2  },
 ]
 
 const warehouseSpend = [
@@ -160,12 +160,12 @@ const warehouseSpend = [
 
 // ─── Security & Identity data ─────────────────────────────────────────────────
 const iamPlatform = [
-  { group: 'Admins (ACCOUNTADMIN)',   n: 4,    mfa: '100%', pam: true,  lastReview: '2026-06-01', risk: 'Low'    },
-  { group: 'Data Platform owners',    n: 12,   mfa: '100%', pam: true,  lastReview: '2026-06-15', risk: 'Low'    },
-  { group: 'Data Engineers',          n: 38,   mfa: '100%', pam: false, lastReview: '2026-06-01', risk: 'Low'    },
-  { group: 'Data Analysts',           n: 124,  mfa: '98%',  pam: false, lastReview: '2026-05-15', risk: 'Medium' },
-  { group: 'Service accounts (API)',  n: 84,   mfa: 'N/A',  pam: true,  lastReview: '2026-04-01', risk: 'Medium' },
-  { group: 'External / contractors',  n: 28,   mfa: '94%',  pam: false, lastReview: '2026-03-01', risk: 'High'   },
+  { group: 'Admins (ACCOUNTADMIN)',   n: 4,    mfa: '100%', pam: true,  lastReview: '2026-11-01', risk: 'Low'    },
+  { group: 'Data Platform owners',    n: 12,   mfa: '100%', pam: true,  lastReview: '2026-11-15', risk: 'Low'    },
+  { group: 'Data Engineers',          n: 38,   mfa: '100%', pam: false, lastReview: '2026-11-01', risk: 'Low'    },
+  { group: 'Data Analysts',           n: 124,  mfa: '98%',  pam: false, lastReview: '2026-10-15', risk: 'Medium' },
+  { group: 'Service accounts (API)',  n: 84,   mfa: 'N/A',  pam: true,  lastReview: '2026-09-01', risk: 'Medium' },
+  { group: 'External / contractors',  n: 28,   mfa: '94%',  pam: false, lastReview: '2026-08-01', risk: 'High'   },
 ]
 
 const rbacHeatmap = [
@@ -177,9 +177,9 @@ const rbacHeatmap = [
 ]
 
 const mfaEnrolTrend = [
-  { m: 'Jan', enrolled: 78, target: 100 }, { m: 'Feb', enrolled: 82, target: 100 },
-  { m: 'Mar', enrolled: 86, target: 100 }, { m: 'Apr', enrolled: 91, target: 100 },
-  { m: 'May', enrolled: 96, target: 100 }, { m: 'Jun', enrolled: 98, target: 100 },
+  { m: 'Jun', enrolled: 78, target: 100 }, { m: 'Jul', enrolled: 82, target: 100 },
+  { m: 'Aug', enrolled: 86, target: 100 }, { m: 'Sep', enrolled: 91, target: 100 },
+  { m: 'Oct', enrolled: 96, target: 100 }, { m: 'Nov', enrolled: 98, target: 100 },
 ]
 
 const policyBreaches = [
@@ -191,12 +191,12 @@ const policyBreaches = [
 ]
 
 const networkAclTrend = [
-  { m: 'Jan', allowed: 12400, blocked: 840, new: 28 },
-  { m: 'Feb', allowed: 12800, blocked: 680, new: 22 },
-  { m: 'Mar', allowed: 13200, blocked: 920, new: 34 },
-  { m: 'Apr', allowed: 13600, blocked: 740, new: 18 },
-  { m: 'May', allowed: 14100, blocked: 680, new: 14 },
-  { m: 'Jun', allowed: 14600, blocked: 620, new: 12 },
+  { m: 'Jun', allowed: 12400, blocked: 840, new: 28 },
+  { m: 'Jul', allowed: 12800, blocked: 680, new: 22 },
+  { m: 'Aug', allowed: 13200, blocked: 920, new: 34 },
+  { m: 'Sep', allowed: 13600, blocked: 740, new: 18 },
+  { m: 'Oct', allowed: 14100, blocked: 680, new: 14 },
+  { m: 'Nov', allowed: 14600, blocked: 620, new: 12 },
 ]
 
 // ─── Tabs ─────────────────────────────────────────────────────────────────────
@@ -1050,7 +1050,7 @@ export default function CIOPage() {
                 </ComposedChart>
               </ResponsiveContainer>
             </div>
-            <div className="text-[11px] text-vfes-dark/55 mt-2">{tt('MFA jumped from 78% to 98% in H1 2026 following the mandatory enrolment campaign. Target 100% by Q3.')}</div>
+            <div className="text-[11px] text-vfes-dark/55 mt-2">{tt('MFA jumped from 78% to 98% in H2 2026 following the mandatory enrolment campaign. Target 100% by Q3.')}</div>
           </Panel>
         </div>
 

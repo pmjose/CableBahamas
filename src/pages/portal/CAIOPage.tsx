@@ -63,12 +63,12 @@ const modelsByDomain = [
 ]
 
 const modelPerf = [
-  { m: 'Jan', production: 18, accuracy: 83.4, drift: 3 },
-  { m: 'Feb', production: 19, accuracy: 84.2, drift: 2 },
-  { m: 'Mar', production: 20, accuracy: 84.8, drift: 2 },
-  { m: 'Apr', production: 21, accuracy: 85.4, drift: 1 },
-  { m: 'May', production: 22, accuracy: 86.1, drift: 1 },
-  { m: 'Jun', production: 23, accuracy: 86.8, drift: 0 },
+  { m: 'Jun', production: 18, accuracy: 83.4, drift: 3 },
+  { m: 'Jul', production: 19, accuracy: 84.2, drift: 2 },
+  { m: 'Aug', production: 20, accuracy: 84.8, drift: 2 },
+  { m: 'Sep', production: 21, accuracy: 85.4, drift: 1 },
+  { m: 'Oct', production: 22, accuracy: 86.1, drift: 1 },
+  { m: 'Nov', production: 23, accuracy: 86.8, drift: 0 },
 ]
 
 // ── Cortex Agents ─────────────────────────────────────────────────────────────
@@ -94,9 +94,9 @@ const agentCallsTrend = [
 ]
 
 const agentCallsMonthly = [
-  { m: 'Jan', calls: 1.42, success: 96.4 }, { m: 'Feb', calls: 1.58, success: 97.2 },
-  { m: 'Mar', calls: 1.68, success: 97.8 }, { m: 'Apr', calls: 1.82, success: 98.2 },
-  { m: 'May', calls: 1.96, success: 98.8 }, { m: 'Jun', calls: 2.12, success: 99.0 },
+  { m: 'Jun', calls: 1.42, success: 96.4 }, { m: 'Jul', calls: 1.58, success: 97.2 },
+  { m: 'Aug', calls: 1.68, success: 97.8 }, { m: 'Sep', calls: 1.82, success: 98.2 },
+  { m: 'Oct', calls: 1.96, success: 98.8 }, { m: 'Nov', calls: 2.12, success: 99.0 },
 ]
 
 // ── Cortex Search & Analyst ────────────────────────────────────────────────────
@@ -128,14 +128,14 @@ const aiSpendByUseCase = [
 ]
 
 const spendTrend = [
-  { m: 'Jan', cortex: 28400, value: 82000 }, { m: 'Feb', cortex: 30200, value: 88000 },
-  { m: 'Mar', cortex: 32400, value: 94000 }, { m: 'Apr', cortex: 34800, value: 102000 },
-  { m: 'May', cortex: 36200, value: 114000 }, { m: 'Jun', cortex: 38000, value: 124000 },
+  { m: 'Jun', cortex: 28400, value: 82000 }, { m: 'Jul', cortex: 30200, value: 88000 },
+  { m: 'Aug', cortex: 32400, value: 94000 }, { m: 'Sep', cortex: 34800, value: 102000 },
+  { m: 'Oct', cortex: 36200, value: 114000 }, { m: 'Nov', cortex: 38000, value: 124000 },
 ]
 
 const costPerCall = [
-  { m: 'Jan', cpp: 0.062 }, { m: 'Feb', cpp: 0.058 }, { m: 'Mar', cpp: 0.056 },
-  { m: 'Apr', cpp: 0.054 }, { m: 'May', cpp: 0.052 }, { m: 'Jun', cpp: 0.051 },
+  { m: 'Jun', cpp: 0.062 }, { m: 'Jul', cpp: 0.058 }, { m: 'Aug', cpp: 0.056 },
+  { m: 'Sep', cpp: 0.054 }, { m: 'Oct', cpp: 0.052 }, { m: 'Nov', cpp: 0.051 },
 ]
 
 // ── Responsible AI / AI governance policy ─────────────────────────────────────────────────
@@ -153,8 +153,8 @@ const raiChecklist = [
 ]
 
 const raiScore = [
-  { q: 'Q3-25', score: 62 }, { q: 'Q4-25', score: 71 },
-  { q: 'Q1-26', score: 82 }, { q: 'Q2-26', score: 88 },
+  { q: 'Q1-26', score: 62 }, { q: 'Q2-26', score: 71 },
+  { q: 'Q3-26', score: 82 }, { q: 'Q4-26', score: 88 },
 ]
 
 // ── Feature Store ─────────────────────────────────────────────────────────────
@@ -168,9 +168,9 @@ const featureGroups = [
 ]
 
 const featureGrowth = [
-  { m: 'Jan', features: 228, groups: 5 }, { m: 'Feb', features: 244, groups: 5 },
-  { m: 'Mar', features: 258, groups: 6 }, { m: 'Apr', features: 268, groups: 6 },
-  { m: 'May', features: 274, groups: 6 }, { m: 'Jun', features: 276, groups: 6 },
+  { m: 'Jun', features: 228, groups: 5 }, { m: 'Jul', features: 244, groups: 5 },
+  { m: 'Aug', features: 258, groups: 6 }, { m: 'Sep', features: 268, groups: 6 },
+  { m: 'Oct', features: 274, groups: 6 }, { m: 'Nov', features: 276, groups: 6 },
 ]
 
 // ── Drift / Monitoring ────────────────────────────────────────────────────────
@@ -186,9 +186,9 @@ const driftMonitor = [
 ]
 
 const driftTrend = [
-  { m: 'Jan', drifted: 4, monitored: 18 }, { m: 'Feb', drifted: 3, monitored: 19 },
-  { m: 'Mar', drifted: 2, monitored: 20 }, { m: 'Apr', drifted: 2, monitored: 21 },
-  { m: 'May', drifted: 1, monitored: 22 }, { m: 'Jun', drifted: 1, monitored: 23 },
+  { m: 'Jun', drifted: 4, monitored: 18 }, { m: 'Jul', drifted: 3, monitored: 19 },
+  { m: 'Aug', drifted: 2, monitored: 20 }, { m: 'Sep', drifted: 2, monitored: 21 },
+  { m: 'Oct', drifted: 1, monitored: 22 }, { m: 'Nov', drifted: 1, monitored: 23 },
 ]
 
 // ── Tabs ──────────────────────────────────────────────────────────────────────
@@ -289,10 +289,10 @@ export default function CAIOPage() {
           xKey: 'q',
           unit: 'M',
           data: [
-            { q: 'Q3-25', actual: 2.1, plan: 2.0 },
-            { q: 'Q4-25', actual: 3.0, plan: 2.8 },
-            { q: 'Q1-26', actual: 3.9, plan: 3.6 },
-            { q: 'Q2-26', actual: 4.8, plan: 4.4 },
+            { q: 'Q1-26', actual: 2.1, plan: 2.0 },
+            { q: 'Q2-26', actual: 3.0, plan: 2.8 },
+            { q: 'Q3-26', actual: 3.9, plan: 3.6 },
+            { q: 'Q4-26', actual: 4.8, plan: 4.4 },
           ],
           series: [
             { key: 'actual', name: 'Actual', color: PURPLE },
@@ -855,7 +855,7 @@ export default function CAIOPage() {
                 </LineChart>
               </ResponsiveContainer>
             </div>
-            <div className="text-[10px] text-vfes-dark/45 mt-2">{tt('Target 100% by Dec-2026. Care-Assist conformity assessment due Jul.')}</div>
+            <div className="text-[10px] text-vfes-dark/45 mt-2">{tt('Target 100% by May-2027. Care-Assist conformity assessment due Jul.')}</div>
           </Panel>
 
           <Panel title={tt('Responsible AI Checklist — 10 controls')}>

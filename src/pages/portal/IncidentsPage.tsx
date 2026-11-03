@@ -45,9 +45,9 @@ const MTTR = [
 ]
 
 const POSTMORTEMS = [
-  { id: 'PM-2018-NOC',  d: '2025-05-18', title: 'Freeport CMTS outage · cluster 14',  rca: 'fibre cut by contractor strike outside-window · NMS escalation lag 22 min',         actions: '3 follow-ups · 2 closed' },
-  { id: 'PM-2024-PLAT', d: '2025-05-21', title: 'WH_TRANSFORM_L credit spike',          rca: 'dbt full-refresh flag accidentally enabled in PR · slipped past CI · cost BSD 2.4K', actions: 'CI lint added · 1 closed · 1 in-flight' },
-  { id: 'PM-2025-BILL', d: '2025-05-21', title: 'FACT_BILLING refresh failed',           rca: 'duplicate INVOICE_ID emitted by upstream BSS during failover',                      actions: 'BSS team unique constraint upgraded' },
+  { id: 'PM-2018-NOC',  d: '2025-10-18', title: 'Freeport CMTS outage · cluster 14',  rca: 'fibre cut by contractor strike outside-window · NMS escalation lag 22 min',         actions: '3 follow-ups · 2 closed' },
+  { id: 'PM-2024-PLAT', d: '2025-10-21', title: 'WH_TRANSFORM_L credit spike',          rca: 'dbt full-refresh flag accidentally enabled in PR · slipped past CI · cost BSD 2.4K', actions: 'CI lint added · 1 closed · 1 in-flight' },
+  { id: 'PM-2025-BILL', d: '2025-10-21', title: 'FACT_BILLING refresh failed',           rca: 'duplicate INVOICE_ID emitted by upstream BSS during failover',                      actions: 'BSS team unique constraint upgraded' },
 ]
 
 // ─── Root cause categories ────────────────────────────────────────────────────
@@ -62,11 +62,11 @@ const RCA_CATEGORIES = [
 
 // ─── Major incident timeline ──────────────────────────────────────────────────
 const MAJOR_INCIDENTS = [
-  { id: 'MI-001', date: '2025-05-18', title: 'Freeport CMTS fibre cut', dur: '2h14m', impact: '4,820 subs', status: 'Closed', change: false },
-  { id: 'MI-002', date: '2025-04-29', title: 'UPF cluster-B session loss', dur: '1h38m', impact: '2,100 sessions', status: 'Closed', change: true },
-  { id: 'MI-003', date: '2025-04-12', title: 'Nassau transport link OSPF flap', dur: '48m', impact: '840 B2B subs', status: 'Closed', change: false },
-  { id: 'MI-004', date: '2025-03-24', title: 'WH_TRANSFORM_L dbt credit spike', dur: '4h', impact: 'BSD 2.4K cost', status: 'Closed', change: false },
-  { id: 'MI-005', date: '2025-02-11', title: 'Peering Local peering packet drop storm', dur: '22m', impact: '12,000 subs', status: 'Closed', change: true },
+  { id: 'MI-001', date: '2025-10-18', title: 'Freeport CMTS fibre cut', dur: '2h14m', impact: '4,820 subs', status: 'Closed', change: false },
+  { id: 'MI-002', date: '2025-09-29', title: 'UPF cluster-B session loss', dur: '1h38m', impact: '2,100 sessions', status: 'Closed', change: true },
+  { id: 'MI-003', date: '2025-09-12', title: 'Nassau transport link OSPF flap', dur: '48m', impact: '840 B2B subs', status: 'Closed', change: false },
+  { id: 'MI-004', date: '2025-08-24', title: 'WH_TRANSFORM_L dbt credit spike', dur: '4h', impact: 'BSD 2.4K cost', status: 'Closed', change: false },
+  { id: 'MI-005', date: '2025-07-11', title: 'Peering Local peering packet drop storm', dur: '22m', impact: '12,000 subs', status: 'Closed', change: true },
 ]
 
 // ─── On-call team rotation ────────────────────────────────────────────────────
@@ -80,7 +80,7 @@ const ONCALL_TEAMS = [
 
 // ─── MTTD / MTTR trend ───────────────────────────────────────────────────────
 const MTTD_MTTR_TREND = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'][i],
+  m: ['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'][i],
   mttd: 12 - i * 0.5 + (i === 4 ? 3 : 0),
   mttr: 58 - i * 1.8 + (i === 4 ? 10 : 0),
 }))
@@ -104,9 +104,9 @@ const SLO_BURN = [
 
 // ─── Problem register ─────────────────────────────────────────────────────────
 const KNOWN_ISSUES = [
-  { id: 'PRB-0098', title: 'Local peering micro-congestion firmware bug', sev: 'P2', cim: 1840, eta: '2026-07-18' },
-  { id: 'PRB-0092', title: 'UPF N4 race condition geo-redundancy',  sev: 'P2', cim: 1230, eta: '2026-08-01' },
-  { id: 'PRB-0085', title: 'Freeport PON ONT serial collision',      sev: 'P3', cim: 640,  eta: '2026-07-25' },
+  { id: 'PRB-0098', title: 'Local peering micro-congestion firmware bug', sev: 'P2', cim: 1840, eta: '2026-12-18' },
+  { id: 'PRB-0092', title: 'UPF N4 race condition geo-redundancy',  sev: 'P2', cim: 1230, eta: '2027-01-01' },
+  { id: 'PRB-0085', title: 'Freeport PON ONT serial collision',      sev: 'P3', cim: 640,  eta: '2026-12-25' },
 ]
 
 // ─── Tabs ─────────────────────────────────────────────────────────────────────

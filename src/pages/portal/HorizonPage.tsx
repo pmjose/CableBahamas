@@ -55,14 +55,14 @@ const CLASSIFY = [
 ]
 
 const DMF_MONITORS = [
-  { table: 'CUSTOMER_360',      dmf: 'freshness_check',    result: 'pass', last_run: '2026-06-29 02:00', detail: 'lag 18 min — target < 30 min'    },
-  { table: 'CUSTOMER_360',      dmf: 'null_rate_email',    result: 'pass', last_run: '2026-06-29 02:00', detail: '0.02% null — threshold 1%'        },
-  { table: 'CHURN_LIST_DAILY',  dmf: 'freshness_check',    result: 'pass', last_run: '2026-06-29 01:00', detail: 'lag 0 min — daily job on schedule' },
-  { table: 'CHURN_LIST_DAILY',  dmf: 'row_count_check',    result: 'pass', last_run: '2026-06-29 01:00', detail: '14.2M rows — expected ≥12M'        },
-  { table: 'PEOPLE_360',        dmf: 'freshness_check',    result: 'warn', last_run: '2026-06-28 00:00', detail: 'lag 26h — threshold 24h'           },
-  { table: 'NETWORK_EVENTS',    dmf: 'schema_check',       result: 'pass', last_run: '2026-06-29 05:00', detail: '48 columns match expected schema'  },
-  { table: 'RISK_360',          dmf: 'uniqueness_check',   result: 'pass', last_run: '2026-06-29 02:00', detail: 'CUSTOMER_ID: 0 duplicates'         },
-  { table: 'EXEC_360_SV',       dmf: 'freshness_check',    result: 'fail', last_run: '2026-06-28 20:00', detail: 'lag 28h — SLA breach · alerting'   },
+  { table: 'CUSTOMER_360',      dmf: 'freshness_check',    result: 'pass', last_run: '2026-11-29 02:00', detail: 'lag 18 min — target < 30 min'    },
+  { table: 'CUSTOMER_360',      dmf: 'null_rate_email',    result: 'pass', last_run: '2026-11-29 02:00', detail: '0.02% null — threshold 1%'        },
+  { table: 'CHURN_LIST_DAILY',  dmf: 'freshness_check',    result: 'pass', last_run: '2026-11-29 01:00', detail: 'lag 0 min — daily job on schedule' },
+  { table: 'CHURN_LIST_DAILY',  dmf: 'row_count_check',    result: 'pass', last_run: '2026-11-29 01:00', detail: '14.2M rows — expected ≥12M'        },
+  { table: 'PEOPLE_360',        dmf: 'freshness_check',    result: 'warn', last_run: '2026-11-28 00:00', detail: 'lag 26h — threshold 24h'           },
+  { table: 'NETWORK_EVENTS',    dmf: 'schema_check',       result: 'pass', last_run: '2026-11-29 05:00', detail: '48 columns match expected schema'  },
+  { table: 'RISK_360',          dmf: 'uniqueness_check',   result: 'pass', last_run: '2026-11-29 02:00', detail: 'CUSTOMER_ID: 0 duplicates'         },
+  { table: 'EXEC_360_SV',       dmf: 'freshness_check',    result: 'fail', last_run: '2026-11-28 20:00', detail: 'lag 28h — SLA breach · alerting'   },
 ]
 
 const LINEAGE_COVERAGE = [
@@ -87,12 +87,12 @@ const COMPLIANCE_CONTROLS = [
 ]
 
 const TAG_TREND = [
-  { m: 'Jan', pii: 218, pci: 18, confidential: 380, dpa: 218 },
-  { m: 'Feb', pii: 224, pci: 19, confidential: 390, dpa: 224 },
-  { m: 'Mar', pii: 230, pci: 20, confidential: 396, dpa: 230 },
-  { m: 'Apr', pii: 238, pci: 21, confidential: 402, dpa: 238 },
-  { m: 'May', pii: 242, pci: 21, confidential: 408, dpa: 242 },
-  { m: 'Jun', pii: 248, pci: 22, confidential: 412, dpa: 248 },
+  { m: 'Jun', pii: 218, pci: 18, confidential: 380, dpa: 218 },
+  { m: 'Jul', pii: 224, pci: 19, confidential: 390, dpa: 224 },
+  { m: 'Aug', pii: 230, pci: 20, confidential: 396, dpa: 230 },
+  { m: 'Sep', pii: 238, pci: 21, confidential: 402, dpa: 238 },
+  { m: 'Oct', pii: 242, pci: 21, confidential: 408, dpa: 242 },
+  { m: 'Nov', pii: 248, pci: 22, confidential: 412, dpa: 248 },
 ]
 
 const MATURITY_SCORES = [
@@ -104,12 +104,12 @@ const MATURITY_SCORES = [
 ]
 
 const ACCESS_LOG = [
-  { user: 'pjose',          role: 'ACCOUNTADMIN',     table: 'SNOWFLAKE.HORIZON.TAG_REFERENCES',    action: 'SELECT', rows: 1840,  ts: '2026-06-29 09:14' },
-  { user: 'ana.castillo',   role: 'COMPLIANCE_RO',    table: 'SNOWFLAKE.HORIZON.POLICY_REFERENCES', action: 'SELECT', rows: 148,   ts: '2026-06-29 08:40' },
-  { user: 'anna.vanpeeters',   role: 'CDO',              table: 'DATA_CLASSIFICATION_LATEST',           action: 'SELECT', rows: 4420,  ts: '2026-06-28 17:22' },
-  { user: 'thomas.janssens',  role: 'ANALYST_FINANCE',  table: 'CBL_CORE.FINANCE.GL_FACT',             action: 'SELECT', rows: 82400, ts: '2026-06-28 16:05' },
-  { user: 'dbt_prod_svc',   role: 'DBT_PROD',         table: 'CBL_CORE.CUSTOMER.C360_STAGING',       action: 'WRITE',  rows: 2400000, ts: '2026-06-29 01:12' },
-  { user: 'luis.garcia',    role: 'ANALYST_NETWORK',  table: 'CBL_RAW.NETWORK.CMTS_EVENTS',          action: 'SELECT', rows: 2800000, ts: '2026-06-29 07:28' },
+  { user: 'pjose',          role: 'ACCOUNTADMIN',     table: 'SNOWFLAKE.HORIZON.TAG_REFERENCES',    action: 'SELECT', rows: 1840,  ts: '2026-11-29 09:14' },
+  { user: 'ana.castillo',   role: 'COMPLIANCE_RO',    table: 'SNOWFLAKE.HORIZON.POLICY_REFERENCES', action: 'SELECT', rows: 148,   ts: '2026-11-29 08:40' },
+  { user: 'anna.vanpeeters',   role: 'CDO',              table: 'DATA_CLASSIFICATION_LATEST',           action: 'SELECT', rows: 4420,  ts: '2026-11-28 17:22' },
+  { user: 'thomas.janssens',  role: 'ANALYST_FINANCE',  table: 'CBL_CORE.FINANCE.GL_FACT',             action: 'SELECT', rows: 82400, ts: '2026-11-28 16:05' },
+  { user: 'dbt_prod_svc',   role: 'DBT_PROD',         table: 'CBL_CORE.CUSTOMER.C360_STAGING',       action: 'WRITE',  rows: 2400000, ts: '2026-11-29 01:12' },
+  { user: 'luis.garcia',    role: 'ANALYST_NETWORK',  table: 'CBL_RAW.NETWORK.CMTS_EVENTS',          action: 'SELECT', rows: 2800000, ts: '2026-11-29 07:28' },
 ]
 
 type TabId = 'overview' | 'tags' | 'classification' | 'policies' | 'quality' | 'access-history' | 'lineage' | 'compliance'

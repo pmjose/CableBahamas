@@ -98,12 +98,12 @@ const QUALITY_TREND = Array.from({ length: 12 }, (_, i) => ({
 }))
 
 const INCIDENT_TREND = [
-  { m: 'Jan', p1: 0, p2: 1, p3: 3, resolved: 4 },
-  { m: 'Feb', p1: 0, p2: 0, p3: 2, resolved: 2 },
-  { m: 'Mar', p1: 1, p2: 1, p3: 4, resolved: 5 },
-  { m: 'Apr', p1: 0, p2: 0, p3: 3, resolved: 3 },
-  { m: 'May', p1: 0, p2: 1, p3: 3, resolved: 3 },
-  { m: 'Jun', p1: 0, p2: 1, p3: 3, resolved: 1 },
+  { m: 'Jun', p1: 0, p2: 1, p3: 3, resolved: 4 },
+  { m: 'Jul', p1: 0, p2: 0, p3: 2, resolved: 2 },
+  { m: 'Aug', p1: 1, p2: 1, p3: 4, resolved: 5 },
+  { m: 'Sep', p1: 0, p2: 0, p3: 3, resolved: 3 },
+  { m: 'Oct', p1: 0, p2: 1, p3: 3, resolved: 3 },
+  { m: 'Nov', p1: 0, p2: 1, p3: 3, resolved: 1 },
 ]
 
 const DOMAIN_COVERAGE = DOMAIN.map(d => ({ domain: d.d.slice(0,10), coverage: d.cov, score: d.s, failures: d.f }))
@@ -437,12 +437,12 @@ export default function DataQualityPage() {
               </thead>
               <tbody>
                 {[
-                  { obj: 'STG_CUSTOMERS',    chg: 'NEW col: FTTH_FLAG BOOLEAN',           det: '2025-05-24 03:14', res: 'auto-backfill default FALSE',     imp: 'none'     },
-                  { obj: 'STG_BILLING',      chg: 'NEW col: PAYMENT_METHOD_V2 VARCHAR',   det: '2025-05-23 01:42', res: 'dbt schema test passed',           imp: 'none'     },
-                  { obj: 'FACT_NETWORK_KPI', chg: 'col rename: CELL_ID → CELL_UUID',      det: '2025-05-22 14:08', res: 'view alias deployed',              imp: 'NOC watch' },
-                  { obj: 'DIM_PRODUCT',      chg: 'col type: PRICE NUMBER → FLOAT',       det: '2025-05-21 08:00', res: 'downstream cast verified',         imp: 'none'     },
-                  { obj: 'STG_TICKETS',      chg: 'NEW enum: CHANNEL = WHATSAPP_BUSINESS',det: '2025-05-20 11:33', res: 'ACCEPTED_VALUES test updated',     imp: 'minor'    },
-                  { obj: 'CHURN_LIST_DAILY', chg: 'col dropped: CHURN_REASON_LEGACY',     det: '2025-05-19 06:42', res: 'contract v2.1 bump · view shim',    imp: 'contract' },
+                  { obj: 'STG_CUSTOMERS',    chg: 'NEW col: FTTH_FLAG BOOLEAN',           det: '2025-10-24 03:14', res: 'auto-backfill default FALSE',     imp: 'none'     },
+                  { obj: 'STG_BILLING',      chg: 'NEW col: PAYMENT_METHOD_V2 VARCHAR',   det: '2025-10-23 01:42', res: 'dbt schema test passed',           imp: 'none'     },
+                  { obj: 'FACT_NETWORK_KPI', chg: 'col rename: CELL_ID → CELL_UUID',      det: '2025-10-22 14:08', res: 'view alias deployed',              imp: 'NOC watch' },
+                  { obj: 'DIM_PRODUCT',      chg: 'col type: PRICE NUMBER → FLOAT',       det: '2025-10-21 08:00', res: 'downstream cast verified',         imp: 'none'     },
+                  { obj: 'STG_TICKETS',      chg: 'NEW enum: CHANNEL = WHATSAPP_BUSINESS',det: '2025-10-20 11:33', res: 'ACCEPTED_VALUES test updated',     imp: 'minor'    },
+                  { obj: 'CHURN_LIST_DAILY', chg: 'col dropped: CHURN_REASON_LEGACY',     det: '2025-10-19 06:42', res: 'contract v2.1 bump · view shim',    imp: 'contract' },
                 ].map((r, i) => (
                   <tr key={i} className="border-b border-black/5 hover:bg-[#fafbfc]">
                     <td className="py-1.5 font-mono text-[10px] font-semibold">{r.obj}</td>
@@ -1044,10 +1044,10 @@ export default function DataQualityPage() {
         <Panel title={tt('Quality programme · key milestones')}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { milestone: tt('DMF coverage 85%'), target: 'Q4-2025', status: 'on-track', detail: tt('Current 78% · +16 pp YTD') },
-              { milestone: tt('Quality score 97'),  target: 'Q1-2026', status: 'on-track', detail: tt('Current 94.2 · +3.2 YTD') },
-              { milestone: tt('Zero P2 incidents'), target: 'Q2-2026', status: 'watch',    detail: tt('INC-2031 P2 open now') },
-              { milestone: tt('100% contract SLA'), target: 'Q3-2026', status: 'on-track', detail: tt('8/8 contracts · 6/8 above SLO') },
+              { milestone: tt('DMF coverage 85%'), target: 'Q2-2026', status: 'on-track', detail: tt('Current 78% · +16 pp YTD') },
+              { milestone: tt('Quality score 97'),  target: 'Q3-2026', status: 'on-track', detail: tt('Current 94.2 · +3.2 YTD') },
+              { milestone: tt('Zero P2 incidents'), target: 'Q4-2026', status: 'watch',    detail: tt('INC-2031 P2 open now') },
+              { milestone: tt('100% contract SLA'), target: 'Q1-2027', status: 'on-track', detail: tt('8/8 contracts · 6/8 above SLO') },
             ].map(m => (
               <div key={m.milestone} className="p-3 border border-black/5 rounded-xl">
                 <div className="text-[11px] font-bold mb-0.5">{m.milestone}</div>

@@ -136,7 +136,7 @@ const adverseImpact = [
 
 // ATTRITION
 const attrTrend = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'][i],
+  m: ['Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov'][i],
   total: 12.4 + Math.sin(i / 1.6) * 1.4 + i * 0.04,
   regrettable: 7.8 + Math.sin(i / 1.6) * 1.2 + i * 0.04,
   involuntary: 2.2 + Math.cos(i / 2) * 0.4,
@@ -231,9 +231,9 @@ const reskilling = [
 ]
 
 // ENGAGEMENT & D&I
-const engagement = { eNPS: 14, response: 0.76, lastSurvey: '2026-04-22', mei: 78, inclusion: 72, belonging: 74 }
+const engagement = { eNPS: 14, response: 0.76, lastSurvey: '2026-09-22', mei: 78, inclusion: 72, belonging: 74 }
 const eNPSTrend = Array.from({ length: 6 }, (_, i) => ({
-  q: ['Q1-25','Q2-25','Q3-25','Q4-25','Q1-26','Q2-26'][i],
+  q: ['Q3-25','Q4-25','Q1-26','Q2-26','Q3-26','Q4-26'][i],
   eNPS: [4, 6, 9, 12, 13, 14][i],
   benchmark: 18,
 }))
@@ -272,7 +272,7 @@ const wellbeing = {
   ltir: 0.42, trir: 1.84, vehicleAccidents: 24, nearMiss: 86,
   grievances: 38, et: 6, settlementsK: 124, disciplinaries: 42, suspensions: 4,
   unionDensityCWU: 0.62, unionDensityConnect: 0.18, unionDensitySIPTU: 0.24,
-  caExpiryNext: '2027-03-31', actionRiskScore: 0.18,
+  caExpiryNext: '2027-08-31', actionRiskScore: 0.18,
 }
 const safetyByFunc = [
   { fn: 'Field Ops',   ltir: 1.42, trir: 6.20, lostDays12m: 124 },
@@ -762,7 +762,7 @@ function PayTab() {
       </div>
 
       <div className="grid lg:grid-cols-2 gap-6 mb-6">
-        <Panel title={tt('Gender pay gap by function')} insight={{ insight: 'Network Engineering shows a mean gender pay gap of 11.4%, the widest in the business and above the internal pay-equity review threshold.', action: 'Commission a pay equity audit for Network Engineering this quarter and prepare a remediation plan ahead of the June 2026 reporting deadline.', impact: 'Closing the gap in Network Engineering addresses the highest legal exposure and positions the company as compliant before the directive deadline, avoiding potential regulatory fines.' }}>
+        <Panel title={tt('Gender pay gap by function')} insight={{ insight: 'Network Engineering shows a mean gender pay gap of 11.4%, the widest in the business and above the internal pay-equity review threshold.', action: 'Commission a pay equity audit for Network Engineering this quarter and prepare a remediation plan ahead of the November 2026 reporting deadline.', impact: 'Closing the gap in Network Engineering addresses the highest legal exposure and positions the company as compliant before the directive deadline, avoiding potential regulatory fines.' }}>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={payGapByFunc} layout="vertical" margin={{ left: 60 }}>
               <CartesianGrid stroke="#eef0f3" horizontal={false} />
@@ -1081,11 +1081,11 @@ function Emp360Tab({ id, setId }: { id: string; setId: (id: string) => void }) {
       <div className="grid lg:grid-cols-2 gap-6 mb-6">
         <Panel title={tt('Career timeline (synthetic)')}>
           <div className="space-y-2 text-sm">
-            <div className="flex gap-3 p-2 rounded bg-[#fafbfc] border border-black/5"><span className="text-xs text-vfes-dark/55 font-mono w-16 shrink-0">{tt('2022-Q1')}</span><span>Joined as {e.title.split(' ').slice(-2).join(' ')}</span></div>
-            <div className="flex gap-3 p-2 rounded bg-[#fafbfc] border border-black/5"><span className="text-xs text-vfes-dark/55 font-mono w-16 shrink-0">{tt('2023-Q3')}</span><span>{tt('Promotion · band L4')}</span></div>
-            <div className="flex gap-3 p-2 rounded bg-[#fafbfc] border border-black/5"><span className="text-xs text-vfes-dark/55 font-mono w-16 shrink-0">{tt('2024-Q4')}</span><span>{tt('Off-cycle increase 6%')}</span></div>
-            <div className="flex gap-3 p-2 rounded bg-[#fafbfc] border border-black/5"><span className="text-xs text-vfes-dark/55 font-mono w-16 shrink-0">{tt('2025-Q2')}</span><span>{tt('Cross-function rotation (3m)')}</span></div>
-            <div className="flex gap-3 p-2 rounded bg-[#fafbfc] border border-black/5"><span className="text-xs text-vfes-dark/55 font-mono w-16 shrink-0">{tt('2026-Q1')}</span><span>Performance: <b>{e.perf}</b></span></div>
+            <div className="flex gap-3 p-2 rounded bg-[#fafbfc] border border-black/5"><span className="text-xs text-vfes-dark/55 font-mono w-16 shrink-0">{tt('2022-Q3')}</span><span>Joined as {e.title.split(' ').slice(-2).join(' ')}</span></div>
+            <div className="flex gap-3 p-2 rounded bg-[#fafbfc] border border-black/5"><span className="text-xs text-vfes-dark/55 font-mono w-16 shrink-0">{tt('2024-Q1')}</span><span>{tt('Promotion · band L4')}</span></div>
+            <div className="flex gap-3 p-2 rounded bg-[#fafbfc] border border-black/5"><span className="text-xs text-vfes-dark/55 font-mono w-16 shrink-0">{tt('2025-Q2')}</span><span>{tt('Off-cycle increase 6%')}</span></div>
+            <div className="flex gap-3 p-2 rounded bg-[#fafbfc] border border-black/5"><span className="text-xs text-vfes-dark/55 font-mono w-16 shrink-0">{tt('2025-Q4')}</span><span>{tt('Cross-function rotation (3m)')}</span></div>
+            <div className="flex gap-3 p-2 rounded bg-[#fafbfc] border border-black/5"><span className="text-xs text-vfes-dark/55 font-mono w-16 shrink-0">{tt('2026-Q3')}</span><span>Performance: <b>{e.perf}</b></span></div>
           </div>
         </Panel>
         <Panel title={tt('Learning & certs')}>

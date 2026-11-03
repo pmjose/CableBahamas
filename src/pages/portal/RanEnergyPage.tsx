@@ -27,14 +27,14 @@ const RED    = '#EF4444'
 // ─── existing data ──────────────────────────────────────────────────────────
 
 const ENERGY_TREND = [
-  { m: 'Jan', kwhPerGb: 0.142, total: 38.2 },
-  { m: 'Feb', kwhPerGb: 0.138, total: 37.1 },
-  { m: 'Mar', kwhPerGb: 0.131, total: 36.4 },
-  { m: 'Apr', kwhPerGb: 0.124, total: 35.0 },
-  { m: 'May', kwhPerGb: 0.118, total: 34.2 },
-  { m: 'Jun', kwhPerGb: 0.109, total: 33.1 },
-  { m: 'Jul', kwhPerGb: 0.104, total: 33.8 },
-  { m: 'Aug', kwhPerGb: 0.101, total: 33.4 },
+  { m: 'Jun', kwhPerGb: 0.142, total: 38.2 },
+  { m: 'Jul', kwhPerGb: 0.138, total: 37.1 },
+  { m: 'Aug', kwhPerGb: 0.131, total: 36.4 },
+  { m: 'Sep', kwhPerGb: 0.124, total: 35.0 },
+  { m: 'Oct', kwhPerGb: 0.118, total: 34.2 },
+  { m: 'Nov', kwhPerGb: 0.109, total: 33.1 },
+  { m: 'Dec', kwhPerGb: 0.104, total: 33.8 },
+  { m: 'Jan', kwhPerGb: 0.101, total: 33.4 },
 ]
 
 const SAVINGS_LEVERS = [
@@ -994,7 +994,7 @@ export default function RanEnergyPage() {
         <Panel title={tt('Energy efficiency programme — key actions & owners')}>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="p-3 rounded-xl border border-black/5 bg-emerald-50">
-              <div className="text-xs font-bold text-emerald-800 mb-1">{tt('Completed — Q3 2023')}</div>
+              <div className="text-xs font-bold text-emerald-800 mb-1">{tt('Completed — Q1 2024')}</div>
               <ul className="text-xs text-emerald-700 space-y-1 list-disc list-inside">
                 <li>{tt('MIMO deep sleep deployed on 1,240 urban 5G sites')}</li>
                 <li>{tt('Luminus Solar PPA I signed — 142 GWh/yr')}</li>
@@ -1002,7 +1002,7 @@ export default function RanEnergyPage() {
               </ul>
             </div>
             <div className="p-3 rounded-xl border border-black/5 bg-amber-50">
-              <div className="text-xs font-bold text-amber-800 mb-1">{tt('In progress — Q4 2023')}</div>
+              <div className="text-xs font-bold text-amber-800 mb-1">{tt('In progress — Q2 2024')}</div>
               <ul className="text-xs text-amber-700 space-y-1 list-disc list-inside">
                 <li>{tt('Rural 4G sleep deployment — 41% complete, target 80%')}</li>
                 <li>{tt('TotalEnergies Green PPA I final contract signature')}</li>
@@ -1010,7 +1010,7 @@ export default function RanEnergyPage() {
               </ul>
             </div>
             <div className="p-3 rounded-xl border border-black/5 bg-blue-50">
-              <div className="text-xs font-bold text-blue-800 mb-1">{tt('Planned — H1 2024')}</div>
+              <div className="text-xs font-bold text-blue-800 mb-1">{tt('Planned — H2 2024')}</div>
               <ul className="text-xs text-blue-700 space-y-1 list-disc list-inside">
                 <li>{tt('Legacy 3G shutdown — VoLTE fallback verification first')}</li>
                 <li>{tt('Expand solar to 60% of sites by 2027')}</li>

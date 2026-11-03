@@ -140,7 +140,7 @@ const vulnsBySev = [
 ]
 
 const vulnTrend = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'][i],
+  m: ['Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov'][i],
   opened: 64 + Math.round(Math.sin(i / 1.4) * 22),
   closed: 58 + Math.round(Math.cos(i / 1.6) * 18),
   backlog: 480 + Math.round(Math.sin(i / 2.2) * 60) + i * 4,
@@ -194,7 +194,7 @@ const cspmFindings = [
   { kind: 'Unencrypted volume',     n:  2, sev: 'Medium' },
   { kind: 'Logging disabled',       n:  4, sev: 'Medium' },
 ]
-const fwHygiene = { rules: 4280, anyAny: 6, orphan: 84, oldest: 2018, lastReview: '2026-04-12' }
+const fwHygiene = { rules: 4280, anyAny: 6, orphan: 84, oldest: 2018, lastReview: '2026-09-12' }
 const cnSeg = [
   { zone: 'Customer prod ↔ Corp',   policy: 'Deny',   hits7d: 142 },
   { zone: 'Corp ↔ Lab',             policy: 'Deny',   hits7d:  38 },
@@ -223,21 +223,21 @@ const bugBounty = { reports30d: 84, paid: 28, criticalAccepted: 1, payoutK: 14 }
 
 // Resilience / 3rd-party / data
 const resilience = [
-  { svc: 'Mobile core',          rtoH: 1,  rpoH: 0.25, lastFail: '2026-03-22', drillResult: 'Pass' },
-  { svc: 'Customer portal',      rtoH: 4,  rpoH: 1,    lastFail: '2026-04-08', drillResult: 'Pass' },
-  { svc: 'Billing (BSS)',        rtoH: 6,  rpoH: 1,    lastFail: '2026-02-18', drillResult: 'Watch' },
-  { svc: 'OSS / NMS',            rtoH: 4,  rpoH: 0.5,  lastFail: '2026-03-04', drillResult: 'Pass' },
-  { svc: 'Hurricane DR · Nassau→Freeport headend failover', rtoH: 8, rpoH: 1, lastFail: '2026-05-28', drillResult: 'Pass' },
-  { svc: 'TV head-end',          rtoH: 2,  rpoH: 0.5,  lastFail: '2026-05-12', drillResult: 'Pass' },
-  { svc: 'Lawful intercept',     rtoH: 0.25,rpoH: 0,    lastFail: '2026-02-22', drillResult: 'Pass' },
-  { svc: '911/919 routing',      rtoH: 0.1, rpoH: 0,    lastFail: '2026-04-30', drillResult: 'Pass' },
+  { svc: 'Mobile core',          rtoH: 1,  rpoH: 0.25, lastFail: '2026-08-22', drillResult: 'Pass' },
+  { svc: 'Customer portal',      rtoH: 4,  rpoH: 1,    lastFail: '2026-09-08', drillResult: 'Pass' },
+  { svc: 'Billing (BSS)',        rtoH: 6,  rpoH: 1,    lastFail: '2026-07-18', drillResult: 'Watch' },
+  { svc: 'OSS / NMS',            rtoH: 4,  rpoH: 0.5,  lastFail: '2026-08-04', drillResult: 'Pass' },
+  { svc: 'Hurricane DR · Nassau→Freeport headend failover', rtoH: 8, rpoH: 1, lastFail: '2026-10-28', drillResult: 'Pass' },
+  { svc: 'TV head-end',          rtoH: 2,  rpoH: 0.5,  lastFail: '2026-10-12', drillResult: 'Pass' },
+  { svc: 'Lawful intercept',     rtoH: 0.25,rpoH: 0,    lastFail: '2026-07-22', drillResult: 'Pass' },
+  { svc: '911/919 routing',      rtoH: 0.1, rpoH: 0,    lastFail: '2026-09-30', drillResult: 'Pass' },
 ]
 const thirdParty = [
-  { vendor: 'AWS',           access: 'Crown jewels', rating: 'A', lastAttest: '2026-03-08', findings: 0 },
-  { vendor: 'Cisco',         access: 'Network OS',   rating: 'A', lastAttest: '2026-02-22', findings: 2 },
-  { vendor: 'Salesforce',    access: 'CRM data',     rating: 'A', lastAttest: '2026-04-04', findings: 0 },
-  { vendor: 'Nokia/Ericsson', access: 'Platform/content', rating: 'A', lastAttest: '2026-01-18', findings: 1 },
-  { vendor: 'Island Field Services (demo)',      access: 'Field WO',     rating: 'C', lastAttest: '2026-04-22', findings: 4 },
+  { vendor: 'AWS',           access: 'Crown jewels', rating: 'A', lastAttest: '2026-08-08', findings: 0 },
+  { vendor: 'Cisco',         access: 'Network OS',   rating: 'A', lastAttest: '2026-07-22', findings: 2 },
+  { vendor: 'Salesforce',    access: 'CRM data',     rating: 'A', lastAttest: '2026-09-04', findings: 0 },
+  { vendor: 'Nokia/Ericsson', access: 'Platform/content', rating: 'A', lastAttest: '2026-06-18', findings: 1 },
+  { vendor: 'Island Field Services (demo)',      access: 'Field WO',     rating: 'C', lastAttest: '2026-09-22', findings: 4 },
   { vendor: 'Tail (412)',    access: 'Mixed',        rating: 'C', lastAttest: 'Pending',     findings: 38 },
 ]
 const dataSec = {
@@ -291,7 +291,7 @@ type Incident = {
 }
 const incidents: Incident[] = [
   {
-    id: 'INC-2026-0033', title: '3rd-party SQLi → BSS billing', sev: 'Critical', status: 'Closed', opened: '2026-05-04 02:18',
+    id: 'INC-2026-0033', title: '3rd-party SQLi → BSS billing', sev: 'Critical', status: 'Closed', opened: '2026-10-04 02:18',
     detection: 'WAF anomaly + DB query pattern', mitre: ['T1190', 'T1059', 'T1505'], assets: ['BSS-billing-prod', 'API-gateway-eu1'],
     ioCs: ['185.220.x.x', 'sql-payload-hash-abc', 'web-shell-attempt'], comms: 'CEO / Board / ODPC briefed within 4h',
     rca: 'Vendor portal lacked parameterised query', lessons: 'Mandate SAST gate for all 3rd-party portals',
@@ -316,7 +316,7 @@ const incidents: Incident[] = [
     ],
   },
   {
-    id: 'INC-2026-0029', title: 'IPTV CDN poisoning attempt', sev: 'High', status: 'Recovering', opened: '2026-05-18 09:42',
+    id: 'INC-2026-0029', title: 'IPTV CDN poisoning attempt', sev: 'High', status: 'Recovering', opened: '2026-10-18 09:42',
     detection: 'CDN edge integrity hash mismatch', mitre: ['T1070', 'T1565'], assets: ['cdn-edge-freeport', 'iptv-origin-1'],
     ioCs: ['proxy-spoof-pattern', 'tampered-manifest'], comms: 'Internal only — no customer impact',
     rca: 'Investigation ongoing — tracking caching origin', lessons: 'Pending',
@@ -337,7 +337,7 @@ const incidents: Incident[] = [
     ],
   },
   {
-    id: 'INC-2026-0021', title: 'Auth outage (OSS portal)', sev: 'Low', status: 'Closed', opened: '2026-04-22 14:08',
+    id: 'INC-2026-0021', title: 'Auth outage (OSS portal)', sev: 'Low', status: 'Closed', opened: '2026-09-22 14:08',
     detection: 'Synthetic monitor', mitre: ['T1496'], assets: ['oss-portal-prod', 'idp-eu1'],
     ioCs: [], comms: 'Internal only', rca: 'IdP cert rotation script bug', lessons: 'Add staging soak for cert rotations',
     timeline: [
@@ -349,7 +349,7 @@ const incidents: Incident[] = [
     killChain: [],
   },
   {
-    id: 'INC-2026-0014', title: 'Mobile-core signalling storm', sev: 'Medium', status: 'Closed', opened: '2026-04-12 22:14',
+    id: 'INC-2026-0014', title: 'Mobile-core signalling storm', sev: 'Medium', status: 'Closed', opened: '2026-09-12 22:14',
     detection: 'Diameter rate-limit', mitre: ['T1499', 'T1430'], assets: ['mme-bs-prod-2', 'diameter-fw'],
     ioCs: ['anom-imsi-pattern', 'flood-source-set'], comms: 'URCA & customers (38min impact)',
     rca: 'Misconfigured roaming partner triggered loop', lessons: 'Add Diameter rate-cap per peer',

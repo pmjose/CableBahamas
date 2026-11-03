@@ -309,12 +309,12 @@ const POLICY_SUMMARY = [
 ]
 
 const USAGE_TREND = [
-  { m: 'Jan', queries: 12400, unique_users: 38 },
-  { m: 'Feb', queries: 13800, unique_users: 42 },
-  { m: 'Mar', queries: 14200, unique_users: 44 },
-  { m: 'Apr', queries: 15600, unique_users: 46 },
-  { m: 'May', queries: 17200, unique_users: 48 },
-  { m: 'Jun', queries: 18400, unique_users: 52 },
+  { m: 'Jun', queries: 12400, unique_users: 38 },
+  { m: 'Jul', queries: 13800, unique_users: 42 },
+  { m: 'Aug', queries: 14200, unique_users: 44 },
+  { m: 'Sep', queries: 15600, unique_users: 46 },
+  { m: 'Oct', queries: 17200, unique_users: 48 },
+  { m: 'Nov', queries: 18400, unique_users: 52 },
 ]
 
 type TabId = 'overview' | 'browser' | 'search' | 'ownership' | 'governance' | 'tags' | 'popularity' | 'quality'
@@ -946,12 +946,12 @@ export default function DataCatalogPage() {
             <div className="h-64">
               <ResponsiveContainer>
                 <AreaChart data={[
-                  { m: 'Jan', auto: 28, manual: 12, gap: 20 },
-                  { m: 'Feb', auto: 30, manual: 13, gap: 18 },
-                  { m: 'Mar', auto: 32, manual: 14, gap: 16 },
-                  { m: 'Apr', auto: 34, manual: 14, gap: 14 },
-                  { m: 'May', auto: 36, manual: 15, gap: 12 },
-                  { m: 'Jun', auto: 40, manual: 16, gap: 8  },
+                  { m: 'Jun', auto: 28, manual: 12, gap: 20 },
+                  { m: 'Jul', auto: 30, manual: 13, gap: 18 },
+                  { m: 'Aug', auto: 32, manual: 14, gap: 16 },
+                  { m: 'Sep', auto: 34, manual: 14, gap: 14 },
+                  { m: 'Oct', auto: 36, manual: 15, gap: 12 },
+                  { m: 'Nov', auto: 40, manual: 16, gap: 8  },
                 ]}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
                   <XAxis dataKey="m" tick={{ fontSize: 11 }} />

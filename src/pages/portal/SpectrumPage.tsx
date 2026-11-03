@@ -61,12 +61,12 @@ const EXPIRY_TIMELINE = [
 
 // ─── Utilisation trend data ───────────────────────────────────────────────────
 const UTIL_TREND = [
-  { m: 'Jan', b700: 88, b1800: 72, b3500: 48, b26ghz: 18 },
-  { m: 'Feb', b700: 89, b1800: 73, b3500: 50, b26ghz: 19 },
-  { m: 'Mar', b700: 90, b1800: 74, b3500: 52, b26ghz: 20 },
-  { m: 'Apr', b700: 91, b1800: 75, b3500: 54, b26ghz: 21 },
-  { m: 'May', b700: 91, b1800: 76, b3500: 56, b26ghz: 21 },
-  { m: 'Jun', b700: 91, b1800: 76, b3500: 57, b26ghz: 22 },
+  { m: 'Jun', b700: 88, b1800: 72, b3500: 48, b26ghz: 18 },
+  { m: 'Jul', b700: 89, b1800: 73, b3500: 50, b26ghz: 19 },
+  { m: 'Aug', b700: 90, b1800: 74, b3500: 52, b26ghz: 20 },
+  { m: 'Sep', b700: 91, b1800: 75, b3500: 54, b26ghz: 21 },
+  { m: 'Oct', b700: 91, b1800: 76, b3500: 56, b26ghz: 21 },
+  { m: 'Nov', b700: 91, b1800: 76, b3500: 57, b26ghz: 22 },
 ]
 
 const UTIL_HOUR = Array.from({ length: 24 }, (_, i) => ({
@@ -87,12 +87,12 @@ const EU_HARMONISATION = [
 ]
 
 const COMPLIANCE_ITEMS = [
-  { obligation: 'Coverage rollout (700 MHz)',  deadline: 'Q4-2026', progress: 94,  status: 'On track' },
-  { obligation: '5G SA deployment obligation', deadline: 'Q2-2027', progress: 72,  status: 'On track' },
-  { obligation: 'Rural coverage 90% pop',      deadline: 'Q4-2027', progress: 68,  status: 'At risk'  },
-  { obligation: 'URCA spectrum audit',          deadline: 'Q3-2026', progress: 80,  status: 'On track' },
+  { obligation: 'Coverage rollout (700 MHz)',  deadline: 'Q2-2027', progress: 94,  status: 'On track' },
+  { obligation: '5G SA deployment obligation', deadline: 'Q4-2027', progress: 72,  status: 'On track' },
+  { obligation: 'Rural coverage 90% pop',      deadline: 'Q2-2028', progress: 68,  status: 'At risk'  },
+  { obligation: 'URCA spectrum audit',          deadline: 'Q1-2027', progress: 80,  status: 'On track' },
   { obligation: 'EMF compliance reporting',     deadline: 'Annual',  progress: 100, status: 'Done'     },
-  { obligation: '26 GHz 5G deployment plan',    deadline: 'Q1-2027', progress: 42,  status: 'Planned'  },
+  { obligation: '26 GHz 5G deployment plan',    deadline: 'Q3-2027', progress: 42,  status: 'Planned'  },
 ]
 
 const AUCTION_HISTORY = [
@@ -104,12 +104,12 @@ const AUCTION_HISTORY = [
 
 // ─── Spectrum roadmap ─────────────────────────────────────────────────────────
 const SPECTRUM_ROADMAP = [
-  { initiative: '3.5 GHz 5G SA dense-urban rollout',       horizon: 'Q3-2026', invest: 'BSD 22M',          status: 'Active',   pct: 68 },
-  { initiative: '700 MHz 5G SA re-farm (coverage)',         horizon: 'Q4-2026', invest: 'BSD 14M',          status: 'Active',   pct: 54 },
-  { initiative: '2030 renewal reserve (120 MHz)',           horizon: 'Q2-2026', invest: 'BSD 780M reserve', status: 'Planning', pct: 28 },
-  { initiative: '26 GHz FWA monetisation pilot',            horizon: 'H2-2026', invest: 'BSD 8M',           status: 'Planning', pct: 18 },
-  { initiative: '900 MHz full GSM shutdown',                horizon: 'Q2-2027', invest: 'BSD 6M',           status: 'Active',   pct: 42 },
-  { initiative: '1800 MHz DSS 5G NR activation (national)', horizon: 'H1-2027', invest: 'BSD 18M',          status: 'Planned',  pct: 12 },
+  { initiative: '3.5 GHz 5G SA dense-urban rollout',       horizon: 'Q1-2027', invest: 'BSD 22M',          status: 'Active',   pct: 68 },
+  { initiative: '700 MHz 5G SA re-farm (coverage)',         horizon: 'Q2-2027', invest: 'BSD 14M',          status: 'Active',   pct: 54 },
+  { initiative: '2030 renewal reserve (120 MHz)',           horizon: 'Q4-2026', invest: 'BSD 780M reserve', status: 'Planning', pct: 28 },
+  { initiative: '26 GHz FWA monetisation pilot',            horizon: 'H1-2027', invest: 'BSD 8M',           status: 'Planning', pct: 18 },
+  { initiative: '900 MHz full GSM shutdown',                horizon: 'Q4-2027', invest: 'BSD 6M',           status: 'Active',   pct: 42 },
+  { initiative: '1800 MHz DSS 5G NR activation (national)', horizon: 'H2-2027', invest: 'BSD 18M',          status: 'Planned',  pct: 12 },
 ]
 
 const MNO_SPECTRUM_COMPARE = [
@@ -442,7 +442,7 @@ export default function SpectrumPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             <KpiCard label={tt('2G sites remaining')}   value="1,484"  delta={tt('target: 0 by 2027')} trend="down" icon={AlertTriangle} accent />
             <KpiCard label={tt('3G sites (2100 MHz)')}   value="8%"     delta={tt('92% already off')} trend="up"   icon={Zap} />
-            <KpiCard label={tt('900 MHz GSM refarmed')}  value="64%"    delta={tt('target 100% by Q2-27')} trend="up" icon={Radio} />
+            <KpiCard label={tt('900 MHz GSM refarmed')}  value="64%"    delta={tt('target 100% by Q4-27')} trend="up" icon={Radio} />
             <KpiCard label={tt('Refarm NPV opportunity')} value="+BSD 48M" delta={tt('throughput uplift')} trend="up"  icon={TrendingUp} />
           </div>
 
@@ -465,11 +465,11 @@ export default function SpectrumPage() {
             <Panel title={tt('Refarm milestone plan')}>
               <div className="space-y-3 py-2">
                 {[
-                  { phase: '900 MHz: GSM → NR DSS Phase 1',  pct: 64, eta: 'Q2-2026' },
-                  { phase: '900 MHz: GSM → NR DSS Phase 2',  pct: 18, eta: 'Q4-2026' },
-                  { phase: '900 MHz: Full GSM shutdown',      pct:  6, eta: 'Q2-2027' },
-                  { phase: '2600 MHz: TDD/FDD rebalance',     pct: 38, eta: 'Q3-2026' },
-                  { phase: '1800 MHz: DSS 5G NR national',   pct: 12, eta: 'H1-2027' },
+                  { phase: '900 MHz: GSM → NR DSS Phase 1',  pct: 64, eta: 'Q4-2026' },
+                  { phase: '900 MHz: GSM → NR DSS Phase 2',  pct: 18, eta: 'Q2-2027' },
+                  { phase: '900 MHz: Full GSM shutdown',      pct:  6, eta: 'Q4-2027' },
+                  { phase: '2600 MHz: TDD/FDD rebalance',     pct: 38, eta: 'Q1-2027' },
+                  { phase: '1800 MHz: DSS 5G NR national',   pct: 12, eta: 'H2-2027' },
                 ].map(m => (
                   <div key={m.phase}>
                     <div className="flex items-center justify-between mb-1 text-sm">
@@ -656,7 +656,7 @@ export default function SpectrumPage() {
       {tab === 'auctions' && (
         <>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <KpiCard label={tt('Total auction spend')} value="BSD 2.37B" delta={tt('since 2011')} trend="flat" icon={Globe} accent />
+            <KpiCard label={tt('Total auction spend')} value="BSD 48M" delta={tt('since 2011')} trend="flat" icon={Globe} accent />
             <KpiCard label={tt('Largest single auction')} value="BSD 1.17B" delta={tt('2011 multi-band')} trend="flat" icon={TrendingUp} />
             <KpiCard label={tt('Total MHz acquired')} value="840 MHz" delta={tt('sub-6 GHz + mmWave')} trend="up" icon={Radio} />
             <KpiCard label={tt('Next renewal window')} value="2030" delta={tt('120 MHz capacity block')} trend="flat" icon={Calendar} />
@@ -714,8 +714,8 @@ export default function SpectrumPage() {
         <>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             <KpiCard label={tt('CITEL harmonised bands')} value="7 / 7"  delta={tt('all bands harmonised')} trend="up" icon={ShieldCheck} accent />
-            <KpiCard label={tt('Coverage obligations')} value="94%"    delta={tt('700 MHz · Q4-2026 deadline')} trend="up" icon={Globe} />
-            <KpiCard label={tt('Rural 90% pop target')} value="68%"    delta={tt('at risk — Q4-2027')} trend="down" icon={AlertTriangle} />
+            <KpiCard label={tt('Coverage obligations')} value="94%"    delta={tt('700 MHz · Q2-2027 deadline')} trend="up" icon={Globe} />
+            <KpiCard label={tt('Rural 90% pop target')} value="68%"    delta={tt('at risk — Q2-2028')} trend="down" icon={AlertTriangle} />
             <KpiCard label={tt('EMF compliance')}        value="100%"   delta={tt('annual audit passed')} trend="up" icon={Activity} />
           </div>
 
@@ -804,7 +804,7 @@ export default function SpectrumPage() {
             <KpiCard label={tt('Active initiatives')}   value="3"    delta={tt('of 6 in execution')} trend="up"   icon={Signal} accent />
             <KpiCard label={tt('Total programme spend')} value="BSD 68M" delta={tt('FY2026 spectrum opex+capex')} trend="flat" icon={Gauge} />
             <KpiCard label={tt('Renewal reserve needed')} value="BSD 780M" delta={tt('2030 auction cliff')} trend="down" icon={AlertTriangle} />
-            <KpiCard label={tt('26 GHz FWA revenue')}   value="BSD 4.2M" delta={tt('pilot H2-2026')} trend="up"   icon={TrendingUp} />
+            <KpiCard label={tt('26 GHz FWA revenue')}   value="BSD 4.2M" delta={tt('pilot H1-2027')} trend="up"   icon={TrendingUp} />
           </div>
 
           <Panel title={tt('Spectrum programme roadmap — FY2026–2027')}>
@@ -873,7 +873,7 @@ export default function SpectrumPage() {
             <div>
               <div className="text-xs uppercase tracking-widest font-bold text-vfes-dark mb-1">{tt('Spectrum strategy')}</div>
               <div className="text-sm text-vfes-dark/80">
-                {tt('The 26 GHz mmWave block is only 22% utilised — FWA pilots in Q3-2026 target residential broadband density in Nassau and Freeport, with BSD 4.2M revenue expected in H2.')}
+                {tt('The 26 GHz mmWave block is only 22% utilised — FWA pilots in Q1-2027 target residential broadband density in Nassau and Freeport, with BSD 4.2M revenue expected in H2.')}
               </div>
             </div>
             <Link to="/portal/network" className="bg-vfes-red text-vfes-dark text-sm font-bold px-4 py-2 rounded-full hover:bg-vfes-red-dark flex items-center gap-2 shrink-0 ml-4">
@@ -926,7 +926,7 @@ export default function SpectrumPage() {
       <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
         <KpiCard label={tt('Total licensed MHz (sub-6)')} value={`${licensedSub6} MHz`} delta={tt('8 bands')} trend="flat" icon={Radio} />
         <KpiCard label={tt('Total licensed MHz (mmWave)')} value={`${mmwave} MHz`} delta={tt('26 GHz hotspot')} trend="flat" icon={Signal} />
-        <KpiCard label={tt('Spectrum spend to date')} value="BSD 2.37B" delta={tt('since 2011 auctions')} trend="flat" icon={TrendingUp} />
+        <KpiCard label={tt('Spectrum spend to date')} value="BSD 48M" delta={tt('since 2011 auctions')} trend="flat" icon={TrendingUp} />
         <KpiCard label={tt('Renewal cliff year')} value="2030" delta={tt('120 MHz at risk')} trend="down" icon={AlertTriangle} />
       </div>
 
@@ -947,12 +947,12 @@ export default function SpectrumPage() {
                 {[
                   { kpi: '700 MHz Utilisation',         cur: '91%', tgt: '<92%',      rag: 'Amber' },
                   { kpi: '3.5 GHz 5G SA rollout',       cur: '84%', tgt: '100% Q4',   rag: 'Green' },
-                  { kpi: '1800 MHz Refarming (DSS)',     cur: '81%', tgt: '100% H1-27', rag: 'Green' },
+                  { kpi: '1800 MHz Refarming (DSS)',     cur: '81%', tgt: '100% H2-27', rag: 'Green' },
                   { kpi: '2100 MHz 3G Shutdown',         cur: '92%', tgt: '100% Q4',   rag: 'Green' },
-                  { kpi: '900 MHz GSM Refarm',           cur: '64%', tgt: '100% Q2-27', rag: 'Amber' },
-                  { kpi: '26 GHz FWA Utilisation',       cur: '22%', tgt: '40% H2-27', rag: 'Amber' },
-                  { kpi: '700 MHz Coverage Obligation',  cur: '94%', tgt: '100% Q4-26', rag: 'Green' },
-                  { kpi: 'Rural 90% Coverage',           cur: '68%', tgt: '100% Q4-27', rag: 'Amber' },
+                  { kpi: '900 MHz GSM Refarm',           cur: '64%', tgt: '100% Q4-27', rag: 'Amber' },
+                  { kpi: '26 GHz FWA Utilisation',       cur: '22%', tgt: '40% H1-28', rag: 'Amber' },
+                  { kpi: '700 MHz Coverage Obligation',  cur: '94%', tgt: '100% Q2-27', rag: 'Green' },
+                  { kpi: 'Rural 90% Coverage',           cur: '68%', tgt: '100% Q2-28', rag: 'Amber' },
                 ].map(r => (
                   <tr key={r.kpi} className="border-b border-black/5 hover:bg-[#fafbfc]">
                     <td className="px-3 py-2 font-semibold">{tt(r.kpi)}</td>
@@ -1047,7 +1047,7 @@ export default function SpectrumPage() {
               </BarChart>
             </ResponsiveContainer>
           </div>
-          <div className="mt-2 text-xs text-vfes-dark/55">{tt('2100 MHz 3G shutdown at 92% — 2G on 900 MHz still in progress targeting Q2-2027.')}</div>
+          <div className="mt-2 text-xs text-vfes-dark/55">{tt('2100 MHz 3G shutdown at 92% — 2G on 900 MHz still in progress targeting Q4-2027.')}</div>
         </Panel>
       </div>
 

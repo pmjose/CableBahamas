@@ -37,12 +37,12 @@ const DISTRIBUTION = [
 ]
 
 const LOGISTICS = [
-  { m: 'Jan', inbound: 84,  outbound: 78,  returns: 9  },
-  { m: 'Feb', inbound: 88,  outbound: 82,  returns: 10 },
-  { m: 'Mar', inbound: 92,  outbound: 90,  returns: 11 },
-  { m: 'Apr', inbound: 96,  outbound: 94,  returns: 12 },
-  { m: 'May', inbound: 101, outbound: 98,  returns: 12 },
-  { m: 'Jun', inbound: 108, outbound: 104, returns: 13 },
+  { m: 'Jun', inbound: 84,  outbound: 78,  returns: 9  },
+  { m: 'Jul', inbound: 88,  outbound: 82,  returns: 10 },
+  { m: 'Aug', inbound: 92,  outbound: 90,  returns: 11 },
+  { m: 'Sep', inbound: 96,  outbound: 94,  returns: 12 },
+  { m: 'Oct', inbound: 101, outbound: 98,  returns: 12 },
+  { m: 'Nov', inbound: 108, outbound: 104, returns: 13 },
 ]
 
 const REVERSE = [
@@ -63,24 +63,24 @@ const SUPPLIERS = [
 ]
 
 const LEAD_TIME_TREND = [
-  { m: 'Jan', flagship: 4.8, midrange: 6.2, cpe: 9.8 },
-  { m: 'Feb', flagship: 4.6, midrange: 6.0, cpe: 9.4 },
-  { m: 'Mar', flagship: 4.4, midrange: 5.8, cpe: 9.2 },
-  { m: 'Apr', flagship: 4.3, midrange: 5.8, cpe: 8.8 },
-  { m: 'May', flagship: 4.2, midrange: 5.8, cpe: 8.5 },
-  { m: 'Jun', flagship: 4.2, midrange: 5.8, cpe: 8.4 },
+  { m: 'Jun', flagship: 4.8, midrange: 6.2, cpe: 9.8 },
+  { m: 'Jul', flagship: 4.6, midrange: 6.0, cpe: 9.4 },
+  { m: 'Aug', flagship: 4.4, midrange: 5.8, cpe: 9.2 },
+  { m: 'Sep', flagship: 4.3, midrange: 5.8, cpe: 8.8 },
+  { m: 'Oct', flagship: 4.2, midrange: 5.8, cpe: 8.5 },
+  { m: 'Nov', flagship: 4.2, midrange: 5.8, cpe: 8.4 },
 ]
 
 // ─── Demand-supply balance ────────────────────────────────────────────────────
 const DEMAND_SUPPLY = [
-  { m: 'Jan', demand: 76, supply: 84,  gap:  8 },
-  { m: 'Feb', demand: 80, supply: 88,  gap:  8 },
-  { m: 'Mar', demand: 92, supply: 92,  gap:  0 },
-  { m: 'Apr', demand: 98, supply: 96,  gap: -2 },
-  { m: 'May', demand: 105, supply: 101, gap: -4 },
-  { m: 'Jun', demand: 112, supply: 108, gap: -4 },
-  { m: 'Jul', demand: 118, supply: 112, gap: -6 },
-  { m: 'Aug', demand: 122, supply: 116, gap: -6 },
+  { m: 'Jun', demand: 76, supply: 84,  gap:  8 },
+  { m: 'Jul', demand: 80, supply: 88,  gap:  8 },
+  { m: 'Aug', demand: 92, supply: 92,  gap:  0 },
+  { m: 'Sep', demand: 98, supply: 96,  gap: -2 },
+  { m: 'Oct', demand: 105, supply: 101, gap: -4 },
+  { m: 'Nov', demand: 112, supply: 108, gap: -4 },
+  { m: 'Dec', demand: 118, supply: 112, gap: -6 },
+  { m: 'Jan', demand: 122, supply: 116, gap: -6 },
 ]
 
 const STOCK_OUT_RISK = [
@@ -92,7 +92,7 @@ const STOCK_OUT_RISK = [
 
 // ─── Procurement linkage ─────────────────────────────────────────────────────
 const OPEN_POS = [
-  { po: 'PO-24892', supplier: 'Samsung',    sku: 'Galaxy S26 Ultra',   qty: 8000,  value: 8.2,  eta: 'Jul 28', status: 'Confirmed'  },
+  { po: 'PO-24892', supplier: 'Samsung',    sku: 'Galaxy S26 Ultra',   qty: 8000,  value: 8.2,  eta: 'Dec 28', status: 'Confirmed'  },
   { po: 'PO-24891', supplier: 'Apple',      sku: 'iPhone 17 Pro',      qty: 4000,  value: 6.8,  eta: 'Jul 15', status: 'Confirmed'  },
   { po: 'PO-24893', supplier: 'Xiaomi',     sku: 'Redmi Note 14 Pro',  qty: 12000, value: 5.4,  eta: 'Aug 10', status: 'At risk'    },
   { po: 'PO-24895', supplier: 'Nokia',      sku: 'Wi-Fi 7 CPE',        qty: 6000,  value: 3.6,  eta: 'Sep 2',  status: 'Delayed'   },
@@ -355,14 +355,14 @@ export default function SupplyChainPage() {
         </div>
 
         <div className="mt-6">
-          <Panel title={tt('Supply chain KPI summary — Q2-26 vs Q2-25')}>
+          <Panel title={tt('Supply chain KPI summary — Q4-26 vs Q4-25')}>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="text-left text-[10px] uppercase tracking-widest text-vfes-dark/55 border-b border-black/5">
                     <th className="py-2">{tt('KPI')}</th>
-                    <th className="text-right">{tt('Q2-26')}</th>
-                    <th className="text-right">{tt('Q2-25')}</th>
+                    <th className="text-right">{tt('Q4-26')}</th>
+                    <th className="text-right">{tt('Q4-25')}</th>
                     <th className="text-right">{tt('YoY')}</th>
                     <th>{tt('Status')}</th>
                   </tr>
@@ -631,7 +631,7 @@ export default function SupplyChainPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Jun demand')} value="112K" delta={tt('units/month')} trend="up" icon={TrendingUp} accent />
           <KpiCard label={tt('Jun supply')} value="108K" delta={tt('−4K shortfall')} trend="down" icon={Boxes} />
-          <KpiCard label={tt('Q3 demand CAGR')} value="+9%"  delta={tt('vs Q3-25')} trend="up" icon={Activity} />
+          <KpiCard label={tt('Q3 demand CAGR')} value="+9%"  delta={tt('vs Q1-26')} trend="up" icon={Activity} />
           <KpiCard label={tt('Stockout impact BSD M')} value="BSD 4.2M" delta={tt('flagship only')} trend="down" icon={AlertTriangle} />
         </div>
 
@@ -780,12 +780,12 @@ export default function SupplyChainPage() {
             <div className="h-48">
               <ResponsiveContainer>
                 <AreaChart data={[
-                  { m: 'Jan', flagship: 28, mid: 15, cpe: 7  },
-                  { m: 'Feb', flagship: 30, mid: 16, cpe: 7  },
-                  { m: 'Mar', flagship: 32, mid: 17, cpe: 8  },
-                  { m: 'Apr', flagship: 34, mid: 16, cpe: 8  },
-                  { m: 'May', flagship: 38, mid: 17, cpe: 8  },
-                  { m: 'Jun', flagship: 42, mid: 18, cpe: 9  },
+                  { m: 'Jun', flagship: 28, mid: 15, cpe: 7  },
+                  { m: 'Jul', flagship: 30, mid: 16, cpe: 7  },
+                  { m: 'Aug', flagship: 32, mid: 17, cpe: 8  },
+                  { m: 'Sep', flagship: 34, mid: 16, cpe: 8  },
+                  { m: 'Oct', flagship: 38, mid: 17, cpe: 8  },
+                  { m: 'Nov', flagship: 42, mid: 18, cpe: 9  },
                 ]}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
                   <XAxis dataKey="m" tick={{ fontSize: 11 }} />

@@ -23,14 +23,14 @@ const RED = '#EF4444'
 const PURPLE = '#7C3AED'
 
 const PL_TREND = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'][i],
+  m: ['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'][i],
   grossLoss: 180 + Math.round(40 * Math.sin(i / 2)) + (i > 8 ? 60 : 0),
   prevented:  120 + Math.round(30 * Math.sin(i / 2.5 + 1)),
   netLoss:     60 + Math.round(20 * Math.sin(i / 3)),
 }))
 
 const FRAUD_TREND = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'][i],
+  m: ['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'][i],
   simSwap:      40 + Math.round(20 * Math.sin(i / 2)) + (i > 8 ? 18 : 0),
   irsf:         28 + Math.round(12 * Math.sin(i / 3 + 1)),
   wangiri:      60 + Math.round(30 * Math.sin(i / 2.5 + 2)),
@@ -38,21 +38,21 @@ const FRAUD_TREND = Array.from({ length: 12 }, (_, i) => ({
 }))
 
 const ML_PERF_TREND = [
-  { m: 'Jan', precision: 0.88, recall: 0.82, f1: 0.85 },
-  { m: 'Feb', precision: 0.89, recall: 0.84, f1: 0.86 },
-  { m: 'Mar', precision: 0.90, recall: 0.85, f1: 0.87 },
-  { m: 'Apr', precision: 0.92, recall: 0.87, f1: 0.89 },
-  { m: 'May', precision: 0.93, recall: 0.89, f1: 0.91 },
-  { m: 'Jun', precision: 0.94, recall: 0.91, f1: 0.92 },
+  { m: 'Jun', precision: 0.88, recall: 0.82, f1: 0.85 },
+  { m: 'Jul', precision: 0.89, recall: 0.84, f1: 0.86 },
+  { m: 'Aug', precision: 0.90, recall: 0.85, f1: 0.87 },
+  { m: 'Sep', precision: 0.92, recall: 0.87, f1: 0.89 },
+  { m: 'Oct', precision: 0.93, recall: 0.89, f1: 0.91 },
+  { m: 'Nov', precision: 0.94, recall: 0.91, f1: 0.92 },
 ]
 
 const LOSS_BY_CAT = [
-  { m: 'Jan', irsf: 48, simSwap: 24, subscription: 22, wangiri: 18 },
-  { m: 'Feb', irsf: 52, simSwap: 28, subscription: 24, wangiri: 16 },
-  { m: 'Mar', irsf: 44, simSwap: 32, subscription: 26, wangiri: 14 },
-  { m: 'Apr', irsf: 38, simSwap: 30, subscription: 24, wangiri: 12 },
-  { m: 'May', irsf: 32, simSwap: 26, subscription: 21, wangiri: 11 },
-  { m: 'Jun', irsf: 28, simSwap: 22, subscription: 18, wangiri: 10 },
+  { m: 'Jun', irsf: 48, simSwap: 24, subscription: 22, wangiri: 18 },
+  { m: 'Jul', irsf: 52, simSwap: 28, subscription: 24, wangiri: 16 },
+  { m: 'Aug', irsf: 44, simSwap: 32, subscription: 26, wangiri: 14 },
+  { m: 'Sep', irsf: 38, simSwap: 30, subscription: 24, wangiri: 12 },
+  { m: 'Oct', irsf: 32, simSwap: 26, subscription: 21, wangiri: 11 },
+  { m: 'Nov', irsf: 28, simSwap: 22, subscription: 18, wangiri: 10 },
 ]
 
 const IRSF_DEST = [
@@ -72,9 +72,9 @@ const IRSF_TREND = [
 ]
 
 const WANGIRI_TREND = [
-  { m: 'Jan', attempts: 4820, suppressed: 4380 }, { m: 'Feb', attempts: 5240, suppressed: 4870 },
-  { m: 'Mar', attempts: 6120, suppressed: 5680 }, { m: 'Apr', attempts: 5840, suppressed: 5520 },
-  { m: 'May', attempts: 4980, suppressed: 4730 }, { m: 'Jun', attempts: 5640, suppressed: 5390 },
+  { m: 'Jun', attempts: 4820, suppressed: 4380 }, { m: 'Jul', attempts: 5240, suppressed: 4870 },
+  { m: 'Aug', attempts: 6120, suppressed: 5680 }, { m: 'Sep', attempts: 5840, suppressed: 5520 },
+  { m: 'Oct', attempts: 4980, suppressed: 4730 }, { m: 'Nov', attempts: 5640, suppressed: 5390 },
 ]
 
 const SUB_FRAUD_TYPES = [
@@ -86,9 +86,9 @@ const SUB_FRAUD_TYPES = [
 ]
 
 const SUB_FRAUD_TREND = [
-  { m: 'Jan', cases: 940,  prevented: 680  }, { m: 'Feb', cases: 1020, prevented: 790  },
-  { m: 'Mar', cases: 1140, prevented: 920  }, { m: 'Apr', cases: 1080, prevented: 870  },
-  { m: 'May', cases: 1240, prevented: 1040 }, { m: 'Jun', cases: 1087, prevented: 960  },
+  { m: 'Jun', cases: 940,  prevented: 680  }, { m: 'Jul', cases: 1020, prevented: 790  },
+  { m: 'Aug', cases: 1140, prevented: 920  }, { m: 'Sep', cases: 1080, prevented: 870  },
+  { m: 'Oct', cases: 1240, prevented: 1040 }, { m: 'Nov', cases: 1087, prevented: 960  },
 ]
 
 const SIGNALING = [
@@ -102,9 +102,9 @@ const SIGNALING = [
 ]
 
 const SS7_TREND = [
-  { m: 'Jan', cat2: 9840,  cat3: 2410, diameter: 1420 }, { m: 'Feb', cat2: 10200, cat3: 2680, diameter: 1580 },
-  { m: 'Mar', cat2: 11400, cat3: 2940, diameter: 1620 }, { m: 'Apr', cat2: 12100, cat3: 3110, diameter: 1740 },
-  { m: 'May', cat2: 12480, cat3: 3280, diameter: 1820 }, { m: 'Jun', cat2: 12840, cat3: 3420, diameter: 1860 },
+  { m: 'Jun', cat2: 9840,  cat3: 2410, diameter: 1420 }, { m: 'Jul', cat2: 10200, cat3: 2680, diameter: 1580 },
+  { m: 'Aug', cat2: 11400, cat3: 2940, diameter: 1620 }, { m: 'Sep', cat2: 12100, cat3: 3110, diameter: 1740 },
+  { m: 'Oct', cat2: 12480, cat3: 3280, diameter: 1820 }, { m: 'Nov', cat2: 12840, cat3: 3420, diameter: 1860 },
 ]
 
 const CASES = [
@@ -134,9 +134,9 @@ const BLOCKLIST_ENTRIES = [
 ]
 
 const BLOCKLIST_TREND = [
-  { m: 'Jan', msisdn: 42000, imei: 11200, ip: 7400 }, { m: 'Feb', msisdn: 43800, imei: 11600, ip: 7600 },
-  { m: 'Mar', msisdn: 45200, imei: 12000, ip: 7900 }, { m: 'Apr', msisdn: 46400, imei: 12200, ip: 8100 },
-  { m: 'May', msisdn: 47100, imei: 12600, ip: 8300 }, { m: 'Jun', msisdn: 48420, imei: 12840, ip: 8420 },
+  { m: 'Jun', msisdn: 42000, imei: 11200, ip: 7400 }, { m: 'Jul', msisdn: 43800, imei: 11600, ip: 7600 },
+  { m: 'Aug', msisdn: 45200, imei: 12000, ip: 7900 }, { m: 'Sep', msisdn: 46400, imei: 12200, ip: 8100 },
+  { m: 'Oct', msisdn: 47100, imei: 12600, ip: 8300 }, { m: 'Nov', msisdn: 48420, imei: 12840, ip: 8420 },
 ]
 
 const SIM_SWAP_QUEUE = [
@@ -430,7 +430,7 @@ export default function FraudPage() {
               </table>
             </div>
             <div className="mt-3 flex items-center justify-between">
-              <span className="text-xs text-vfes-dark/55">{tt('Benchmarks sourced from GSMA fraud analytics consortium — anonymised Q1 2026.')}</span>
+              <span className="text-xs text-vfes-dark/55">{tt('Benchmarks sourced from GSMA fraud analytics consortium — anonymised Q3 2026.')}</span>
               <Link to="/portal/risk" className="text-xs font-bold text-vfes-dark hover:underline">{tt('Risk Centre →')}</Link>
             </div>
           </Panel>
@@ -967,12 +967,12 @@ export default function FraudPage() {
             <div className="h-64">
               <ResponsiveContainer>
                 <LineChart data={[
-                  { m: 'Jan', fpRate: 1.8, coverage: 94, autoAdd: 82 },
-                  { m: 'Feb', fpRate: 1.6, coverage: 95, autoAdd: 84 },
-                  { m: 'Mar', fpRate: 1.4, coverage: 95, autoAdd: 86 },
-                  { m: 'Apr', fpRate: 1.2, coverage: 96, autoAdd: 88 },
-                  { m: 'May', fpRate: 1.0, coverage: 96, autoAdd: 90 },
-                  { m: 'Jun', fpRate: 0.8, coverage: 97, autoAdd: 92 },
+                  { m: 'Jun', fpRate: 1.8, coverage: 94, autoAdd: 82 },
+                  { m: 'Jul', fpRate: 1.6, coverage: 95, autoAdd: 84 },
+                  { m: 'Aug', fpRate: 1.4, coverage: 95, autoAdd: 86 },
+                  { m: 'Sep', fpRate: 1.2, coverage: 96, autoAdd: 88 },
+                  { m: 'Oct', fpRate: 1.0, coverage: 96, autoAdd: 90 },
+                  { m: 'Nov', fpRate: 0.8, coverage: 97, autoAdd: 92 },
                 ]}>
                   <CartesianGrid stroke="#eee" strokeDasharray="3 3" />
                   <XAxis dataKey="m" stroke="#999" fontSize={11} />
@@ -1054,12 +1054,12 @@ export default function FraudPage() {
             <div className="h-64">
               <ResponsiveContainer>
                 <LineChart data={[
-                  { m: 'Jan', preventCost: 12.4, savedLoss: 142, netBenefit: 129.6 },
-                  { m: 'Feb', preventCost: 13.2, savedLoss: 168, netBenefit: 154.8 },
-                  { m: 'Mar', preventCost: 13.8, savedLoss: 182, netBenefit: 168.2 },
-                  { m: 'Apr', preventCost: 13.4, savedLoss: 174, netBenefit: 160.6 },
-                  { m: 'May', preventCost: 14.2, savedLoss: 192, netBenefit: 177.8 },
-                  { m: 'Jun', preventCost: 14.8, savedLoss: 204, netBenefit: 189.2 },
+                  { m: 'Jun', preventCost: 12.4, savedLoss: 142, netBenefit: 129.6 },
+                  { m: 'Jul', preventCost: 13.2, savedLoss: 168, netBenefit: 154.8 },
+                  { m: 'Aug', preventCost: 13.8, savedLoss: 182, netBenefit: 168.2 },
+                  { m: 'Sep', preventCost: 13.4, savedLoss: 174, netBenefit: 160.6 },
+                  { m: 'Oct', preventCost: 14.2, savedLoss: 192, netBenefit: 177.8 },
+                  { m: 'Nov', preventCost: 14.8, savedLoss: 204, netBenefit: 189.2 },
                 ]}>
                   <CartesianGrid stroke="#eee" strokeDasharray="3 3" />
                   <XAxis dataKey="m" stroke="#999" fontSize={11} />

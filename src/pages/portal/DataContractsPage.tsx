@@ -31,11 +31,11 @@ const CONTRACTS = [
 ]
 
 const BREAKS_EXTENDED = [
-  { d: '2025-05-21', contract: 'EXEC_360_CONTRACT_v2',         change: 'column TOTAL_REV → REVENUE_TOTAL', producer: 'Finance DE',  impact: '4 BI dashboards',       resolution: 'view shim deployed · backfilled v3 in dev', impactScore: 80, breaking: true  },
-  { d: '2025-05-19', contract: 'CMTS_EVENTS_CONTRACT_v6',      change: 'enum value SET_TOP added',          producer: 'Network Eng', impact: 'AI_CLASSIFY model',      resolution: 'retraining triggered',                      impactScore: 40, breaking: false },
-  { d: '2025-05-14', contract: 'NETWORK_KPI_CONTRACT_v4',      change: 'freshness SLA miss · +12 min',      producer: 'Network DE',  impact: 'NOC dashboards delayed', resolution: 'pipeline optimised',                         impactScore: 60, breaking: false },
-  { d: '2024-12-30', contract: 'CHURN_LIST_DAILY_CONTRACT_v2', change: 'column types changed',              producer: 'ML platform', impact: '2 CRM syncs',            resolution: 'fixed · contract bumped v2.1',               impactScore: 35, breaking: true  },
-  { d: '2024-11-08', contract: 'B2B_360_CONTRACT_v2',          change: 'row_count drop −22% vs T-1',        producer: 'B2B DE',      impact: 'B2B forecasting model',  resolution: 'upstream pipeline bug fixed',                impactScore: 55, breaking: false },
+  { d: '2025-10-21', contract: 'EXEC_360_CONTRACT_v2',         change: 'column TOTAL_REV → REVENUE_TOTAL', producer: 'Finance DE',  impact: '4 BI dashboards',       resolution: 'view shim deployed · backfilled v3 in dev', impactScore: 80, breaking: true  },
+  { d: '2025-10-19', contract: 'CMTS_EVENTS_CONTRACT_v6',      change: 'enum value SET_TOP added',          producer: 'Network Eng', impact: 'AI_CLASSIFY model',      resolution: 'retraining triggered',                      impactScore: 40, breaking: false },
+  { d: '2025-10-14', contract: 'NETWORK_KPI_CONTRACT_v4',      change: 'freshness SLA miss · +12 min',      producer: 'Network DE',  impact: 'NOC dashboards delayed', resolution: 'pipeline optimised',                         impactScore: 60, breaking: false },
+  { d: '2025-05-30', contract: 'CHURN_LIST_DAILY_CONTRACT_v2', change: 'column types changed',              producer: 'ML platform', impact: '2 CRM syncs',            resolution: 'fixed · contract bumped v2.1',               impactScore: 35, breaking: true  },
+  { d: '2025-04-08', contract: 'B2B_360_CONTRACT_v2',          change: 'row_count drop −22% vs T-1',        producer: 'B2B DE',      impact: 'B2B forecasting model',  resolution: 'upstream pipeline bug fixed',                impactScore: 55, breaking: false },
 ]
 
 const SLA_TREND = Array.from({ length: 30 }, (_, i) => ({
@@ -45,25 +45,25 @@ const SLA_TREND = Array.from({ length: 30 }, (_, i) => ({
 }))
 
 const BREACH_TREND_MONTHLY = [
-  { m: 'Jan', breaches: 4, resolved: 4, open: 0 },
-  { m: 'Feb', breaches: 2, resolved: 2, open: 0 },
-  { m: 'Mar', breaches: 5, resolved: 4, open: 1 },
-  { m: 'Apr', breaches: 3, resolved: 3, open: 0 },
-  { m: 'May', breaches: 3, resolved: 2, open: 1 },
-  { m: 'Jun', breaches: 1, resolved: 0, open: 1 },
+  { m: 'Jun', breaches: 4, resolved: 4, open: 0 },
+  { m: 'Jul', breaches: 2, resolved: 2, open: 0 },
+  { m: 'Aug', breaches: 5, resolved: 4, open: 1 },
+  { m: 'Sep', breaches: 3, resolved: 3, open: 0 },
+  { m: 'Oct', breaches: 3, resolved: 2, open: 1 },
+  { m: 'Nov', breaches: 1, resolved: 0, open: 1 },
 ]
 
 const SLA_BAR = CONTRACTS.map(c => ({ contract: c.c.replace('_CONTRACT_v', ' v'), sla_met: c.sla_met, target: 99.5 }))
 
 const VERSION_HISTORY = [
-  { contract: 'CUSTOMER_360_CONTRACT_v3',     from_v: 'v3.3', to_v: 'v3.4', date: '2025-04-12', type: 'minor', change: 'added CLV_SEGMENT column',              breaking: false, migration: 'backfill complete' },
-  { contract: 'CUSTOMER_360_CONTRACT_v3',     from_v: 'v3.2', to_v: 'v3.3', date: '2025-01-08', type: 'minor', change: 'FTTH_FLAG boolean added',               breaking: false, migration: 'default FALSE' },
-  { contract: 'EXEC_360_CONTRACT_v2',         from_v: 'v1.x', to_v: 'v2.0', date: '2024-11-01', type: 'major', change: 'rename TOTAL_REV → REVENUE_TOTAL',      breaking: true,  migration: 'view shim + 90d deprecation' },
-  { contract: 'CHURN_LIST_DAILY_CONTRACT_v2', from_v: 'v2.0', to_v: 'v2.1', date: '2024-12-30', type: 'patch', change: 'type fix CHURN_SCORE FLOAT→NUMBER(5,4)', breaking: false, migration: 'auto-cast applied' },
-  { contract: 'NETWORK_KPI_CONTRACT_v4',      from_v: 'v3.x', to_v: 'v4.0', date: '2024-09-15', type: 'major', change: 'added RAN_REGION + 14 new cols',         breaking: true,  migration: '90d overlap window' },
-  { contract: 'CMTS_EVENTS_CONTRACT_v6',      from_v: 'v6.1', to_v: 'v6.2', date: '2025-05-10', type: 'minor', change: 'enum SET_TOP added to DEVICE_TYPE',      breaking: false, migration: 'consumers notified' },
-  { contract: 'PRODUCT_360_CONTRACT_v2',      from_v: 'v1.x', to_v: 'v2.0', date: '2025-02-20', type: 'major', change: 'product_id type VARCHAR→UUID',            breaking: true,  migration: 'cast function provided' },
-  { contract: 'B2B_360_CONTRACT_v2',          from_v: 'v1.4', to_v: 'v2.0', date: '2024-08-01', type: 'major', change: 'B2B_SEGMENT new dimension table',         breaking: false, migration: 'additive change' },
+  { contract: 'CUSTOMER_360_CONTRACT_v3',     from_v: 'v3.3', to_v: 'v3.4', date: '2025-09-12', type: 'minor', change: 'added CLV_SEGMENT column',              breaking: false, migration: 'backfill complete' },
+  { contract: 'CUSTOMER_360_CONTRACT_v3',     from_v: 'v3.2', to_v: 'v3.3', date: '2025-06-08', type: 'minor', change: 'FTTH_FLAG boolean added',               breaking: false, migration: 'default FALSE' },
+  { contract: 'EXEC_360_CONTRACT_v2',         from_v: 'v1.x', to_v: 'v2.0', date: '2025-04-01', type: 'major', change: 'rename TOTAL_REV → REVENUE_TOTAL',      breaking: true,  migration: 'view shim + 90d deprecation' },
+  { contract: 'CHURN_LIST_DAILY_CONTRACT_v2', from_v: 'v2.0', to_v: 'v2.1', date: '2025-05-30', type: 'patch', change: 'type fix CHURN_SCORE FLOAT→NUMBER(5,4)', breaking: false, migration: 'auto-cast applied' },
+  { contract: 'NETWORK_KPI_CONTRACT_v4',      from_v: 'v3.x', to_v: 'v4.0', date: '2025-02-15', type: 'major', change: 'added RAN_REGION + 14 new cols',         breaking: true,  migration: '90d overlap window' },
+  { contract: 'CMTS_EVENTS_CONTRACT_v6',      from_v: 'v6.1', to_v: 'v6.2', date: '2025-10-10', type: 'minor', change: 'enum SET_TOP added to DEVICE_TYPE',      breaking: false, migration: 'consumers notified' },
+  { contract: 'PRODUCT_360_CONTRACT_v2',      from_v: 'v1.x', to_v: 'v2.0', date: '2025-07-20', type: 'major', change: 'product_id type VARCHAR→UUID',            breaking: true,  migration: 'cast function provided' },
+  { contract: 'B2B_360_CONTRACT_v2',          from_v: 'v1.4', to_v: 'v2.0', date: '2025-01-01', type: 'major', change: 'B2B_SEGMENT new dimension table',         breaking: false, migration: 'additive change' },
 ]
 
 const ENFORCEMENT_POLICIES = [

@@ -97,7 +97,7 @@ const COST_DATA = [
 ]
 
 const REUSE_TREND = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][i],
+  m: ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May'][i],
   reuse: 48 + i * 4,
   models: 2 + Math.floor(i * 0.5),
 }))
@@ -208,7 +208,7 @@ export default function FeatureStorePage() {
         agentBlurb={tt('Centralising features in Snowflake Feature Store eliminates dual-serving drift: training data and online lookups share the same materialised tables, so model performance matches offline evaluation exactly.')}
         decision={{
           title: tt('Retrain propensity_bundle — 3 features drifted beyond PSI 0.20'),
-          detail: tt('propensity_upsell_tv, cell_congestion_index and data_usage_delta_30d have population stability index > 0.20. propensity_bundle_v3 was trained on Q4-25 data; re-training on current distribution closes the gap before summer churn season.'),
+          detail: tt('propensity_upsell_tv, cell_congestion_index and data_usage_delta_30d have population stability index > 0.20. propensity_bundle_v3 was trained on Q2-26 data; re-training on current distribution closes the gap before summer churn season.'),
           impact: tt('propensity model +3.1 AUC · churn prevention value BSD 420K'),
           risk: tt('Re-training window: 48h — marketing campaigns should be paused meanwhile'),
           linkTo: '/portal/ml-registry',

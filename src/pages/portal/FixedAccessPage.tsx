@@ -49,16 +49,16 @@ const OVERBUILD = [
 ]
 
 const TAKE_TREND = [
-  { m: 'Jan', overall: 33, xgs: 24, gpon: 9 }, { m: 'Feb', overall: 34, xgs: 26, gpon: 8 },
-  { m: 'Mar', overall: 35, xgs: 28, gpon: 7 }, { m: 'Apr', overall: 36, xgs: 30, gpon: 6 },
-  { m: 'May', overall: 37, xgs: 34, gpon: 3 }, { m: 'Jun', overall: 38, xgs: 38, gpon: 0 },
+  { m: 'Jun', overall: 33, xgs: 24, gpon: 9 }, { m: 'Jul', overall: 34, xgs: 26, gpon: 8 },
+  { m: 'Aug', overall: 35, xgs: 28, gpon: 7 }, { m: 'Sep', overall: 36, xgs: 30, gpon: 6 },
+  { m: 'Oct', overall: 37, xgs: 34, gpon: 3 }, { m: 'Nov', overall: 38, xgs: 38, gpon: 0 },
 ]
 
 const BUILD_PROGRESS = [
   { q: 'Q3-24', passed: 1_380_000, target: 1_450_000 }, { q: 'Q4-24', passed: 1_480_000, target: 1_600_000 },
-  { q: 'Q1-25', passed: 1_560_000, target: 1_750_000 }, { q: 'Q2-25', passed: 1_640_000, target: 1_900_000 },
-  { q: 'Q3-25', passed: 1_690_000, target: 2_000_000 }, { q: 'Q4-25', passed: 1_720_000, target: 2_100_000 },
-  { q: 'Q1-26', passed: 1_730_000, target: 2_100_000 }, { q: 'Q2-26', passed: 1_740_000, target: 2_100_000 },
+  { q: 'Q3-25', passed: 1_560_000, target: 1_750_000 }, { q: 'Q4-25', passed: 1_640_000, target: 1_900_000 },
+  { q: 'Q1-26', passed: 1_690_000, target: 2_000_000 }, { q: 'Q2-26', passed: 1_720_000, target: 2_100_000 },
+  { q: 'Q3-26', passed: 1_730_000, target: 2_100_000 }, { q: 'Q4-26', passed: 1_740_000, target: 2_100_000 },
 ]
 
 const ONT_HEALTH = [
@@ -85,16 +85,16 @@ const SPLITTER_UTIL = [
 ]
 
 const COPPER_DECOM = [
-  { exchange: 'ANT-BER', copperLines: 8420, ftthPassed: 100, ftthTake: 68, targetDecom: 'Q3-26', status: 'On-track' },
-  { exchange: 'GNT-LED',     copperLines: 6240, ftthPassed: 100, ftthTake: 62, targetDecom: 'Q4-26', status: 'On-track' },
-  { exchange: 'BRG-ASB',    copperLines: 4810, ftthPassed:  88, ftthTake: 54, targetDecom: 'Q1-27', status: 'At-risk'  },
-  { exchange: 'LVN-EAST',       copperLines: 3920, ftthPassed:  74, ftthTake: 42, targetDecom: 'Q2-27', status: 'At-risk'  },
-  { exchange: 'MEC-NEK',    copperLines: 2840, ftthPassed:  96, ftthTake: 58, targetDecom: 'Q3-26', status: 'On-track' },
+  { exchange: 'ANT-BER', copperLines: 8420, ftthPassed: 100, ftthTake: 68, targetDecom: 'Q1-27', status: 'On-track' },
+  { exchange: 'GNT-LED',     copperLines: 6240, ftthPassed: 100, ftthTake: 62, targetDecom: 'Q2-27', status: 'On-track' },
+  { exchange: 'BRG-ASB',    copperLines: 4810, ftthPassed:  88, ftthTake: 54, targetDecom: 'Q3-27', status: 'At-risk'  },
+  { exchange: 'LVN-EAST',       copperLines: 3920, ftthPassed:  74, ftthTake: 42, targetDecom: 'Q4-27', status: 'At-risk'  },
+  { exchange: 'MEC-NEK',    copperLines: 2840, ftthPassed:  96, ftthTake: 58, targetDecom: 'Q1-27', status: 'On-track' },
 ]
 
 const COPPER_TREND = [
-  { m: 'Jan', lines: 284_000 }, { m: 'Feb', lines: 271_000 }, { m: 'Mar', lines: 258_000 },
-  { m: 'Apr', lines: 244_000 }, { m: 'May', lines: 231_000 }, { m: 'Jun', lines: 218_000 },
+  { m: 'Jun', lines: 284_000 }, { m: 'Jul', lines: 271_000 }, { m: 'Aug', lines: 258_000 },
+  { m: 'Sep', lines: 244_000 }, { m: 'Oct', lines: 231_000 }, { m: 'Nov', lines: 218_000 },
 ]
 
 const CHURN_BY_REGION = [
@@ -207,7 +207,7 @@ export default function FixedAccessPage() {
         decision={{
           title: tt('Accelerate XGS-PON build in Bimini — lowest overbuild, highest take headroom'),
           detail: tt('Propensity model scores Bimini 28% current take vs 44% addressable. Only 2 overbuilders vs 3–4 in Nassau/Freeport. Civil-works backlog is smallest — Q3 completion feasible with current contractor capacity.'),
-          impact: tt('+BSD 1.4M ARR · de-risks copper decom schedule Q3-26'),
+          impact: tt('+BSD 1.4M ARR · de-risks copper decom schedule Q1-27'),
           risk: tt('ONT procurement lead-time 10 weeks'),
           linkTo: '#/portal/fixed-access',
           linkLabel: tt('Open Fixed Access →'),

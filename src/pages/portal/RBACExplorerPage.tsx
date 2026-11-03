@@ -46,14 +46,14 @@ const TAG_COLORS: Record<string, string> = {
 }
 
 const GRANTS = [
-  { obj: 'CBL_ANALYTICS.CUSTOMER.CUSTOMER_360',  priv: 'SELECT',        to: 'ANALYST_CUSTOMER', via: 'role',              granted_by: 'SECURITYADMIN', granted_on: '2025-09-14' },
-  { obj: 'CBL_ANALYTICS.CUSTOMER.CUSTOMER_360',  priv: 'SELECT',        to: 'BI_POWERBI_SVC',   via: 'role',              granted_by: 'SECURITYADMIN', granted_on: '2025-09-14' },
-  { obj: 'CBL_AI.AGENTS.CHURN_AGENT',            priv: 'USAGE',         to: 'SC_AGENT_CHURN',   via: 'role',              granted_by: 'SECURITYADMIN', granted_on: '2025-10-08' },
-  { obj: 'CBL_GOV.POLICIES.MASK_EMAIL_V2',       priv: 'APPLY',         to: 'DATA_PLATFORM',    via: 'role',              granted_by: 'SECURITYADMIN', granted_on: '2025-08-01' },
-  { obj: 'CBL_RAW.NETWORK.CMTS_EVENTS',          priv: 'SELECT',        to: 'ANALYST_NETWORK',  via: 'role',              granted_by: 'SECURITYADMIN', granted_on: '2025-07-22' },
-  { obj: 'CBL_ANALYTICS.PEOPLE.PEOPLE_360',      priv: 'SELECT (RLS)',  to: 'PEOPLE_HR_BP',     via: 'row_access_policy', granted_by: 'SECURITYADMIN', granted_on: '2025-06-04' },
-  { obj: 'CBL_CORE.ML.MODEL_REGISTRY',           priv: 'USAGE',         to: 'DATA_SCIENCE',     via: 'role',              granted_by: 'SECURITYADMIN', granted_on: '2025-11-01' },
-  { obj: 'CBL_ANALYTICS.RISK.RISK_360',          priv: 'SELECT',        to: 'COMPLIANCE_RO',    via: 'role',              granted_by: 'SECURITYADMIN', granted_on: '2025-05-10' },
+  { obj: 'CBL_ANALYTICS.CUSTOMER.CUSTOMER_360',  priv: 'SELECT',        to: 'ANALYST_CUSTOMER', via: 'role',              granted_by: 'SECURITYADMIN', granted_on: '2026-02-14' },
+  { obj: 'CBL_ANALYTICS.CUSTOMER.CUSTOMER_360',  priv: 'SELECT',        to: 'BI_POWERBI_SVC',   via: 'role',              granted_by: 'SECURITYADMIN', granted_on: '2026-02-14' },
+  { obj: 'CBL_AI.AGENTS.CHURN_AGENT',            priv: 'USAGE',         to: 'SC_AGENT_CHURN',   via: 'role',              granted_by: 'SECURITYADMIN', granted_on: '2026-03-08' },
+  { obj: 'CBL_GOV.POLICIES.MASK_EMAIL_V2',       priv: 'APPLY',         to: 'DATA_PLATFORM',    via: 'role',              granted_by: 'SECURITYADMIN', granted_on: '2026-01-01' },
+  { obj: 'CBL_RAW.NETWORK.CMTS_EVENTS',          priv: 'SELECT',        to: 'ANALYST_NETWORK',  via: 'role',              granted_by: 'SECURITYADMIN', granted_on: '2025-12-22' },
+  { obj: 'CBL_ANALYTICS.PEOPLE.PEOPLE_360',      priv: 'SELECT (RLS)',  to: 'PEOPLE_HR_BP',     via: 'row_access_policy', granted_by: 'SECURITYADMIN', granted_on: '2025-11-04' },
+  { obj: 'CBL_CORE.ML.MODEL_REGISTRY',           priv: 'USAGE',         to: 'DATA_SCIENCE',     via: 'role',              granted_by: 'SECURITYADMIN', granted_on: '2026-04-01' },
+  { obj: 'CBL_ANALYTICS.RISK.RISK_360',          priv: 'SELECT',        to: 'COMPLIANCE_RO',    via: 'role',              granted_by: 'SECURITYADMIN', granted_on: '2025-10-10' },
 ]
 
 const FINDINGS = [
@@ -77,13 +77,13 @@ const MASKING_POLICIES = [
 ]
 
 const ACCESS_REVIEWS = [
-  { role: 'ACCOUNTADMIN',    last_review: '2026-05-01', next_review: '2026-08-01', status: 'Due soon',     reviewer: 'CISO',         finding: '3 holders — remediation in progress' },
-  { role: 'SECURITYADMIN',   last_review: '2026-06-01', next_review: '2026-09-01', status: 'Current',      reviewer: 'CISO',         finding: 'Clean' },
-  { role: 'ANALYST_CUSTOMER',last_review: '2026-06-15', next_review: '2026-09-15', status: 'Current',      reviewer: 'CDO',          finding: '24 members — 2 inactive' },
-  { role: 'DATA_SCIENCE',    last_review: '2026-04-01', next_review: '2026-07-01', status: 'Overdue',      reviewer: 'Data Eng Lead', finding: 'leen.jacobs bulk download flagged' },
-  { role: 'PEOPLE_HR_BP',    last_review: '2026-06-01', next_review: '2026-09-01', status: 'Current',      reviewer: 'CHRO',         finding: 'Clean' },
-  { role: 'BI_POWERBI_SVC',  last_review: '2025-09-01', next_review: '2026-03-01', status: 'Overdue',      reviewer: 'SecAdmin',     finding: 'Password 387d — SEC-2042' },
-  { role: 'COMPLIANCE_RO',   last_review: '2026-05-15', next_review: '2026-08-15', status: 'Due soon',     reviewer: 'DPO',          finding: 'Clean' },
+  { role: 'ACCOUNTADMIN',    last_review: '2026-10-01', next_review: '2027-01-01', status: 'Due soon',     reviewer: 'CISO',         finding: '3 holders — remediation in progress' },
+  { role: 'SECURITYADMIN',   last_review: '2026-11-01', next_review: '2027-02-01', status: 'Current',      reviewer: 'CISO',         finding: 'Clean' },
+  { role: 'ANALYST_CUSTOMER',last_review: '2026-11-15', next_review: '2027-02-15', status: 'Current',      reviewer: 'CDO',          finding: '24 members — 2 inactive' },
+  { role: 'DATA_SCIENCE',    last_review: '2026-09-01', next_review: '2026-12-01', status: 'Overdue',      reviewer: 'Data Eng Lead', finding: 'leen.jacobs bulk download flagged' },
+  { role: 'PEOPLE_HR_BP',    last_review: '2026-11-01', next_review: '2027-02-01', status: 'Current',      reviewer: 'CHRO',         finding: 'Clean' },
+  { role: 'BI_POWERBI_SVC',  last_review: '2026-02-01', next_review: '2026-08-01', status: 'Overdue',      reviewer: 'SecAdmin',     finding: 'Password 387d — SEC-2042' },
+  { role: 'COMPLIANCE_RO',   last_review: '2026-10-15', next_review: '2027-01-15', status: 'Due soon',     reviewer: 'DPO',          finding: 'Clean' },
 ]
 
 const RECOMMENDATIONS = [
@@ -97,12 +97,12 @@ const RECOMMENDATIONS = [
 ]
 
 const ROLE_USAGE_TREND = [
-  { m: 'Jan', human: 142, svc: 18, privileged: 6 },
-  { m: 'Feb', human: 148, svc: 19, privileged: 6 },
-  { m: 'Mar', human: 152, svc: 20, privileged: 6 },
-  { m: 'Apr', human: 156, svc: 21, privileged: 6 },
-  { m: 'May', human: 138, svc: 22, privileged: 5 },
-  { m: 'Jun', human: 140, svc: 24, privileged: 5 },
+  { m: 'Jun', human: 142, svc: 18, privileged: 6 },
+  { m: 'Jul', human: 148, svc: 19, privileged: 6 },
+  { m: 'Aug', human: 152, svc: 20, privileged: 6 },
+  { m: 'Sep', human: 156, svc: 21, privileged: 6 },
+  { m: 'Oct', human: 138, svc: 22, privileged: 5 },
+  { m: 'Nov', human: 140, svc: 24, privileged: 5 },
 ]
 
 const GRANT_AGE_DIST = [
@@ -861,8 +861,8 @@ export default function RBACExplorerPage() {
               <ResponsiveContainer>
                 <LineChart
                   data={[
-                    { m: 'Jan', grants: 680 }, { m: 'Feb', grants: 658 }, { m: 'Mar', grants: 640 },
-                    { m: 'Apr', grants: 610 }, { m: 'May', grants: 570 }, { m: 'Jun', grants: 512 },
+                    { m: 'Jun', grants: 680 }, { m: 'Jul', grants: 658 }, { m: 'Aug', grants: 640 },
+                    { m: 'Sep', grants: 610 }, { m: 'Oct', grants: 570 }, { m: 'Nov', grants: 512 },
                   ]}
                 >
                   <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
@@ -994,15 +994,15 @@ export default function RBACExplorerPage() {
             </thead>
             <tbody>
               {[
-                { ts: '2026-06-29 09:05', actor: 'SECURITYADMIN', event: 'GRANT', obj: 'CBL_AI.AGENTS.COMPLIANCE_AGENT', detail: 'USAGE TO SC_AGENT_COMPLIANCE' },
-                { ts: '2026-06-28 22:14', actor: 'SYSADMIN',      event: 'CREATE ROLE', obj: 'MOBILE_FRAUD_ANALYST_V2',  detail: 'parent: DATA_PLATFORM' },
-                { ts: '2026-06-28 18:02', actor: 'SECURITYADMIN', event: 'REVOKE',  obj: 'CBL_RAW.HR.*',                detail: 'SELECT FROM DATA_PLATFORM' },
-                { ts: '2026-06-27 14:30', actor: 'SECURITYADMIN', event: 'GRANT',   obj: 'CBL_GOV.POLICIES.MASK_IBAN',  detail: 'APPLY TO DATA_PLATFORM' },
-                { ts: '2026-06-26 11:00', actor: 'ACCOUNTADMIN',  event: 'POLICY',  obj: 'NP_SNOWPARK_COMPUTE',         detail: 'Altered IP allow-list (+2 CIDRs)' },
-                { ts: '2026-06-25 09:48', actor: 'SECURITYADMIN', event: 'REVOKE',  obj: 'EXEC_VIEWER',                 detail: 'Removed 3 stale schema USAGE grants' },
-                { ts: '2026-06-24 16:12', actor: 'ACCOUNTADMIN',  event: 'POLICY',  obj: 'NP_COMPLIANCE_TEAM',               detail: 'Added 2 new CIDR ranges for DPO team' },
-                { ts: '2026-06-23 08:55', actor: 'SECURITYADMIN', event: 'GRANT',   obj: 'CBL_ANALYTICS.RISK.RISK_360',     detail: 'SELECT TO COMPLIANCE_RO' },
-                { ts: '2026-06-22 14:01', actor: 'SYSADMIN',      event: 'REVOKE',  obj: 'OLD_ANALYST_X',                   detail: 'DROP ROLE candidate — 0 grants 91d' },
+                { ts: '2026-11-29 09:05', actor: 'SECURITYADMIN', event: 'GRANT', obj: 'CBL_AI.AGENTS.COMPLIANCE_AGENT', detail: 'USAGE TO SC_AGENT_COMPLIANCE' },
+                { ts: '2026-11-28 22:14', actor: 'SYSADMIN',      event: 'CREATE ROLE', obj: 'MOBILE_FRAUD_ANALYST_V2',  detail: 'parent: DATA_PLATFORM' },
+                { ts: '2026-11-28 18:02', actor: 'SECURITYADMIN', event: 'REVOKE',  obj: 'CBL_RAW.HR.*',                detail: 'SELECT FROM DATA_PLATFORM' },
+                { ts: '2026-11-27 14:30', actor: 'SECURITYADMIN', event: 'GRANT',   obj: 'CBL_GOV.POLICIES.MASK_IBAN',  detail: 'APPLY TO DATA_PLATFORM' },
+                { ts: '2026-11-26 11:00', actor: 'ACCOUNTADMIN',  event: 'POLICY',  obj: 'NP_SNOWPARK_COMPUTE',         detail: 'Altered IP allow-list (+2 CIDRs)' },
+                { ts: '2026-11-25 09:48', actor: 'SECURITYADMIN', event: 'REVOKE',  obj: 'EXEC_VIEWER',                 detail: 'Removed 3 stale schema USAGE grants' },
+                { ts: '2026-11-24 16:12', actor: 'ACCOUNTADMIN',  event: 'POLICY',  obj: 'NP_COMPLIANCE_TEAM',               detail: 'Added 2 new CIDR ranges for DPO team' },
+                { ts: '2026-11-23 08:55', actor: 'SECURITYADMIN', event: 'GRANT',   obj: 'CBL_ANALYTICS.RISK.RISK_360',     detail: 'SELECT TO COMPLIANCE_RO' },
+                { ts: '2026-11-22 14:01', actor: 'SYSADMIN',      event: 'REVOKE',  obj: 'OLD_ANALYST_X',                   detail: 'DROP ROLE candidate — 0 grants 91d' },
               ].map((e, i) => (
                 <tr key={i} className="border-b border-black/5">
                   <td className="py-1.5 font-mono text-[10px]">{e.ts}</td>

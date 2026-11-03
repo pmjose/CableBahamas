@@ -61,7 +61,7 @@ const okrs: OKR[] = [
     id: 'NET1', pillar: 'NETWORK', priority: 'P0',
     objective: "Become The Bahamas's #1 gigabit network",
     owner: 'CTO · Jonas Adderley', ownerInitials: 'JW',
-    confidence: 0.78, progress: 78, dueDate: '31 Dec 2026', lastUpdate: '2 days ago', weeklyDelta: +2, rag: 'green',
+    confidence: 0.78, progress: 78, dueDate: '31 May 2027', lastUpdate: '2 days ago', weeklyDelta: +2, rag: 'green',
     krs: [
       { kr: 'Reach 2.1M premises passed', baseline: '1.42M', current: '1.74M', target: '2.10M', pct: 87, trend: [42,48,54,61,68,75,82,87] },
       { kr: 'Achieve 70% gigabit availability', baseline: '38%', current: '64%', target: '70%', pct: 91, trend: [55,60,65,70,78,84,88,91] },
@@ -80,7 +80,7 @@ const okrs: OKR[] = [
     id: 'NET2', pillar: 'NETWORK', priority: 'P1',
     objective: 'Best-in-class network reliability',
     owner: 'COO · Sofie Knowles', ownerInitials: 'SJ',
-    confidence: 0.82, progress: 84, dueDate: '31 Dec 2026', lastUpdate: '1 day ago', weeklyDelta: +1, rag: 'green',
+    confidence: 0.82, progress: 84, dueDate: '31 May 2027', lastUpdate: '1 day ago', weeklyDelta: +1, rag: 'green',
     krs: [
       { kr: 'Network availability > 99.95%', baseline: '99.84%', current: '99.94%', target: '99.95%', pct: 92, trend: [78,80,82,85,87,89,90,92] },
       { kr: 'P1 incidents < 12/year', baseline: '22', current: '8 YTD', target: '12', pct: 100, trend: [45,55,65,75,85,92,96,100] },
@@ -97,7 +97,7 @@ const okrs: OKR[] = [
     id: 'CUS1', pillar: 'CUSTOMER', priority: 'P0',
     objective: 'Industry-leading customer experience',
     owner: 'CCO · Thomas Rolle', ownerInitials: 'TP',
-    confidence: 0.71, progress: 71, dueDate: '31 Dec 2026', lastUpdate: '3 days ago', weeklyDelta: -1, rag: 'amber',
+    confidence: 0.71, progress: 71, dueDate: '31 May 2027', lastUpdate: '3 days ago', weeklyDelta: -1, rag: 'amber',
     krs: [
       { kr: 'CSAT > 90', baseline: '78', current: '87', target: '90', pct: 96, trend: [70,74,78,82,84,86,87,87] },
       { kr: 'First call resolution > 80%', baseline: '64%', current: '74%', target: '80%', pct: 92, trend: [60,64,68,71,73,73,74,74] },
@@ -115,7 +115,7 @@ const okrs: OKR[] = [
     id: 'CUS2', pillar: 'CUSTOMER', priority: 'P1',
     objective: 'Reduce churn 25% through ML-driven retention',
     owner: 'VP CVM · Lore Willems', ownerInitials: 'LW',
-    confidence: 0.74, progress: 68, dueDate: '31 Dec 2026', lastUpdate: '6 hours ago', weeklyDelta: +3, rag: 'green',
+    confidence: 0.74, progress: 68, dueDate: '31 May 2027', lastUpdate: '6 hours ago', weeklyDelta: +3, rag: 'green',
     krs: [
       { kr: 'Annual churn < 1.20%', baseline: '1.84%', current: '1.42%', target: '1.20%', pct: 66, trend: [10,18,28,38,48,56,62,66] },
       { kr: 'Retention offer accept rate > 35%', baseline: '22%', current: '31%', target: '35%', pct: 86, trend: [42,50,58,66,72,78,82,86] },
@@ -132,7 +132,7 @@ const okrs: OKR[] = [
     id: 'COM1', pillar: 'COMMERCIAL', priority: 'P0',
     objective: 'Grow B2B & wholesale revenue 30%',
     owner: 'CRO · Thomas Rolle', ownerInitials: 'TP',
-    confidence: 0.62, progress: 62, dueDate: '31 Dec 2026', lastUpdate: '4 days ago', weeklyDelta: 0, rag: 'amber',
+    confidence: 0.62, progress: 62, dueDate: '31 May 2027', lastUpdate: '4 days ago', weeklyDelta: 0, rag: 'amber',
     krs: [
       { kr: 'Sign 50 new enterprise logos', baseline: '0', current: '32', target: '50', pct: 64, trend: [12,16,20,24,28,30,31,32] },
       { kr: 'Wholesale revenue BSD 120M', baseline: 'BSD 78M YTD', current: 'BSD 78M', target: 'BSD 120M', pct: 65, trend: [20,28,38,46,54,62,68,65] },
@@ -150,7 +150,7 @@ const okrs: OKR[] = [
     id: 'COM2', pillar: 'COMMERCIAL', priority: 'P1',
     objective: 'Cost-out BSD 15M operating expense',
     owner: 'CFO · Emma Bain', ownerInitials: 'EC',
-    confidence: 0.58, progress: 56, dueDate: '31 Dec 2026', lastUpdate: '1 week ago', weeklyDelta: 0, rag: 'amber',
+    confidence: 0.58, progress: 56, dueDate: '31 May 2027', lastUpdate: '1 week ago', weeklyDelta: 0, rag: 'amber',
     krs: [
       { kr: 'BSD 15M run-rate savings', baseline: 'BSD 0', current: 'BSD 8.4M', target: 'BSD 15M', pct: 56, trend: [5,12,22,32,38,44,50,56] },
       { kr: 'Reduce IT contractor spend 30%', baseline: 'BSD 18M', current: 'BSD 14.2M', target: 'BSD 12.6M', pct: 70, trend: [20,32,44,52,58,64,68,70] },
@@ -167,7 +167,7 @@ const okrs: OKR[] = [
     id: 'SUS1', pillar: 'SUSTAIN', priority: 'P1',
     objective: 'Net Zero by 2030 (Cable Bahamas Group commitment)',
     owner: 'CSO · Marie Rolle', ownerInitials: 'MP',
-    confidence: 0.55, progress: 45, dueDate: '31 Dec 2030', lastUpdate: '2 weeks ago', weeklyDelta: 0, rag: 'amber',
+    confidence: 0.55, progress: 45, dueDate: '31 May 2031', lastUpdate: '2 weeks ago', weeklyDelta: 0, rag: 'amber',
     krs: [
       { kr: 'Reduce Scope 1+2 emissions 50%', baseline: '100%', current: '78% (-22%)', target: '50% (-50%)', pct: 44, trend: [4,8,14,20,26,32,38,44] },
       { kr: '100% renewable electricity', baseline: '42%', current: '78%', target: '100%', pct: 78, trend: [42,50,58,64,70,74,76,78] },
@@ -182,9 +182,9 @@ const okrs: OKR[] = [
   },
   {
     id: 'MOB1', pillar: 'MOBILE', priority: 'P0',
-    objective: 'Hit 95% 5G population coverage by Q4 2026',
+    objective: 'Hit 95% 5G population coverage by Q2 2027',
     owner: 'CTO Mobile · Jonas Adderley', ownerInitials: 'JW',
-    confidence: 0.81, progress: 76, dueDate: '31 Dec 2026', lastUpdate: '1 day ago', weeklyDelta: +1, rag: 'green',
+    confidence: 0.81, progress: 76, dueDate: '31 May 2027', lastUpdate: '1 day ago', weeklyDelta: +1, rag: 'green',
     krs: [
       { kr: '5G pop-coverage 95% (DSS + SA)', baseline: '78%', current: '89.4%', target: '95%', pct: 91, trend: [78,81,83,85,86,87,88,89] },
       { kr: '22.5K cell-sites active (Island Towers (demo)-shared incl.)', baseline: '20.1K', current: '22.18K', target: '22.5K', pct: 87, trend: [82,84,86,87,88,89,90,91] },
@@ -203,7 +203,7 @@ const okrs: OKR[] = [
     id: 'MOB2', pillar: 'MOBILE', priority: 'P0',
     objective: 'Lead The Bahamas on Mobile NPS — beat BTC & Rival ISP A',
     owner: 'CCO · Britt Bethel', ownerInitials: 'BM',
-    confidence: 0.74, progress: 68, dueDate: '31 Dec 2026', lastUpdate: '3 days ago', weeklyDelta: +2, rag: 'amber',
+    confidence: 0.74, progress: 68, dueDate: '31 May 2027', lastUpdate: '3 days ago', weeklyDelta: +2, rag: 'amber',
     krs: [
       { kr: 'Mobile NPS ≥ +42 (lead by 5+ pts)', baseline: '+30', current: '+38', target: '+42', pct: 90, trend: [70,74,78,82,85,87,89,90] },
       { kr: 'Voice MOS ≥ 4.30 (LTE + VoNR)', baseline: '4.05', current: '4.21', target: '4.30', pct: 87, trend: [70,74,78,82,84,85,86,87] },
@@ -219,9 +219,9 @@ const okrs: OKR[] = [
   },
   {
     id: 'MOB3', pillar: 'MOBILE', priority: 'P1',
-    objective: 'Open RAN GA in 2 regions by Q2 2027',
+    objective: 'Open RAN GA in 2 regions by Q4 2027',
     owner: 'CTO Mobile · Jonas Adderley', ownerInitials: 'JW',
-    confidence: 0.62, progress: 38, dueDate: '30 Jun 2027', lastUpdate: '5 days ago', weeklyDelta: 0, rag: 'amber',
+    confidence: 0.62, progress: 38, dueDate: '30 Nov 2027', lastUpdate: '5 days ago', weeklyDelta: 0, rag: 'amber',
     krs: [
       { kr: 'O-RAN sites in production ≥ 1,200', baseline: '0', current: '420', target: '1200', pct: 35, trend: [0,5,10,18,24,28,32,35] },
       { kr: '2 regions GA (Abaco + Grand Bahama)', baseline: '0', current: '1', target: '2', pct: 50, trend: [0,0,0,25,25,50,50,50] },
@@ -239,7 +239,7 @@ const okrs: OKR[] = [
 
 // ─── market context ────────────────────────────────────────────────────────
 const marketContext = [
-  { type: 'Competitor', text: 'BTC announces 5G expansion to 90% pop coverage by Q4 2026 — pressure on mobile pricing', impact: 'high', date: '2 days ago' },
+  { type: 'Competitor', text: 'BTC announces 5G expansion to 90% pop coverage by Q2 2027 — pressure on mobile pricing', impact: 'high', date: '2 days ago' },
   { type: 'Competitor', text: 'Rival ISP B drops 1 Gb to BSD 30/mo for 18 months in fibre areas — direct hit on M250/500', impact: 'high', date: '1 week ago' },
   { type: 'Regulatory', text: 'URCA consultation on automatic compensation for outages — could increase OpEx BSD 4M/yr', impact: 'medium', date: '4 days ago' },
   { type: 'Macro', text: 'CBOB discount rate hold at 4.00% — refinancing CapEx broadly stable', impact: 'low', date: '1 week ago' },
@@ -259,12 +259,12 @@ const portfolio = [
 
 // ─── market share trend ────────────────────────────────────────────────────
 const MARKET_SHARE_TREND = [
-  { q: 'Q1-25', fixed: 28.4, mobile: 14.2, broadband: 31.6 },
-  { q: 'Q2-25', fixed: 29.1, mobile: 14.8, broadband: 32.2 },
-  { q: 'Q3-25', fixed: 29.8, mobile: 15.4, broadband: 32.8 },
-  { q: 'Q4-25', fixed: 30.4, mobile: 16.1, broadband: 33.4 },
-  { q: 'Q1-26', fixed: 31.2, mobile: 16.8, broadband: 34.1 },
-  { q: 'Q2-26', fixed: 31.8, mobile: 17.2, broadband: 34.6 },
+  { q: 'Q3-25', fixed: 28.4, mobile: 14.2, broadband: 31.6 },
+  { q: 'Q4-25', fixed: 29.1, mobile: 14.8, broadband: 32.2 },
+  { q: 'Q1-26', fixed: 29.8, mobile: 15.4, broadband: 32.8 },
+  { q: 'Q2-26', fixed: 30.4, mobile: 16.1, broadband: 33.4 },
+  { q: 'Q3-26', fixed: 31.2, mobile: 16.8, broadband: 34.1 },
+  { q: 'Q4-26', fixed: 31.8, mobile: 17.2, broadband: 34.6 },
 ]
 
 // ─── portfolio bar data ────────────────────────────────────────────────────
@@ -272,20 +272,20 @@ const PORTFOLIO_CHART = portfolio.map(p => ({ name: p.name, growth: p.growth, sh
 
 // ─── scenario data (base quarterly forward revenues BSD M) ───────────────────
 const SCENARIO_BASE = [
-  { q: 'Q3-26', base: 137.2, sensitivity: 2.1 },
-  { q: 'Q4-26', base: 139.6, sensitivity: 2.6 },
-  { q: 'Q1-27', base: 142.4, sensitivity: 2.9 },
-  { q: 'Q2-27', base: 144.8, sensitivity: 3.2 },
+  { q: 'Q1-27', base: 137.2, sensitivity: 2.1 },
+  { q: 'Q2-27', base: 139.6, sensitivity: 2.6 },
+  { q: 'Q3-27', base: 142.4, sensitivity: 2.9 },
+  { q: 'Q4-27', base: 144.8, sensitivity: 3.2 },
 ]
 
 // ─── transformation programs ──────────────────────────────────────────────
 const TRANSFORM_PROGRAMS = [
-  { name: 'Snowflake Data Platform', pillar: 'IT',         budget: 8.2,  spent: 5.9,  value: 12.4, pct: 72, status: 'on-track', owner: 'CIO',  due: 'Q4-26' },
-  { name: '5G Open RAN Rollout',     pillar: 'NETWORK',    budget: 221,  spent: 142,  value: 380,  pct: 64, status: 'on-track', owner: 'CTO',  due: 'Q2-27' },
-  { name: 'AI-Driven CVM Programme', pillar: 'CUSTOMER',   budget: 6.4,  spent: 4.2,  value: 18.6, pct: 66, status: 'on-track', owner: 'CCO',  due: 'Q3-26' },
-  { name: 'B2B SD-WAN & Cloud',      pillar: 'COMMERCIAL', budget: 14.8, spent: 7.4,  value: 32.4, pct: 50, status: 'at-risk',  owner: 'CRO',  due: 'Q4-26' },
-  { name: 'Net Zero 2030 Accelerator', pillar: 'SUSTAIN',  budget: 22.4, spent: 9.8,  value: 14.2, pct: 44, status: 'at-risk',  owner: 'CSO',  due: 'Q4-30' },
-  { name: 'DOCSIS 4.0 / XGS-PON',   pillar: 'NETWORK',    budget: 48,   spent: 22,   value: 64,   pct: 46, status: 'on-track', owner: 'CTO',  due: 'Q2-27' },
+  { name: 'Snowflake Data Platform', pillar: 'IT',         budget: 8.2,  spent: 5.9,  value: 12.4, pct: 72, status: 'on-track', owner: 'CIO',  due: 'Q2-27' },
+  { name: '5G Open RAN Rollout',     pillar: 'NETWORK',    budget: 221,  spent: 142,  value: 380,  pct: 64, status: 'on-track', owner: 'CTO',  due: 'Q4-27' },
+  { name: 'AI-Driven CVM Programme', pillar: 'CUSTOMER',   budget: 6.4,  spent: 4.2,  value: 18.6, pct: 66, status: 'on-track', owner: 'CCO',  due: 'Q1-27' },
+  { name: 'B2B SD-WAN & Cloud',      pillar: 'COMMERCIAL', budget: 14.8, spent: 7.4,  value: 32.4, pct: 50, status: 'at-risk',  owner: 'CRO',  due: 'Q2-27' },
+  { name: 'Net Zero 2030 Accelerator', pillar: 'SUSTAIN',  budget: 22.4, spent: 9.8,  value: 14.2, pct: 44, status: 'at-risk',  owner: 'CSO',  due: 'Q2-31' },
+  { name: 'DOCSIS 4.0 / XGS-PON',   pillar: 'NETWORK',    budget: 48,   spent: 22,   value: 64,   pct: 46, status: 'on-track', owner: 'CTO',  due: 'Q4-27' },
 ]
 
 // ─── roadmap milestones ────────────────────────────────────────────────────
@@ -340,9 +340,9 @@ const STRATEGY_AGENDA = [
   { when: 'Mon 21 May',   what: 'ELT OKR review · Q2 attainment + H2 outlook' },
   { when: 'Tue 17 Jun',   what: 'Board strategy & CapEx governance' },
   { when: 'Mon 7 Jul',    what: 'Mid-year OKR reset workshop · EOIY reforecast' },
-  { when: 'Q3 2026',      what: 'Competitor response playbook — BTC 5G launch' },
-  { when: 'Q4 2026',      what: 'FY27 strategy refresh & OKR-setting' },
-  { when: '31 Dec 2026',  what: 'Year-end OKR attainment close · board pack' },
+  { when: 'Q1 2027',      what: 'Competitor response playbook — BTC 5G launch' },
+  { when: 'Q2 2027',      what: 'FY27 strategy refresh & OKR-setting' },
+  { when: '31 May 2027',  what: 'Year-end OKR attainment close · board pack' },
 ]
 
 // ─── helper components ─────────────────────────────────────────────────────
@@ -393,12 +393,12 @@ const COMPETITOR_SPIDER = [
   { axis: 'ESG',     cbl: 86, btc: 78, digi: 58 },
 ]
 const COMPETITOR_MARKET_SHARE = [
-  { q: 'Q1-25', cbl: 28.4, btc: 38.2, voo: 18.4, orange: 12.2, digi: 2.8 },
-  { q: 'Q2-25', cbl: 29.1, btc: 37.8, voo: 18.6, orange: 12.0, digi: 2.5 },
-  { q: 'Q3-25', cbl: 29.8, btc: 37.4, voo: 18.8, orange: 11.6, digi: 2.4 },
-  { q: 'Q4-25', cbl: 30.4, btc: 37.0, voo: 19.0, orange: 11.2, digi: 2.4 },
-  { q: 'Q1-26', cbl: 31.2, btc: 36.6, voo: 19.2, orange: 10.8, digi: 2.2 },
-  { q: 'Q2-26', cbl: 31.8, btc: 36.2, voo: 19.4, orange: 10.4, digi: 2.2 },
+  { q: 'Q3-25', cbl: 28.4, btc: 38.2, voo: 18.4, orange: 12.2, digi: 2.8 },
+  { q: 'Q4-25', cbl: 29.1, btc: 37.8, voo: 18.6, orange: 12.0, digi: 2.5 },
+  { q: 'Q1-26', cbl: 29.8, btc: 37.4, voo: 18.8, orange: 11.6, digi: 2.4 },
+  { q: 'Q2-26', cbl: 30.4, btc: 37.0, voo: 19.0, orange: 11.2, digi: 2.4 },
+  { q: 'Q3-26', cbl: 31.2, btc: 36.6, voo: 19.2, orange: 10.8, digi: 2.2 },
+  { q: 'Q4-26', cbl: 31.8, btc: 36.2, voo: 19.4, orange: 10.4, digi: 2.2 },
 ]
 const COMPETITOR_INVESTMENTS = [
   { co: 'Cable Bahamas',       capexPct: 20.4, ranBudgetM: 221, networkScore: 88 },
@@ -479,7 +479,7 @@ export default function StrategyPage() {
     <div className="p-8">
       <PageHeader
         title={tt('Strategy & OKRs')}
-        subtitle={`FY2026 · Q${fyQuarter} of 4 · ${daysRemaining} ${tt('days remaining')} · ${tt('last reviewed Mon 14 May 2026')}`}
+        subtitle={`FY2026 · Q${fyQuarter} of 4 · ${daysRemaining} ${tt('days remaining')} · ${tt('last reviewed Mon 14 October 2026')}`}
         actions={
           <Link to="/portal/war-room"
             className="bg-vfes-red hover:bg-vfes-red-dark text-vfes-dark text-sm font-bold px-4 py-2 rounded-lg flex items-center gap-2">
@@ -787,10 +787,10 @@ export default function StrategyPage() {
               <thead className="text-left text-vfes-dark/55 text-[10px] uppercase tracking-widest">
                 <tr>
                   <th className="py-2 pr-4">{tt('Initiative')}</th>
-                  <th className="pr-3">{tt('Q3-26')}</th>
-                  <th className="pr-3">{tt('Q4-26')}</th>
                   <th className="pr-3">{tt('Q1-27')}</th>
                   <th className="pr-3">{tt('Q2-27')}</th>
+                  <th className="pr-3">{tt('Q3-27')}</th>
+                  <th className="pr-3">{tt('Q4-27')}</th>
                   <th>{tt('Owner')}</th>
                 </tr>
               </thead>
@@ -809,7 +809,7 @@ export default function StrategyPage() {
             </table>
           </div>
           <div className="mt-2 text-[10px] text-vfes-dark/45 uppercase tracking-widest">
-            {tt('Q1 = Oct-Dec 2026 · Q2 = Jan-Mar 2027 · All milestones gate-reviewed at ELT')}
+            {tt('Q1 = Oct-May 2027 · Q2 = Jan-Aug 2027 · All milestones gate-reviewed at ELT')}
           </div>
         </Panel>
 
@@ -895,7 +895,7 @@ export default function StrategyPage() {
 
         {/* BCG portfolio view */}
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
-          <Panel title={tt('Product portfolio (BCG view) — May 2026')}>
+          <Panel title={tt('Product portfolio (BCG view) — October 2026')}>
             <div className="text-xs text-vfes-dark/55 mb-3">{tt('Growth × Market share')}</div>
             <div className="space-y-2">
               {portfolio.map(p => (
@@ -1121,7 +1121,7 @@ export default function StrategyPage() {
       {/* ═══════ COMPETITOR BENCHMARK ═══════ */}
       {tab === 'competitor' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Market share')}      value="31.8%"              delta={tt('+3.4 pp vs Q1-25')}           trend="up"   icon={Globe}       accent />
+          <KpiCard label={tt('Market share')}      value="31.8%"              delta={tt('+3.4 pp vs Q3-25')}           trend="up"   icon={Globe}       accent />
           <KpiCard label={tt('NPS lead vs peers')} value="+4 pts"             delta={tt('vs BTC +32')}            trend="up"   icon={Award} />
           <KpiCard label={tt('EBITDA premium')}    value="+2.0 pp"            delta={tt('vs sector avg 36.6%')}        trend="up"   icon={TrendingUp} />
           <KpiCard label={tt('Churn advantage')}   value="-0.26 pp"           delta={tt('vs BTC 1.22%')}          trend="up"   icon={Activity} />
@@ -1248,7 +1248,7 @@ export default function StrategyPage() {
       {tab === 'cockpit' && (<>
         <DomainGrid title={tt('Domain navigation — strategy-linked pages')} links={STRATEGY_DOMAIN_LINKS} />
         <div className="grid lg:grid-cols-2 gap-5 mt-5">
-          <PriorityList title={tt('Top strategic priorities — H2 2026')} items={STRATEGY_PRIORITIES} />
+          <PriorityList title={tt('Top strategic priorities — H1 2027')} items={STRATEGY_PRIORITIES} />
           <WatchList    title={tt('Strategy watch list')}                items={STRATEGY_WATCH} />
         </div>
         <div className="mt-5">

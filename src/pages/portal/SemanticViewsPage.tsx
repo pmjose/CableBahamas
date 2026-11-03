@@ -71,9 +71,9 @@ const CALL_TREND = Array.from({ length: 30 }, (_, i) => ({
 }))
 
 const ACCURACY_TREND = [
-  { m: 'Jan', acc: 91.2, vqr: 72 }, { m: 'Feb', acc: 92.4, vqr: 74 },
-  { m: 'Mar', acc: 93.1, vqr: 78 }, { m: 'Apr', acc: 93.8, vqr: 82 },
-  { m: 'May', acc: 94.3, vqr: 86 }, { m: 'Jun', acc: 94.6, vqr: 90 },
+  { m: 'Jun', acc: 91.2, vqr: 72 }, { m: 'Jul', acc: 92.4, vqr: 74 },
+  { m: 'Aug', acc: 93.1, vqr: 78 }, { m: 'Sep', acc: 93.8, vqr: 82 },
+  { m: 'Oct', acc: 94.3, vqr: 86 }, { m: 'Nov', acc: 94.6, vqr: 90 },
 ]
 
 const VIEW_CALLS_BAR = VIEWS.map(v => ({ name: v.name.replace('_SV','').replace('_360','360'), calls: v.calls_day, accuracy: v.accuracy }))
@@ -1061,10 +1061,10 @@ export default function SemanticViewsPage() {
         <Panel title={tt('Semantic views programme · milestones')}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { milestone: tt('8 views certified'),     target: 'Q4-2025', status: 'watch',    detail: tt('PROCURE_360 at 78% coverage — 7/8 certified') },
-              { milestone: tt('VQR count 400+'),        target: 'Q1-2026', status: 'on-track', detail: tt('Current 312 · +48 QoQ') },
-              { milestone: tt('Accuracy 96%'),          target: 'Q4-2025', status: 'on-track', detail: tt('Current 94.6% · +3.4 YTD') },
-              { milestone: tt('AI metrics 20+'),        target: 'Q2-2026', status: 'on-track', detail: tt('Current 12 · plan adds 8 more') },
+              { milestone: tt('8 views certified'),     target: 'Q2-2026', status: 'watch',    detail: tt('PROCURE_360 at 78% coverage — 7/8 certified') },
+              { milestone: tt('VQR count 400+'),        target: 'Q3-2026', status: 'on-track', detail: tt('Current 312 · +48 QoQ') },
+              { milestone: tt('Accuracy 96%'),          target: 'Q2-2026', status: 'on-track', detail: tt('Current 94.6% · +3.4 YTD') },
+              { milestone: tt('AI metrics 20+'),        target: 'Q4-2026', status: 'on-track', detail: tt('Current 12 · plan adds 8 more') },
             ].map(m => (
               <div key={m.milestone} className="p-3 border border-black/5 rounded-xl">
                 <div className="text-[11px] font-bold mb-0.5">{m.milestone}</div>

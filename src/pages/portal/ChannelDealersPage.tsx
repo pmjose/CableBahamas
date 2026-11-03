@@ -34,12 +34,12 @@ const CHANNEL_MIX = [
 ]
 
 const MIX_TREND = [
-  { m: 'Jan', owned: 24, franchise: 29, independent: 20, digital: 19, tele: 8 },
-  { m: 'Feb', owned: 23, franchise: 30, independent: 19, digital: 20, tele: 8 },
-  { m: 'Mar', owned: 23, franchise: 30, independent: 19, digital: 20, tele: 8 },
-  { m: 'Apr', owned: 22, franchise: 31, independent: 18, digital: 21, tele: 8 },
-  { m: 'May', owned: 22, franchise: 31, independent: 18, digital: 21, tele: 8 },
-  { m: 'Jun', owned: 22, franchise: 31, independent: 18, digital: 21, tele: 8 },
+  { m: 'Jun', owned: 24, franchise: 29, independent: 20, digital: 19, tele: 8 },
+  { m: 'Jul', owned: 23, franchise: 30, independent: 19, digital: 20, tele: 8 },
+  { m: 'Aug', owned: 23, franchise: 30, independent: 19, digital: 20, tele: 8 },
+  { m: 'Sep', owned: 22, franchise: 31, independent: 18, digital: 21, tele: 8 },
+  { m: 'Oct', owned: 22, franchise: 31, independent: 18, digital: 21, tele: 8 },
+  { m: 'Nov', owned: 22, franchise: 31, independent: 18, digital: 21, tele: 8 },
 ]
 
 // ─── Dealer network ───────────────────────────────────────────────────────────
@@ -71,12 +71,12 @@ const COMM_TIERS = [
 ]
 
 const COMM_TREND = [
-  { m: 'Jan', total: 524, qualBonus: 88 },
-  { m: 'Feb', total: 538, qualBonus: 94 },
-  { m: 'Mar', total: 551, qualBonus: 98 },
-  { m: 'Apr', total: 563, qualBonus: 102 },
-  { m: 'May', total: 574, qualBonus: 108 },
-  { m: 'Jun', total: 587, qualBonus: 114 },
+  { m: 'Jun', total: 524, qualBonus: 88 },
+  { m: 'Jul', total: 538, qualBonus: 94 },
+  { m: 'Aug', total: 551, qualBonus: 98 },
+  { m: 'Sep', total: 563, qualBonus: 102 },
+  { m: 'Oct', total: 574, qualBonus: 108 },
+  { m: 'Nov', total: 587, qualBonus: 114 },
 ]
 
 // ─── Store performance ────────────────────────────────────────────────────────
@@ -94,12 +94,12 @@ const STORES = [
 ]
 
 const STORE_TREND = [
-  { m: 'Jan', owned: 1420, franchise: 980, independent: 620 },
-  { m: 'Feb', owned: 1460, franchise: 1010, independent: 630 },
-  { m: 'Mar', owned: 1490, franchise: 1040, independent: 640 },
-  { m: 'Apr', owned: 1520, franchise: 1060, independent: 650 },
-  { m: 'May', owned: 1550, franchise: 1090, independent: 660 },
-  { m: 'Jun', owned: 1580, franchise: 1110, independent: 660 },
+  { m: 'Jun', owned: 1420, franchise: 980, independent: 620 },
+  { m: 'Jul', owned: 1460, franchise: 1010, independent: 630 },
+  { m: 'Aug', owned: 1490, franchise: 1040, independent: 640 },
+  { m: 'Sep', owned: 1520, franchise: 1060, independent: 650 },
+  { m: 'Oct', owned: 1550, franchise: 1090, independent: 660 },
+  { m: 'Nov', owned: 1580, franchise: 1110, independent: 660 },
 ]
 
 // ─── Geographic data ─────────────────────────────────────────────────────────
@@ -117,18 +117,18 @@ const GEO_DATA = [
 
 // ─── Forecast ────────────────────────────────────────────────────────────────
 const FULL_FORECAST = [
-  { m: 'Jan', actual: 39.2, base: 39.0, optimistic: 42.0, conservative: 37.0 },
-  { m: 'Feb', actual: 40.1, base: 39.8, optimistic: 42.8, conservative: 37.6 },
-  { m: 'Mar', actual: 40.8, base: 40.4, optimistic: 43.6, conservative: 38.2 },
-  { m: 'Apr', actual: 41.6, base: 41.0, optimistic: 44.4, conservative: 38.8 },
-  { m: 'May', actual: 42.4, base: 41.8, optimistic: 45.2, conservative: 39.4 },
-  { m: 'Jun', actual: 43.1, base: 42.6, optimistic: 46.0, conservative: 40.0 },
-  { m: 'Jul', actual: null, base: 43.2, optimistic: 45.8, conservative: 40.6 },
-  { m: 'Aug', actual: null, base: 44.1, optimistic: 47.2, conservative: 41.4 },
-  { m: 'Sep', actual: null, base: 45.6, optimistic: 49.1, conservative: 42.2 },
-  { m: 'Oct', actual: null, base: 46.8, optimistic: 50.4, conservative: 43.1 },
-  { m: 'Nov', actual: null, base: 47.4, optimistic: 51.2, conservative: 43.6 },
-  { m: 'Dec', actual: null, base: 48.0, optimistic: 52.0, conservative: 44.0 },
+  { m: 'Jun', actual: 39.2, base: 39.0, optimistic: 42.0, conservative: 37.0 },
+  { m: 'Jul', actual: 40.1, base: 39.8, optimistic: 42.8, conservative: 37.6 },
+  { m: 'Aug', actual: 40.8, base: 40.4, optimistic: 43.6, conservative: 38.2 },
+  { m: 'Sep', actual: 41.6, base: 41.0, optimistic: 44.4, conservative: 38.8 },
+  { m: 'Oct', actual: 42.4, base: 41.8, optimistic: 45.2, conservative: 39.4 },
+  { m: 'Nov', actual: 43.1, base: 42.6, optimistic: 46.0, conservative: 40.0 },
+  { m: 'Dec', actual: null, base: 43.2, optimistic: 45.8, conservative: 40.6 },
+  { m: 'Jan', actual: null, base: 44.1, optimistic: 47.2, conservative: 41.4 },
+  { m: 'Feb', actual: null, base: 45.6, optimistic: 49.1, conservative: 42.2 },
+  { m: 'Mar', actual: null, base: 46.8, optimistic: 50.4, conservative: 43.1 },
+  { m: 'Apr', actual: null, base: 47.4, optimistic: 51.2, conservative: 43.6 },
+  { m: 'May', actual: null, base: 48.0, optimistic: 52.0, conservative: 44.0 },
 ]
 
 const statusColor = (s: string) =>
@@ -492,7 +492,7 @@ export default function ChannelDealersPage() {
           <KpiCard label={tt('Gold tier dealers')}  value="2"  delta={tt('quality ≥ 85, volume leaders')} trend="up"   icon={Award}        accent />
           <KpiCard label={tt('Silver tier dealers')} value="4"  delta={tt('quality 70–84')}              trend="flat" icon={Award}              />
           <KpiCard label={tt('Watch tier dealers')}  value="2"  delta={tt('quality plans in progress')}  trend="down" icon={AlertTriangle}      />
-          <KpiCard label={tt('Avg quality score')}   value="74" delta={tt('target ≥ 80 by Q4-26')}       trend="up"   icon={Target}             />
+          <KpiCard label={tt('Avg quality score')}   value="74" delta={tt('target ≥ 80 by Q2-27')}       trend="up"   icon={Target}             />
         </div>
 
         <Panel title={tt('Dealer quality score — horizontal bar scorecard')}>

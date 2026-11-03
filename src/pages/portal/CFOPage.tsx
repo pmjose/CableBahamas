@@ -32,7 +32,7 @@ const tooltipStyle = { background: '#fff', border: '1px solid #e5e7eb', borderRa
 // Quarterly EBITDA (136.8 × 38.6% = 52.8 M)
 const EBITDA_Q = +(KPI.revenueQtrM * KPI.ebitdaMarginPct / 100).toFixed(1)
 
-// ─── P&L data (reconciled quarterly, Q2 2026) ───────────────────────────────
+// ─── P&L data (reconciled quarterly, Q4 2026) ───────────────────────────────
 const quarterlyPnl = [['Revenue',12],['COGS',-4.8],['Gross profit',7.2],['Sales & Marketing',-1.8],['G&A',-0.9],['EBITDA',4.5],['D&A',-1.5],['EBIT',3],['Interest expense',-0.6],['Tax',-0.3],['Net income',2.1]].map(([line,value])=>({line:String(line),actual:round(Number(value)*KPI.revenueQtrM/12),plan:round(Number(value)*KPI.revenueQtrM/12*1.02),py:round(Number(value)*KPI.revenueQtrM/12*0.95)}))
 
 const revTrend = Array.from({length:4},(_,index)=>({q:['Jun–Aug','Sep–Nov','Dec–Feb','Mar–May'][index],actual:round(FINANCE_TREND.slice(index*3,index*3+3).reduce((sum,row)=>sum+row.revenue,0)),plan:round(FINANCE_TREND.slice(index*3,index*3+3).reduce((sum,row)=>sum+row.plan,0))}))
@@ -49,7 +49,7 @@ const arpuByTier = [
 ]
 
 // ─── cash flow data ──────────────────────────────────────────────────────────
-// FCF TTM (Q3-25 + Q4-25 + Q1-26 + Q2-26) = 20.2+21.4+21.0+21.4 = 84.0 = KPI.fcfTtmM ✓
+// FCF TTM (Q1-26 + Q2-26 + Q3-26 + Q4-26) = 20.2+21.4+21.0+21.4 = 84.0 = KPI.fcfTtmM ✓
 const cashflowQtly = Array.from({length:4},(_,index)=>{const rows=FINANCE_TREND.slice(index*3,index*3+3);return {q:['Jun–Aug','Sep–Nov','Dec–Feb','Mar–May'][index],ocf:round(rows.reduce((sum,row)=>sum+row.ocf,0)),capex:round(rows.reduce((sum,row)=>sum+row.capex,0)),fcf:round(rows.reduce((sum,row)=>sum+row.fcf,0))}})
 
 const cash13wk = Array.from({length:13},(_,index)=>({wk:`W${index+1}`,inflow:3,outflow:2.7,balance:round(FINANCE.cashM+(index+1)*0.3)}))
@@ -117,8 +117,8 @@ const covenants = [
 ]
 
 const fxHedges = [
-      { instr: 'IRS · floating → fixed (BSD 84M notes)',     notional:  84, expiry: 'Dec 28', mtm:  1.8, status: 'Active' },
-  { instr: 'Fuel surcharge hedge · grid electricity (BPL)', notional: 4.2, expiry: 'Dec 26', mtm:  0.2, status: 'Active' },
+      { instr: 'IRS · floating → fixed (BSD 84M notes)',     notional:  84, expiry: 'May 29', mtm:  1.8, status: 'Active' },
+  { instr: 'Fuel surcharge hedge · grid electricity (BPL)', notional: 4.2, expiry: 'May 27', mtm:  0.2, status: 'Active' },
 ]
 
 // ─── Forecast & scenarios ────────────────────────────────────────────────────
@@ -141,7 +141,7 @@ const sensitivities = [
 
 const riskRegister = [
   { r: 'BTC Fibre BSD 40/mo promo persistence',   impact: 'BSD 5.6M ARR',      prob: 'High',   sev: 'High',   mit: 'Targeted price-match for at-risk base only' },
-  { r: 'Rival ISP B content cost inflation FY27',          impact: 'BSD 8.4M GP',       prob: 'Medium', sev: 'High',   mit: 'Re-negotiate before H2 2026' },
+  { r: 'Rival ISP B content cost inflation FY27',          impact: 'BSD 8.4M GP',       prob: 'Medium', sev: 'High',   mit: 'Re-negotiate before H1 2027' },
   { r: 'US rate normalisation · 2027 refinancing', impact: '+BSD 1.2M interest', prob: 'Low',   sev: 'Medium', mit: '80% fixed via IRS hedges; monitoring' },
   { r: 'B2B AR concentration (top 5 = 38%)',        impact: 'BSD 3.3M bad debt', prob: 'Low',    sev: 'High',   mit: 'Credit insurance in place; dunning escalated' },
   { r: 'Hurricane season · restoration + revenue credits', impact: 'BSD 6.5M EBITDA', prob: 'Medium', sev: 'High', mit: 'Parametric cover + catastrophe reserve; pre-staged spares' },
@@ -162,16 +162,16 @@ const costOutInitiatives = [
 ]
 
 const costOutTracker: { q: string; run: number | null; cum: number | null; planCum: number }[] = [
-  { q: 'Q1-25', run:  0,   cum:  0.0, planCum:  0.0 },
-  { q: 'Q2-25', run:  0.4, cum:  0.4, planCum:  0.8 },
-  { q: 'Q3-25', run:  1.2, cum:  1.6, planCum:  1.8 },
-  { q: 'Q4-25', run:  1.8, cum:  3.4, planCum:  3.2 },
-  { q: 'Q1-26', run:  1.4, cum:  4.8, planCum:  4.6 },
-  { q: 'Q2-26', run:  1.4, cum:  6.2, planCum:  6.0 },
-  { q: 'Q3-26', run: null, cum: null, planCum:  8.4 },
-  { q: 'Q4-26', run: null, cum: null, planCum: 11.2 },
-  { q: 'Q1-27', run: null, cum: null, planCum: 13.2 },
-  { q: 'Q2-27', run: null, cum: null, planCum: 15.0 },
+  { q: 'Q3-25', run:  0,   cum:  0.0, planCum:  0.0 },
+  { q: 'Q4-25', run:  0.4, cum:  0.4, planCum:  0.8 },
+  { q: 'Q1-26', run:  1.2, cum:  1.6, planCum:  1.8 },
+  { q: 'Q2-26', run:  1.8, cum:  3.4, planCum:  3.2 },
+  { q: 'Q3-26', run:  1.4, cum:  4.8, planCum:  4.6 },
+  { q: 'Q4-26', run:  1.4, cum:  6.2, planCum:  6.0 },
+  { q: 'Q1-27', run: null, cum: null, planCum:  8.4 },
+  { q: 'Q2-27', run: null, cum: null, planCum: 11.2 },
+  { q: 'Q3-27', run: null, cum: null, planCum: 13.2 },
+  { q: 'Q4-27', run: null, cum: null, planCum: 15.0 },
 ]
 
 const opexBreakdown = [
@@ -224,7 +224,7 @@ export default function CFOPage() {
     <div className="p-8">
       <PageHeader
         title={tt('Chief Financial Officer')}
-        subtitle={tt('Office of the CFO · Camille Vermeulen · FY2026 Q2 · last board pack 17 Jun 2026')}
+        subtitle={tt('Office of the CFO · Camille Vermeulen · FY2026 Q2 · last board pack 17 Nov 2026')}
         actions={
           <Link to="/portal/finance" className="bg-vfes-red hover:bg-vfes-red-dark text-vfes-dark text-sm font-bold px-4 py-2 rounded-lg flex items-center gap-2">
             <Wallet className="w-4 h-4" /> {tt('Open Finance Detail')}
@@ -306,7 +306,7 @@ export default function CFOPage() {
           <KpiCard label={tt('Net Debt / EBITDA')}     value={`${KPI.netDebtEbitdaX}×`} delta="covenant ≤ 4.0×"      trend="up"   icon={Landmark} />
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Credit rating')}         value={KPI.creditRating}         delta="affirmed Apr 2026"      trend="flat" icon={ShieldCheck} />
+          <KpiCard label={tt('Credit rating')}         value={KPI.creditRating}         delta="affirmed Sep 2026"      trend="flat" icon={ShieldCheck} />
           <KpiCard label={tt('CapEx intensity')}        value="20.4%"                   delta="vs 22% ceiling"         trend="up"   icon={Briefcase} />
           <KpiCard label={tt('DSO')}                   value="42 days"                  delta="target ≤ 40"            trend="down" icon={Calendar} />
           <KpiCard label={tt('Cost-out YTD')}          value={`BSD ${costOutYtd}M`}        delta="of BSD 15M target"         trend="up"   icon={Award} />
@@ -369,7 +369,7 @@ export default function CFOPage() {
       {/* ═══════ P&L ═══════ */}
       {tab === 'pnl' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-          <KpiCard label={tt('Revenue (Q2-26)')}   value={`BSD ${KPI.revenueQtrM}M`} delta="+5.7% YoY · −1.2% vs plan" trend="down" icon={TrendingUp} accent />
+          <KpiCard label={tt('Revenue (Q4-26)')}   value={`BSD ${KPI.revenueQtrM}M`} delta="+5.7% YoY · −1.2% vs plan" trend="down" icon={TrendingUp} accent />
           <KpiCard label={tt('EBITDA margin')}     value={`${KPI.ebitdaMarginPct}%`} delta="+1.0 pp YoY"             trend="up"   icon={Percent}    />
           <KpiCard label={tt('Gross margin')}      value="58.2%"                   delta="+0.4 pp YoY"               trend="up"   icon={Coins}      />
           <KpiCard label={tt('Net income (Q2)')}   value="BSD 12.1M"                  delta="+33% YoY"                  trend="up"   icon={DollarSign} />
@@ -383,7 +383,7 @@ export default function CFOPage() {
 
         <div className="grid lg:grid-cols-3 gap-6 mb-6">
           <div className="lg:col-span-2">
-            <Panel title={tt('Revenue trend · Actual vs Plan (BSD M / quarter)')} insight={{ insight: 'Revenue reached BSD 143M in Q2-26, tracking 2% above the annual plan line for the third consecutive quarter.', action: 'Lock in the Q3 plan uplift to reflect sustained over-performance and release the contingency reserve.', impact: 'Reforecast could unlock BSD 4–6M of discretionary opex headroom without breaching leverage covenants.' }}>
+            <Panel title={tt('Revenue trend · Actual vs Plan (BSD M / quarter)')} insight={{ insight: 'Revenue reached BSD 143M in Q4-26, tracking 2% above the annual plan line for the third consecutive quarter.', action: 'Lock in the Q3 plan uplift to reflect sustained over-performance and release the contingency reserve.', impact: 'Reforecast could unlock BSD 4–6M of discretionary opex headroom without breaching leverage covenants.' }}>
               <div className="h-72">
                 <ResponsiveContainer>
                   <AreaChart data={revTrend}>
@@ -397,10 +397,10 @@ export default function CFOPage() {
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
-              <div className="text-[11px] text-vfes-dark/55 mt-3">{tt('Q2-26 BSD 136.8M · under plan by BSD 1.7M · +5.7% YoY. Collections push and H2 price action expected to close the full-year gap.')}</div>
+              <div className="text-[11px] text-vfes-dark/55 mt-3">{tt('Q4-26 BSD 136.8M · under plan by BSD 1.7M · +5.7% YoY. Collections push and H2 price action expected to close the full-year gap.')}</div>
             </Panel>
           </div>
-          <Panel title={tt('EBITDA Walk · Q2-25 → Q2-26 (BSD M)')} insight={{ insight: 'EBITDA grew BSD 8.2M year-on-year, with cost-out savings contributing BSD 3.8M and revenue mix improvement adding BSD 5.1M, partly offset by higher energy costs.', action: 'Accelerate the two at-risk cost-out initiatives to protect the full-year BSD 15M savings target.', impact: 'Closing the BSD 1.2M gap on delayed initiatives would lift EBITDA margin by approximately 20 basis points.' }}>
+          <Panel title={tt('EBITDA Walk · Q4-25 → Q4-26 (BSD M)')} insight={{ insight: 'EBITDA grew BSD 8.2M year-on-year, with cost-out savings contributing BSD 3.8M and revenue mix improvement adding BSD 5.1M, partly offset by higher energy costs.', action: 'Accelerate the two at-risk cost-out initiatives to protect the full-year BSD 15M savings target.', impact: 'Closing the BSD 1.2M gap on delayed initiatives would lift EBITDA margin by approximately 20 basis points.' }}>
             <div className="h-72">
               <ResponsiveContainer>
                 <BarChart data={ebitdaWalk} layout="vertical">
@@ -417,7 +417,7 @@ export default function CFOPage() {
           </Panel>
         </div>
 
-        <Panel title={tt('Income Statement · Q2 2026 vs Plan vs PY (BSD M)')}>
+        <Panel title={tt('Income Statement · Q4 2026 vs Plan vs PY (BSD M)')}>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="text-left text-vfes-dark/55 text-[10px] uppercase tracking-widest">
@@ -507,7 +507,7 @@ export default function CFOPage() {
 
         <div className="grid lg:grid-cols-3 gap-6 mb-6">
           <div className="lg:col-span-2">
-            <Panel title={tt('OCF · CapEx · FCF · Quarterly (BSD M)')} insight={{ insight: 'FCF turned positive in Q4-25 and has held above BSD 18M per quarter, while CapEx intensity remains below the 22% ceiling at 20.4%.', action: 'Maintain the current CapEx discipline and redirect the BSD 6M intensity buffer toward accelerated debt amortisation.', impact: 'Additional BSD 6M debt repayment reduces interest expense by roughly BSD 0.3M annually and tightens leverage by 0.05×.' }}>
+            <Panel title={tt('OCF · CapEx · FCF · Quarterly (BSD M)')} insight={{ insight: 'FCF turned positive in Q2-26 and has held above BSD 18M per quarter, while CapEx intensity remains below the 22% ceiling at 20.4%.', action: 'Maintain the current CapEx discipline and redirect the BSD 6M intensity buffer toward accelerated debt amortisation.', impact: 'Additional BSD 6M debt repayment reduces interest expense by roughly BSD 0.3M annually and tightens leverage by 0.05×.' }}>
               <div className="h-72">
                 <ResponsiveContainer>
                   <ComposedChart data={cashflowQtly}>
@@ -522,7 +522,7 @@ export default function CFOPage() {
                   </ComposedChart>
                 </ResponsiveContainer>
               </div>
-              <div className="text-[11px] text-vfes-dark/55 mt-3">{tt('FCF TTM BSD 84M (Q3-25+Q4-25+Q1-26+Q2-26). Strong OCF growth absorbing rising CapEx. 2027 bond re-fi on track.')}</div>
+              <div className="text-[11px] text-vfes-dark/55 mt-3">{tt('FCF TTM BSD 84M (Q1-26+Q2-26+Q3-26+Q4-26). Strong OCF growth absorbing rising CapEx. 2027 bond re-fi on track.')}</div>
             </Panel>
           </div>
 
@@ -648,7 +648,7 @@ export default function CFOPage() {
             </Panel>
           </div>
 
-          <Panel title={tt('Build vs Maintenance split')} insight={{ insight: 'Build CapEx represents 68% of total spend, above the 60% strategic target, driven by accelerated 5G rollout in Q1-26.', action: 'Review maintenance deferral backlog before the Q3 budget lock to avoid concentration of catch-up spend in H2.', impact: 'Deferring maintenance above the 40% floor introduces an estimated BSD 3–5M incremental network reliability risk in the following fiscal year.' }}>
+          <Panel title={tt('Build vs Maintenance split')} insight={{ insight: 'Build CapEx represents 68% of total spend, above the 60% strategic target, driven by accelerated 5G rollout in Q3-26.', action: 'Review maintenance deferral backlog before the Q3 budget lock to avoid concentration of catch-up spend in H2.', impact: 'Deferring maintenance above the 40% floor introduces an estimated BSD 3–5M incremental network reliability risk in the following fiscal year.' }}>
             <div className="h-72">
               <ResponsiveContainer>
                 <PieChart>
@@ -712,7 +712,7 @@ export default function CFOPage() {
 
         <div className="grid lg:grid-cols-3 gap-6 mb-6">
           <div className="lg:col-span-2">
-            <Panel title={tt('Debt Maturity Ladder (BSD M)')} insight={{ insight: 'A BSD 120M term loan matures in 2027, representing 38% of gross debt, creating a material refinancing cliff two years out.', action: 'Engage the relationship banks in Q3-26 to pre-place a 5-year replacement facility before credit spreads widen into the election cycle.', impact: 'Early refinancing at the current 4.8% average cost locks in approximately BSD 3M annual interest saving versus a stressed 2027 market rate.' }}>
+            <Panel title={tt('Debt Maturity Ladder (BSD M)')} insight={{ insight: 'A BSD 120M term loan matures in 2027, representing 38% of gross debt, creating a material refinancing cliff two years out.', action: 'Engage the relationship banks in Q1-27 to pre-place a 5-year replacement facility before credit spreads widen into the election cycle.', impact: 'Early refinancing at the current 4.8% average cost locks in approximately BSD 3M annual interest saving versus a stressed 2027 market rate.' }}>
               <div className="h-64">
                 <ResponsiveContainer>
                   <BarChart data={debtLadder}>
@@ -806,7 +806,7 @@ export default function CFOPage() {
 
         <div className="grid lg:grid-cols-3 gap-6 mb-6">
           <div className="lg:col-span-2">
-            <Panel title={tt('EBITDA Scenarios · 8 Quarter Outlook (BSD M)')} insight={{ insight: 'The bear scenario shows EBITDA falling to BSD 38M by Q4-27, breaching the 2.5× interest coverage covenant threshold in that quarter.', action: 'Stress-test the liquidity reserve against the bear path and prepare a covenant waiver request template for lender use if macro conditions deteriorate.', impact: 'Proactive lender engagement avoids a technical default event that would trigger 150 bps margin step-up on all floating debt.' }}>
+            <Panel title={tt('EBITDA Scenarios · 8 Quarter Outlook (BSD M)')} insight={{ insight: 'The bear scenario shows EBITDA falling to BSD 38M by Q2-28, breaching the 2.5× interest coverage covenant threshold in that quarter.', action: 'Stress-test the liquidity reserve against the bear path and prepare a covenant waiver request template for lender use if macro conditions deteriorate.', impact: 'Proactive lender engagement avoids a technical default event that would trigger 150 bps margin step-up on all floating debt.' }}>
               <div className="h-72">
                 <ResponsiveContainer>
                   <ComposedChart data={ebitdaScenarios}>
@@ -871,7 +871,7 @@ export default function CFOPage() {
           <KpiCard label={tt('Savings YTD')}          value={`BSD ${costOutYtd}M`}   delta="of BSD 15M FY target"          trend="down" icon={Percent}    accent />
           <KpiCard label={tt('Run-rate achieved')}    value="BSD 3.8M / qtr"         delta="vs BSD 3.75M target rate"      trend="up"   icon={TrendingUp} />
           <KpiCard label={tt('Initiatives on-track')} value="4 / 7"               delta="2 behind · 1 at-risk"       trend="down" icon={GitBranch}  />
-          <KpiCard label={tt('Opex saving Q2 YoY')}  value="BSD 3.8M"               delta="vs Q2-25 · all lines down"  trend="up"   icon={ArrowUpRight}/>
+          <KpiCard label={tt('Opex saving Q2 YoY')}  value="BSD 3.8M"               delta="vs Q4-25 · all lines down"  trend="up"   icon={ArrowUpRight}/>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6 mb-6">
@@ -892,11 +892,11 @@ export default function CFOPage() {
                   </ComposedChart>
                 </ResponsiveContainer>
               </div>
-              <div className="text-[11px] text-vfes-dark/55 mt-3">{tt('BSD 6.2M secured by Q2-26. Property rationalisation and shared-service centre are the main at-risk items. Procurement savings ahead of plan offset delays.')}</div>
+              <div className="text-[11px] text-vfes-dark/55 mt-3">{tt('BSD 6.2M secured by Q4-26. Property rationalisation and shared-service centre are the main at-risk items. Procurement savings ahead of plan offset delays.')}</div>
             </Panel>
           </div>
 
-          <Panel title={tt('OpEx Q2-25 vs Q2-26 (BSD M)')} insight={{ insight: 'Total OpEx fell BSD 3.8M year-on-year to BSD 96.2M, led by a BSD 2.1M reduction in network operations costs and BSD 1.4M lower customer acquisition spend.', action: 'Hold network operations savings in the baseline and redeploy the customer acquisition saving into digital channel investment to sustain acquisition efficiency.', impact: 'Sustaining the BSD 2.1M network operations run-rate saving improves full-year EBITDA margin by approximately 35 basis points.' }}>
+          <Panel title={tt('OpEx Q4-25 vs Q4-26 (BSD M)')} insight={{ insight: 'Total OpEx fell BSD 3.8M year-on-year to BSD 96.2M, led by a BSD 2.1M reduction in network operations costs and BSD 1.4M lower customer acquisition spend.', action: 'Hold network operations savings in the baseline and redeploy the customer acquisition saving into digital channel investment to sustain acquisition efficiency.', impact: 'Sustaining the BSD 2.1M network operations run-rate saving improves full-year EBITDA margin by approximately 35 basis points.' }}>
             <div className="h-72">
               <ResponsiveContainer>
                 <BarChart data={opexBreakdown} layout="vertical">
@@ -905,8 +905,8 @@ export default function CFOPage() {
                   <YAxis type="category" dataKey="cat" tick={{ fontSize: 10 }} width={115} />
                   <Tooltip contentStyle={tooltipStyle} />
                   <Legend wrapperStyle={{ fontSize: 10 }} />
-                  <Bar dataKey="q2_25" name={tt('Q2-25')} fill={GREY}  />
-                  <Bar dataKey="q2_26" name={tt('Q2-26')} fill={BLUE}  />
+                  <Bar dataKey="q2_25" name={tt('Q4-25')} fill={GREY}  />
+                  <Bar dataKey="q2_26" name={tt('Q4-26')} fill={BLUE}  />
                 </BarChart>
               </ResponsiveContainer>
             </div>

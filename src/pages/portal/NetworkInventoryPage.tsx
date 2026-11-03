@@ -111,17 +111,17 @@ const VALUE_TREND = [
 
 // Reconciliation audit log
 const RECON_LOG = [
-  { run: '2023-Q4', autoDiscov: 96.2, vendorEms: 99.1, manual: 61.4, iotSens: 88.4, delta: 0.3 },
-  { run: '2023-Q3', autoDiscov: 95.8, vendorEms: 98.8, manual: 59.1, iotSens: 87.1, delta: 0.8 },
-  { run: '2023-Q2', autoDiscov: 94.1, vendorEms: 98.4, manual: 56.8, iotSens: 85.6, delta: 1.2 },
-  { run: '2023-Q1', autoDiscov: 92.8, vendorEms: 97.9, manual: 54.2, iotSens: 83.4, delta: 1.9 },
+  { run: '2024-Q2', autoDiscov: 96.2, vendorEms: 99.1, manual: 61.4, iotSens: 88.4, delta: 0.3 },
+  { run: '2024-Q1', autoDiscov: 95.8, vendorEms: 98.8, manual: 59.1, iotSens: 87.1, delta: 0.8 },
+  { run: '2023-Q4', autoDiscov: 94.1, vendorEms: 98.4, manual: 56.8, iotSens: 85.6, delta: 1.2 },
+  { run: '2023-Q3', autoDiscov: 92.8, vendorEms: 97.9, manual: 54.2, iotSens: 83.4, delta: 1.9 },
 ]
 
 const RECON_TREND = [
-  { q: '2023-Q1', overall: 86.2 },
-  { q: '2023-Q2', overall: 87.4 },
-  { q: '2023-Q3', overall: 88.6 },
-  { q: '2023-Q4', overall: 89.1 },
+  { q: '2023-Q3', overall: 86.2 },
+  { q: '2023-Q4', overall: 87.4 },
+  { q: '2024-Q1', overall: 88.6 },
+  { q: '2024-Q2', overall: 89.1 },
 ]
 
 type TabId = 'register' | 'footprint' | 'cmdb' | 'lifecycle' | 'vendor' | 'spares' | 'audit' | 'recon'
@@ -907,7 +907,7 @@ export default function NetworkInventoryPage() {
           <div className="mt-4 p-4 rounded-xl bg-amber-50 border border-amber-100">
             <div className="text-xs font-bold text-amber-800 mb-1">{tt('Improvement path')}</div>
             <p className="text-xs text-amber-700 leading-relaxed">
-              {tt('The manual/spreadsheet source (24,800 items, 61% reconciled) is the primary drag on overall accuracy. Migrating these records to the OSS auto-discovery workflow would add ~3pp to the overall rate. Target: begin migration in Q1 2024 with IT and Network Ops.')}
+              {tt('The manual/spreadsheet source (24,800 items, 61% reconciled) is the primary drag on overall accuracy. Migrating these records to the OSS auto-discovery workflow would add ~3pp to the overall rate. Target: begin migration in Q3 2024 with IT and Network Ops.')}
             </p>
           </div>
         </>

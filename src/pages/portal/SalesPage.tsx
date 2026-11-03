@@ -221,12 +221,12 @@ const cancellationReasons = [
 ]
 
 const renewalCalendar = [
-  { mo: 'Jun', count: 4820, tcv: 8.4, atRisk: 380 },
-  { mo: 'Jul', count: 5210, tcv: 9.2, atRisk: 420 },
-  { mo: 'Aug', count: 5640, tcv: 10.1, atRisk: 510 },
-  { mo: 'Sep', count: 4980, tcv: 8.8, atRisk: 460 },
-  { mo: 'Oct', count: 5320, tcv: 9.4, atRisk: 480 },
-  { mo: 'Nov', count: 4760, tcv: 8.4, atRisk: 410 },
+  { mo: 'Nov', count: 4820, tcv: 8.4, atRisk: 380 },
+  { mo: 'Dec', count: 5210, tcv: 9.2, atRisk: 420 },
+  { mo: 'Jan', count: 5640, tcv: 10.1, atRisk: 510 },
+  { mo: 'Feb', count: 4980, tcv: 8.8, atRisk: 460 },
+  { mo: 'Mar', count: 5320, tcv: 9.4, atRisk: 480 },
+  { mo: 'Apr', count: 4760, tcv: 8.4, atRisk: 410 },
 ]
 
 const crossSell = [
@@ -329,8 +329,8 @@ const winLossByQuarter = [
   { q: 'Q2 24', won: 196, lost: 326, rate: 37.5 },
   { q: 'Q3 24', won: 208, lost: 332, rate: 38.5 },
   { q: 'Q4 24', won: 224, lost: 352, rate: 38.9 },
-  { q: 'Q1 25', won: 218, lost: 348, rate: 38.5 },
-  { q: 'Q2 25', won: 230, lost: 356, rate: 39.2 },
+  { q: 'Q3 25', won: 218, lost: 348, rate: 38.5 },
+  { q: 'Q4 25', won: 230, lost: 356, rate: 39.2 },
 ]
 
 const lostByCompetitor = [

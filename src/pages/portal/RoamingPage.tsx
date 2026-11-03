@@ -30,10 +30,10 @@ const SLATE  = '#94a3b8'
 
 // ── data ──────────────────────────────────────────────────────────────────────
 const MONTHLY = [
-  { m: 'Jan', outRev: 4.2, inRev: 3.1, iot: 1.8 }, { m: 'Feb', outRev: 3.8, inRev: 2.9, iot: 1.7 },
-  { m: 'Mar', outRev: 4.6, inRev: 3.4, iot: 1.9 }, { m: 'Apr', outRev: 5.1, inRev: 3.8, iot: 2.0 },
-  { m: 'May', outRev: 6.4, inRev: 4.6, iot: 2.4 }, { m: 'Jun', outRev: 8.9, inRev: 6.2, iot: 3.1 },
-  { m: 'Jul', outRev: 11.2, inRev: 7.8, iot: 3.8 }, { m: 'Aug', outRev: 12.6, inRev: 8.4, iot: 4.0 },
+  { m: 'Jun', outRev: 4.2, inRev: 3.1, iot: 1.8 }, { m: 'Jul', outRev: 3.8, inRev: 2.9, iot: 1.7 },
+  { m: 'Aug', outRev: 4.6, inRev: 3.4, iot: 1.9 }, { m: 'Sep', outRev: 5.1, inRev: 3.8, iot: 2.0 },
+  { m: 'Oct', outRev: 6.4, inRev: 4.6, iot: 2.4 }, { m: 'Nov', outRev: 8.9, inRev: 6.2, iot: 3.1 },
+  { m: 'Dec', outRev: 11.2, inRev: 7.8, iot: 3.8 }, { m: 'Jan', outRev: 12.6, inRev: 8.4, iot: 4.0 },
 ]
 
 const TOP_DEST = [
@@ -71,11 +71,11 @@ const TRAVELERS = [
 ]
 
 const DEALS = [
-  { partner: 'Rival ISP A FR',    type: 'Discount agreement', expiry: 'Q3 2026', status: 'renegotiate', valueM: 4.8 },
-  { partner: 'TIM IT',       type: 'Balanced (in=out)',  expiry: 'Q1 2027', status: 'live',        valueM: 3.2 },
-  { partner: 'Deutsche Tel', type: 'Volume commitment',  expiry: 'Q4 2026', status: 'live',        valueM: 2.9 },
+  { partner: 'Rival ISP A FR',    type: 'Discount agreement', expiry: 'Q1 2027', status: 'renegotiate', valueM: 4.8 },
+  { partner: 'TIM IT',       type: 'Balanced (in=out)',  expiry: 'Q3 2027', status: 'live',        valueM: 3.2 },
+  { partner: 'Deutsche Tel', type: 'Volume commitment',  expiry: 'Q2 2027', status: 'live',        valueM: 2.9 },
   { partner: 'Britcom UK',   type: 'Legacy IOT',         expiry: 'expired',  status: 'renegotiate', valueM: 2.1 },
-  { partner: 'AT&T US',      type: 'Capped premium',     expiry: 'Q2 2027', status: 'capped',      valueM: 1.6 },
+  { partner: 'AT&T US',      type: 'Capped premium',     expiry: 'Q4 2027', status: 'capped',      valueM: 1.6 },
 ]
 
 const INBOUND_SOURCES = [
@@ -96,25 +96,25 @@ const SETTLEMENT_Q2 = [
 ]
 
 const INBOUND_TREND = [
-  { m: 'Jan', total: 3.1 }, { m: 'Feb', total: 2.9 }, { m: 'Mar', total: 3.4 },
-  { m: 'Apr', total: 3.8 }, { m: 'May', total: 4.6 }, { m: 'Jun', total: 6.2 },
-  { m: 'Jul', total: 7.8 }, { m: 'Aug', total: 8.4 },
+  { m: 'Jun', total: 3.1 }, { m: 'Jul', total: 2.9 }, { m: 'Aug', total: 3.4 },
+  { m: 'Sep', total: 3.8 }, { m: 'Oct', total: 4.6 }, { m: 'Nov', total: 6.2 },
+  { m: 'Dec', total: 7.8 }, { m: 'Jan', total: 8.4 },
 ]
 
 const FORECAST = [
-  { q: 'Q3 2025', actual: 38.4, forecast: null },
-  { q: 'Q4 2025', actual: 41.2, forecast: null },
-  { q: 'Q1 2026', actual: 18.3, forecast: null },
-  { q: 'Q2 2026', actual: 39.6, forecast: null },
-  { q: 'Q3 2026', actual: null, forecast: 52.8 },
-  { q: 'Q4 2026', actual: null, forecast: 44.1 },
+  { q: 'Q1 2026', actual: 38.4, forecast: null },
+  { q: 'Q2 2026', actual: 41.2, forecast: null },
+  { q: 'Q3 2026', actual: 18.3, forecast: null },
+  { q: 'Q4 2026', actual: 39.6, forecast: null },
+  { q: 'Q1 2027', actual: null, forecast: 52.8 },
+  { q: 'Q2 2027', actual: null, forecast: 44.1 },
 ]
 
 const IOT_TREND = [
-  { m: 'Jan', us: 1.2, row: 0.6 }, { m: 'Feb', us: 1.1, row: 0.6 },
-  { m: 'Mar', us: 1.3, row: 0.6 }, { m: 'Apr', us: 1.4, row: 0.6 },
-  { m: 'May', us: 1.7, row: 0.7 }, { m: 'Jun', us: 2.1, row: 1.0 },
-  { m: 'Jul', us: 2.6, row: 1.2 }, { m: 'Aug', us: 2.8, row: 1.2 },
+  { m: 'Jun', us: 1.2, row: 0.6 }, { m: 'Jul', us: 1.1, row: 0.6 },
+  { m: 'Aug', us: 1.3, row: 0.6 }, { m: 'Sep', us: 1.4, row: 0.6 },
+  { m: 'Oct', us: 1.7, row: 0.7 }, { m: 'Nov', us: 2.1, row: 1.0 },
+  { m: 'Dec', us: 2.6, row: 1.2 }, { m: 'Jan', us: 2.8, row: 1.2 },
 ]
 
 const ML_IOT_PRED = [
@@ -656,9 +656,9 @@ export default function RoamingPage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             <KpiCard label={tt('Highest-volume partner')} value="Rival ISP A FR" delta={tt('124 TB/qtr')}   trend="up"   icon={Activity} />
-            <KpiCard label={tt('Partners expiring H2 26')} value="2"        delta={tt('Rival ISP A FR, DT')} trend="flat" icon={Clock} />
+            <KpiCard label={tt('Partners expiring H1 27')} value="2"        delta={tt('Rival ISP A FR, DT')} trend="flat" icon={Clock} />
             <KpiCard label={tt('Total deal portfolio')}    value="BSD 14.6M"   delta={tt('annual value')}  trend="up"   icon={DollarSign} />
-            <KpiCard label={tt('Last renegotiation')}      value="TIM IT"   delta={tt('Q1 2026')}       trend="flat" icon={FileText} />
+            <KpiCard label={tt('Last renegotiation')}      value="TIM IT"   delta={tt('Q3 2026')}       trend="flat" icon={FileText} />
           </div>
 
           <Panel title={tt('Partner directory — IOT agreements')}>
@@ -707,8 +707,8 @@ export default function RoamingPage() {
                   <YAxis stroke="#999" fontSize={11} unit=" TB" />
                   <Tooltip contentStyle={{ fontSize: 12 }} />
                   <Legend wrapperStyle={{ fontSize: 11 }} />
-                  <Bar dataKey="q1" fill={SLATE} radius={[6, 6, 0, 0]} name={tt('Q1 2026')} />
-                  <Bar dataKey="q2" fill={BLUE}  radius={[6, 6, 0, 0]} name={tt('Q2 2026')} />
+                  <Bar dataKey="q1" fill={SLATE} radius={[6, 6, 0, 0]} name={tt('Q3 2026')} />
+                  <Bar dataKey="q2" fill={BLUE}  radius={[6, 6, 0, 0]} name={tt('Q4 2026')} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -854,7 +854,7 @@ export default function RoamingPage() {
             <KpiCard label={tt('YTD net position')}     value="BSD 0.8M"   delta={tt('net receivable')}   trend="up"   icon={CheckCircle} />
           </div>
 
-          <Panel title={tt('Q2 2026 wholesale settlement by partner')}>
+          <Panel title={tt('Q4 2026 wholesale settlement by partner')}>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
@@ -885,7 +885,7 @@ export default function RoamingPage() {
             </div>
           </Panel>
 
-          <Panel title={tt('Net settlement per partner — Q2 2026 (BSD M)')}>
+          <Panel title={tt('Net settlement per partner — Q4 2026 (BSD M)')}>
             <div className="h-56">
               <ResponsiveContainer>
                 <BarChart data={SETTLEMENT_Q2}>
@@ -909,15 +909,15 @@ export default function RoamingPage() {
             <KpiCard label={tt('On-time settlement rate')} value="60%"   delta={tt('3 of 5 partners')}    trend="flat" icon={CheckCircle} />
             <KpiCard label={tt('Dispute resolution ETA')} value="Aug 1"  delta={tt('Britcom UK')}         trend="flat" icon={Clock} />
             <KpiCard label={tt('Settlement accuracy')}    value="99.4%"  delta={tt('vs invoice')}         trend="up"   icon={BarChart2} />
-            <KpiCard label={tt('Next cycle opens')}       value="Oct 1"  delta={tt('Q3 2026')}            trend="flat" icon={FileText} />
+            <KpiCard label={tt('Next cycle opens')}       value="Oct 1"  delta={tt('Q1 2027')}            trend="flat" icon={FileText} />
           </div>
 
           <Panel title={tt('Settlement history — net position per quarter (BSD M)')}>
             <div className="h-56">
               <ResponsiveContainer>
                 <BarChart data={[
-                  { q: 'Q3 25', net: 0.6 }, { q: 'Q4 25', net: 0.4 },
-                  { q: 'Q1 26', net: 0.3 }, { q: 'Q2 26', net: totalSettlement },
+                  { q: 'Q1 26', net: 0.6 }, { q: 'Q2 26', net: 0.4 },
+                  { q: 'Q3 26', net: 0.3 }, { q: 'Q4 26', net: totalSettlement },
                 ]}>
                   <CartesianGrid stroke="#eee" strokeDasharray="3 3" />
                   <XAxis dataKey="q" stroke="#999" fontSize={11} />
@@ -940,9 +940,9 @@ export default function RoamingPage() {
       {tab === 'forecast' && (
         <>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <KpiCard label={tt('H2 2026 forecast total')} value={`BSD ${forecastTotal.toFixed(1)}M`} delta={tt('+8% vs H2 2025')} trend="up"   icon={TrendingUp}  accent />
-            <KpiCard label={tt('Q3 2026 forecast')}        value="BSD 52.8M"  delta={tt('peak summer')}    trend="up"   icon={Plane} />
-            <KpiCard label={tt('Q4 2026 forecast')}        value="BSD 44.1M"  delta={tt('off-season')}     trend="flat" icon={TrendingUp} />
+            <KpiCard label={tt('H1 2027 forecast total')} value={`BSD ${forecastTotal.toFixed(1)}M`} delta={tt('+8% vs H1 2026')} trend="up"   icon={TrendingUp}  accent />
+            <KpiCard label={tt('Q1 2027 forecast')}        value="BSD 52.8M"  delta={tt('peak summer')}    trend="up"   icon={Plane} />
+            <KpiCard label={tt('Q2 2027 forecast')}        value="BSD 44.1M"  delta={tt('off-season')}     trend="flat" icon={TrendingUp} />
             <KpiCard label={tt('Forecast confidence')}     value="94%"     delta={tt('model accuracy')} trend="up"   icon={BarChart2} />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
@@ -1002,7 +1002,7 @@ export default function RoamingPage() {
             </div>
           </Panel>
 
-          <Panel title={tt('Scenario comparison — H2 2026 revenue (BSD M)')}>
+          <Panel title={tt('Scenario comparison — H1 2027 revenue (BSD M)')}>
             <div className="h-56">
               <ResponsiveContainer>
                 <BarChart data={[

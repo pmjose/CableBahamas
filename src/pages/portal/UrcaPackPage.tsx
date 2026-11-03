@@ -33,12 +33,12 @@ const OBLIGATIONS = [
 ]
 
 const COVERAGE_TREND = [
-  { m: 'Jan', pop5g: 87.2, pop4g: 98.8, rural700: 89.4 },
-  { m: 'Feb', pop5g: 87.8, pop4g: 98.9, rural700: 90.1 },
-  { m: 'Mar', pop5g: 88.4, pop4g: 99.0, rural700: 90.6 },
-  { m: 'Apr', pop5g: 89.1, pop4g: 99.1, rural700: 90.8 },
-  { m: 'May', pop5g: 89.8, pop4g: 99.2, rural700: 91.0 },
-  { m: 'Jun', pop5g: 90.6, pop4g: 99.2, rural700: 91.2 },
+  { m: 'Jun', pop5g: 87.2, pop4g: 98.8, rural700: 89.4 },
+  { m: 'Jul', pop5g: 87.8, pop4g: 98.9, rural700: 90.1 },
+  { m: 'Aug', pop5g: 88.4, pop4g: 99.0, rural700: 90.6 },
+  { m: 'Sep', pop5g: 89.1, pop4g: 99.1, rural700: 90.8 },
+  { m: 'Oct', pop5g: 89.8, pop4g: 99.2, rural700: 91.0 },
+  { m: 'Nov', pop5g: 90.6, pop4g: 99.2, rural700: 91.2 },
 ]
 
 const QOS = [
@@ -51,12 +51,12 @@ const QOS = [
 ]
 
 const QOS_TREND = [
-  { m: 'Jan', setupSuccess: 99.3, dropRate: 0.58, emergency: 100 },
-  { m: 'Feb', setupSuccess: 99.4, dropRate: 0.54, emergency: 100 },
-  { m: 'Mar', setupSuccess: 99.4, dropRate: 0.50, emergency: 100 },
-  { m: 'Apr', setupSuccess: 99.5, dropRate: 0.48, emergency: 100 },
-  { m: 'May', setupSuccess: 99.6, dropRate: 0.44, emergency: 100 },
-  { m: 'Jun', setupSuccess: 99.6, dropRate: 0.42, emergency: 100 },
+  { m: 'Jun', setupSuccess: 99.3, dropRate: 0.58, emergency: 100 },
+  { m: 'Jul', setupSuccess: 99.4, dropRate: 0.54, emergency: 100 },
+  { m: 'Aug', setupSuccess: 99.4, dropRate: 0.50, emergency: 100 },
+  { m: 'Sep', setupSuccess: 99.5, dropRate: 0.48, emergency: 100 },
+  { m: 'Oct', setupSuccess: 99.6, dropRate: 0.44, emergency: 100 },
+  { m: 'Nov', setupSuccess: 99.6, dropRate: 0.42, emergency: 100 },
 ]
 
 const DSAR = [
@@ -67,85 +67,85 @@ const DSAR = [
 ]
 
 const DSAR_TREND = [
-  { m: 'Jan', received: 248, resolved: 232, breached: 6 },
-  { m: 'Feb', received: 271, resolved: 258, breached: 4 },
-  { m: 'Mar', received: 294, resolved: 284, breached: 4 },
-  { m: 'Apr', received: 312, resolved: 302, breached: 3 },
-  { m: 'May', received: 288, resolved: 281, breached: 3 },
-  { m: 'Jun', received: 295, resolved: 292, breached: 3 },
+  { m: 'Jun', received: 248, resolved: 232, breached: 6 },
+  { m: 'Jul', received: 271, resolved: 258, breached: 4 },
+  { m: 'Aug', received: 294, resolved: 284, breached: 4 },
+  { m: 'Sep', received: 312, resolved: 302, breached: 3 },
+  { m: 'Oct', received: 288, resolved: 281, breached: 3 },
+  { m: 'Nov', received: 295, resolved: 292, breached: 3 },
 ]
 
 const MARKET_REVIEWS = [
-  { id: 'M1', name: 'Fixed access networks',           status: 'Completed', obligation: 'SMP designation', compliant: true,  deadline: '2024-06' },
-  { id: 'M2', 'name': 'Origination on PSTN',            status: 'Active',    obligation: 'Cost-based pricing', compliant: true, deadline: '2025-12' },
-  { id: 'M3', name: 'Broadband wholesale (WBA)',        status: 'Active',    obligation: 'Bitstream access', compliant: true,  deadline: '2026-06' },
-  { id: 'M4', name: 'Mobile termination rates',        status: 'Active',    obligation: 'Glide-path MTR',   compliant: true,  deadline: '2026-09' },
+  { id: 'M1', name: 'Fixed access networks',           status: 'Completed', obligation: 'SMP designation', compliant: true,  deadline: '2024-11' },
+  { id: 'M2', 'name': 'Origination on PSTN',            status: 'Active',    obligation: 'Cost-based pricing', compliant: true, deadline: '2026-05' },
+  { id: 'M3', name: 'Broadband wholesale (WBA)',        status: 'Active',    obligation: 'Bitstream access', compliant: true,  deadline: '2026-11' },
+  { id: 'M4', name: 'Mobile termination rates',        status: 'Active',    obligation: 'Glide-path MTR',   compliant: true,  deadline: '2027-02' },
 ]
 
 const MARKET_SHARE = [
-  { m: 'Jan', fixed: 38.2, mobile: 24.8, broadband: 35.4 },
-  { m: 'Feb', fixed: 38.3, mobile: 24.9, broadband: 35.6 },
-  { m: 'Mar', fixed: 38.4, mobile: 25.0, broadband: 35.8 },
-  { m: 'Apr', fixed: 38.5, mobile: 25.1, broadband: 36.0 },
-  { m: 'May', fixed: 38.6, mobile: 25.2, broadband: 36.2 },
-  { m: 'Jun', fixed: 38.7, mobile: 25.3, broadband: 36.4 },
+  { m: 'Jun', fixed: 38.2, mobile: 24.8, broadband: 35.4 },
+  { m: 'Jul', fixed: 38.3, mobile: 24.9, broadband: 35.6 },
+  { m: 'Aug', fixed: 38.4, mobile: 25.0, broadband: 35.8 },
+  { m: 'Sep', fixed: 38.5, mobile: 25.1, broadband: 36.0 },
+  { m: 'Oct', fixed: 38.6, mobile: 25.2, broadband: 36.2 },
+  { m: 'Nov', fixed: 38.7, mobile: 25.3, broadband: 36.4 },
 ]
 
 const WHOLESALE_OBS = [
-  { obligation: 'Bitstream access (ADSL)',    smp: true,  price: 'BSD 5.42/mo',  compliant: true,  review: '2026-06' },
-  { obligation: 'Bitstream access (VDSL)',    smp: true,  price: 'BSD 8.14/mo',  compliant: true,  review: '2026-06' },
-  { obligation: 'Physical unbundling (LLU)',  smp: true,  price: 'BSD 9.82/mo',  compliant: true,  review: '2026-06' },
-  { obligation: 'Fibre wholesale (WBA)',       smp: true,  price: 'BSD 14.20/mo', compliant: true,  review: '2026-06' },
-  { obligation: 'Mobile wholesale (MVNO)',     smp: false, price: 'Negotiated', compliant: true, review: '2026-09' },
-  { obligation: 'SMS A2P termination',         smp: false, price: 'BSD 0.024',    compliant: true,  review: '2026-12' },
-  { obligation: 'International roaming IOT',  smp: false, price: 'BSD 0.003/MB',  compliant: true, review: '2027-01' },
-  { obligation: 'Dark fibre leasing',          smp: true,  price: 'Cost+12%',  compliant: false, review: '2026-03' },
+  { obligation: 'Bitstream access (ADSL)',    smp: true,  price: 'BSD 5.42/mo',  compliant: true,  review: '2026-11' },
+  { obligation: 'Bitstream access (VDSL)',    smp: true,  price: 'BSD 8.14/mo',  compliant: true,  review: '2026-11' },
+  { obligation: 'Physical unbundling (LLU)',  smp: true,  price: 'BSD 9.82/mo',  compliant: true,  review: '2026-11' },
+  { obligation: 'Fibre wholesale (WBA)',       smp: true,  price: 'BSD 14.20/mo', compliant: true,  review: '2026-11' },
+  { obligation: 'Mobile wholesale (MVNO)',     smp: false, price: 'Negotiated', compliant: true, review: '2027-02' },
+  { obligation: 'SMS A2P termination',         smp: false, price: 'BSD 0.024',    compliant: true,  review: '2027-05' },
+  { obligation: 'International roaming IOT',  smp: false, price: 'BSD 0.003/MB',  compliant: true, review: '2027-06' },
+  { obligation: 'Dark fibre leasing',          smp: true,  price: 'Cost+12%',  compliant: false, review: '2026-08' },
 ]
 
 const PORTABILITY = [
-  { m: 'Jan', portIn: 4820, portOut: 3840, netGain: 980,  successRate: 99.2 },
-  { m: 'Feb', portIn: 5240, portOut: 4120, netGain: 1120, successRate: 99.3 },
-  { m: 'Mar', portIn: 5680, portOut: 4480, netGain: 1200, successRate: 99.3 },
-  { m: 'Apr', portIn: 5120, portOut: 4280, netGain: 840,  successRate: 99.4 },
-  { m: 'May', portIn: 5480, portOut: 4560, netGain: 920,  successRate: 99.4 },
-  { m: 'Jun', portIn: 5840, portOut: 4880, netGain: 960,  successRate: 99.5 },
+  { m: 'Jun', portIn: 4820, portOut: 3840, netGain: 980,  successRate: 99.2 },
+  { m: 'Jul', portIn: 5240, portOut: 4120, netGain: 1120, successRate: 99.3 },
+  { m: 'Aug', portIn: 5680, portOut: 4480, netGain: 1200, successRate: 99.3 },
+  { m: 'Sep', portIn: 5120, portOut: 4280, netGain: 840,  successRate: 99.4 },
+  { m: 'Oct', portIn: 5480, portOut: 4560, netGain: 920,  successRate: 99.4 },
+  { m: 'Nov', portIn: 5840, portOut: 4880, netGain: 960,  successRate: 99.5 },
 ]
 
 const COMPLIANCE_DEADLINES = [
-  { deadline: '2026-07-31', obligation: 'Q2 coverage attestation',    risk: 'Low',  daysLeft: 32, owner: 'Network' },
-  { deadline: '2026-08-15', obligation: 'DSAR quarterly report',       risk: 'Low',  daysLeft: 47, owner: 'Privacy' },
-  { deadline: '2026-09-30', obligation: 'M4 MTR glide-path reporting', risk: 'Med',  daysLeft: 93, owner: 'Wholesale' },
-  { deadline: '2026-10-01', obligation: 'FTTH obligation catch-up',    risk: 'High', daysLeft: 94, owner: 'Network' },
-  { deadline: '2026-10-31', obligation: 'Annual QoS report',           risk: 'Low',  daysLeft: 124,owner: 'Operations' },
-  { deadline: '2026-12-31', obligation: 'URCA annual filing (EOY)',    risk: 'High', daysLeft: 185,owner: 'Regulatory' },
-  { deadline: '2027-01-31', obligation: 'Dark fibre price review',     risk: 'High', daysLeft: 216,owner: 'Wholesale' },
-  { deadline: '2027-03-31', obligation: 'WBA market review renewal',   risk: 'Med',  daysLeft: 275,owner: 'Regulatory' },
+  { deadline: '2026-12-31', obligation: 'Q2 coverage attestation',    risk: 'Low',  daysLeft: 32, owner: 'Network' },
+  { deadline: '2027-01-15', obligation: 'DSAR quarterly report',       risk: 'Low',  daysLeft: 47, owner: 'Privacy' },
+  { deadline: '2027-02-28', obligation: 'M4 MTR glide-path reporting', risk: 'Med',  daysLeft: 93, owner: 'Wholesale' },
+  { deadline: '2027-03-01', obligation: 'FTTH obligation catch-up',    risk: 'High', daysLeft: 94, owner: 'Network' },
+  { deadline: '2027-03-31', obligation: 'Annual QoS report',           risk: 'Low',  daysLeft: 124,owner: 'Operations' },
+  { deadline: '2027-05-31', obligation: 'URCA annual filing (EOY)',    risk: 'High', daysLeft: 185,owner: 'Regulatory' },
+  { deadline: '2027-06-30', obligation: 'Dark fibre price review',     risk: 'High', daysLeft: 216,owner: 'Wholesale' },
+  { deadline: '2027-08-31', obligation: 'WBA market review renewal',   risk: 'Med',  daysLeft: 275,owner: 'Regulatory' },
 ]
 
 const COMPLIANCE_SCORE_TREND = [
   { q: 'Q3-24', score: 88 }, { q: 'Q4-24', score: 90 },
-  { q: 'Q1-25', score: 91 }, { q: 'Q2-25', score: 92 },
-  { q: 'Q3-25', score: 93 }, { q: 'Q4-25', score: 94 },
-  { q: 'Q1-26', score: 94 }, { q: 'Q2-26', score: 95 },
+  { q: 'Q3-25', score: 91 }, { q: 'Q4-25', score: 92 },
+  { q: 'Q1-26', score: 93 }, { q: 'Q2-26', score: 94 },
+  { q: 'Q3-26', score: 94 }, { q: 'Q4-26', score: 95 },
 ]
 
 const WHOLESALE_COMPLIANCE_TREND = [
-  { m: 'Jan', compliant: 7, nonCompliant: 1 }, { m: 'Feb', compliant: 7, nonCompliant: 1 },
-  { m: 'Mar', compliant: 7, nonCompliant: 1 }, { m: 'Apr', compliant: 7, nonCompliant: 1 },
-  { m: 'May', compliant: 7, nonCompliant: 1 }, { m: 'Jun', compliant: 7, nonCompliant: 1 },
+  { m: 'Jun', compliant: 7, nonCompliant: 1 }, { m: 'Jul', compliant: 7, nonCompliant: 1 },
+  { m: 'Aug', compliant: 7, nonCompliant: 1 }, { m: 'Sep', compliant: 7, nonCompliant: 1 },
+  { m: 'Oct', compliant: 7, nonCompliant: 1 }, { m: 'Nov', compliant: 7, nonCompliant: 1 },
 ]
 
 const PORT_NET_TREND = [
-  { m: 'Jan', netGain: 980 }, { m: 'Feb', netGain: 1120 }, { m: 'Mar', netGain: 1200 },
-  { m: 'Apr', netGain: 840 }, { m: 'May', netGain: 920  }, { m: 'Jun', netGain: 960  },
+  { m: 'Jun', netGain: 980 }, { m: 'Jul', netGain: 1120 }, { m: 'Aug', netGain: 1200 },
+  { m: 'Sep', netGain: 840 }, { m: 'Oct', netGain: 920  }, { m: 'Nov', netGain: 960  },
 ]
 
 const FILING_HISTORY = [
-  { filing: 'Q2 2025 coverage',   submitted: '2025-07-28', status: 'Accepted', findings: 0 },
-  { filing: 'Q3 2025 coverage',   submitted: '2025-10-29', status: 'Accepted', findings: 0 },
-  { filing: 'Q4 2025 annual',     submitted: '2026-01-30', status: 'Accepted', findings: 2 },
-  { filing: 'Q1 2026 coverage',   submitted: '2026-04-28', status: 'Accepted', findings: 1 },
-  { filing: 'Q2 2026 coverage',   submitted: 'Pending',    status: 'Pending',  findings: 0 },
+  { filing: 'Q4 2025 coverage',   submitted: '2025-12-28', status: 'Accepted', findings: 0 },
+  { filing: 'Q1 2026 coverage',   submitted: '2026-03-29', status: 'Accepted', findings: 0 },
+  { filing: 'Q2 2026 annual',     submitted: '2026-06-30', status: 'Accepted', findings: 2 },
+  { filing: 'Q3 2026 coverage',   submitted: '2026-09-28', status: 'Accepted', findings: 1 },
+  { filing: 'Q4 2026 coverage',   submitted: 'Pending',    status: 'Pending',  findings: 0 },
 ]
 
 type TabId = 'overview' | 'market' | 'coverage' | 'wholesale' | 'qos' | 'portability' | 'compliance' | 'dsar'
@@ -171,7 +171,7 @@ export default function UrcaPackPage() {
   const [filingCountdown, setFilingCountdown] = useState(32)
 
   useEffect(() => {
-    const target = new Date('2026-08-31')
+    const target = new Date('2027-01-31')
     const diff = Math.ceil((target.getTime() - Date.now()) / 86_400_000)
     setFilingCountdown(Math.max(0, diff))
   }, [])
@@ -208,7 +208,7 @@ export default function UrcaPackPage() {
             <span className="bg-amber-50 text-amber-700 px-2.5 py-1 rounded-full font-bold text-xs">
               {filingCountdown}{tt('d to Q2 filing')}
             </span>
-            <span className="bg-vfes-red/10 text-vfes-dark px-2.5 py-1 rounded-full font-bold text-xs">{tt('Q2 2026 filing')}</span>
+            <span className="bg-vfes-red/10 text-vfes-dark px-2.5 py-1 rounded-full font-bold text-xs">{tt('Q4 2026 filing')}</span>
           </div>
         }
       />
@@ -333,7 +333,7 @@ export default function UrcaPackPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Market reviews active')} value="3"     delta={tt('M2 · M3 · M4')}           trend="flat" icon={BarChart2} />
           <KpiCard label={tt('Wholesale obligations')} value="8"     delta={tt('1 non-compliant')}         trend="flat" icon={Scale}    />
-          <KpiCard label={tt('Portability net gain')}  value="+960"  delta={tt('Jun 2026')}                trend="up"   icon={Phone}   />
+          <KpiCard label={tt('Portability net gain')}  value="+960"  delta={tt('Nov 2026')}                trend="up"   icon={Phone}   />
           <KpiCard label={tt('Compliance score')}      value="95/100" delta={tt('+1 pt QoQ')}              trend="up"   icon={Activity}/>
         </div>
 
@@ -375,7 +375,7 @@ export default function UrcaPackPage() {
               </table>
             </div>
             <div className="mt-3 flex items-center justify-between">
-              <span className="text-xs text-vfes-dark/55">{tt('Q4 2025 annual had 2 findings — FTTH gap and 112 delay event — both remediated in Q1 2026.')}</span>
+              <span className="text-xs text-vfes-dark/55">{tt('Q2 2026 annual had 2 findings — FTTH gap and 112 delay event — both remediated in Q3 2026.')}</span>
               <Link to="/portal/ai-insights" className="text-xs font-bold text-vfes-dark hover:underline">{tt('AI Insights →')}</Link>
             </div>
           </Panel>
@@ -390,8 +390,8 @@ export default function UrcaPackPage() {
         </div>
         <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
           <KpiCard label={tt('FTTH civil works')}       value="14"     delta={tt('sites started')}       trend="up"   icon={Zap}         />
-          <KpiCard label={tt('Next filing deadline')}   value={`${filingCountdown}d`} delta={tt('Q2 2026 URCA')} trend="flat" icon={AlertTriangle}/>
-          <KpiCard label={tt('Open findings')}          value="3"      delta={tt('from Q4 2025')}        trend="flat" icon={Lock}         />
+          <KpiCard label={tt('Next filing deadline')}   value={`${filingCountdown}d`} delta={tt('Q4 2026 URCA')} trend="flat" icon={AlertTriangle}/>
+          <KpiCard label={tt('Open findings')}          value="3"      delta={tt('from Q2 2026')}        trend="flat" icon={Lock}         />
           <KpiCard label={tt('Last audit result')}      value="Pass"   delta={tt('1 minor finding')}     trend="up"   icon={ShieldCheck}  />
         </div>
 
@@ -444,7 +444,7 @@ export default function UrcaPackPage() {
             </table>
           </div>
           <div className="mt-3 flex items-center justify-between">
-            <span className="text-xs text-vfes-dark/55">{tt('All active SMP obligations compliant at last audit. M3 WBA renewal due Q2 2026.')}</span>
+            <span className="text-xs text-vfes-dark/55">{tt('All active SMP obligations compliant at last audit. M3 WBA renewal due Q4 2026.')}</span>
             <Link to="/portal/regulatory" className="text-xs font-bold text-vfes-dark hover:underline">{tt('Regulatory →')}</Link>
           </div>
         </Panel>
@@ -474,8 +474,8 @@ export default function UrcaPackPage() {
         <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
           <KpiCard label={tt('SMP markets')}          value="2"      delta={tt('fixed + broadband')}    trend="flat" icon={Scale}     />
           <KpiCard label={tt('MTR (mobile)')}          value="BSD 0.0028"delta={tt('URCA glide-path')}      trend="up"   icon={Phone}    />
-          <KpiCard label={tt('Reference offer')}       value="Active" delta={tt('scenario Jan 2026')}   trend="up"   icon={FileText} />
-          <KpiCard label={tt('Next M3 review')}        value="Q2 2026"delta={tt('WBA renewal')}          trend="flat" icon={BarChart2}/>
+          <KpiCard label={tt('Reference offer')}       value="Active" delta={tt('scenario Jun 2026')}   trend="up"   icon={FileText} />
+          <KpiCard label={tt('Next M3 review')}        value="Q4 2026"delta={tt('WBA renewal')}          trend="flat" icon={BarChart2}/>
         </div>
 
         <div className="flex flex-wrap gap-2 mt-4">
@@ -576,7 +576,7 @@ export default function UrcaPackPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Total obligations')}    value="8"      delta={tt('1 non-compliant')}      trend="flat" icon={Scale}       accent />
           <KpiCard label={tt('SMP obligations')}      value="5"      delta={tt('all compliant')}        trend="up"   icon={ShieldCheck} />
-          <KpiCard label={tt('Reference offer filed')}value="Yes"    delta={tt('scenario Q1 2026')}    trend="up"   icon={FileText}   />
+          <KpiCard label={tt('Reference offer filed')}value="Yes"    delta={tt('scenario Q3 2026')}    trend="up"   icon={FileText}   />
           <KpiCard label={tt('Price reviews pending')}value="2"      delta={tt('dark fibre + LLU')}     trend="flat" icon={AlertTriangle}/>
         </div>
 
@@ -621,7 +621,7 @@ export default function UrcaPackPage() {
           </div>
           <div className="mt-3 flex items-center justify-between">
             <div className="text-xs text-vfes-dark font-bold flex items-center gap-1">
-              <Brain className="w-3 h-3" />{tt('Dark fibre price review overdue — submit cost model to URCA by 31 Mar 2027.')}<ChevronRight className="w-3 h-3" />
+              <Brain className="w-3 h-3" />{tt('Dark fibre price review overdue — submit cost model to URCA by 31 Aug 2027.')}<ChevronRight className="w-3 h-3" />
             </div>
             <Link to="/portal/billing-charging" className="text-xs font-bold text-vfes-dark hover:underline">{tt('Billing →')}</Link>
           </div>
@@ -878,7 +878,7 @@ export default function UrcaPackPage() {
           <KpiCard label={tt('Deadlines (90d)')}    value="2"       delta={tt('1 high-risk')}       trend="flat" icon={AlertTriangle} accent />
           <KpiCard label={tt('High-risk items')}     value="3"       delta={tt('filing · rural · fibre')} trend="flat" icon={Lock}   />
           <KpiCard label={tt('Overall score')}       value="95/100"  delta={tt('+1 pt QoQ')}        trend="up"   icon={Activity}     />
-          <KpiCard label={tt('Filing in')}           value={`${filingCountdown}d`} delta={tt('Q2 2026')} trend="flat" icon={FileText}  />
+          <KpiCard label={tt('Filing in')}           value={`${filingCountdown}d`} delta={tt('Q4 2026')} trend="flat" icon={FileText}  />
         </div>
 
         <div className="flex flex-wrap items-center gap-2 mb-4">

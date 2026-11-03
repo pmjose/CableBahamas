@@ -48,12 +48,12 @@ const SITE_HEALTH = [
   { region: 'New Providence-Capital',total:  640, healthy:  628, degraded: 10, critical: 2 },
 ]
 const ENERGY_MONTHLY = [
-  { m: 'Jan', kwh: 0.122, target: 0.100, gwh: 31.4, renewPct: 62 },
-  { m: 'Feb', kwh: 0.118, target: 0.100, gwh: 30.8, renewPct: 64 },
-  { m: 'Mar', kwh: 0.115, target: 0.100, gwh: 30.2, renewPct: 66 },
-  { m: 'Apr', kwh: 0.111, target: 0.100, gwh: 29.6, renewPct: 68 },
-  { m: 'May', kwh: 0.106, target: 0.100, gwh: 28.8, renewPct: 71 },
-  { m: 'Jun', kwh: 0.101, target: 0.100, gwh: 28.2, renewPct: 74 },
+  { m: 'Jun', kwh: 0.122, target: 0.100, gwh: 31.4, renewPct: 62 },
+  { m: 'Jul', kwh: 0.118, target: 0.100, gwh: 30.8, renewPct: 64 },
+  { m: 'Aug', kwh: 0.115, target: 0.100, gwh: 30.2, renewPct: 66 },
+  { m: 'Sep', kwh: 0.111, target: 0.100, gwh: 29.6, renewPct: 68 },
+  { m: 'Oct', kwh: 0.106, target: 0.100, gwh: 28.8, renewPct: 71 },
+  { m: 'Nov', kwh: 0.101, target: 0.100, gwh: 28.2, renewPct: 74 },
 ]
 const TECH_SPLIT_SITES = [
   { tech: '5G SA only',   sites: 4820, color: '#FF4438' },
@@ -62,9 +62,9 @@ const TECH_SPLIT_SITES = [
   { tech: '2G/3G legacy', sites: 1484, color: '#F59E0B' },
 ]
 const RRC_TREND = [
-  { m: 'Jan', rrc: 98.82, drop: 0.52 }, { m: 'Feb', rrc: 98.94, drop: 0.50 },
-  { m: 'Mar', rrc: 99.01, drop: 0.48 }, { m: 'Apr', rrc: 99.08, drop: 0.46 },
-  { m: 'May', rrc: 99.12, drop: 0.44 }, { m: 'Jun', rrc: 99.18, drop: 0.42 },
+  { m: 'Jun', rrc: 98.82, drop: 0.52 }, { m: 'Jul', rrc: 98.94, drop: 0.50 },
+  { m: 'Aug', rrc: 99.01, drop: 0.48 }, { m: 'Sep', rrc: 99.08, drop: 0.46 },
+  { m: 'Oct', rrc: 99.12, drop: 0.44 }, { m: 'Nov', rrc: 99.18, drop: 0.42 },
 ]
 const ENERGY_BY_VENDOR = [
   { vendor: 'Ericsson', gwh: 11.4, sites: 8400 },
@@ -691,7 +691,7 @@ export default function MobileRanPage() {
       {/* ════ COMPETITIVE ══════════════════════════════════════════════════════════════════ */}
       {tab === 'compete' && (
         <>
-          <Panel title={tt('MNO competitive benchmark — Q2 2026')}>
+          <Panel title={tt('MNO competitive benchmark — Q4 2026')}>
             <div className="h-96">
               <ResponsiveContainer>
                 <BarChart data={MNO_BENCHMARK} layout="vertical" margin={{ left: 80 }}>
@@ -707,7 +707,7 @@ export default function MobileRanPage() {
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="mt-3 text-xs text-vfes-dark/55">{tt('Source: nPerf · Speedtest · URCA · Cable Bahamas benchmarking lab · Q2 2026')}</div>
+            <div className="mt-3 text-xs text-vfes-dark/55">{tt('Source: nPerf · Speedtest · URCA · Cable Bahamas benchmarking lab · Q4 2026')}</div>
           </Panel>
           <div className="mt-3 flex gap-3">
             <Link to="/portal/ai-insights" className="text-xs font-bold text-vfes-dark hover:underline">{tt('AI Insights →')}</Link>
@@ -928,7 +928,7 @@ export default function MobileRanPage() {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
-              <div className="mt-2 text-xs text-vfes-dark/55">{tt('Ericsson highest — sleep-mode firmware upgrade targeted H2-2026.')}</div>
+              <div className="mt-2 text-xs text-vfes-dark/55">{tt('Ericsson highest — sleep-mode firmware upgrade targeted H1-2027.')}</div>
             </Panel>
           </div>
 

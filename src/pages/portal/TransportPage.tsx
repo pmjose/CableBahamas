@@ -38,9 +38,9 @@ const PEERING = [
 ]
 
 const TRANSIT_TREND = [
-  { m: 'Jan', usd: 0.52 }, { m: 'Feb', usd: 0.49 }, { m: 'Mar', usd: 0.46 },
-  { m: 'Apr', usd: 0.43 }, { m: 'May', usd: 0.40 }, { m: 'Jun', usd: 0.38 },
-  { m: 'Jul', usd: 0.36 }, { m: 'Aug', usd: 0.35 },
+  { m: 'Jun', usd: 0.52 }, { m: 'Jul', usd: 0.49 }, { m: 'Aug', usd: 0.46 },
+  { m: 'Sep', usd: 0.43 }, { m: 'Oct', usd: 0.40 }, { m: 'Nov', usd: 0.38 },
+  { m: 'Dec', usd: 0.36 }, { m: 'Jan', usd: 0.35 },
 ]
 
 const LATENCY_MATRIX = [
@@ -75,18 +75,18 @@ const MPLS_TUNNELS = [
 ]
 
 const MPLS_TRAFFIC = [
-  { m: 'Jan', gold: 2840, silver: 1420, bronze: 680 }, { m: 'Feb', gold: 2920, silver: 1460, bronze: 710 },
-  { m: 'Mar', gold: 3040, silver: 1520, bronze: 740 }, { m: 'Apr', gold: 3180, silver: 1590, bronze: 760 },
-  { m: 'May', gold: 3260, silver: 1640, bronze: 790 }, { m: 'Jun', gold: 3380, silver: 1680, bronze: 820 },
+  { m: 'Jun', gold: 2840, silver: 1420, bronze: 680 }, { m: 'Jul', gold: 2920, silver: 1460, bronze: 710 },
+  { m: 'Aug', gold: 3040, silver: 1520, bronze: 740 }, { m: 'Sep', gold: 3180, silver: 1590, bronze: 760 },
+  { m: 'Oct', gold: 3260, silver: 1640, bronze: 790 }, { m: 'Nov', gold: 3380, silver: 1680, bronze: 820 },
 ]
 
 const CAPACITY_FORECAST = [
-  { q: 'Q3-25', util: 68, headroom: 32, threshold: 85 },
-  { q: 'Q4-25', util: 71, headroom: 29, threshold: 85 },
-  { q: 'Q1-26', util: 74, headroom: 26, threshold: 85 },
-  { q: 'Q2-26', util: 78, headroom: 22, threshold: 85 },
-  { q: 'Q3-26', util: 82, headroom: 18, threshold: 85 },
-  { q: 'Q4-26', util: 87, headroom: 13, threshold: 85 },
+  { q: 'Q1-26', util: 68, headroom: 32, threshold: 85 },
+  { q: 'Q2-26', util: 71, headroom: 29, threshold: 85 },
+  { q: 'Q3-26', util: 74, headroom: 26, threshold: 85 },
+  { q: 'Q4-26', util: 78, headroom: 22, threshold: 85 },
+  { q: 'Q1-27', util: 82, headroom: 18, threshold: 85 },
+  { q: 'Q2-27', util: 87, headroom: 13, threshold: 85 },
 ]
 
 const RESILIENCE_SRLG = [
@@ -98,9 +98,9 @@ const RESILIENCE_SRLG = [
 ]
 
 const RESILIENCE_AVAIL = [
-  { m: 'Jan', avail: 99.994, mttr: 38 }, { m: 'Feb', avail: 99.996, mttr: 32 },
-  { m: 'Mar', avail: 99.998, mttr: 28 }, { m: 'Apr', avail: 99.994, mttr: 41 },
-  { m: 'May', avail: 99.997, mttr: 24 }, { m: 'Jun', avail: 99.998, mttr: 22 },
+  { m: 'Jun', avail: 99.994, mttr: 38 }, { m: 'Jul', avail: 99.996, mttr: 32 },
+  { m: 'Aug', avail: 99.998, mttr: 28 }, { m: 'Sep', avail: 99.994, mttr: 41 },
+  { m: 'Oct', avail: 99.997, mttr: 24 }, { m: 'Nov', avail: 99.998, mttr: 22 },
 ]
 
 const NOC_EVENTS = [
@@ -126,9 +126,9 @@ const TRAFFIC_DAILY = Array.from({ length: 24 }, (_, i) => ({
 }))
 
 const PEERING_MONTHLY = [
-  { m: 'Jan', pni: 4820, ixp: 1240, transit: 980 }, { m: 'Feb', pni: 5040, ixp: 1320, transit: 880 },
-  { m: 'Mar', pni: 5280, ixp: 1380, transit: 820 }, { m: 'Apr', pni: 5420, ixp: 1460, transit: 760 },
-  { m: 'May', pni: 5680, ixp: 1520, transit: 710 }, { m: 'Jun', pni: 5920, ixp: 1580, transit: 670 },
+  { m: 'Jun', pni: 4820, ixp: 1240, transit: 980 }, { m: 'Jul', pni: 5040, ixp: 1320, transit: 880 },
+  { m: 'Aug', pni: 5280, ixp: 1380, transit: 820 }, { m: 'Sep', pni: 5420, ixp: 1460, transit: 760 },
+  { m: 'Oct', pni: 5680, ixp: 1520, transit: 710 }, { m: 'Nov', pni: 5920, ixp: 1580, transit: 670 },
 ]
 
 const DWDM_CHANNELS = [
@@ -256,7 +256,7 @@ export default function TransportPage() {
           unit: '%',
           data: CAPACITY_FORECAST,
           series: [{ key: 'util', name: tt('Avg utilisation'), color: BLUE }],
-          note: tt('Q4-26 forecast crosses 85% threshold without augmentation — order window is now.'),
+          note: tt('Q2-27 forecast crosses 85% threshold without augmentation — order window is now.'),
         }}
       />
 
@@ -834,9 +834,9 @@ export default function TransportPage() {
       {/* ══ CAPACITY ══════════════════════════════════════════════════════════ */}
       {tab === 'capacity' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Q4-26 forecast util')} value="87%"      delta={tt('above 85% threshold')}   trend="down" icon={AlertTriangle} accent />
+          <KpiCard label={tt('Q2-27 forecast util')} value="87%"      delta={tt('above 85% threshold')}   trend="down" icon={AlertTriangle} accent />
           <KpiCard label={tt('Current avg util')}     value="68%"      delta={tt('all backbone links')}   trend="flat" icon={Gauge}               />
-          <KpiCard label={tt('Headroom today')}       value="32%"      delta={tt('Q4-26 only 13%')}       trend="down" icon={TrendingUp}           />
+          <KpiCard label={tt('Headroom today')}       value="32%"      delta={tt('Q2-27 only 13%')}       trend="down" icon={TrendingUp}           />
           <KpiCard label={tt('400G lambda order')}    value={tt('Pending')} delta={tt('board approval Q2')} trend="flat" icon={Zap}             />
         </div>
 
@@ -857,7 +857,7 @@ export default function TransportPage() {
                 </ComposedChart>
               </ResponsiveContainer>
             </div>
-            <div className="mt-2 text-[10px] text-vfes-dark/45">{tt('Without augmentation, backbone avg crosses 85% threshold in Q4-2026.')}</div>
+            <div className="mt-2 text-[10px] text-vfes-dark/45">{tt('Without augmentation, backbone avg crosses 85% threshold in Q2-2027.')}</div>
           </Panel>
 
           <Panel title={tt('DWDM channel headroom by node')}>

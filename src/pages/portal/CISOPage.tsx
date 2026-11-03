@@ -91,12 +91,12 @@ const vulnsBySev = [
 ]
 
 const vulnTrend = [
-  { mo: 'Jan', opened: 64, closed: 58, backlog: 480 },
-  { mo: 'Feb', opened: 72, closed: 62, backlog: 490 },
-  { mo: 'Mar', opened: 58, closed: 68, backlog: 480 },
-  { mo: 'Apr', opened: 66, closed: 72, backlog: 474 },
-  { mo: 'May', opened: 60, closed: 74, backlog: 460 },
-  { mo: 'Jun', opened: 54, closed: 68, backlog: 446 },
+  { mo: 'Jun', opened: 64, closed: 58, backlog: 480 },
+  { mo: 'Jul', opened: 72, closed: 62, backlog: 490 },
+  { mo: 'Aug', opened: 58, closed: 68, backlog: 480 },
+  { mo: 'Sep', opened: 66, closed: 72, backlog: 474 },
+  { mo: 'Oct', opened: 60, closed: 74, backlog: 460 },
+  { mo: 'Nov', opened: 54, closed: 68, backlog: 446 },
 ]
 
 const assetCoverage = [
@@ -122,12 +122,12 @@ const fraudSummary = [
 ]
 
 const ddosTrend = [
-  { mo: 'Jan', attacks: 28, peakGbps: 240, mitigatedMin: 420 },
-  { mo: 'Feb', attacks: 22, peakGbps: 180, mitigatedMin: 340 },
-  { mo: 'Mar', attacks: 32, peakGbps: 380, mitigatedMin: 580 },
-  { mo: 'Apr', attacks: 24, peakGbps: 210, mitigatedMin: 380 },
-  { mo: 'May', attacks: 18, peakGbps: 160, mitigatedMin: 290 },
-  { mo: 'Jun', attacks: 18, peakGbps: 220, mitigatedMin: 286 },
+  { mo: 'Jun', attacks: 28, peakGbps: 240, mitigatedMin: 420 },
+  { mo: 'Jul', attacks: 22, peakGbps: 180, mitigatedMin: 340 },
+  { mo: 'Aug', attacks: 32, peakGbps: 380, mitigatedMin: 580 },
+  { mo: 'Sep', attacks: 24, peakGbps: 210, mitigatedMin: 380 },
+  { mo: 'Oct', attacks: 18, peakGbps: 160, mitigatedMin: 290 },
+  { mo: 'Nov', attacks: 18, peakGbps: 220, mitigatedMin: 286 },
 ]
 
 const mfaCoverage = [
@@ -145,12 +145,12 @@ const signallingProbes = [
 ]
 
 const fraudTrend = [
-  { mo: 'Jan', simSwap: 18, irsf: 42, smsPump: 58, lossK: 184 },
-  { mo: 'Feb', simSwap: 16, irsf: 38, smsPump: 52, lossK: 168 },
-  { mo: 'Mar', simSwap: 14, irsf: 34, smsPump: 48, lossK: 154 },
-  { mo: 'Apr', simSwap: 12, irsf: 30, smsPump: 44, lossK: 140 },
-  { mo: 'May', simSwap: 10, irsf: 28, smsPump: 40, lossK: 128 },
-  { mo: 'Jun', simSwap: 8,  irsf: 24, smsPump: 36, lossK: 114 },
+  { mo: 'Jun', simSwap: 18, irsf: 42, smsPump: 58, lossK: 184 },
+  { mo: 'Jul', simSwap: 16, irsf: 38, smsPump: 52, lossK: 168 },
+  { mo: 'Aug', simSwap: 14, irsf: 34, smsPump: 48, lossK: 154 },
+  { mo: 'Sep', simSwap: 12, irsf: 30, smsPump: 44, lossK: 140 },
+  { mo: 'Oct', simSwap: 10, irsf: 28, smsPump: 40, lossK: 128 },
+  { mo: 'Nov', simSwap: 8,  irsf: 24, smsPump: 36, lossK: 114 },
 ]
 
 // ─── IAM / RBAC ───────────────────────────────────────────────────────────────
@@ -171,23 +171,23 @@ const accountInventory = [
 ]
 
 const rbacTrend = [
-  { mo: 'Jan', stale: 28, violations: 12, jitElev: 98,  reviewsPending: 142 },
-  { mo: 'Feb', stale: 24, violations: 10, jitElev: 108, reviewsPending: 124 },
-  { mo: 'Mar', stale: 22, violations: 8,  jitElev: 118, reviewsPending: 110 },
-  { mo: 'Apr', stale: 20, violations: 7,  jitElev: 128, reviewsPending: 96  },
-  { mo: 'May', stale: 18, violations: 6,  jitElev: 138, reviewsPending: 84  },
-  { mo: 'Jun', stale: 18, violations: 6,  jitElev: 142, reviewsPending: 72  },
+  { mo: 'Jun', stale: 28, violations: 12, jitElev: 98,  reviewsPending: 142 },
+  { mo: 'Jul', stale: 24, violations: 10, jitElev: 108, reviewsPending: 124 },
+  { mo: 'Aug', stale: 22, violations: 8,  jitElev: 118, reviewsPending: 110 },
+  { mo: 'Sep', stale: 20, violations: 7,  jitElev: 128, reviewsPending: 96  },
+  { mo: 'Oct', stale: 18, violations: 6,  jitElev: 138, reviewsPending: 84  },
+  { mo: 'Nov', stale: 18, violations: 6,  jitElev: 142, reviewsPending: 72  },
 ]
 
 // ─── Compliance / Trust ───────────────────────────────────────────────────────
 
 const complianceItems = [
-  { framework: 'URCA cyber',        status: 'On-track',  score: 82, gap: 18, dueDate: '2025-10-17', owner: 'GRC' },
+  { framework: 'URCA cyber',        status: 'On-track',  score: 82, gap: 18, dueDate: '2026-03-17', owner: 'GRC' },
   { framework: 'DPA',        status: 'Compliant', score: 96, gap: 4,  dueDate: 'Ongoing',    owner: 'DPO' },
-  { framework: 'AI policy',      status: 'At-risk',   score: 64, gap: 36, dueDate: '2026-08-01', owner: 'CISO'},
-  { framework: 'PCI-DSS 4.0', status: 'Compliant', score: 98, gap: 2,  dueDate: '2026-03-31', owner: 'GRC' },
-  { framework: 'URCA (AAEE)', status: 'On-track',  score: 88, gap: 12, dueDate: '2025-12-31', owner: 'Reg' },
-  { framework: 'CCB Cyber Fundamentals', status: 'Compliant', score: 94, gap: 6, dueDate: '2026-01-15', owner: 'GRC'},
+  { framework: 'AI policy',      status: 'At-risk',   score: 64, gap: 36, dueDate: '2027-01-01', owner: 'CISO'},
+  { framework: 'PCI-DSS 4.0', status: 'Compliant', score: 98, gap: 2,  dueDate: '2026-08-31', owner: 'GRC' },
+  { framework: 'URCA (AAEE)', status: 'On-track',  score: 88, gap: 12, dueDate: '2026-05-31', owner: 'Reg' },
+  { framework: 'CCB Cyber Fundamentals', status: 'Compliant', score: 94, gap: 6, dueDate: '2026-06-15', owner: 'GRC'},
 ]
 
 const nistMaturity = [
@@ -209,21 +209,21 @@ const INC_KEYS = ['All', 'Critical', 'High', 'Medium', 'Low'] as const
 type IncSevFilter = typeof INC_KEYS[number]
 
 const incidentLog = [
-  { id: 'INC-2026-0033', title: 'Third-party SQLi → BSS billing',   sev: 'Critical', status: 'Closed',    opened: '2026-05-04', mttr: 720,  mitre: 'T1190,T1059' },
-  { id: 'INC-2026-0029', title: 'IPTV CDN poisoning',                sev: 'High',     status: 'Contained', opened: '2026-05-18', mttr: null, mitre: 'T1070,T1565' },
-  { id: 'INC-2026-0021', title: 'OSS portal auth outage',            sev: 'Low',      status: 'Closed',    opened: '2026-04-22', mttr: 14,   mitre: 'T1496'       },
-  { id: 'INC-2026-0014', title: 'Mobile core signalling storm',       sev: 'Medium',   status: 'Closed',    opened: '2026-04-12', mttr: 38,   mitre: 'T1499,T1430' },
-  { id: 'INC-2026-0008', title: 'Mass employee phishing (FIN-7)',     sev: 'High',     status: 'Closed',    opened: '2026-03-28', mttr: 128,  mitre: 'T1566'       },
-  { id: 'INC-2026-0003', title: 'DDoS 380 Gbps — POP Nassau',       sev: 'High',    status: 'Closed',    opened: '2026-03-08', mttr: 22,   mitre: 'T1498'       },
+  { id: 'INC-2026-0033', title: 'Third-party SQLi → BSS billing',   sev: 'Critical', status: 'Closed',    opened: '2026-10-04', mttr: 720,  mitre: 'T1190,T1059' },
+  { id: 'INC-2026-0029', title: 'IPTV CDN poisoning',                sev: 'High',     status: 'Contained', opened: '2026-10-18', mttr: null, mitre: 'T1070,T1565' },
+  { id: 'INC-2026-0021', title: 'OSS portal auth outage',            sev: 'Low',      status: 'Closed',    opened: '2026-09-22', mttr: 14,   mitre: 'T1496'       },
+  { id: 'INC-2026-0014', title: 'Mobile core signalling storm',       sev: 'Medium',   status: 'Closed',    opened: '2026-09-12', mttr: 38,   mitre: 'T1499,T1430' },
+  { id: 'INC-2026-0008', title: 'Mass employee phishing (FIN-7)',     sev: 'High',     status: 'Closed',    opened: '2026-08-28', mttr: 128,  mitre: 'T1566'       },
+  { id: 'INC-2026-0003', title: 'DDoS 380 Gbps — POP Nassau',       sev: 'High',    status: 'Closed',    opened: '2026-08-08', mttr: 22,   mitre: 'T1498'       },
 ]
 
 const incidentTrend = [
-  { mo: 'Jan', critical: 1, high: 3, medium: 4, low: 2 },
-  { mo: 'Feb', critical: 0, high: 2, medium: 3, low: 3 },
-  { mo: 'Mar', critical: 1, high: 3, medium: 5, low: 2 },
-  { mo: 'Apr', critical: 0, high: 2, medium: 4, low: 4 },
-  { mo: 'May', critical: 1, high: 2, medium: 3, low: 2 },
-  { mo: 'Jun', critical: 0, high: 2, medium: 2, low: 1 },
+  { mo: 'Jun', critical: 1, high: 3, medium: 4, low: 2 },
+  { mo: 'Jul', critical: 0, high: 2, medium: 3, low: 3 },
+  { mo: 'Aug', critical: 1, high: 3, medium: 5, low: 2 },
+  { mo: 'Sep', critical: 0, high: 2, medium: 4, low: 4 },
+  { mo: 'Oct', critical: 1, high: 2, medium: 3, low: 2 },
+  { mo: 'Nov', critical: 0, high: 2, medium: 2, low: 1 },
 ]
 
 // ─── Board & Cyber Risk Quantification data ───────────────────────────────────
@@ -240,12 +240,12 @@ const fairRisks = [
 ]
 
 const boardMetrics = [
-  { m: 'Jan', cyberRisk: 14.2, residual: 10.8, budget: 8.4 },
-  { m: 'Feb', cyberRisk: 13.8, residual: 10.2, budget: 8.4 },
-  { m: 'Mar', cyberRisk: 13.4, residual:  9.8, budget: 8.4 },
-  { m: 'Apr', cyberRisk: 13.0, residual:  9.4, budget: 8.4 },
-  { m: 'May', cyberRisk: 12.6, residual:  9.0, budget: 8.4 },
-  { m: 'Jun', cyberRisk: 12.2, residual:  8.6, budget: 8.4 },
+  { m: 'Jun', cyberRisk: 14.2, residual: 10.8, budget: 8.4 },
+  { m: 'Jul', cyberRisk: 13.8, residual: 10.2, budget: 8.4 },
+  { m: 'Aug', cyberRisk: 13.4, residual:  9.8, budget: 8.4 },
+  { m: 'Sep', cyberRisk: 13.0, residual:  9.4, budget: 8.4 },
+  { m: 'Oct', cyberRisk: 12.6, residual:  9.0, budget: 8.4 },
+  { m: 'Nov', cyberRisk: 12.2, residual:  8.6, budget: 8.4 },
 ]
 
 const cyberInsuranceCoverage = [
@@ -653,7 +653,7 @@ export default function CISOPage() {
               </div>
             ))}
           </div>
-          <div className="mt-3 text-[10px] text-vfes-dark/55">{tt('OT/SCADA (62%) and containers (74%) are the most critical gaps — CWPP and OT security roadmap in H2 2025.')}</div>
+          <div className="mt-3 text-[10px] text-vfes-dark/55">{tt('OT/SCADA (62%) and containers (74%) are the most critical gaps — CWPP and OT security roadmap in H1 2026.')}</div>
         </Panel>
       </>)}
 

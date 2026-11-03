@@ -48,7 +48,7 @@ const AGENTS: Agent[] = [
     customTools: ['shap_explain(customer_id)', 'best_offer(customer_id)'],
     metrics: { calls7d: 2884, p95Sec: 1.8, success: 98.6, cost7d: 18.9 },
     evalScore: 0.91, guardrailHits: 12, toolCalls7d: 5768,
-    promptHints: ['Why is customer 884122 at risk?', 'Best save offer for high-CLV broadband-only churners in Freeport', 'Compare churn drivers Q4-25 vs Q1-26'],
+    promptHints: ['Why is customer 884122 at risk?', 'Best save offer for high-CLV broadband-only churners in Freeport', 'Compare churn drivers Q2-26 vs Q3-26'],
     surfaces: ['Customer 360 page', 'Retention agent desktop', 'Snowflake Intelligence tile'],
   },
   {

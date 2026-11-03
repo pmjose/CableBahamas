@@ -77,30 +77,30 @@ const CIS_CONTROLS = [
 ]
 
 const NETWORK_POLICIES = [
-  { name: 'NP_MECHELEN_HQ',    type: 'IP allow-list',     ips: 24, attached_to: 'ANALYSTS, EXEC_VIEWER',  modified: '2025-09-01' },
-  { name: 'NP_VPN_BAHAMAS',        type: 'IP allow-list',     ips: 8,  attached_to: 'DATA_SCIENCE, DBT_PROD', modified: '2025-08-14' },
-  { name: 'NP_POWERBI_SVC',      type: 'IP allow-list',     ips: 4,  attached_to: 'BI_POWERBI_SVC',         modified: '2025-07-01' },
-  { name: 'NP_COMPLIANCE_TEAM',  type: 'IP allow-list',     ips: 6,  attached_to: 'COMPLIANCE_RO',          modified: '2025-09-12' },
-  { name: 'NP_SAML_BYPASS',      type: 'SAML bypass block', ips: 0,  attached_to: 'ACCOUNTADMIN',           modified: '2025-06-01' },
-  { name: 'NP_SNOWPARK_COMPUTE', type: 'Snowpark-only',     ips: 12, attached_to: 'DATA_PLATFORM',          modified: '2025-10-01' },
+  { name: 'NP_MECHELEN_HQ',    type: 'IP allow-list',     ips: 24, attached_to: 'ANALYSTS, EXEC_VIEWER',  modified: '2026-02-01' },
+  { name: 'NP_VPN_BAHAMAS',        type: 'IP allow-list',     ips: 8,  attached_to: 'DATA_SCIENCE, DBT_PROD', modified: '2026-01-14' },
+  { name: 'NP_POWERBI_SVC',      type: 'IP allow-list',     ips: 4,  attached_to: 'BI_POWERBI_SVC',         modified: '2025-12-01' },
+  { name: 'NP_COMPLIANCE_TEAM',  type: 'IP allow-list',     ips: 6,  attached_to: 'COMPLIANCE_RO',          modified: '2026-02-12' },
+  { name: 'NP_SAML_BYPASS',      type: 'SAML bypass block', ips: 0,  attached_to: 'ACCOUNTADMIN',           modified: '2025-11-01' },
+  { name: 'NP_SNOWPARK_COMPUTE', type: 'Snowpark-only',     ips: 12, attached_to: 'DATA_PLATFORM',          modified: '2026-03-01' },
 ]
 
 const MFA_TRENDS = [
-  { m: 'Jan', enrolled: 96.8, active30d: 88.2 }, { m: 'Feb', enrolled: 97.4, active30d: 89.1 },
-  { m: 'Mar', enrolled: 98.0, active30d: 90.2 }, { m: 'Apr', enrolled: 98.8, active30d: 91.0 },
-  { m: 'May', enrolled: 99.1, active30d: 91.8 }, { m: 'Jun', enrolled: 99.4, active30d: 92.3 },
+  { m: 'Jun', enrolled: 96.8, active30d: 88.2 }, { m: 'Jul', enrolled: 97.4, active30d: 89.1 },
+  { m: 'Aug', enrolled: 98.0, active30d: 90.2 }, { m: 'Sep', enrolled: 98.8, active30d: 91.0 },
+  { m: 'Oct', enrolled: 99.1, active30d: 91.8 }, { m: 'Nov', enrolled: 99.4, active30d: 92.3 },
 ]
 
 const POSTURE_HISTORY = [
-  { m: 'Jan', score: 88, target: 90 }, { m: 'Feb', score: 89, target: 90 },
-  { m: 'Mar', score: 90, target: 90 }, { m: 'Apr', score: 91, target: 90 },
-  { m: 'May', score: 92, target: 90 }, { m: 'Jun', score: 94, target: 90 },
+  { m: 'Jun', score: 88, target: 90 }, { m: 'Jul', score: 89, target: 90 },
+  { m: 'Aug', score: 90, target: 90 }, { m: 'Sep', score: 91, target: 90 },
+  { m: 'Oct', score: 92, target: 90 }, { m: 'Nov', score: 94, target: 90 },
 ]
 
 const FINDINGS_TREND = [
-  { m: 'Jan', high: 5, medium: 14, low: 28 }, { m: 'Feb', high: 4, medium: 12, low: 24 },
-  { m: 'Mar', high: 4, medium: 11, low: 22 }, { m: 'Apr', high: 3, medium: 10, low: 20 },
-  { m: 'May', high: 3, medium: 9,  low: 18 }, { m: 'Jun', high: 2, medium: 8,  low: 16 },
+  { m: 'Jun', high: 5, medium: 14, low: 28 }, { m: 'Jul', high: 4, medium: 12, low: 24 },
+  { m: 'Aug', high: 4, medium: 11, low: 22 }, { m: 'Sep', high: 3, medium: 10, low: 20 },
+  { m: 'Oct', high: 3, medium: 9,  low: 18 }, { m: 'Nov', high: 2, medium: 8,  low: 16 },
 ]
 
 const CAT_FINDINGS = [
@@ -120,24 +120,24 @@ const DATA_PROT = [
 ]
 
 const ACCESS_HIST = [
-  { user: 'pjose',           role: 'ACCOUNTADMIN',     obj: 'ACCOUNT_USAGE.LOGIN_HISTORY',     action: 'SELECT', rows: 14200,    ts: '2026-06-29 09:14', risk: 'Normal' },
-  { user: 'leen.jacobs',     role: 'DATA_SCIENCE',      obj: 'CBL_AI.FEATURES.CHURN_FEAT',     action: 'SELECT', rows: 4200000,  ts: '2026-06-29 08:22', risk: 'Watch'  },
-  { user: 'marcos.perez',    role: 'ANALYST_FINANCE',   obj: 'CBL_ANALYTICS.FINANCE.GL_FACT',  action: 'SELECT', rows: 82400,    ts: '2026-06-28 17:05', risk: 'Normal' },
-  { user: 'bi_powerbi_svc',  role: 'BI_POWERBI_SVC',    obj: 'CBL_ANALYTICS.CUSTOMER.C360',    action: 'SELECT', rows: 340000,   ts: '2026-06-28 23:00', risk: 'Normal' },
-  { user: 'ana.castillo',    role: 'COMPLIANCE_RO',     obj: 'SNOWFLAKE.ACCOUNT_USAGE.*',       action: 'SELECT', rows: 28000,    ts: '2026-06-28 11:40', risk: 'Normal' },
-  { user: 'dbt_prod_svc',    role: 'DBT_PROD',          obj: 'CBL_CORE.CUSTOMER.*',             action: 'WRITE',  rows: 1240000,  ts: '2026-06-29 01:14', risk: 'Normal' },
-  { user: 'luis.garcia',     role: 'ANALYST_NETWORK',   obj: 'CBL_RAW.NETWORK.CMTS_EVENTS',    action: 'SELECT', rows: 2800000,  ts: '2026-06-29 07:30', risk: 'Normal' },
-  { user: 'externe_analyst', role: 'EXEC_VIEWER',       obj: 'CBL_ANALYTICS.EXEC.EXEC_360_SV', action: 'SELECT', rows: 1200,     ts: '2026-06-28 14:00', risk: 'Watch'  },
+  { user: 'pjose',           role: 'ACCOUNTADMIN',     obj: 'ACCOUNT_USAGE.LOGIN_HISTORY',     action: 'SELECT', rows: 14200,    ts: '2026-11-29 09:14', risk: 'Normal' },
+  { user: 'leen.jacobs',     role: 'DATA_SCIENCE',      obj: 'CBL_AI.FEATURES.CHURN_FEAT',     action: 'SELECT', rows: 4200000,  ts: '2026-11-29 08:22', risk: 'Watch'  },
+  { user: 'marcos.perez',    role: 'ANALYST_FINANCE',   obj: 'CBL_ANALYTICS.FINANCE.GL_FACT',  action: 'SELECT', rows: 82400,    ts: '2026-11-28 17:05', risk: 'Normal' },
+  { user: 'bi_powerbi_svc',  role: 'BI_POWERBI_SVC',    obj: 'CBL_ANALYTICS.CUSTOMER.C360',    action: 'SELECT', rows: 340000,   ts: '2026-11-28 23:00', risk: 'Normal' },
+  { user: 'ana.castillo',    role: 'COMPLIANCE_RO',     obj: 'SNOWFLAKE.ACCOUNT_USAGE.*',       action: 'SELECT', rows: 28000,    ts: '2026-11-28 11:40', risk: 'Normal' },
+  { user: 'dbt_prod_svc',    role: 'DBT_PROD',          obj: 'CBL_CORE.CUSTOMER.*',             action: 'WRITE',  rows: 1240000,  ts: '2026-11-29 01:14', risk: 'Normal' },
+  { user: 'luis.garcia',     role: 'ANALYST_NETWORK',   obj: 'CBL_RAW.NETWORK.CMTS_EVENTS',    action: 'SELECT', rows: 2800000,  ts: '2026-11-29 07:30', risk: 'Normal' },
+  { user: 'externe_analyst', role: 'EXEC_VIEWER',       obj: 'CBL_ANALYTICS.EXEC.EXEC_360_SV', action: 'SELECT', rows: 1200,     ts: '2026-11-28 14:00', risk: 'Watch'  },
 ]
 
 const REMEDIATION_TRACK = [
-  { ticket: 'SEC-2042', finding: 'BI_POWERBI_SVC key rotation (387 days)',     owner: 'SecAdmin',   due: '2026-07-15', status: 'In Progress',  effort: 'Low', sev: 'H' },
-  { ticket: 'SEC-2038', finding: '3 users with ACCOUNTADMIN — reduce to 1+1',  owner: 'CISO',       due: '2026-07-31', status: 'In Progress',  effort: 'Med', sev: 'H' },
-  { ticket: 'SEC-2035', finding: '6 stale users — auto-disable job',           owner: 'IAM Team',   due: '2026-07-03', status: 'Scheduled',    effort: 'Low', sev: 'M' },
-  { ticket: 'SEC-2031', finding: '4 PUBLIC role USAGE grants audit',            owner: 'SecAdmin',   due: '2026-07-10', status: 'Under Review', effort: 'Low', sev: 'M' },
-  { ticket: 'SEC-2029', finding: 'Idle session timeout on 3 integrations',     owner: 'Platform',   due: '2026-07-20', status: 'Planned',      effort: 'Low', sev: 'M' },
-  { ticket: 'SEC-2024', finding: 'Cortex Guard jailbreak policy v2',           owner: 'AI Safety',  due: '2026-07-05', status: 'Done',         effort: 'Med', sev: 'H' },
-  { ticket: 'SEC-2018', finding: 'Driver version enforcement policy',           owner: 'Platform',   due: '2026-06-30', status: 'Done',         effort: 'Low', sev: 'L' },
+  { ticket: 'SEC-2042', finding: 'BI_POWERBI_SVC key rotation (387 days)',     owner: 'SecAdmin',   due: '2026-12-15', status: 'In Progress',  effort: 'Low', sev: 'H' },
+  { ticket: 'SEC-2038', finding: '3 users with ACCOUNTADMIN — reduce to 1+1',  owner: 'CISO',       due: '2026-12-31', status: 'In Progress',  effort: 'Med', sev: 'H' },
+  { ticket: 'SEC-2035', finding: '6 stale users — auto-disable job',           owner: 'IAM Team',   due: '2026-12-03', status: 'Scheduled',    effort: 'Low', sev: 'M' },
+  { ticket: 'SEC-2031', finding: '4 PUBLIC role USAGE grants audit',            owner: 'SecAdmin',   due: '2026-12-10', status: 'Under Review', effort: 'Low', sev: 'M' },
+  { ticket: 'SEC-2029', finding: 'Idle session timeout on 3 integrations',     owner: 'Platform',   due: '2026-12-20', status: 'Planned',      effort: 'Low', sev: 'M' },
+  { ticket: 'SEC-2024', finding: 'Cortex Guard jailbreak policy v2',           owner: 'AI Safety',  due: '2026-12-05', status: 'Done',         effort: 'Med', sev: 'H' },
+  { ticket: 'SEC-2018', finding: 'Driver version enforcement policy',           owner: 'Platform',   due: '2026-11-30', status: 'Done',         effort: 'Low', sev: 'L' },
 ]
 
 const REMTAG_C: Record<string, string> = {
@@ -149,9 +149,9 @@ const REMTAG_C: Record<string, string> = {
 }
 
 const REM_TREND = [
-  { m: 'Jan', open: 28, resolved: 8  }, { m: 'Feb', open: 24, resolved: 10 },
-  { m: 'Mar', open: 20, resolved: 9  }, { m: 'Apr', open: 17, resolved: 8  },
-  { m: 'May', open: 14, resolved: 9  }, { m: 'Jun', open: 10, resolved: 12 },
+  { m: 'Jun', open: 28, resolved: 8  }, { m: 'Jul', open: 24, resolved: 10 },
+  { m: 'Aug', open: 20, resolved: 9  }, { m: 'Sep', open: 17, resolved: 8  },
+  { m: 'Oct', open: 14, resolved: 9  }, { m: 'Nov', open: 10, resolved: 12 },
 ]
 
 const MATURITY_SCORES = [
@@ -262,7 +262,7 @@ export default function TrustCenterPage() {
             { key: 'score',  name: 'Posture score', color: GREEN              },
             { key: 'target', name: 'Target',          color: SLATE, dashed: true },
           ],
-          note: 'Crossed the 90 threshold in March — target 96 by Q4-2026.',
+          note: 'Crossed the 90 threshold in March — target 96 by Q2-2027.',
         }}
       />
 
@@ -336,7 +336,7 @@ export default function TrustCenterPage() {
               </ResponsiveContainer>
             </div>
             <div className="mt-2 text-[10px] text-vfes-dark/45 uppercase tracking-widest">
-              {tt('Amber = 90 minimum threshold · target 96 by Q4-2026')}
+              {tt('Amber = 90 minimum threshold · target 96 by Q2-2027')}
             </div>
           </Panel>
 
@@ -906,7 +906,7 @@ export default function TrustCenterPage() {
             </tbody>
           </table>
           <div className="text-[11px] text-vfes-dark/65 mt-3">
-            {tt('5 of 7 mobile controls compliant. URCA incident reporting + O-RAN security profile closing Q3 2026.')}
+            {tt('5 of 7 mobile controls compliant. URCA incident reporting + O-RAN security profile closing Q1 2027.')}
           </div>
         </Panel>
       </>)}

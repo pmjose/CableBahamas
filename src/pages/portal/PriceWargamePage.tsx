@@ -82,32 +82,32 @@ const MATRIX_DATA = [
 
 // ─── Historical competitor price moves ───────────────────────────────────────────
 const PRICE_HISTORY = [
-  { mo: 'Jan', btc: 36.2, orange: 34.8, voo: 24.1, digi: 16.4, cablebahamas: 38.5 },
-  { mo: 'Feb', btc: 36.2, orange: 34.8, voo: 24.1, digi: 16.2, cablebahamas: 38.5 },
-  { mo: 'Mar', btc: 35.8, orange: 34.2, voo: 23.8, digi: 15.9, cablebahamas: 38.0 },
-  { mo: 'Apr', btc: 35.4, orange: 33.8, voo: 23.8, digi: 15.6, cablebahamas: 38.0 },
-  { mo: 'May', btc: 35.4, orange: 33.8, voo: 23.4, digi: 15.4, cablebahamas: 37.8 },
-  { mo: 'Jun', btc: 34.8, orange: 33.4, voo: 22.9, digi: 14.8, cablebahamas: 37.5 },
+  { mo: 'Jun', btc: 36.2, orange: 34.8, voo: 24.1, digi: 16.4, cablebahamas: 38.5 },
+  { mo: 'Jul', btc: 36.2, orange: 34.8, voo: 24.1, digi: 16.2, cablebahamas: 38.5 },
+  { mo: 'Aug', btc: 35.8, orange: 34.2, voo: 23.8, digi: 15.9, cablebahamas: 38.0 },
+  { mo: 'Sep', btc: 35.4, orange: 33.8, voo: 23.8, digi: 15.6, cablebahamas: 38.0 },
+  { mo: 'Oct', btc: 35.4, orange: 33.8, voo: 23.4, digi: 15.4, cablebahamas: 37.8 },
+  { mo: 'Nov', btc: 34.8, orange: 33.4, voo: 22.9, digi: 14.8, cablebahamas: 37.5 },
 ]
 
 // ─── Market share trend ─────────────────────────────────────────────────────────
 const SHARE_TREND = [
-  { mo: 'Jan', cablebahamas: 28.2, btc: 26.4, orange: 22.1, voo: 14.8, digi: 8.5 },
-  { mo: 'Feb', cablebahamas: 28.1, btc: 26.3, orange: 22.0, voo: 14.9, digi: 8.7 },
-  { mo: 'Mar', cablebahamas: 28.0, btc: 26.1, orange: 21.9, voo: 14.8, digi: 9.2 },
-  { mo: 'Apr', cablebahamas: 27.9, btc: 25.9, orange: 21.8, voo: 14.9, digi: 9.5 },
-  { mo: 'May', cablebahamas: 27.8, btc: 25.8, orange: 21.6, voo: 15.0, digi: 9.8 },
-  { mo: 'Jun', cablebahamas: 27.6, btc: 25.6, orange: 21.5, voo: 15.1, digi: 10.2 },
+  { mo: 'Jun', cablebahamas: 28.2, btc: 26.4, orange: 22.1, voo: 14.8, digi: 8.5 },
+  { mo: 'Jul', cablebahamas: 28.1, btc: 26.3, orange: 22.0, voo: 14.9, digi: 8.7 },
+  { mo: 'Aug', cablebahamas: 28.0, btc: 26.1, orange: 21.9, voo: 14.8, digi: 9.2 },
+  { mo: 'Sep', cablebahamas: 27.9, btc: 25.9, orange: 21.8, voo: 14.9, digi: 9.5 },
+  { mo: 'Oct', cablebahamas: 27.8, btc: 25.8, orange: 21.6, voo: 15.0, digi: 9.8 },
+  { mo: 'Nov', cablebahamas: 27.6, btc: 25.6, orange: 21.5, voo: 15.1, digi: 10.2 },
 ]
 
 // ─── Competitive intelligence register ───────────────────────────────────────────
 const COMP_INTEL = [
-  { competitor: 'BTC',  move: 'BSD -2 on 1Gb fibre',         probability: 40, timeframe: 'Q3-26', threat: 'Med', tier: 'Premium' },
-  { competitor: 'Rival ISP A',    move: 'BSD -3 on unlimited 5G',       probability: 28, timeframe: 'Q3-26', threat: 'Med', tier: 'Premium' },
+  { competitor: 'BTC',  move: 'BSD -2 on 1Gb fibre',         probability: 40, timeframe: 'Q1-27', threat: 'Med', tier: 'Premium' },
+  { competitor: 'Rival ISP A',    move: 'BSD -3 on unlimited 5G',       probability: 28, timeframe: 'Q1-27', threat: 'Med', tier: 'Premium' },
   { competitor: 'Rival ISP B',  move: 'BSD -5 on entry mobile',      probability: 62, timeframe: 'Jul-26', threat: 'High', tier: 'Value'   },
   { competitor: 'Rival ISP B',      move: 'BSD -4 on SIM-only entry',     probability: 74, timeframe: 'Jul-26', threat: 'High', tier: 'Low-cost' },
-  { competitor: 'Rival ISP B',  move: 'BSD -2 convergent bundle',    probability: 35, timeframe: 'Q4-26', threat: 'Low',  tier: 'Value'   },
-  { competitor: 'Rival ISP B',      move: 'New convergent launch',     probability: 22, timeframe: 'Q4-26', threat: 'Med',  tier: 'Low-cost' },
+  { competitor: 'Rival ISP B',  move: 'BSD -2 convergent bundle',    probability: 35, timeframe: 'Q2-27', threat: 'Low',  tier: 'Value'   },
+  { competitor: 'Rival ISP B',      move: 'New convergent launch',     probability: 22, timeframe: 'Q2-27', threat: 'Med',  tier: 'Low-cost' },
 ]
 
 // ─── Tier sensitivity ─────────────────────────────────────────────────────────────
@@ -544,13 +544,13 @@ export default function PriceWargamePage() {
       {/* ══ HISTORY ═══════════════════════════════════════════════════════════ */}
       {tab === 'history' && (<>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Cable Bahamas ARPU')} value="BSD 37.5" delta={tt('Jun 2026')}           trend="flat" icon={Activity}  accent />
+          <KpiCard label={tt('Cable Bahamas ARPU')} value="BSD 37.5" delta={tt('Nov 2026')}           trend="flat" icon={Activity}  accent />
           <KpiCard label={tt('BTC gap')}   value="BSD 2.7"  delta={tt('shrinking')}           trend="down" icon={TrendingDown}   />
           <KpiCard label={tt('Rival ISP B gap')}       value="BSD 22.7" delta={tt('stable low-cost')}     trend="flat" icon={TrendingUp}    />
           <KpiCard label={tt('Price premium')}  value="+10%"  delta={tt('vs market avg')}        trend="flat" icon={Target}        />
         </div>
 
-        <Panel title={tt('Competitor average ARPU trend — Jan–Jun 2026 (BSD /mo)')}>
+        <Panel title={tt('Competitor average ARPU trend — Jan–Nov 2026 (BSD /mo)')}>
           <div className="h-64">
             <ResponsiveContainer>
               <LineChart data={PRICE_HISTORY}>
@@ -580,7 +580,7 @@ export default function PriceWargamePage() {
       {/* ══ SHARE ════════════════════════════════════════════════════════════ */}
       {tab === 'share' && (<>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Cable Bahamas share')}  value="27.6%" delta={tt('Jun 2026')}              trend="down" icon={BarChart2}  accent />
+          <KpiCard label={tt('Cable Bahamas share')}  value="27.6%" delta={tt('Nov 2026')}              trend="down" icon={BarChart2}  accent />
           <KpiCard label={tt('Rival ISP B gaining')}      value="+1.7pp" delta={tt('YTD — watch')}         trend="down" icon={AlertTriangle}   />
           <KpiCard label={tt('BTC share')}    value="25.6%" delta={tt('largest single rival')} trend="flat" icon={Activity}       />
           <KpiCard label={tt('Share at risk')}     value="0.8pp" delta={tt('if Rival ISP B moves unansw.')} trend="down" icon={TrendingDown}   />
@@ -598,7 +598,7 @@ export default function PriceWargamePage() {
           ))}
         </div>
 
-        <Panel title={tt('Market share trend — all operators (Jan–Jun 2026 %)')}>
+        <Panel title={tt('Market share trend — all operators (Jan–Nov 2026 %)')}>
           <div className="h-64">
             <ResponsiveContainer>
               <AreaChart data={SHARE_TREND}>
@@ -896,7 +896,7 @@ export default function PriceWargamePage() {
           </div>
         </Panel>
 
-        <Panel title={tt('Competitor ARPU trend — Jan–Jun 2026 (BSD /mo)')}>
+        <Panel title={tt('Competitor ARPU trend — Jan–Nov 2026 (BSD /mo)')}>
           <div className="h-48">
             <ResponsiveContainer>
               <LineChart data={PRICE_HISTORY}>
@@ -936,7 +936,7 @@ export default function PriceWargamePage() {
 
       {/* ── Market share area chart ─────────────────────────────────────────── */}
       <div className="mt-6">
-        <Panel title={tt('Market share trend — Cable Bahamas vs peers (Jan–Jun 2026 %)')}>
+        <Panel title={tt('Market share trend — Cable Bahamas vs peers (Jan–Nov 2026 %)')}>
           <div className="h-48">
             <ResponsiveContainer>
               <AreaChart data={SHARE_TREND}>

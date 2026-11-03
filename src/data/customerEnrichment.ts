@@ -174,7 +174,7 @@ function past(today: Date, days: number): string {
 
 export function enrichCustomer(c: Customer): EnrichedCustomer {
   const seed = seedNum(c.id)
-  const today = new Date('2026-05-22')
+  const today = new Date('2026-10-22')
 
   // ---- 1. Identity & Household ----
   const householdSize = 1 + (seed % 4) // 1-4

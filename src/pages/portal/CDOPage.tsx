@@ -42,12 +42,12 @@ const catalogDomains = [
 const totalTables = catalogDomains.reduce((s, d) => s + d.tables, 0)
 
 const catalogGrowth = [
-  { m: 'Jan', tables: 1042, views: 312, streams: 48 },
-  { m: 'Feb', tables: 1058, views: 318, streams: 52 },
-  { m: 'Mar', tables: 1072, views: 326, streams: 56 },
-  { m: 'Apr', tables: 1088, views: 334, streams: 60 },
-  { m: 'May', tables: 1108, views: 348, streams: 64 },
-  { m: 'Jun', tables: 1121, views: 356, streams: 68 },
+  { m: 'Jun', tables: 1042, views: 312, streams: 48 },
+  { m: 'Jul', tables: 1058, views: 318, streams: 52 },
+  { m: 'Aug', tables: 1072, views: 326, streams: 56 },
+  { m: 'Sep', tables: 1088, views: 334, streams: 60 },
+  { m: 'Oct', tables: 1108, views: 348, streams: 64 },
+  { m: 'Nov', tables: 1121, views: 356, streams: 68 },
 ]
 
 const tagCoverage = catalogDomains.map(d => ({
@@ -91,9 +91,9 @@ const lineageDepth = [
 ]
 
 const lineageTrend = [
-  { m: 'Jan', edges: 4200, traced: 3780 }, { m: 'Feb', edges: 4400, traced: 4015 },
-  { m: 'Mar', edges: 4620, traced: 4250 }, { m: 'Apr', edges: 4840, traced: 4520 },
-  { m: 'May', edges: 5060, traced: 4784 }, { m: 'Jun', edges: 5240, traced: 5030 },
+  { m: 'Jun', edges: 4200, traced: 3780 }, { m: 'Jul', edges: 4400, traced: 4015 },
+  { m: 'Aug', edges: 4620, traced: 4250 }, { m: 'Sep', edges: 4840, traced: 4520 },
+  { m: 'Oct', edges: 5060, traced: 4784 }, { m: 'Nov', edges: 5240, traced: 5030 },
 ]
 
 // ── Data Quality ──────────────────────────────────────────────────────────────
@@ -109,15 +109,15 @@ const qualityScores = [
 ]
 
 const qualityTrend = [
-  { m: 'Jan', score: 95.2, dmf: 91.4 }, { m: 'Feb', score: 95.8, dmf: 92.8 },
-  { m: 'Mar', score: 96.2, dmf: 93.6 }, { m: 'Apr', score: 96.8, dmf: 95.0 },
-  { m: 'May', score: 97.0, dmf: 96.2 }, { m: 'Jun', score: 97.2, dmf: 97.1 },
+  { m: 'Jun', score: 95.2, dmf: 91.4 }, { m: 'Jul', score: 95.8, dmf: 92.8 },
+  { m: 'Aug', score: 96.2, dmf: 93.6 }, { m: 'Sep', score: 96.8, dmf: 95.0 },
+  { m: 'Oct', score: 97.0, dmf: 96.2 }, { m: 'Nov', score: 97.2, dmf: 97.1 },
 ]
 
 const freshnessSla = [
-  { m: 'Jan', met: 98.2, target: 99.0 }, { m: 'Feb', met: 98.6, target: 99.0 },
-  { m: 'Mar', met: 98.9, target: 99.0 }, { m: 'Apr', met: 99.0, target: 99.0 },
-  { m: 'May', met: 99.1, target: 99.0 }, { m: 'Jun', met: 99.1, target: 99.0 },
+  { m: 'Jun', met: 98.2, target: 99.0 }, { m: 'Jul', met: 98.6, target: 99.0 },
+  { m: 'Aug', met: 98.9, target: 99.0 }, { m: 'Sep', met: 99.0, target: 99.0 },
+  { m: 'Oct', met: 99.1, target: 99.0 }, { m: 'Nov', met: 99.1, target: 99.0 },
 ]
 
 // ── Governance ────────────────────────────────────────────────────────────────
@@ -133,8 +133,8 @@ const policyRegistry = [
 ]
 
 const governanceCovTrend = [
-  { q: 'Q3-25', actual: 71, target: 80 }, { q: 'Q4-25', actual: 83, target: 86 },
-  { q: 'Q1-26', actual: 90, target: 92 }, { q: 'Q2-26', actual: 94, target: 95 },
+  { q: 'Q1-26', actual: 71, target: 80 }, { q: 'Q2-26', actual: 83, target: 86 },
+  { q: 'Q3-26', actual: 90, target: 92 }, { q: 'Q4-26', actual: 94, target: 95 },
 ]
 
 const rbacRoles = [
@@ -164,9 +164,9 @@ const dataProducts = [
 ]
 
 const productSlaTrend = [
-  { m: 'Jan', healthy: 38, watch: 3, breached: 1 }, { m: 'Feb', healthy: 39, watch: 3, breached: 0 },
-  { m: 'Mar', healthy: 40, watch: 2, breached: 0 }, { m: 'Apr', healthy: 40, watch: 2, breached: 0 },
-  { m: 'May', healthy: 41, watch: 2, breached: 0 }, { m: 'Jun', healthy: 40, watch: 2, breached: 0 },
+  { m: 'Jun', healthy: 38, watch: 3, breached: 1 }, { m: 'Jul', healthy: 39, watch: 3, breached: 0 },
+  { m: 'Aug', healthy: 40, watch: 2, breached: 0 }, { m: 'Sep', healthy: 40, watch: 2, breached: 0 },
+  { m: 'Oct', healthy: 41, watch: 2, breached: 0 }, { m: 'Nov', healthy: 40, watch: 2, breached: 0 },
 ]
 
 // ── Observability ─────────────────────────────────────────────────────────────
@@ -202,9 +202,9 @@ const storageBreakdown = [
 ]
 
 const costTrend = [
-  { m: 'Jan', storage: 18.2, compute: 34.6 }, { m: 'Feb', storage: 18.6, compute: 36.2 },
-  { m: 'Mar', storage: 19.0, compute: 35.8 }, { m: 'Apr', storage: 19.4, compute: 37.4 },
-  { m: 'May', storage: 20.1, compute: 36.8 }, { m: 'Jun', storage: 20.8, compute: 38.2 },
+  { m: 'Jun', storage: 18.2, compute: 34.6 }, { m: 'Jul', storage: 18.6, compute: 36.2 },
+  { m: 'Aug', storage: 19.0, compute: 35.8 }, { m: 'Sep', storage: 19.4, compute: 37.4 },
+  { m: 'Oct', storage: 20.1, compute: 36.8 }, { m: 'Nov', storage: 20.8, compute: 38.2 },
 ]
 
 // ── Tabs ──────────────────────────────────────────────────────────────────────
@@ -305,10 +305,10 @@ export default function CDOPage() {
           xKey: 'q',
           unit: '%',
           data: [
-            { q: 'Q3-25', actual: 71, target: 80 },
-            { q: 'Q4-25', actual: 83, target: 86 },
-            { q: 'Q1-26', actual: 90, target: 92 },
-            { q: 'Q2-26', actual: 94, target: 95 },
+            { q: 'Q1-26', actual: 71, target: 80 },
+            { q: 'Q2-26', actual: 83, target: 86 },
+            { q: 'Q3-26', actual: 90, target: 92 },
+            { q: 'Q4-26', actual: 94, target: 95 },
           ],
           series: [
             { key: 'actual', name: 'Actual', color: BLUE },
@@ -796,7 +796,7 @@ export default function CDOPage() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
-          <Panel title={tt('Governance Coverage Trend — Q3-2025 → Q2-2026')} insight={{ insight: 'Coverage gained 18 points over three quarters but actual progress has decelerated below the target trajectory since Q1-2026.', action: 'Focus the next governance sprint on assigning owners to the 200 classified but unowned assets dragging the average down.', impact: 'Reaching the 95% EOY target unlocks the internal data marketplace certification programme and satisfies the regulatory audit requirement.' }}>
+          <Panel title={tt('Governance Coverage Trend — Q1-2026 → Q4-2026')} insight={{ insight: 'Coverage gained 18 points over three quarters but actual progress has decelerated below the target trajectory since Q3-2026.', action: 'Focus the next governance sprint on assigning owners to the 200 classified but unowned assets dragging the average down.', impact: 'Reaching the 95% EOY target unlocks the internal data marketplace certification programme and satisfies the regulatory audit requirement.' }}>
             <div className="h-64">
               <ResponsiveContainer>
                 <LineChart data={governanceCovTrend}>
@@ -904,7 +904,7 @@ export default function CDOPage() {
         </div>
 
         <div className="mb-6">
-          <Panel title={tt('Product SLA — Healthy / Watch / Breached (6 months)')} insight={{ insight: 'Breached product SLAs rose month-on-month through Q4-2025, with the watch cohort now representing over 25% of the portfolio.', action: 'Escalate the five longest-breached products to domain leads and require remediation plans with defined timelines within one week.', impact: 'Eliminating breached products restores consumer confidence in the data marketplace and protects the Q3 adoption target.' }}>
+          <Panel title={tt('Product SLA — Healthy / Watch / Breached (6 months)')} insight={{ insight: 'Breached product SLAs rose month-on-month through Q2-2026, with the watch cohort now representing over 25% of the portfolio.', action: 'Escalate the five longest-breached products to domain leads and require remediation plans with defined timelines within one week.', impact: 'Eliminating breached products restores consumer confidence in the data marketplace and protects the Q3 adoption target.' }}>
             <div className="h-48">
               <ResponsiveContainer>
                 <BarChart data={productSlaTrend}>

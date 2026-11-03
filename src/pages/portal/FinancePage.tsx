@@ -134,8 +134,8 @@ const covenants = [
 ]
 
 const fxIrHedges = [
-      { instr: 'IRS · floating → fixed',     notional: 84, expiry: 'Dec 28', mtm: 1.8,  status: 'Active' },
-  { instr: 'Energy hedge · electricity', notional: 4.2, expiry: 'Dec 26', mtm: 0.2,  status: 'Active' },
+      { instr: 'IRS · floating → fixed',     notional: 84, expiry: 'May 29', mtm: 1.8,  status: 'Active' },
+  { instr: 'Energy hedge · electricity', notional: 4.2, expiry: 'May 27', mtm: 0.2,  status: 'Active' },
 ]
 
 // Forecast & FP&A
@@ -221,7 +221,7 @@ export default function FinancePage() {
     <div className="p-8">
       <PageHeader
         title={tt('Finance')}
-        subtitle={tt('P&L · cash · CapEx · balance sheet · forecast · AI close · May 2026')}
+        subtitle={tt('P&L · cash · CapEx · balance sheet · forecast · AI close · October 2026')}
         actions={
           <div className="flex items-center gap-2">
             <span className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest">
@@ -974,18 +974,18 @@ export default function FinancePage() {
 // ═══════ WORKING CAPITAL ═══════
 function WorkingCapitalTab() {
   const wcData = [
-    { m: 'Jun', dso: 38, dpo: 58, ccc: -20 },
-    { m: 'Jul', dso: 36, dpo: 60, ccc: -24 },
-    { m: 'Aug', dso: 35, dpo: 62, ccc: -27 },
-    { m: 'Sep', dso: 34, dpo: 63, ccc: -29 },
-    { m: 'Oct', dso: 33, dpo: 64, ccc: -31 },
-    { m: 'Nov', dso: 33, dpo: 64, ccc: -31 },
-    { m: 'Dec', dso: 32, dpo: 64, ccc: -32 },
-    { m: 'Jan', dso: 32, dpo: 65, ccc: -33 },
-    { m: 'Feb', dso: 32, dpo: 65, ccc: -33 },
-    { m: 'Mar', dso: 31, dpo: 66, ccc: -35 },
-    { m: 'Apr', dso: 31, dpo: 66, ccc: -35 },
+    { m: 'Nov', dso: 38, dpo: 58, ccc: -20 },
+    { m: 'Dec', dso: 36, dpo: 60, ccc: -24 },
+    { m: 'Jan', dso: 35, dpo: 62, ccc: -27 },
+    { m: 'Feb', dso: 34, dpo: 63, ccc: -29 },
+    { m: 'Mar', dso: 33, dpo: 64, ccc: -31 },
+    { m: 'Apr', dso: 33, dpo: 64, ccc: -31 },
     { m: 'May', dso: 32, dpo: 64, ccc: -32 },
+    { m: 'Jun', dso: 32, dpo: 65, ccc: -33 },
+    { m: 'Jul', dso: 32, dpo: 65, ccc: -33 },
+    { m: 'Aug', dso: 31, dpo: 66, ccc: -35 },
+    { m: 'Sep', dso: 31, dpo: 66, ccc: -35 },
+    { m: 'Oct', dso: 32, dpo: 64, ccc: -32 },
   ]
   const wcLevers = [
     { lever: tt('E-invoicing adoption'),          impact: 'BSD 2.4M', status: 'Active' },
@@ -1039,16 +1039,16 @@ function WorkingCapitalTab() {
 // ═══════ TAX & TREASURY ═══════
 function TaxTreasuryTab() {
   const taxSchedule = [
-    { item: tt('Corporate income tax (CIT)'),      amount: 4.8, due: 'Jul 2026',  status: 'Filed' },
+    { item: tt('Corporate income tax (CIT)'),      amount: 4.8, due: 'Dec 2026',  status: 'Filed' },
     { item: tt('VAT monthly settlement'),           amount: 2.1, due: 'Monthly',   status: 'Current' },
-    { item: tt('Transfer pricing documentation'),   amount: 0,   due: 'Oct 2026',  status: 'In progress' },
-    { item: tt('Country-by-country report'),        amount: 0,   due: 'Dec 2026',  status: 'Planned' },
-    { item: tt('BEIR Pillar Two (15% GloBE)'),      amount: 1.2, due: 'Mar 2027',  status: 'Assessment' },
+    { item: tt('Transfer pricing documentation'),   amount: 0,   due: 'Mar 2027',  status: 'In progress' },
+    { item: tt('Country-by-country report'),        amount: 0,   due: 'May 2027',  status: 'Planned' },
+    { item: tt('BEIR Pillar Two (15% GloBE)'),      amount: 1.2, due: 'Aug 2027',  status: 'Assessment' },
   ]
   const liquidityFacilities = [
-    { fac: tt('Revolving credit facility'), limit: 62, drawn: 0,  expiry: 'Dec 2028', cost: '3M BSDIBOR + 1.6%' },
-    { fac: tt('Bilateral term loan A'),     limit: 24, drawn: 24, expiry: 'Jun 2026', cost: '3M BSDIBOR + 1.8%' },
-    { fac: tt('Bilateral term loan B'),     limit: 32, drawn: 32, expiry: 'Mar 2030', cost: 'Fixed 4.2%' },
+    { fac: tt('Revolving credit facility'), limit: 62, drawn: 0,  expiry: 'May 2029', cost: '3M BSDIBOR + 1.6%' },
+    { fac: tt('Bilateral term loan A'),     limit: 24, drawn: 24, expiry: 'Nov 2026', cost: '3M BSDIBOR + 1.8%' },
+    { fac: tt('Bilateral term loan B'),     limit: 32, drawn: 32, expiry: 'Aug 2030', cost: 'Fixed 4.2%' },
     { fac: tt('Commercial paper'),          limit: 20, drawn: 0,  expiry: 'Rolling',  cost: '3M T-bill + 0.4%' },
   ]
   return (
@@ -1099,9 +1099,9 @@ function TaxTreasuryTab() {
       <Panel title={tt('Treasury hedging position — MtM summary')}>
         <div className="grid md:grid-cols-3 gap-4">
           {[
-            { label: tt('IRS notional (floating→fixed)'), value: 'BSD 84M', sub: tt('Dec 2028 · MtM +BSD 1.8M') },
+            { label: tt('IRS notional (floating→fixed)'), value: 'BSD 84M', sub: tt('May 2029 · MtM +BSD 1.8M') },
             { label: tt('Content licences paid in USD'),       value: 'BSD 12M', sub: tt('1:1 peg · no FX hedge required') },
-            { label: tt('Energy hedge · electricity'),   value: 'BSD 4.2M', sub: tt('Dec 2026 · MtM +BSD 0.2M') },
+            { label: tt('Energy hedge · electricity'),   value: 'BSD 4.2M', sub: tt('May 2027 · MtM +BSD 0.2M') },
           ].map((h) => (
             <div key={h.label} className="p-3 rounded-lg bg-zinc-50 border border-black/5">
               <div className="text-[10px] uppercase tracking-widest text-vfes-dark/55 font-bold">{h.label}</div>

@@ -48,10 +48,10 @@ const ANALYSTS = [
 
 // ─── guidance vs actual ───────────────────────────────────────────────────
 const GUIDANCE = [
-  { q: 'Q3-25', guideLow: 32.0, guideHigh: 33.5, actual: 32.8 },
-  { q: 'Q4-25', guideLow: 33.0, guideHigh: 34.5, actual: 33.9 },
-  { q: 'Q1-26', guideLow: 33.8, guideHigh: 35.2, actual: 34.6 },
-  { q: 'Q2-26', guideLow: 34.5, guideHigh: 36.5, actual: KPI.revenueQtrM },
+  { q: 'Q1-26', guideLow: 32.0, guideHigh: 33.5, actual: 32.8 },
+  { q: 'Q2-26', guideLow: 33.0, guideHigh: 34.5, actual: 33.9 },
+  { q: 'Q3-26', guideLow: 33.8, guideHigh: 35.2, actual: 34.6 },
+  { q: 'Q4-26', guideLow: 34.5, guideHigh: 36.5, actual: KPI.revenueQtrM },
 ]
 
 // ─── shareholder returns ───────────────────────────────────────────────────
@@ -101,12 +101,12 @@ const COVENANTS = [
 
 // ─── earnings calendar ─────────────────────────────────────────────────────
 const EARNINGS_CALENDAR = [
-  { date: '29 Jul 2026',  event: 'Q2 2026 earnings call',             type: 'Earnings',  status: 'Upcoming' },
-  { date: '28 Oct 2026',  event: 'Q3 2026 earnings call',             type: 'Earnings',  status: 'Scheduled' },
-  { date: '10 Nov 2026',  event: 'Capital Markets Day — Freeport',   type: 'CMD',       status: 'Scheduled' },
-  { date: '27 Jan 2027',  event: 'FY 2026 preliminary results',       type: 'Earnings',  status: 'Scheduled' },
-  { date: '25 Mar 2027',  event: 'Annual General Meeting (AGM)',       type: 'AGM',       status: 'Scheduled' },
-  { date: '28 Apr 2027',  event: 'Q1 2027 earnings call',             type: 'Earnings',  status: 'Scheduled' },
+  { date: '29 Dec 2026',  event: 'Q4 2026 earnings call',             type: 'Earnings',  status: 'Upcoming' },
+  { date: '28 Mar 2027',  event: 'Q1 2027 earnings call',             type: 'Earnings',  status: 'Scheduled' },
+  { date: '10 Apr 2027',  event: 'Capital Markets Day — Freeport',   type: 'CMD',       status: 'Scheduled' },
+  { date: '27 Jun 2027',  event: 'FY 2026 preliminary results',       type: 'Earnings',  status: 'Scheduled' },
+  { date: '25 Aug 2027',  event: 'Annual General Meeting (AGM)',       type: 'AGM',       status: 'Scheduled' },
+  { date: '28 Sep 2027',  event: 'Q3 2027 earnings call',             type: 'Earnings',  status: 'Scheduled' },
 ]
 
 // ─── EBITDA margin trend ───────────────────────────────────────────────────
@@ -114,12 +114,12 @@ const EBITDA_TREND = [
   { q: 'Q2-24', revenue: 30.0, ebitda: 10.8, margin: 36.0 },
   { q: 'Q3-24', revenue: 30.6, ebitda: 11.1, margin: 36.3 },
   { q: 'Q4-24', revenue: 31.2, ebitda: 11.4, margin: 36.5 },
-  { q: 'Q1-25', revenue: 31.8, ebitda: 11.7, margin: 36.8 },
-  { q: 'Q2-25', revenue: 32.4, ebitda: 12.0, margin: 37.0 },
-  { q: 'Q3-25', revenue: 32.8, ebitda: 12.2, margin: 37.2 },
-  { q: 'Q4-25', revenue: 33.9, ebitda: 12.6, margin: 37.2 },
-  { q: 'Q1-26', revenue: 34.6, ebitda: 12.9, margin: 37.3 },
-  { q: 'Q2-26', revenue: KPI.revenueQtrM, ebitda: KPI.ebitdaM * 3, margin: KPI.ebitdaMarginPct },
+  { q: 'Q3-25', revenue: 31.8, ebitda: 11.7, margin: 36.8 },
+  { q: 'Q4-25', revenue: 32.4, ebitda: 12.0, margin: 37.0 },
+  { q: 'Q1-26', revenue: 32.8, ebitda: 12.2, margin: 37.2 },
+  { q: 'Q2-26', revenue: 33.9, ebitda: 12.6, margin: 37.2 },
+  { q: 'Q3-26', revenue: 34.6, ebitda: 12.9, margin: 37.3 },
+  { q: 'Q4-26', revenue: KPI.revenueQtrM, ebitda: KPI.ebitdaM * 3, margin: KPI.ebitdaMarginPct },
 ]
 
 // ─── FCF walk ─────────────────────────────────────────────────────────────
@@ -179,7 +179,7 @@ void IR_DOMAIN_LINKS // suppress unused
 
 const IR_PRIORITIES: Priority[] = [
   { name: 'Q2 earnings call preparation',            owner: 'CFO · Marie Knowles',    pct: 88, status: 'on-track' },
-  { name: 'Capital Markets Day — Freeport Nov 26',  owner: 'CEO · Lucas Rolle',     pct: 42, status: 'at-risk' },
+  { name: 'Capital Markets Day — Freeport Apr 27',  owner: 'CEO · Lucas Rolle',     pct: 42, status: 'at-risk' },
   { name: 'Buyback tranche 3 (BSD 1.5M) approval',      owner: 'Board remuneration cmte', pct: 75, status: 'on-track' },
   { name: 'MSCI AA confirmation — evidence pack',    owner: 'CSO · Andrea Ferguson',     pct: 64, status: 'on-track' },
   { name: 'Debt refi — 2030 BISX notes pre-financing',  owner: 'Treasury',               pct: 32, status: 'at-risk' },
@@ -194,12 +194,12 @@ const IR_WATCH: WatchItem[] = [
 ]
 
 const IR_AGENDA = [
-  { when: '29 Jul 2026',  what: 'Q2 earnings call (pre-market)' },
-  { when: '10 Nov 2026',  what: 'Capital Markets Day — Freeport' },
-  { when: '15 Sep 2026',  what: 'Roadshow — Miami & Toronto (buyside)' },
-  { when: '20 Oct 2026',  what: 'Q3 guidance update — ELT review' },
-  { when: '28 Oct 2026',  what: 'Q3 earnings call' },
-  { when: '25 Mar 2027',  what: 'AGM — Abaco' },
+  { when: '29 Dec 2026',  what: 'Q2 earnings call (pre-market)' },
+  { when: '10 Apr 2027',  what: 'Capital Markets Day — Freeport' },
+  { when: '15 Feb 2027',  what: 'Roadshow — Miami & Toronto (buyside)' },
+  { when: '20 Mar 2027',  what: 'Q3 guidance update — ELT review' },
+  { when: '28 Mar 2027',  what: 'Q3 earnings call' },
+  { when: '25 Aug 2027',  what: 'AGM — Abaco' },
 ]
 
 // ─── helpers ───────────────────────────────────────────────────────────────
@@ -253,14 +253,14 @@ const TABS = [
 type TabId = typeof TABS[number]['id']
 
 // ─── period selector helper ────────────────────────────────────────────────
-const PERIODS = ['Q2-26', 'Q1-26', 'Q4-25', 'Q3-25', 'FY-25', 'FY-24'] as const
+const PERIODS = ['Q4-26', 'Q3-26', 'Q2-26', 'Q1-26', 'FY-25', 'FY-24'] as const
 type Period = typeof PERIODS[number]
 
 // ──────────────────────────────────────────────────────────────────────────
 export default function InvestorRelationsPage() {
   // ── hooks (8) ─────────────────────────────────────────────────────────
   const [tab, setTab]             = useState<TabId>('summary')
-  const [period, setPeriod]       = useState<Period>('Q2-26')
+  const [period, setPeriod]       = useState<Period>('Q4-26')
   const [showGuidance, setShowGuidance] = useState<boolean>(true)
   const [debtView, setDebtView]   = useState<'ladder' | 'pie'>('ladder')
   const [esgTab, setEsgTab]       = useState<'ratings' | 'pillars'>('ratings')
@@ -287,10 +287,10 @@ export default function InvestorRelationsPage() {
   // period-adjusted key metrics (mock variation per period)
   const periodMetrics = useMemo(() => {
     const adj: Record<Period, { revenue: number; ebitda: number; fcf: number; margin: number }> = {
-      'Q2-26': { revenue: KPI.revenueQtrM,  ebitda: KPI.ebitdaM * 3,    fcf: 3.3,  margin: KPI.ebitdaMarginPct },
-      'Q1-26': { revenue: 34.6,             ebitda: 12.9,               fcf: 3.1,  margin: 37.3 },
-      'Q4-25': { revenue: 33.9,             ebitda: 12.6,               fcf: 3.0,  margin: 37.2 },
-      'Q3-25': { revenue: 32.8,             ebitda: 12.2,               fcf: 2.9,  margin: 37.2 },
+      'Q4-26': { revenue: KPI.revenueQtrM,  ebitda: KPI.ebitdaM * 3,    fcf: 3.3,  margin: KPI.ebitdaMarginPct },
+      'Q3-26': { revenue: 34.6,             ebitda: 12.9,               fcf: 3.1,  margin: 37.3 },
+      'Q2-26': { revenue: 33.9,             ebitda: 12.6,               fcf: 3.0,  margin: 37.2 },
+      'Q1-26': { revenue: 32.8,             ebitda: 12.2,               fcf: 2.9,  margin: 37.2 },
       'FY-25':  { revenue: 130.9,           ebitda: 48.5,               fcf: 11.4, margin: 37.1 },
       'FY-24':  { revenue: 121.2,           ebitda: 44.2,               fcf: 10.1, margin: 36.5 },
     }
@@ -486,7 +486,7 @@ export default function InvestorRelationsPage() {
             </table>
           </div>
           <div className="mt-2 text-[10px] text-vfes-dark/45 uppercase tracking-widest">
-            {tt('Cable Bahamas leads on all four metrics vs Bahamian peers as of May 2026.')}
+            {tt('Cable Bahamas leads on all four metrics vs Bahamian peers as of October 2026.')}
           </div>
         </Panel>
       </>)}
@@ -765,7 +765,7 @@ export default function InvestorRelationsPage() {
                 ))}
               </div>
               <div className="mt-3 text-[10px] text-vfes-dark/40 uppercase tracking-widest">
-                {tt('Last updated: Jun 2026 · Next MSCI review: Q4 2026')}
+                {tt('Last updated: Nov 2026 · Next MSCI review: Q2 2027')}
               </div>
             </Panel>
 
@@ -837,7 +837,7 @@ export default function InvestorRelationsPage() {
               </table>
             </div>
             <div className="mt-2 text-[10px] text-vfes-dark/45 uppercase tracking-widest">
-              {tt('All 5 covenants passing with comfortable headroom as of Q2-26.')}
+              {tt('All 5 covenants passing with comfortable headroom as of Q4-26.')}
             </div>
           </Panel>
         </>)}
@@ -897,7 +897,7 @@ export default function InvestorRelationsPage() {
       {/* ═══════ IR CALENDAR ═══════ */}
       {tab === 'calendar' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Next earnings call')}   value="29 Jul"   delta={tt('Q2 2026 · pre-market')}    trend="up"   icon={Calendar}  accent />
+          <KpiCard label={tt('Next earnings call')}   value="29 Jul"   delta={tt('Q4 2026 · pre-market')}    trend="up"   icon={Calendar}  accent />
           <KpiCard label={tt('Capital Markets Day')}  value="10 Nov"   delta={tt('Freeport · in-person')}   trend="up"   icon={Building2} />
           <KpiCard label={tt('Annual dividend')}      value="BSD 0.92"    delta={tt('per share · FY26e')}        trend="up"   icon={DollarSign} />
           <KpiCard label={tt('AGM date')}             value="25 Mar 27" delta={tt('Abaco')}               trend="flat" icon={Award} />
@@ -944,10 +944,10 @@ export default function InvestorRelationsPage() {
                 </thead>
                 <tbody>
                   {[
-                    { q: 'Q2-26', ev: 'Earnings call + roadshow Miami/Toronto', aud: 'Buyside / Sellside', meetings: 28, status: 'Upcoming' },
-                    { q: 'Q3-26', ev: 'Capital Markets Day — Freeport',           aud: 'Institutional / Press', meetings: 80, status: 'Scheduled' },
-                    { q: 'Q4-26', ev: 'Q3 earnings + New York roadshow',           aud: 'Buyside',              meetings: 20, status: 'Scheduled' },
-                    { q: 'Q1-27', ev: 'FY26 preliminary results',                  aud: 'All investors',        meetings: 35, status: 'Scheduled' },
+                    { q: 'Q4-26', ev: 'Earnings call + roadshow Miami/Toronto', aud: 'Buyside / Sellside', meetings: 28, status: 'Upcoming' },
+                    { q: 'Q1-27', ev: 'Capital Markets Day — Freeport',           aud: 'Institutional / Press', meetings: 80, status: 'Scheduled' },
+                    { q: 'Q2-27', ev: 'Q3 earnings + New York roadshow',           aud: 'Buyside',              meetings: 20, status: 'Scheduled' },
+                    { q: 'Q3-27', ev: 'FY26 preliminary results',                  aud: 'All investors',        meetings: 35, status: 'Scheduled' },
                   ].map((r, i) => (
                     <tr key={i} className="border-t border-black/5">
                       <td className="py-2.5 font-bold">{r.q}</td>
@@ -1097,7 +1097,7 @@ export default function InvestorRelationsPage() {
       {tab === 'cockpit' && (<>
         <DomainGrid title={tt('Domain navigation — IR-linked pages')} links={IR_DOMAIN_LINKS_FIXED} />
         <div className="grid lg:grid-cols-2 gap-5 mt-5">
-          <PriorityList title={tt('IR team priorities — Q3 2026')} items={IR_PRIORITIES} />
+          <PriorityList title={tt('IR team priorities — Q1 2027')} items={IR_PRIORITIES} />
           <WatchList    title={tt('IR watch list')}                 items={IR_WATCH} />
         </div>
         <div className="mt-5">

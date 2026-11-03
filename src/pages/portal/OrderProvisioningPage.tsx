@@ -73,7 +73,7 @@ const PARTNER_ORDERS = [
 
 // ─── Activation success trend ─────────────────────────────────────────────────
 const ACT_TREND = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'][i],
+  m: ['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'][i],
   rate: 78 + i * 1.1 + (i >= 8 ? 0.4 : 0),
   target: 85,
 }))

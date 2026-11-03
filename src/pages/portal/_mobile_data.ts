@@ -107,18 +107,18 @@ export const TOP_CELLS: MobileSite[] = (() => {
 
 // Voice quality 12-month trend
 export const VOICE_QUALITY: { month: string; dropPct: number; mos: number; pddMs: number }[] = [
-  { month: 'Jun', dropPct: 0.62, mos: 4.05, pddMs: 980 },
-  { month: 'Jul', dropPct: 0.59, mos: 4.07, pddMs: 970 },
-  { month: 'Aug', dropPct: 0.55, mos: 4.10, pddMs: 960 },
-  { month: 'Sep', dropPct: 0.52, mos: 4.12, pddMs: 955 },
-  { month: 'Oct', dropPct: 0.51, mos: 4.14, pddMs: 950 },
-  { month: 'Nov', dropPct: 0.49, mos: 4.16, pddMs: 945 },
-  { month: 'Dec', dropPct: 0.48, mos: 4.17, pddMs: 940 },
-  { month: 'Jan', dropPct: 0.47, mos: 4.18, pddMs: 935 },
-  { month: 'Feb', dropPct: 0.46, mos: 4.19, pddMs: 930 },
-  { month: 'Mar', dropPct: 0.45, mos: 4.20, pddMs: 925 },
-  { month: 'Apr', dropPct: 0.44, mos: 4.20, pddMs: 922 },
-  { month: 'May', dropPct: 0.42, mos: 4.21, pddMs: 920 },
+  { month: 'Nov', dropPct: 0.62, mos: 4.05, pddMs: 980 },
+  { month: 'Dec', dropPct: 0.59, mos: 4.07, pddMs: 970 },
+  { month: 'Jan', dropPct: 0.55, mos: 4.10, pddMs: 960 },
+  { month: 'Feb', dropPct: 0.52, mos: 4.12, pddMs: 955 },
+  { month: 'Mar', dropPct: 0.51, mos: 4.14, pddMs: 950 },
+  { month: 'Apr', dropPct: 0.49, mos: 4.16, pddMs: 945 },
+  { month: 'May', dropPct: 0.48, mos: 4.17, pddMs: 940 },
+  { month: 'Jun', dropPct: 0.47, mos: 4.18, pddMs: 935 },
+  { month: 'Jul', dropPct: 0.46, mos: 4.19, pddMs: 930 },
+  { month: 'Aug', dropPct: 0.45, mos: 4.20, pddMs: 925 },
+  { month: 'Sep', dropPct: 0.44, mos: 4.20, pddMs: 922 },
+  { month: 'Oct', dropPct: 0.42, mos: 4.21, pddMs: 920 },
 ]
 
 // Vendor mix (RAN nodes)
@@ -143,12 +143,12 @@ export const COVERAGE_BY_REGION = [
 
 // Roadmap programmes
 export const MOBILE_ROADMAP = [
-  { prog: '5G SA national rollout',       rag: 'Green',  pct: 62, eta: 'Q4 2026', capex: 280, owner: 'RAN Engineering' },
-  { prog: 'Open RAN New Providence pilot',       rag: 'Amber',  pct: 28, eta: 'Q2 2027', capex: 64,  owner: 'Innovation' },
-  { prog: 'Network Slicing for Enterprise',rag: 'Green', pct: 48, eta: 'Q3 2026', capex: 38,  owner: 'B2B' },
-  { prog: 'mmWave fixed-wireless trial',  rag: 'Red',    pct: 12, eta: 'Q1 2027', capex: 22,  owner: 'Innovation' },
-  { prog: 'Island Towers (demo) tower share expansion',  rag: 'Green',  pct: 78, eta: 'Q3 2026', capex: 85,  owner: 'TowerCo' },
-  { prog: 'VoNR rollout',                 rag: 'Green',  pct: 42, eta: 'Q4 2026', capex: 28,  owner: 'Core Voice' },
+  { prog: '5G SA national rollout',       rag: 'Green',  pct: 62, eta: 'Q2 2027', capex: 280, owner: 'RAN Engineering' },
+  { prog: 'Open RAN New Providence pilot',       rag: 'Amber',  pct: 28, eta: 'Q4 2027', capex: 64,  owner: 'Innovation' },
+  { prog: 'Network Slicing for Enterprise',rag: 'Green', pct: 48, eta: 'Q1 2027', capex: 38,  owner: 'B2B' },
+  { prog: 'mmWave fixed-wireless trial',  rag: 'Red',    pct: 12, eta: 'Q3 2027', capex: 22,  owner: 'Innovation' },
+  { prog: 'Island Towers (demo) tower share expansion',  rag: 'Green',  pct: 78, eta: 'Q1 2027', capex: 85,  owner: 'TowerCo' },
+  { prog: 'VoNR rollout',                 rag: 'Green',  pct: 42, eta: 'Q2 2027', capex: 28,  owner: 'Core Voice' },
 ]
 
 // === Live mobile incidents ===
@@ -341,13 +341,13 @@ export const MOBILE_RAN_PROCUREMENT = [
 
 // Regulatory: mobile / spectrum / 5G / Open RAN obligations
 export const MOBILE_REGULATORY = [
-  { id: 'URCA-5G-OBL',   body: 'URCA',         topic: 'Spectrum 700 MHz coverage obligation', dueDate: 'Q4 2026', status: 'on-track', impact: '95% pop coverage by Dec-26',                  risk: 'Medium' },
-  { id: 'URCA-VENDOR-RISK', body: 'URCA',     topic: 'High-risk vendor policy',  dueDate: 'Q2 2027', status: 'on-track', impact: 'Huawei share <20% in core (currently 12%)',  risk: 'Low' },
+  { id: 'URCA-5G-OBL',   body: 'URCA',         topic: 'Spectrum 700 MHz coverage obligation', dueDate: 'Q2 2027', status: 'on-track', impact: '95% pop coverage by Dec-26',                  risk: 'Medium' },
+  { id: 'URCA-VENDOR-RISK', body: 'URCA',     topic: 'High-risk vendor policy',  dueDate: 'Q4 2027', status: 'on-track', impact: 'Huawei share <20% in core (currently 12%)',  risk: 'Low' },
   { id: 'URCA-MNP-RULE', body: 'URCA',         topic: 'MNP next-day port-in (24h SLA)',         dueDate: 'Live',    status: 'compliant', impact: 'eSIM port-in flow live · 99.4% on-time',     risk: 'Low' },
-  { id: 'URCA-C-700-IND', body: 'URCA',          topic: '700 MHz indoor coverage rural reporting', dueDate: 'Q3 2026', status: 'at-risk',  impact: '6 sites in the Family Islands behind plan', risk: 'High' },
+  { id: 'URCA-C-700-IND', body: 'URCA',          topic: '700 MHz indoor coverage rural reporting', dueDate: 'Q1 2027', status: 'at-risk',  impact: '6 sites in the Family Islands behind plan', risk: 'High' },
   { id: 'URCA-WHOLE-MV', body: 'URCA',         topic: 'MVNO wholesale reference offer (RIO)',   dueDate: 'Live',    status: 'compliant', impact: '4 MVNOs (Mobile Vikings, Scarlet, etc.) on RIO', risk: 'Low' },
-  { id: 'ODPC-LOC-DATA', body: 'ODPC',           topic: 'Location data · DPA retention 90d',     dueDate: 'Live',    status: 'compliant', impact: 'Privacy review passed Q1 2026',              risk: 'Low' },
-  { id: 'URCA-CONSUMER',    body: 'URCA',     topic: 'eID / eSIM identity verification',       dueDate: 'Q1 2027', status: 'in-flight', impact: 'eIDAS 2.0 wallet integration in design',     risk: 'Medium' },
+  { id: 'ODPC-LOC-DATA', body: 'ODPC',           topic: 'Location data · DPA retention 90d',     dueDate: 'Live',    status: 'compliant', impact: 'Privacy review passed Q3 2026',              risk: 'Low' },
+  { id: 'URCA-CONSUMER',    body: 'URCA',     topic: 'eID / eSIM identity verification',       dueDate: 'Q3 2027', status: 'in-flight', impact: 'eIDAS 2.0 wallet integration in design',     risk: 'Medium' },
   { id: 'URCA-ROAM',     body: 'BEREC + URCA', topic: 'US/Canada roam-like-at-home bundles',   dueDate: 'Live',    status: 'compliant', impact: 'Wholesale caps tracked monthly',             risk: 'Low' },
 ]
 
@@ -450,13 +450,13 @@ export const MOBILE_RBAC_ROLES = [
 
 // Trust Center · mobile compliance posture
 export const MOBILE_TRUST = [
-  { control: 'NESAS-certified RAN vendors',        framework: 'GSMA NESAS',     status: 'compliant', lastAssessed: '2026-Q1', evidence: 'Ericsson + Nokia + Samsung NESAS L3', owner: 'CISO' },
-  { control: 'SS7 / Diameter STP firewall',        framework: 'GSMA FS.11',     status: 'compliant', lastAssessed: '2026-Q1', evidence: 'Mavenir STP firewall live · 3.2M signals/day', owner: 'CISO' },
-  { control: 'eKYC for SIM swap',                  framework: 'URCA + ODPC',     status: 'compliant', lastAssessed: '2026-Q1', evidence: 'eIDAS 2.0 wallet + 24h delay enforced', owner: 'Fraud + DPO' },
-  { control: 'High-risk vendor policy', framework: 'URCA',       status: 'compliant', lastAssessed: '2026-Q2', evidence: 'Huawei share 12% (cap 20%)', owner: 'CRO' },
-  { control: 'Location data 90-day retention',     framework: 'Data Protection Act',    status: 'compliant', lastAssessed: '2026-Q1', evidence: 'Pseudonymisation + automated purge', owner: 'DPO' },
-  { control: 'URCA cyber mobile network reporting',      framework: 'URCA cyber',        status: 'in-flight', lastAssessed: '2026-Q2', evidence: 'CSIRT integration in deployment', owner: 'CISO' },
-  { control: 'O-RAN security profile',             framework: 'O-RAN Alliance', status: 'in-flight', lastAssessed: '2026-Q2', evidence: 'WG11 profile pending pilot sign-off', owner: 'Open RAN' },
+  { control: 'NESAS-certified RAN vendors',        framework: 'GSMA NESAS',     status: 'compliant', lastAssessed: '2026-Q3', evidence: 'Ericsson + Nokia + Samsung NESAS L3', owner: 'CISO' },
+  { control: 'SS7 / Diameter STP firewall',        framework: 'GSMA FS.11',     status: 'compliant', lastAssessed: '2026-Q3', evidence: 'Mavenir STP firewall live · 3.2M signals/day', owner: 'CISO' },
+  { control: 'eKYC for SIM swap',                  framework: 'URCA + ODPC',     status: 'compliant', lastAssessed: '2026-Q3', evidence: 'eIDAS 2.0 wallet + 24h delay enforced', owner: 'Fraud + DPO' },
+  { control: 'High-risk vendor policy', framework: 'URCA',       status: 'compliant', lastAssessed: '2026-Q4', evidence: 'Huawei share 12% (cap 20%)', owner: 'CRO' },
+  { control: 'Location data 90-day retention',     framework: 'Data Protection Act',    status: 'compliant', lastAssessed: '2026-Q3', evidence: 'Pseudonymisation + automated purge', owner: 'DPO' },
+  { control: 'URCA cyber mobile network reporting',      framework: 'URCA cyber',        status: 'in-flight', lastAssessed: '2026-Q4', evidence: 'CSIRT integration in deployment', owner: 'CISO' },
+  { control: 'O-RAN security profile',             framework: 'O-RAN Alliance', status: 'in-flight', lastAssessed: '2026-Q4', evidence: 'WG11 profile pending pilot sign-off', owner: 'Open RAN' },
 ]
 
 // Horizon · mobile data classification

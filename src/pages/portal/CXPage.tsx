@@ -24,7 +24,7 @@ const tooltipStyle = { background: '#fff', border: '1px solid #e5e7eb', borderRa
 // ============================== DATA ============================== //
 
 const csatTrend = Array.from({ length: 12 }, (_, i) => ({
-  m: ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May'][i],
+  m: ['Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'][i],
   csat: 80 + Math.round(Math.sin(i / 2) * 4 + i / 3),
   nps: 30 + Math.round(Math.sin(i / 2) * 5 + i / 2),
   ces: 4.2 + +(Math.sin(i / 3) * 0.3 - i / 60).toFixed(2),
@@ -227,21 +227,21 @@ const actionQueue = [
 
 // ── Network CX trend by product segment ─────────────────────────────────────
 const networkNpsTrend = [
-  { m: 'Jan', mobile: 35, ftth: 42, hfc: 26, conv: 48 },
-  { m: 'Feb', mobile: 36, ftth: 43, hfc: 27, conv: 49 },
-  { m: 'Mar', mobile: 37, ftth: 44, hfc: 27, conv: 50 },
-  { m: 'Apr', mobile: 37, ftth: 45, hfc: 28, conv: 51 },
-  { m: 'May', mobile: 38, ftth: 46, hfc: 29, conv: 52 },
-  { m: 'Jun', mobile: 38, ftth: 46, hfc: 30, conv: 52 },
+  { m: 'Jun', mobile: 35, ftth: 42, hfc: 26, conv: 48 },
+  { m: 'Jul', mobile: 36, ftth: 43, hfc: 27, conv: 49 },
+  { m: 'Aug', mobile: 37, ftth: 44, hfc: 27, conv: 50 },
+  { m: 'Sep', mobile: 37, ftth: 45, hfc: 28, conv: 51 },
+  { m: 'Oct', mobile: 38, ftth: 46, hfc: 29, conv: 52 },
+  { m: 'Nov', mobile: 38, ftth: 46, hfc: 30, conv: 52 },
 ]
 
 const contactRateTrend = [
-  { m: 'Jan', mobile: 8.4, ftth: 6.2, hfc: 11.8, conv: 5.8 },
-  { m: 'Feb', mobile: 8.2, ftth: 6.0, hfc: 11.4, conv: 5.6 },
-  { m: 'Mar', mobile: 8.0, ftth: 5.8, hfc: 11.2, conv: 5.4 },
-  { m: 'Apr', mobile: 7.9, ftth: 5.7, hfc: 11.0, conv: 5.2 },
-  { m: 'May', mobile: 7.8, ftth: 5.6, hfc: 10.8, conv: 5.1 },
-  { m: 'Jun', mobile: 7.8, ftth: 5.5, hfc: 10.6, conv: 5.0 },
+  { m: 'Jun', mobile: 8.4, ftth: 6.2, hfc: 11.8, conv: 5.8 },
+  { m: 'Jul', mobile: 8.2, ftth: 6.0, hfc: 11.4, conv: 5.6 },
+  { m: 'Aug', mobile: 8.0, ftth: 5.8, hfc: 11.2, conv: 5.4 },
+  { m: 'Sep', mobile: 7.9, ftth: 5.7, hfc: 11.0, conv: 5.2 },
+  { m: 'Oct', mobile: 7.8, ftth: 5.6, hfc: 10.8, conv: 5.1 },
+  { m: 'Nov', mobile: 7.8, ftth: 5.5, hfc: 10.6, conv: 5.0 },
 ]
 
 const nxCsatPie = [
@@ -253,12 +253,12 @@ const nxCsatPie = [
 
 // ── Complaints data ───────────────────────────────────────────────────────────
 const complaintsTrend = [
-  { m: 'Jan', cnmc: 48, internal: 384, repeat: 62 },
-  { m: 'Feb', cnmc: 52, internal: 396, repeat: 58 },
-  { m: 'Mar', cnmc: 44, internal: 372, repeat: 54 },
-  { m: 'Apr', cnmc: 56, internal: 408, repeat: 60 },
-  { m: 'May', cnmc: 58, internal: 420, repeat: 64 },
-  { m: 'Jun', cnmc: 62, internal: 432, repeat: 66 },
+  { m: 'Jun', cnmc: 48, internal: 384, repeat: 62 },
+  { m: 'Jul', cnmc: 52, internal: 396, repeat: 58 },
+  { m: 'Aug', cnmc: 44, internal: 372, repeat: 54 },
+  { m: 'Sep', cnmc: 56, internal: 408, repeat: 60 },
+  { m: 'Oct', cnmc: 58, internal: 420, repeat: 64 },
+  { m: 'Nov', cnmc: 62, internal: 432, repeat: 66 },
 ]
 
 const complaintsRegister = [

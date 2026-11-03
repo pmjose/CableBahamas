@@ -68,22 +68,22 @@ const QUEUE_BY_DAY: Record<string, { h: string; wait: number; abandon: number; s
 
 // ─── AHT trend ───────────────────────────────────────────────────────────────
 const AHT_TREND = [
-  { m: 'Jan', assisted: 6.1, baseline: 8.4, occupancy: 78 },
-  { m: 'Feb', assisted: 5.8, baseline: 8.3, occupancy: 79 },
-  { m: 'Mar', assisted: 5.4, baseline: 8.2, occupancy: 80 },
-  { m: 'Apr', assisted: 5.0, baseline: 8.1, occupancy: 81 },
-  { m: 'May', assisted: 4.6, baseline: 8.0, occupancy: 82 },
-  { m: 'Jun', assisted: 4.3, baseline: 8.0, occupancy: 83 },
+  { m: 'Jun', assisted: 6.1, baseline: 8.4, occupancy: 78 },
+  { m: 'Jul', assisted: 5.8, baseline: 8.3, occupancy: 79 },
+  { m: 'Aug', assisted: 5.4, baseline: 8.2, occupancy: 80 },
+  { m: 'Sep', assisted: 5.0, baseline: 8.1, occupancy: 81 },
+  { m: 'Oct', assisted: 4.6, baseline: 8.0, occupancy: 82 },
+  { m: 'Nov', assisted: 4.3, baseline: 8.0, occupancy: 83 },
 ]
 
 // ─── FCR trend ────────────────────────────────────────────────────────────────
 const FCR_TREND = [
-  { m: 'Jan', fcr: 68, target: 75 },
-  { m: 'Feb', fcr: 70, target: 75 },
-  { m: 'Mar', fcr: 71, target: 75 },
-  { m: 'Apr', fcr: 73, target: 75 },
-  { m: 'May', fcr: 74, target: 75 },
-  { m: 'Jun', fcr: 76, target: 75 },
+  { m: 'Jun', fcr: 68, target: 75 },
+  { m: 'Jul', fcr: 70, target: 75 },
+  { m: 'Aug', fcr: 71, target: 75 },
+  { m: 'Sep', fcr: 73, target: 75 },
+  { m: 'Oct', fcr: 74, target: 75 },
+  { m: 'Nov', fcr: 76, target: 75 },
 ]
 
 // ─── SLA weekly trend ─────────────────────────────────────────────────────────
@@ -98,12 +98,12 @@ const SLA_TREND = [
 
 // ─── Occupancy trend ─────────────────────────────────────────────────────────
 const OCC_TREND = [
-  { m: 'Jan', billing: 79, technical: 88, retention: 74 },
-  { m: 'Feb', billing: 80, technical: 89, retention: 76 },
-  { m: 'Mar', billing: 81, technical: 90, retention: 75 },
-  { m: 'Apr', billing: 82, technical: 91, retention: 77 },
-  { m: 'May', billing: 83, technical: 92, retention: 78 },
-  { m: 'Jun', billing: 83, technical: 91, retention: 79 },
+  { m: 'Jun', billing: 79, technical: 88, retention: 74 },
+  { m: 'Jul', billing: 80, technical: 89, retention: 76 },
+  { m: 'Aug', billing: 81, technical: 90, retention: 75 },
+  { m: 'Sep', billing: 82, technical: 91, retention: 77 },
+  { m: 'Oct', billing: 83, technical: 92, retention: 78 },
+  { m: 'Nov', billing: 83, technical: 91, retention: 79 },
 ]
 
 // ─── Skill groups ─────────────────────────────────────────────────────────────
@@ -155,12 +155,12 @@ const COACHING_PIPELINE = [
 
 // ─── QA trend & automation stats ─────────────────────────────────────────────
 const QA_TREND = [
-  { m: 'Jan', avgScore: 79, compliance: 88, cortexFlag: 12 },
-  { m: 'Feb', avgScore: 80, compliance: 89, cortexFlag: 14 },
-  { m: 'Mar', avgScore: 81, compliance: 90, cortexFlag: 18 },
-  { m: 'Apr', avgScore: 83, compliance: 92, cortexFlag: 22 },
-  { m: 'May', avgScore: 84, compliance: 94, cortexFlag: 24 },
-  { m: 'Jun', avgScore: 85, compliance: 95, cortexFlag: 28 },
+  { m: 'Jun', avgScore: 79, compliance: 88, cortexFlag: 12 },
+  { m: 'Jul', avgScore: 80, compliance: 89, cortexFlag: 14 },
+  { m: 'Aug', avgScore: 81, compliance: 90, cortexFlag: 18 },
+  { m: 'Sep', avgScore: 83, compliance: 92, cortexFlag: 22 },
+  { m: 'Oct', avgScore: 84, compliance: 94, cortexFlag: 24 },
+  { m: 'Nov', avgScore: 85, compliance: 95, cortexFlag: 28 },
 ]
 
 const COACHING_OUTCOMES = [
@@ -172,12 +172,12 @@ const COACHING_OUTCOMES = [
 
 // ─── Deflection savings tracker ──────────────────────────────────────────────
 const DEFLECTION_SAVINGS = [
-  { m: 'Jan', savings: 124, contacts: 41200 },
-  { m: 'Feb', savings: 136, contacts: 45300 },
-  { m: 'Mar', savings: 148, contacts: 49400 },
-  { m: 'Apr', savings: 162, contacts: 54000 },
-  { m: 'May', savings: 174, contacts: 58000 },
-  { m: 'Jun', savings: 188, contacts: 62700 },
+  { m: 'Jun', savings: 124, contacts: 41200 },
+  { m: 'Jul', savings: 136, contacts: 45300 },
+  { m: 'Aug', savings: 148, contacts: 49400 },
+  { m: 'Sep', savings: 162, contacts: 54000 },
+  { m: 'Oct', savings: 174, contacts: 58000 },
+  { m: 'Nov', savings: 188, contacts: 62700 },
 ]
 
 const SENTIMENT = [
