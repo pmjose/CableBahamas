@@ -1,0 +1,42 @@
+version: 1
+artifacts:
+  - path: CABLE_BAHAMAS_AGENT.agent.yaml
+    type: cortex_agent
+    targets:
+      default:
+        object: CABLEBAHAMAS_DEMO.ANALYTICS.CABLE_BAHAMAS_AGENT
+  - path: CUSTOMER_ANALYTICS.sv.yaml
+    type: semantic_view
+    targets:
+      default:
+        object: CABLEBAHAMAS_DEMO.ANALYTICS.CUSTOMER_ANALYTICS
+  - path: FINANCE_ANALYTICS.sv.yaml
+    type: semantic_view
+    targets:
+      default:
+        object: CABLEBAHAMAS_DEMO.ANALYTICS.FINANCE_ANALYTICS
+  - path: SERVICE_ANALYTICS.sv.yaml
+    type: semantic_view
+    targets:
+      default:
+        object: CABLEBAHAMAS_DEMO.ANALYTICS.SERVICE_ANALYTICS
+  - path: NETWORK_ANALYTICS.sv.yaml
+    type: semantic_view
+    targets:
+      default:
+        object: CABLEBAHAMAS_DEMO.ANALYTICS.NETWORK_ANALYTICS
+  - path: BILLING_ANALYTICS.sv.yaml
+    type: semantic_view
+    targets:
+      default:
+        object: CABLEBAHAMAS_DEMO.ANALYTICS.BILLING_ANALYTICS
+  - path: B2B_ANALYTICS.sv.yaml
+    type: semantic_view
+    targets:
+      default:
+        object: CABLEBAHAMAS_DEMO.ANALYTICS.B2B_ANALYTICS
+  - path: PRODUCT_ANALYTICS.sv.yaml
+    type: semantic_view
+    targets:
+      default:
+        object: CABLEBAHAMAS_DEMO.ANALYTICS.PRODUCT_ANALYTICS

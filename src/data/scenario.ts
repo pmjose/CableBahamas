@@ -46,6 +46,18 @@ export const TTM_REVENUE_M = round(FINANCE_TREND.reduce((total, month) => total 
 export const TTM_EBITDA_M = round(FINANCE_TREND.reduce((total, month) => total + month.ebitda, 0))
 export const TTM_FCF_M = round(FINANCE_TREND.reduce((total, month) => total + month.fcf, 0))
 
+// Receivables ageing at 31 Oct 2026, BSD M. Sized to 42 days sales outstanding:
+// group 16.8M on BSD 12M/month; B2B 4.2M on business + wholesale BSD 3M/month.
+export const AR_AGING = [
+  { bucket: 'Current', group: 11.6, b2b: 3.0 },
+  { bucket: '1-30 days', group: 3.1, b2b: 0.75 },
+  { bucket: '31-60 days', group: 1.0, b2b: 0.25 },
+  { bucket: '61-90 days', group: 0.55, b2b: 0.1 },
+  { bucket: '90+ days', group: 0.55, b2b: 0.1 },
+] as const
+export const AR_TOTAL_M = round(AR_AGING.reduce((s, b) => s + b.group, 0), 2)
+export const DSO_DAYS = 42
+
 export const NETWORK_BASE = { activeSites: 220, ownedSites: 160, sharedSites: 60, homesPassed: 140_000 } as const
 
 export function seededRandom(seed: number): () => number {

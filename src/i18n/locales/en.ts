@@ -3855,7 +3855,7 @@ const en = {
   'Column-level lineage · CUSTOMER_360': 'Column-level lineage · CUSTOMER_360',
   'Blast-radius — if you change CUSTOMER_360 today': 'Blast-radius — if you change CUSTOMER_360 today',
   'Recent consumers (ACCESS_HISTORY · 7d)': 'Recent consumers (ACCESS_HISTORY · 7d)',
-  '26 named accounts · BSD 84M ARR · 5 segments · live MD cockpit': '26 named accounts · BSD 84M ARR · 5 segments · live MD cockpit',
+  '26 named accounts · BSD 23.4M ARR · 5 segments · live MD cockpit': '26 named accounts · BSD 23.4M ARR · 5 segments · live MD cockpit',
   'Net Revenue Retention': 'Net Revenue Retention',
   'Gross Revenue Retention': 'Gross Revenue Retention',
   'Logo Churn (TTM)': 'Logo Churn (TTM)',

@@ -97,7 +97,7 @@ export default function B2BPage() {
     <div className="p-8">
       <PageHeader
         title={tt('B2B / Wholesale')}
-        subtitle={tt('26 named accounts · BSD 84M ARR · 5 segments · live MD cockpit')}
+        subtitle={tt('26 named accounts · BSD 23.4M ARR · 5 segments · live MD cockpit')}
         actions={<div className="flex items-center gap-2 bg-vfes-red/5 text-vfes-dark px-3 py-2 rounded-lg text-xs font-bold uppercase tracking-widest"><Award className="w-3.5 h-3.5" />{tt('MD Cockpit')}</div>}
       />
 
@@ -167,7 +167,7 @@ export default function B2BPage() {
         decision={{
           title: tt('Protect top-10 ARR logos · push Private 5G & SD-WAN upsell'),
           detail: tt('ARR is concentrated in the top-10 accounts. Pair exec sponsorship on at-risk logos with whitespace expansion plays for net growth.'),
-          impact: tt('+BSD 12M ARR if top-3 whitespace plays convert in H2'),
+          impact: tt('+BSD 1.2M ARR if top-3 whitespace plays convert in H2'),
           risk: tt('Concentration risk — one logo loss dents the quarter'),
           linkTo: '#/portal/company-360',
           linkLabel: tt('Open Company 360'),
@@ -290,7 +290,7 @@ function OverviewTab({ filtered, drillInto }: { filtered: Account[]; drillInto: 
         <KpiCard label={tt('ARR')} value="BSD 84.0M" delta="+18.0% YoY" trend="up" icon={Coins} accent />
         <KpiCard label={tt('Net Revenue Retention')} value="106%" delta="+4 pts" trend="up" icon={TrendingUp} />
         <KpiCard label={tt('Gross Revenue Retention')} value="92%" delta="-1 pt" trend="down" icon={Heart} />
-        <KpiCard label={tt('Logo Churn (TTM)')} value="6 logos" delta="BSD 4.2M ARR" trend="down" icon={TrendingDown} />
+        <KpiCard label={tt('Logo Churn (TTM)')} value="6 logos" delta="BSD 0.6M ARR" trend="down" icon={TrendingDown} />
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <KpiCard label={tt('Top-10 concentration')} value={`${(top10Share * 100).toFixed(0)}%`} delta="of ARR" trend="flat" icon={AlertTriangle} />

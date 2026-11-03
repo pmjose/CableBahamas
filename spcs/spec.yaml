@@ -1,0 +1,28 @@
+spec:
+  containers:
+  - name: web
+    image: /cablebahamas_demo/app/images/cablebahamas-web:latest
+    env:
+      PORT: "8080"
+      NODE_ENV: production
+      SNOWFLAKE_WAREHOUSE: DC_WAREHOUSE
+      SNOWFLAKE_DATABASE: CABLEBAHAMAS_DEMO
+      SNOWFLAKE_SCHEMA: ANALYTICS_V2
+      AGENT_FQN: CABLEBAHAMAS_DEMO.ANALYTICS_V2.CABLE_BAHAMAS_AGENT
+    resources:
+      requests:
+        memory: 512Mi
+        cpu: 250m
+      limits:
+        memory: 1Gi
+        cpu: 1000m
+    readinessProbe:
+      port: 8080
+      path: /api/health
+  endpoints:
+  - name: web
+    port: 8080
+    public: true
+capabilities:
+  securityContext:
+    executeAsCaller: true

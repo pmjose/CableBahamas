@@ -1,4 +1,4 @@
-import { FINANCE, FINANCE_TREND, round } from '../../data/scenario'
+import { FINANCE, FINANCE_TREND, round, AR_AGING, AR_TOTAL_M } from '../../data/scenario'
 import { useState, useMemo, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { PageHeader, Panel } from '../../components/Panel'
@@ -54,13 +54,7 @@ const cashflowQtly = Array.from({length:4},(_,index)=>{const rows=FINANCE_TREND.
 
 const cash13wk = Array.from({length:13},(_,index)=>({wk:`W${index+1}`,inflow:3,outflow:2.7,balance:round(FINANCE.cashM+(index+1)*0.3)}))
 
-const arAgingData = [
-  { bucket: 'Current',    amt: 42.6, color: GREEN      },
-  { bucket: '1-30 days',  amt:  9.2, color: AMBER      },
-  { bucket: '31-60 days', amt:  3.2, color: '#fb923c'  },
-  { bucket: '61-90 days', amt:  1.6, color: '#ef4444'  },
-  { bucket: '90+ days',   amt:  1.2, color: '#7f1d1d'  },
-]
+const arAgingData = AR_AGING.map((b, i) => ({ bucket: b.bucket, amt: b.group, color: ['#10b981','#f59e0b','#fb923c','#ef4444','#7f1d1d'][i] }))
 
 const topOverdueAR = [
   { acc: 'BTC Wholesale (interconnect)',  amt: 1240, dso: 88, status: 'Disputed'   },
@@ -574,7 +568,7 @@ export default function CFOPage() {
         </Panel>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6 mt-6">
-          <Panel title={tt('AR Aging · BSD 57.8M total receivables')} insight={{ insight: 'Receivables overdue beyond 60 days represent BSD 14.2M (25% of the total), up from BSD 11M in the prior quarter.', action: 'Escalate the top five B2B accounts in dunning to executive sponsorship and instruct legal to issue formal demand letters within five business days.', impact: 'Recovery of 70% of the 60+ day balance would reduce DSO by approximately 3 days and release BSD 10M of working capital.' }}>
+          <Panel title={`${tt('AR Aging')} · BSD ${AR_TOTAL_M}M ${tt('total receivables')}`} insight={{ insight: `Receivables overdue beyond 60 days are BSD ${round(AR_AGING[3].group + AR_AGING[4].group, 2)}M (${round((AR_AGING[3].group + AR_AGING[4].group) / AR_TOTAL_M * 100, 1)}% of the total), up from BSD 0.9M last quarter after the September storm.`, action: 'Escalate the top five B2B accounts in dunning to executive sponsorship and issue formal demand letters within five business days.', impact: `Recovering 70% of the 60+ day balance would reduce DSO by about 1.5 days and release BSD ${round((AR_AGING[3].group + AR_AGING[4].group) * 0.7, 2)}M of working capital.` }}>
             <div className="h-56">
               <ResponsiveContainer>
                 <PieChart>

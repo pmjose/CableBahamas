@@ -1,4 +1,4 @@
-import { FINANCE, FINANCE_TREND, round } from '../../data/scenario'
+import { FINANCE, FINANCE_TREND, round, AR_AGING } from '../../data/scenario'
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PageHeader, Panel } from '../../components/Panel'
@@ -30,7 +30,7 @@ const headline = {
     arpu: 47.4, arpuDelta: 0.8, gm: 60, gmDelta: 0.4,
     ebitda: FINANCE.monthlyEbitdaM, ebitdaDelta: 1.01,
     fcf: 1.2, fcfDelta: 1.01, netDebt: FINANCE.netDebtM, leverage: KPI.netDebtEbitdaX,
-    cashBalance: FINANCE.cashM, dso: 32, dpo: 64, dio: 14, ccc: -18,
+    cashBalance: FINANCE.cashM, dso: 42, dpo: 64, dio: 14, ccc: -18,
     capexYTD: 10, capexPlan: 24, daysToClose: 6.2, closeAuto: 78,
   }
 
@@ -63,13 +63,7 @@ const cashflowMonthly = FINANCE_TREND
 
 const cash13wk = Array.from({length:13},(_,index)=>({wk: `W${index+1}`,inflow:3,outflow:2.7,balance:round(FINANCE.cashM+(index+1)*0.3)}))
 
-const arAging = [
-  { bucket: 'Current',     amt: 14.2, color: '#10b981' },
-  { bucket: '1-30 days',   amt: 3.8,  color: '#f59e0b' },
-  { bucket: '31-60 days',  amt: 1.2,  color: '#fb923c' },
-  { bucket: '61-90 days',  amt: 0.6,  color: '#ef4444' },
-  { bucket: '90+ days',    amt: 0.3,  color: '#7f1d1d' },
-]
+const arAging = AR_AGING.map((b, i) => ({ bucket: b.bucket, amt: b.group, color: ['#10b981','#f59e0b','#fb923c','#ef4444','#7f1d1d'][i] }))
 
 const topOverdueAR = [
   { acc: 'BTC Wholesale (interconnect)', amt: 412, dso: 88,  status: 'Disputed', owner: 'Treasury' },
@@ -997,7 +991,7 @@ function WorkingCapitalTab() {
   return (
     <>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-        <KpiCard label={tt('DSO')}  value="32 d"  delta={tt('target ≤35')}         trend="up"   icon={Calendar} accent />
+        <KpiCard label={tt('DSO')}  value="42 d"  delta={tt('target ≤45')}         trend="up"   icon={Calendar} accent />
         <KpiCard label={tt('DPO')}  value="64 d"  delta={tt('target ≥60')}         trend="up"   icon={Coins} />
         <KpiCard label={tt('DIO')}  value="14 d"  delta={tt('best-in-class')}      trend="up"   icon={Activity} />
         <KpiCard label={tt('CCC')}  value="-32 d" delta={tt('negative · healthy')} trend="up"   icon={ArrowUpRight} />

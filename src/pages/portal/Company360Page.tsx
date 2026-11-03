@@ -232,7 +232,7 @@ export default function Company360Page() {
         decision={{
           title: tt('Protect top-10 logos · push SD-WAN & Private 5G expansion'),
           detail: tt('Top-10 accounts represent 78% of ARR. Pair exec sponsorship on at-risk logos with whitespace expansion plays.'),
-          impact: tt('+BSD 12M ARR if top-3 whitespace plays convert in H2'),
+          impact: tt('+BSD 1.2M ARR if top-3 whitespace plays convert in H2'),
           risk: tt('Concentration risk — one logo loss dents the quarter'),
           linkTo: '#/portal/company-360',
           linkLabel: tt('Company 360'),

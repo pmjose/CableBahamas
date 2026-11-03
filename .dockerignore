@@ -1,0 +1,12 @@
+node_modules
+dist
+server/dist
+.git
+.github
+docs
+tests
+spcs
+*.md
+.env*
+tsconfig.tsbuildinfo
+.DS_Store

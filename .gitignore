@@ -10,3 +10,6 @@ dist
 .snowflake/
 playwright-report/
 test-results/
+
+# Generated agent dataset (rebuild with npx tsx snowflake/v2/generate.ts)
+snowflake/v2/out/

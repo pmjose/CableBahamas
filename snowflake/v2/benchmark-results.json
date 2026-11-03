@@ -1,0 +1,267 @@
+{
+  "agent": "CABLEBAHAMAS_DEMO.ANALYTICS_V2.CABLE_BAHAMAS_AGENT",
+  "runAt": "2026-11-03T21:39:05.521Z",
+  "passed": 20,
+  "total": 20,
+  "results": [
+    {
+      "question": "How many fixed customers do we have?",
+      "pass": true,
+      "ms": 29457,
+      "tools": [
+        "CUSTOMER_ANALYTICS",
+        "system_execute_sql",
+        "data_to_chart"
+      ],
+      "expectedTool": "CUSTOMER_ANALYTICS",
+      "missing": [],
+      "answer": "On 31 October 2026 we had **74,400 REV fixed customers** in this synthetic demo data.\n\n\n\n\n**What stands out**\n- **New Providence has most of the base.** Its 47,800 customers are about 64% of the total.\n- **Grand Bahama is second** with 12,600 customers, about 17%.\n- **The Family Islands are small.** Abaco, Eleuthera, Exuma, Andros and the Other Family Islands add up to 14,000 customers, about 19%.\n\n**Recommended next steps**\n- **Customer insights team:** see whether customers who also have aliv mobile are spread evenly across the islands. That shows where there's room to sell more combined fixed-and-mobile bundles.\n- **Retention team:** check the October churn rate by island, so customers we're losing on the smaller islands get attention even though those bases are small."
+    },
+    {
+      "question": "How many fixed customers are in New Providence?",
+      "pass": true,
+      "ms": 17908,
+      "tools": [
+        "CUSTOMER_ANALYTICS",
+        "system_execute_sql"
+      ],
+      "expectedTool": "CUSTOMER_ANALYTICS",
+      "missing": [],
+      "answer": "As of 31 October 2026, New Providence (Nassau) has **47,800 REV fixed customers** (synthetic demo data).\n\n- New Providence: 47,800 accounts\n- All islands: 74,400 accounts\n- New Providence's share: about **64%**\n\n**What stands out**\n- Close to two in three fixed accounts are in New Providence. The other six island groups together hold about 26,600.\n- Because the customer base is so concentrated, anything that hits Nassau, like an outage, a price change or churn, affects most of the base.\n\n**Recommended next steps**\n- Customer analytics: break the 47,800 down by churn risk and by whether the household also has aliv mobile, to find who to protect and who to cross-sell to.\n- Network team: compare this count with homes passed in New Providence to get take-up and see how much room there is to grow."
+    },
+    {
+      "question": "What was revenue and EBITDA in October 2026?",
+      "pass": true,
+      "ms": 12322,
+      "tools": [
+        "system_execute_sql"
+      ],
+      "expectedTool": "FINANCE_ANALYTICS",
+      "missing": [],
+      "answer": "In October 2026, group revenue was **BSD 12.0M** and EBITDA was **BSD 4.5M**, which is an EBITDA margin of **37.5%** (synthetic demo data).\n\n- Revenue: BSD 12,000,000\n- EBITDA: BSD 4,500,000\n- EBITDA margin: 37.5%\n\n**What stands out**\n- About 37.5 cents of every BSD 1 of revenue is left after cost of service and operating expense.\n- This is the group total for a single month. I haven't checked it against budget or split it by service line or island.\n\n**Recommended next steps**\n- FP&A could compare October against budget and against September to see whether revenue and margin are on track.\n- Finance could break October EBITDA down by service line (Fixed FTTH and HFC, Mobile, Business fixed, Wholesale) to see where the margin comes from."
+    },
+    {
+      "question": "What is our EBITDA margin this month?",
+      "pass": true,
+      "ms": 21685,
+      "tools": [
+        "FINANCE_ANALYTICS",
+        "system_execute_sql",
+        "system_execute_sql"
+      ],
+      "expectedTool": "FINANCE_ANALYTICS",
+      "missing": [],
+      "answer": "Pulling October plus September for context, and by service line.\nGroup EBITDA margin for **October 2026 was 37.5%**: **BSD 4.50M EBITDA** on **BSD 12.00M revenue**. That's the same as September (37.5%). This is synthetic demo data.\n\n\n\n\n**What stands out**\n- **Every service line shows exactly 37.5%**, and so do September and the group total. Real P&Ls never look like this. It means EBITDA in this dataset is set as a fixed share of revenue, not built from actual costs. I didn't chart it because a chart of identical values wouldn't tell you anything.\n- Mobile (Consumer) brings in the most revenue (BSD 3.20M) and EBITDA (BSD 1.20M), with Fixed (FTTH) close behind (BSD 3.00M / BSD 1.13M).\n- Since every margin is the same, this data can't show which service line or island is more profitable.\n\n**Recommended next steps**\n1. **Finance/FP&A:** check whether cost of service and operating expense ar"
+    },
+    {
+      "question": "What were gross adds, disconnects and net adds in October?",
+      "pass": true,
+      "ms": 33528,
+      "tools": [
+        "CUSTOMER_ANALYTICS",
+        "system_execute_sql",
+        "server_skill",
+        "data_to_chart",
+        "PROPOSE_ACTION"
+      ],
+      "expectedTool": "CUSTOMER_ANALYTICS",
+      "missing": [],
+      "answer": "In October 2026, REV fixed had **1,118 gross adds** and **818 disconnects**, so **net adds were +300**. Churn was 1.10% (synthetic demo data).\n\n\n\n\n**What stands out**\n- **New Providence accounts for most of the growth:** 247 of the 300 net adds, with 1.00% churn.\n- **Grand Bahama barely grew:** 181 adds against 176 disconnects left it at +5, with churn of 1.40%.\n- **Andros (1.40%) and Other Family Islands (1.39%) also had high churn.** Exuma had the lowest at 0.82%.\n\n**Recommended next steps**\n- **Retention team:** contact Grand Bahama's high-risk fixed customers through the save desk. I've logged this as a proposed action, and it's waiting for approval.\n- **Customer care:** check whether Grand Bahama's disconnects line up with cancellation calls that mention switching to BTC.\n- **Network operations:** check for outages in October on Andros and the Other Family Islands that could explain"
+    },
+    {
+      "question": "Which island has the highest churn this month?",
+      "pass": true,
+      "ms": 27057,
+      "tools": [
+        "system_execute_sql",
+        "server_skill",
+        "data_to_chart"
+      ],
+      "expectedTool": "CUSTOMER_ANALYTICS",
+      "missing": [],
+      "answer": "In October 2026, **Andros** had the highest fixed (REV) churn rate at **1.40%**, from 21 disconnects. Grand Bahama (1.40%) and Other Family Islands (1.39%) were almost exactly the same. (This is synthetic demo data.)\n\n\n\n\n**What stands out**\n- The top three islands are within 0.01 points of each other, so Andros only leads by a rounding margin.\n- Grand Bahama is the bigger concern in volume terms. Its 176 disconnects are more than eight times Andros's 21.\n- New Providence churn is lower (1.00%), but it had the most disconnects, at 477. Exuma had the lowest churn rate (0.82%).\n\n**Recommended next steps**\n- Retention team: run save-desk outreach for high-risk customers on Grand Bahama and Andros.\n- Care team: compare October's \"Cancel / switching to BTC\" contacts by island to see what's driving disconnects.\n\nI haven't logged a formal action proposal for approval yet. I can log one if you'd "
+    },
+    {
+      "question": "How many mobile subscribers do we have?",
+      "pass": true,
+      "ms": 20345,
+      "tools": [
+        "MOBILE_ANALYTICS",
+        "system_execute_sql",
+        "data_to_chart"
+      ],
+      "expectedTool": "MOBILE_ANALYTICS",
+      "missing": [],
+      "answer": "aliv had **180,500 active mobile lines** on 31 October 2026. This is synthetic demo data.\n\n\n\n\n**What stands out**\n- **Prepaid is the biggest group but earns the least per line:** 93,000 lines (52%) at BSD 12.41 average monthly ARPU.\n- **Postpaid and Business lines earn about 2.5\u00d7 more per line:** BSD 31.14 for Postpaid and BSD 33.68 for Business. Together they make up 82,000 lines.\n- **IoT is small:** 5,500 lines at BSD 3.55.\n\n**Recommended next steps**\n- **Mobile marketing:** Run a campaign to move high-usage Prepaid customers onto Postpaid. Each move should add roughly BSD 19 a month.\n- **B2B team:** Look at whether the 25,000 Business lines include fixed-service accounts that could be sold more services.\n- **Analytics:** Break the line count down by island and churn risk to find where lines are most at risk of leaving."
+    },
+    {
+      "question": "How many households are convergent with aliv mobile?",
+      "pass": true,
+      "ms": 33268,
+      "tools": [
+        "CUSTOMER_ANALYTICS",
+        "system_execute_sql",
+        "data_to_chart",
+        "PROPOSE_ACTION"
+      ],
+      "expectedTool": "CUSTOMER_ANALYTICS",
+      "missing": [],
+      "answer": "On 31 October 2026, **39,000 REV fixed households** also had aliv mobile. That's **52.4%** of the 74,400 fixed accounts (synthetic demo data).\n\n\n\n\n**What stands out**\n- New Providence has 25,397 convergent households, about 65% of the total.\n- Exuma has the highest share at 54.0%.\n- Other Family Islands has the lowest share at 40.9%, about 11.5 points below the group. Every other island is between 51.7% and 54.0%.\n\n**Recommended next steps**\n- **Consumer marketing:** run an aliv cross-sell campaign for REV customers in Other Family Islands. Getting to the group rate would add about 260 convergent households. I've logged this as a proposed action, and it's waiting for approval.\n- **Product team:** check that the REVConnect bundle can be sold and is priced right on the Family Islands.\n- **Retention desk:** compare churn risk between convergent and fixed-only households to measure how much "
+    },
+    {
+      "question": "How much debt is more than 60 days overdue?",
+      "pass": true,
+      "ms": 23480,
+      "tools": [
+        "system_execute_sql",
+        "PROPOSE_ACTION"
+      ],
+      "expectedTool": "BILLING_ANALYTICS",
+      "missing": [],
+      "answer": "As of 31 October 2026, **BSD 1.1M** of open receivables is more than 60 days overdue (synthetic demo data).\n\n\n\n\n**What stands out**\n- Consumer accounts make up most of it: BSD 0.9M, about 82%.\n- Business accounts owe BSD 0.2M. There are fewer of them, so each one carries more money.\n- The BSD 1.1M is about 6.5% of the BSD 16.8M total receivables book.\n\n**Recommended next steps**\n- Collections team: start stepped-up payment reminders, then suspend service where needed, for consumer accounts past 60 days.\n- B2B account managers: call each overdue business account directly and agree payment plans before contract renewals come up.\n- Finance: check whether the bad-debt provision covers the over-60-day balance.\n\nI've logged a proposal to prioritise collections on the over-60-day receivables; it's waiting for human approval."
+    },
+    {
+      "question": "What are total receivables?",
+      "pass": true,
+      "ms": 33923,
+      "tools": [
+        "BILLING_ANALYTICS",
+        "system_execute_sql",
+        "server_skill",
+        "data_to_chart",
+        "PROPOSE_ACTION"
+      ],
+      "expectedTool": "BILLING_ANALYTICS",
+      "missing": [],
+      "answer": "Total open receivables were **BSD 16.8M** at 31 October 2026, spread across about 92,900 open items in the consumer and business ledgers (synthetic demo data).\n\n\n\n\n**What stands out**\n- **69% of the balance isn't due yet:** BSD 11.6M is current.\n- **BSD 1.1M (7%) is more than 60 days overdue,** split evenly between 61\u201390 days and 90+ days (BSD 0.55M each, about 4,500 items in total).\n- **The 1\u201330 day bucket is large, at BSD 3.1M.** If it isn't collected, it will move into the older buckets.\n\n**Recommended next steps**\n1. **Collections team:** start with the BSD 1.1M that is more than 60 days overdue. I've logged a proposed action for this, and it's waiting for approval.\n2. **Billing operations:** send automated reminders to the 1\u201330 day accounts before they age further.\n3. **Finance:** split the overdue debt by ledger (consumer vs business) and by island to see where the risk sits."
+    },
+    {
+      "question": "How many network sites and homes passed do we have?",
+      "pass": true,
+      "ms": 25180,
+      "tools": [
+        "NETWORK_ANALYTICS",
+        "system_execute_sql",
+        "data_to_chart"
+      ],
+      "expectedTool": "NETWORK_ANALYTICS",
+      "missing": [],
+      "answer": "As of 31 October 2026, we have **220 network sites** passing **140,000 homes** (synthetic demo data). Of those homes, 74,400 take REV fixed service, a take-up of about 53%.\n\n\n\n\n**What stands out**\n- **New Providence is most of the network:** it has 96 sites and 84,000 homes passed, which is 60% of all homes passed. It also has the highest take-up at 56.9%.\n- **Andros has the lowest take-up at 37.5%,** followed by Eleuthera at 42.7%. Those homes already have network reach, so there is room to sell more there.\n- **Grand Bahama is second:** 38 sites and 25,000 homes passed, with take-up of 50.4%.\n\n**Recommended next steps**\n1. Consumer marketing: run REVHome campaigns in Andros and Eleuthera to raise take-up where the network already reaches.\n2. Network planning: compare homes per site (about 330 on the Family Islands versus about 875 in New Providence) when deciding where to build next.\n3."
+    },
+    {
+      "question": "What was network availability in October?",
+      "pass": true,
+      "ms": 19789,
+      "tools": [
+        "NETWORK_ANALYTICS",
+        "system_execute_sql"
+      ],
+      "expectedTool": "NETWORK_ANALYTICS",
+      "missing": [],
+      "answer": "Network availability across all 220 sites was **99.94% in October 2026**, with 5,892 outage minutes in total (synthetic demo data).\n\n\n\n\n**What stands out**\n- Every island ran between 99.92% and 99.96%, so the gap between them is small.\n- Eleuthera had the lowest availability (99.922%), followed by Abaco (99.931%). Both have a lot of overhead (aerial) cable.\n- New Providence had 2,428 outage minutes, 41% of the total. That's mostly because it has the most sites (96). Its availability was still above the group figure, at 99.943%.\n\n**Recommended next steps**\n- **Network Operations:** look at the Eleuthera and Abaco sites with the most outage minutes to find whether a few sites caused most of the downtime.\n- **Regulatory:** check October's figures against the URCA quality-of-service targets before the filing due 10 November."
+    },
+    {
+      "question": "Are there any outages right now?",
+      "pass": true,
+      "ms": 18206,
+      "tools": [
+        "system_execute_sql",
+        "PROPOSE_ACTION"
+      ],
+      "expectedTool": "OPERATIONS_ANALYTICS",
+      "missing": [],
+      "answer": "Yes. **3 incidents are open** as of 31 October 2026 (synthetic data). Between them they affect **1,327 customers and 46 business accounts**. Two of the three are P1.\n\n\n\n\n**What stands out**\n- **Nassau East broadband (INC-30418, P1)** is the biggest. It has been open since 07:42 and affects 1,140 customers and 23 business accounts.\n- **Freeport business fibre (INC-30422, P1)** affects no consumers, but 23 business accounts are down, so service-level agreements are at risk.\n- **Marsh Harbour TV head-end (INC-30425, P2)** affects 187 customers on Abaco.\n\n**Recommended next steps**\n1. **Network operations centre:** escalate the fix for the faulty broadband node in Nassau East (CMTS-07), and have care send customers proactive SMS updates. I've logged this as a proposed action, which is waiting for approval.\n2. **B2B account managers:** contact the 23 Freeport business-fibre accounts directly "
+    },
+    {
+      "question": "Are we ready for hurricane season?",
+      "pass": true,
+      "ms": 28906,
+      "tools": [
+        "system_execute_sql",
+        "server_skill",
+        "PROPOSE_ACTION",
+        "data_to_chart"
+      ],
+      "expectedTool": "NETWORK_ANALYTICS",
+      "missing": [],
+      "answer": "**Partly. 3 of 7 islands are ready (New Providence, Eleuthera, Exuma). Generators cover 199 of 220 sites (90%) overall, but there are gaps on Grand Bahama, Abaco, Andros and the Family Islands.** This uses synthetic demo data as of 31 Oct 2026.\n\n\n\n\n**What stands out**\n- **Grand Bahama is the biggest risk.** Only 29 of its 38 sites (76%) have generators, so it is 9 short. It also has 260 km of aerial plant, the second most of any island.\n- **Abaco is 3,200 gallons short on fuel.** Andros has a crew gap. The Other Family Islands rely on ferries, and only 16 of their 20 sites have generators.\n- **New Providence is ready.** It has the most aerial plant (310 km) and generators at 94 of its 96 sites.\n\n**Recommended next steps**\n1. Network Operations should send the 9 missing generators to Grand Bahama, starting with the sites that serve the most subscribers.\n2. Logistics should pre-position 3,"
+    },
+    {
+      "question": "What is our URCA filing status?",
+      "pass": true,
+      "ms": 22006,
+      "tools": [
+        "system_execute_sql",
+        "PROPOSE_ACTION"
+      ],
+      "expectedTool": "OPERATIONS_ANALYTICS",
+      "missing": [],
+      "answer": "For Q3 2026 we hit **12 of 14 URCA quality-of-service targets**. The filing is due **10 November 2026**, one week from today. Both misses are 24-hour fault repair on Family Islands. (Synthetic demo data.)\n\n\n\n\n**What stands out**\n- **Andros** repaired 78% of faults within 24 hours and **Exuma** 81%, against a 90% target. Those are the only two misses.\n- **Grand Bahama** is exactly on target at 90%, so it has no room to slip. New Providence is at 92%.\n- Every network and customer-facing metric beats its target, including network availability (99.94%), dropped calls (0.42%) and installs within 10 days (91%).\n\n**Recommended next steps**\n1. **Field operations:** write a recovery plan for Andros and Exuma covering technician coverage, spare parts and travel times. I've logged a proposed action for this; it awaits approval.\n2. **Regulatory team:** draft the explanation for the two misses and in"
+    },
+    {
+      "question": "What is the open B2B pipeline?",
+      "pass": true,
+      "ms": 21516,
+      "tools": [
+        "B2B_ANALYTICS",
+        "system_execute_sql",
+        "data_to_chart"
+      ],
+      "expectedTool": "B2B_ANALYTICS",
+      "missing": [],
+      "answer": "As of 31 October 2026, the open B2B pipeline is **BSD 4.20M** in annual contract value, across **24 opportunities**. Weighted by win probability, it's about **BSD 1.90M** (synthetic demo data).\n\n\n\n\n**What stands out**\n- **The pipeline is spread evenly.** Each stage has 8 deals and between BSD 1.36M and 1.46M, so no single stage dominates.\n- **Negotiation is worth the most once weighted.** It holds BSD 0.97M of the weighted value, about 51% of the total, because its deals have the highest win probability.\n- **Qualification has the least weighted value.** It has BSD 1.36M of contract value but only BSD 0.27M weighted, so those deals need work before they count toward the forecast.\n\nThese figures are annual contract value, not recognised revenue, so don't add them to P&L revenue.\n\n**Recommended next steps**\n1. **B2B sales lead:** review the 8 Negotiation deals each week and try to close the"
+    },
+    {
+      "question": "What were the top reasons customers contacted us this month?",
+      "pass": true,
+      "ms": 33188,
+      "tools": [
+        "SERVICE_ANALYTICS",
+        "system_execute_sql",
+        "data_to_chart",
+        "PROPOSE_ACTION"
+      ],
+      "expectedTool": "SERVICE_ANALYTICS",
+      "missing": [],
+      "answer": "The top reason customers contacted us in October 2026 was **Slow speed / Wi-Fi, with 5,900 contacts (27.6%)**. Billing questions (4,700, 22.0%) and Outage / no service (3,800, 17.8%) came next. Together these three make up about two-thirds of the roughly 21,400 contacts (synthetic demo data).\n\n\n\n\n**What stands out**\n- **Speed and Wi-Fi problems lead.** This is the largest theme, and it has the best first-contact resolution of any theme (75.5%), so many of these contacts could be handled through digital self-help.\n- **Customers leaving for BTC.** 1,900 contacts (8.9%) were \"Cancel / switching to BTC\", and only 71.9% of them were resolved on the first contact.\n- **Satisfaction is flat.** Average satisfaction scores are about 3.9 for every theme. \"Other\" has the weakest first-contact resolution at 66.1%.\n\n**Recommended next steps**\n1. **Care operations:** Send all \"switching to BTC\" contact"
+    },
+    {
+      "question": "How much fraud loss did we avoid this month?",
+      "pass": true,
+      "ms": 32745,
+      "tools": [
+        "OPERATIONS_ANALYTICS",
+        "system_execute_sql",
+        "server_skill",
+        "data_to_chart"
+      ],
+      "expectedTool": "OPERATIONS_ANALYTICS",
+      "missing": [],
+      "answer": "We avoided **BSD 124,000 in fraud losses in October 2026**, across 104 fraud cases. Actual losses were BSD 11,000. This is synthetic demo data.\n\n\n\n\n**What stands out**\n- **SIM-swap attempts** account for about half the loss avoided (BSD 61,000 across 42 cases), and none of them led to a loss.\n- **Subscription fraud** has the weakest result. It caused the largest loss (BSD 6,800) and had the lowest loss avoided (BSD 25,000), so about 21% of its exposure got through.\n- **International revenue share fraud (IRSF)** avoided BSD 38,000 but still lost BSD 4,200. Across all fraud types, about 92% of exposure was stopped (124,000 of 135,000).\n\n**Recommended next steps**\n1. The fraud team should check which subscription-fraud cases got past onboarding and credit checks, and tighten ID checks for new postpaid lines and new REV accounts.\n2. Network security should review IRSF controls, such as call-"
+    },
+    {
+      "question": "Which products have the best direct margin?",
+      "pass": true,
+      "ms": 24047,
+      "tools": [
+        "PRODUCT_ANALYTICS",
+        "system_execute_sql",
+        "data_to_chart"
+      ],
+      "expectedTool": "PRODUCT_ANALYTICS",
+      "missing": [],
+      "answer": "**REV Business Fibre DIA has the highest direct margin, at BSD 250 per month** (BSD 420 price minus BSD 170 cost). REV Business 200 is second at BSD 77 and REVHome 1 Gig third at BSD 56. These are current catalogue prices from synthetic demo data.\n\n\n\n\n**What stands out**\n- Business products earn the most per unit: Fibre DIA makes over 3\u00d7 the margin of any other product.\n- By margin percentage, the ranking changes. REV Home Voice has the highest (65.0%) but earns only BSD 13 a month. REVHome 1 Gig is next at 62.9%.\n- REVHome 500 + TV has the lowest margin percentage (53.5%). Adding TV raises the price by BSD 30 over REVHome 500 but adds only BSD 11 of margin, because TV costs BSD 19 a month.\n\n**Recommended next steps**\n- **Consumer marketing:** move REVHome 100/250 customers up to REVHome 1 Gig, which adds BSD 21\u201328 of margin a month per upgrade.\n- **B2B sales:** prioritise pipeline deals"
+    },
+    {
+      "question": "What will the weather be in Nassau tomorrow?",
+      "pass": true,
+      "ms": 13620,
+      "tools": [],
+      "expectedTool": null,
+      "missing": [],
+      "answer": "I can't answer that. Weather forecasts aren't in the Cable Bahamas data, which covers customers, mobile, finance, billing, care, network, operations, B2B and products. For tomorrow's Nassau forecast, check the Bahamas Department of Meteorology or a weather service.\n\n**Questions I can answer instead**\n- **Hurricane readiness:** which New Providence network sites have generator backup gaps or low readiness scores.\n- **Weather-exposed network:** how much aerial plant (km) is at New Providence sites, and how many fixed subscribers those sites serve.\n- **Recent disruption:** October 2026 outage minutes and availability for Nassau sites, plus any open incidents and how many customers they affect.\n\nAll of these use synthetic demo data as of 31 October 2026. Just tell me which one you want."
+    }
+  ],
+  "avgSeconds": 24.6,
+  "actionsProposed": 8
+}
