@@ -42,7 +42,7 @@ const DEALS = [
   { deal: 'Media attribution bundle',    partner: 'Media Network',     value: 'BSD 0.8M', status: 'active',  lift: '+18%', expiry: '2026-12-31' },
   { deal: 'Bank propensity programme',   partner: 'Island Bank (demo)',         value: 'BSD 1.1M', status: 'review',  lift: '+31%', expiry: '2026-11-30' },
   { deal: 'Auto OEM data exchange',      partner: 'Auto OEM',          value: 'BSD 0.5M', status: 'active',  lift: '+14%', expiry: '2026-06-30' },
-  { deal: 'Benchmark B bundle attribution',     partner: 'Benchmark B The Bahamas',       value: 'BSD 0.3M', status: 'active',  lift: '+9%',  expiry: '2026-08-31' },
+  { deal: 'Rival ISP B bundle attribution',     partner: 'Rival ISP B The Bahamas',       value: 'BSD 0.3M', status: 'active',  lift: '+9%',  expiry: '2026-08-31' },
 ]
 
 const ACTIVATION_JOBS = [
@@ -50,7 +50,7 @@ const ACTIVATION_JOBS = [
   { job: 'Media reach & freq export',           partner: 'Media Network',     records: '410K', latency: '7 min',  status: 'done'    },
   { job: 'Bank propensity → CRM enrichment',    partner: 'Island Bank (demo)',         records: '180K', latency: '12 min', status: 'running' },
   { job: 'Auto OEM footprint → BI dashboard',  partner: 'Auto OEM',          records: '88K',  latency: '2 min',  status: 'done'    },
-  { job: 'Benchmark B attribution → campaign report', partner: 'Benchmark B The Bahamas',       records: '210K', latency: '5 min',  status: 'queued'  },
+  { job: 'Rival ISP B attribution → campaign report', partner: 'Rival ISP B The Bahamas',       records: '210K', latency: '5 min',  status: 'queued'  },
 ]
 
 const PRIVACY_EVENTS = [
@@ -66,7 +66,7 @@ const GOVERNANCE_CHECKS = [
   { check: 'k-anonymity threshold enforcement',   result: 'Pass',  last: '2026-06-28', owner: 'Privacy Eng' },
   { check: 'Differential privacy budget audit',   result: 'Watch', last: '2026-06-27', owner: 'Privacy Eng' },
   { check: 'Partner contract validity',           result: 'Pass',  last: '2026-06-01', owner: 'Legal'       },
-  { check: 'GDPR data residency (EU only)',        result: 'Pass',  last: '2026-06-01', owner: 'DPO'         },
+  { check: 'Data residency (Bahamas / US-East)',        result: 'Pass',  last: '2026-06-01', owner: 'DPO'         },
   { check: 'Analysis template approval pipeline', result: 'Pass',  last: '2026-05-31', owner: 'Data Gov'    },
 ]
 
@@ -897,7 +897,7 @@ export default function CleanRoomsPage() {
         <div className="grid md:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Governance checks')}  value="6/6"  delta={tt('5 pass · 1 watch')}    trend="up"   icon={ShieldCheck} accent />
           <KpiCard label={tt('PII row egress')}      value="0"    delta={tt('zero since inception')} trend="flat" icon={Lock}       />
-          <KpiCard label={tt('GDPR residency')}      value="Pass" delta={tt('all data EU only')}    trend="up"   icon={Globe2}     />
+          <KpiCard label={tt('DPA residency')}      value="Pass" delta={tt('all data in approved regions')}    trend="up"   icon={Globe2}     />
           <KpiCard label={tt('DPO sign-offs')}       value="4/4"  delta={tt('templates approved')}  trend="up"   icon={Users}      />
         </div>
 

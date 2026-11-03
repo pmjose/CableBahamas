@@ -212,7 +212,7 @@ const TICKER_ITEMS: { label: string; value: string; up?: boolean; down?: boolean
   { label: 'Freeport outage',    value: 'restored 09:30' },
   { label: 'Network peak',   value: `${KPI.corePeakTbps} Tbps` },
   { label: 'Island Bank (demo) framework',  value: 'WON · BSD 4.2M ARR', up: true },
-  { label: 'Benchmark B renewal',    value: 'BSD 18M · CEO sign-off' },
+  { label: 'Rival ISP B renewal',    value: 'BSD 18M · CEO sign-off' },
   { label: 'URCA M4',      value: 'response 14d' },
   { label: 'KEV CVEs open',  value: '2 · all in SLA' },
   { label: 'Fraud loss YTD', value: 'BSD 316K',  up: true },

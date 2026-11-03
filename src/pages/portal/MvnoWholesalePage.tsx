@@ -92,12 +92,12 @@ const REVENUE_SHARE_QUARTERLY = [
 ]
 
 const TARIFF_SCHEDULE = [
-  { product: 'Voice (national out)', unit: 'min', floorEur: 0.0012,  currentEur: 0.0018,  regulatory: 'URCA', margin: 33 },
-  { product: "Voice (int'l EU)",     unit: 'min', floorEur: 0.0040,  currentEur: 0.0055,  regulatory: 'RLAH', margin: 27 },
-  { product: 'Data (4G/5G)',         unit: 'MB',  floorEur: 0.00080, currentEur: 0.00115, regulatory: 'URCA', margin: 30 },
-  { product: 'SMS (national)',       unit: 'msg', floorEur: 0.00200, currentEur: 0.00290, regulatory: 'URCA', margin: 29 },
-  { product: 'MMS',                  unit: 'msg', floorEur: 0.01200, currentEur: 0.01650, regulatory: 'none', margin: 27 },
-  { product: 'VoLTE (HD)',           unit: 'min', floorEur: 0.0014,  currentEur: 0.0022,  regulatory: 'none', margin: 37 },
+  { product: 'Voice (national out)', unit: 'min', floorBsd: 0.0012,  currentBsd: 0.0018,  regulatory: 'URCA', margin: 33 },
+  { product: "Voice (int'l US)",     unit: 'min', floorBsd: 0.0040,  currentBsd: 0.0055,  regulatory: 'bundled', margin: 27 },
+  { product: 'Data (4G/5G)',         unit: 'MB',  floorBsd: 0.00080, currentBsd: 0.00115, regulatory: 'URCA', margin: 30 },
+  { product: 'SMS (national)',       unit: 'msg', floorBsd: 0.00200, currentBsd: 0.00290, regulatory: 'URCA', margin: 29 },
+  { product: 'MMS',                  unit: 'msg', floorBsd: 0.01200, currentBsd: 0.01650, regulatory: 'none', margin: 27 },
+  { product: 'VoLTE (HD)',           unit: 'min', floorBsd: 0.0014,  currentBsd: 0.0022,  regulatory: 'none', margin: 37 },
 ]
 
 const TRAFFIC_MONTHLY = [
@@ -180,7 +180,7 @@ export default function MvnoWholesalePage() {
   )
   const sortedTariffs = useMemo(
     () => [...TARIFF_SCHEDULE].sort((a, b) =>
-      tariffSort === 'margin' ? b.margin - a.margin : a.floorEur - b.floorEur),
+      tariffSort === 'margin' ? b.margin - a.margin : a.floorBsd - b.floorBsd),
     [tariffSort],
   )
   const slaBreaches = useMemo(() => SLA_METRICS.filter(p => p.status === 'breach'), [])
@@ -563,7 +563,7 @@ export default function MvnoWholesalePage() {
 
             <Panel title={tt('TowerCo thesis')}>
               <div className="text-sm text-vfes-dark/70">
-                {tt('8,420 owned towers at 1.62 tenancy ratio support a carve-out valuation of 18–22× EV/EBITDA based on comparable European TowerCo transactions. A carve-out would unlock capital while retaining anchor-tenant control.')}
+                {tt('160 owned towers at 1.38 tenancy ratio support a carve-out valuation of 18–22× EV/EBITDA based on comparable Caribbean TowerCo transactions. A carve-out would unlock capital while retaining anchor-tenant control.')}
               </div>
               <div className="mt-3 text-xs text-vfes-dark font-bold flex items-center gap-1">
                 <Brain className="w-3 h-3" /> {tt('See M&A Simulator for full carve-out NPV and leverage impact.')} <ChevronRight className="w-3 h-3" />
@@ -884,8 +884,8 @@ export default function MvnoWholesalePage() {
                     <tr key={t.product} className="border-b border-black/5 hover:bg-[#fafbfc]">
                       <td className="px-3 py-2 font-semibold">{tt(t.product)}</td>
                       <td className="px-3 py-2 text-right font-mono text-xs">{tt(t.unit)}</td>
-                      <td className="px-3 py-2 text-right font-mono">BSD {t.floorEur.toFixed(5)}</td>
-                      <td className="px-3 py-2 text-right font-mono">BSD {t.currentEur.toFixed(5)}</td>
+                      <td className="px-3 py-2 text-right font-mono">BSD {t.floorBsd.toFixed(5)}</td>
+                      <td className="px-3 py-2 text-right font-mono">BSD {t.currentBsd.toFixed(5)}</td>
                       <td className="px-3 py-2 text-xs">{t.regulatory}</td>
                       <td className="px-3 py-2 text-right font-mono font-bold"
                         style={{ color: t.margin >= 30 ? GREEN : AMBER }}>{t.margin}%</td>
@@ -895,7 +895,7 @@ export default function MvnoWholesalePage() {
               </table>
             </div>
             <div className="mt-3 text-xs text-vfes-dark/55">
-              {tt('Floor prices set by URCA/RLAH. Current tariffs must remain above floor. Margins calculated vs incremental cost.')}
+              {tt('Floor prices set by URCA/bundled. Current tariffs must remain above floor. Margins calculated vs incremental cost.')}
             </div>
           </Panel>
 
@@ -930,8 +930,8 @@ export default function MvnoWholesalePage() {
                   </thead>
                   <tbody>
                     {TARIFF_SCHEDULE.map(t => {
-                      const headroom = t.currentEur - t.floorEur
-                      const headroomPct = ((headroom / t.floorEur) * 100).toFixed(0)
+                      const headroom = t.currentBsd - t.floorBsd
+                      const headroomPct = ((headroom / t.floorBsd) * 100).toFixed(0)
                       return (
                         <tr key={t.product} className="border-b border-black/5 hover:bg-[#fafbfc]">
                           <td className="px-3 py-2 font-semibold">{tt(t.product)}</td>
@@ -944,7 +944,7 @@ export default function MvnoWholesalePage() {
                 </table>
               </div>
               <div className="mt-3 text-xs text-vfes-dark/55">
-                {tt('All tariffs maintain adequate headroom above URCA/RLAH floors. VoLTE (HD) has the most room for competitive adjustment.')}
+                {tt('All tariffs maintain adequate headroom above URCA/bundled floors. VoLTE (HD) has the most room for competitive adjustment.')}
               </div>
             </Panel>
           </Panel>

@@ -44,7 +44,7 @@ const MIX_TREND = [
 
 // ─── Dealer network ───────────────────────────────────────────────────────────
 const DEALERS = [
-  { dealer: 'New Providence Airlines Telecom Group', adds: 4200, quality: 92, commK: 168, status: 'gold',   region: 'Nassau',  ninety: 4.2 },
+  { dealer: 'Atlantis Resort Group', adds: 4200, quality: 92, commK: 168, status: 'gold',   region: 'Nassau',  ninety: 4.2 },
   { dealer: 'NoordConnect',          adds: 3100, quality: 88, commK: 121, status: 'gold',   region: 'Freeport',    ninety: 5.1 },
   { dealer: 'MediaMobile Stores',     adds: 2600, quality: 74, commK: 104, status: 'silver', region: 'Abaco',   ninety: 7.4 },
   { dealer: 'ZuidPhone Retail',       adds: 1800, quality: 61, commK:  78, status: 'watch',  region: 'Eleuthera',   ninety: 9.2 },

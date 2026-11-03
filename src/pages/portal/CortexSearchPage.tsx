@@ -32,9 +32,9 @@ const TOP_QUERIES = [
   { q: 'CMTS DOCSIS 4.0 reset procedure',                 calls: 246, hit_rate: '96%', service: 'KB_NETWORK_RUNBOOKS'  },
   { q: 'URCA complaint escalation policy',              calls: 184, hit_rate: '90%', service: 'KB_REGULATORY_FILINGS'},
   { q: 'Island Bank (demo) framework agreement renewal terms',     calls: 142, hit_rate: '78%', service: 'KB_LEGAL_CONTRACTS'   },
-  { q: 'GDPR DSAR fulfilment SOP',                        calls: 96,  hit_rate: '92%', service: 'KB_POLICIES_DOCS'     },
+  { q: 'DPA DSAR fulfilment SOP',                        calls: 96,  hit_rate: '92%', service: 'KB_POLICIES_DOCS'     },
   { q: '5G NR SA slice activation enterprise',            calls: 84,  hit_rate: '91%', service: 'KB_NETWORK_RUNBOOKS'  },
-  { q: 'roaming tariff The Bahamas-EU data cap 2025',           calls: 76,  hit_rate: '87%', service: 'KB_PRODUCT_CATALOG'   },
+  { q: 'roaming tariff The Bahamas-US data cap 2025',           calls: 76,  hit_rate: '87%', service: 'KB_PRODUCT_CATALOG'   },
 ]
 
 const LATENCY = Array.from({ length: 24 }, (_, i) => ({
@@ -888,8 +888,8 @@ export default function CortexSearchPage() {
               <div className="space-y-3 text-xs">
                 <div className="font-bold text-sm">{tt('Row-access & masking')}</div>
                 <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
-                  <div className="font-bold text-purple-900 mb-1">{tt('GDPR · URCA · NIS2')}</div>
-                  <div className="text-vfes-dark/70">{tt('All search results pass through the masking pipeline before returning to the agent. PII fields (MSISDN, NIF, address) are masked to GDPR-compliant tokens.')}</div>
+                  <div className="font-bold text-purple-900 mb-1">{tt('DPA · URCA · URCA cyber')}</div>
+                  <div className="text-vfes-dark/70">{tt('All search results pass through the masking pipeline before returning to the agent. PII fields (account number, NIB number, address) are masked to DPA-compliant tokens.')}</div>
                 </div>
                 <div className="p-3 bg-sky-50 rounded-lg border border-sky-200">
                   <div className="font-bold text-sky-900 mb-1">{tt('Row-access policies')}</div>
@@ -1035,7 +1035,7 @@ export default function CortexSearchPage() {
                   { date: '2026-06-20', svc: 'KB_PRODUCT_CATALOG',   change: 'Added 120 new SKU documents',             by: 'Product DS',   result: 'Docs 704 → 824'    },
                   { date: '2026-06-18', svc: 'KB_NETWORK_RUNBOOKS',  change: 'Added DOCSIS 4.0 runbook chapter',       by: 'Network Eng',  result: 'Docs +48'           },
                   { date: '2026-06-14', svc: 'KB_REGULATORY_FILINGS',change: 'URCA M4 filing indexed',                 by: 'Compliance',   result: 'New doc available'  },
-                  { date: '2026-06-10', svc: 'KB_LEGAL_CONTRACTS',   change: 'Belfius renewal contract added',             by: 'B2B Sales',    result: 'Docs +1'            },
+                  { date: '2026-06-10', svc: 'KB_LEGAL_CONTRACTS',   change: 'Commonwealth Bank (demo) renewal contract added',             by: 'B2B Sales',    result: 'Docs +1'            },
                   { date: '2026-06-05', svc: 'KB_POLICIES_DOCS',     change: 'HR policy v3.1 uploaded',                by: 'HR-BP',        result: 'Docs updated'       },
                 ].map(r => (
                   <tr key={r.date + r.svc} className="border-b border-black/5">
@@ -1075,7 +1075,7 @@ export default function CortexSearchPage() {
         </div>
         <div className="text-[10px] text-vfes-dark/40 flex items-center gap-2">
           <ShieldCheck className="w-3 h-3" />
-          {tt('All Cortex Search results pass through GDPR masking policies · URCA-compliant data handling · audit trail in CBL_GOV.AUDIT.ACCESS_HISTORY_V')}
+          {tt('All Cortex Search results pass through DPA masking policies · URCA-compliant data handling · audit trail in CBL_GOV.AUDIT.ACCESS_HISTORY_V')}
         </div>
       </div>
     </div>

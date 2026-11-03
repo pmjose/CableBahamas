@@ -367,7 +367,7 @@ export default function EnvironmentsPage() {
           </ResponsiveContainer>
         </Panel>
         <div className="mt-3 p-3 bg-zinc-50 rounded-lg border border-black/5 text-[11px] text-vfes-dark/60">
-          {tt('Cable Bahamas uses Snowflake Business Critical edition across all environments. PROD and DR run in AWS eu-west-1 with cross-region replication to eu-central-1. DEV and STAGE use zero-copy clones from PROD nightly. All environments share the same Snowflake organization for unified governance via RBAC and masking policies.')}
+          {tt('Cable Bahamas uses Snowflake Business Critical edition across all environments. PROD and DR run in AWS us-east-1 with cross-region replication to us-west-2. DEV and STAGE use zero-copy clones from PROD nightly. All environments share the same Snowflake organization for unified governance via RBAC and masking policies.')}
         </div>
       </>)}
 
@@ -1064,8 +1064,8 @@ export default function EnvironmentsPage() {
         <div>{tt('02:00 UTC nightly PROD release window')}</div>
       </div>
       <div className="mt-2 grid grid-cols-4 gap-2 text-[10px] text-vfes-dark/40">
-        <div>{tt('Snowflake Business Critical · AWS eu-west-1')}</div>
-        <div>{tt('DR: cross-region replication to eu-central-1')}</div>
+        <div>{tt('Snowflake Business Critical · AWS us-east-1')}</div>
+        <div>{tt('DR: cross-region replication to us-west-2')}</div>
         <div>{tt('Zero-copy clone provisioning: ~12s nightly')}</div>
         <div>{tt('Deploy risk model retrained weekly · 6-month window')}</div>
       </div>

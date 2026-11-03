@@ -202,7 +202,7 @@ const DBS: Db[] = [
         { name: 'KB_LEGAL_CONTRACTS',   type: 'cortex_search', desc: 'Doc AI parsed · 884 contracts' },
         { name: 'KB_CUSTOMER_KB',       type: 'cortex_search', desc: 'Customer service KB · 12,884 articles' },
         { name: 'KB_PRODUCT_CATALOG',   type: 'cortex_search', desc: 'Product specs · 3,212 SKUs' },
-        { name: 'KB_REGULATORY_FILINGS',type: 'cortex_search', desc: 'URCA + EU regulatory filings · 884 docs' },
+        { name: 'KB_REGULATORY_FILINGS',type: 'cortex_search', desc: 'URCA regulatory filings · 884 docs' },
       ]},
       { name: 'AGENTS', desc: 'Cortex Agents (Snowflake Intelligence tiles)', objects: [
         { name: 'CEO_BRIEFING_AGENT',  type: 'cortex_agent', steward: 'P. Jose',     desc: '2 tools (Analyst on EXEC_360_SV + Search on regulatory) · Claude 3.5 Sonnet' },
@@ -245,7 +245,7 @@ const DBS: Db[] = [
     schemas: [
       { name: 'INBOUND', objects: [
         { name: 'WEATHER_DAILY',       type: 'view', desc: 'Snowflake Marketplace · Tomorrow.io · daily' },
-        { name: 'STATBEL_POPULATION_2022', type: 'view', desc: 'Inbound · Statbel' },
+        { name: 'BAHAMAS_NSI_POPULATION_2022', type: 'view', desc: 'Inbound · Bahamas NSI' },
         { name: 'BSDOSTAT_TELCO',      type: 'view', desc: 'Marketplace · Knoema' },
         { name: 'COMPETITOR_PRICING',  type: 'view', desc: 'Private share from BrandAlytics' },
       ]},
@@ -695,7 +695,7 @@ export default function DataCatalogPage() {
               </tbody>
             </table>
             <div className="text-[11px] text-vfes-dark/65 mt-3">
-              {tt('SIM_SWAP_REQUESTS is the only Critical-sensitivity mobile asset (180K/day, eKYC-protected). MOBILE_LOCATION_EVENTS pending certification once GDPR retention DMF is automated.')}
+              {tt('SIM_SWAP_REQUESTS is the only Critical-sensitivity mobile asset (180K/day, eKYC-protected). MOBILE_LOCATION_EVENTS pending certification once DPA retention DMF is automated.')}
             </div>
           </Panel>
         </div>

@@ -26,15 +26,15 @@ export type Account = {
 }
 
 export const accounts: Account[] = [
-  { code: 'Belfius',    name: 'Belfius',          segment: 'Enterprise',        vertical: 'Banking',       region: 'Nassau',   mrr: 184000, arr: 2208000, sites: 320, circuits: 412, contractEnd: '2027-03', wault: 22, status: 'Healthy',  nps: 48, health: 88, ownerAE: 'Femke Adderley',  vertId: 1, exec: 'Wout Rolle'   },
-  { code: 'SN',     name: 'New Providence Airlines Group',  segment: 'Enterprise',        vertical: 'Travel',        region: 'New Providence',  mrr: 142000, arr: 1704000, sites: 18,  circuits: 64,  contractEnd: '2026-09', wault: 4,  status: 'Renewal',  nps: 31, health: 64, ownerAE: 'Daan Bethel',    vertId: 2, exec: 'Wout Rolle'   },
-  { code: 'PRIM',    name: 'Colruyt Group',            segment: 'Enterprise',        vertical: 'Retail',        region: 'National',  mrr: 96000,  arr: 1152000, sites: 38,  circuits: 76,  contractEnd: '2027-11', wault: 30, status: 'Healthy',  nps: 52, health: 82, ownerAE: 'Sofie Knowles', vertId: 3, exec: 'Wout Rolle'   },
+  { code: 'Commonwealth Bank (demo)',    name: 'Commonwealth Bank (demo)',          segment: 'Enterprise',        vertical: 'Banking',       region: 'Nassau',   mrr: 184000, arr: 2208000, sites: 320, circuits: 412, contractEnd: '2027-03', wault: 22, status: 'Healthy',  nps: 48, health: 88, ownerAE: 'Femke Adderley',  vertId: 1, exec: 'Wout Rolle'   },
+  { code: 'SN',     name: 'Atlantis Resort Group',  segment: 'Enterprise',        vertical: 'Travel',        region: 'New Providence',  mrr: 142000, arr: 1704000, sites: 18,  circuits: 64,  contractEnd: '2026-09', wault: 4,  status: 'Renewal',  nps: 31, health: 64, ownerAE: 'Daan Bethel',    vertId: 2, exec: 'Wout Rolle'   },
+  { code: 'PRIM',    name: 'Super Value Group (demo)',            segment: 'Enterprise',        vertical: 'Retail',        region: 'National',  mrr: 96000,  arr: 1152000, sites: 38,  circuits: 76,  contractEnd: '2027-11', wault: 30, status: 'Healthy',  nps: 52, health: 82, ownerAE: 'Sofie Knowles', vertId: 3, exec: 'Wout Rolle'   },
   { code: 'SNS',     name: 'BPost',                   segment: 'Enterprise',        vertical: 'Public',        region: 'National',  mrr: 78000,  arr: 936000,  sites: 240, circuits: 380, contractEnd: '2026-06', wault: 1,  status: 'Renewal',  nps: 12, health: 48, ownerAE: 'Public Team',  vertId: 4, exec: 'Wout Rolle'  },
   { code: 'TCD',     name: 'KU Eleuthera',               segment: 'Mid-Market',        vertical: 'Education',     region: 'Eleuthera',    mrr: 62000,  arr: 744000,  sites: 12,  circuits: 28,  contractEnd: '2028-08', wault: 39, status: 'Healthy',  nps: 56, health: 90, ownerAE: 'Lars Vermeulen', vertId: 5, exec: 'Thomas Knowles'  },
   { code: 'CRH',     name: 'Besix Group',             segment: 'Enterprise',        vertical: 'Manufacturing', region: 'Nassau',   mrr: 48000,  arr: 576000,  sites: 28,  circuits: 56,  contractEnd: '2026-08', wault: 3,  status: 'At Risk',  nps: -8, health: 38, ownerAE: 'Daan Bethel',    vertId: 6, exec: 'Wout Rolle'   },
   { code: 'Island Bank (demo)',     name: 'Island Bank (demo) Bank',                segment: 'Enterprise',        vertical: 'Banking',       region: 'Nassau',   mrr: 156000, arr: 1872000, sites: 280, circuits: 360, contractEnd: '2027-01', wault: 20, status: 'Healthy',  nps: 44, health: 84, ownerAE: 'Femke Adderley',  vertId: 1, exec: 'Wout Rolle'   },
-  { code: 'Island Bank (demo)_OLD', name: 'BNP Paribas Fortis',      segment: 'Mid-Market',        vertical: 'Banking',       region: 'New Providence',  mrr: 22000,  arr: 264000,  sites: 14,  circuits: 24,  contractEnd: '2025-12', wault: -5, status: 'Churned',  nps: -22, health: 12, ownerAE: 'Femke Adderley', vertId: 1, exec: 'Wout Rolle'   },
-  { code: 'SUPERV',  name: 'Delhaize Group',          segment: 'Enterprise',        vertical: 'Retail',        region: 'Freeport',     mrr: 88000,  arr: 1056000, sites: 220, circuits: 240, contractEnd: '2027-05', wault: 24, status: 'Healthy',  nps: 39, health: 78, ownerAE: 'Sofie Knowles', vertId: 3, exec: 'Thomas Knowles'  },
+  { code: 'Island Bank (demo)_OLD', name: 'Scotiabank Bahamas (demo)',      segment: 'Mid-Market',        vertical: 'Banking',       region: 'New Providence',  mrr: 22000,  arr: 264000,  sites: 14,  circuits: 24,  contractEnd: '2025-12', wault: -5, status: 'Churned',  nps: -22, health: 12, ownerAE: 'Femke Adderley', vertId: 1, exec: 'Wout Rolle'   },
+  { code: 'SUPERV',  name: 'AML Foods (demo)',          segment: 'Enterprise',        vertical: 'Retail',        region: 'Freeport',     mrr: 88000,  arr: 1056000, sites: 220, circuits: 240, contractEnd: '2027-05', wault: 24, status: 'Healthy',  nps: 39, health: 78, ownerAE: 'Sofie Knowles', vertId: 3, exec: 'Thomas Knowles'  },
   { code: 'DUNNES',  name: 'Carrefour The Bahamas',       segment: 'Enterprise',        vertical: 'Retail',        region: 'Nassau',   mrr: 64000,  arr: 768000,  sites: 142, circuits: 158, contractEnd: '2026-11', wault: 6,  status: 'Watch',    nps: 21, health: 60, ownerAE: 'Sofie Knowles', vertId: 3, exec: 'Thomas Knowles'  },
   { code: 'INTEL',   name: 'Island Manufacturing (demo)',              segment: 'Enterprise',        vertical: 'Tech',          region: 'Andros',  mrr: 220000, arr: 2640000, sites: 4,   circuits: 48,  contractEnd: '2028-02', wault: 33, status: 'Healthy',  nps: 61, health: 92, ownerAE: 'Lars Vermeulen', vertId: 10, exec: 'Wout Rolle'  },
   { code: 'PFIZER',  name: 'UCB Pharma',              segment: 'Enterprise',        vertical: 'Healthcare',    region: 'Freeport',     mrr: 110000, arr: 1320000, sites: 6,   circuits: 32,  contractEnd: '2027-10', wault: 29, status: 'Healthy',  nps: 49, health: 86, ownerAE: 'Lars Vermeulen', vertId: 7, exec: 'Wout Rolle'   },
@@ -42,11 +42,11 @@ export const accounts: Account[] = [
   { code: 'IBEC',    name: 'VBO-FEB',                 segment: 'Mid-Market',        vertical: 'Public',        region: 'New Providence',  mrr: 18000,  arr: 216000,  sites: 6,   circuits: 12,  contractEnd: '2027-04', wault: 23, status: 'Healthy',  nps: 51, health: 82, ownerAE: 'Public Team',  vertId: 4, exec: 'Thomas Knowles' },
   { code: 'JURYS',   name: 'Van der Valk The Bahamas',    segment: 'Mid-Market',        vertical: 'Hospitality',   region: 'Nassau',   mrr: 36000,  arr: 432000,  sites: 22,  circuits: 28,  contractEnd: '2026-10', wault: 5,  status: 'Watch',    nps: 18, health: 58, ownerAE: 'Daan Bethel',    vertId: 8, exec: 'Thomas Knowles'  },
   { code: 'RTE',     name: 'Local broadcaster',                     segment: 'Enterprise',        vertical: 'Media',         region: 'New Providence',  mrr: 58000,  arr: 696000,  sites: 8,   circuits: 22,  contractEnd: '2027-07', wault: 26, status: 'Healthy',  nps: 42, health: 80, ownerAE: 'Lars Vermeulen', vertId: 9, exec: 'Thomas Knowles'  },
-  { code: 'VHI',     name: 'Belfius Insurance',       segment: 'Enterprise',        vertical: 'Healthcare',    region: 'New Providence',  mrr: 72000,  arr: 864000,  sites: 9,   circuits: 24,  contractEnd: '2026-07', wault: 2,  status: 'At Risk',  nps: -3, health: 42, ownerAE: 'Lars Vermeulen', vertId: 7, exec: 'Wout Rolle'   },
+  { code: 'VHI',     name: 'Family Guardian (demo)',       segment: 'Enterprise',        vertical: 'Healthcare',    region: 'New Providence',  mrr: 72000,  arr: 864000,  sites: 9,   circuits: 24,  contractEnd: '2026-07', wault: 2,  status: 'At Risk',  nps: -3, health: 42, ownerAE: 'Lars Vermeulen', vertId: 7, exec: 'Wout Rolle'   },
   { code: 'EIR_W',   name: 'BTC (wholesale)',    segment: 'Wholesale-Carrier', vertical: 'Tech',          region: 'National',  mrr: 240000, arr: 2880000, sites: 0,   circuits: 1820, contractEnd: '2027-12', wault: 31, status: 'Healthy', nps: 22, health: 72, ownerAE: 'Wholesale Desk', vertId: 10, exec: 'Anke Ferguson' },
-  { code: 'BT_W',    name: 'Benchmark A The Bahamas (wholesale)', segment: 'Wholesale-Carrier', vertical: 'Tech',       region: 'National',  mrr: 168000, arr: 2016000, sites: 0,   circuits: 920,  contractEnd: '2026-12', wault: 7,  status: 'Renewal', nps: 18, health: 68, ownerAE: 'Wholesale Desk', vertId: 10, exec: 'Anke Ferguson' },
-  { code: 'DGI_W',   name: 'Benchmark B (wholesale)',         segment: 'Wholesale-Carrier', vertical: 'Media',         region: 'National',  mrr: 132000, arr: 1584000, sites: 0,   circuits: 640,  contractEnd: '2027-06', wault: 25, status: 'Healthy', nps: 31, health: 76, ownerAE: 'Wholesale Desk', vertId: 9, exec: 'Anke Ferguson' },
-  { code: 'THREE_W', name: 'Benchmark C (wholesale)',          segment: 'Wholesale-Carrier', vertical: 'Tech',          region: 'National',  mrr: 96000,  arr: 1152000, sites: 0,   circuits: 380,  contractEnd: '2026-08', wault: 3,  status: 'At Risk', nps: 4, health: 44, ownerAE: 'Wholesale Desk', vertId: 10, exec: 'Anke Ferguson' },
+  { code: 'BT_W',    name: 'Rival ISP A The Bahamas (wholesale)', segment: 'Wholesale-Carrier', vertical: 'Tech',       region: 'National',  mrr: 168000, arr: 2016000, sites: 0,   circuits: 920,  contractEnd: '2026-12', wault: 7,  status: 'Renewal', nps: 18, health: 68, ownerAE: 'Wholesale Desk', vertId: 10, exec: 'Anke Ferguson' },
+  { code: 'DGI_W',   name: 'Rival ISP B (wholesale)',         segment: 'Wholesale-Carrier', vertical: 'Media',         region: 'National',  mrr: 132000, arr: 1584000, sites: 0,   circuits: 640,  contractEnd: '2027-06', wault: 25, status: 'Healthy', nps: 31, health: 76, ownerAE: 'Wholesale Desk', vertId: 9, exec: 'Anke Ferguson' },
+  { code: 'THREE_W', name: 'Rival ISP C (wholesale)',          segment: 'Wholesale-Carrier', vertical: 'Tech',          region: 'National',  mrr: 96000,  arr: 1152000, sites: 0,   circuits: 380,  contractEnd: '2026-08', wault: 3,  status: 'At Risk', nps: 4, health: 44, ownerAE: 'Wholesale Desk', vertId: 10, exec: 'Anke Ferguson' },
   { code: 'AWS',     name: 'AWS (Cloud Connect)',      segment: 'Wholesale-Infra',   vertical: 'Tech',          region: 'Nassau',   mrr: 280000, arr: 3360000, sites: 0,   circuits: 24,   contractEnd: '2028-12', wault: 43, status: 'Healthy', nps: 64, health: 94, ownerAE: 'Cloud Desk',     vertId: 10, exec: 'Anke Ferguson' },
   { code: 'AZURE',   name: 'Microsoft Azure (ER)',     segment: 'Wholesale-Infra',   vertical: 'Tech',          region: 'Nassau',   mrr: 220000, arr: 2640000, sites: 0,   circuits: 18,   contractEnd: '2028-04', wault: 35, status: 'Healthy', nps: 58, health: 90, ownerAE: 'Cloud Desk',     vertId: 10, exec: 'Anke Ferguson' },
   { code: 'GOOG',    name: 'Google Interconnect',      segment: 'Wholesale-Infra',   vertical: 'Tech',          region: 'Nassau',   mrr: 142000, arr: 1704000, sites: 0,   circuits: 12,   contractEnd: '2027-09', wault: 28, status: 'Healthy', nps: 55, health: 88, ownerAE: 'Cloud Desk',     vertId: 10, exec: 'Anke Ferguson' },
@@ -93,9 +93,9 @@ export const winLoss = [
   { vs: 'BTC',      won: 86, lost: 64, neutral: 12 },
   { vs: 'Cable Bahamas Biz', won: 72, lost: 58, neutral: 8 },
   { vs: 'BT The Bahamas', won: 38, lost: 42, neutral: 4 },
-  { vs: 'Benchmark B Biz',  won: 28, lost: 18, neutral: 6 },
+  { vs: 'Rival ISP B Biz',  won: 28, lost: 18, neutral: 6 },
   { vs: 'Adamo',  won: 24, lost: 12, neutral: 4 },
-  { vs: 'Benchmark C Biz', won: 18, lost: 22, neutral: 3 },
+  { vs: 'Rival ISP C Biz', won: 18, lost: 22, neutral: 3 },
   { vs: 'Colt',     won:  6, lost: 14, neutral: 2 },
 ]
 
@@ -130,9 +130,9 @@ export const installBacklog = [
 // Wholesale interconnect (BSD K MoM net settlement; +ve = Cable Bahamas earns)
 export const interconnect = [
   { peer: 'BTC',     net:  +84, minutes: 124, mtr: 0.0049 },
-  { peer: 'Benchmark C',        net:  +62, minutes:  88, mtr: 0.0049 },
+  { peer: 'Rival ISP C',        net:  +62, minutes:  88, mtr: 0.0049 },
   { peer: 'Tele2 The Bahamas', net:  -28, minutes:  54, mtr: 0.0049 },
-  { peer: 'Benchmark B',           net:  +18, minutes:  22, mtr: 0.0049 },
+  { peer: 'Rival ISP B',           net:  +18, minutes:  22, mtr: 0.0049 },
   { peer: 'Colt',        net:  +44, minutes:  72, mtr: 0.0049 },
   { peer: 'BT UK',        net:  +12, minutes:  28, mtr: 0.0044 },
   { peer: 'Tata Comms',   net:  -18, minutes:  48, mtr: 0.0038 },
@@ -282,8 +282,8 @@ export const regulatory = [
   { item: 'SMP Market 3b (FTTH wholesale)', status: 'Compliant',    risk: 'Medium', next: '2026-08 margin-squeeze' },
   { item: 'SMP Market 4 (Leased lines)',    status: 'Investigation', risk: 'High',   next: 'URCA case 26-04' },
   { item: 'USO net cost claim',             status: 'Filed',        risk: 'Medium', next: '2026-10 decision' },
-  { item: 'NIS2 self-assessment',           status: 'Compliant',    risk: 'Low',    next: '2027-01 review' },
-  { item: 'DORA (financial customers)',     status: 'On track',     risk: 'Medium', next: '2026-12 deadline' },
+  { item: 'URCA cyber self-assessment',           status: 'Compliant',    risk: 'Low',    next: '2027-01 review' },
+  { item: 'CBOB IT risk guidelines (bank customers)',     status: 'On track',     risk: 'Medium', next: '2026-12 deadline' },
 ]
 
 // =============================================================================
@@ -397,7 +397,7 @@ export function buildAccountDetails(code: string): AccountDetails {
   const slaAvg = slaHistory.reduce((a, b) => a + b.uptime, 0) / slaHistory.length
   if (slaAvg < 99.95) flags.push({ kind: 'sla', severity: 'warn', text: `SLA avg ${slaAvg.toFixed(3)}% below 99.95 threshold` })
   if (ar[3].amt + ar[4].amt > acc.mrr * 0.1) flags.push({ kind: 'churn', severity: 'warn', text: `AR aged 60+ exceeds 10% of MRR` })
-  if (acc.vertical === 'Banking') flags.push({ kind: 'reg', severity: 'info', text: `DORA reporting required – financial customer` })
+  if (acc.vertical === 'Banking') flags.push({ kind: 'reg', severity: 'info', text: `CBOB IT risk reporting required – financial customer` })
   if (acc.vertical === 'Public') flags.push({ kind: 'reg', severity: 'info', text: `OGP framework dependency – tender renewal exposure` })
   if (acc.segment === 'Enterprise' && r() > 0.5) flags.push({ kind: 'esg', severity: 'info', text: `Scope-3 reporting requested – preparing emissions disclosure` })
   if (r() > 0.6) flags.push({ kind: 'comp', severity: 'info', text: `Competitor (BTC Biz / Cable Bahamas Biz) approached IT Director` })
@@ -406,7 +406,7 @@ export function buildAccountDetails(code: string): AccountDetails {
   const playPool = [
     { play: 'DIA upgrade 1G → 10G',     rationale: 'Utilisation >78% peak',    tcv: Math.round(acc.mrr * 6  * (1 + r())), prob: 0.4 + r() * 0.4 },
     { play: 'SD-WAN refresh',           rationale: 'MPLS contract maturing',  tcv: Math.round(acc.mrr * 8  * (1 + r())), prob: 0.3 + r() * 0.4 },
-    { play: 'Cyber/SASE bolt-on',       rationale: 'NIS2 readiness gap',      tcv: Math.round(acc.mrr * 4  * (1 + r())), prob: 0.4 + r() * 0.3 },
+    { play: 'Cyber/SASE bolt-on',       rationale: 'URCA cyber readiness gap',      tcv: Math.round(acc.mrr * 4  * (1 + r())), prob: 0.4 + r() * 0.3 },
     { play: 'Cloud Connect (Azure ER)', rationale: 'O365 latency complaints', tcv: Math.round(acc.mrr * 3  * (1 + r())), prob: 0.5 + r() * 0.3 },
     { play: 'Mobile fleet consolidation',rationale: 'Multi-vendor inefficient',tcv: Math.round(acc.mrr * 5  * (1 + r())), prob: 0.3 + r() * 0.4 },
     { play: 'Managed UCaaS (Teams DR)', rationale: 'Legacy PBX EoL 2027',     tcv: Math.round(acc.mrr * 3  * (1 + r())), prob: 0.4 + r() * 0.4 },

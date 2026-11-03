@@ -22,55 +22,55 @@ const TS = { background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, f
 
 // ─── Existing deal pipeline (preserved) ──────────────────────────────────────
 const DEALS = [
-  { deal: 'TowerCo carve-out',     ev: 4200, ebitda: 230, multiple: 18.3, type: 'divest',  status: 'Active'   },
-  { deal: 'FTTH JV (50/50)',        ev: 2800, ebitda: 175, multiple: 16.0, type: 'jv',      status: 'LOI'      },
-  { deal: 'Fixed-wireless swap',   ev:  640, ebitda:  48, multiple: 13.3, type: 'swap',    status: 'Exploring'},
-  { deal: 'MVNO acquisition',      ev:  380, ebitda:  31, multiple: 12.3, type: 'acquire', status: 'Active'   },
+  { deal: 'TowerCo carve-out',     ev:   77, ebitda: 6.4, multiple: 12.0, type: 'divest',  status: 'Active'   },
+  { deal: 'FTTH JV (50/50)',        ev:   60, ebitda: 5.5, multiple: 10.9, type: 'jv',      status: 'LOI'      },
+  { deal: 'Fixed-wireless swap',   ev:   12, ebitda: 1.5, multiple:  8.0, type: 'swap',    status: 'Exploring'},
+  { deal: 'MVNO acquisition',      ev:    8, ebitda: 1.1, multiple:  7.3, type: 'acquire', status: 'Active'   },
 ]
 
 // ─── Existing NPV sensitivity tornado (preserved) ────────────────────────────
 const TORNADO = [
-  { driver: 'EV/EBITDA multiple ±2×', swing: 920 },
-  { driver: 'Tenancy ratio ±0.2',     swing: 540 },
-  { driver: 'Tower count ±10%',        swing: 410 },
-  { driver: 'Leaseback term ±2y',      swing: 380 },
-  { driver: 'Lease escalator ±50bps',  swing: 210 },
+  { driver: 'EV/EBITDA multiple ±2×', swing: 13 },
+  { driver: 'Tenancy ratio ±0.2',     swing:  8 },
+  { driver: 'Tower count ±10%',        swing:  7 },
+  { driver: 'Leaseback term ±2y',      swing:  6 },
+  { driver: 'Lease escalator ±50bps',  swing:  3 },
 ].sort((a, b) => b.swing - a.swing)
 
 // ─── Target screening ─────────────────────────────────────────────────────────
 const TARGETS = [
-  { name: 'TowerCo The Bahamas',      type: 'Infrastructure',  ev: 4200, evEbitda: 18.3, synergy: 120, strategic: 'High',   fcfImpact: '+BSD 8M',  riskLevel: 'Low'    },
-  { name: 'FTTH NetCo JV',       type: 'Fixed network',   ev: 2800, evEbitda: 16.0, synergy: 95,  strategic: 'High',   fcfImpact: '+BSD 6M',  riskLevel: 'Low'    },
-  { name: 'CloudCom SME MVNO',   type: 'Mobile virtual',  ev:  380, evEbitda: 12.3, synergy: 42,  strategic: 'Medium', fcfImpact: '+BSD 3M',  riskLevel: 'Medium' },
-  { name: 'FWA Swap — Rural Out Islands',  type: 'Asset swap',      ev:  640, evEbitda: 13.3, synergy: 28,  strategic: 'Low',    fcfImpact: '+BSD 2M',  riskLevel: 'Low'    },
-  { name: 'IoT Platform (SaaS)', type: 'Digital B2B',     ev:  220, evEbitda: 22.0, synergy: 15,  strategic: 'Medium', fcfImpact: '+BSD 1M',  riskLevel: 'High'   },
-  { name: 'EdgeDC (4 sites)',    type: 'Edge compute',    ev:  480, evEbitda: 14.8, synergy: 32,  strategic: 'Medium', fcfImpact: '+BSD 3M',  riskLevel: 'Medium' },
+  { name: 'TowerCo The Bahamas',      type: 'Infrastructure',  ev:   77, evEbitda: 12.0, synergy: 2.5, strategic: 'High',   fcfImpact: '+BSD 1.2M',  riskLevel: 'Low'    },
+  { name: 'FTTH NetCo JV',       type: 'Fixed network',   ev:   60, evEbitda: 10.9, synergy: 2,   strategic: 'High',   fcfImpact: '+BSD 0.9M',  riskLevel: 'Low'    },
+  { name: 'CloudCom SME MVNO',   type: 'Mobile virtual',  ev:    8, evEbitda:  7.3, synergy: 1,   strategic: 'Medium', fcfImpact: '+BSD 0.4M',  riskLevel: 'Medium' },
+  { name: 'FWA Swap — Rural Out Islands',  type: 'Asset swap',      ev:   12, evEbitda:  8.0, synergy: 0.5, strategic: 'Low',    fcfImpact: '+BSD 0.3M',  riskLevel: 'Low'    },
+  { name: 'IoT Platform (SaaS)', type: 'Digital B2B',     ev:    5, evEbitda: 15.0, synergy: 0.5, strategic: 'Medium', fcfImpact: '+BSD 0.1M',  riskLevel: 'High'   },
+  { name: 'EdgeDC (4 sites)',    type: 'Edge compute',    ev:   10, evEbitda: 10.0, synergy: 0.5, strategic: 'Medium', fcfImpact: '+BSD 0.4M',  riskLevel: 'Medium' },
 ]
 
 // ─── Synergy model ────────────────────────────────────────────────────────────
 const SYNERGY_PHASES = [
-  { yr: 'Y1', costSyn: 20, revSyn: 5,  oneOff: 35 },
-  { yr: 'Y2', costSyn: 55, revSyn: 18, oneOff: 15 },
-  { yr: 'Y3', costSyn: 80, revSyn: 38, oneOff: 8  },
-  { yr: 'Y4', costSyn: 95, revSyn: 52, oneOff: 3  },
-  { yr: 'Y5', costSyn: 105, revSyn: 62, oneOff: 0 },
+  { yr: 'Y1', costSyn: 0.4, revSyn: 0.1, oneOff: 0.7 },
+  { yr: 'Y2', costSyn: 1.1, revSyn: 0.4, oneOff: 0.3 },
+  { yr: 'Y3', costSyn: 1.6, revSyn: 0.8, oneOff: 0.2 },
+  { yr: 'Y4', costSyn: 1.9, revSyn: 1.0, oneOff: 0.1 },
+  { yr: 'Y5', costSyn: 2.1, revSyn: 1.2, oneOff: 0   },
 ]
 
 // ─── Financing mix ────────────────────────────────────────────────────────────
 const FINANCING_MIX = [
-  { name: 'Senior debt',     pct: 45, cost: 3.2, color: NAVY   },
-  { name: 'Hybrid bond',     pct: 20, cost: 5.4, color: BLUE   },
-  { name: 'Equity proceeds', pct: 20, cost: 9.2, color: PURPLE },
+  { name: 'Senior debt',     pct: 45, cost: 6.1, color: NAVY   },
+  { name: 'Private-placement bond', pct: 20, cost: 7.5, color: BLUE   },
+  { name: 'Equity proceeds', pct: 20, cost: 12.5, color: PURPLE },
   { name: 'Asset disposal',  pct: 15, cost: 0.0, color: GREEN  },
 ]
 
 // ─── Valuation comps ─────────────────────────────────────────────────────────
 const TOWER_COMPS = [
-  { co: 'SPIE (BSD)',    evEbitda: 21.4, yield: 3.8, color: SLATE  },
-  { co: 'ATC Europe',      evEbitda: 20.1, yield: 4.1, color: SLATE  },
-  { co: 'Vantage Towers',  evEbitda: 19.2, yield: 4.4, color: BLUE   },
-  { co: 'Cable Bahamas TowerCo (target)', evEbitda: 18.3, yield: 4.7, color: GREEN },
-  { co: 'Telxius residual', evEbitda: 17.1, yield: 5.0, color: SLATE },
+  { co: 'SBA Communications',    evEbitda: 21.4, yield: 3.8, color: SLATE  },
+  { co: 'Digicel Tower Co', evEbitda: 13.5, yield: 6.0, color: SLATE  },
+  { co: 'Phoenix Tower Intl (Caribbean)', evEbitda: 12.8, yield: 6.4, color: BLUE   },
+  { co: 'Cable Bahamas TowerCo (target)', evEbitda: 12.0, yield: 6.8, color: GREEN },
+  { co: 'Island Field Services (demo) residual', evEbitda: 10.5, yield: 7.4, color: SLATE },
 ]
 
 const ACCRETION_CURVE = [
@@ -84,15 +84,15 @@ const ACCRETION_CURVE = [
 
 // ─── Deal scenarios ───────────────────────────────────────────────────────────
 const SCENARIOS = [
-  { name: 'Base case',   ev: 4200, towers: 8420, multiple: 18.3, synergy: 160, delevX: 1.8, epsY3: '+0.7%', prob: 55 },
-  { name: 'Bull case',   ev: 4800, towers: 8420, multiple: 21.0, synergy: 200, delevX: 2.1, epsY3: '+1.8%', prob: 25 },
-  { name: 'Bear case',   ev: 3500, towers: 7000, multiple: 15.2, synergy: 100, delevX: 1.2, epsY3: '-0.2%', prob: 20 },
+  { name: 'Base case',   ev:   77, towers: 160, multiple: 12.0, synergy: 3.3, delevX: 0.55, epsY3: '+0.7%', prob: 55 },
+  { name: 'Bull case',   ev:   90, towers: 160, multiple: 14.0, synergy: 4.0, delevX: 0.70, epsY3: '+1.8%', prob: 25 },
+  { name: 'Bear case',   ev:   58, towers: 130, multiple: 10.0, synergy: 2.0, delevX: 0.30, epsY3: '-0.2%', prob: 20 },
 ]
 
 // ─── Due diligence tracker ────────────────────────────────────────────────────
 const DD_WORKSTREAMS = [
   { stream: 'Financial (VDD)',    lead: 'EY',              complete: 92, status: 'Active',   eta: 'Jul 15' },
-  { stream: 'Legal / Regulatory', lead: 'Stibbe',    complete: 78, status: 'Active',   eta: 'Jul 22' },
+  { stream: 'Legal / Regulatory', lead: 'Higgs & Johnson (demo)',complete: 78, status: 'Active',   eta: 'Jul 22' },
   { stream: 'Commercial / IMS',   lead: 'McKinsey',       complete: 88, status: 'Active',   eta: 'Jul 12' },
   { stream: 'Tax & Structures',   lead: 'Deloitte',       complete: 65, status: 'Active',   eta: 'Jul 28' },
   { stream: 'IT / Network',       lead: 'Internal CTO',   complete: 70, status: 'Watch',    eta: 'Aug 5'  },
@@ -101,20 +101,20 @@ const DD_WORKSTREAMS = [
 
 // ─── Leverage bridge post-deal ────────────────────────────────────────────────
 const LEVERAGE_BRIDGE = [
-  { step: 'Pre-deal leverage',   val: 2.60,  type: 'open' },
-  { step: 'Tower EBITDA out',    val: 0.13,  type: 'neg'  },
-  { step: 'Debt repaid',         val: -1.40, type: 'pos'  },
-  { step: 'Interest saved',      val: -0.08, type: 'pos'  },
-  { step: 'Post-deal leverage',  val: 1.25,  type: 'close'},
+  { step: 'Pre-deal leverage',   val: 3.17,  type: 'open' },
+  { step: 'Tower EBITDA out',    val: 0.45,  type: 'neg'  },
+  { step: 'Debt repaid',         val: -0.95, type: 'pos'  },
+  { step: 'Interest saved',      val: -0.05, type: 'pos'  },
+  { step: 'Post-deal leverage',  val: 2.62,  type: 'close'},
 ]
 
 // ─── Post-close synergy waterfall ────────────────────────────────────────────
 const SYNERGY_WATERFALL = [
-  { item: 'Cost synergies Y5',  value:  105, type: 'pos' },
-  { item: 'Revenue synergies',  value:   62, type: 'pos' },
-  { item: 'One-off costs',      value:  -61, type: 'neg' },
-  { item: 'Tax leakage',        value:  -18, type: 'neg' },
-  { item: 'Net run-rate NPV',   value:  600, type: 'total'},
+  { item: 'Cost synergies Y5',  value:  2.1, type: 'pos' },
+  { item: 'Revenue synergies',  value:  1.2, type: 'pos' },
+  { item: 'One-off costs',      value: -1.3, type: 'neg' },
+  { item: 'Tax leakage',        value: -0.4, type: 'neg' },
+  { item: 'Net run-rate NPV',   value:   12, type: 'total'},
 ]
 
 // ─── Tabs ─────────────────────────────────────────────────────────────────────
@@ -134,9 +134,9 @@ export default function MaSimulatorPage() {
   const [tab, setTab] = useState<TabId>('overview')
 
   // Existing sliders (preserved)
-  const [towers, setTowers] = useState(8420)
-  const [multiple, setMultiple] = useState(18)
-  const [tenancy, setTenancy] = useState(1.62)
+  const [towers, setTowers] = useState(160)
+  const [multiple, setMultiple] = useState(12)
+  const [tenancy, setTenancy] = useState(1.38)
   const [retainPct, setRetainPct] = useState(100)
 
   // New interactive controls
@@ -154,41 +154,41 @@ export default function MaSimulatorPage() {
   }, [])
 
   // ─── Core model (existing, preserved) ─────────────────────────────────────
-  const ebitdaPerTower = 0.0273
+  const ebitdaPerTower = 0.04
   const towerEbitda = useMemo(
-    () => towers * ebitdaPerTower * (tenancy / 1.62),
+    () => towers * ebitdaPerTower * (tenancy / 1.38),
     [towers, tenancy],
   )
   const ev = useMemo(() => towerEbitda * multiple, [towerEbitda, multiple])
-  const leasebackCost = useMemo(() => towers * 0.012 * (retainPct / 100), [towers, retainPct])
+  const leasebackCost = useMemo(() => towers * 0.025 * (retainPct / 100), [towers, retainPct])
   const netProceeds = useMemo(() => ev - leasebackCost * 8, [ev, leasebackCost])
 
-  const groupEbitda = 1760
-  const netDebt = 4900
+  const groupEbitda = 51.1
+  const netDebt = 162
   const leverageBefore = useMemo(() => netDebt / groupEbitda, [])
   const leverageAfter = useMemo(
     () => (netDebt - netProceeds) / (groupEbitda - towerEbitda),
     [netProceeds, towerEbitda],
   )
-  const interestSaved = useMemo(() => netProceeds * 0.045, [netProceeds])
+  const interestSaved = useMemo(() => netProceeds * 0.061, [netProceeds])
   const epsDelta = useMemo(
     () => ((interestSaved - towerEbitda) / groupEbitda) * 100,
     [interestSaved, towerEbitda],
   )
-  const leverageReduction = useMemo(() => netProceeds / 1000, [netProceeds])
+  const leverageReduction = useMemo(() => netProceeds / 80, [netProceeds])
 
   // ─── Derived synergy/financing ────────────────────────────────────────────
   const adjustedSynergy = useMemo(
     () => SYNERGY_PHASES.map(s => ({
       ...s,
-      costSyn: Math.round(s.costSyn * synPct / 100),
-      revSyn:  Math.round(s.revSyn  * synPct / 100),
+      costSyn: Math.round(s.costSyn * synPct / 10) / 10,
+      revSyn:  Math.round(s.revSyn  * synPct / 10) / 10,
     })),
     [synPct],
   )
 
   const blendedCost = useMemo(() => {
-    const eqCost = 9.2, debtCost = 3.2, hybridCost = 5.4
+    const eqCost = 12.5, debtCost = 6.1, hybridCost = 7.5
     const eqPct = (100 - debtPct) / 2
     return +((debtPct / 100 * debtCost + eqPct / 100 * eqCost + eqPct / 100 * hybridCost)).toFixed(2)
   }, [debtPct])
@@ -223,15 +223,15 @@ export default function MaSimulatorPage() {
         agentRunningLabel="Modelling…"
         agentSteps={[
           'Screened 6 inorganic targets by strategic fit × capital efficiency',
-          'Valued TowerCo at 18.3× EV/EBITDA vs comps (18–21× range)',
+          'Valued TowerCo at 12.0× EV/EBITDA vs Caribbean comps (10–14× range)',
           'Modelled leaseback PV, net proceeds and leverage bridge',
           'Stress-tested accretion path in bull/base/bear scenarios',
         ]}
         agentBlurb="One deal model — valuation, synergies, leverage and EPS — on a single data platform; the AI can run 10,000 Monte Carlo paths in seconds."
         decision={{
-          title: 'Proceed with TowerCo carve-out at 18–19× EV/EBITDA; use proceeds to deleverage to 1.25×',
-          detail: 'At the modelled multiple (18.3×) the carve-out generates net proceeds of BSD 4.0B+ which, applied to debt repayment, cuts net debt/EBITDA from 2.60× to 1.25× — creating 1.35× turns of dry powder for spectrum and future M&A.',
-          impact: 'net debt/EBITDA 2.60× → 1.25× · EPS accretive by Y2',
+          title: 'Proceed with TowerCo carve-out at 11–13× EV/EBITDA; use proceeds to deleverage to ~2.6×',
+          detail: 'At the modelled multiple (12×) the carve-out of 160 owned towers generates net proceeds of ~BSD 45M which, applied to debt repayment, cuts net debt/EBITDA from 3.17× to ~2.6× — restoring ~0.9× of headroom under the 3.5× covenant for spectrum and future M&A.',
+          impact: 'net debt/EBITDA 3.17× → 2.6× · EPS accretive by Y2',
           risk: 'leaseback escalator lock-in — cap to CPI +50bps in the term sheet',
           linkTo: '/portal/capital-treasury',
           linkLabel: 'Open Capital & Treasury',
@@ -243,7 +243,7 @@ export default function MaSimulatorPage() {
           unit: 'M',
           data: DEALS,
           series: [{ key: 'ev', name: 'EV BSD M', color: NAVY }],
-          colorBy: { key: 'ev', high: 3000, mid: 500 },
+          colorBy: { key: 'ev', high: 50, mid: 10 },
         }}
       />
 
@@ -278,9 +278,9 @@ export default function MaSimulatorPage() {
       {/* ══════════════ OVERVIEW ══════════════════════════════════════════════ */}
       {tab === 'overview' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Implied EV')}            value={`BSD ${(ev / 1000).toFixed(2)}B`}         delta={`${multiple}× EV/EBITDA`}             trend="up"   icon={TrendingUp} accent />
-          <KpiCard label={tt('TowerCo EBITDA')}        value={`BSD ${towerEbitda.toFixed(0)}M`}          delta={`${tenancy.toFixed(2)} ${tt('tenancy')}`} trend="flat" icon={Building2} />
-          <KpiCard label={tt('Net proceeds')}           value={`BSD ${(netProceeds / 1000).toFixed(2)}B`} delta={tt('after leaseback PV')}              trend="up"   icon={Briefcase} />
+          <KpiCard label={tt('Implied EV')}            value={`BSD ${ev.toFixed(1)}M`}         delta={`${multiple}× EV/EBITDA`}             trend="up"   icon={TrendingUp} accent />
+          <KpiCard label={tt('TowerCo EBITDA')}        value={`BSD ${towerEbitda.toFixed(1)}M`}          delta={`${tenancy.toFixed(2)} ${tt('tenancy')}`} trend="flat" icon={Building2} />
+          <KpiCard label={tt('Net proceeds')}           value={`BSD ${netProceeds.toFixed(1)}M`} delta={tt('after leaseback PV')}              trend="up"   icon={Briefcase} />
           <KpiCard label={tt('Leverage reduction')}    value={`${leverageReduction.toFixed(1)}×`}     delta={tt('net debt/EBITDA turns')}           trend="up"   icon={Scale} />
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
@@ -295,15 +295,15 @@ export default function MaSimulatorPage() {
             <div className="space-y-4 mt-2">
               <div>
                 <div className="flex justify-between text-sm mb-1"><span>{tt('Towers in scope')}</span><span className="font-mono font-bold">{towers.toLocaleString('en-BS')}</span></div>
-                <input type="range" min={2000} max={8420} step={100} value={towers} onChange={e => setTowers(+e.target.value)} className="w-full accent-vfes-red" />
+                <input type="range" min={40} max={160} step={5} value={towers} onChange={e => setTowers(+e.target.value)} className="w-full accent-vfes-red" />
               </div>
               <div>
                 <div className="flex justify-between text-sm mb-1"><span>{tt('EV/EBITDA multiple')}</span><span className="font-mono font-bold">{multiple}×</span></div>
-                <input type="range" min={12} max={24} step={0.5} value={multiple} onChange={e => setMultiple(+e.target.value)} className="w-full accent-vfes-red" />
+                <input type="range" min={8} max={16} step={0.5} value={multiple} onChange={e => setMultiple(+e.target.value)} className="w-full accent-vfes-red" />
               </div>
               <div>
                 <div className="flex justify-between text-sm mb-1"><span>{tt('Tenancy ratio')}</span><span className="font-mono font-bold">{tenancy.toFixed(2)}</span></div>
-                <input type="range" min={1.2} max={2.4} step={0.01} value={tenancy} onChange={e => setTenancy(+e.target.value)} className="w-full accent-vfes-red" />
+                <input type="range" min={1.0} max={2.0} step={0.01} value={tenancy} onChange={e => setTenancy(+e.target.value)} className="w-full accent-vfes-red" />
               </div>
               <div>
                 <div className="flex justify-between text-sm mb-1"><span>{tt('Anchor-tenant leaseback %')}</span><span className="font-mono font-bold">{retainPct}%</span></div>
@@ -311,9 +311,9 @@ export default function MaSimulatorPage() {
               </div>
             </div>
             <div className="mt-4 rounded-lg bg-[#f6f7fb] p-4 text-sm space-y-1">
-              <div className="flex justify-between"><span className="text-vfes-dark/65">{tt('Implied EV')}</span><span className="font-bold">BSD {(ev / 1000).toFixed(2)}B</span></div>
-              <div className="flex justify-between"><span className="text-vfes-dark/65">{tt('Leaseback PV (8y)')}</span><span className="font-bold text-red-600">−BSD {(leasebackCost * 8 / 1000).toFixed(2)}B</span></div>
-              <div className="flex justify-between border-t border-black/10 pt-1 mt-1"><span className="font-semibold">{tt('Net proceeds')}</span><span className="font-extrabold text-emerald-700">BSD {(netProceeds / 1000).toFixed(2)}B</span></div>
+              <div className="flex justify-between"><span className="text-vfes-dark/65">{tt('Implied EV')}</span><span className="font-bold">BSD {ev.toFixed(1)}M</span></div>
+              <div className="flex justify-between"><span className="text-vfes-dark/65">{tt('Leaseback PV (8y)')}</span><span className="font-bold text-red-600">−BSD {(leasebackCost * 8).toFixed(1)}M</span></div>
+              <div className="flex justify-between border-t border-black/10 pt-1 mt-1"><span className="font-semibold">{tt('Net proceeds')}</span><span className="font-extrabold text-emerald-700">BSD {netProceeds.toFixed(1)}M</span></div>
             </div>
           </Panel>
 
@@ -395,7 +395,7 @@ export default function MaSimulatorPage() {
                     { ms: 'EY VDD commenced',                    date: 'May 2',     owner: 'EY',             status: 'Done',    note: 'Financial vendor DD in progress'     },
                     { ms: 'LOI signed — FTTH JV',               date: 'May 28',    owner: 'CEO',            status: 'Done',    note: 'Exclusivity period 90d'              },
                     { ms: 'McKinsey commercial DD',              date: 'Jun 1',     owner: 'McKinsey',       status: 'Done',    note: '88% complete'                        },
-                    { ms: 'Stibbe legal sign-off',          date: 'Jul 22',    owner: 'Stibbe',    status: 'Active',  note: '78% complete'                        },
+                    { ms: 'Higgs & Johnson legal sign-off',     date: 'Jul 22',    owner: 'Higgs & Johnson',status: 'Active',  note: '78% complete'                        },
                     { ms: 'Deloitte tax structure final',        date: 'Jul 28',    owner: 'Deloitte',       status: 'Active',  note: 'Transfer pricing at risk'            },
                     { ms: 'Capital committee exclusivity vote',  date: 'Jul 10',    owner: 'CFO / Tsy',      status: 'Active',  note: 'Board pre-approved'                  },
                     { ms: 'IT/network red lines agreed',         date: 'Aug 5',     owner: 'CTO',            status: 'Watch',   note: 'Leaseback RAN sharing terms'         },
@@ -427,7 +427,7 @@ export default function MaSimulatorPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Targets screened')} value={`${TARGETS.length}`} delta={tt('active pipeline')} trend="flat" icon={Target} accent />
           <KpiCard label={tt('High strategic fit')} value="2" delta={tt('TowerCo + FTTH JV')} trend="up" icon={ShieldCheck} />
-          <KpiCard label={tt('Total EV universe')} value={`BSD ${(TARGETS.reduce((s, t) => s + t.ev, 0) / 1000).toFixed(1)}B`} delta={tt('screened targets')} trend="flat" icon={DollarSign} />
+          <KpiCard label={tt('Total EV universe')} value={`BSD ${(TARGETS.reduce((s, t) => s + t.ev, 0)).toFixed(0)}M`} delta={tt('screened targets')} trend="flat" icon={DollarSign} />
           <KpiCard label={tt('Synergy pool')} value={`BSD ${TARGETS.reduce((s, t) => s + t.synergy, 0)}M`} delta={tt('run-rate potential')} trend="up" icon={Zap} />
         </div>
 
@@ -474,7 +474,7 @@ export default function MaSimulatorPage() {
                 <BarChart data={TARGETS}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
                   <XAxis dataKey="name" tick={{ fontSize: 9 }} />
-                  <YAxis yAxisId="l" tick={{ fontSize: 11 }} unit="M" domain={[0, 5000]} />
+                  <YAxis yAxisId="l" tick={{ fontSize: 11 }} unit="M" domain={[0, 100]} />
                   <YAxis yAxisId="r" orientation="right" tick={{ fontSize: 11 }} unit="×" domain={[0, 25]} />
                   <Tooltip contentStyle={TS} />
                   <Legend wrapperStyle={{ fontSize: 10 }} />
@@ -486,7 +486,7 @@ export default function MaSimulatorPage() {
           </Panel>
         </div>
         <div className="mt-3 p-3 rounded-lg bg-amber-50 border border-amber-200 text-xs text-amber-800">
-          <span className="font-bold">{tt('Screening note:')}</span> {tt('IoT Platform premium (22×) reflects growth optionality, not current profitability — fund only if NPV exceeds WACC hurdle at mid-point synergy case.')}
+          <span className="font-bold">{tt('Screening note:')}</span> {tt('IoT Platform premium (15×) reflects growth optionality, not current profitability — fund only if NPV exceeds WACC hurdle at mid-point synergy case.')}
         </div>
         <div className="mt-2 flex items-center gap-3 text-xs text-vfes-dark/50">
           <Link to="/portal/device-financing" className="font-semibold text-vfes-dark hover:underline">{tt('Device Financing →')}</Link>
@@ -498,10 +498,10 @@ export default function MaSimulatorPage() {
       {/* ══════════════ VALUATION ═════════════════════════════════════════════ */}
       {tab === 'valuation' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('TowerCo EV (base)')} value={`BSD ${(ev / 1000).toFixed(2)}B`} delta={`${multiple}× EV/EBITDA`} trend="up" icon={Scale} accent />
-          <KpiCard label={tt('Tower EBITDA')} value={`BSD ${towerEbitda.toFixed(0)}M`} delta={tt('at modelled tenancy')} trend="flat" icon={Building2} />
+          <KpiCard label={tt('TowerCo EV (base)')} value={`BSD ${ev.toFixed(1)}M`} delta={`${multiple}× EV/EBITDA`} trend="up" icon={Scale} accent />
+          <KpiCard label={tt('Tower EBITDA')} value={`BSD ${towerEbitda.toFixed(1)}M`} delta={tt('at modelled tenancy')} trend="flat" icon={Building2} />
           <KpiCard label={tt('Premium to comps')} value={`${premiumPct > 0 ? '+' : ''}${premiumPct}%`} delta={tt('adjust slider')} trend="flat" icon={Percent} />
-          <KpiCard label={tt('Adjusted EV')} value={`BSD ${(adjustedEv / 1000).toFixed(2)}B`} delta={tt('incl. control premium')} trend="up" icon={TrendingUp} />
+          <KpiCard label={tt('Adjusted EV')} value={`BSD ${adjustedEv.toFixed(1)}M`} delta={tt('incl. control premium')} trend="up" icon={TrendingUp} />
         </div>
 
         <Panel title={tt('Control premium slider')}>
@@ -515,9 +515,9 @@ export default function MaSimulatorPage() {
                 <input type="range" min={-5} max={15} step={1} value={premiumPct} onChange={e => setPremiumPct(+e.target.value)} className="w-full accent-vfes-red" />
               </div>
               <div className="rounded-lg bg-[#f6f7fb] p-4 text-sm space-y-1">
-                <div className="flex justify-between"><span className="text-vfes-dark/65">{tt('Base EV')}</span><span className="font-bold">BSD {(ev / 1000).toFixed(2)}B</span></div>
-                <div className="flex justify-between"><span className="text-vfes-dark/65">{tt('Premium')}</span><span className={`font-bold ${premiumPct >= 0 ? 'text-amber-600' : 'text-emerald-600'}`}>{premiumPct >= 0 ? '+' : ''}BSD {(ev * premiumPct / 100 / 1000).toFixed(2)}B</span></div>
-                <div className="flex justify-between border-t border-black/10 pt-1"><span className="font-semibold">{tt('Adjusted EV')}</span><span className="font-extrabold text-blue-700">BSD {(adjustedEv / 1000).toFixed(2)}B</span></div>
+                <div className="flex justify-between"><span className="text-vfes-dark/65">{tt('Base EV')}</span><span className="font-bold">BSD {ev.toFixed(1)}M</span></div>
+                <div className="flex justify-between"><span className="text-vfes-dark/65">{tt('Premium')}</span><span className={`font-bold ${premiumPct >= 0 ? 'text-amber-600' : 'text-emerald-600'}`}>{premiumPct >= 0 ? '+' : ''}BSD {(ev * premiumPct / 100).toFixed(1)}M</span></div>
+                <div className="flex justify-between border-t border-black/10 pt-1"><span className="font-semibold">{tt('Adjusted EV')}</span><span className="font-extrabold text-blue-700">BSD {adjustedEv.toFixed(1)}M</span></div>
               </div>
             </div>
             <div>
@@ -526,13 +526,13 @@ export default function MaSimulatorPage() {
                 <ResponsiveContainer>
                   <BarChart data={TOWER_COMPS} layout="vertical">
                     <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
-                    <XAxis type="number" tick={{ fontSize: 11 }} unit="×" domain={[14, 24]} />
+                    <XAxis type="number" tick={{ fontSize: 11 }} unit="×" domain={[8, 24]} />
                     <YAxis type="category" dataKey="co" tick={{ fontSize: 9 }} width={130} />
                     <Tooltip contentStyle={TS} formatter={(v: number) => `${v}×`} />
                     <Bar dataKey="evEbitda" name={tt('EV/EBITDA')} radius={[0, 4, 4, 0]}>
                       {TOWER_COMPS.map((c, i) => <Cell key={i} fill={c.color} />)}
                     </Bar>
-                    <ReferenceLine x={18.3} stroke={RED} strokeDasharray="3 3" />
+                    <ReferenceLine x={12} stroke={RED} strokeDasharray="3 3" />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -561,11 +561,11 @@ export default function MaSimulatorPage() {
                 </thead>
                 <tbody>
                   {[
-                    { co: 'SPIE',           evE: 21.4, yield: 3.8, tenancy: 1.82, note: 'Premium for scale + growth pipeline'     },
-                    { co: 'American Tower EU', evE: 20.1, yield: 4.1, tenancy: 1.74, note: 'USD re-rating; BSD premium over peers'    },
-                    { co: 'Vantage Towers',    evE: 19.2, yield: 4.4, tenancy: 1.61, note: 'BTP carve-out — anchor tenant 85%'   },
-                    { co: 'Cable Bahamas TowerCo', evE: 18.3, yield: 4.7, tenancy: 1.62, note: 'Target — 1.3× headroom vs comps average'  },
-                    { co: 'Telxius (residual)', evE: 17.1, yield: 5.0, tenancy: 1.44, note: 'Sold down; lower quality portfolio'       },
+                    { co: 'SBA Comms',           evE: 21.4, yield: 3.8, tenancy: 1.82, note: 'Premium for scale + growth pipeline'     },
+                    { co: 'Digicel Tower Co', evE: 13.5, yield: 6.0, tenancy: 1.40, note: 'USD-linked Caribbean portfolio; regional benchmark' },
+                    { co: 'Phoenix Tower Intl (Caribbean)', evE: 12.8, yield: 6.4, tenancy: 1.45, note: 'Caribbean carve-outs — anchor tenant 80%' },
+                    { co: 'Cable Bahamas TowerCo', evE: 12.0, yield: 6.8, tenancy: 1.38, note: 'Target — ~6% discount to Caribbean comps median' },
+                    { co: 'Island Field Services (demo) (residual)', evE: 10.5, yield: 7.4, tenancy: 1.25, note: 'Sold down; lower quality portfolio'       },
                   ].map(row => (
                     <tr key={row.co} className={`border-b border-black/5 hover:bg-[#fafbfc] ${row.co === 'Cable Bahamas TowerCo' ? 'bg-blue-50/50' : ''}`}>
                       <td className={`py-2.5 font-semibold text-xs ${row.co === 'Cable Bahamas TowerCo' ? 'text-blue-700' : ''}`}>{row.co}</td>
@@ -578,7 +578,7 @@ export default function MaSimulatorPage() {
                 </tbody>
               </table>
             </div>
-            <div className="mt-2 text-[10px] text-vfes-dark/45">{tt('Cable Bahamas TowerCo at 18.3× represents a 4% discount to the peer median — justified by lower tenancy (1.62 vs 1.72 median). Grow tenancy to 1.80 to support a 19-20× ask.')}</div>
+            <div className="mt-2 text-[10px] text-vfes-dark/45">{tt('Cable Bahamas TowerCo at 12.0× represents a ~6% discount to the Caribbean comps median (12.8×) — justified by lower tenancy (1.38 vs 1.40 median). Grow tenancy to 1.55 to support a 13× ask.')}</div>
           </Panel>
         </div>
       </>)}
@@ -586,10 +586,10 @@ export default function MaSimulatorPage() {
       {/* */}
       {tab === 'synergies' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Y5 cost synergies')} value="BSD 105M" delta={tt('run-rate per annum')} trend="up" icon={Layers} accent />
-          <KpiCard label={tt('Y5 revenue synergies')} value="BSD 62M" delta={tt('anchor tenant upsell + IoT')} trend="up" icon={TrendingUp} />
+          <KpiCard label={tt('Y5 cost synergies')} value="BSD 2.1M" delta={tt('run-rate per annum')} trend="up" icon={Layers} accent />
+          <KpiCard label={tt('Y5 revenue synergies')} value="BSD 1.2M" delta={tt('anchor tenant upsell + IoT')} trend="up" icon={TrendingUp} />
           <KpiCard label={tt('Synergy capture rate')} value={`${synPct}%`} delta={tt('adjust slider')} trend="flat" icon={Percent} />
-          <KpiCard label={tt('NPV of synergies')} value="BSD 600M" delta={tt('net of one-off costs')} trend="up" icon={DollarSign} />
+          <KpiCard label={tt('NPV of synergies')} value="BSD 12M" delta={tt('net of one-off costs')} trend="up" icon={DollarSign} />
         </div>
 
         <Panel title={tt('Synergy capture rate')}>
@@ -657,12 +657,12 @@ export default function MaSimulatorPage() {
                 </thead>
                 <tbody>
                   {[
-                    { cat: 'Opex — shared services',      y1:  8, y2: 22, y3: 34, y5:  42, driver: 'Finance, HR, IT consolidation'       },
-                    { cat: 'Network cost reduction',       y1:  6, y2: 16, y3: 24, y5:  32, driver: 'RAN sharing, SLA simplification'      },
-                    { cat: 'Procurement leverage',         y1:  4, y2: 10, y3: 14, y5:  18, driver: 'Combined vendor scale'                },
-                    { cat: 'Capital avoidance',            y1:  2, y2:  7, y3:  8, y5:  13, driver: 'Avoid parallel tower builds'          },
-                    { cat: 'Revenue — anchor upsell',      y1:  3, y2:  9, y3: 20, y5:  38, driver: 'DAS, 5G densification, IoT backhaul'  },
-                    { cat: 'Revenue — 3rd-party tenants',  y1:  2, y2:  9, y3: 18, y5:  24, driver: 'MNO + MVNO sub-leasing pipeline'      },
+                    { cat: 'Opex — shared services',      y1: 0.2, y2: 0.4, y3: 0.6, y5: 0.8, driver: 'Finance, HR, IT consolidation'       },
+                    { cat: 'Network cost reduction',       y1: 0.1, y2: 0.3, y3: 0.5, y5: 0.6, driver: 'RAN sharing, SLA simplification'      },
+                    { cat: 'Procurement leverage',         y1: 0.1, y2: 0.2, y3: 0.3, y5: 0.4, driver: 'Combined vendor scale'                },
+                    { cat: 'Capital avoidance',            y1: 0.0, y2: 0.2, y3: 0.2, y5: 0.3, driver: 'Avoid parallel tower builds'          },
+                    { cat: 'Revenue — anchor upsell',      y1: 0.1, y2: 0.2, y3: 0.5, y5: 0.7, driver: 'DAS, 5G densification, IoT backhaul'  },
+                    { cat: 'Revenue — 3rd-party tenants',  y1: 0.0, y2: 0.2, y3: 0.3, y5: 0.5, driver: 'MNO + MVNO sub-leasing pipeline'      },
                   ].map(row => (
                     <tr key={row.cat} className="border-b border-black/5 hover:bg-[#fafbfc]">
                       <td className="py-2 font-semibold text-xs">{tt(row.cat)}</td>
@@ -676,7 +676,7 @@ export default function MaSimulatorPage() {
                 </tbody>
               </table>
             </div>
-            <div className="text-[10px] text-vfes-dark/45 mt-2">{tt('Y5 total = BSD 167M · capture rate assumption 100% in base case. Adjust the slider above for bear/bull.')}</div>
+            <div className="text-[10px] text-vfes-dark/45 mt-2">{tt('Y5 total = BSD 3.3M · capture rate assumption 100% in base case. Adjust the slider above for bear/bull.')}</div>
           </Panel>
         </div>
       </>)}
@@ -687,7 +687,7 @@ export default function MaSimulatorPage() {
           <KpiCard label={tt('Senior debt %')} value={`${debtPct}%`} delta={tt('adjust slider')} trend="flat" icon={DollarSign} accent />
           <KpiCard label={tt('Blended cost')} value={`${blendedCost}%`} delta={tt('weighted all-in')} trend="flat" icon={Percent} />
           <KpiCard label={tt('Post-deal leverage')} value={`${leverageAfter.toFixed(2)}×`} delta={tt('pro-forma')} trend="up" icon={Scale} />
-          <KpiCard label={tt('Rating headroom')} value="BBB+" delta={tt('maintained at base case')} trend="flat" icon={ShieldCheck} />
+          <KpiCard label={tt('Rating headroom')} value="BB" delta={tt('maintained at base case')} trend="flat" icon={ShieldCheck} />
         </div>
 
         <Panel title={tt('Financing mix — debt vs equity proportion')}>
@@ -743,11 +743,11 @@ export default function MaSimulatorPage() {
                 </thead>
                 <tbody>
                   {[
-                    { inst: 'Senior bond (7yr)',     amt: 1800, cost: '3.2%',  mat: '7yr',  lev: '+1.0×', rat: 'BBB+ maintained' },
-                    { inst: 'Hybrid bond (10yr)',    amt:  800, cost: '5.4%',  mat: '10yr', lev: '+0.0×', rat: '50% equity credit at S&P' },
-                    { inst: 'Equity placement',      amt:  800, cost: '9.2%',  mat: '—',    lev: '−0.5×', rat: 'Dilutive to existing' },
-                    { inst: 'Asset disposal (2 DCs)', amt: 600, cost: '0.0%',  mat: '—',    lev: '−0.3×', rat: 'Positive FCF/debt' },
-                    { inst: 'Bridge facility (6m)',  amt: 1500, cost: '3.8%',  mat: '6m',   lev: '+0.8×', rat: 'Temp — to be termed out' },
+                    { inst: 'BISX senior bond (7yr)', amt: 30, cost: '6.1%',  mat: '7yr',  lev: '+0.6×', rat: 'BB maintained' },
+                    { inst: 'Private-placement bond (10yr)', amt: 15, cost: '7.5%', mat: '10yr', lev: '+0.3×', rat: 'Local pension / insurance buyers' },
+                    { inst: 'Equity placement (BISX)', amt: 15, cost: '12.5%',  mat: '—',    lev: '−0.5×', rat: 'Dilutive to existing' },
+                    { inst: 'Asset disposal (2 DCs)', amt: 10, cost: '0.0%',  mat: '—',    lev: '−0.3×', rat: 'Positive FCF/debt' },
+                    { inst: 'Bridge facility (6m) — RBC (demo)', amt: 25, cost: '7.0%', mat: '6m', lev: '+0.5×', rat: 'Temp — to be termed out' },
                   ].map(row => (
                     <tr key={row.inst} className="border-b border-black/5 hover:bg-[#fafbfc]">
                       <td className="py-2.5 font-semibold text-xs">{tt(row.inst)}</td>
@@ -768,9 +768,9 @@ export default function MaSimulatorPage() {
       {/* */}
       {tab === 'scenarios' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-          <KpiCard label={tt('Base case prob')} value="55%" delta={tt('18.3× · BSD 4.0B proceeds')} trend="flat" icon={Globe} accent />
-          <KpiCard label={tt('Bull case prob')} value="25%" delta={tt('21× · BSD 4.8B proceeds')} trend="up" icon={TrendingUp} />
-          <KpiCard label={tt('Bear case prob')} value="20%" delta={tt('15.2× · BSD 3.5B proceeds')} trend="down" icon={AlertTriangle} />
+          <KpiCard label={tt('Base case prob')} value="55%" delta={tt('12× · BSD 45M proceeds')} trend="flat" icon={Globe} accent />
+          <KpiCard label={tt('Bull case prob')} value="25%" delta={tt('14× · BSD 58M proceeds')} trend="up" icon={TrendingUp} />
+          <KpiCard label={tt('Bear case prob')} value="20%" delta={tt('10× · BSD 30M proceeds')} trend="down" icon={AlertTriangle} />
         </div>
 
         <Panel title={tt('Deal scenario comparison — EV, synergies, leverage and EPS')}>
@@ -811,7 +811,7 @@ export default function MaSimulatorPage() {
                 <BarChart data={SCENARIOS}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
                   <XAxis dataKey="name" tick={{ fontSize: 11 }} />
-                  <YAxis tick={{ fontSize: 11 }} unit="M" domain={[0, 5500]} />
+                  <YAxis tick={{ fontSize: 11 }} unit="M" domain={[0, 100]} />
                   <Tooltip contentStyle={TS} />
                   <Legend wrapperStyle={{ fontSize: 10 }} />
                   <Bar dataKey="ev" name={tt('EV BSD M')} radius={[4, 4, 0, 0]}>
@@ -836,9 +836,9 @@ export default function MaSimulatorPage() {
             <div className="h-48">
               <ResponsiveContainer>
                 <BarChart data={[
-                  { label: 'Weighted EV',       base: 4200 * 0.55, bull: 4800 * 0.25, bear: 3500 * 0.20 },
-                  { label: 'Weighted proceeds', base: 3960 * 0.55, bull: 4540 * 0.25, bear: 3200 * 0.20 },
-                  { label: 'Weighted synergy',  base:  160 * 0.55, bull:  200 * 0.25, bear:  100 * 0.20 },
+                  { label: 'Weighted EV',       base: 77 * 0.55, bull: 90 * 0.25, bear: 58 * 0.20 },
+                  { label: 'Weighted proceeds', base: 45 * 0.55, bull: 58 * 0.25, bear: 30 * 0.20 },
+                  { label: 'Weighted synergy',  base: 3.3 * 0.55, bull: 4.0 * 0.25, bear: 2.0 * 0.20 },
                 ]}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
                   <XAxis dataKey="label" tick={{ fontSize: 10 }} />
@@ -851,7 +851,7 @@ export default function MaSimulatorPage() {
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="text-[10px] text-vfes-dark/45 mt-2">{tt('Probability-weighted EV = BSD 4.16B · proceeds = BSD 3.92B · synergy = BSD 133M. Skew is materially positive — deal value is robust.')}</div>
+            <div className="text-[10px] text-vfes-dark/45 mt-2">{tt('Probability-weighted EV = BSD 76M · proceeds = BSD 45M · synergy = BSD 3.2M. Skew is materially positive — deal value is robust.')}</div>
           </Panel>
         </div>
       </>)}
@@ -861,7 +861,7 @@ export default function MaSimulatorPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Workstreams active')} value="6" delta={tt('all in progress')} trend="flat" icon={ShieldCheck} accent />
           <KpiCard label={tt('VDD completion')} value="92%" delta={tt('EY · ETA Jul 15')} trend="up" icon={Activity} />
-          <KpiCard label={tt('Legal sign-off')} value="78%" delta={tt('Stibbe')} trend="up" icon={Scale} />
+          <KpiCard label={tt('Legal sign-off')} value="78%" delta={tt('Higgs & Johnson (demo)')} trend="up" icon={Scale} />
           <KpiCard label={tt('Expected close')} value="Sep-26" delta={tt('subject to board + CC')} trend="flat" icon={AlertTriangle} />
         </div>
 
@@ -939,12 +939,12 @@ export default function MaSimulatorPage() {
                 </thead>
                 <tbody>
                   {[
-                    { risk: 'Leaseback escalator locks in above-inflation cost', cat: 'Commercial',  like: 'Med',  imp: 120, mit: 'Cap at CPI +50bps in term sheet'         },
-                    { risk: 'Regulatory delay (URCA referral)',                  cat: 'Regulatory',  like: 'Low',  imp: 200, mit: 'Pre-notify; informal contact done'        },
-                    { risk: 'Interest-rate spike between signing and close',     cat: 'Financial',   like: 'Med',  imp: 80,  mit: 'Rate lock on bridge facility at signing'  },
-                    { risk: 'IT/network separation cost overrun',                cat: 'Operational', like: 'High', imp: 60,  mit: 'Fixed-price carve-out TSA with Wipro'      },
-                    { risk: 'Valuation comp re-rating (SPIE down)',           cat: 'Market',      like: 'Low',  imp: 400, mit: 'Floor price covenant in SPA'              },
-                    { risk: 'Tax leakage on asset transfer (stamp duty)',        cat: 'Tax',         like: 'Med',  imp: 45,  mit: 'Holding-co structure via Deloitte'         },
+                    { risk: 'Leaseback escalator locks in above-inflation cost', cat: 'Commercial',  like: 'Med',  imp: 2,   mit: 'Cap at CPI +50bps in term sheet'         },
+                    { risk: 'Regulatory delay (URCA referral)',                  cat: 'Regulatory',  like: 'Low',  imp: 3,   mit: 'Pre-notify; informal contact done'        },
+                    { risk: 'Interest-rate spike between signing and close',     cat: 'Financial',   like: 'Med',  imp: 1.5, mit: 'Rate lock on bridge facility at signing'  },
+                    { risk: 'IT/network separation cost overrun',                cat: 'Operational', like: 'High', imp: 1,   mit: 'Fixed-price carve-out TSA with Wipro'      },
+                    { risk: 'Valuation comp re-rating (SBA down)',           cat: 'Market',      like: 'Low',  imp: 6,   mit: 'Floor price covenant in SPA'              },
+                    { risk: 'Tax leakage on asset transfer (stamp duty)',        cat: 'Tax',         like: 'Med',  imp: 0.5, mit: 'Holding-co structure via Deloitte'         },
                   ].map(row => (
                     <tr key={row.risk} className="border-b border-black/5 hover:bg-[#fafbfc]">
                       <td className="py-2.5 font-semibold text-xs">{tt(row.risk)}</td>
@@ -992,7 +992,7 @@ export default function MaSimulatorPage() {
               <ResponsiveContainer>
                 <BarChart data={LEVERAGE_BRIDGE} layout="vertical">
                   <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
-                  <XAxis type="number" tick={{ fontSize: 11 }} unit="×" domain={[-1.5, 3]} />
+                  <XAxis type="number" tick={{ fontSize: 11 }} unit="×" domain={[-1.5, 4]} />
                   <YAxis type="category" dataKey="step" tick={{ fontSize: 9 }} width={140} />
                   <Tooltip contentStyle={TS} formatter={(v: number) => `${v}×`} />
                   <Bar dataKey="val" name={tt('×')} radius={[0, 4, 4, 0]}>
@@ -1020,8 +1020,8 @@ export default function MaSimulatorPage() {
                 {[
                   { driver: 'EPS Year 2',           bear: '-0.5%', base: '+0.2%', bull: '+0.8%', swing: '1.3pp' },
                   { driver: 'EPS Year 3',            bear: '-0.2%', base: '+0.7%', bull: '+1.8%', swing: '2.0pp' },
-                  { driver: 'Post-deal leverage (×)', bear: '1.90×', base: '1.25×', bull: '0.85×', swing: '1.05×' },
-                  { driver: 'Interest saved (BSD M/yr)', bear: 'BSD 160M',  base: 'BSD 180M',  bull: 'BSD 216M',  swing: 'BSD 56M' },
+                  { driver: 'Post-deal leverage (×)', bear: '2.85×', base: '2.62×', bull: '2.45×', swing: '0.40×' },
+                  { driver: 'Interest saved (BSD M/yr)', bear: 'BSD 1.8M',  base: 'BSD 2.7M',  bull: 'BSD 3.5M',  swing: 'BSD 1.7M' },
                 ].map(r => (
                   <tr key={r.driver} className="border-b border-black/5 hover:bg-[#fafbfc]">
                     <td className="py-2.5 font-semibold text-xs">{tt(r.driver)}</td>
@@ -1048,11 +1048,11 @@ export default function MaSimulatorPage() {
             <div className="h-52">
               <ResponsiveContainer>
                 <BarChart data={[
-                  { step: 'Group EBITDA (pre)',    val: 1760, type: 'open'  },
+                  { step: 'Group EBITDA (pre)',    val: 51.1, type: 'open'  },
                   { step: 'Tower EBITDA out',       val: -Math.round(towerEbitda), type: 'neg'   },
                   { step: 'Interest saved (yr1)',   val:  Math.round(interestSaved), type: 'pos'   },
-                  { step: 'Synergy Y1 (est.)',      val:  25,  type: 'pos'  },
-                  { step: 'Group EBITDA (post)',     val: 1760 - Math.round(towerEbitda) + Math.round(interestSaved) + 25, type: 'close' },
+                  { step: 'Synergy Y1 (est.)',      val:  0.5,  type: 'pos'  },
+                  { step: 'Group EBITDA (post)',     val: 51.1 - Math.round(towerEbitda) + Math.round(interestSaved) + 0.5, type: 'close' },
                 ]} layout="vertical">
                   <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
                   <XAxis type="number" tick={{ fontSize: 11 }} unit="M" />
@@ -1076,7 +1076,7 @@ export default function MaSimulatorPage() {
 
         <div className="mt-4 rounded-xl bg-gradient-to-br from-[#FF4438]/10 to-transparent border border-[#FF4438]/20 p-4">
           <div className="text-[10px] font-bold uppercase tracking-widest text-[#222128] mb-1">{tt('Treasury link')}</div>
-          <div className="text-sm text-vfes-dark/75">{tt('Proceeds of BSD 4.0B+ flow directly to debt repayment, cutting net debt/EBITDA from 2.60× to 1.25×. This creates 1.35× turns of headroom below the 3.5× covenant — capacity for spectrum, FTTH JV and the next M&A cycle.')}</div>
+          <div className="text-sm text-vfes-dark/75">{tt('Proceeds of ~BSD 45M flow directly to debt repayment, cutting net debt/EBITDA from 3.17× to ~2.6×. This restores ~0.9× of headroom below the 3.5× covenant — capacity for spectrum, FTTH JV and the next M&A cycle.')}</div>
           <div className="mt-2 flex items-center gap-3">
             <Link to="/portal/capital-treasury" className="text-xs font-bold text-[#222128] hover:underline">{tt('Open Capital & Treasury →')}</Link>
             <Link to="/portal/debt-collections" className="text-xs font-bold text-[#222128] hover:underline">{tt('Debt Collections →')}</Link>

@@ -149,8 +149,8 @@ const PREF_TOPICS = [
   { topic: 'Third-party partner deals', opted: 38, declined: 62 },
 ]
 
-// ─── GDPR purposes ────────────────────────────────────────────────────────────
-const GDPR_PURPOSES = [
+// ─── DPA purposes ────────────────────────────────────────────────────────────
+const DPA_PURPOSES = [
   { purpose: 'Marketing communications', lawful: 'Consent',         rate: 74,  expiring90d: 8_400,  risk: 'Low'  },
   { purpose: 'Service notifications',    lawful: 'Contract',        rate: 98,  expiring90d: 0,      risk: 'Low'  },
   { purpose: 'Analytics / profiling',    lawful: 'Consent',         rate: 62,  expiring90d: 14_200, risk: 'Med'  },
@@ -181,7 +181,7 @@ const AUDIT_LOG = [
 ]
 
 // ─── Tabs ─────────────────────────────────────────────────────────────────────
-type TabId = 'overview' | 'tiers' | 'points' | 'redemption' | 'rewards' | 'consent' | 'gdpr' | 'audit'
+type TabId = 'overview' | 'tiers' | 'points' | 'redemption' | 'rewards' | 'consent' | 'dpa' | 'audit'
 const TABS: { id: TabId; label: string; icon: any }[] = [
   { id: 'overview',   label: 'Overview',           icon: Activity   },
   { id: 'tiers',      label: 'Loyalty Tiers',      icon: BadgeCheck },
@@ -189,7 +189,7 @@ const TABS: { id: TabId; label: string; icon: any }[] = [
   { id: 'redemption', label: 'Redemption',          icon: Star       },
   { id: 'rewards',    label: 'Rewards Catalogue',   icon: Award      },
   { id: 'consent',    label: 'Consent & Reach',     icon: Mail       },
-  { id: 'gdpr',       label: 'GDPR / Privacy',      icon: ShieldCheck },
+  { id: 'dpa',       label: 'DPA / Privacy',      icon: ShieldCheck },
   { id: 'audit',      label: 'Consent Audit',       icon: FileCheck  },
 ]
 
@@ -220,8 +220,8 @@ export default function LoyaltyConsentPage() {
 
   const filteredGdpr = useMemo(
     () => gdprFilter === 'All'
-      ? GDPR_PURPOSES
-      : GDPR_PURPOSES.filter(p => gdprFilter === 'Consent' ? p.lawful === 'Consent' : p.lawful === 'Contract'),
+      ? DPA_PURPOSES
+      : DPA_PURPOSES.filter(p => gdprFilter === 'Consent' ? p.lawful === 'Consent' : p.lawful === 'Contract'),
     [gdprFilter],
   )
 
@@ -232,7 +232,7 @@ export default function LoyaltyConsentPage() {
     <div className="p-8">
       <PageHeader
         title={tt('Loyalty & Consent')}
-        subtitle={tt('Loyalty tiers · points liability · redemption · consent & contactability · GDPR preference centre')}
+        subtitle={tt('Loyalty tiers · points liability · redemption · consent & contactability · DPA preference centre')}
         actions={
           <div className="flex items-center gap-2">
             <span className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest">
@@ -297,7 +297,7 @@ export default function LoyaltyConsentPage() {
                 {tt('22,800 third-party consent records expire within 90 days · 14,200 analytics consents due for renewal')}
               </div>
               <div className="text-xs text-amber-800 mt-1">
-                {tt('Re-permission wave must launch within 30 days to prevent partner revenue impact and GDPR non-compliance.')}
+                {tt('Re-permission wave must launch within 30 days to prevent partner revenue impact and DPA non-compliance.')}
               </div>
             </div>
             <div className="flex items-center gap-2 shrink-0">
@@ -331,7 +331,7 @@ export default function LoyaltyConsentPage() {
           <KpiCard label={tt('Points liability')}   value={`BSD ${latestLiability.toFixed(1)}M`}       delta={tt('on balance sheet IFRS')}        trend="flat" icon={Gift}       />
           <KpiCard label={tt('Redemption rate')}    value={`${CUST.redemptionPct}%`}                 delta={tt('+3 pp YoY')}                    trend="up"   icon={Star}       />
           <KpiCard label={tt('SMS contactable')}    value={`${CUST.contactable.sms}%`}               delta={tt('marketing-permissioned')}       trend="flat" icon={Mail}       />
-          <KpiCard label={tt('GDPR compliance')}    value="98.4%"                                     delta={tt('consent coverage score')}       trend="up"   icon={ShieldCheck} />
+          <KpiCard label={tt('DPA compliance')}    value="98.4%"                                     delta={tt('consent coverage score')}       trend="up"   icon={ShieldCheck} />
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
@@ -349,9 +349,9 @@ export default function LoyaltyConsentPage() {
               { to: 'customer-360',    label: 'Customer 360',        metric: tt('Full loyalty profile'),        icon: Users       },
               { to: 'clv',             label: 'CLV',                 metric: tt('ARPU by tier · margin index'), icon: Star        },
               { to: 'marketing',       label: 'Marketing',           metric: tt('Consent-gated campaigns'),     icon: Mail        },
-              { to: 'trust-center',    label: 'Trust Center',        metric: tt('Privacy & GDPR posture'),      icon: ShieldCheck },
+              { to: 'trust-center',    label: 'Trust Center',        metric: tt('Privacy & DPA posture'),      icon: ShieldCheck },
               { to: 'base-management', label: 'Base Management',     metric: tt('Tier migration pipeline'),     icon: BadgeCheck  },
-              { to: 'regulatory',      label: 'Regulatory',          metric: tt('GDPR · ePrivacy · URCA'),      icon: Lock        },
+              { to: 'regulatory',      label: 'Regulatory',          metric: tt('Data Protection Act · URCA'),      icon: Lock        },
               { to: 'ai-insights',     label: 'AI Insights',         metric: tt('Model recommendations'),       icon: Activity    },
             ]}
           />
@@ -858,13 +858,13 @@ export default function LoyaltyConsentPage() {
         </div>
       </>)}
 
-      {/* ══════════════ GDPR / PRIVACY ════════════════════════════════════════ */}
-      {tab === 'gdpr' && (<>
+      {/* ══════════════ DPA / PRIVACY ════════════════════════════════════════ */}
+      {tab === 'dpa' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Compliance score')}    value="98.4%"   delta={tt('consent coverage')}        trend="up"   icon={ShieldCheck}  accent />
           <KpiCard label={tt('DSAR SLA compliance')} value="100%"    delta={tt('all within 30 days')}      trend="up"   icon={FileCheck}    />
           <KpiCard label={tt('Consents expiring')}   value="37K"     delta={tt('within 90 days')}          trend="down" icon={AlertTriangle} />
-          <KpiCard label={tt('Active purposes')}     value="6"       delta={tt('GDPR Art.6 lawful bases')} trend="flat" icon={Lock}         />
+          <KpiCard label={tt('Active purposes')}     value="6"       delta={tt('DPA lawful purposes')} trend="flat" icon={Lock}         />
         </div>
 
         <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -878,7 +878,7 @@ export default function LoyaltyConsentPage() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
-          <Panel title={tt('GDPR processing purposes — consent rates & expiry risk')}>
+          <Panel title={tt('DPA processing purposes — consent rates & expiry risk')}>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
@@ -931,7 +931,7 @@ export default function LoyaltyConsentPage() {
           <div>
             <div className="text-xs uppercase tracking-widest font-bold text-purple-700 mb-1">{tt('Privacy & Regulatory')}</div>
             <div className="text-sm text-vfes-dark/80">
-              {tt('Full GDPR register, DPO dashboard, Bahamian DPA interaction log and ePrivacy consent mapping.')}
+              {tt('Full Data Protection Act register, privacy officer dashboard, Data Protection Commissioner log and consent mapping.')}
             </div>
           </div>
           <Link to="/portal/regulatory" className="bg-purple-700 text-white text-sm font-bold px-4 py-2 rounded-full hover:bg-purple-800 flex items-center gap-2 shrink-0">

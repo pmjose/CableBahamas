@@ -20,7 +20,7 @@ A React 18, TypeScript and Vite demonstration for exploring customer, financial 
 
 ## Business Description And Process
 
-The demonstration is intended for executive, customer-care, finance, network-operations and B2B teams evaluating how customer context and analytical questions can support decisions. The intended Cable Bahamas scope is **fixed broadband, television, fixed voice and business connectivity**.
+The demonstration is intended for executive, customer-care, finance, network-operations and B2B teams evaluating how customer context and analytical questions can support decisions. The web demo covers the Cable Bahamas group: **REV fixed broadband, television, fixed voice and business connectivity**, plus **aliv mobile** in a separately labelled sidebar group. The Snowflake agent covers fixed services only.
 
 There are two independent experiences:
 
@@ -29,7 +29,7 @@ There are two independent experiences:
 | Public web demo | Dashboards, Customer 360, Bahamas network maps and interactive scenarios | Browser-only fixtures; AI buttons and the in-app chat are scripted simulations |
 | Snowflake Intelligence agent | Queries customers, finance, support, network, billing, pipeline and product economics; creates charts when useful | Real SQL execution over separately generated synthetic Snowflake tables and seven semantic views |
 
-**The public app is not connected to the Snowflake agent.** Their datasets and totals are independent and must not be compared as if they were one system. Legacy mobile/aliv pages and references remain in the public app; they have **not** been hidden yet and are outside the intended fixed-services presentation. The Snowflake agent excludes mobile, aliv, SIMs, RAN, 5G, spectrum and roaming.
+**The public app is not connected to the Snowflake agent.** Their datasets and totals are independent and must not be compared as if they were one system. Mobile pages (RAN, spectrum, 5G core, slicing, portability, MVNO, roaming, handsets) are grouped under **aliv Mobile** in the sidebar. The Snowflake agent excludes mobile, aliv, SIMs, RAN, 5G, spectrum and roaming, so skip that group when you pair the web demo with the agent.
 
 Typical demonstration flow:
 
@@ -94,7 +94,9 @@ The entry code is hard-coded client-side and is **not authentication**. Do not p
 
 Use the sidebar to navigate leadership, customer, commercial, operations and data-platform scenarios. Customer 360 contains fictional contacts using reserved email addresses. National maps fit the Bahamas; customer maps use approximate town locations rather than actual service addresses. The transit scenario includes explicitly labeled Florida endpoints.
 
-The application's "Ask the data" and other AI controls simulate interactions. They do not call the deployed Snowflake agent or modify real business records. Avoid the legacy mobile screens when presenting the fixed-services use case.
+The application's "Ask the data" and other AI controls simulate interactions. They do not call the deployed Snowflake agent or modify real business records. For a fixed-services-only story, skip the **aliv Mobile** sidebar group.
+
+Regulatory and market context is Bahamian: URCA, the Data Protection Act (ODPC), Central Bank of The Bahamas, NEMA hurricane resilience, BISX, a BSD pegged 1:1 to the USD, BTC as the named competitor and fictional "Rival ISP A/B/C" for other operators. `tests/rebrand.test.ts` fails if European regulation, institutions or placeholders reappear.
 
 ### Snowflake Intelligence Agent
 
@@ -144,6 +146,6 @@ GitHub Actions runs tests, checks the basemap secret, builds the application and
 
 - The web demo is deployed through GitHub Actions. The latest application audit recorded **15 passing tests**, a passing production build and no dependency advisories at the time of that audit; these are dated results, not continuous guarantees.
 - The agent's curated benchmark passed **12 supported data questions and 3 boundary checks**, followed by a provenance retest. Automatic chart generation was separately verified with a revenue-trend question. This does not establish accuracy on all unseen questions.
-- Known follow-ups: hide the web demo's mobile surfaces; connect the web app to the agent only through an authenticated backend; configure non-administrative viewer access; commit the local Snowflake artifacts after review.
+- Known follow-ups: connect the web app to the agent only through an authenticated backend; configure non-administrative viewer access; commit the local Snowflake artifacts after review.
 - No license file is currently provided. Do not assume open-source reuse rights. Brand assets remain subject to their owners' rights.
 - No contribution guide is present. Discuss proposed changes with the repository owner before submitting them.

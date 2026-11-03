@@ -223,7 +223,7 @@ export default function PlatformArchitecturePage() {
             <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 font-bold">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />{tt('HEALTHY · ')}{liveTime}
             </span>
-            <span className="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-700 font-mono">{tt('Cable Bahamas-DATA_PROD · eu-west-1')}</span>
+            <span className="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-700 font-mono">{tt('Cable Bahamas-DATA_PROD · us-east-1')}</span>
             <Link to="/portal/data-engineering" className="bg-vfes-red text-vfes-dark text-xs font-bold px-3 py-1.5 rounded-lg">{tt('Data Engineering →')}</Link>
           </div>
         }
@@ -430,7 +430,7 @@ export default function PlatformArchitecturePage() {
         </div>
 
         <div className="text-[10px] uppercase tracking-widest text-vfes-dark/40 pt-4 border-t border-black/5">
-          {tt('Cable Bahamas-DATA_PROD · eu-west-1 · enterprise edition · 7.4 TB storage · 4,200 daily query volume · refreshed 02:00 UTC')}
+          {tt('Cable Bahamas-DATA_PROD · us-east-1 · enterprise edition · 7.4 TB storage · 4,200 daily query volume · refreshed 02:00 UTC')}
         </div>
       </>)}
 
@@ -982,7 +982,7 @@ export default function PlatformArchitecturePage() {
               <Row k={tt('Classified columns')}        v="91% PII candidates"     icon={Eye} />
               <Row k={tt('Object contacts')}           v="100% prod tables"       icon={ShieldCheck} />
               <Row k={tt('Trust Center scanners')}     v="22 enabled · all green" icon={ShieldCheck} />
-              <Row k={tt('Network policy')}            v="CBL_CORP_VPN + EU"      icon={Lock} />
+              <Row k={tt('Network policy')}            v="CBL_CORP_VPN + Bahamas"      icon={Lock} />
               <Row k={tt('MFA / SSO')}                 v="100% / Okta SAML"       icon={ShieldCheck} />
               <Row k={tt('Periodic rekeying')}         v="Enabled"                icon={Lock} />
             </div>
@@ -1098,7 +1098,7 @@ export default function PlatformArchitecturePage() {
       </div>
 
       <div className="text-[10px] uppercase tracking-widest text-vfes-dark/40 pt-4 border-t border-black/5 mt-4">
-        {tt('Cable Bahamas-DATA_PROD · eu-west-1 · enterprise edition · 7.4 TB storage · 4,200 daily query volume · refreshed 02:00 UTC')}
+        {tt('Cable Bahamas-DATA_PROD · us-east-1 · enterprise edition · 7.4 TB storage · 4,200 daily query volume · refreshed 02:00 UTC')}
       </div>
     </div>
   )

@@ -65,7 +65,7 @@ const MOBILE_PROV = [
 // ─── Partner / wholesale orders ──────────────────────────────────────────────
 const PARTNER_ORDERS = [
   { partner: 'Scarlet',    orders: 2840, fallout: 180, sla: 'Green', cycleH: 6.2 },
-  { partner: 'Benchmark B The Bahamas',   orders: 2140, fallout: 210, sla: 'Amber', cycleH: 8.8 },
+  { partner: 'Rival ISP B The Bahamas',   orders: 2140, fallout: 210, sla: 'Amber', cycleH: 8.8 },
   { partner: 'EDPnet',orders: 1620, fallout: 120, sla: 'Green', cycleH: 5.8 },
   { partner: 'Telecable',    orders: 980,  fallout: 88,  sla: 'Green', cycleH: 6.4 },
   { partner: 'BT The Bahamas',    orders: 640,  fallout: 94,  sla: 'Red',   cycleH: 12.1 },

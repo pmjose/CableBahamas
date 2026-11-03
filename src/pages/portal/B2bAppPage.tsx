@@ -50,7 +50,7 @@ const VERSIONS = [
 ]
 
 const ORDERS = [
-  { id: 'ORD-4421', company: 'Colruyt Group',       product: 'Footprint & Coverage', value: 84000, status: 'live',    via: 'self-serve' },
+  { id: 'ORD-4421', company: 'Super Value Group (demo)',       product: 'Footprint & Coverage', value: 84000, status: 'live',    via: 'self-serve' },
   { id: 'ORD-4398', company: 'Island Manufacturing (demo)',           product: 'Mobility Insights',    value: 96000, status: 'live',    via: 'self-serve' },
   { id: 'ORD-4376', company: 'Family Islands Logistics',   product: 'IoT Asset Telemetry',  value: 42000, status: 'provisioning', via: 'self-serve' },
   { id: 'ORD-4351', company: 'Rolle Construction (demo)', product: 'SLA Feed',          value: 48000, status: 'live',    via: 'assisted' },

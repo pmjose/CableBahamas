@@ -60,7 +60,7 @@ const BILLSHOCK = [
 const PAYMETHODS = [
   { method: 'Direct debit', share: 58, success: 99.2 },
   { method: 'Card', share: 30, success: 96.8 },
-  { method: 'Wallet / Bancontact', share: 9, success: 95.1 },
+  { method: 'Wallet / Sand Dollar', share: 9, success: 95.1 },
   { method: 'Bank transfer', share: 3, success: 99.5 },
 ]
 const RECOVERY = [
@@ -98,11 +98,11 @@ const RATING_ACCURACY = [
 
 // ---- Dunning channel effectiveness ----
 const DUNNING_CHANNELS = [
-  { channel: 'SMS D+3',           sent: 84200, responseRate: 62, costPerEuro: 0.02 },
-  { channel: 'Email D+5',         sent: 76800, responseRate: 38, costPerEuro: 0.01 },
-  { channel: 'IVR call D+10',     sent: 42400, responseRate: 41, costPerEuro: 0.18 },
-  { channel: 'App push D+12',     sent: 58600, responseRate: 55, costPerEuro: 0.01 },
-  { channel: 'Soft-suspend D+21', sent: 18800, responseRate: 78, costPerEuro: 0.05 },
+  { channel: 'SMS D+3',           sent: 84200, responseRate: 62, costPerBsd: 0.02 },
+  { channel: 'Email D+5',         sent: 76800, responseRate: 38, costPerBsd: 0.01 },
+  { channel: 'IVR call D+10',     sent: 42400, responseRate: 41, costPerBsd: 0.18 },
+  { channel: 'App push D+12',     sent: 58600, responseRate: 55, costPerBsd: 0.01 },
+  { channel: 'Soft-suspend D+21', sent: 18800, responseRate: 78, costPerBsd: 0.05 },
 ]
 
 // ---- Bill run SLA / quality ----
@@ -171,7 +171,7 @@ const TABS: { id: TabId; label: string }[] = [
 export default function BillingChargingPage() {
   const { i18n } = useTranslation()
   const [tab, setTab] = useState<TabId>('pipeline')
-  const [dunningSort, setDunningSort] = useState<'responseRate' | 'costPerEuro'>('responseRate')
+  const [dunningSort, setDunningSort] = useState<'responseRate' | 'costPerBsd'>('responseRate')
   const [shockFilter, setShockFilter] = useState<'all' | 'high' | 'medium'>('all')
   const [liveTime, setLiveTime] = useState('')
 
@@ -184,7 +184,7 @@ export default function BillingChargingPage() {
 
   const sortedDunning = useMemo(
     () => [...DUNNING_CHANNELS].sort((a, b) =>
-      dunningSort === 'responseRate' ? b.responseRate - a.responseRate : a.costPerEuro - b.costPerEuro
+      dunningSort === 'responseRate' ? b.responseRate - a.responseRate : a.costPerBsd - b.costPerBsd
     ),
     [dunningSort],
   )
@@ -200,7 +200,7 @@ export default function BillingChargingPage() {
   const billed = PIPELINE[PIPELINE.length - 1].value
   const throughput = ((billed / events) * 100).toFixed(1)
   const shockFlagged = BILLSHOCK.reduce((s, b) => s + b.flagged, 0)
-  const shockEur = Math.round(BILLSHOCK.reduce((s, b) => s + b.flagged * b.eurAvg, 0) / 1000)
+  const shockBsd = Math.round(BILLSHOCK.reduce((s, b) => s + b.flagged * b.eurAvg, 0) / 1000)
   const atRiskAccounts = PROPENSITY.reduce((s, p) => s + p.accounts, 0)
 
   return (
@@ -214,7 +214,7 @@ export default function BillingChargingPage() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <KpiCard label={tt('Events rated / day')} value={`${(events / 1000).toFixed(2)}B`} delta={tt('CDR + EDR')} trend="flat" icon={Zap} accent />
         <KpiCard label={tt('Invoice accuracy')} value="99.6%" delta={tt('+0.4 pp YTD')} trend="up" icon={GitMerge} />
-        <KpiCard label={tt('Bill-shock flagged (ML)')} value={shockFlagged.toLocaleString('en-BS')} delta={`BSD ${shockEur}K ${tt('at risk')}`} trend="down" icon={BellRing} accent />
+        <KpiCard label={tt('Bill-shock flagged (ML)')} value={shockFlagged.toLocaleString('en-BS')} delta={`BSD ${shockBsd}K ${tt('at risk')}`} trend="down" icon={BellRing} accent />
         <KpiCard label={tt('Payment recovery (smart retry)')} value="75%" delta={tt('vs 42% baseline')} trend="up" icon={CreditCard} />
       </div>
 
@@ -575,7 +575,7 @@ export default function BillingChargingPage() {
 
           <div className="flex items-center gap-2 my-4">
             <span className="text-xs font-bold uppercase tracking-widest text-vfes-dark/55">{tt('Sort dunning channels by:')}</span>
-            {(['responseRate', 'costPerEuro'] as const).map(k => (
+            {(['responseRate', 'costPerBsd'] as const).map(k => (
               <button key={k} onClick={() => setDunningSort(k)}
                 className={`text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded ${dunningSort === k ? 'bg-vfes-red text-vfes-dark' : 'bg-black/5 text-vfes-dark/65 hover:bg-black/10'}`}>
                 {k === 'responseRate' ? tt('Response rate') : tt('Cost per BSD ')}
@@ -613,7 +613,7 @@ export default function BillingChargingPage() {
                       <td className="px-3 py-2 font-semibold">{tt(d.channel)}</td>
                       <td className="px-3 py-2 text-right font-mono">{d.sent.toLocaleString('en-BS')}</td>
                       <td className={`px-3 py-2 text-right font-bold ${d.responseRate >= 60 ? 'text-emerald-600' : d.responseRate >= 40 ? 'text-amber-600' : 'text-red-600'}`}>{d.responseRate}%</td>
-                      <td className="px-3 py-2 text-right font-mono">BSD {d.costPerEuro.toFixed(2)}</td>
+                      <td className="px-3 py-2 text-right font-mono">BSD {d.costPerBsd.toFixed(2)}</td>
                     </tr>
                   ))}
                 </tbody>

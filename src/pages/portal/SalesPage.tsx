@@ -99,9 +99,9 @@ const winLossReasons = [
 
 const competitiveLosses = [
   { c: 'BTC',       deals: 142, share: 38, depth: 12 },
-  { c: 'Benchmark B',       deals: 98,  share: 26, depth: 18 },
-  { c: 'Benchmark C',  deals: 71,  share: 19, depth: 8 },
-  { c: 'Benchmark B',  deals: 44,  share: 12, depth: 14 },
+  { c: 'Rival ISP B',       deals: 98,  share: 26, depth: 18 },
+  { c: 'Rival ISP C',  deals: 71,  share: 19, depth: 8 },
+  { c: 'Rival ISP B',  deals: 44,  share: 12, depth: 14 },
   { c: 'Other',     deals: 18,  share: 5,  depth: 6 },
 ]
 
@@ -162,7 +162,7 @@ const regions = [
 const topAccounts = [
   { acc: 'Island Bank (demo) Group',              tier: 'Strategic', tcv: 4.8, services: 92, expansion: 1.2, owner: 'A. Bethel' },
   { acc: 'Island Logistics (demo) Group',               tier: 'Public',    tcv: 3.6, services: 84, expansion: 0.8, owner: 'N. Knowles' },
-  { acc: 'Belfius',        tier: 'Strategic', tcv: 3.2, services: 68, expansion: 1.4, owner: 'A. Bethel' },
+  { acc: 'Commonwealth Bank (demo)',        tier: 'Strategic', tcv: 3.2, services: 68, expansion: 1.4, owner: 'A. Bethel' },
   { acc: 'Island Air (demo) Holdings',       tier: 'Strategic', tcv: 2.4, services: 42, expansion: 1.8, owner: 'D. Knowles' },
   { acc: 'Barco',          tier: 'Strategic', tcv: 2.1, services: 18, expansion: 0.4, owner: 'D. Knowles' },
   { acc: 'Nassau Bus',             tier: 'Public',    tcv: 1.4, services: 24, expansion: 0.6, owner: 'A. Bethel' },
@@ -217,7 +217,7 @@ const cancellationReasons = [
   { r: 'Wrong product sold',    n: 64 },
   { r: 'Credit / KYC fail',     n: 48 },
   { r: 'Buyer remorse',         n: 32 },
-  { r: 'BTC / Benchmark B counter',     n: 28 },
+  { r: 'BTC / Rival ISP B counter',     n: 28 },
 ]
 
 const renewalCalendar = [
@@ -335,9 +335,9 @@ const winLossByQuarter = [
 
 const lostByCompetitor = [
   { competitor: 'BTC', price: 62, network: 18, bundle: 12, service: 8 },
-  { competitor: 'Benchmark B',     price: 54, network: 22, bundle: 8,  service: 16 },
-  { competitor: 'Benchmark C',    price: 48, network: 28, bundle: 14, service: 10 },
-  { competitor: 'Benchmark B', price: 58, network: 20, bundle: 12, service: 10 },
+  { competitor: 'Rival ISP B',     price: 54, network: 22, bundle: 8,  service: 16 },
+  { competitor: 'Rival ISP C',    price: 48, network: 28, bundle: 14, service: 10 },
+  { competitor: 'Rival ISP B', price: 58, network: 20, bundle: 12, service: 10 },
 ]
 
 const dealSizeWinRate = [

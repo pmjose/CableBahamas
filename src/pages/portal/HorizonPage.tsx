@@ -25,7 +25,7 @@ const POLICIES = [
   { type: 'Masking',     name: 'mask_iban',             applied_to: 4,   scope: 'PCI',              action: 'tokenize via FPE'               },
   { type: 'Masking',     name: 'mask_msisdn',           applied_to: 8,   scope: 'PII · subscriber', action: 'hash sha-256'                   },
   { type: 'Masking',     name: 'mask_salary',           applied_to: 2,   scope: 'HR sensitive',     action: 'NULL except PEOPLE_HR_BP'       },
-  { type: 'Row access',  name: 'rls_region_eu',         applied_to: 6,   scope: 'EU vs ROW',        action: 'region IN (USER.region_grant)'  },
+  { type: 'Row access',  name: 'rls_region_eu',         applied_to: 6,   scope: 'US vs ROW',        action: 'region IN (USER.region_grant)'  },
   { type: 'Row access',  name: 'rls_b2b_account_owner', applied_to: 3,   scope: 'B2B sales rep',   action: 'owner_id = current_user_email'  },
   { type: 'Row access',  name: 'rls_hr_country',        applied_to: 2,   scope: 'HR by country',    action: 'country_code IN entitlements'   },
   { type: 'Tag-based',   name: 'auto_mask_pii',         applied_to: 248, scope: 'tag:PII',          action: 'all PII columns auto-masked'    },
@@ -38,8 +38,8 @@ const TAGS = [
   { name: 'CONFIDENTIAL',      applied: 412, owner: 'CDO',    steward: "Anna Knowles" },
   { name: 'COST_CENTRE',       applied: 612, owner: 'Finance', steward: 'Thomas Knowles' },
   { name: 'BUSINESS_CRITICAL', applied: 38,  owner: 'CTO',    steward: 'Pieter Knowles'      },
-  { name: 'GDPR_SUBJECT',      applied: 248, owner: 'DPO',    steward: 'Ann Vermeulen'    },
-  { name: 'NIS2_SCOPE',        applied: 24,  owner: 'CISO',   steward: 'Lars Bethel'       },
+  { name: 'DPA_SUBJECT',      applied: 248, owner: 'DPO',    steward: 'Ann Vermeulen'    },
+  { name: 'CYBER_SCOPE',        applied: 24,  owner: 'CISO',   steward: 'Lars Bethel'       },
   { name: 'DATA_PRODUCT_OWNER',applied: 14,  owner: 'CDO',    steward: "Anna Knowles" },
 ]
 
@@ -76,23 +76,23 @@ const LINEAGE_COVERAGE = [
 ]
 
 const COMPLIANCE_CONTROLS = [
-  { id: 'GDPR-1',  framework: 'GDPR',     control: 'Data minimisation',                 status: 'pass', score: 94, evidence: 'Column-level masking + RLS enforced' },
-  { id: 'GDPR-2',  framework: 'GDPR',     control: 'Right to be forgotten automation',  status: 'pass', score: 88, evidence: 'Purge proc + Snowflake TTL'          },
-  { id: 'GDPR-3',  framework: 'GDPR',     control: 'Data classification & labelling',   status: 'pass', score: 91, evidence: 'SYSTEM$CLASSIFY + steward review'    },
-  { id: 'NIS2-1',  framework: 'NIS2',     control: 'Data breach notification < 72h',    status: 'pass', score: 100, evidence: 'Automated alert chain active'       },
-  { id: 'NIS2-2',  framework: 'NIS2',     control: 'Supplier risk management',          status: 'warn', score: 72,  evidence: 'Partial — 3rd-party review ongoing'  },
+  { id: 'DPA-1',  framework: 'DPA',     control: 'Data minimisation',                 status: 'pass', score: 94, evidence: 'Column-level masking + RLS enforced' },
+  { id: 'DPA-2',  framework: 'DPA',     control: 'Right to be forgotten automation',  status: 'pass', score: 88, evidence: 'Purge proc + Snowflake TTL'          },
+  { id: 'DPA-3',  framework: 'DPA',     control: 'Data classification & labelling',   status: 'pass', score: 91, evidence: 'SYSTEM$CLASSIFY + steward review'    },
+  { id: 'URCA cyber-1',  framework: 'URCA cyber',     control: 'Data breach notification < 72h',    status: 'pass', score: 100, evidence: 'Automated alert chain active'       },
+  { id: 'URCA cyber-2',  framework: 'URCA cyber',     control: 'Supplier risk management',          status: 'warn', score: 72,  evidence: 'Partial — 3rd-party review ongoing'  },
   { id: 'PCI-1',   framework: 'PCI-DSS',  control: 'Cardholder data encryption (FPE)', status: 'pass', score: 100, evidence: 'mask_iban FPE tokenization active'   },
   { id: 'URCA-1',  framework: 'URCA',     control: 'Retention limits for call records', status: 'pass', score: 96,  evidence: 'Storage lifecycle policy active'     },
-  { id: 'APD-1',   framework: 'APD',      control: 'Consent management lineage',        status: 'warn', score: 68,  evidence: 'Lineage gap in consent pipeline'     },
+  { id: 'ODPC-1',   framework: 'ODPC',      control: 'Consent management lineage',        status: 'warn', score: 68,  evidence: 'Lineage gap in consent pipeline'     },
 ]
 
 const TAG_TREND = [
-  { m: 'Jan', pii: 218, pci: 18, confidential: 380, gdpr: 218 },
-  { m: 'Feb', pii: 224, pci: 19, confidential: 390, gdpr: 224 },
-  { m: 'Mar', pii: 230, pci: 20, confidential: 396, gdpr: 230 },
-  { m: 'Apr', pii: 238, pci: 21, confidential: 402, gdpr: 238 },
-  { m: 'May', pii: 242, pci: 21, confidential: 408, gdpr: 242 },
-  { m: 'Jun', pii: 248, pci: 22, confidential: 412, gdpr: 248 },
+  { m: 'Jan', pii: 218, pci: 18, confidential: 380, dpa: 218 },
+  { m: 'Feb', pii: 224, pci: 19, confidential: 390, dpa: 224 },
+  { m: 'Mar', pii: 230, pci: 20, confidential: 396, dpa: 230 },
+  { m: 'Apr', pii: 238, pci: 21, confidential: 402, dpa: 238 },
+  { m: 'May', pii: 242, pci: 21, confidential: 408, dpa: 242 },
+  { m: 'Jun', pii: 248, pci: 22, confidential: 412, dpa: 248 },
 ]
 
 const MATURITY_SCORES = [
@@ -214,15 +214,15 @@ export default function HorizonPage() {
         }}
         chart={{
           kind: 'line',
-          title: 'Tag attachment trend — PII · PCI · GDPR (6 months)',
+          title: 'Tag attachment trend — PII · PCI · DPA (6 months)',
           xKey: 'm',
           data: TAG_TREND,
           series: [
             { key: 'pii',  name: 'PII',  color: '#dc2626'        },
             { key: 'pci',  name: 'PCI',  color: AMBER            },
-            { key: 'gdpr', name: 'GDPR', color: PURPLE, dashed: true },
+            { key: 'dpa', name: 'DPA', color: PURPLE, dashed: true },
           ],
-          note: 'PII and GDPR counts stay in sync — all PII columns tagged as GDPR subjects.',
+          note: 'PII and DPA counts stay in sync — all PII columns tagged as DPA subjects.',
         }}
       />
 
@@ -233,7 +233,7 @@ export default function HorizonPage() {
             <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
             <div className="flex-1">
               <div className="font-bold text-amber-900 text-sm">
-                {tt('EXEC_360_SV freshness SLA breach · 128 unclassified telemetry columns · APD consent lineage gap')}
+                {tt('EXEC_360_SV freshness SLA breach · 128 unclassified telemetry columns · ODPC consent lineage gap')}
               </div>
               <div className="text-xs text-amber-800 mt-1">
                 {tt('PEOPLE_360 freshness > 24h threshold. Lineage coverage in AI/ML and mobile domains below 80%.')}
@@ -272,13 +272,13 @@ export default function HorizonPage() {
       {tab === 'overview' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           <KpiCard label={tt('Masking policies')}    value="14"     delta={tt('5 types')}                trend="flat" icon={Lock}       accent />
-          <KpiCard label={tt('Row-access policies')} value="6"      delta={tt('EU · B2B · HR')}          trend="flat" icon={Eye}        />
+          <KpiCard label={tt('Row-access policies')} value="6"      delta={tt('Bahamas · B2B · HR')}          trend="flat" icon={Eye}        />
           <KpiCard label={tt('Active tags')}          value="8"      delta={tt('1,612 attachments')}      trend="up"   icon={Tag}        />
           <KpiCard label={tt('Classified columns')}  value="91%"    delta="+3 pp MoM"                    trend="up"   icon={CheckCircle2}/>
           <KpiCard label={tt('Object contacts')}     value="100%"   delta={tt('steward assigned')}       trend="flat" icon={ShieldCheck} />
           <KpiCard label={tt('DMF monitors')}         value="8"      delta={tt('1 SLA breach')}           trend="down" icon={Activity}   />
           <KpiCard label={tt('Tag attachments')}      value="1,612"  delta="+248 MoM"                     trend="up"   icon={Tag}        />
-          <KpiCard label={tt('Compliance score')}     value="91%"    delta={tt('GDPR · NIS2 · PCI')}      trend="up"   icon={ShieldCheck} />
+          <KpiCard label={tt('Compliance score')}     value="91%"    delta={tt('DPA · URCA cyber · PCI')}      trend="up"   icon={ShieldCheck} />
           <KpiCard label={tt('Lineage coverage')}     value="88%"    delta="+4 pp MoM"                    trend="up"   icon={Network}    />
           <KpiCard label={tt('Data product owners')}  value="14"     delta={tt('active stewards')}         trend="flat" icon={FileText}   />
           <KpiCard label={tt('Auto-classification rate')} value="84%" delta={tt('SYSTEM$CLASSIFY')}     trend="up"   icon={RefreshCw}  />
@@ -296,7 +296,7 @@ export default function HorizonPage() {
                   <Legend wrapperStyle={{ fontSize: 11 }} />
                   <Line type="monotone" dataKey="pii"         name="PII"         stroke="#dc2626" strokeWidth={2.4} dot />
                   <Line type="monotone" dataKey="confidential" name={tt('Confidential')} stroke={NAVY}  strokeWidth={1.8} dot={false} strokeDasharray="3 3" />
-                  <Line type="monotone" dataKey="gdpr"        name="GDPR"        stroke={PURPLE} strokeWidth={2} dot={false} strokeDasharray="4 4" />
+                  <Line type="monotone" dataKey="dpa"        name="DPA"        stroke={PURPLE} strokeWidth={2} dot={false} strokeDasharray="4 4" />
                 </LineChart>
               </ResponsiveContainer>
             </div>
@@ -416,7 +416,7 @@ export default function HorizonPage() {
             </tbody>
           </table>
           <div className="text-[11px] text-vfes-dark/65 mt-3">
-            {tt('SIM_SWAP_REQUESTS is the only Critical-sensitivity object — 11 masked columns, RAP enforced. MOBILE_LOCATION_LOGS Iceberg has 14 downstream consumers under GDPR location retention policy.')}
+            {tt('SIM_SWAP_REQUESTS is the only Critical-sensitivity object — 11 masked columns, RAP enforced. MOBILE_LOCATION_LOGS Iceberg has 14 downstream consumers under DPA location retention policy.')}
           </div>
         </Panel>
       </>)}
@@ -427,7 +427,7 @@ export default function HorizonPage() {
           <KpiCard label={tt('Active tags')}        value="8"      delta={tt('5 new YTD')}             trend="up"   icon={Tag}     accent />
           <KpiCard label={tt('Tag attachments')}    value="1,612"  delta="+248 MoM"                    trend="up"   icon={Activity}/>
           <KpiCard label={tt('PII tagged columns')} value="248"    delta={tt('100% classified')}       trend="flat" icon={Lock}    />
-          <KpiCard label={tt('GDPR subjects')}      value="248"    delta={tt('matches PII count')}     trend="flat" icon={Eye}     />
+          <KpiCard label={tt('DPA subjects')}      value="248"    delta={tt('matches PII count')}     trend="flat" icon={Eye}     />
         </div>
 
         <div className="flex items-center gap-3 mb-4">
@@ -484,7 +484,7 @@ export default function HorizonPage() {
               </div>
             </Panel>
 
-            <Panel title={tt('Tag trend — PII + GDPR aligned')}>
+            <Panel title={tt('Tag trend — PII + DPA aligned')}>
               <div className="h-44">
                 <ResponsiveContainer>
                   <AreaChart data={TAG_TREND}>
@@ -494,7 +494,7 @@ export default function HorizonPage() {
                     <Tooltip contentStyle={TS} />
                     <Legend wrapperStyle={{ fontSize: 11 }} />
                     <Area type="monotone" dataKey="pii"  name="PII"  stroke="#dc2626" fill="#dc2626" fillOpacity={0.25} />
-                    <Area type="monotone" dataKey="gdpr" name="GDPR" stroke={PURPLE}  fill={PURPLE}  fillOpacity={0.2} />
+                    <Area type="monotone" dataKey="dpa" name="DPA" stroke={PURPLE}  fill={PURPLE}  fillOpacity={0.2} />
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
@@ -620,7 +620,7 @@ export default function HorizonPage() {
       {tab === 'policies' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Masking policies')}    value="14"  delta={tt('5 object types')}      trend="flat" icon={Lock}   accent />
-          <KpiCard label={tt('Row-access policies')} value="6"   delta={tt('EU · B2B · HR')}       trend="flat" icon={Eye}   />
+          <KpiCard label={tt('Row-access policies')} value="6"   delta={tt('Bahamas · B2B · HR')}       trend="flat" icon={Eye}   />
           <KpiCard label={tt('Tag-based policies')}  value="2"   delta={tt('auto enforcement')}    trend="up"   icon={Tag}   />
           <KpiCard label={tt('Aggregation policies')} value="1"  delta={tt('public stats min-k')} trend="flat" icon={Activity}/>
         </div>
@@ -960,12 +960,12 @@ export default function HorizonPage() {
           <KpiCard label={tt('Controls assessed')} value="8"    delta={tt('5 frameworks')}       trend="flat" icon={ShieldCheck} accent />
           <KpiCard label={tt('Pass')}               value="6"    delta={tt('75% pass rate')}      trend="up"   icon={CheckCircle2}/>
           <KpiCard label={tt('Warning')}             value="2"    delta={tt('partial compliance')} trend="down" icon={AlertTriangle}/>
-          <KpiCard label={tt('GDPR score')}          value="91"   delta={tt('/ 100')}              trend="up"   icon={Eye}         />
+          <KpiCard label={tt('DPA score')}          value="91"   delta={tt('/ 100')}              trend="up"   icon={Eye}         />
         </div>
 
         <div className="flex flex-wrap items-center gap-2 mb-4">
           <span className="text-xs font-bold uppercase tracking-widest text-vfes-dark/55">{tt('Framework:')}</span>
-          {['All', 'GDPR', 'NIS2', 'PCI-DSS', 'URCA', 'APD'].map(f => (
+          {['All', 'DPA', 'URCA cyber', 'PCI-DSS', 'URCA', 'ODPC'].map(f => (
             <button
               key={f}
               onClick={() => setCompFramework(f)}
@@ -1038,7 +1038,7 @@ export default function HorizonPage() {
             <div className="rounded-xl bg-gradient-to-br from-vfes-red/10 to-transparent border border-vfes-red/20 p-4">
               <div className="text-xs uppercase tracking-widest font-bold text-vfes-dark mb-1">{tt('Compliance action items')}</div>
               <div className="text-sm text-vfes-dark/80 mb-3">
-                {tt('NIS2-2 supplier risk and APD-1 consent lineage are the two open gaps. Target Q3 close.')}
+                {tt('URCA cyber-2 supplier risk and DPA-1 consent lineage are the two open gaps. Target Q3 close.')}
               </div>
               <div className="flex gap-3 text-xs">
                 <Link to="/portal/regulatory" className="font-bold text-vfes-dark hover:underline">{tt('Regulatory →')}</Link>

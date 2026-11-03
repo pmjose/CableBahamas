@@ -66,7 +66,7 @@ const funnel = [
   { stage: 'Footprint eligible',   n:  742000, color: '#475569', drop: '−31% (no FTTH/HFC)' },
   { stage: 'Contract eligible',    n:  486000, color: '#64748b', drop: '−34% (in 24-mo term)' },
   { stage: 'Content rights OK',    n:  442000, color: '#94a3b8', drop: '−9% (Sports rights)' },
-  { stage: 'Marketing consent',    n:  362000, color: '#cbd5e1', drop: '−18% (GDPR opt-out)' },
+  { stage: 'Marketing consent',    n:  362000, color: '#cbd5e1', drop: '−18% (DPA opt-out)' },
   { stage: 'Capacity / fatigue',   n:  298000, color: '#e2e8f0', drop: '−18% (in other campaigns)' },
   { stage: 'Final addressable',    n:  298000, color: '#10b981', drop: '' },
 ]
@@ -252,7 +252,7 @@ export default function BundlePropensityPage() {
           ],
           findings: [
             'The margin waterfall favours convergent bundles over single-product upsell.',
-            'Targeting the eligible high-propensity base maximises EBITDA per campaign euro.',
+            'Targeting the eligible high-propensity base maximises EBITDA per campaign dollar.',
             'Route each offer to the best-fit channel inside contact-policy caps to protect conversion.',
           ],
           note: 'Net out existing add-ons before launch to avoid cannibalising current ARPU.',
@@ -545,7 +545,7 @@ export default function BundlePropensityPage() {
             <div className="flex items-center gap-1"><Wifi className="w-3 h-3 text-emerald-600" />{tt('FTTH/HFC check')}</div>
             <div className="flex items-center gap-1"><Network className="w-3 h-3 text-amber-600" />{tt('Contract / ETF')}</div>
             <div className="flex items-center gap-1"><Tv className="w-3 h-3 text-slate-600" />{tt('Content rights')}</div>
-            <div className="flex items-center gap-1"><ShieldCheck className="w-3 h-3 text-vfes-dark" />{tt('GDPR consent')}</div>
+            <div className="flex items-center gap-1"><ShieldCheck className="w-3 h-3 text-vfes-dark" />{tt('DPA consent')}</div>
           </div>
         </Panel>
 
@@ -832,7 +832,7 @@ export default function BundlePropensityPage() {
             <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Drift max')}</div><div className="font-semibold text-amber-700">{tt('0.09 (Sports — content shift)')}</div></div>
             <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Last retrained')}</div><div className="font-semibold">{tt('12 days ago')}</div></div>
             <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Owner')}</div><div className="font-semibold">{tt('Commercial Analytics · A. Bain')}</div></div>
-            <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('GDPR basis')}</div><div className="font-semibold">{tt('Marketing consent · DPIA-2024-MKT-12')}</div></div>
+            <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('DPA basis')}</div><div className="font-semibold">{tt('Marketing consent · DPIA-2024-MKT-12')}</div></div>
             <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Hold-out actual lift')}</div><div className="font-semibold text-emerald-700">{tt('+38% vs control')}</div></div>
             <div className="col-span-2"><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Fairness')}</div><div className="font-semibold text-emerald-700">{tt('Demographic parity Δ &lt; 0.03 across age, county, social grade')}</div></div>
           </div>
@@ -1092,7 +1092,7 @@ export default function BundlePropensityPage() {
   )
 // BundlePropensityPage — 8-tab flagship page with XGBoost + T-Learner models
 // Tabs: overview · uplift · channels · scenarios · model · b2b · performance · segmentation
-// All model metrics sourced from Snowflake Model Registry · GDPR: DPIA-2024-MKT-12
+// All model metrics sourced from Snowflake Model Registry · DPA: DPIA-2024-MKT-12
 // Semantic view: CBL_ANALYTICS.ML_OUTPUTS.BUNDLE_PROPENSITY
 // Demographic parity Δ < 0.03 across all segments — fairness check passing
 }

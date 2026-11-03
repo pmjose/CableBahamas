@@ -32,10 +32,10 @@ const DAILY_FLOW = Array.from({ length: 30 }, (_, i) => {
 
 const NET_BY_CARRIER = [
   { carrier: 'BTC',  gained: 5240, lost: 3980, net: 1260 },
-  { carrier: 'Benchmark A',    gained: 4120, lost: 4360, net: -240 },
-  { carrier: 'Benchmark B',  gained: 3880, lost: 2940, net: 940 },
-  { carrier: 'Benchmark C',       gained: 2210, lost: 5120, net: -2910 },
-  { carrier: 'Benchmark C',       gained: 1640, lost: 1180, net: 460 },
+  { carrier: 'Rival ISP A',    gained: 4120, lost: 4360, net: -240 },
+  { carrier: 'Rival ISP B',  gained: 3880, lost: 2940, net: 940 },
+  { carrier: 'Rival ISP C',       gained: 2210, lost: 5120, net: -2910 },
+  { carrier: 'Rival ISP C',       gained: 1640, lost: 1180, net: 460 },
 ]
 
 const LOSS_REASONS = [
@@ -102,10 +102,10 @@ const WIN_BACK_TREND = Array.from({ length: 8 }, (_, i) => ({
 
 const CARRIER_DETAIL = [
   { carrier: 'BTC',   gained: 5240, lost: 3980, net: 1260,  shareGained: 42, shareLost: 31 },
-  { carrier: 'Benchmark A',     gained: 4120, lost: 4360, net: -240,  shareGained: 33, shareLost: 34 },
-  { carrier: 'Benchmark B',   gained: 3880, lost: 2940, net: 940,   shareGained: 31, shareLost: 23 },
-  { carrier: 'Benchmark C',        gained: 2210, lost: 5120, net: -2910, shareGained: 18, shareLost: 40 },
-  { carrier: 'Benchmark C',         gained: 1640, lost: 1180, net: 460,   shareGained: 13, shareLost:  9 },
+  { carrier: 'Rival ISP A',     gained: 4120, lost: 4360, net: -240,  shareGained: 33, shareLost: 34 },
+  { carrier: 'Rival ISP B',   gained: 3880, lost: 2940, net: 940,   shareGained: 31, shareLost: 23 },
+  { carrier: 'Rival ISP C',        gained: 2210, lost: 5120, net: -2910, shareGained: 18, shareLost: 40 },
+  { carrier: 'Rival ISP C',         gained: 1640, lost: 1180, net: 460,   shareGained: 13, shareLost:  9 },
 ]
 
 // ─── Tabs ──────────────────────────────────────────────────────────────────────
@@ -178,7 +178,7 @@ export default function MnpPage() {
       {/* KPI Row 2 */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
         <KpiCard label={tt('Win rate vs BTC')} value="+1,260" delta={tt('best competitor')} trend="up" icon={TrendingUp} />
-        <KpiCard label={tt('Loss vs Benchmark B')} value="−2,910" delta={tt('price-defence urgent')} trend="down" icon={TrendingDown} />
+        <KpiCard label={tt('Loss vs Rival ISP B')} value="−2,910" delta={tt('price-defence urgent')} trend="down" icon={TrendingDown} />
         <KpiCard label={tt('Save desk contacted')} value="8,920" delta={tt('63% of eligible')} trend="up" icon={Phone} />
         <KpiCard label={tt('Avg ARPU saved')} value="BSD 56" delta={tt('+8 vs portfolio avg')} trend="up" icon={ShieldCheck} />
         <KpiCard label={tt('MNP window time')} value="24h" delta={tt('PAC expires in 24h')} trend="flat" icon={Activity} />
@@ -378,7 +378,7 @@ export default function MnpPage() {
                 </ResponsiveContainer>
               </div>
               <div className="mt-3 text-xs text-vfes-dark font-bold flex items-center gap-1">
-                <Brain className="w-3 h-3" /> {tt('Winner vs BTC & Benchmark B; Benchmark B low-cost drain -2,910 — price-defence segment urgent.')}
+                <Brain className="w-3 h-3" /> {tt('Winner vs BTC & Rival ISP B; Rival ISP B low-cost drain -2,910 — price-defence segment urgent.')}
               </div>
             </Panel>
 
@@ -431,11 +431,11 @@ export default function MnpPage() {
                   </thead>
                   <tbody>
                     {[
-                      { carrier: 'Benchmark B',     net: -2910, weakness: 'Price only — no 5G network or TV',           lever: 'Convergent Bundle + 5G upgrade',       status: 'Urgent' },
-                      { carrier: 'Benchmark A',   net:  -240, weakness: 'Family plan leakage — 2-line plan',        lever: '2nd line -50% · mid-size families',       status: 'Active' },
-                      { carrier: 'Benchmark C', net:   940, weakness: 'Poor rural coverage',                 lever: 'Leverage coverage + win-back',            status: 'Winning' },
+                      { carrier: 'Rival ISP B',     net: -2910, weakness: 'Price only — no 5G network or TV',           lever: 'Convergent Bundle + 5G upgrade',       status: 'Urgent' },
+                      { carrier: 'Rival ISP A',   net:  -240, weakness: 'Family plan leakage — 2-line plan',        lever: '2nd line -50% · mid-size families',       status: 'Active' },
+                      { carrier: 'Rival ISP C', net:   940, weakness: 'Poor rural coverage',                 lever: 'Leverage coverage + win-back',            status: 'Winning' },
                       { carrier: 'BTC', net:  1260, weakness: 'Premium price without clear differentiation',lever: 'Quality positioning + loyalty',          status: 'Winning' },
-                      { carrier: 'Benchmark C',      net:   460, weakness: 'Limited portfolio — no TV / IoT',          lever: 'Bundle + Smart Home cross-sell',          status: 'Winning' },
+                      { carrier: 'Rival ISP C',      net:   460, weakness: 'Limited portfolio — no TV / IoT',          lever: 'Bundle + Smart Home cross-sell',          status: 'Winning' },
                     ].map(c => (
                       <tr key={c.carrier} className="border-b border-black/5 hover:bg-[#fafbfc]">
                         <td className="py-2.5 font-semibold">{c.carrier}</td>
@@ -487,9 +487,9 @@ export default function MnpPage() {
             <div className="h-64">
               <ResponsiveContainer>
                 <BarChart data={[
-                  { carrier: 'Benchmark B',    price: 62, network: 8,  bill: 9,  care: 14, other: 7 },
-                  { carrier: 'Benchmark A',  price: 38, network: 18, bill: 14, care: 20, other: 10 },
-                  { carrier: 'Benchmark C',     price: 44, network: 12, bill: 10, care: 22, other: 12 },
+                  { carrier: 'Rival ISP B',    price: 62, network: 8,  bill: 9,  care: 14, other: 7 },
+                  { carrier: 'Rival ISP A',  price: 38, network: 18, bill: 14, care: 20, other: 10 },
+                  { carrier: 'Rival ISP C',     price: 44, network: 12, bill: 10, care: 22, other: 12 },
                   { carrier: 'BTC',price: 28, network: 20, bill: 16, care: 24, other: 12 },
                 ]} layout="vertical">
                   <CartesianGrid stroke="#eee" strokeDasharray="3 3" />
@@ -942,7 +942,7 @@ export default function MnpPage() {
             <div className="space-y-2 text-sm">
               {[
                 'Which 5K subscribers with the highest CLV have filed a PAC request in the last 7 days?',
-                'Which save offer has the highest ROI for the at-risk Benchmark B-destination segment?',
+                'Which save offer has the highest ROI for the at-risk Rival ISP B-destination segment?',
                 'Compare save desk rate on weekends vs weekdays — is there a significant difference?',
                 'How many inactive 12-month customers have active marketing consent and ARPU > BSD 30?',
                 'Analyse whether churn reasons vary by region — group by Bahamian province.',
@@ -975,8 +975,8 @@ export default function MnpPage() {
 
       <div className="mt-6 grid md:grid-cols-3 gap-4">
         <div className="rounded-xl border border-black/5 bg-[#fafbfc] p-4">
-          <div className="text-[10px] uppercase tracking-widest font-bold text-vfes-dark mb-2">{tt('Priority 1 — Benchmark B')}</div>
-          <div className="text-sm">{tt('Launch price-defence segment vs Benchmark B: convergent bundle with 12-month limited price offer. Target: 380K at risk.')}</div>
+          <div className="text-[10px] uppercase tracking-widest font-bold text-vfes-dark mb-2">{tt('Priority 1 — Rival ISP B')}</div>
+          <div className="text-sm">{tt('Launch price-defence segment vs Rival ISP B: convergent bundle with 12-month limited price offer. Target: 380K at risk.')}</div>
           <div className="mt-2 flex gap-2">
             <Link to="/portal/pricing-simulator" className="text-[10px] font-bold text-vfes-dark hover:underline">{tt('Pricing →')}</Link>
             <Link to="/portal/bundle-propensity" className="text-[10px] font-bold text-vfes-dark hover:underline">{tt('Propensity →')}</Link>
@@ -1010,7 +1010,7 @@ export default function MnpPage() {
         </div>
         <div className="mt-4 grid md:grid-cols-3 gap-3 text-xs">
           <div>
-            <div className="font-bold text-vfes-dark mb-1">{tt('Benchmark B Plan')}</div>
+            <div className="font-bold text-vfes-dark mb-1">{tt('Rival ISP B Plan')}</div>
             <div className="text-vfes-dark/65">{tt('Price-defence segment: convergent + 5G upgrade for 380K at risk. Deployment Q3.')}</div>
             <Link to="/portal/pricing-simulator" className="text-vfes-dark font-semibold mt-1 block hover:underline">{tt('Pricing Simulator →')}</Link>
           </div>

@@ -128,7 +128,7 @@ const policyRegistry = [
   { policy: 'Row-level — Network region',      type: 'Row Access',  tables:  24, owner: 'Network',         status: 'Active' },
   { policy: 'Aggregation — HR metrics',        type: 'Aggregation', tables:  12, owner: 'HR',              status: 'Active' },
   { policy: 'Projection — CRM restrict',       type: 'Projection',  tables:   8, owner: 'CRM',             status: 'Review' },
-  { policy: 'Tag — GDPR Article-6 consent',    type: 'Tag',         tables: 134, owner: 'Legal',           status: 'Active' },
+  { policy: 'Tag — DPA Article-6 consent',    type: 'Tag',         tables: 134, owner: 'Legal',           status: 'Active' },
   { policy: 'Tag — URCA Regulatory data',      type: 'Tag',         tables:  75, owner: 'Regulatory',      status: 'Active' },
 ]
 

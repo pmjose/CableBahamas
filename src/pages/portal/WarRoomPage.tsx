@@ -82,7 +82,7 @@ const incidents: Incident[] = [
     customersImpacted: 0,
     productsAffected: ['Online payments', 'MyREV app'],
     revenuePerMin: 92,
-    rootCause: 'Worldpay regional outage in EU-West-1',
+    rootCause: 'Worldpay regional outage in US-West-1',
     runbookUrl: 'RUNBOOK-PAY-OUTAGE-002',
     vendorEscalation: 'Worldpay status: investigating',
     nextStep: 'Failover to backup processor active — payments queuing',
@@ -102,7 +102,7 @@ const incidents: Incident[] = [
     customersImpacted: 380,
     productsAffected: ['Broadband'],
     revenuePerMin: 0,
-    rootCause: 'Suspected reaction to Benchmark B BSD 30 launch announcement',
+    rootCause: 'Suspected reaction to Rival ISP B BSD 30 launch announcement',
     runbookUrl: 'RUNBOOK-CHURN-SURGE-001',
     nextStep: 'Retention save offer auto-deployed via PEGA',
     publicStatusPage: 'hidden',
@@ -121,7 +121,7 @@ const incidents: Incident[] = [
     customersImpacted: 0,
     productsAffected: ['Latency on Freeport POP +14ms'],
     revenuePerMin: 0,
-    rootCause: '120 Gbps UDP flood — botnet origin Eastern Europe',
+    rootCause: '120 Gbps UDP flood — botnet origin offshore',
     runbookUrl: 'RUNBOOK-SEC-DDOS-001',
     vendorEscalation: 'Akamai Prolexic engaged',
     nextStep: 'Scrubbing in place; monitoring for second wave',
@@ -141,9 +141,9 @@ const incidents: Incident[] = [
     customersImpacted: 4800,
     productsAffected: ['REVTV'],
     revenuePerMin: 0,
-    rootCause: 'Benchmark B EPG feed lag — vendor-side',
+    rootCause: 'Rival ISP B EPG feed lag — vendor-side',
     runbookUrl: 'RUNBOOK-TV-EPG-001',
-    vendorEscalation: 'Benchmark B engineering ticket Benchmark B-INC-118842',
+    vendorEscalation: 'Rival ISP B engineering ticket Rival ISP B-INC-118842',
     nextStep: 'Rolling restart of EPG cache nodes',
     publicStatusPage: 'visible',
   },
@@ -213,7 +213,7 @@ const decisions = [
   { sev: 'urgent', text: 'Approve BSD 50K make-good package for Nassau North customers (12.4K impact)', for: 'COO', age: 8, link: '/portal/operations' },
   { sev: 'urgent', text: 'Authorise public press statement re: A12 civils strike', for: 'CEO/CMO', age: 14, link: '/portal/regulatory' },
   { sev: 'review', text: 'URCA notification for >10K customer outage required within 2h', for: 'Legal', age: 22, link: '/portal/regulatory' },
-  { sev: 'review', text: 'Eleuthera retention budget uplift BSD 20K — Benchmark B defensive', for: 'CCO', age: 38, link: '/portal/customer-360' },
+  { sev: 'review', text: 'Eleuthera retention budget uplift BSD 20K — Rival ISP B defensive', for: 'CCO', age: 38, link: '/portal/customer-360' },
 ]
 
 const trend30d = [
@@ -238,7 +238,7 @@ const recentResolved = [
 const topProblems = [
   { c: 'Civils-related fibre cuts', n: 14, trend: '+27% vs prior 30d', region: 'Freeport, Nassau' },
   { c: 'CMTS firmware failures', n: 9, trend: '-12%', region: 'National' },
-  { c: 'Worldpay EU-West outages', n: 4, trend: '+100% (new)', region: 'National' },
+  { c: 'Worldpay US-West outages', n: 4, trend: '+100% (new)', region: 'National' },
 ]
 
 // ── extra data for new tabs ──
@@ -286,13 +286,13 @@ const runbookSteps = [
 ]
 
 const vendors = [
-  { vendor: 'Cisco TAC', ticket: 'SR-3849421', severity: 'S1', status: 'Active', lastUpdate: '14:18', sla: '2h', contact: 'Cisco NOC EU' },
+  { vendor: 'Cisco TAC', ticket: 'SR-3849421', severity: 'S1', status: 'Active', lastUpdate: '14:18', sla: '2h', contact: 'Cisco NOC Americas' },
   { vendor: 'Nokia', ticket: 'Nokia-INC-88421', severity: 'L4', status: 'Active', lastUpdate: '14:21', sla: '4h', contact: 'Nokia IMS TAC' },
-  { vendor: 'Worldpay', ticket: 'WP-EU-WEST-2026', severity: 'P1', status: 'Monitoring', lastUpdate: '13:55', sla: '1h', contact: 'Worldpay Incident' },
+  { vendor: 'Worldpay', ticket: 'WP-US-WEST-2026', severity: 'P1', status: 'Monitoring', lastUpdate: '13:55', sla: '1h', contact: 'Worldpay Incident' },
   { vendor: 'Akamai Prolexic', ticket: 'AK-PROL-2841', severity: 'High', status: 'Mitigated', lastUpdate: '14:01', sla: '1h', contact: 'Prolexic 24/7' },
   { vendor: 'Island utility (demo) NOC', ticket: 'END-2026-44182', severity: 'P2', status: 'Active', lastUpdate: '14:12', sla: '3h', contact: 'Island utility (demo) Grid Ops' },
   { vendor: 'Ericsson TAC', ticket: 'ER-118291', severity: 'S1', status: 'Active', lastUpdate: '14:31', sla: '2h', contact: 'Ericsson 5G Core' },
-  { vendor: 'Benchmark C EPG', ticket: 'Benchmark B-INC-118842', severity: 'P3', status: 'Investigating', lastUpdate: '12:40', sla: '6h', contact: 'Benchmark C Content Eng' },
+  { vendor: 'Rival ISP C EPG', ticket: 'Rival ISP B-INC-118842', severity: 'P3', status: 'Investigating', lastUpdate: '12:40', sla: '6h', contact: 'Rival ISP C Content Eng' },
 ]
 
 const slaBreachRisk = [

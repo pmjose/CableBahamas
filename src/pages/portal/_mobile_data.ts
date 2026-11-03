@@ -54,7 +54,7 @@ export const TRAFFIC_BY_TECH: { day: number; t5gSA: number; t5gNSA: number; t4g:
   return out
 })()
 
-// MNO benchmark — Cable Bahamas vs BTC vs Benchmark A vs Benchmark B
+// MNO benchmark — Cable Bahamas vs BTC vs Rival ISP A vs Rival ISP B
 export const MNO_BENCHMARK = [
   { metric: 'DL Throughput (Mbps)', vfes: 145, btc: 152, orange: 138, digi: 121 },
   { metric: 'UL Throughput (Mbps)', vfes: 38,  btc: 41,  orange: 35,  digi: 30 },
@@ -131,14 +131,14 @@ export const VENDOR_MIX = [
 
 // Coverage by region (5G %)
 export const COVERAGE_BY_REGION = [
-  { region: 'Nassau',         cov5g: 96, cov4g: 100,  sites: 2840 },
-  { region: 'Grand Bahama',   cov5g: 94, cov4g: 99.8, sites: 3120 },
-  { region: 'New Providence Region', cov5g: 88, cov4g: 99.6, sites: 3680 },
-  { region: 'Cat Island Province',  cov5g: 91, cov4g: 99.8, sites: 2240 },
-  { region: 'Eleuthera', cov5g: 92, cov4g: 99.7, sites: 1380 },
-  { region: 'Abaco',   cov5g: 82, cov4g: 99.2, sites: 1920 },
-  { region: 'Cat Island',         cov5g: 78, cov4g: 99.0, sites: 2080 },
-  { region: 'Rest of The Bahamas',   cov5g: 84, cov4g: 99.4, sites: 4924 },
+  // Sums to MOBILE_KPIS.activeSites (220)
+  { region: 'New Providence', cov5g: 96, cov4g: 100,  sites: 96 },
+  { region: 'Grand Bahama',   cov5g: 90, cov4g: 99.8, sites: 38 },
+  { region: 'Abaco',          cov5g: 72, cov4g: 99.2, sites: 22 },
+  { region: 'Eleuthera',      cov5g: 64, cov4g: 98.6, sites: 18 },
+  { region: 'Exuma',          cov5g: 58, cov4g: 98.4, sites: 14 },
+  { region: 'Andros',         cov5g: 41, cov4g: 96.8, sites: 12 },
+  { region: 'Other Family Islands', cov5g: 33, cov4g: 95.1, sites: 20 },
 ]
 
 // Roadmap programmes
@@ -342,13 +342,13 @@ export const MOBILE_RAN_PROCUREMENT = [
 // Regulatory: mobile / spectrum / 5G / Open RAN obligations
 export const MOBILE_REGULATORY = [
   { id: 'URCA-5G-OBL',   body: 'URCA',         topic: 'Spectrum 700 MHz coverage obligation', dueDate: 'Q4 2026', status: 'on-track', impact: '95% pop coverage by Dec-26',                  risk: 'Medium' },
-  { id: 'EU-5G-TOOLBOX', body: 'EU Comm.',     topic: 'EU 5G Toolbox · high-risk vendor cap',  dueDate: 'Q2 2027', status: 'on-track', impact: 'Huawei share <20% in core (currently 12%)',  risk: 'Low' },
+  { id: 'URCA-VENDOR-RISK', body: 'URCA',     topic: 'High-risk vendor policy',  dueDate: 'Q2 2027', status: 'on-track', impact: 'Huawei share <20% in core (currently 12%)',  risk: 'Low' },
   { id: 'URCA-MNP-RULE', body: 'URCA',         topic: 'MNP next-day port-in (24h SLA)',         dueDate: 'Live',    status: 'compliant', impact: 'eSIM port-in flow live · 99.4% on-time',     risk: 'Low' },
-  { id: 'CCB-700-IND', body: 'URCA',          topic: '700 MHz indoor coverage rural reporting', dueDate: 'Q3 2026', status: 'at-risk',  impact: '38 sites in Cat Island behind plan', risk: 'High' },
+  { id: 'URCA-C-700-IND', body: 'URCA',          topic: '700 MHz indoor coverage rural reporting', dueDate: 'Q3 2026', status: 'at-risk',  impact: '6 sites in the Family Islands behind plan', risk: 'High' },
   { id: 'URCA-WHOLE-MV', body: 'URCA',         topic: 'MVNO wholesale reference offer (RIO)',   dueDate: 'Live',    status: 'compliant', impact: '4 MVNOs (Mobile Vikings, Scarlet, etc.) on RIO', risk: 'Low' },
-  { id: 'APD-LOC-DATA', body: 'APD',           topic: 'Location data · GDPR retention 90d',     dueDate: 'Live',    status: 'compliant', impact: 'Privacy review passed Q1 2026',              risk: 'Low' },
-  { id: 'EU-DSA-EID',    body: 'EU Comm.',     topic: 'eID / eSIM identity verification',       dueDate: 'Q1 2027', status: 'in-flight', impact: 'eIDAS 2.0 wallet integration in design',     risk: 'Medium' },
-  { id: 'URCA-ROAM',     body: 'BEREC + URCA', topic: 'EU intra-roaming "roam-like-at-home"',   dueDate: 'Live',    status: 'compliant', impact: 'Wholesale caps tracked monthly',             risk: 'Low' },
+  { id: 'ODPC-LOC-DATA', body: 'ODPC',           topic: 'Location data · DPA retention 90d',     dueDate: 'Live',    status: 'compliant', impact: 'Privacy review passed Q1 2026',              risk: 'Low' },
+  { id: 'URCA-CONSUMER',    body: 'URCA',     topic: 'eID / eSIM identity verification',       dueDate: 'Q1 2027', status: 'in-flight', impact: 'eIDAS 2.0 wallet integration in design',     risk: 'Medium' },
+  { id: 'URCA-ROAM',     body: 'BEREC + URCA', topic: 'US/Canada roam-like-at-home bundles',   dueDate: 'Live',    status: 'compliant', impact: 'Wholesale caps tracked monthly',             risk: 'Low' },
 ]
 
 // ESG · RAN energy efficiency (kWh per terabyte traffic)
@@ -357,7 +357,7 @@ export const MOBILE_ESG = [
   { metric: 'Cell-site renewable %',        value: '78%',           target: '90%',          trend: +6.2,  ytdProgress: 72, color: '#10B981' },
   { metric: 'Sleep-mode 4G/5G hours/day',   value: '6.4h',          target: '8.0h',         trend: +1.8,  ytdProgress: 68, color: '#10B981' },
   { metric: 'Scope-2 mobile emissions',     value: '24.6 kt CO₂e',  target: '18.0 kt CO₂e', trend: -12.4, ytdProgress: 56, color: '#10B981' },
-  { metric: 'Island Towers (demo) tower-share decarbon.',  value: '5,940 sites',   target: '6,500 sites',  trend: +8.6,  ytdProgress: 91, color: '#10B981' },
+  { metric: 'Island Towers (demo) tower-share decarbon.',  value: '146 sites',     target: '160 sites',  trend: +8.6,  ytdProgress: 91, color: '#10B981' },
 ]
 
 // Risk · mobile-specific
@@ -368,7 +368,7 @@ export const MOBILE_RISKS = [
   { id: 'MOB-R-04', risk: 'RAN vendor concentration (Ericsson + Nokia 60%)',      category: 'Supplier',  likelihood: 'Low',    impact: 'High',     residual: 'Medium', owner: 'CTO + CPO',        mitigation: 'Open RAN diversification (Samsung/Mavenir/Fujitsu)', trend: 'down' },
   { id: 'MOB-R-05', risk: 'Spectrum auction outcome (3.5 GHz extension 2030)',    category: 'Regulatory',likelihood: 'Medium', impact: 'High',     residual: 'Medium', owner: 'CRO + Reg. affairs', mitigation: 'Long-range capex hedge + spectrum trading', trend: 'flat' },
   { id: 'MOB-R-06', risk: 'mmWave roll-out delay (planning permits)',             category: 'Operational',likelihood: 'High',  impact: 'Medium',   residual: 'Medium', owner: 'COO',              mitigation: 'Island Towers (demo) + small-cell street furniture deals', trend: 'flat' },
-  { id: 'MOB-R-07', risk: 'GDPR breach via mobility / location data',             category: 'Privacy',   likelihood: 'Low',    impact: 'High',     residual: 'Low',    owner: 'DPO',              mitigation: 'Pseudonymisation + 90d retention + APD review', trend: 'down' },
+  { id: 'MOB-R-07', risk: 'DPA breach via mobility / location data',             category: 'Privacy',   likelihood: 'Low',    impact: 'High',     residual: 'Low',    owner: 'DPO',              mitigation: 'Pseudonymisation + 90d retention + ODPC review', trend: 'down' },
   { id: 'MOB-R-08', risk: 'Power grid outage (cell-site battery autonomy 2h)',    category: 'Operational',likelihood: 'Medium', impact: 'High',     residual: 'Medium', owner: 'COO + Field Ops',  mitigation: 'Generators dispatch SLA 35min + battery uplift', trend: 'flat' },
 ]
 
@@ -400,7 +400,7 @@ export const MOBILE_AGENTS = [
 export const MOBILE_SEARCH_INDEXES = [
   { name: 'RAN_VENDOR_MANUALS',     description: 'Ericsson AIR / Nokia AirScale / Samsung vRAN runbooks', docs: 12480, sizeGb: 28.4, refreshHrs: 24, queriesDay: 4200,   topUser: 'Mobile NOC' },
   { name: 'GSMA_STANDARDS',         description: 'GSMA + 3GPP standards (5G SA, VoNR, SS7 hardening)',     docs:  6240, sizeGb: 14.2, refreshHrs: 168, queriesDay:  840,   topUser: 'RAN engineering' },
-  { name: 'EU_5G_TOOLBOX_REGS',     description: 'EU 5G Toolbox · URCA + CCB regulatory corpus',         docs:   840, sizeGb:  2.6, refreshHrs: 24,  queriesDay:  120,   topUser: 'Spectrum & reg.' },
+  { name: 'EU_5G_TOOLBOX_REGS',     description: 'URCA regulatory corpus',         docs:   840, sizeGb:  2.6, refreshHrs: 24,  queriesDay:  120,   topUser: 'Spectrum & reg.' },
   { name: 'MOBILE_INCIDENT_KB',     description: 'Historical mobile P1/P2/P3 PIRs · root-cause patterns',  docs:  4280, sizeGb:  6.8, refreshHrs: 1,   queriesDay: 2400,   topUser: 'War Room' },
   { name: 'SIM_FRAUD_PATTERNS',     description: 'GSMA fraud patterns + Cable Bahamas SIM-swap case library',       docs:  1240, sizeGb:  1.4, refreshHrs: 6,   queriesDay:  680,   topUser: 'Fraud + CISO' },
 ]
@@ -452,10 +452,10 @@ export const MOBILE_RBAC_ROLES = [
 export const MOBILE_TRUST = [
   { control: 'NESAS-certified RAN vendors',        framework: 'GSMA NESAS',     status: 'compliant', lastAssessed: '2026-Q1', evidence: 'Ericsson + Nokia + Samsung NESAS L3', owner: 'CISO' },
   { control: 'SS7 / Diameter STP firewall',        framework: 'GSMA FS.11',     status: 'compliant', lastAssessed: '2026-Q1', evidence: 'Mavenir STP firewall live · 3.2M signals/day', owner: 'CISO' },
-  { control: 'eKYC for SIM swap',                  framework: 'URCA + APD',     status: 'compliant', lastAssessed: '2026-Q1', evidence: 'eIDAS 2.0 wallet + 24h delay enforced', owner: 'Fraud + DPO' },
-  { control: 'EU 5G Toolbox high-risk vendor cap', framework: 'EU Comm.',       status: 'compliant', lastAssessed: '2026-Q2', evidence: 'Huawei share 12% (cap 20%)', owner: 'CRO' },
-  { control: 'Location data 90-day retention',     framework: 'GDPR · APD',    status: 'compliant', lastAssessed: '2026-Q1', evidence: 'Pseudonymisation + automated purge', owner: 'DPO' },
-  { control: 'NIS2 mobile network reporting',      framework: 'EU NIS2',        status: 'in-flight', lastAssessed: '2026-Q2', evidence: 'CSIRT integration in deployment', owner: 'CISO' },
+  { control: 'eKYC for SIM swap',                  framework: 'URCA + ODPC',     status: 'compliant', lastAssessed: '2026-Q1', evidence: 'eIDAS 2.0 wallet + 24h delay enforced', owner: 'Fraud + DPO' },
+  { control: 'High-risk vendor policy', framework: 'URCA',       status: 'compliant', lastAssessed: '2026-Q2', evidence: 'Huawei share 12% (cap 20%)', owner: 'CRO' },
+  { control: 'Location data 90-day retention',     framework: 'Data Protection Act',    status: 'compliant', lastAssessed: '2026-Q1', evidence: 'Pseudonymisation + automated purge', owner: 'DPO' },
+  { control: 'URCA cyber mobile network reporting',      framework: 'URCA cyber',        status: 'in-flight', lastAssessed: '2026-Q2', evidence: 'CSIRT integration in deployment', owner: 'CISO' },
   { control: 'O-RAN security profile',             framework: 'O-RAN Alliance', status: 'in-flight', lastAssessed: '2026-Q2', evidence: 'WG11 profile pending pilot sign-off', owner: 'Open RAN' },
 ]
 
@@ -466,7 +466,7 @@ export const MOBILE_HORIZON = [
   { object: 'MNP_PORT_REQUESTS',      type: 'Table',         sensitivity: 'High',   tags: 'PII · MSISDN · Identity',  maskedColumns: 6,  rowAccessPolicy: 'Yes', lineageDownstream:  8 },
   { object: 'SIM_SWAP_REQUESTS',      type: 'Table',         sensitivity: 'Critical', tags: 'PII · IMSI · Auth',      maskedColumns: 11, rowAccessPolicy: 'Yes', lineageDownstream:  4 },
   { object: 'RAN_VENDOR_INVOICES',    type: 'Table',         sensitivity: 'Medium', tags: 'Commercial · Vendor PII',  maskedColumns: 4,  rowAccessPolicy: 'Yes', lineageDownstream:  6 },
-  { object: 'MOBILE_LOCATION_LOGS',   type: 'Iceberg',       sensitivity: 'High',   tags: 'Location · GDPR',          maskedColumns: 4,  rowAccessPolicy: 'Yes', lineageDownstream: 14 },
+  { object: 'MOBILE_LOCATION_LOGS',   type: 'Iceberg',       sensitivity: 'High',   tags: 'Location · DPA',          maskedColumns: 4,  rowAccessPolicy: 'Yes', lineageDownstream: 14 },
 ]
 
 // Cost Intelligence · mobile workload spend
@@ -482,7 +482,7 @@ export const MOBILE_COST = [
 
 // Sharing & Marketplace · mobile data shares
 export const MOBILE_SHARES = [
-  { name: 'Island Towers (demo)_SITE_PORTFOLIO',   direction: 'Outbound', consumer: 'Island Towers (demo) (SPIE/Vantage)', records: '5,940 sites',  refresh: 'Daily',   lastSync: '2h ago', status: 'live' },
+  { name: 'Island Towers (demo)_SITE_PORTFOLIO',   direction: 'Outbound', consumer: 'Island Towers (demo) (regional TowerCo)', records: '146 sites',  refresh: 'Daily',   lastSync: '2h ago', status: 'live' },
   { name: 'MVNO_USAGE_FEED',        direction: 'Outbound', consumer: 'Mobile Vikings · Scarlet · 4 MVNOs', records: '0.84M lines', refresh: 'Hourly', lastSync: '38m ago',status: 'live' },
   { name: 'URCA_REGULATORY_FEED',   direction: 'Outbound', consumer: 'URCA',                      records: 'KPI rollups',  refresh: 'Monthly',lastSync: '5d ago', status: 'live' },
   { name: 'GROUP_5G_BENCHMARK',     direction: 'Inbound',  consumer: 'Cable Bahamas Group',            records: '5G KPIs (12 OpCos)', refresh: 'Weekly', lastSync: '2d ago', status: 'live' },

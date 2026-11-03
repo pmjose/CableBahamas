@@ -105,9 +105,9 @@ const mitreCoverage = [
 // Threat campaigns (TI feed)
 const campaigns = [
   { actor: 'Volt Typhoon (China)',      target: 'Telco / critical infra', activity: 'Active scanning · BGP probes',     iocsHit: 12, sev: 'High'    },
-  { actor: 'Sandworm (Russia)',         target: 'EU telco signalling',    activity: 'GTP probing observed (no entry)',  iocsHit:  4, sev: 'Medium'  },
+  { actor: 'Sandworm (Russia)',         target: 'Telco signalling',    activity: 'GTP probing observed (no entry)',  iocsHit:  4, sev: 'Medium'  },
   { actor: 'FIN-7',                     target: 'Carrier billing/POS',    activity: 'Spear-phish to 12 finance users',  iocsHit: 18, sev: 'High'    },
-  { actor: 'Storm-1567 (cyber-crim)',   target: 'EU SMB telecoms',        activity: 'IRSF / Wangiri ramp',              iocsHit: 28, sev: 'Medium'  },
+  { actor: 'Storm-1567 (cyber-crim)',   target: 'Caribbean SMB telecoms',        activity: 'IRSF / Wangiri ramp',              iocsHit: 28, sev: 'Medium'  },
   { actor: 'Andariel',                  target: 'Cloud APIs',             activity: 'Cred-stuffing on admin portals',   iocsHit:  8, sev: 'Medium'  },
 ]
 
@@ -227,16 +227,17 @@ const resilience = [
   { svc: 'Customer portal',      rtoH: 4,  rpoH: 1,    lastFail: '2026-04-08', drillResult: 'Pass' },
   { svc: 'Billing (BSS)',        rtoH: 6,  rpoH: 1,    lastFail: '2026-02-18', drillResult: 'Watch' },
   { svc: 'OSS / NMS',            rtoH: 4,  rpoH: 0.5,  lastFail: '2026-03-04', drillResult: 'Pass' },
+  { svc: 'Hurricane DR · Nassau→Freeport headend failover', rtoH: 8, rpoH: 1, lastFail: '2026-05-28', drillResult: 'Pass' },
   { svc: 'TV head-end',          rtoH: 2,  rpoH: 0.5,  lastFail: '2026-05-12', drillResult: 'Pass' },
   { svc: 'Lawful intercept',     rtoH: 0.25,rpoH: 0,    lastFail: '2026-02-22', drillResult: 'Pass' },
-  { svc: '112 routing',      rtoH: 0.1, rpoH: 0,    lastFail: '2026-04-30', drillResult: 'Pass' },
+  { svc: '911/919 routing',      rtoH: 0.1, rpoH: 0,    lastFail: '2026-04-30', drillResult: 'Pass' },
 ]
 const thirdParty = [
   { vendor: 'AWS',           access: 'Crown jewels', rating: 'A', lastAttest: '2026-03-08', findings: 0 },
   { vendor: 'Cisco',         access: 'Network OS',   rating: 'A', lastAttest: '2026-02-22', findings: 2 },
   { vendor: 'Salesforce',    access: 'CRM data',     rating: 'A', lastAttest: '2026-04-04', findings: 0 },
   { vendor: 'Nokia/Ericsson', access: 'Platform/content', rating: 'A', lastAttest: '2026-01-18', findings: 1 },
-  { vendor: 'Telxius',      access: 'Field WO',     rating: 'C', lastAttest: '2026-04-22', findings: 4 },
+  { vendor: 'Island Field Services (demo)',      access: 'Field WO',     rating: 'C', lastAttest: '2026-04-22', findings: 4 },
   { vendor: 'Tail (412)',    access: 'Mixed',        rating: 'C', lastAttest: 'Pending',     findings: 38 },
 ]
 const dataSec = {
@@ -249,15 +250,15 @@ const riskRegister = [
   { id: 'ER-01', name: 'Ransomware on BSS billing',           cat: 'Cyber', inh: 9, res: 6, owner: 'CISO',    appetite: 4, kci: 'Backup tested', trend: 'flat' },
   { id: 'ER-02', name: 'Major fibre cut (Nassau metro)',      cat: 'Ops',   inh: 8, res: 5, owner: 'CTO',     appetite: 4, kci: 'Diverse routes', trend: 'down' },
   { id: 'ER-03', name: 'URCA M4 margin-squeeze finding',    cat: 'Reg',   inh: 7, res: 4, owner: 'Reg Affairs', appetite: 5, kci: 'Internal model', trend: 'flat' },
-  { id: 'ER-04', name: 'Cloud single-region (eu-west-1)',     cat: 'Tech',  inh: 7, res: 5, owner: 'CIO',     appetite: 4, kci: 'Multi-AZ live', trend: 'down' },
+  { id: 'ER-04', name: 'Cloud single-region (us-east-1)',     cat: 'Tech',  inh: 7, res: 5, owner: 'CIO',     appetite: 4, kci: 'Multi-AZ live', trend: 'down' },
   { id: 'ER-05', name: 'Vendor concentration · Cisco/Nokia', cat: '3rd-party', inh: 7, res: 6, owner: 'CPO', appetite: 5, kci: 'Dual-source plan', trend: 'flat' },
   { id: 'ER-06', name: 'Insider data exfil',                  cat: 'Cyber', inh: 8, res: 4, owner: 'CISO',    appetite: 3, kci: 'UEBA + DLP', trend: 'down' },
   { id: 'ER-07', name: 'IRSF / SMS-pumping fraud surge',      cat: 'Fraud', inh: 6, res: 4, owner: 'CISO',    appetite: 4, kci: 'Real-time block', trend: 'flat' },
   { id: 'ER-08', name: 'Talent retention (engineering)',      cat: 'People',inh: 6, res: 5, owner: 'CHRO',    appetite: 5, kci: 'Attrition < 12%', trend: 'up' },
-  { id: 'ER-09', name: 'Climate physical (DC heat / flood)',  cat: 'Climate', inh: 6, res: 4, owner: 'COO',   appetite: 4, kci: 'Capex plan',  trend: 'flat' },
-  { id: 'ER-10', name: 'AI Act non-conformity (Agent Assist)', cat: 'Reg',  inh: 6, res: 4, owner: 'CISO',    appetite: 4, kci: 'HITL gates',   trend: 'down' },
+  { id: 'ER-09', name: 'Hurricane / storm surge (headends, aerial plant)', cat: 'Climate', inh: 9, res: 6, owner: 'COO', appetite: 4, kci: 'Undergrounding + generators', trend: 'down' },
+  { id: 'ER-10', name: 'AI policy non-conformity (Agent Assist)', cat: 'Reg',  inh: 6, res: 4, owner: 'CISO',    appetite: 4, kci: 'HITL gates',   trend: 'down' },
   { id: 'ER-11', name: 'BGP / RPKI failure → traffic loss',   cat: 'Cyber', inh: 7, res: 4, owner: 'CISO',    appetite: 3, kci: 'RPKI 94%',    trend: 'down' },
-  { id: 'ER-12', name: 'GDPR class-action exposure',          cat: 'Reg',   inh: 7, res: 5, owner: 'DPO',     appetite: 4, kci: 'Breaches < 5', trend: 'flat' },
+  { id: 'ER-12', name: 'DPA class-action exposure',          cat: 'Reg',   inh: 7, res: 5, owner: 'DPO',     appetite: 4, kci: 'Breaches < 5', trend: 'flat' },
 ]
 
 // Maturity (NIST CSF + CIS 18)
@@ -292,7 +293,7 @@ const incidents: Incident[] = [
   {
     id: 'INC-2026-0033', title: '3rd-party SQLi → BSS billing', sev: 'Critical', status: 'Closed', opened: '2026-05-04 02:18',
     detection: 'WAF anomaly + DB query pattern', mitre: ['T1190', 'T1059', 'T1505'], assets: ['BSS-billing-prod', 'API-gateway-eu1'],
-    ioCs: ['185.220.x.x', 'sql-payload-hash-abc', 'web-shell-attempt'], comms: 'CEO / Board / APD briefed within 4h',
+    ioCs: ['185.220.x.x', 'sql-payload-hash-abc', 'web-shell-attempt'], comms: 'CEO / Board / ODPC briefed within 4h',
     rca: 'Vendor portal lacked parameterised query', lessons: 'Mandate SAST gate for all 3rd-party portals',
     timeline: [
       { t: '02:18', event: 'WAF anomaly score spike' },
@@ -300,7 +301,7 @@ const incidents: Incident[] = [
       { t: '02:34', event: 'L1 escalated to L3 · BSS team paged' },
       { t: '02:48', event: 'Vendor portal taken offline' },
       { t: '04:12', event: 'No exfiltration confirmed (DLP egress logs)' },
-      { t: '07:00', event: 'APD notified within 72h window' },
+      { t: '07:00', event: 'ODPC notified within 72h window' },
       { t: '14:30', event: 'Patch deployed · service restored' },
       { t: '+ 7d',  event: 'Lessons-learned posted · vendor PCAP shared' },
     ],
@@ -349,7 +350,7 @@ const incidents: Incident[] = [
   },
   {
     id: 'INC-2026-0014', title: 'Mobile-core signalling storm', sev: 'Medium', status: 'Closed', opened: '2026-04-12 22:14',
-    detection: 'Diameter rate-limit', mitre: ['T1499', 'T1430'], assets: ['mme-eu-prod-2', 'diameter-fw'],
+    detection: 'Diameter rate-limit', mitre: ['T1499', 'T1430'], assets: ['mme-bs-prod-2', 'diameter-fw'],
     ioCs: ['anom-imsi-pattern', 'flood-source-set'], comms: 'URCA & customers (38min impact)',
     rca: 'Misconfigured roaming partner triggered loop', lessons: 'Add Diameter rate-cap per peer',
     timeline: [
@@ -357,7 +358,7 @@ const incidents: Incident[] = [
       { t: '22:18', event: 'Partner peer paused' },
       { t: '22:42', event: 'Service stabilised' },
       { t: '22:52', event: 'Partner re-enabled with cap' },
-      { t: '+ 4h',  event: 'NIS2 24h notification filed' },
+      { t: '+ 4h',  event: 'URCA 24h incident notification filed' },
     ],
     killChain: [
       { phase: 'Recon',         status: 'Miss' },

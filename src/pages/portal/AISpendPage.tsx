@@ -845,7 +845,7 @@ export default function AISpendPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Guard interventions 30d')} value="142"    delta={tt('+12 vs prior 30d')}   trend="down" icon={Shield}      accent />
           <KpiCard label={tt('Blocked (jailbreaks)')}    value="84"     delta={tt('59% of total')}        trend="flat" icon={AlertTriangle}    />
-          <KpiCard label={tt('Redacted (PII)')}          value="38"     delta={tt('GDPR compliance')}     trend="flat" icon={Shield}           />
+          <KpiCard label={tt('Redacted (PII)')}          value="38"     delta={tt('DPA compliance')}     trend="flat" icon={Shield}           />
           <KpiCard label={tt('Warned (tool misuse)')}    value="20"     delta={tt('NOC + Procurement')}   trend="flat" icon={Sparkles}         />
         </div>
 

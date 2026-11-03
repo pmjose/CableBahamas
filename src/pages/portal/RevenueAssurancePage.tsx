@@ -74,8 +74,8 @@ const MARGIN_BY_PRODUCT = [
 // ---- Interconnect settlement ----
 const INTERCONNECT = [
   { partner: 'BTC',  billed: 3.84, received: 3.76, delta: -0.08, status: 'Dispute' },
-  { partner: 'Benchmark A The Bahamas', billed: 2.14, received: 2.14, delta:  0.00, status: 'Settled' },
-  { partner: 'Benchmark B',  billed: 1.68, received: 1.62, delta: -0.06, status: 'Dispute' },
+  { partner: 'Rival ISP A The Bahamas', billed: 2.14, received: 2.14, delta:  0.00, status: 'Settled' },
+  { partner: 'Rival ISP B',  billed: 1.68, received: 1.62, delta: -0.06, status: 'Dispute' },
   { partner: 'T-Mobile',  billed: 0.84, received: 0.84, delta:  0.00, status: 'Settled' },
   { partner: 'BICS',      billed: 0.62, received: 0.60, delta: -0.02, status: 'Pending' },
 ]
@@ -640,7 +640,7 @@ export default function RevenueAssurancePage() {
       {tab === 'interconnect' && (
         <div className="space-y-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <KpiCard label={tt('Settled partners')} value="2 / 5" delta={tt('BTC + Benchmark B disputes')} trend="flat" icon={ShieldCheck} accent />
+            <KpiCard label={tt('Settled partners')} value="2 / 5" delta={tt('BTC + Rival ISP B disputes')} trend="flat" icon={ShieldCheck} accent />
             <KpiCard label={tt('Under-collected')} value="BSD 140K" delta={tt('from open disputes')} trend="down" icon={AlertTriangle} />
             <KpiCard label={tt('Billed to partners')} value="BSD 8.12M" delta={tt('this settlement cycle')} trend="up" icon={TrendingUp} />
             <KpiCard label={tt('Match rate')} value="96.3%" delta={tt('-1.4 pp — BICS latency')} trend="down" icon={Activity} />
@@ -672,7 +672,7 @@ export default function RevenueAssurancePage() {
               </table>
             </div>
             <div className="mt-3 flex justify-between text-xs">
-              <span className="text-vfes-dark/55">{tt('Total under-collected: BSD 140K — BTC and Benchmark B disputes in progress')}</span>
+              <span className="text-vfes-dark/55">{tt('Total under-collected: BSD 140K — BTC and Rival ISP B disputes in progress')}</span>
               <Link to="/portal/debt-collections" className="font-semibold text-vfes-dark hover:underline">{tt('Debt Collections →')}</Link>
             </div>
           </Panel>
@@ -857,7 +857,7 @@ export default function RevenueAssurancePage() {
                     { case: 'Provisioning lag (FMC bundle)',   value: 10.4, age: 12, owner: 'BSS ops',       status: 'Recovering' },
                     { case: 'Wholesale margin erosion (TAT)',  value:  4.8, age: 24, owner: 'B2B finance',   status: 'In review' },
                     { case: 'Promo not expired (700 accts)',   value:  5.6, age:  8, owner: 'Billing team',  status: 'In review' },
-                    { case: 'Benchmark B interconnect shortfall', value:  6.0, age: 31, owner: 'Wholesale ops', status: 'Dispute' },
+                    { case: 'Rival ISP B interconnect shortfall', value:  6.0, age: 31, owner: 'Wholesale ops', status: 'Dispute' },
                   ].map(r => (
                     <tr key={r.case} className="border-b border-black/5 hover:bg-[#fafbfc]">
                       <td className="px-3 py-2.5 font-semibold">{tt(r.case)}</td>

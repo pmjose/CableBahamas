@@ -80,14 +80,14 @@ const insights = [
   { id: 'INS-438', title: 'Cross-sell REVConnect to 18.4K Freeport BB-only HHs',         impact: 1.40, conf: 88, ttl: '14 days', area: 'Cross-sell', owner: 'Marketing', detail: '14.2% propensity · estimated 2,612 takers · margin-positive at BSD 84/mo' },
   { id: 'INS-435', title: 'Upgrade 12,400 households from 250→1 Gb',           impact: 0.94, conf: 84, ttl: '21 days', area: 'Upsell', owner: 'CRM', detail: 'Speed-upgrade likelihood model · BSD 15 BC · estimated 1,860 conversions' },
   { id: 'INS-433', title: 'Win-back 18,200 lapsed customers (≤90 days out)',    impact: 0.84, conf: 81, ttl: '30 days', area: 'Win-back', owner: 'Marketing', detail: 'Win-back model · 36% expected save rate · BSD 15 BC depth' },
-  { id: 'INS-431', title: 'Re-allocate BSD 100K from Display → Search brand defence', impact: 0.32, conf: 78, ttl: '7 days', area: 'Marketing', owner: 'Media', detail: 'MMM model · Benchmark A The Bahamas bidding our brand terms · expected +184 net adds in 30d' },
+  { id: 'INS-431', title: 'Re-allocate BSD 100K from Display → Search brand defence', impact: 0.32, conf: 78, ttl: '7 days', area: 'Marketing', owner: 'Media', detail: 'MMM model · Rival ISP A The Bahamas bidding our brand terms · expected +184 net adds in 30d' },
   { id: 'INS-430', title: 'Refer 86 mid-market accounts at expansion-ready stage', impact: 1.20, conf: 74, ttl: '30 days', area: 'B2B', owner: 'Sales', detail: 'Account-expansion model · avg BSD 14K TCV uplift · 12% close prob' },
 ]
 
 // Right-now anomalies (business-flavoured)
 const anomalies = [
-  { sev: 'High',   when: '14:00', what: 'Freeport churn signal +14% WoW · Benchmark A The Bahamas Fibre BSD 40 promo correlation', loss: 'BSD 1.2M ARR risk' },
-  { sev: 'Medium', when: '11:20', what: 'Search CPC +18% on "fastest broadband bahamas" — Benchmark A The Bahamas bidding our brand', loss: 'BSD 4.2K / day waste' },
+  { sev: 'High',   when: '14:00', what: 'Freeport churn signal +14% WoW · Rival ISP A The Bahamas Fibre BSD 40 promo correlation', loss: 'BSD 1.2M ARR risk' },
+  { sev: 'Medium', when: '11:20', what: 'Search CPC +18% on "fastest broadband bahamas" — Rival ISP A The Bahamas bidding our brand', loss: 'BSD 4.2K / day waste' },
   { sev: 'Low',    when: '08:45', what: 'B2B SoHo Hosted Voice attach rate down 4 pp', loss: 'monitor' },
   { sev: 'High',   when: 'Yest',   what: 'High-LTV at-risk pool grew by 412 customers (engagement model)',         loss: 'BSD 84K MRR exposure' },
 ]
@@ -108,7 +108,7 @@ const risks = [
   { name: 'Contract-end cliff · next 60d',    metric: '11.4K contracts', impact: 'BSD 2.10M ARR', sev: 'High', trend: 'Calendar', action: 'Pre-emptive renewal offers' },
   { name: 'Fraud watch · application',         metric: '142 high-risk', impact: 'BSD 124K loss avoided', sev: 'Medium', trend: '+2% WoW', action: 'Block + manual review' },
   { name: 'Network-driven churn risk',         metric: '4 hotspots',   impact: 'BSD 640K ARR', sev: 'Medium', trend: 'Freeport+Abaco', action: 'Save desk pre-empt outbound' },
-  { name: 'Competitor pressure (Benchmark A The Bahamas Fibre BSD 40)', metric: 'High-LTV exposure', impact: 'BSD 1.40M ARR', sev: 'High', trend: '+18% lost deals', action: 'Match offer for at-risk only' },
+  { name: 'Competitor pressure (Rival ISP A The Bahamas Fibre BSD 40)', metric: 'High-LTV exposure', impact: 'BSD 1.40M ARR', sev: 'High', trend: '+18% lost deals', action: 'Match offer for at-risk only' },
   { name: 'B2B late-quarter slip',              metric: '3 deals · BSD 580K', impact: 'BSD 580K Q', sev: 'Medium', trend: 'Negotiation > 21d', action: 'Multi-thread + exec sponsor' },
 ]
 
@@ -139,7 +139,7 @@ const voiceTopics = [
 
 const emergingThemes = [
   { theme: '"5 Gb beta" enthusiasm in Nassau', mentions: 412, dWk: '+62%', sentiment: '+0.84', tag: 'opportunity' },
-  { theme: 'Benchmark A The Bahamas Fibre BSD 40 price compare',       mentions: 1480, dWk: '+38%', sentiment: '-0.42', tag: 'risk' },
+  { theme: 'Rival ISP A The Bahamas Fibre BSD 40 price compare',       mentions: 1480, dWk: '+38%', sentiment: '-0.42', tag: 'risk' },
   { theme: 'REVConnect Mobile dropouts in rural',      mentions: 184, dWk: '+24%', sentiment: '-0.66', tag: 'risk' },
   { theme: 'Sports add-on · Sports package goal-line tech praise',   mentions: 96,   dWk: '+18%', sentiment: '+0.78', tag: 'opportunity' },
 ]
@@ -172,7 +172,7 @@ const scenarios = [
     upside: '+BSD 420K MRR · +352 net adds', downside: '-12% reach (brand)', confidence: 86,
   },
   {
-    name: 'Match Benchmark A The Bahamas BSD 40 offer for at-risk only',
+    name: 'Match Rival ISP A The Bahamas BSD 40 offer for at-risk only',
     levers: ['Audience: 4,820 high-LTV at-risk', 'Depth: BSD 5 / mo for 6 mo', 'Trigger: churn risk > 30%'],
     upside: '+BSD 1.04M ARR (saves)', downside: '-BSD 340K margin · perception risk', confidence: 74,
   },
@@ -363,7 +363,7 @@ export default function AIInsightsPage() {
           <div className="flex-1">
             <div className="font-bold text-amber-900 text-sm">{tt('BSD 1.2M ARR at risk this week · Freeport churn signal +14% WoW')}</div>
             <div className="text-xs text-amber-800 mt-1">
-              Benchmark A The Bahamas Fibre BSD 40 promo correlation · 4,820 high-LTV customers · save-desk window 5 days
+              Rival ISP A The Bahamas Fibre BSD 40 promo correlation · 4,820 high-LTV customers · save-desk window 5 days
               <span className="ml-2 font-mono bg-white/70 px-1.5 py-0.5 rounded">{tt('recommend INS-441')}</span>
               <span className="ml-2 font-mono bg-white/70 px-1.5 py-0.5 rounded">{tt('expected save rate 38%')}</span>
             </div>

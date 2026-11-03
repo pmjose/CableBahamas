@@ -30,7 +30,7 @@ const PROMOS = [
   { promo: 'Fibre 1Gb -BSD 10 / 12mo',   take: 31, marginGiveK: 198, day90Churn:  8, roi: 3.1, uplift: 18.4, cannibal:  2.1, verdict: 'keep',   segment: 'Fixed broadband' },
   { promo: 'Mobile 2nd line -50%',     take: 14, marginGiveK: 142, day90Churn:  9, roi: 2.0, uplift:  7.6, cannibal:  5.2, verdict: 'tune',   segment: 'Mobile' },
   { promo: 'Black Friday device BSD 0',   take:  9, marginGiveK:  96, day90Churn: 14, roi: 1.2, uplift:  4.8, cannibal:  3.8, verdict: 'tune',   segment: 'Device' },
-  { promo: 'Roaming +EU -BSD 5 / 3mo',   take: 11, marginGiveK:  62, day90Churn:  7, roi: 2.8, uplift:  6.2, cannibal:  1.4, verdict: 'keep',   segment: 'Mobile' },
+  { promo: 'Roaming +US -BSD 5 / 3mo',   take: 11, marginGiveK:  62, day90Churn:  7, roi: 2.8, uplift:  6.2, cannibal:  1.4, verdict: 'keep',   segment: 'Mobile' },
   { promo: 'SME bundle -15% 12mo',     take:  8, marginGiveK:  88, day90Churn:  6, roi: 3.4, uplift:  9.1, cannibal:  0.8, verdict: 'keep',   segment: 'B2B SME' },
 ]
 

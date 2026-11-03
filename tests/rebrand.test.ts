@@ -89,3 +89,26 @@ describe('Cable Bahamas identity', () => {
     expect(readFileSync(resolve(root, 'src/pages/portal/PortalLayout.tsx'), 'utf8')).toContain('Synthetic demo data')
   })
 })
+
+describe('Bahamas market relevance', () => {
+  it('removes European regulation, institutions and placeholder competitors', () => {
+    const stale = /\bGDPR\b|\bNIS2\b|\bDORA\b|\bEU\b|EU AI Act|\bCSRD\b|\bESRS\b|ePrivacy|\bECB\b|Eurosport|\beuros?\b|Leprechaun|irish|Statbel|Belfius|CaixaBank|BNP Paribas|Colruyt|Delhaize|Bancontact|Loyens|Prosegur|westeurope|europe-west|eu-west|Benchmark [ABC]\b|New Providence Airlines|\btln\b|Schuldschein|Euronext|IBEX/i
+    const matches = sourceFiles(resolve(root, 'src')).flatMap(filename => {
+      const match = readFileSync(filename, 'utf8').match(stale)
+      return match ? [{ filename, token: match[0] }] : []
+    })
+    expect(matches).toEqual([])
+  })
+
+  it('treats the BSD as pegged 1:1 to the USD', () => {
+    const offPeg = /BSD\/USD[^\n]{0,40}1\.0[1-9]|BSD\/USD forward/
+    for (const filename of sourceFiles(resolve(root, 'src'))) {
+      expect(readFileSync(filename, 'utf8').match(offPeg), filename).toBeNull()
+    }
+  })
+
+  it('keeps regional mobile sites consistent with the national site total', async () => {
+    const { COVERAGE_BY_REGION, MOBILE_KPIS } = await import('../src/pages/portal/_mobile_data')
+    expect(COVERAGE_BY_REGION.reduce((sum, r) => sum + r.sites, 0)).toBe(MOBILE_KPIS.activeSites)
+  })
+})

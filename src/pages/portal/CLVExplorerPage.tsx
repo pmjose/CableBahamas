@@ -138,9 +138,9 @@ const b2b = [
 const BENCHMARK_PEERS = [
   { operator: 'Cable Bahamas', clv36: 1840, churn: 1.52, cac: 275, payback: 9.4,  color: '#FF4438' },
   { operator: 'BTC',  clv36: 1720, churn: 1.68, cac: 310, payback: 10.8, color: '#11567F' },
-  { operator: 'Benchmark A',    clv36: 1640, churn: 1.84, cac: 295, payback: 10.7, color: '#F59E0B' },
-  { operator: 'Benchmark C',  clv36: 1580, churn: 1.91, cac: 280, payback: 10.6, color: '#94a3b8' },
-  { operator: 'Benchmark C',     clv36: 1320, churn: 2.12, cac: 240, payback: 10.9, color: '#7C3AED' },
+  { operator: 'Rival ISP A',    clv36: 1640, churn: 1.84, cac: 295, payback: 10.7, color: '#F59E0B' },
+  { operator: 'Rival ISP C',  clv36: 1580, churn: 1.91, cac: 280, payback: 10.6, color: '#94a3b8' },
+  { operator: 'Rival ISP C',     clv36: 1320, churn: 2.12, cac: 240, payback: 10.9, color: '#7C3AED' },
 ]
 
 // CLV trend vs industry (quarterly)
@@ -293,7 +293,7 @@ export default function CLVExplorerPage() {
           unit: 'BSD ',
           note: 'Cable Bahamas CLV growing 1.7× faster than industry — convergent mix is the structural advantage.',
         }}
-        registryNote="Models trained on 28.4M customer-months · Snowpark ML · WACC 8.5% · GDPR basis: Legitimate Interest."
+        registryNote="Models trained on 28.4M customer-months · Snowpark ML · WACC 8.5% · DPA basis: Legitimate Interest."
       />
 
       {/* Related links strip */}
@@ -710,7 +710,7 @@ export default function CLVExplorerPage() {
           </div>
         </Panel>
 
-        <Panel title={tt('Benchmark A Business — CLV by Segment')} action={<Briefcase className="w-4 h-4 text-vfes-dark/40" />}>
+        <Panel title={tt('Rival ISP A Business — CLV by Segment')} action={<Briefcase className="w-4 h-4 text-vfes-dark/40" />}>
           <div className="space-y-3">
             {b2b.map((s) => (
               <div key={s.seg} className="flex items-center justify-between p-3 bg-[#fafbfc] rounded-lg border border-black/5">
@@ -813,7 +813,7 @@ export default function CLVExplorerPage() {
             <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Drift (PSI)')}</div><div className="font-semibold text-emerald-700">{tt('0.04 · stable')}</div></div>
             <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Last retrained')}</div><div className="font-semibold">{tt('6 days ago')}</div></div>
             <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Owner')}</div><div className="font-semibold">{tt('Customer Analytics · M. Johnsonberghe')}</div></div>
-            <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('GDPR basis')}</div><div className="font-semibold">{tt('Legitimate interest · DPIA-2024-CLV-04')}</div></div>
+            <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('DPA basis')}</div><div className="font-semibold">{tt('Legitimate interest · DPIA-2024-CLV-04')}</div></div>
             <div className="col-span-2"><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Fairness')}</div><div className="font-semibold text-emerald-700">{tt('Demographic parity Δ &lt; 0.03 across age, county, tenure bands')}</div></div>
           </div>
           <div className="mt-3 pt-3 border-t border-black/5 flex items-center justify-between text-[11px]">
@@ -893,7 +893,7 @@ export default function CLVExplorerPage() {
           </Panel>
         </div>
 
-        <Panel title={tt('Benchmark A Business \u2014 CLV by segment detail')}>
+        <Panel title={tt('Rival ISP A Business \u2014 CLV by segment detail')}>
           <div className="space-y-3">
             {b2b.map((s) => (
               <div key={s.seg} className="flex items-center justify-between p-3 bg-[#fafbfc] rounded-lg border border-black/5">

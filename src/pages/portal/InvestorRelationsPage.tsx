@@ -31,12 +31,12 @@ const tooltipStyle = { background: '#fff', border: '1px solid #e5e7eb', borderRa
 
 // ─── TSR vs peers (5-yr indexed 100) ──────────────────────────────────────
 const TSR = [
-  { y: '2021', tln: 100, peerA: 100, peerB: 100, index: 100 },
-  { y: '2022', tln: 118, peerA: 104, peerB: 96,  index: 102 },
-  { y: '2023', tln: 134, peerA: 112, peerB: 101, index: 108 },
-  { y: '2024', tln: 152, peerA: 119, peerB: 107, index: 113 },
-  { y: '2025', tln: 168, peerA: 124, peerB: 110, index: 118 },
-  { y: '2026', tln: 172, peerA: 128, peerB: 112, index: 121 },
+  { y: '2021', cbl: 100, peerA: 100, peerB: 100, index: 100 },
+  { y: '2022', cbl: 118, peerA: 104, peerB: 96,  index: 102 },
+  { y: '2023', cbl: 134, peerA: 112, peerB: 101, index: 108 },
+  { y: '2024', cbl: 152, peerA: 119, peerB: 107, index: 113 },
+  { y: '2025', cbl: 168, peerA: 124, peerB: 110, index: 118 },
+  { y: '2026', cbl: 172, peerA: 128, peerB: 112, index: 121 },
 ]
 
 // ─── analyst consensus ────────────────────────────────────────────────────
@@ -48,24 +48,24 @@ const ANALYSTS = [
 
 // ─── guidance vs actual ───────────────────────────────────────────────────
 const GUIDANCE = [
-  { q: 'Q3-25', guideLow: 129.0, guideHigh: 135.0, actual: 133.8 },
-  { q: 'Q4-25', guideLow: 132.0, guideHigh: 138.0, actual: 137.7 },
-  { q: 'Q1-26', guideLow: 133.5, guideHigh: 139.5, actual: 138.6 },
-  { q: 'Q2-26', guideLow: 131.0, guideHigh: 141.0, actual: KPI.revenueQtrM },
+  { q: 'Q3-25', guideLow: 32.0, guideHigh: 33.5, actual: 32.8 },
+  { q: 'Q4-25', guideLow: 33.0, guideHigh: 34.5, actual: 33.9 },
+  { q: 'Q1-26', guideLow: 33.8, guideHigh: 35.2, actual: 34.6 },
+  { q: 'Q2-26', guideLow: 34.5, guideHigh: 36.5, actual: KPI.revenueQtrM },
 ]
 
 // ─── shareholder returns ───────────────────────────────────────────────────
 const RETURNS = [
-  { y: '2023', dividend: 28, buyback: 12 },
-  { y: '2024', dividend: 32, buyback: 18 },
-  { y: '2025', dividend: 36, buyback: 24 },
-  { y: '2026e', dividend: 40, buyback: 30 },
+  { y: '2023', dividend: 4.5, buyback: 0.5 },
+  { y: '2024', dividend: 5.0, buyback: 1.0 },
+  { y: '2025', dividend: 5.5, buyback: 1.0 },
+  { y: '2026e', dividend: 6.0, buyback: 1.5 },
 ]
 
 // ─── shareholder structure ─────────────────────────────────────────────────
 const SHAREHOLDERS = [
   { name: 'Institutional — The Bahamas',        pct: 34, color: BLUE   },
-  { name: 'Institutional — Rest of Europe', pct: 22, color: NAVY   },
+  { name: 'Institutional — Caribbean (ex-Bahamas)', pct: 22, color: NAVY   },
   { name: 'Institutional — US / Global',  pct: 18, color: PURPLE },
   { name: 'Retail — The Bahamas',               pct: 16, color: AMBER  },
   { name: 'Treasury / Buyback',           pct: 6,  color: SLATE  },
@@ -83,19 +83,19 @@ const ESG_RATINGS = [
 
 // ─── debt structure ────────────────────────────────────────────────────────
 const DEBT_LADDER = [
-  { y: '2026', amt: 24, type: 'Term loan A' },
-  { y: '2027', amt: 84, type: 'Notes 4.5%' },
-  { y: '2028', amt: 64, type: 'Notes 5.1%' },
-  { y: '2029', amt: 96, type: 'Notes 5.4%' },
-  { y: '2030', amt: 32, type: 'Term loan B' },
-  { y: '2031+', amt: 20, type: 'Revolver' },
+  { y: '2026', amt:  8, type: 'BISX notes 5.25%' },
+  { y: '2027', amt: 14, type: 'Term loan — Bahamas Prime + 1.5%' },
+  { y: '2028', amt: 22, type: 'BISX notes 5.9%' },
+  { y: '2029', amt: 30, type: 'Term loan — Bahamas Prime + 1.75%' },
+  { y: '2030', amt: 70, type: 'BISX notes 6.25%' },
+  { y: '2031+', amt: 42, type: 'Private placement 6.5%' },
 ]
 
 const COVENANTS = [
-  { c: 'Net Debt / EBITDA',      target: '≤ 4.0×', actual: `${KPI.netDebtEbitdaX}×`, headroom: '1.9×',  status: 'Pass' },
-  { c: 'Interest cover',          target: '≥ 3.0×', actual: '4.4×',                   headroom: '1.4×',  status: 'Pass' },
-  { c: 'Liquidity (cash + RCF)',  target: '≥ BSD 50M', actual: 'BSD 146M',                   headroom: 'BSD 96M',  status: 'Pass' },
-  { c: 'CapEx / Revenue',         target: '≤ 22%',  actual: '20.4%',                   headroom: '1.6 pp', status: 'Pass' },
+  { c: 'Net Debt / EBITDA',      target: '≤ 3.5×', actual: `${KPI.netDebtEbitdaX}×`, headroom: '0.33×',  status: 'Pass' },
+  { c: 'Interest cover',          target: '≥ 3.0×', actual: '4.6×',                   headroom: '1.6×',  status: 'Pass' },
+  { c: 'Liquidity (cash + RCF)',  target: '≥ BSD 20M', actual: 'BSD 59M',                    headroom: 'BSD 39M',  status: 'Pass' },
+  { c: 'CapEx / Revenue',         target: '≤ 25%',  actual: '17.4%',                   headroom: '7.6 pp', status: 'Pass' },
   { c: 'Bad debt %',              target: '≤ 1.5%', actual: '1.2%',                    headroom: '0.3 pp', status: 'Pass' },
 ]
 
@@ -111,43 +111,43 @@ const EARNINGS_CALENDAR = [
 
 // ─── EBITDA margin trend ───────────────────────────────────────────────────
 const EBITDA_TREND = [
-  { q: 'Q2-24', revenue: 121.4, ebitda: 43.4, margin: 35.8 },
-  { q: 'Q3-24', revenue: 124.8, ebitda: 44.9, margin: 36.0 },
-  { q: 'Q4-24', revenue: 128.2, ebitda: 47.4, margin: 37.0 },
-  { q: 'Q1-25', revenue: 130.4, ebitda: 49.2, margin: 37.7 },
-  { q: 'Q2-25', revenue: 132.6, ebitda: 50.4, margin: 38.0 },
-  { q: 'Q3-25', revenue: 133.8, ebitda: 51.0, margin: 38.1 },
-  { q: 'Q4-25', revenue: 137.7, ebitda: 53.4, margin: 38.8 },
-  { q: 'Q1-26', revenue: 138.6, ebitda: 53.5, margin: 38.6 },
+  { q: 'Q2-24', revenue: 30.0, ebitda: 10.8, margin: 36.0 },
+  { q: 'Q3-24', revenue: 30.6, ebitda: 11.1, margin: 36.3 },
+  { q: 'Q4-24', revenue: 31.2, ebitda: 11.4, margin: 36.5 },
+  { q: 'Q1-25', revenue: 31.8, ebitda: 11.7, margin: 36.8 },
+  { q: 'Q2-25', revenue: 32.4, ebitda: 12.0, margin: 37.0 },
+  { q: 'Q3-25', revenue: 32.8, ebitda: 12.2, margin: 37.2 },
+  { q: 'Q4-25', revenue: 33.9, ebitda: 12.6, margin: 37.2 },
+  { q: 'Q1-26', revenue: 34.6, ebitda: 12.9, margin: 37.3 },
   { q: 'Q2-26', revenue: KPI.revenueQtrM, ebitda: KPI.ebitdaM * 3, margin: KPI.ebitdaMarginPct },
 ]
 
 // ─── FCF walk ─────────────────────────────────────────────────────────────
 const FCF_WALK = [
   { k: 'EBITDA TTM',        v: KPI.ebitdaM * 12, color: BLUE   },
-  { k: 'CapEx',             v: -174,              color: RED    },
-  { k: 'Working capital',   v: 12,                color: GREEN  },
-  { k: 'Tax',               v: -18,               color: RED    },
-  { k: 'Interest',          v: -25,               color: RED    },
+  { k: 'CapEx',             v: -24,              color: RED    },
+  { k: 'Working capital',   v: -6.9,              color: RED  },
+  { k: 'Tax',               v: -3.6,               color: RED    },
+  { k: 'Interest',          v: -7.2,               color: RED    },
   { k: 'FCF TTM',           v: KPI.fcfTtmM,       color: NAVY   },
 ]
 
 // ─── peer comparison ──────────────────────────────────────────────────────
 const PEERS = [
   { name: 'Cable Bahamas',           ebitdaMargin: KPI.ebitdaMarginPct, leverage: KPI.netDebtEbitdaX, tsr: KPI.tsr5yrPct, nps: KPI.nps },
-  { name: 'BTC ES',   ebitdaMargin: 36.2,                leverage: 3.1,                 tsr: 28,            nps: 32 },
-  { name: 'Benchmark B',      ebitdaMargin: 34.8,                leverage: 3.6,                 tsr: 24,            nps: 28 },
-  { name: 'Benchmark A The Bahamas',     ebitdaMargin: 35.4,                leverage: 2.9,                 tsr: 21,            nps: 29 },
+  { name: 'BTC (demo)',   ebitdaMargin: 36.2,                leverage: 3.1,                 tsr: 28,            nps: 32 },
+  { name: 'Rival ISP B',      ebitdaMargin: 34.8,                leverage: 3.6,                 tsr: 24,            nps: 28 },
+  { name: 'Rival ISP A The Bahamas',     ebitdaMargin: 35.4,                leverage: 2.9,                 tsr: 21,            nps: 29 },
   { name: 'Sector avg',    ebitdaMargin: 35.6,                leverage: 3.1,                 tsr: 25,            nps: 30 },
 ]
 
 // ─── FY26 guidance ────────────────────────────────────────────────────────
 const GUIDANCE_FY = {
-  revenueLow: 535, revenueHigh: 550,
-  ebitdaLow: 195, ebitdaHigh: 210,
-  fcfLow: 75, fcfHigh: 90,
-  capexMax: 185,
-  dividendCoverage: '2.2×', yieldTarget: '3.5%',
+  revenueLow: 140, revenueHigh: 146,
+  ebitdaLow: 52, ebitdaHigh: 55,
+  fcfLow: 11, fcfHigh: 15,
+  capexMax: 26,
+  dividendCoverage: '2.0×', yieldTarget: '3.5%',
 }
 
 // ─── cockpit data ──────────────────────────────────────────────────────────
@@ -180,14 +180,14 @@ void IR_DOMAIN_LINKS // suppress unused
 const IR_PRIORITIES: Priority[] = [
   { name: 'Q2 earnings call preparation',            owner: 'CFO · Marie Knowles',    pct: 88, status: 'on-track' },
   { name: 'Capital Markets Day — Freeport Nov 26',  owner: 'CEO · Lucas Rolle',     pct: 42, status: 'at-risk' },
-  { name: 'Buyback tranche 3 (BSD 30M) approval',      owner: 'Board remuneration cmte', pct: 75, status: 'on-track' },
-  { name: 'MSCI AA confirmation — evidence pack',    owner: 'CSO · Anke Willems',     pct: 64, status: 'on-track' },
-  { name: 'Debt refi — 2027 notes early refinance',  owner: 'Treasury',               pct: 32, status: 'at-risk' },
+  { name: 'Buyback tranche 3 (BSD 1.5M) approval',      owner: 'Board remuneration cmte', pct: 75, status: 'on-track' },
+  { name: 'MSCI AA confirmation — evidence pack',    owner: 'CSO · Andrea Ferguson',     pct: 64, status: 'on-track' },
+  { name: 'Debt refi — 2030 BISX notes pre-financing',  owner: 'Treasury',               pct: 32, status: 'at-risk' },
 ]
 
 const IR_WATCH: WatchItem[] = [
   { text: 'Short interest up 1.2 pp in June — monitor for activist positioning',               level: 'high'   },
-  { text: '2027 notes BSD 84M due — early refi window open; rate sensitivity ±30 bps',           level: 'high'   },
+  { text: '2030 BISX notes BSD 70M — pre-financing window open; rate sensitivity ±30 bps',           level: 'high'   },
   { text: 'URCA pricing investigation disclosure obligation — draft response needed by Aug',    level: 'medium' },
   { text: 'Four analysts have Not Yet Rated after guidance refresh — invite to CMD',            level: 'medium' },
   { text: 'AGM proxy season — ISS recommendation pending on remuneration report',              level: 'low'    },
@@ -196,7 +196,7 @@ const IR_WATCH: WatchItem[] = [
 const IR_AGENDA = [
   { when: '29 Jul 2026',  what: 'Q2 earnings call (pre-market)' },
   { when: '10 Nov 2026',  what: 'Capital Markets Day — Freeport' },
-  { when: '15 Sep 2026',  what: 'Roadshow — London & Edinburgh (buyside)' },
+  { when: '15 Sep 2026',  what: 'Roadshow — Miami & Toronto (buyside)' },
   { when: '20 Oct 2026',  what: 'Q3 guidance update — ELT review' },
   { when: '28 Oct 2026',  what: 'Q3 earnings call' },
   { when: '25 Mar 2027',  what: 'AGM — Abaco' },
@@ -210,34 +210,34 @@ const ragColor = (s: string) =>
 
 // ─── Capital Allocation data ───────────────────────────────────────────────────────
 const CAPALLOC = [
-  { y: 'FY23', network: 82, it: 18, commercial: 22, sustainability: 8,  total: 130 },
-  { y: 'FY24', network: 88, it: 22, commercial: 24, sustainability: 10, total: 144 },
-  { y: 'FY25', network: 96, it: 28, commercial: 26, sustainability: 14, total: 164 },
-  { y: 'FY26e',network: 102, it: 32, commercial: 28, sustainability: 18, total: 180 },
+  { y: 'FY23', network: 14, it: 3, commercial: 4, sustainability: 1,  total: 22 },
+  { y: 'FY24', network: 14.5, it: 3.5, commercial: 4, sustainability: 1.5, total: 23.5 },
+  { y: 'FY25', network: 15, it: 3.5, commercial: 4, sustainability: 1.5, total: 24 },
+  { y: 'FY26e',network: 15, it: 4, commercial: 4, sustainability: 2, total: 25 },
 ]
 const RETURNS_POLICY = [
-  { y: 'FY23', dividendYield: 3.1, buybackYield: 0.8, totalReturn: 3.9 },
-  { y: 'FY24', dividendYield: 3.2, buybackYield: 1.1, totalReturn: 4.3 },
-  { y: 'FY25', dividendYield: 3.4, buybackYield: 1.4, totalReturn: 4.8 },
-  { y: 'FY26e',dividendYield: 3.5, buybackYield: 1.7, totalReturn: 5.2 },
+  { y: 'FY23', dividendYield: 3.1, buybackYield: 0.3, totalReturn: 3.4 },
+  { y: 'FY24', dividendYield: 3.2, buybackYield: 0.6, totalReturn: 3.8 },
+  { y: 'FY25', dividendYield: 3.4, buybackYield: 0.6, totalReturn: 4.0 },
+  { y: 'FY26e',dividendYield: 3.5, buybackYield: 0.9, totalReturn: 4.4 },
 ]
 const WACC_COMPONENTS = [
-  { component: 'Risk-free rate (10yr Bono)', value: 3.40, type: 'cost' },
-  { component: 'Equity risk premium',        value: 5.20, type: 'cost' },
-  { component: 'Beta (β = 0.72)',            value: 3.74, type: 'cost' },
-  { component: 'Cost of equity (Ke)',         value: 7.14, type: 'total' },
-  { component: 'Pre-tax cost of debt (Kd)',   value: 4.80, type: 'cost' },
-  { component: 'Tax shield (25%)',            value: -1.20, type: 'shield' },
-  { component: 'After-tax cost of debt',      value: 3.60, type: 'total' },
-  { component: 'WACC (60/40 equity/debt)',    value: 5.72, type: 'total' },
+  { component: 'Risk-free rate (10yr Bahamas Govt)', value: 5.50, type: 'cost' },
+  { component: 'Equity risk premium (incl. country)', value: 7.00, type: 'cost' },
+  { component: 'Beta (β = 1.00)',            value: 7.00, type: 'cost' },
+  { component: 'Cost of equity (Ke)',         value: 12.50, type: 'total' },
+  { component: 'Pre-tax cost of debt (Kd)',   value: 6.10, type: 'cost' },
+  { component: 'Tax shield (0% — no corporate income tax)', value: 0.00, type: 'shield' },
+  { component: 'After-tax cost of debt',      value: 6.10, type: 'total' },
+  { component: 'WACC (55/45 equity/debt)',    value: 9.60, type: 'total' },
 ]
 const NPV_PROGRAMS = [
-  { program: '5G SA rollout',        wacc: 5.72, irr: 14.2, npvM: 284, payback: 4.2, status: 'Go' },
-  { program: 'XGS-PON FTTH build',   wacc: 5.72, irr: 11.8, npvM: 196, payback: 5.4, status: 'Go' },
-  { program: 'Snowflake Data Plat.', wacc: 5.72, irr: 18.4, npvM: 52,  payback: 2.8, status: 'Go' },
-  { program: 'B2B SD-WAN',           wacc: 5.72, irr: 9.6,  npvM: 84,  payback: 6.2, status: 'Review' },
-  { program: 'Solar Data Centres',   wacc: 5.72, irr: 7.2,  npvM: 28,  payback: 8.4, status: 'Review' },
-  { program: 'Open RAN Family Islands',    wacc: 5.72, irr: 10.4, npvM: 118, payback: 5.8, status: 'Go' },
+  { program: '5G SA rollout',        wacc: 9.60, irr: 18.2, npvM: 14, payback: 4.2, status: 'Go' },
+  { program: 'XGS-PON FTTH build',   wacc: 9.60, irr: 15.8, npvM: 11, payback: 5.4, status: 'Go' },
+  { program: 'Snowflake Data Plat.', wacc: 9.60, irr: 22.4, npvM: 2.5, payback: 2.8, status: 'Go' },
+  { program: 'B2B SD-WAN',           wacc: 9.60, irr: 12.1, npvM: 3,   payback: 6.2, status: 'Review' },
+  { program: 'Solar Data Centres',   wacc: 9.60, irr: 10.4, npvM: 1.2, payback: 8.4, status: 'Review' },
+  { program: 'Open RAN Family Islands',    wacc: 9.60, irr: 14.6, npvM: 5,   payback: 5.8, status: 'Go' },
 ]
 
 const TABS = [
@@ -287,12 +287,12 @@ export default function InvestorRelationsPage() {
   // period-adjusted key metrics (mock variation per period)
   const periodMetrics = useMemo(() => {
     const adj: Record<Period, { revenue: number; ebitda: number; fcf: number; margin: number }> = {
-      'Q2-26': { revenue: KPI.revenueQtrM,  ebitda: KPI.ebitdaM * 3,    fcf: 21.4, margin: KPI.ebitdaMarginPct },
-      'Q1-26': { revenue: 138.6,            ebitda: 53.5,               fcf: 20.6, margin: 38.6 },
-      'Q4-25': { revenue: 137.7,            ebitda: 53.4,               fcf: 21.2, margin: 38.8 },
-      'Q3-25': { revenue: 133.8,            ebitda: 51.0,               fcf: 19.8, margin: 38.1 },
-      'FY-25':  { revenue: 537.1,           ebitda: 207.5,              fcf: 78.4, margin: 38.6 },
-      'FY-24':  { revenue: 506.2,           ebitda: 191.4,              fcf: 68.2, margin: 37.8 },
+      'Q2-26': { revenue: KPI.revenueQtrM,  ebitda: KPI.ebitdaM * 3,    fcf: 3.3,  margin: KPI.ebitdaMarginPct },
+      'Q1-26': { revenue: 34.6,             ebitda: 12.9,               fcf: 3.1,  margin: 37.3 },
+      'Q4-25': { revenue: 33.9,             ebitda: 12.6,               fcf: 3.0,  margin: 37.2 },
+      'Q3-25': { revenue: 32.8,             ebitda: 12.2,               fcf: 2.9,  margin: 37.2 },
+      'FY-25':  { revenue: 130.9,           ebitda: 48.5,               fcf: 11.4, margin: 37.1 },
+      'FY-24':  { revenue: 121.2,           ebitda: 44.2,               fcf: 10.1, margin: 36.5 },
     }
     return adj[period]
   }, [period])
@@ -353,7 +353,7 @@ export default function InvestorRelationsPage() {
         agentBlurb={tt('Every IR number traces to the same governed data the board and regulator see — one source, no surprises.')}
         decision={{
           title: tt('Lead earnings on TSR outperformance & deleveraging; raise buyback'),
-          detail: tt('TSR is 44 pts ahead of peers and leverage is inside covenant at 2.6×. The equity story is consistent delivery vs guidance. Pair it with a larger buyback to signal confidence and support the re-rating thesis.'),
+          detail: tt('TSR is 44 pts ahead of peers and leverage is inside covenant at 3.2×. The equity story is consistent delivery vs guidance. Pair it with a larger buyback to signal confidence and support the re-rating thesis.'),
           impact: tt('re-rating potential · supports valuation multiple'),
           risk: tt('buyback vs network capex — balance against the build plan'),
           linkTo: '#/portal/capital-treasury', linkLabel: tt('Open Capital & Treasury'),
@@ -362,7 +362,7 @@ export default function InvestorRelationsPage() {
           kind: 'bar', title: tt('TSR vs peers (5-yr, indexed 100)'), xKey: 'y', unit: '',
           data: TSR,
           series: [
-            { key: 'tln',    name: 'Cable Bahamas',          color: BLUE  },
+            { key: 'cbl',    name: 'Cable Bahamas',          color: BLUE  },
             { key: 'peerA',  name: 'Peer A',        color: NAVY  },
             { key: 'peerB',  name: 'Peer B',        color: AMBER },
             { key: 'index',  name: 'Sector index',  color: SLATE },
@@ -404,7 +404,7 @@ export default function InvestorRelationsPage() {
           <KpiCard label={tt('Revenue')}           value={`BSD ${periodMetrics.revenue.toFixed(1)}M`} delta={`${period} · +4.2% YoY`}           trend="up"   icon={TrendingUp}  accent />
           <KpiCard label={tt('EBITDA')}             value={`BSD ${periodMetrics.ebitda.toFixed(1)}M`} delta={`${periodMetrics.margin}% margin`}   trend="up"   icon={DollarSign} />
           <KpiCard label={tt('FCF')}                value={`BSD ${periodMetrics.fcf.toFixed(1)}M`}    delta={`TTM BSD ${KPI.fcfTtmM}M`}             trend="up"   icon={Wallet} />
-          <KpiCard label={tt('Net debt / EBITDA')}  value={`${KPI.netDebtEbitdaX}×`}               delta={tt('covenant ≤ 4.0× · pass')}        trend="flat" icon={Landmark} />
+          <KpiCard label={tt('Net debt / EBITDA')}  value={`${KPI.netDebtEbitdaX}×`}               delta={tt('covenant ≤ 3.5× · pass')}        trend="flat" icon={Landmark} />
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('5-yr TSR')}           value={`+${KPI.tsr5yrPct}%`}                  delta={tt('peer avg +28%')}                  trend="up"   icon={Award}    />
@@ -416,7 +416,7 @@ export default function InvestorRelationsPage() {
         {/* EBITDA margin trend */}
         <div className="grid lg:grid-cols-3 gap-6 mb-6">
           <div className="lg:col-span-2">
-            <Panel title={tt('Revenue & EBITDA trend — quarterly (BSD M)')} insight={{ insight: 'Four consecutive quarters of EBITDA margin expansion to 38.2% confirm operating leverage above Bahamian peer median.', action: 'Highlight margin trajectory in roadshows to compress EV/EBITDA from 7.2× toward sector-leading 8.5× multiple.', impact: 'Multiple re-rating to peer-leader level implies approximately BSD 800M incremental market-cap value.' }}>
+            <Panel title={tt('Revenue & EBITDA trend — quarterly (BSD M)')} insight={{ insight: 'Four consecutive quarters of EBITDA margin expansion to 37.5% confirm operating leverage above Bahamian peer median.', action: 'Highlight margin trajectory in roadshows to lift EV/EBITDA from 6.4× toward the 7.5× regional peer-leader multiple.', impact: 'Multiple re-rating to peer-leader level implies approximately BSD 50M incremental market-cap value.' }}>
               <div className="h-72">
                 <ResponsiveContainer>
                   <ComposedChart data={EBITDA_TREND}>
@@ -439,7 +439,7 @@ export default function InvestorRelationsPage() {
           </div>
 
           {/* FCF walk */}
-          <Panel title={tt('FCF walk — TTM (BSD M)')} insight={{ insight: 'TTM free cash flow of BSD 71M exceeds consensus by 14%, driven by working-capital release and lower net interest cost.', action: 'Communicate FCF conversion rate of 68% to equity sales and fixed-income desk to anchor dividend sustainability messaging.', impact: 'Higher perceived FCF visibility reduces cost of equity by ~30bps and supports a tighter credit spread on the 2028 bond.' }}>
+          <Panel title={tt('FCF walk — TTM (BSD M)')} insight={{ insight: 'TTM free cash flow of BSD 12M exceeds consensus by 8%, despite a working-capital build and Bahamas Prime-linked interest cost.', action: 'Communicate FCF conversion rate of 24% of EBITDA to equity sales and fixed-income desk to anchor dividend sustainability messaging.', impact: 'Higher perceived FCF visibility reduces cost of equity by ~30bps and supports a tighter credit spread on the 2028 BISX notes.' }}>
             <div className="h-72">
               <ResponsiveContainer>
                 <BarChart data={FCF_WALK} layout="vertical">
@@ -495,13 +495,13 @@ export default function InvestorRelationsPage() {
       {tab === 'tsr' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('5-yr TSR')}            value={`+${KPI.tsr5yrPct}%`}     delta={tt('vs peer +28% / index +21%')} trend="up"   icon={TrendingUp} accent />
-          <KpiCard label={tt('FY26e dividend')}       value="BSD 40M"                     delta={tt('BSD 0.62 / share · +11% YoY')}  trend="up"   icon={DollarSign} />
-          <KpiCard label={tt('FY26e buyback')}        value="BSD 30M"                     delta={tt('Tranche 3 · board approved')} trend="up"   icon={Award} />
-          <KpiCard label={tt('Total shareholder return FY26e')} value="BSD 70M"          delta={tt('dividend + buyback combined')} trend="up"  icon={Wallet} />
+          <KpiCard label={tt('FY26e dividend')}       value="BSD 6M"                      delta={tt('BSD 0.92 / share · +9% YoY')}  trend="up"   icon={DollarSign} />
+          <KpiCard label={tt('FY26e buyback')}        value="BSD 1.5M"                    delta={tt('Tranche 3 · board approved')} trend="up"   icon={Award} />
+          <KpiCard label={tt('Total shareholder return FY26e')} value="BSD 7.5M"         delta={tt('dividend + buyback combined')} trend="up"  icon={Wallet} />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
-          <Panel title={tt('Total shareholder return vs peers — 5-yr indexed 100')} insight={{ insight: '5-year TSR of +78% versus peer median +28% and IBEX +21% demonstrates sustained capital-allocation discipline.', action: 'Lead roadshow narrative with TSR outperformance to attract GARP funds currently underweight the Bahamian telco sector.', impact: 'Institutional re-weighting by GARP mandates could add 3–4% to float turnover and reduce the discount to intrinsic NAV.' }}>
+          <Panel title={tt('Total shareholder return vs peers — 5-yr indexed 100')} insight={{ insight: '5-year TSR of +72% versus peer median +28% and BISX All Share +21% demonstrates sustained capital-allocation discipline.', action: 'Lead roadshow narrative with TSR outperformance to attract GARP funds currently underweight the Bahamian telco sector.', impact: 'Institutional re-weighting by GARP mandates could add 3–4% to float turnover and reduce the discount to intrinsic NAV.' }}>
             <div className="h-72">
               <ResponsiveContainer>
                 <LineChart data={TSR}>
@@ -510,7 +510,7 @@ export default function InvestorRelationsPage() {
                   <YAxis stroke="#999" fontSize={11} />
                   <Tooltip contentStyle={tooltipStyle} />
                   <Legend wrapperStyle={{ fontSize: 11 }} />
-                  <Line type="monotone" dataKey="tln"   stroke={BLUE}  strokeWidth={2.5} name="Cable Bahamas" dot />
+                  <Line type="monotone" dataKey="cbl"   stroke={BLUE}  strokeWidth={2.5} name="Cable Bahamas" dot />
                   <Line type="monotone" dataKey="peerA" stroke={NAVY}  strokeWidth={1.5} name={tt('Peer A')} />
                   <Line type="monotone" dataKey="peerB" stroke={AMBER} strokeWidth={1.5} name={tt('Peer B')} />
                   <Line type="monotone" dataKey="index" stroke={SLATE} strokeDasharray="4 4" strokeWidth={1.5} name={tt('Sector index')} />
@@ -523,7 +523,7 @@ export default function InvestorRelationsPage() {
             </div>
           </Panel>
 
-          <Panel title={tt('Shareholder returns — dividend & buyback (BSD M)')} insight={{ insight: 'Combined FY26e shareholder returns of BSD 70M represent a 5.8% total yield, double the IBEX 35 sector average.', action: 'Pre-announce the Q3 buyback tranche early to anchor share-price floor ahead of the annual consensus reset in October.', impact: 'Yield anchoring reduces price volatility and lowers the hurdle for value-oriented mandates to initiate new positions.' }}>
+          <Panel title={tt('Shareholder returns — dividend & buyback (BSD M)')} insight={{ insight: 'Combined FY26e shareholder returns of BSD 7.5M represent a 4.4% total yield, above the BISX-listed sector average.', action: 'Pre-announce the Q3 buyback tranche early to anchor share-price floor ahead of the annual consensus reset in October.', impact: 'Yield anchoring reduces price volatility and lowers the hurdle for value-oriented mandates to initiate new positions.' }}>
             <div className="h-72">
               <ResponsiveContainer>
                 <BarChart data={returnsWithTotal}>
@@ -538,13 +538,13 @@ export default function InvestorRelationsPage() {
               </ResponsiveContainer>
             </div>
             <div className="mt-2 text-[11px] text-vfes-dark/55">
-              {tt('Total distributions rising to BSD 70M in FY26e — sustainable at 2.6× leverage and BSD 84M FCF TTM.')}
+              {tt('Total distributions rising to BSD 7.5M in FY26e — covered by BSD 12M FCF TTM at 3.2× leverage.')}
             </div>
           </Panel>
         </div>
 
         {/* shareholder structure */}
-        <Panel title={tt('Shareholder structure — % of issued share capital')} insight={{ insight: 'Institutional free float of 54% is concentrated in three sovereign-adjacent funds, creating single-seller tail risk.', action: 'Target UK and Nordic long-only growth funds at the Q4 non-deal roadshow to diversify the investor base.', impact: 'Broader ownership reduces technical selling pressure and supports a tighter bid-ask spread and lower liquidity premium.' }}>
+        <Panel title={tt('Shareholder structure — % of issued share capital')} insight={{ insight: 'Institutional free float of 54% is concentrated in three sovereign-adjacent funds, creating single-seller tail risk.', action: 'Target US, Canadian and regional Caribbean long-only funds at the Q4 non-deal roadshow to diversify the investor base.', impact: 'Broader ownership reduces technical selling pressure and supports a tighter bid-ask spread and lower liquidity premium.' }}>
           <div className="grid lg:grid-cols-2 gap-6">
             <div className="h-64">
               <ResponsiveContainer>
@@ -647,9 +647,9 @@ export default function InvestorRelationsPage() {
       {tab === 'guidance' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('FY26 revenue guidance')}  value={`BSD ${GUIDANCE_FY.revenueLow}–${GUIDANCE_FY.revenueHigh}M`} delta={tt('current guidance range')} trend="up" icon={TrendingUp} accent />
-          <KpiCard label={tt('FY26 EBITDA guidance')}   value={`BSD ${GUIDANCE_FY.ebitdaLow}–${GUIDANCE_FY.ebitdaHigh}M`} delta={tt('37–39% margin target')}    trend="up" icon={DollarSign} />
+          <KpiCard label={tt('FY26 EBITDA guidance')}   value={`BSD ${GUIDANCE_FY.ebitdaLow}–${GUIDANCE_FY.ebitdaHigh}M`} delta={tt('37–38% margin target')}    trend="up" icon={DollarSign} />
           <KpiCard label={tt('FY26 FCF guidance')}      value={`BSD ${GUIDANCE_FY.fcfLow}–${GUIDANCE_FY.fcfHigh}M`}       delta={tt('after CapEx')}              trend="up" icon={Wallet} />
-          <KpiCard label={tt('FY26 CapEx')}             value={`≤ BSD ${GUIDANCE_FY.capexMax}M`}                           delta={tt('≤22% revenue intensity')}   trend="flat" icon={Briefcase} />
+          <KpiCard label={tt('FY26 CapEx')}             value={`≤ BSD ${GUIDANCE_FY.capexMax}M`}                           delta={tt('≤18% revenue intensity')}   trend="flat" icon={Briefcase} />
         </div>
 
         {/* toggle */}
@@ -698,10 +698,10 @@ export default function InvestorRelationsPage() {
                 </thead>
                 <tbody>
                   {[
-                    { m: 'Revenue (BSD M)',       lo: GUIDANCE_FY.revenueLow,  hi: GUIDANCE_FY.revenueHigh, run: ((KPI.revenueQtrM + 138.6) * 2).toFixed(0) },
-                    { m: 'EBITDA (BSD M)',        lo: GUIDANCE_FY.ebitdaLow,   hi: GUIDANCE_FY.ebitdaHigh,  run: ((KPI.ebitdaM * 3 + 53.5) * 2).toFixed(0) },
-                    { m: 'FCF (BSD M)',           lo: GUIDANCE_FY.fcfLow,      hi: GUIDANCE_FY.fcfHigh,     run: '43' },
-                    { m: 'CapEx (BSD M)',         lo: 160,                      hi: GUIDANCE_FY.capexMax,    run: '91' },
+                    { m: 'Revenue (BSD M)',       lo: GUIDANCE_FY.revenueLow,  hi: GUIDANCE_FY.revenueHigh, run: ((KPI.revenueQtrM + 34.6) * 2).toFixed(0) },
+                    { m: 'EBITDA (BSD M)',        lo: GUIDANCE_FY.ebitdaLow,   hi: GUIDANCE_FY.ebitdaHigh,  run: ((KPI.ebitdaM * 3 + 12.9) * 2).toFixed(0) },
+                    { m: 'FCF (BSD M)',           lo: GUIDANCE_FY.fcfLow,      hi: GUIDANCE_FY.fcfHigh,     run: '13' },
+                    { m: 'CapEx (BSD M)',         lo: 22,                       hi: GUIDANCE_FY.capexMax,    run: '24' },
                     { m: 'Dividend / share',   lo: 0.58,                     hi: 0.64,                   run: '0.31 interim' },
                   ].map((r, i) => (
                     <tr key={i} className="border-t border-black/5">
@@ -735,7 +735,7 @@ export default function InvestorRelationsPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('MSCI ESG')}          value="AA"                    delta={tt('Leaders class · upgraded FY25')}   trend="up"   icon={Award}      accent />
           <KpiCard label={tt('CDP Climate')}        value="A-"                    delta={tt('Leadership · ↑ from B+')}          trend="up"   icon={Leaf as any} />
-          <KpiCard label={tt('Credit rating')}      value={KPI.creditRating}      delta={tt('S&P Stable · Moody\'s Baa2')}      trend="flat" icon={ShieldCheck} />
+          <KpiCard label={tt('Credit rating')}      value={KPI.creditRating}      delta={tt('S&P Stable · Moody\'s Ba2')}      trend="flat" icon={ShieldCheck} />
           <KpiCard label={tt('Renewable electricity')} value={`${KPI.renewablePct}%`} delta={tt('target 100% by 2028')}        trend="up"   icon={Globe} />
         </div>
 
@@ -770,7 +770,7 @@ export default function InvestorRelationsPage() {
             </Panel>
 
             {/* Debt ladder */}
-            <Panel title={tt('Debt maturity ladder (BSD M)')} insight={{ insight: 'Debt concentration in the 2027–2028 window represents BSD 380M of refinancing need within 24 months at current spread levels.', action: 'Initiate early refinancing of the 2027 tranche in Q4 via a 5-year bond to lock in the current Baa2 spread before any rate uptick.', impact: 'Pre-emptive refinancing eliminates rollover risk premium, preserving the Baa2 rating and reducing annual interest cost by ~BSD 6M.' }}>
+            <Panel title={tt('Debt maturity ladder (BSD M)')} insight={{ insight: 'The 2030 BISX notes (BSD 70M) are the largest single tranche — 38% of gross debt falls due in one year.', action: 'Pre-finance the 2030 tranche in Q3 via a BISX-listed 7-year green bond to lock in the current spread before any rate uptick.', impact: 'Pre-emptive refinancing eliminates rollover risk premium, preserving the BB rating and reducing annual interest cost by ~BSD 0.4M.' }}>
               <div className="flex gap-2 mb-3">
                 {(['ladder', 'pie'] as const).map(v => (
                   <button key={v} onClick={() => setDebtView(v)}
@@ -805,7 +805,7 @@ export default function InvestorRelationsPage() {
                 </div>
               )}
               <div className="mt-2 text-xs text-vfes-dark/55">
-                {tt('Total debt ')} <span className="font-bold">BSD {totalDebt}M</span> · {tt('weighted avg maturity 4.2 yr · avg cost 4.8%')}
+                {tt('Total debt ')} <span className="font-bold">BSD {totalDebt}M</span> · {tt('weighted avg maturity 5.4 yr · avg cost 6.1%')}
               </div>
             </Panel>
           </div>
@@ -899,7 +899,7 @@ export default function InvestorRelationsPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Next earnings call')}   value="29 Jul"   delta={tt('Q2 2026 · pre-market')}    trend="up"   icon={Calendar}  accent />
           <KpiCard label={tt('Capital Markets Day')}  value="10 Nov"   delta={tt('Freeport · in-person')}   trend="up"   icon={Building2} />
-          <KpiCard label={tt('Annual dividend')}      value="BSD 0.62"    delta={tt('per share · FY26e')}        trend="up"   icon={DollarSign} />
+          <KpiCard label={tt('Annual dividend')}      value="BSD 0.92"    delta={tt('per share · FY26e')}        trend="up"   icon={DollarSign} />
           <KpiCard label={tt('AGM date')}             value="25 Mar 27" delta={tt('Abaco')}               trend="flat" icon={Award} />
         </div>
 
@@ -944,9 +944,9 @@ export default function InvestorRelationsPage() {
                 </thead>
                 <tbody>
                   {[
-                    { q: 'Q2-26', ev: 'Earnings call + roadshow London/Edinburgh', aud: 'Buyside / Sellside', meetings: 28, status: 'Upcoming' },
+                    { q: 'Q2-26', ev: 'Earnings call + roadshow Miami/Toronto', aud: 'Buyside / Sellside', meetings: 28, status: 'Upcoming' },
                     { q: 'Q3-26', ev: 'Capital Markets Day — Freeport',           aud: 'Institutional / Press', meetings: 80, status: 'Scheduled' },
-                    { q: 'Q4-26', ev: 'Q3 earnings + Paris roadshow',              aud: 'Buyside',              meetings: 20, status: 'Scheduled' },
+                    { q: 'Q4-26', ev: 'Q3 earnings + New York roadshow',           aud: 'Buyside',              meetings: 20, status: 'Scheduled' },
                     { q: 'Q1-27', ev: 'FY26 preliminary results',                  aud: 'All investors',        meetings: 35, status: 'Scheduled' },
                   ].map((r, i) => (
                     <tr key={i} className="border-t border-black/5">
@@ -967,14 +967,14 @@ export default function InvestorRelationsPage() {
       {/* ═══════ CAPITAL ALLOCATION ═══════ */}
       {tab === 'capalloc' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('FY26e CapEx')}           value="BSD 180M"    delta={tt('≤22% of revenue')}           trend="flat" icon={Briefcase}  accent />
-          <KpiCard label={tt('WACC')}                   value="5.72%"    delta={tt('10yr Bono 3.40% + risk')}    trend="flat" icon={DollarSign} />
-          <KpiCard label={tt('Dividend yield FY26e')}   value="3.5%"     delta={tt('BSD 0.62/share target')}         trend="up"   icon={TrendingUp} />
-          <KpiCard label={tt('Total shareholder yield')}value="5.2%"     delta={tt('dividend + buyback')}        trend="up"   icon={Award} />
+          <KpiCard label={tt('FY26e CapEx')}           value="BSD 25M"     delta={tt('≤18% of revenue')}           trend="flat" icon={Briefcase}  accent />
+          <KpiCard label={tt('WACC')}                   value="9.6%"     delta={tt('10yr Bahamas Govt 5.50% + risk')}    trend="flat" icon={DollarSign} />
+          <KpiCard label={tt('Dividend yield FY26e')}   value="3.5%"     delta={tt('BSD 0.92/share target')}         trend="up"   icon={TrendingUp} />
+          <KpiCard label={tt('Total shareholder yield')}value="4.4%"     delta={tt('dividend + buyback')}        trend="up"   icon={Award} />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
-          <Panel title={tt('CapEx allocation by area — FY23-FY26e (BSD M)')} insight={{ insight: '5G and fibre infrastructure absorb 61% of total CapEx, consistent with the capital-light enterprise strategy stated in FY24.', action: 'Frame CapEx intensity reduction to 16.5% of revenue in investor presentations to improve FCF yield comparisons versus European peers.', impact: 'Lower CapEx intensity narrative can narrow the EV/FCF discount to Deutsche Telekom by 0.5–0.8 turns over two reporting cycles.' }}>
+          <Panel title={tt('CapEx allocation by area — FY23-FY26e (BSD M)')} insight={{ insight: 'Network (5G and fibre) absorbs 60% of total CapEx, consistent with the capital-light strategy stated in FY24.', action: 'Frame CapEx intensity reduction to 16% of revenue in investor presentations to improve FCF yield comparisons versus Caribbean peers.', impact: 'Lower CapEx intensity narrative can narrow the EV/FCF discount to regional peers (LLA, Digicel) by 0.5–0.8 turns over two reporting cycles.' }}>
             <div className="h-72">
               <ResponsiveContainer>
                 <BarChart data={CAPALLOC}>
@@ -991,11 +991,11 @@ export default function InvestorRelationsPage() {
               </ResponsiveContainer>
             </div>
             <div className="mt-2 text-[11px] text-vfes-dark/55">
-              {tt('Network absorbs 57% of CapEx. Sustainability growing +125% over 3 years (solar network + EV fleet) in line with Net Zero 2030.')}
+              {tt('Network absorbs 60% of CapEx. Sustainability doubling over 3 years (solar network + EV fleet) in line with Net Zero 2030.')}
             </div>
           </Panel>
 
-          <Panel title={tt('Capital return yield — dividend yield + buyback yield (%)')} insight={{ insight: 'Total capital return yield of 5.8% in FY26e is the highest in the Bahamian telco peer group and 2.1pp above the sector average.', action: 'Publish a multi-year capital return framework committing to at least 5% combined yield through FY28 to attract income-mandate investors.', impact: 'A formalised yield floor expands the eligible investor universe to pension and insurance mandates, supporting a lower cost of equity.' }}>
+          <Panel title={tt('Capital return yield — dividend yield + buyback yield (%)')} insight={{ insight: 'Total capital return yield of 4.4% in FY26e is the highest in the Bahamian telco peer group and 0.3pp above the sector average.', action: 'Publish a multi-year capital return framework committing to at least 4% combined yield through FY28 to attract income-mandate investors.', impact: 'A formalised yield floor expands the eligible investor universe to pension and insurance mandates, supporting a lower cost of equity.' }}>
             <div className="h-72">
               <ResponsiveContainer>
                 <ComposedChart data={RETURNS_POLICY}>
@@ -1011,12 +1011,12 @@ export default function InvestorRelationsPage() {
               </ResponsiveContainer>
             </div>
             <div className="mt-2 text-[11px] text-vfes-dark/55">
-              {tt('Total shareholder yield rises to 5.2% in FY26e — above the sector average (4.1%). Sustainable at FCF TTM BSD ')}{ KPI.fcfTtmM }M.
+              {tt('Total shareholder yield rises to 4.4% in FY26e — above the sector average (4.1%). Sustainable at FCF TTM BSD ')}{ KPI.fcfTtmM }M.
             </div>
           </Panel>
         </div>
 
-        <Panel title={tt('NPV and IRR of investment programmes — WACC 5.72%')}>
+        <Panel title={tt('NPV and IRR of investment programmes — WACC 9.6%')}>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="text-left text-vfes-dark/55 text-[10px] uppercase tracking-widest">

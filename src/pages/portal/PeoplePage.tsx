@@ -281,7 +281,7 @@ const safetyByFunc = [
   { fn: 'Office (corp)',  ltir: 0.04, trir: 0.18, lostDays12m: 6 },
 ]
 const policyTraining = [
-  { policy: 'GDPR refresh',           done: 0.96 },
+  { policy: 'DPA refresh',           done: 0.96 },
   { policy: 'Information security',   done: 0.94 },
   { policy: 'Code of conduct',        done: 0.98 },
   { policy: 'Anti-bribery',           done: 0.92 },
@@ -762,7 +762,7 @@ function PayTab() {
       </div>
 
       <div className="grid lg:grid-cols-2 gap-6 mb-6">
-        <Panel title={tt('Gender pay gap by function')} insight={{ insight: 'Network Engineering shows a mean gender pay gap of 11.4%, the widest in the business and above the threshold that triggers mandatory disclosure under the 2026 EU directive.', action: 'Commission a pay equity audit for Network Engineering this quarter and prepare a remediation plan ahead of the June 2026 reporting deadline.', impact: 'Closing the gap in Network Engineering addresses the highest legal exposure and positions the company as compliant before the directive deadline, avoiding potential regulatory fines.' }}>
+        <Panel title={tt('Gender pay gap by function')} insight={{ insight: 'Network Engineering shows a mean gender pay gap of 11.4%, the widest in the business and above the internal pay-equity review threshold.', action: 'Commission a pay equity audit for Network Engineering this quarter and prepare a remediation plan ahead of the June 2026 reporting deadline.', impact: 'Closing the gap in Network Engineering addresses the highest legal exposure and positions the company as compliant before the directive deadline, avoiding potential regulatory fines.' }}>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={payGapByFunc} layout="vertical" margin={{ left: 60 }}>
               <CartesianGrid stroke="#eef0f3" horizontal={false} />
@@ -791,7 +791,7 @@ function PayTab() {
         </Panel>
       </div>
 
-      <Panel title={tt('EU Pay-Transparency Directive (2026 deadline) · readiness')}>
+      <Panel title={tt('Employment Act pay-equity review · readiness')}>
         <div className="grid md:grid-cols-4 gap-3 text-sm">
           <Mini label={tt('Job-architecture mapped')} value="86%" />
           <Mini label={tt('Pay-band publication')} value="Pilot" />

@@ -209,7 +209,7 @@ export default function SemanticViewsPage() {
         })}
       </div>
 
-      <div className="mt-1 text-[10px] text-vfes-dark/35 uppercase tracking-widest">{tt('Semantic views governed via tln-semantic-models GitHub repo · CI validates YAML schema on PR · accuracy suite runs nightly via Snowflake Task')}</div>
+      <div className="mt-1 text-[10px] text-vfes-dark/35 uppercase tracking-widest">{tt('Semantic views governed via cbl-semantic-models GitHub repo · CI validates YAML schema on PR · accuracy suite runs nightly via Snowflake Task')}</div>
 
       {/* ══════════════ OVERVIEW ═════════════════════════════════════════════ */}
       {tab === 'overview' && (<>
@@ -1042,7 +1042,7 @@ export default function SemanticViewsPage() {
         </div>
 
         <div className="mt-2 text-[10px] text-vfes-dark/35 uppercase tracking-widest">
-          {tt('Semantic views governed via tln-semantic-models repo · CI/CD pipeline validates YAML schema on every PR · accuracy suite runs nightly via Snowflake Task')}
+          {tt('Semantic views governed via cbl-semantic-models repo · CI/CD pipeline validates YAML schema on every PR · accuracy suite runs nightly via Snowflake Task')}
         </div>
         <div className="mt-1 flex items-center gap-3 text-[10px] text-vfes-dark/50 uppercase tracking-widest font-bold">
           <Link to="/portal/data-quality" className="text-vfes-dark hover:underline">{tt('Data Quality →')}</Link>

@@ -80,7 +80,7 @@ const EU_HARMONISATION = [
   { band: '700 MHz',  standard: 'APT700 FDD',   status: 'Harmonised', note: 'EC Decision 2016/687' },
   { band: '800 MHz',  standard: '800 FDD',       status: 'Harmonised', note: 'EC Decision 2010/267' },
   { band: '1800 MHz', standard: '1800 FDD',      status: 'Harmonised', note: 'EC Decision 2009/766' },
-  { band: '2100 MHz', standard: 'IMT-2000',      status: 'Harmonised', note: 'CEPT ECC/DEC/(06)01' },
+  { band: '2100 MHz', standard: 'IMT-2000',      status: 'Harmonised', note: 'CITEL PCC.II/(06)01' },
   { band: '2600 MHz', standard: '2.6 GHz',       status: 'Harmonised', note: 'EC Decision 2008/411' },
   { band: '3.5 GHz',  standard: '3.4–3.8 GHz',  status: 'Harmonised', note: 'EC Decision 2019/235' },
   { band: '26 GHz',   standard: '24.25–27.5 GHz', status: 'Harmonised', note: 'EC Decision 2019/784' },
@@ -115,8 +115,8 @@ const SPECTRUM_ROADMAP = [
 const MNO_SPECTRUM_COMPARE = [
   { mno: 'Cable Bahamas', sub1ghz: 60, mid: 190, mmwave: 400 },
   { mno: 'BTC',  sub1ghz: 50, mid: 180, mmwave: 200 },
-  { mno: 'Benchmark A',    sub1ghz: 40, mid: 150, mmwave: 200 },
-  { mno: 'Benchmark B',  sub1ghz: 30, mid: 100, mmwave: 0   },
+  { mno: 'Rival ISP A',    sub1ghz: 40, mid: 150, mmwave: 200 },
+  { mno: 'Rival ISP B',  sub1ghz: 30, mid: 100, mmwave: 0   },
 ]
 
 type TabId = 'holdings' | 'refarm' | 'lifecycle' | 'value' | 'utilisation' | 'regulatory' | 'auctions' | 'roadmap'
@@ -198,21 +198,21 @@ export default function SpectrumPage() {
         heading="Spectrum intelligence"
         models={[
           { name: 'Band Utilisation Forecaster', metric: 'MAPE 5.2%', sub: '90d ahead per band per hour' },
-          { name: 'Renewal Price Estimator',      metric: 'R² 0.86',   sub: 'EU comparable auction pricing' },
+          { name: 'Renewal Price Estimator',      metric: 'R² 0.86',   sub: 'Regional comparable auction pricing' },
           { name: 'Refarming Optimiser',          metric: 'NPV +BSD 48M', sub: 'optimal legacy-off schedule' },
         ]}
         agentLabel="Run Spectrum Optimiser"
         agentRunningLabel="Optimising…"
         agentSteps={[
           'Scored 700 MHz for 5G SA re-farm eligibility across all sites',
-          'Modelled 2030 auction renewal costs vs EU comparable auctions',
+          'Modelled 2030 auction renewal costs vs regional comparable auctions',
           'Sized treasury reserve to cover 120 MHz capacity-spectrum renewal',
           'Ranked refarming sequence by incremental throughput per BSD M spent',
         ]}
         agentBlurb="Snowflake ML models correlate band utilisation, device penetration and population density to produce a defensible renewal reserve and refarming priority list."
         decision={{
           title: 'Reserve BSD 780M for the 2030 capacity-spectrum renewal now',
-          detail: '120 MHz of capacity spectrum (1800/2100/2600) expires in 2030. Comparable EU auctions imply BSD 680M–BSD 940M cost. Pre-funding the reserve eliminates the auction-cliff risk and signals continuity to bond markets.',
+          detail: '120 MHz of capacity spectrum (1800/2100/2600) expires in 2030. Comparable regional auctions imply BSD 680M–BSD 940M cost. Pre-funding the reserve eliminates the auction-cliff risk and signals continuity to bond markets.',
           impact: 'avoids BSD 0.6–0.9B auction-cliff exposure',
           risk: 'treasury opportunity cost ~4% per annum on reserve',
           linkTo: '#/portal/capacity-capex',
@@ -520,7 +520,7 @@ export default function SpectrumPage() {
         <>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             <KpiCard label={tt('MHz expiring 2030')} value="120 MHz" delta={tt('1800/2100/2600 — High risk')} trend="down" icon={AlertTriangle} accent />
-            <KpiCard label={tt('Renewal est. 2030')} value="~BSD 810M"  delta={tt('based on EU comparables')} trend="flat" icon={Gauge} />
+            <KpiCard label={tt('Renewal est. 2030')} value="~BSD 810M"  delta={tt('based on regional comparables')} trend="flat" icon={Gauge} />
             <KpiCard label={tt('MHz expiring 2031')} value="40 MHz"  delta={tt('800/900 MHz')} trend="flat" icon={Radio} />
             <KpiCard label={tt('Longest licence')}   value="2039"    delta={tt('26 GHz mmWave')} trend="flat" icon={Calendar} />
           </div>
@@ -528,7 +528,7 @@ export default function SpectrumPage() {
           <Panel title={tt('Licence expiry timeline & renewal risk')}
             action={<AgentAction label="Reserve renewal capital" runningLabel="Modelling…"
               steps={[
-                'Projected 2030 auction reserve price from comparable EU bands',
+                'Projected 2030 auction reserve price from comparable regional bands',
                 'Sized renewal reserve for 120 MHz capacity spectrum',
                 'Flagged to Finance — CapEx plan & treasury hold created',
               ]} />}
@@ -568,7 +568,7 @@ export default function SpectrumPage() {
               label="Reserve renewal capital"
               runningLabel="Modelling…"
               steps={[
-                'Projected 2030 auction reserve price from comparable EU bands',
+                'Projected 2030 auction reserve price from comparable regional bands',
                 'Sized renewal reserve for 120 MHz capacity spectrum',
                 'Flagged to Finance — CapEx plan & treasury hold created',
               ]}
@@ -624,7 +624,7 @@ export default function SpectrumPage() {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
-              <div className="mt-3 text-xs text-vfes-dark/55">{tt('Sub-1 GHz carries the premium — scarce, coverage-grade, and EU-harmonised.')}</div>
+              <div className="mt-3 text-xs text-vfes-dark/55">{tt('Sub-1 GHz carries the premium — scarce, coverage-grade, and ITU Region 2 harmonised.')}</div>
             </Panel>
             <Panel title={tt('Portfolio book value — utilisation by tier')}>
               <div className="h-72">
@@ -713,7 +713,7 @@ export default function SpectrumPage() {
       {tab === 'regulatory' && (
         <>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <KpiCard label={tt('EU harmonised bands')} value="7 / 7"  delta={tt('all bands harmonised')} trend="up" icon={ShieldCheck} accent />
+            <KpiCard label={tt('CITEL harmonised bands')} value="7 / 7"  delta={tt('all bands harmonised')} trend="up" icon={ShieldCheck} accent />
             <KpiCard label={tt('Coverage obligations')} value="94%"    delta={tt('700 MHz · Q4-2026 deadline')} trend="up" icon={Globe} />
             <KpiCard label={tt('Rural 90% pop target')} value="68%"    delta={tt('at risk — Q4-2027')} trend="down" icon={AlertTriangle} />
             <KpiCard label={tt('EMF compliance')}        value="100%"   delta={tt('annual audit passed')} trend="up" icon={Activity} />
@@ -765,7 +765,7 @@ export default function SpectrumPage() {
           </Panel>
 
           <div className="mt-4">
-            <Panel title={tt('EU harmonisation status by band')}>
+            <Panel title={tt('CITEL harmonisation status by band')}>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
@@ -773,7 +773,7 @@ export default function SpectrumPage() {
                       <th className="px-3 py-2">{tt('Band')}</th>
                       <th className="px-3 py-2">{tt('Standard')}</th>
                       <th className="px-3 py-2">{tt('Status')}</th>
-                      <th className="px-3 py-2">{tt('EC/CEPT Decision')}</th>
+                      <th className="px-3 py-2">{tt('CITEL Decision')}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -976,7 +976,7 @@ export default function SpectrumPage() {
       <div className="mt-4 rounded-xl bg-gradient-to-br from-vfes-red/10 to-transparent border border-vfes-red/20 p-4 flex items-center justify-between">
         <div>
           <div className="text-xs uppercase tracking-widest font-bold text-vfes-dark mb-1">{tt('AI-native spectrum optimisation')}</div>
-          <div className="text-sm text-vfes-dark/80">{tt('Snowflake Cortex fuses band utilisation telemetry, EU auction comparables, and device penetration data to produce a continuous renewal reserve recommendation and refarming priority ranked by NPV per MHz.')}</div>
+          <div className="text-sm text-vfes-dark/80">{tt('Snowflake Cortex fuses band utilisation telemetry, regional auction comparables, and device penetration data to produce a continuous renewal reserve recommendation and refarming priority ranked by NPV per MHz.')}</div>
         </div>
         <Link to="/portal/ai-insights" className="bg-vfes-red text-vfes-dark text-sm font-bold px-4 py-2 rounded-full hover:bg-vfes-red-dark flex items-center gap-2 shrink-0 ml-4">
           <Brain className="w-4 h-4" />{tt('AI Insights →')}
@@ -1079,9 +1079,9 @@ export default function SpectrumPage() {
       </div>
 
       <div className="mt-4 text-[11px] text-vfes-dark/40 border-t border-black/5 pt-3">
-        {tt('Spectrum data: URCA licence register · Cable Bahamas regulatory tracker · Snowflake Cortex AI. EU harmonisation status per EC/CEPT decisions.')}
-        {' '}{tt('Valuation estimates based on comparable EU auctions. Renewal estimates are indicative — final amounts subject to URCA auction process.')}
-        {' '}{tt('MHz-pop coverage values based on Statbel 2025 population data. All utilisation metrics 30-day rolling averages. Refreshed daily.')}
+        {tt('Spectrum data: URCA licence register · Cable Bahamas regulatory tracker · Snowflake Cortex AI. Harmonisation status per CITEL / ITU Region 2.')}
+        {' '}{tt('Valuation estimates based on comparable regional auctions. Renewal estimates are indicative — final amounts subject to URCA auction process.')}
+        {' '}{tt('MHz-pop coverage values based on Bahamas NSI 2025 population data. All utilisation metrics 30-day rolling averages. Refreshed daily.')}
       </div>
 
       <div className="mt-4 flex flex-wrap gap-3 text-xs">

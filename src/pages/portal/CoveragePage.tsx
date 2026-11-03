@@ -905,8 +905,8 @@ export default function CoveragePage() {
                   <Legend wrapperStyle={{ fontSize: 10 }} />
                   <Bar dataKey="ours" name={tt('Cable Bahamas')} fill={RED} radius={[4,4,0,0]} />
                   <Bar dataKey="btc" name="BTC" fill="#0ea5e9" radius={[4,4,0,0]} />
-                  <Bar dataKey="orange" name="Benchmark A" fill="#f97316" radius={[4,4,0,0]} />
-                  <Bar dataKey="digi" name="Benchmark B" fill="#6366f1" radius={[4,4,0,0]} />
+                  <Bar dataKey="orange" name="Rival ISP A" fill="#f97316" radius={[4,4,0,0]} />
+                  <Bar dataKey="digi" name="Rival ISP B" fill="#6366f1" radius={[4,4,0,0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>

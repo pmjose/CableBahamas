@@ -21,25 +21,25 @@ const TS = { background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, f
 
 // ─── Static data ─────────────────────────────────────────────────────────────
 const OUTBOUND = [
-  { name: 'CBL_NETWORK_INTEL_LISTING', typeKey: 'paid',   type: 'Marketplace · paid', consumers: 14,  regions: 'EU/UK', mrr: 42000, mrrFmt: 'BSD 42K', sla: '99.9%',      status: 'live'  },
-  { name: 'CBL_AGGREGATED_FOOTFALL',   typeKey: 'paid',   type: 'Marketplace · paid', consumers: 8,   regions: 'EU',    mrr: 18000, mrrFmt: 'BSD 18K', sla: '99.5%',      status: 'live'  },
-  { name: 'CBL_PRIVATE_CAIXABANK',     typeKey: 'direct', type: 'Direct share · 1:1', consumers: 1,   regions: 'BE',    mrr: 0,     mrrFmt: '—',    sla: 'best-effort', status: 'live'  },
+  { name: 'CBL_NETWORK_INTEL_LISTING', typeKey: 'paid',   type: 'Marketplace · paid', consumers: 14,  regions: 'US/Canada', mrr: 42000, mrrFmt: 'BSD 42K', sla: '99.9%',      status: 'live'  },
+  { name: 'CBL_AGGREGATED_FOOTFALL',   typeKey: 'paid',   type: 'Marketplace · paid', consumers: 8,   regions: 'US-East',    mrr: 18000, mrrFmt: 'BSD 18K', sla: '99.5%',      status: 'live'  },
+  { name: 'CBL_PRIVATE_ISLAND_BANK',     typeKey: 'direct', type: 'Direct share · 1:1', consumers: 1,   regions: 'BE',    mrr: 0,     mrrFmt: '—',    sla: 'best-effort', status: 'live'  },
   { name: 'CBL_OPEN_DATA_ESG',         typeKey: 'free',   type: 'Marketplace · free', consumers: 184, regions: 'global',mrr: 0,     mrrFmt: '—',    sla: 'best-effort', status: 'live'  },
-  { name: 'CBL_DEMOGRAPHIC_LISTING',   typeKey: 'paid',   type: 'Marketplace · paid', consumers: 0,   regions: 'EU/UK', mrr: 0,     mrrFmt: '—',    sla: 'pending',     status: 'draft' },
+  { name: 'CBL_DEMOGRAPHIC_LISTING',   typeKey: 'paid',   type: 'Marketplace · paid', consumers: 0,   regions: 'US/Canada', mrr: 0,     mrrFmt: '—',    sla: 'pending',     status: 'draft' },
 ]
 
 const INBOUND = [
-  { name: 'STATBEL_DATA',    provider: 'Marketplace · Statbel',  tables: 14, size: '8.2 GB',  cost: 'free',      auto_refresh: 'monthly',   use: 'demographics, ESG',  region: 'EU'     },
-  { name: 'URCA_PRICE_INTEL',    provider: 'Marketplace · URCA',         tables: 6,  size: '480 MB',  cost: 'BSD 2K/mo',    auto_refresh: 'weekly',    use: 'price benchmark',    region: 'EU'     },
-  { name: 'OECD_TELECOM_BENCH',  provider: 'Marketplace · OECD',         tables: 22, size: '4.1 GB',  cost: 'free',      auto_refresh: 'quarterly', use: 'EU benchmark',       region: 'Global' },
-  { name: 'CAIXABANK_FRAMEWORK', provider: 'Direct share · Island Bank (demo)',   tables: 4,  size: '120 MB',  cost: '—',         auto_refresh: 'on-change', use: 'framework deal',     region: 'EU'     },
-  { name: 'WEATHER_FORECAST_EU', provider: 'Marketplace · Tomorrow.io',  tables: 8,  size: '2.4 GB',  cost: 'BSD 3.2K/mo',  auto_refresh: 'hourly',    use: 'field-ops, network', region: 'EU'     },
-  { name: 'OPEN_FIBER_REGISTRY', provider: 'Marketplace · BTC OD',  tables: 2,  size: '180 MB',  cost: 'free',      auto_refresh: 'monthly',   use: 'coverage planning',  region: 'EU'     },
+  { name: 'BAHAMAS_NSI_DATA',    provider: 'Marketplace · Bahamas NSI',  tables: 14, size: '8.2 GB',  cost: 'free',      auto_refresh: 'monthly',   use: 'demographics, ESG',  region: 'US-East'     },
+  { name: 'URCA_PRICE_INTEL',    provider: 'Marketplace · URCA',         tables: 6,  size: '480 MB',  cost: 'BSD 2K/mo',    auto_refresh: 'weekly',    use: 'price benchmark',    region: 'US-East'     },
+  { name: 'OECD_TELECOM_BENCH',  provider: 'Marketplace · OECD',         tables: 22, size: '4.1 GB',  cost: 'free',      auto_refresh: 'quarterly', use: 'Caribbean benchmark',       region: 'Global' },
+  { name: 'ISLAND_BANK_FRAMEWORK', provider: 'Direct share · Island Bank (demo)',   tables: 4,  size: '120 MB',  cost: '—',         auto_refresh: 'on-change', use: 'framework deal',     region: 'US-East'     },
+  { name: 'WEATHER_FORECAST_EU', provider: 'Marketplace · Tomorrow.io',  tables: 8,  size: '2.4 GB',  cost: 'BSD 3.2K/mo',  auto_refresh: 'hourly',    use: 'field-ops, network', region: 'US-East'     },
+  { name: 'OPEN_FIBER_REGISTRY', provider: 'Marketplace · BTC OD',  tables: 2,  size: '180 MB',  cost: 'free',      auto_refresh: 'monthly',   use: 'coverage planning',  region: 'US-East'     },
 ]
 
 const CLEAN_ROOMS = [
-  { name: 'CAIXABANK_x_CBL_PROPENSITY', partner: 'Island Bank (demo)',    use: 'joint propensity model', state: 'analysis-running', shared_kpis: 'overlap, lift, CLV'        },
-  { name: 'Benchmark B_x_CBL_BUNDLE',          partner: 'Benchmark B The Bahamas',  use: 'bundle attribution',     state: 'live',             shared_kpis: 'attribution lift'           },
+  { name: 'ISLAND_BANK_x_CBL_PROPENSITY', partner: 'Island Bank (demo)',    use: 'joint propensity model', state: 'analysis-running', shared_kpis: 'overlap, lift, CLV'        },
+  { name: 'Benchmark B_x_CBL_BUNDLE',          partner: 'Rival ISP B The Bahamas',  use: 'bundle attribution',     state: 'live',             shared_kpis: 'attribution lift'           },
   { name: 'MOBILE_VIKINGS_x_CBL',         partner: 'Mobile Vikings', use: 'audience overlap',       state: 'awaiting-approve', shared_kpis: 'overlap %, segment volumes' },
 ]
 
@@ -69,7 +69,7 @@ const GOVERNANCE_CHECKS = [
   { check: 'PII scan — all outbound listings',    result: 'Pass',  last: '2026-06-28', owner: 'CDO Office' },
   { check: 'Secure share encryption audit',        result: 'Pass',  last: '2026-06-20', owner: 'Security'   },
   { check: 'Marketplace T&C compliance',           result: 'Pass',  last: '2026-05-31', owner: 'Legal'      },
-  { check: 'GDPR data residency (EU)',             result: 'Pass',  last: '2026-06-01', owner: 'DPO'        },
+  { check: 'Data residency (Bahamas / US-East)',             result: 'Pass',  last: '2026-06-01', owner: 'DPO'        },
   { check: 'Consumer access review (semi-annual)', result: 'Pass',  last: '2026-04-30', owner: 'Data Gov'   },
   { check: 'Reader account activity audit',        result: 'Watch', last: '2026-06-15', owner: 'Ops'        },
 ]
@@ -225,7 +225,7 @@ export default function SharingMarketplacePage() {
         agentBlurb={tt('One sharing layer — listings, direct shares, clean rooms — lets a single model see the full monetization picture and identify the next-best data product.')}
         decision={{
           title: tt('Launch CBL_DEMOGRAPHIC_LISTING to unlock BSD 120K incremental MRR'),
-          detail: tt('The monetization model identifies CBL_DEMOGRAPHIC_LISTING as the highest-value unscenario asset. 22 prospective consumers already query similar ESG data; the demographic product fills a gap in the EU telco marketplace and commands a premium price point.'),
+          detail: tt('The monetization model identifies CBL_DEMOGRAPHIC_LISTING as the highest-value unscenario asset. 22 prospective consumers already query similar ESG data; the demographic product fills a gap in the US telco marketplace and commands a premium price point.'),
           impact: tt('BSD 120K incremental MRR · 22 new marketplace consumers'),
           risk: tt('DPO sign-off needed — aggregation thresholds must be confirmed before publish'),
           linkTo: '/portal/data-products',
@@ -609,7 +609,7 @@ export default function SharingMarketplacePage() {
 
         <div className="flex items-center gap-2 mb-4">
           <span className="text-xs font-bold uppercase tracking-widest text-vfes-dark/55">{tt('Region:')}</span>
-          {['All', 'EU', 'Global'].map(r => (
+          {['All', 'US', 'Global'].map(r => (
             <button key={r} onClick={() => setRegionFilter(r)}
               className={`text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded ${regionFilter === r ? 'bg-vfes-red text-vfes-dark' : 'bg-black/5 text-vfes-dark/65 hover:bg-black/10'}`}>
               {r}
@@ -968,7 +968,7 @@ export default function SharingMarketplacePage() {
         <div className="grid md:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Governance checks')}  value="6/6"   delta={tt('5 pass · 1 watch')}    trend="up"   icon={ShieldCheck} accent />
           <KpiCard label={tt('PII egress')}          value="0"     delta={tt('all shares aggregate')} trend="flat" icon={Lock}       />
-          <KpiCard label={tt('GDPR residency')}      value="Pass"  delta={tt('all data EU-only')}    trend="up"   icon={Globe2}     />
+          <KpiCard label={tt('DPA residency')}      value="Pass"  delta={tt('all data in approved regions')}    trend="up"   icon={Globe2}     />
           <KpiCard label={tt('DPO sign-offs')}       value="4/5"   delta={tt('1 pending — demo listing')} trend="down" icon={Users} />
         </div>
 
@@ -1024,7 +1024,7 @@ export default function SharingMarketplacePage() {
               {[
                 { label: tt('CBL_NETWORK_INTEL_LISTING'), enc: 'TLS 1.3 · AES-256', status: 'Pass' },
                 { label: tt('CBL_AGGREGATED_FOOTFALL'),   enc: 'TLS 1.3 · AES-256', status: 'Pass' },
-                { label: tt('CBL_PRIVATE_CAIXABANK'),     enc: 'Tri-Secret Secure',  status: 'Pass' },
+                { label: tt('CBL_PRIVATE_ISLAND_BANK'),     enc: 'Tri-Secret Secure',  status: 'Pass' },
                 { label: tt('CBL_OPEN_DATA_ESG'),         enc: 'TLS 1.3',            status: 'Pass' },
               ].map(e => (
                 <div key={e.label} className="flex items-center justify-between border-b border-black/5 pb-2">

@@ -205,7 +205,7 @@ function OverviewTab({ drillInto }: { drillInto: (c: string) => void }) {
   const totalSpend = vendors.reduce((s, v) => s + v.spend, 0) / 1000
   const top10 = [...vendors].sort((a, b) => b.spend - a.spend).slice(0, 10)
   const top10Share = top10.reduce((s, v) => s + v.spend, 0) / vendors.reduce((s, v) => s + v.spend, 0)
-  const fxNonEur = vendors.filter((v) => v.ccy !== 'BSD').reduce((s, v) => s + v.spend, 0) / 1000
+  const fxNonBsd = vendors.filter((v) => v.ccy !== 'BSD').reduce((s, v) => s + v.spend, 0) / 1000
   const renewalsNext90 = vendors.filter((v) => v.daysToNotice > 0 && v.daysToNotice <= 90).length
 
   return (
@@ -219,7 +219,7 @@ function OverviewTab({ drillInto }: { drillInto: (c: string) => void }) {
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <KpiCard label={tt('Active contracts')} value="240" delta={`${noticeAlerts.length} notice OPEN`} trend="flat" icon={FileSignature} />
         <KpiCard label={tt('Renewals < 90 days')} value={`${renewalsNext90}`} delta="action required" trend="down" icon={Calendar} />
-        <KpiCard label={tt('Non-BSD FX exposure')} value={`BSD ${fxNonEur.toFixed(0)}M`} delta="USD/GBP" trend="flat" icon={Globe} />
+        <KpiCard label={tt('Non-BSD FX exposure')} value={`BSD ${fxNonBsd.toFixed(0)}M`} delta="USD/GBP" trend="flat" icon={Globe} />
         <KpiCard label={tt('OTIF (top-10)')} value="92%" delta="-1 pt vs plan" trend="down" icon={Truck} />
       </div>
 
@@ -251,7 +251,7 @@ function OverviewTab({ drillInto }: { drillInto: (c: string) => void }) {
             </tr>
           </tbody>
         </table>
-        <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('Ericsson + Nokia represent 60% of mobile RAN spend (5G SA macro footprint). Huawei is on Watch under EU 5G Toolbox — limited to refarm + microwave only. Open RAN spend rising via Samsung / Mavenir / Fujitsu (BSD 63.6M TTM combined).')}</div>
+        <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('Ericsson + Nokia represent 60% of mobile RAN spend (5G SA macro footprint). Huawei is on Watch under the high-risk vendor policy — limited to refarm + microwave only. Open RAN spend rising via Samsung / Mavenir / Fujitsu (BSD 63.6M TTM combined).')}</div>
       </Panel>
 
       <div className="grid lg:grid-cols-3 gap-6 mb-6">
@@ -683,7 +683,7 @@ function RiskTab({ drillInto }: { drillInto: (c: string) => void }) {
     <>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <KpiCard label={tt('Single-source vendors')} value={`${single.length}`} delta={`BSD ${single.reduce((s, v) => s + v.spend, 0) / 1000} M`} trend="down" icon={AlertTriangle} accent />
-        <KpiCard label={tt('Cyber rating C+')} value={`${cyberWeak.length}`} delta="NIS2 attestation" trend="down" icon={Shield} />
+        <KpiCard label={tt('Cyber rating C+')} value={`${cyberWeak.length}`} delta="URCA cyber attestation" trend="down" icon={Shield} />
         <KpiCard label={tt('Financial-health watch')} value={`${finRisk.length}`} delta="D&B downgrade" trend="down" icon={TrendingDown} />
         <KpiCard label={tt('Open risk register')} value={`${risks.length}`} delta={`${risks.filter((r) => r.sev === 'High').length} high`} trend="flat" icon={Activity} />
       </div>
@@ -746,7 +746,7 @@ function RiskTab({ drillInto }: { drillInto: (c: string) => void }) {
 
       <SiPrompts prompts={[
         'Forecast vendor financial-health risk using Snowpark ML model.',
-        'Show all NIS2-required vendors lacking attestation.',
+        'Show all URCA cyber-required vendors lacking attestation.',
         'List geopolitical exposure: Russia, China-restricted sub-suppliers.',
       ]} />
     </>
@@ -756,12 +756,12 @@ function RiskTab({ drillInto }: { drillInto: (c: string) => void }) {
 // ----------------------------------------------------------------------------- ESG
 function EsgTab() {
   const totalScope3 = scope3ByCategory.reduce((s, x) => s + x.ktCo2e, 0)
-  const irishSme = diversitySpend.find((d) => d.kind === 'Bahamian SME')?.value ?? 0
+  const bahamianSme = diversitySpend.find((d) => d.kind === 'Bahamian SME')?.value ?? 0
   return (
     <>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <KpiCard label={tt('Scope-3 (procurement)')} value={`${totalScope3.toFixed(1)} ktCO₂e`} delta="-6% YoY" trend="up" icon={Leaf} accent />
-        <KpiCard label={tt('Bahamian SME spend')} value={`BSD ${irishSme}M`} delta="+BSD 2.4M YoY" trend="up" icon={Heart} />
+        <KpiCard label={tt('Bahamian SME spend')} value={`BSD ${bahamianSme}M`} delta="+BSD 2.4M YoY" trend="up" icon={Heart} />
         <KpiCard label={tt('EcoVadis ≥ 50')} value={`${ecovadisDist[0].count + ecovadisDist[1].count}`} delta="of top 86" trend="up" icon={CheckCircle} />
         <KpiCard label={tt('CDP-disclosed vendors')} value="62%" delta="+8 pts" trend="up" icon={FileText} />
       </div>

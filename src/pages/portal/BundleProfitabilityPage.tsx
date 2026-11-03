@@ -466,7 +466,7 @@ export default function BundleProfitabilityPage() {
                 <span className="text-vfes-dark/65">{tt('Scenario')}</span>
                 <select value={cfg.scenario} onChange={(e) => dispatch({ type: 'SET', patch: { scenario: e.target.value as Config['scenario'] } })}
                   className="bg-[#f3f4f7] rounded px-1 py-0.5 font-semibold text-[10px]">
-                  <option value="base">{tt('Base')}</option><option value="sky_renewal">{tt('Benchmark B +15%')}</option><option value="comreg_cap">{tt('URCA cap')}</option><option value="recession">{tt('Recession')}</option><option value="comp_match">{tt('Comp match')}</option>
+                  <option value="base">{tt('Base')}</option><option value="sky_renewal">{tt('Rival ISP B +15%')}</option><option value="comreg_cap">{tt('URCA cap')}</option><option value="recession">{tt('Recession')}</option><option value="comp_match">{tt('Comp match')}</option>
                 </select>
               </div>
             </div>
@@ -601,7 +601,7 @@ export default function BundleProfitabilityPage() {
           <span className="font-bold text-vfes-dark uppercase tracking-widest text-[10px]">{tt('Sensitivity knobs')}</span>
           <label className="flex items-center gap-1.5">Scenario
             <select value={cfg.scenario} onChange={(e) => dispatch({ type: 'SET', patch: { scenario: e.target.value as Config['scenario'] } })} className="bg-white rounded px-1.5 py-0.5 font-semibold">
-              <option value="base">{tt('Base')}</option><option value="sky_renewal">{tt('Benchmark B renewal +15%')}</option><option value="comreg_cap">{tt('URCA cap')}</option><option value="recession">{tt('Recession')}</option><option value="comp_match">{tt('Comp match')}</option>
+              <option value="base">{tt('Base')}</option><option value="sky_renewal">{tt('Rival ISP B renewal +15%')}</option><option value="comreg_cap">{tt('URCA cap')}</option><option value="recession">{tt('Recession')}</option><option value="comp_match">{tt('Comp match')}</option>
             </select>
           </label>
           <label className="flex items-center gap-1.5">σ mult
@@ -624,7 +624,7 @@ export default function BundleProfitabilityPage() {
           <span className="font-bold text-vfes-dark uppercase tracking-widest text-[10px]">{tt('Comp/reg knobs')}</span>
           <label className="flex items-center gap-1.5">Benchmark
             <select value={cfg.benchmarkSet} onChange={(e) => dispatch({ type: 'SET', patch: { benchmarkSet: e.target.value as Config['benchmarkSet'] } })} className="bg-white rounded px-1.5 py-0.5 font-semibold">
-              <option value="all">{tt('All')}</option><option value="digi">{tt('Benchmark B only')}</option><option value="btc">{tt('BTC only')}</option><option value="voo">{tt('Benchmark C')}</option>
+              <option value="all">{tt('All')}</option><option value="digi">{tt('Rival ISP B only')}</option><option value="btc">{tt('BTC only')}</option><option value="voo">{tt('Rival ISP C')}</option>
             </select>
           </label>
         </>)}
@@ -1172,7 +1172,7 @@ function CompRegTab({ cfg, b, engine }: { cfg: Config; b: BundleSKU; engine: any
     { competitor: 'BTC Fibre Max',       slot: 'BB+TV',     speed: '1 Gb', tv: '180 ch', price: 99,  promo: 49, set: 'btc' },
     { competitor: 'BTC Bundle Mobile',   slot: 'BB+Mobile', speed: '1 Gb', tv: '–',       price: 89,  promo: 45, set: 'btc' },
     { competitor: 'BTC Flex',  slot: 'BB+TV',     speed: '1 Gb', tv: 'Premium', price: 92,  promo: 59, set: 'btc' },
-    { competitor: 'Benchmark C Box+',       slot: 'BB+Mobile', speed: '1 Gb', tv: '–',       price: 72,  promo: 42, set: 'voo' },
+    { competitor: 'Rival ISP C Box+',       slot: 'BB+Mobile', speed: '1 Gb', tv: '–',       price: 72,  promo: 42, set: 'voo' },
     { competitor: 'Cable Bahamas — selected',     slot: b.category,  speed: b.code.includes('1G') ? '1 Gb' : b.code.includes('500') ? '500 Mb' : '2 Gb', tv: b.code.includes('TV') ? 'Streaming' : '–', price: b.list, promo: b.promo, set: 'vfes' },
   ].filter((x) => cfg.benchmarkSet === 'all' || x.set === cfg.benchmarkSet || x.set === 'vfes')
 
@@ -1217,7 +1217,7 @@ function CompRegTab({ cfg, b, engine }: { cfg: Config; b: BundleSKU; engine: any
             {[
               { name: 'Bahamian content levy (CRC)', val: cfg.baiLevy, note: '% of TV revenue' },
               { name: 'USO contribution', val: cfg.usoContrib, note: '% of telecoms revenue' },
-              { name: 'EU roaming impact (mobile leg)', val: 0.4, note: 'BSD /sub margin drag' },
+              { name: 'US roaming impact (mobile leg)', val: 0.4, note: 'BSD /sub margin drag' },
             ].map((l) => (
               <div key={tt(l.name)}>
                 <div className="flex justify-between text-sm mb-1">

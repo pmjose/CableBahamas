@@ -92,7 +92,7 @@ const funnelByProduct: Record<ProductKey, { stage: string; mobile: number; deskt
 }
 
 const dropReasons = [
-  { r: 'Price concern (vs. BTC/Benchmark B)',          n: 38, color: 'bg-red-500' },
+  { r: 'Price concern (vs. BTC/Rival ISP B)',          n: 38, color: 'bg-red-500' },
   { r: 'Serviceability check failed',           n: 24, color: 'bg-amber-500' },
   { r: 'Credit check fear',                     n: 14, color: 'bg-orange-500' },
   { r: 'Installation wait time',                n: 11, color: 'bg-yellow-500' },
@@ -163,9 +163,9 @@ const promos = [
 const competitive = [
   { brand: 'Cable Bahamas',   speed500: 49, speed1G: 65, speed2G: 79, contract: 18, install: 'BSD 0', score: 0.78 },
   { brand: 'BTC',    speed500: 45, speed1G: 60, speed2G: 75, contract: 24, install: 'BSD 99', score: 0.74 },
-  { brand: 'Benchmark B',    speed500: 39, speed1G: 55, speed2G: 69, contract: 12, install: 'BSD 0', score: 0.82 },
-  { brand: 'Benchmark B',        speed500: 50, speed1G: 70, speed2G: '—', contract: 18, install: 'BSD 49', score: 0.68 },
-  { brand: 'Benchmark A',      speed500: 47, speed1G: 62, speed2G: 78, contract: 18, install: 'BSD 0', score: 0.72 },
+  { brand: 'Rival ISP B',    speed500: 39, speed1G: 55, speed2G: 69, contract: 12, install: 'BSD 0', score: 0.82 },
+  { brand: 'Rival ISP B',        speed500: 50, speed1G: 70, speed2G: '—', contract: 18, install: 'BSD 49', score: 0.68 },
+  { brand: 'Rival ISP A',      speed500: 47, speed1G: 62, speed2G: 78, contract: 18, install: 'BSD 0', score: 0.72 },
 ]
 
 // Serviceability fails by region — with FTTH unlock quarter
@@ -211,7 +211,7 @@ const chatSave = [
 const actionQueue = [
   { type: 'Fix',         priority: 'P0', title: 'Postcode lookup API timeouts',         impact: 'BSD 84K MRR/Q', why: '4% of mobile sessions losing 18% drop · API call avg 14s', play: 'Cache postcode results, retry on 502', owner: 'Eng / Web', cta: 'Open ticket' },
   { type: 'Pause',       priority: 'P1', title: 'TikTok prospecting campaign',          impact: 'BSD 3.2K saved', why: 'CAC BSD 46 vs BSD 14 paid search · 0.62% conv', play: 'Pause until creative refresh', owner: 'Performance', cta: 'Pause now' },
-  { type: 'Match',       priority: 'P0', title: 'Benchmark B 12-mo BSD 39 deal',                  impact: 'BSD 420K LTV/Q', why: 'Lost 38% of 500Mb price-sensitive prospects', play: 'Launch 12-mo BSD 42 + BSD 0 install', owner: 'Pricing', cta: 'Brief approval' },
+  { type: 'Match',       priority: 'P0', title: 'Rival ISP B 12-mo BSD 39 deal',                  impact: 'BSD 420K LTV/Q', why: 'Lost 38% of 500Mb price-sensitive prospects', play: 'Launch 12-mo BSD 42 + BSD 0 install', owner: 'Pricing', cta: 'Brief approval' },
   { type: 'Retarget',    priority: 'P1', title: '4,820 high-CLV cart abandoners',       impact: 'BSD 220K MRR/Q', why: 'CLV propensity > 0.7 · last 7d', play: 'Send personalised email + SMS reminder', owner: 'CRM', cta: 'Push to Marketing Cloud' },
   { type: 'Defer',       priority: 'P2', title: 'Abaco / Freeport SEM spend',              impact: 'BSD 8K saved/wk', why: '14-18% serviceability fail · FTTH not until Q3-Q4 26', play: 'Reduce bids until coverage live', owner: 'Performance', cta: 'Adjust bids' },
   { type: 'Promote',     priority: 'P1', title: 'Postcode autocomplete v2 rollout',      impact: '+18.4% conv', why: '99% sig · winning experiment', play: 'Roll to 100% of traffic', owner: 'Web', cta: 'Promote variant' },
@@ -806,7 +806,7 @@ export default function DigitalFunnelPage() {
             </tbody>
           </table>
           <div className="mt-3 pt-3 border-t border-black/5 text-[11px] text-vfes-dark/55">
-            <span className="text-red-600 font-bold">{tt('Benchmark B BSD 39 / 12-mo')}</span> is undercutting our 500 Mb · <span className="text-vfes-dark font-semibold">{tt('Pricing brief in queue')}</span>
+            <span className="text-red-600 font-bold">{tt('Rival ISP B BSD 39 / 12-mo')}</span> is undercutting our 500 Mb · <span className="text-vfes-dark font-semibold">{tt('Pricing brief in queue')}</span>
           </div>
         </Panel>
       </div>
@@ -960,7 +960,7 @@ export default function DigitalFunnelPage() {
             <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('MMM')}</div><div className="font-semibold">{tt('Robyn weekly · saturation curves')}</div></div>
             <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Streaming lag')}</div><div className="font-semibold text-emerald-700">{tt('18s p95 (Snowpipe Streaming)')}</div></div>
             <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Owner')}</div><div className="font-semibold">{tt('Digital Analytics · T. Bethel')}</div></div>
-            <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('GDPR basis')}</div><div className="font-semibold">{tt('Cookie consent · DPIA-2024-WEB-04')}</div></div>
+            <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('DPA basis')}</div><div className="font-semibold">{tt('Cookie consent · DPIA-2024-WEB-04')}</div></div>
           </div>
           <div className="mt-3 pt-3 border-t border-black/5 flex items-center justify-between text-[11px]">
             <span className="font-mono text-vfes-dark/55">{tt('CBL_ANALYTICS.WEB.CLICKSTREAM ⨝ ML_OUTPUTS.RETARGET')}</span>
@@ -975,7 +975,7 @@ export default function DigitalFunnelPage() {
               'How much MRR are we losing to the Postcode lookup timeout per hour?',
               'Compare 500 Mb vs 1 Gb funnel by mobile / desktop · where is the biggest leak?',
               'List 5,000 cart-abandoners in Nassau with retarget propensity > 0.7 from last 7 days.',
-              'If we match Benchmark B\'s BSD 39 12-mo deal on 500 Mb, what is the LTV impact net of cannibalisation?',
+              'If we match Rival ISP B\'s BSD 39 12-mo deal on 500 Mb, what is the LTV impact net of cannibalisation?',
               'Forecast EOM revenue at current pace and recommend top 3 levers to land plan.',
             ].map((q) => (
               <button key={q} className="w-full text-left p-3 rounded-lg bg-[#fafbfc] border border-black/5 hover:border-vfes-red/30 transition flex items-start gap-2">

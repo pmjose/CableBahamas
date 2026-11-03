@@ -74,7 +74,7 @@ const products: Product[] = [
     eAcq: -2.1, eChurn: 1.2, eMig: 1.5, movistarPrice: 32,  digiPrice: 28, vodaPrice: 30,  vooPrice: 0 },
 
   // ───── TV (REVTV) ──────────────────────────────────────────
-  { code: 'TV_TOTAL',     name: 'REVTV (Sports package + Champions + DAZN)', cat: 'TV', segment: 'B2C',
+  { code: 'TV_TOTAL',     name: 'REVTV (Sports package + Champions + ESPN)', cat: 'TV', segment: 'B2C',
     list: 35, promo: 25, svr: 35, promoMonths: 6, contractMonths: 24, etf: 84, install: 0, kitSubsidy: 0, activation: 0,
     cogs: 18, care: 2.8, baseAcq: 1240, baseChurn: 96, baseMig: 110, baseBase: 28_500,
     eAcq: -1.6, eChurn: 0.8, eMig: 1.1, movistarPrice: 0, digiPrice: 35, vodaPrice: 0, vooPrice: 0 },
@@ -86,7 +86,7 @@ const products: Product[] = [
     list: 30, promo: 20, svr: 30, promoMonths: 3, contractMonths: 0,  etf: 0,  install: 0, kitSubsidy: 0, activation: 0,
     cogs: 22, care: 1.4, baseAcq: 620,  baseChurn: 88, baseMig: 0,   baseBase: 12_400,
     eAcq: -1.8, eChurn: 1.1, eMig: 0.9, movistarPrice: 0, digiPrice: 32, vodaPrice: 0, vooPrice: 0 },
-  { code: 'DAZN_PACK',  name: 'DAZN Sports package + Eurosport',       cat: 'TV', segment: 'B2C',
+  { code: 'ESPN_PACK',  name: 'Caribbean Sports package + ESPN',       cat: 'TV', segment: 'B2C',
     list: 20, promo: 12, svr: 20, promoMonths: 3, contractMonths: 0,  etf: 0,  install: 0, kitSubsidy: 0, activation: 0,
     cogs: 14, care: 1.2, baseAcq: 410,  baseChurn: 64, baseMig: 0,   baseBase: 7_800,
     eAcq: -1.7, eChurn: 1.0, eMig: 0.8, movistarPrice: 0, digiPrice: 22, vodaPrice: 0, vooPrice: 0 },
@@ -103,7 +103,7 @@ const products: Product[] = [
     cogs: 11, care: 0.4, baseAcq: 540,  baseChurn: 48, baseMig: 0,   baseBase: 11_400,
     eAcq: -1.3, eChurn: 0.6, eMig: 0.5, movistarPrice: 0, digiPrice: 13, vodaPrice: 14, vooPrice: 0 },
 
-  // ───── Mobile (aliv Mobile on Benchmark C) ───────────────────────────────
+  // ───── Mobile (aliv Mobile on Rival ISP C) ───────────────────────────────
   { code: 'MOB_UNL',  name: 'aliv Mobile Unlimited 5G+',  cat: 'Mobile', segment: 'B2C',
     list: 35, promo: 25, svr: 35, promoMonths: 6, contractMonths: 12, etf: 60, install: 0, kitSubsidy: 0, activation: 10,
     cogs: 14, care: 2.0, baseAcq: 1640, baseChurn: 152, baseMig: 280, baseBase: 41_200,
@@ -120,7 +120,7 @@ const products: Product[] = [
     list: 15, promo: 10, svr: 15, promoMonths: 6, contractMonths: 12, etf: 30, install: 0, kitSubsidy: 0, activation: 10,
     cogs: 5,  care: 1.4, baseAcq: 980,  baseChurn: 142, baseMig: 180, baseBase: 22_400,
     eAcq: -2.0, eChurn: 1.2, eMig: 0.9, movistarPrice: 14, digiPrice: 15, vodaPrice: 15, vooPrice: 14 },
-  { code: 'MOB_ROAM', name: 'EU Roaming Pack (10GB)',        cat: 'Mobile', segment: 'B2C',
+  { code: 'MOB_ROAM', name: 'US Roaming Pack (10GB)',        cat: 'Mobile', segment: 'B2C',
     list: 6,  promo: 5,  svr: 6,  promoMonths: 0, contractMonths: 0,  etf: 0,  install: 0, kitSubsidy: 0, activation: 0,
     cogs: 3,  care: 0.2, baseAcq: 320,  baseChurn: 24, baseMig: 0,   baseBase: 6_800,
     eAcq: -1.4, eChurn: 0.5, eMig: 0.4, movistarPrice: 6, digiPrice: 0, vodaPrice: 7, vooPrice: 5 },
@@ -514,7 +514,7 @@ export default function PricingSimulatorPage() {
           title: tt('Raise BB_1G by \u20ac2 · harvest the back-book'),
           detail: tt('Elasticity sub-1 on 1Gb tier; back-book ARPU gap of \u20ac12 is recoverable with minimal churn.'),
           impact: tt('+\u20ac1.4M/yr EBITDA'),
-          risk: tt('Monitor Benchmark B response within 14 weeks.'),
+          risk: tt('Monitor Rival ISP B response within 14 weeks.'),
           linkTo: '/portal/bundle-profitability',
           linkLabel: tt('Open Bundle Profitability'),
         }}
@@ -888,10 +888,10 @@ export default function PricingSimulatorPage() {
 
       {/* Portfolio mode panel */}
       {cfg.portfolioMode && (
-        <Panel title={tt('Mobile plan tiers — Cable Bahamas vs BTC · Benchmark A · Benchmark B')} action={<span className="text-[10px] uppercase tracking-widest font-bold text-vfes-dark bg-vfes-red/10 rounded px-2 py-1 flex items-center gap-1"><Smartphone className="w-3 h-3" />{tt('5G SA · all tiers')}</span>}>
+        <Panel title={tt('Mobile plan tiers — Cable Bahamas vs BTC · Rival ISP A · Rival ISP B')} action={<span className="text-[10px] uppercase tracking-widest font-bold text-vfes-dark bg-vfes-red/10 rounded px-2 py-1 flex items-center gap-1"><Smartphone className="w-3 h-3" />{tt('5G SA · all tiers')}</span>}>
           <table className="w-full text-sm mb-4">
             <thead className="text-left text-vfes-dark/55 text-xs uppercase tracking-widest">
-              <tr><th className="py-1.5">{tt('Tier')}</th><th>{tt('Data')}</th><th>{tt('Voice')}</th><th>{tt('Cable Bahamas')}</th><th>{tt('BTC')}</th><th>{tt('Benchmark A')}</th><th>{tt('Benchmark B')}</th><th>{tt('Active base')}</th></tr>
+              <tr><th className="py-1.5">{tt('Tier')}</th><th>{tt('Data')}</th><th>{tt('Voice')}</th><th>{tt('Cable Bahamas')}</th><th>{tt('BTC')}</th><th>{tt('Rival ISP A')}</th><th>{tt('Rival ISP B')}</th><th>{tt('Active base')}</th></tr>
             </thead>
             <tbody>
               {MOBILE_PLAN_TIERS.map((p) => (
@@ -908,7 +908,7 @@ export default function PricingSimulatorPage() {
               ))}
             </tbody>
           </table>
-          <div className="text-[11px] text-vfes-dark/65">{tt('Cable Bahamas is priced 7–13% below BTC across all tiers, on par with Benchmark A, and at a small premium to Benchmark B — defensible price-elasticity ladder.')}</div>
+          <div className="text-[11px] text-vfes-dark/65">{tt('Cable Bahamas is priced 7–13% below BTC across all tiers, on par with Rival ISP A, and at a small premium to Rival ISP B — defensible price-elasticity ladder.')}</div>
         </Panel>
       )}
 
@@ -1626,9 +1626,9 @@ export default function PricingSimulatorPage() {
           { name: 'Cable Bahamas (B)', price: newPrice },
           { name: 'Cable Bahamas (A)', price: p.svr },
           { name: 'BTC',      price: p.movistarPrice },
-          { name: 'Benchmark B',      price: p.digiPrice },
+          { name: 'Rival ISP B',      price: p.digiPrice },
           { name: 'Cable Bahamas', price: p.vodaPrice },
-          { name: 'Benchmark C',    price: p.vooPrice },
+          { name: 'Rival ISP C',    price: p.vooPrice },
         ].filter(x => x.price > 0)
         const cheapest = Math.min(...compData.map(x => x.price))
         const responseDecay = Array.from({ length: 12 }, (_, w) => ({
@@ -1641,7 +1641,7 @@ export default function PricingSimulatorPage() {
         const nashPrices0 = [newPrice, p.movistarPrice || p.svr, p.digiPrice || p.svr, p.vodaPrice || p.svr, p.vooPrice || p.svr].map((x) => x || p.svr)
         const nashMc = [p.cogs + p.care, p.cogs * 1.05, p.cogs * 0.95, p.cogs * 1.0, p.cogs * 0.9]
         const nashEq = bertrandNash(nashPrices0, nashMc, 0.05, 25)
-        const nashChart = ['Cable Bahamas','BTC','Benchmark B','Cable Bahamas','Benchmark C'].map((n, i) => ({
+        const nashChart = ['Cable Bahamas','BTC','Rival ISP B','Cable Bahamas','Rival ISP C'].map((n, i) => ({
           name: n, Current: Math.round(nashPrices0[i]), Equilibrium: Math.round(nashEq[i]),
         }))
 
@@ -1796,7 +1796,7 @@ export default function PricingSimulatorPage() {
                 { lbl: 'Annual CPI+X% cap', v: 'CPI + 3.0% max', sub: 'breach > 7% triggers complaint surge', risk: Math.abs(pctChange) > 6 ? 'High' : Math.abs(pctChange) > 3 ? 'Med' : 'Low' },
                 { lbl: 'Advance notice obligation', v: '30 days', sub: 'right-to-cancel without ETF', risk: 'Low' },
                 { lbl: 'Vulnerable customer carve-out', v: 'Required', sub: 'social tariff at BSD 25 max', risk: 'Med' },
-                { lbl: 'Price clarity (UCD/EU)', v: 'Compliant', sub: 'all-in monthly + promo end date', risk: 'Low' },
+                { lbl: 'Price clarity (URCA consumer code)', v: 'Compliant', sub: 'all-in monthly + promo end date', risk: 'Low' },
                 { lbl: 'Bundle untying rule', v: 'Single SKU break', sub: 'must allow component cancellation', risk: 'Low' },
                 { lbl: 'Switching pack (postcode pull)', v: 'Live', sub: 'auto-port, no fees', risk: 'Low' },
               ].map((r) => (
@@ -2075,7 +2075,7 @@ export default function PricingSimulatorPage() {
                   { name: 'CPI +3.0% portfolio rise',  ebitda: '+BSD 6.4M', risk: 'Med', date: '2026-04-01' },
                   { name: 'Loyalty win-back (>24mo)',  ebitda: '+BSD 2.1M', risk: 'Low', date: '2026-Q2' },
                   { name: 'REVConnect 2P promo deepening',   ebitda: '+BSD 3.8M', risk: 'Low', date: '2026-Q3' },
-                  { name: 'Mobile −BSD 3 vs Benchmark C',       ebitda: '+BSD 1.2M', risk: 'Med', date: 'Tactical' },
+                  { name: 'Mobile −BSD 3 vs Rival ISP C',       ebitda: '+BSD 1.2M', risk: 'Med', date: 'Tactical' },
                   { name: 'BB SVR +BSD 2 back-book',      ebitda: '+BSD 4.6M', risk: 'High',date: 'Pending' },
                 ].map((s, i) => (
                   <div key={i} className="p-3 rounded-lg bg-[#fafbfc] border border-black/5 flex items-center justify-between">

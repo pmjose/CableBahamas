@@ -488,7 +488,7 @@ export default function CXPage() {
                 ))}
               </tbody>
             </table>
-            <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('Mobile NPS +38 leads BTC (+32) and Benchmark A (+31). HFC remains the laggard — prioritise DOCSIS 4.0 cutover or fibre overbuild in HFC pockets.')}</div>
+            <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('Mobile NPS +38 leads BTC (+32) and Rival ISP A (+31). HFC remains the laggard — prioritise DOCSIS 4.0 cutover or fibre overbuild in HFC pockets.')}</div>
           </Panel>
 
           {/* Trend with forecast + Top complaint drivers */}
@@ -1065,10 +1065,10 @@ export default function CXPage() {
                 <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('VoC topic clustering')}</div><div className="font-semibold">{tt('Cortex Complete · llama3.1-70b')}</div></div>
                 <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Sentiment')}</div><div className="font-semibold">{tt('Cortex Sentiment · multilingual')}</div></div>
                 <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Churn-intent classifier')}</div><div className="font-semibold">{tt('XGBoost · AUC 0.88')}</div></div>
-                <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Speech-to-text')}</div><div className="font-semibold">{tt('Whisper-Large · IE-EN tuned')}</div></div>
+                <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Speech-to-text')}</div><div className="font-semibold">{tt('Whisper-Large · Bahamian-EN tuned')}</div></div>
                 <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Refresh')}</div><div className="font-semibold">{tt('Hourly · Snowpipe Streaming')}</div></div>
                 <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Owner')}</div><div className="font-semibold">{tt('CX Analytics · S. Rolle')}</div></div>
-                <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('GDPR basis')}</div><div className="font-semibold">{tt('Service contract · DPIA-2024-CX-08')}</div></div>
+                <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('DPA basis')}</div><div className="font-semibold">{tt('Service contract · DPIA-2024-CX-08')}</div></div>
                 <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('PII redaction')}</div><div className="font-semibold text-emerald-700">{tt('Pre-cluster · regex + LLM')}</div></div>
               </div>
               <div className="mt-3 pt-3 border-t border-black/5 flex items-center justify-between text-[11px]">

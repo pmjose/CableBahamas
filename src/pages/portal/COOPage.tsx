@@ -894,7 +894,7 @@ export default function COOPage() {
 
         <div className="grid lg:grid-cols-3 gap-6 mb-6">
           <div className="lg:col-span-2">
-            <Panel title={tt('Automation Rate by Area (%) vs Target')} insight={{ insight: 'RFO auto-drafting at 44% and field dispatch at 62% are the two areas furthest below the 80% target, earmarked as H2 AI programme priorities.', action: 'Allocate H2 AI development capacity to close the RFO and dispatch automation gaps, targeting 70% and 78% respectively by year-end.', impact: 'Closing both gaps to target is estimated to deliver an additional 0.8M euros in operational savings on top of the current 2.4M AIOps run rate.' }}>
+            <Panel title={tt('Automation Rate by Area (%) vs Target')} insight={{ insight: 'RFO auto-drafting at 44% and field dispatch at 62% are the two areas furthest below the 80% target, earmarked as H2 AI programme priorities.', action: 'Allocate H2 AI development capacity to close the RFO and dispatch automation gaps, targeting 70% and 78% respectively by year-end.', impact: 'Closing both gaps to target is estimated to deliver an additional 0.8M BSD in operational savings on top of the current 2.4M AIOps run rate.' }}>
               <div className="flex items-center justify-between mb-3">
                 <div className="text-xs text-vfes-dark/55">{tt('AIOps · field dispatch · change automation rates')}</div>
                 <button onClick={() => setShowAutomationGap(!showAutomationGap)}
@@ -1047,7 +1047,7 @@ export default function COOPage() {
             <div className="text-[11px] text-vfes-dark/55 mt-2">{tt('Cisco NPS 54 — below 65 threshold. Escalation to Cisco account director on 10 Jul QBR.')}</div>
           </Panel>
 
-          <Panel title={tt('SLA credit penalty exposure — accruals (BSD K)')} insight={{ insight: 'Cisco has accrued the largest vendor penalty exposure at 84K euros, with a remediation plan requested ahead of the Q4 renewal negotiation.', action: 'Issue the formal SLA remedy letter by Jul 10 and set penalty reduction milestones as a condition for contract renewal at current rates.', impact: 'Securing a credible remediation plan before Q4 renewal protects against further accrual and strengthens the rate negotiation position.' }}>
+          <Panel title={tt('SLA credit penalty exposure — accruals (BSD K)')} insight={{ insight: 'Cisco has accrued the largest vendor penalty exposure at 84K BSD, with a remediation plan requested ahead of the Q4 renewal negotiation.', action: 'Issue the formal SLA remedy letter by Jul 10 and set penalty reduction milestones as a condition for contract renewal at current rates.', impact: 'Securing a credible remediation plan before Q4 renewal protects against further accrual and strengthens the rate negotiation position.' }}>
             <div className="h-64">
               <ResponsiveContainer>
                 <BarChart data={vendorCreditPenalty} layout="vertical">

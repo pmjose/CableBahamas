@@ -513,8 +513,8 @@ export default function CTOPage() {
                   <th className="py-2">{tt('Metric')}</th>
                   <th className="text-right text-vfes-dark">{tt('Cable Bahamas')}</th>
                   <th className="text-right">{tt('BTC')}</th>
-                  <th className="text-right">{tt('Benchmark A')}</th>
-                  <th className="text-right">{tt('Benchmark B')}</th>
+                  <th className="text-right">{tt('Rival ISP A')}</th>
+                  <th className="text-right">{tt('Rival ISP B')}</th>
                   <th>{tt('Position')}</th>
                 </tr>
               </thead>

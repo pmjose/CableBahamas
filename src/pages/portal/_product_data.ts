@@ -45,7 +45,7 @@ export const skus: SKU[] = [
   { code: 'TV_ESEN',   name: 'REVTV Start',                  cat: 'TV',        stage: 'Mature',  launchDate: '2024-04', take: 14, mrr: 20,  trend: 8,   gmPct: 35, nps: 28, dauPct: 52, churnPct: 1.8, cac: 45,  ltv: 720,  squad: 'TV',      okr: 'TV pivot to streaming', share: 0.6, growth: 8,  refreshDate: '2025-02', status: 'GA' },
   { code: 'TV_BOX',    name: 'REVTV Box (set-top, EOL 2027)',   cat: 'TV',        stage: 'Decline', launchDate: '2019-09', take: 18, mrr: 42,  trend: -14, gmPct: 22, nps: 22, dauPct: 70, churnPct: 2.0, cac: 75,  ltv: 980,  squad: 'TV',      okr: 'Sunset',           cannibPair: 'TV_TOTAL', share: 0.8, growth: -28, refreshDate: '2023-06', status: 'EOL' },
   { code: 'MOV_LIGA',  name: 'Sports add-on Sports package (add-on)',          cat: 'Add-on',    stage: 'Growth',  launchDate: '2020-08', take: 11, mrr: 30,  trend: 6,   gmPct: 32, nps: 56, dauPct: 82, churnPct: 1.2, cac: 35,  ltv: 1300, squad: 'TV',      okr: 'Premium content',  share: 1.0, growth: 12,  refreshDate: '2025-08', status: 'GA' },
-  { code: 'DAZN_PACK', name: 'DAZN Sports package + Eurosport',              cat: 'Add-on',    stage: 'Intro',   launchDate: '2025-08', take: 6,  mrr: 20,  trend: 22,  gmPct: 25, nps: 44, dauPct: 75, churnPct: 1.4, cac: 30,  ltv: 720,  squad: 'TV',      okr: 'Premium content',  share: 0.7, growth: 65,  refreshDate: '2025-08', status: 'New' },
+  { code: 'ESPN_PACK', name: 'Caribbean Sports package + ESPN',              cat: 'Add-on',    stage: 'Intro',   launchDate: '2025-08', take: 6,  mrr: 20,  trend: 22,  gmPct: 25, nps: 44, dauPct: 75, churnPct: 1.4, cac: 30,  ltv: 720,  squad: 'TV',      okr: 'Premium content',  share: 0.7, growth: 65,  refreshDate: '2025-08', status: 'New' },
   { code: 'HBO_DSNY',  name: 'Max + Disney+',                     cat: 'Add-on',    stage: 'Mature',  launchDate: '2021-11', take: 8,  mrr: 15,  trend: 4,   gmPct: 38, nps: 34, dauPct: 58, churnPct: 1.6, cac: 25,  ltv: 540,  squad: 'TV',      okr: 'Premium content',  share: 0.9, growth: 6,   refreshDate: '2024-11', status: 'GA' },
   { code: 'MOB_UNL',   name: 'aliv Mobile Unlimited 5G',           cat: 'Mobile',    stage: 'Growth',  launchDate: '2024-01', take: 12, mrr: 35,  trend: 28,  gmPct: 32, nps: 46, dauPct: 92, churnPct: 1.0, cac: 45,  ltv: 1320, squad: 'Mobile',  okr: 'Mobile attach',    share: 0.5, growth: 38,  refreshDate: '2025-06', status: 'GA' },
   { code: 'MOB_150',   name: 'aliv Mobile 150GB 5G',               cat: 'Mobile',    stage: 'Mature',  launchDate: '2023-03', take: 14, mrr: 25,  trend: 14,  gmPct: 38, nps: 38, dauPct: 88, churnPct: 1.2, cac: 38,  ltv: 920,  squad: 'Mobile',  okr: 'Mobile attach',    share: 0.6, growth: 14,  refreshDate: '2025-03', status: 'GA' },
@@ -65,7 +65,7 @@ export const skus: SKU[] = [
 // -------------------------------------------------------------------------
 export type ContentItem = {
   name: string
-  partner: 'Sports add-on' | 'BTC' | 'Netflix' | 'Amazon' | 'Disney' | 'Apple' | 'WBD' | 'Local broadcaster' | 'DAZN'
+  partner: 'Sports add-on' | 'BTC' | 'Netflix' | 'Amazon' | 'Disney' | 'Apple' | 'WBD' | 'Local broadcaster' | 'ESPN'
   genre: 'Sports' | 'Cinema' | 'SVOD' | 'Linear' | 'Kids' | 'News' | 'Local'
   cost: number              // BSD m / yr
   viewers: number
@@ -83,7 +83,7 @@ export const content: ContentItem[] = [
   { name: 'Sports add-on Cine',       partner: 'Sports add-on', genre: 'Cinema',  cost: 8.6,  viewers: 312000, viewerHours: 44,  attributedSubs: 78000,  mg: 7.5,  exclusivity: 'Co-exclusive',   renewalDate: '2026-12', revShare: 0,  windowing: 'Linear+VOD', saveOfferUse: 18 },
   { name: 'Netflix (carrier billing)', partner: 'Netflix',   genre: 'SVOD',    cost: 6.2,  viewers: 412000, viewerHours: 72,  attributedSubs: 24000,  mg: 0,    exclusivity: 'Non-exclusive',  renewalDate: '2027-03', revShare: 12, windowing: 'VOD',        saveOfferUse: 6 },
   { name: 'Prime Video (integrated)',  partner: 'Amazon',    genre: 'SVOD',    cost: 4.8,  viewers: 224000, viewerHours: 38,  attributedSubs: 12000,  mg: 0,    exclusivity: 'Non-exclusive',  renewalDate: '2026-09', revShare: 10, windowing: 'VOD',        saveOfferUse: 3 },
-  { name: 'DAZN Sports package',              partner: 'DAZN',      genre: 'Sports',  cost: 7.2,  viewers: 142000, viewerHours: 24,  attributedSubs: 38000,  mg: 6.5,  exclusivity: 'Exclusive',      renewalDate: '2026-06', revShare: 0,  windowing: 'Live',       saveOfferUse: 14 },
+  { name: 'Caribbean Sports package',              partner: 'ESPN',      genre: 'Sports',  cost: 7.2,  viewers: 142000, viewerHours: 24,  attributedSubs: 38000,  mg: 6.5,  exclusivity: 'Exclusive',      renewalDate: '2026-06', revShare: 0,  windowing: 'Live',       saveOfferUse: 14 },
   { name: 'Disney+',                   partner: 'Disney',    genre: 'SVOD',    cost: 3.6,  viewers: 156000, viewerHours: 28,  attributedSubs: 8000,   mg: 0,    exclusivity: 'Non-exclusive',  renewalDate: '2027-01', revShare: 14, windowing: 'VOD',        saveOfferUse: 4 },
   { name: 'Apple TV+',                 partner: 'Apple',     genre: 'SVOD',    cost: 2.4,  viewers: 92000,  viewerHours: 18,  attributedSubs: 4000,   mg: 0,    exclusivity: 'Non-exclusive',  renewalDate: '2027-04', revShare: 15, windowing: 'VOD',        saveOfferUse: 2 },
   { name: 'OUR TV (scenario)',           partner: 'Local broadcaster',       genre: 'Local',   cost: 0.0,  viewers: 188000, viewerHours: 28,  attributedSubs: 18000,  mg: 0,    exclusivity: 'Non-exclusive',  renewalDate: '2028-12', revShare: 0,  windowing: 'Catch-up',   saveOfferUse: 1 },
@@ -120,10 +120,10 @@ export const roadmap: RoadmapItem[] = [
   { id: 'R05', title: 'REVTV 4K Plus (premium streaming)',status: 'Next',  theme: 'TV',        squad: 'TV',      okr: 'TV pivot to streaming',invest: 'BSD 3.1M / 8 hd / Q4',    confidence: 'Likely',     evidence: 'TV Total NPS 38 · Sports add-on growing in market',  successMetric: '60K subs in first 12 months',                  risks: 'Cannibalisation of TV Total',                         eta: 'Q1 2027' },
   { id: 'R06', title: 'REVConnect+ multi-line mobile',       status: 'Next',  theme: 'Mobile',     squad: 'Bundles', okr: 'Bundle uplift',        invest: 'BSD 1.8M / 4 hd / Q4',    confidence: 'Likely',     evidence: '32% of REVConnect customers asked for "additional lines"', successMetric: 'Avg 2.3 mobile lines per REVConnect HH',           risks: 'Margin compression on additional lines',              eta: 'Q2 2027' },
   { id: 'R07', title: 'Save-offer ML personalisation',         status: 'Next',  theme: 'AI',         squad: 'Apps',    okr: 'Save rate',            invest: 'BSD 720K / 4 hd / Q4',    confidence: 'Committed',  evidence: 'Pilot save-rate +6pp on 12K calls · BSD 4.2M LTV impact', successMetric: 'Save-rate 38% → 44% by Q2 2027',           risks: 'Bias in offer assignment',                            eta: 'Q1 2027' },
-  { id: 'R08', title: 'Cable Bahamas Home', status: 'Later', theme: 'Smart Home', squad: 'BB',      okr: 'Adjacency revenue',    invest: 'BSD 4.8M / 14 hd / FY27', confidence: 'Exploratory',evidence: '14 customer interviews · 22% intent at BSD 15/mo',    successMetric: '5K households Y1 · BSD 75K MRR',                          risks: 'Adjacency commodity (Securitas, Tyco, BTC Prosegur)', eta: 'H2 2027' },
+  { id: 'R08', title: 'Cable Bahamas Home', status: 'Later', theme: 'Smart Home', squad: 'BB',      okr: 'Adjacency revenue',    invest: 'BSD 4.8M / 14 hd / FY27', confidence: 'Exploratory',evidence: '14 customer interviews · 22% intent at BSD 15/mo',    successMetric: '5K households Y1 · BSD 75K MRR',                          risks: 'Adjacency commodity (ADT, Tyco, BTC SmartHome)', eta: 'H2 2027' },
   { id: 'R09', title: 'IPTV en app (cordless TV)',             status: 'Later', theme: 'TV',         squad: 'TV',      okr: 'TV pivot to streaming',invest: 'BSD 2.4M / 6 hd / FY27', confidence: 'Exploratory',evidence: 'REVTV Box EOL 2027 · streaming-first cohort grows', successMetric: 'TV-only subs without STB: 30K Y1',         risks: 'Sports add-on parity',                              eta: 'H2 2027' },
-  { id: 'R10', title: 'Carbon dashboard for customers',        status: 'Later', theme: 'Apps',       squad: 'Apps',    okr: 'ESG / Brand',          invest: 'BSD 280K / 2 hd / FY27', confidence: 'Exploratory',evidence: 'Cable Bahamas Group ESG mandate · CSRD reporting',     successMetric: 'Brand NPS +3pp · CSRD compliance',             risks: 'Data accuracy',                                       eta: 'H2 2027' },
-  { id: 'R11', title: 'API marketplace for B2B partners',      status: 'Later', theme: 'Network',    squad: 'BB',      okr: 'B2B revenue',          invest: 'BSD 3.6M / 9 hd / FY27', confidence: 'Exploratory',evidence: 'BTC, Benchmark A have public APIs · 18 partner asks', successMetric: 'BSD 4M ARR Y1',                                  risks: 'PSD2/DORA compliance',                                eta: '2028' },
+  { id: 'R10', title: 'Carbon dashboard for customers',        status: 'Later', theme: 'Apps',       squad: 'Apps',    okr: 'ESG / Brand',          invest: 'BSD 280K / 2 hd / FY27', confidence: 'Exploratory',evidence: 'Cable Bahamas Group ESG mandate · sustainability reporting',     successMetric: 'Brand NPS +3pp · sustainability reporting',             risks: 'Data accuracy',                                       eta: 'H2 2027' },
+  { id: 'R11', title: 'API marketplace for B2B partners',      status: 'Later', theme: 'Network',    squad: 'BB',      okr: 'B2B revenue',          invest: 'BSD 3.6M / 9 hd / FY27', confidence: 'Exploratory',evidence: 'BTC, Rival ISP A have public APIs · 18 partner asks', successMetric: 'BSD 4M ARR Y1',                                  risks: 'PSD2/CBOB IT risk compliance',                                eta: '2028' },
   { id: 'R12', title: 'WiFi 7 mesh extender retail',           status: 'Later', theme: 'Network',    squad: 'BB',      okr: 'Wi-Fi quality',        invest: 'BSD 1.2M / 3 hd / Q1',   confidence: 'Likely',     evidence: 'Mesh take-rate 22% → mesh wanted by 2-floor HHs',  successMetric: '15% attach to BB+',                            risks: 'Cannibalises Smart Mesh',                             eta: 'Q1 2027' },
   { id: 'R13', title: 'Fixed-wireless 5G fallback',            status: 'Later', theme: 'Network',    squad: 'BB',      okr: 'Reliability',          invest: 'BSD 2.0M / 6 hd / FY27', confidence: 'Exploratory',evidence: '4.2K outages/yr · NPS hit on outage',              successMetric: '<8min average outage perceived',               risks: 'RAN dependency',                                      eta: 'H2 2027' },
   { id: 'R14', title: 'Personalised pricing offers',           status: 'Later', theme: 'AI',         squad: 'Apps',    okr: 'Yield management',     invest: 'BSD 640K / 3 hd / FY27', confidence: 'Exploratory',evidence: 'UC1 elasticity model · BSD 3.4M EBITDA upside in sim',successMetric: '+BSD 2M annualised yield',                        risks: 'URCA regulator scrutiny',                             eta: 'H2 2027' },
@@ -132,7 +132,7 @@ export const roadmap: RoadmapItem[] = [
 export const shipped = [
   { q: 'Q2 2026', title: 'Cable Bahamas Wi-Fi Guarantee (BSD 150 credit)', metric: '38% take-rate · NPS 72 · −1.4pp churn',     outcome: 'beat plan' },
   { q: 'Q2 2026', title: 'MyREV app v9 (Snowflake-backed)', metric: 'MAU 62K (+9.4%) · D7 retention 64%',     outcome: 'on plan' },
-  { q: 'Q1 2026', title: 'DAZN Sports package add-on',          metric: '6% take · NPS 44 · +BSD 1.2M MRR',             outcome: 'on plan' },
+  { q: 'Q1 2026', title: 'Caribbean Sports package add-on',          metric: '6% take · NPS 44 · +BSD 1.2M MRR',             outcome: 'on plan' },
   { q: 'Q1 2026', title: '10 Gb Fibre commercial launch', metric: '2% take · NPS 52 · +BSD 840K MRR',             outcome: 'beat plan' },
 ]
 
@@ -150,11 +150,11 @@ export const complaints: Complaint[] = [
   { theme: 'Wi-Fi dead-spot in 2nd floor / garden',       volume: 8400, costToServe: 19.6, trend: -8,  cat: 'Quality' },
   { theme: 'Bill higher than expected',                   volume: 6200, costToServe: 12.4, trend: -22, cat: 'Billing' },
   { theme: 'Streaming buffering / TV freeze',             volume: 4900, costToServe: 22.8, trend: -14, cat: 'Quality' },
-  { theme: 'Cancel — switching to BTC / Benchmark A', volume: 3800, costToServe: 38.5, trend: 4,   cat: 'Retention' },
+  { theme: 'Cancel — switching to BTC / Rival ISP A', volume: 3800, costToServe: 38.5, trend: 4,   cat: 'Retention' },
   { theme: 'Mobile signal indoors',                       volume: 3100, costToServe: 16.5, trend: -2,  cat: 'Mobile' },
   { theme: 'App login / password reset',                  volume: 2700, costToServe: 4.2,  trend: -42, cat: 'Apps' },
   { theme: 'Install / appointment missed',                volume: 1900, costToServe: 64.0, trend: -18, cat: 'Install' },
-  { theme: 'Sports add-on / DAZN not working',           volume: 1600, costToServe: 22.5, trend: 18,  cat: 'Content' },
+  { theme: 'Sports add-on / ESPN not working',           volume: 1600, costToServe: 22.5, trend: 18,  cat: 'Content' },
   { theme: 'One mobile not added to bundle',              volume: 1100, costToServe: 14.5, trend: -28, cat: 'Bundle' },
   { theme: 'Out-of-contract price jump',                  volume: 980,  costToServe: 28.0, trend: 12,  cat: 'Pricing' },
 ]
@@ -183,10 +183,10 @@ export type ChurnReason = { reason: string; pct: number }
 export const churnReasons: ChurnReason[] = [
   { reason: 'Price (out-of-contract jump)', pct: 32 },
   { reason: 'Switched to BTC',         pct: 18 },
-  { reason: 'Switched to Benchmark A',           pct: 14 },
+  { reason: 'Switched to Rival ISP A',           pct: 14 },
   { reason: 'Moved house — no service',     pct: 12 },
   { reason: 'Quality / outage frustration', pct: 11 },
-  { reason: 'Switched to Benchmark B/Benchmark C',   pct: 7 },
+  { reason: 'Switched to Rival ISP B/Rival ISP C',   pct: 7 },
   { reason: 'Bereavement / hardship',       pct: 4 },
   { reason: 'Other / unknown',              pct: 2 },
 ]
@@ -294,9 +294,9 @@ export const parityMatrix: ParityRow[] = [
 
 export const competitorMoves = [
   { date: '2026-05-12', who: 'BTC', move: 'Sports add-on price increase 4.4% (CPI+3.9)' },
-  { date: '2026-05-04', who: 'Benchmark A',   move: 'Benchmark A Love Total BSD 15/mo discount 12 months' },
-  { date: '2026-04-28', who: 'Benchmark B', move: 'Benchmark B 1 Gb fibre launched in Eleuthera' },
-  { date: '2026-04-20', who: 'Benchmark B',     move: 'Multi-line family plan (4 SIMs BSD 40)' },
+  { date: '2026-05-04', who: 'Rival ISP A',   move: 'Rival ISP A Love Total BSD 15/mo discount 12 months' },
+  { date: '2026-04-28', who: 'Rival ISP B', move: 'Rival ISP B 1 Gb fibre launched in Eleuthera' },
+  { date: '2026-04-20', who: 'Rival ISP B',     move: 'Multi-line family plan (4 SIMs BSD 40)' },
   { date: '2026-04-10', who: 'BTC', move: 'Sports add-on Sports package + Champions BSD 35/mo bundle' },
 ]
 
@@ -511,7 +511,7 @@ export function buildSkuDetails(sku: SKU): SkuDetails {
     ? [
         { addon: 'Sports add-on · Sports package',          rate: +(rand(20, 38)).toFixed(0), impact: '+BSD 30 MRR · NPS +18' },
         { addon: 'Max + Disney+',            rate: +(rand(14, 26)).toFixed(0), impact: '+BSD 15 MRR' },
-        { addon: 'DAZN Sports package + Eurosport',     rate: +(rand(8, 18)).toFixed(0),  impact: '+BSD 20 MRR' },
+        { addon: 'Caribbean Sports package + ESPN',     rate: +(rand(8, 18)).toFixed(0),  impact: '+BSD 20 MRR' },
         { addon: 'Multi-room',                   rate: +(rand(6, 12)).toFixed(0),  impact: '+BSD 10 MRR' },
       ]
     : sku.cat === 'Mobile'
@@ -590,7 +590,7 @@ export function buildSkuDetails(sku: SKU): SkuDetails {
     : sku.cat === 'TV'
     ? [
         { topic: 'Streaming buffering / freeze',    volume: intRand(800, 2200), cost: 22.8, trend: -14 },
-        { topic: 'Sports add-on / DAZN not working', volume: intRand(200, 800), cost: 22.5, trend: 18 },
+        { topic: 'Sports add-on / ESPN not working', volume: intRand(200, 800), cost: 22.5, trend: 18 },
         { topic: 'Channel missing',                 volume: intRand(150, 450),  cost: 14.2, trend: -6 },
         { topic: 'Remote / box restart',            volume: intRand(140, 420),  cost: 9.5,  trend: 0 },
       ]
@@ -614,24 +614,24 @@ export function buildSkuDetails(sku: SKU): SkuDetails {
   if (sku.cat === 'Broadband') {
     competitorEquiv.push(
       { competitor: 'BTC', product: `Flex ${sku.code.includes('600') ? '600 Mb' : sku.code.includes('1G') ? '1 Gb' : sku.code.includes('2G') ? '2 Gb' : sku.code.includes('10G') ? '— (no 10 Gb tier)' : '300 Mb'}`, price: baseMov, gap: baseMov - sku.mrr,  note: sku.code === 'BB_10G' ? 'Cable Bahamas only at 10 Gb tier' : 'Match' },
-      { competitor: 'Benchmark A',   product: `Love Fibre ${sku.code.includes('600') ? '600' : sku.code.includes('1G') ? '1G' : '2G'}`,                                          price: baseOra, gap: baseOra - sku.mrr,  note: 'Match' },
-      { competitor: 'Benchmark B', product: `MM Fibre ${sku.code.includes('1G') ? '1G' : '600'}`,                                                                              price: baseMM,  gap: baseMM - sku.mrr,  note: 'Match' },
+      { competitor: 'Rival ISP A',   product: `Love Fibre ${sku.code.includes('600') ? '600' : sku.code.includes('1G') ? '1G' : '2G'}`,                                          price: baseOra, gap: baseOra - sku.mrr,  note: 'Match' },
+      { competitor: 'Rival ISP B', product: `MM Fibre ${sku.code.includes('1G') ? '1G' : '600'}`,                                                                              price: baseMM,  gap: baseMM - sku.mrr,  note: 'Match' },
     )
   } else if (sku.cat === 'TV') {
     competitorEquiv.push(
       { competitor: 'BTC', product: 'Sports add-on Total', price: 95 + intRand(-5, 10),  gap: 95 - sku.mrr, note: 'BTC leads bundle' },
-      { competitor: 'Benchmark A',   product: 'Benchmark A TV (180ch)',    price: 49 + intRand(-5, 8),   gap: 49 - sku.mrr, note: 'Cheaper / fewer channels' },
+      { competitor: 'Rival ISP A',   product: 'Rival ISP A TV (180ch)',    price: 49 + intRand(-5, 8),   gap: 49 - sku.mrr, note: 'Cheaper / fewer channels' },
     )
   } else if (sku.cat === 'Mobile') {
     competitorEquiv.push(
-      { competitor: 'Benchmark B',     product: sku.code.includes('UNL') ? 'Benchmark B Unlimited 5G' : 'Benchmark B 100GB', price: sku.mrr + intRand(-8, 0), gap: -5, note: 'Benchmark B leads MNO direct' },
-      { competitor: 'Benchmark A',   product: sku.code.includes('UNL') ? 'Benchmark A Unlimited' : 'Benchmark A 100GB', price: sku.mrr + intRand(-2, 6), gap: 2,  note: 'Match' },
+      { competitor: 'Rival ISP B',     product: sku.code.includes('UNL') ? 'Rival ISP B Unlimited 5G' : 'Rival ISP B 100GB', price: sku.mrr + intRand(-8, 0), gap: -5, note: 'Rival ISP B leads MNO direct' },
+      { competitor: 'Rival ISP A',   product: sku.code.includes('UNL') ? 'Rival ISP A Unlimited' : 'Rival ISP A 100GB', price: sku.mrr + intRand(-2, 6), gap: 2,  note: 'Match' },
       { competitor: 'BTC', product: sku.code.includes('UNL') ? 'BTC Unlimited' : 'BTC 100GB', price: sku.mrr + intRand(-4, 4), gap: 0, note: 'Match' },
     )
   } else if (sku.cat === 'Bundle') {
     competitorEquiv.push(
       { competitor: 'BTC', product: 'BTC Flex Total',  price: sku.mrr + intRand(0, 12),  gap: 6,  note: 'BTC premium' },
-      { competitor: 'Benchmark A',   product: 'Benchmark A Love Total',      price: sku.mrr + intRand(-15, 0), gap: -8, note: 'Benchmark A cheapest' },
+      { competitor: 'Rival ISP A',   product: 'Rival ISP A Love Total',      price: sku.mrr + intRand(-15, 0), gap: -8, note: 'Rival ISP A cheapest' },
     )
   } else {
     competitorEquiv.push(

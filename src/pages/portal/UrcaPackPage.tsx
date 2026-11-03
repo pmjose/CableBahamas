@@ -60,7 +60,7 @@ const QOS_TREND = [
 ]
 
 const DSAR = [
-  { type: 'Access (GDPR Art.15)',  open: 142, slaDays: 30, breached: 2, avgDays: 14.2 },
+  { type: 'Access (DPA s.8)',  open: 142, slaDays: 30, breached: 2, avgDays: 14.2 },
   { type: 'Erasure (Art.17)',       open: 88,  slaDays: 30, breached: 0, avgDays: 8.4  },
   { type: 'Portability (Art.20)',   open: 41,  slaDays: 30, breached: 1, avgDays: 12.8 },
   { type: 'Retention metadata',     open: 24,  slaDays: 30, breached: 0, avgDays: 6.2  },
@@ -202,7 +202,7 @@ export default function UrcaPackPage() {
     <div className="p-8" key={i18n.language}>
       <PageHeader
         title={tt('URCA / Regulator Pack')}
-        subtitle={tt('Coverage obligations · QoS attestation · 112 routing · DSAR SLA · market reviews · wholesale')}
+        subtitle={tt('Coverage obligations · QoS attestation · 911/919 routing · DSAR SLA · market reviews · wholesale')}
         actions={
           <div className="flex items-center gap-2">
             <span className="bg-amber-50 text-amber-700 px-2.5 py-1 rounded-full font-bold text-xs">
@@ -274,7 +274,7 @@ export default function UrcaPackPage() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <KpiCard label={tt('Obligations met')}   value="4 / 7"  delta={tt('3 at risk')}            trend="flat" icon={Scale}       accent />
         <KpiCard label={tt('5G pop coverage')}   value="90.6%"  delta={tt('target 95% Q4')}         trend="up"   icon={ShieldCheck} />
-        <KpiCard label={tt('112 routing')}        value="100%"   delta={tt('compliant')}             trend="up"   icon={Phone}       />
+        <KpiCard label={tt('911/919 routing')}        value="100%"   delta={tt('compliant')}             trend="up"   icon={Phone}       />
         <KpiCard label={tt('DSAR SLA breaches')} value="3"      delta={tt('of 295 requests')}       trend="flat" icon={FileText}    />
       </div>
 
@@ -846,7 +846,7 @@ export default function UrcaPackPage() {
                 </AreaChart>
               </ResponsiveContainer>
             </div>
-            <div className="mt-3 text-xs text-vfes-dark/55">{tt('Positive net gain every month — competitive pricing and 5G coverage driving port-ins from BTC and Benchmark A.')}</div>
+            <div className="mt-3 text-xs text-vfes-dark/55">{tt('Positive net gain every month — competitive pricing and 5G coverage driving port-ins from BTC and Rival ISP A.')}</div>
           </Panel>
         </div>
 
@@ -1061,7 +1061,7 @@ export default function UrcaPackPage() {
               </div>
             </div>
             <div className="mt-3 flex items-center justify-between">
-              <span className="text-xs text-vfes-dark/55">{tt('GDPR compliance tracked in Snowflake. Full request-to-response lineage retained for 5 years.')}</span>
+              <span className="text-xs text-vfes-dark/55">{tt('DPA compliance tracked in Snowflake. Full request-to-response lineage retained for 5 years.')}</span>
               <Link to="/portal/ai-insights" className="text-xs font-bold text-vfes-dark hover:underline">{tt('AI Insights →')}</Link>
             </div>
           </Panel>

@@ -194,14 +194,14 @@ const okrs: OKR[] = [
       { name: '5G SA rollout — Nassau + Freeport core', pct: 88, budget: 96, spent: 72.8, status: 'on-track', owner: 'Femke Bethel'   },
       { name: 'mmWave hotspot — airports & venues', pct: 34, budget: 22, spent: 6.8, status: 'on-track', owner: 'Wout Rolle'  },
       { name: 'Refarming 2100 → 5G NR-FDD (rural)', pct: 62, budget: 18, spent: 10.4, status: 'on-track', owner: 'Lars Knowles' },
-      { name: 'Island Towers (demo) tower-share — 5,940 sites', pct: 71, budget: 85, spent: 58.2, status: 'on-track', owner: 'Emma Willems'  },
+      { name: 'Island Towers (demo) tower-share — 146 sites', pct: 71, budget: 85, spent: 58.2, status: 'on-track', owner: 'Emma Willems'  },
     ],
     blockers: ['28 sites delayed by regional planning permits'],
     dependencies: ['Ericsson AIR 6488 RU delivery (Q3)', 'Nokia AirScale BBU shipments'],
   },
   {
     id: 'MOB2', pillar: 'MOBILE', priority: 'P0',
-    objective: 'Lead The Bahamas on Mobile NPS — beat BTC & Benchmark A',
+    objective: 'Lead The Bahamas on Mobile NPS — beat BTC & Rival ISP A',
     owner: 'CCO · Britt Bethel', ownerInitials: 'BM',
     confidence: 0.74, progress: 68, dueDate: '31 Dec 2026', lastUpdate: '3 days ago', weeklyDelta: +2, rag: 'amber',
     krs: [
@@ -214,7 +214,7 @@ const okrs: OKR[] = [
       { name: 'Smart capacity — top 1% congested cells', pct: 72, budget: 24, spent: 17.2, status: 'on-track', owner: 'Femke Bethel'   },
       { name: 'Family-plan switcher campaign', pct: 41, budget: 8, spent: 3.4, status: 'at-risk', owner: 'Britt Bethel'    },
     ],
-    blockers: ['Benchmark B aggressive pricing on family bundles'],
+    blockers: ['Rival ISP B aggressive pricing on family bundles'],
     dependencies: ['Cortex Search live for retention agents'],
   },
   {
@@ -233,16 +233,16 @@ const okrs: OKR[] = [
       { name: 'SMO + RIC integration (rApp/xApp)', pct: 44, budget: 14, spent: 6.4, status: 'on-track', owner: 'Femke Bethel'   },
     ],
     blockers: ['Vendor interop testing slipping (Mavenir↔Fujitsu)', 'O-RAN SC certification timeline'],
-    dependencies: ['EU TRG funding tranche 2', 'Group Open RAN Centre of Excellence'],
+    dependencies: ['Universal service fund tranche 2', 'Group Open RAN Centre of Excellence'],
   },
 ]
 
 // ─── market context ────────────────────────────────────────────────────────
 const marketContext = [
   { type: 'Competitor', text: 'BTC announces 5G expansion to 90% pop coverage by Q4 2026 — pressure on mobile pricing', impact: 'high', date: '2 days ago' },
-  { type: 'Competitor', text: 'Benchmark B drops 1 Gb to BSD 30/mo for 18 months in fibre areas — direct hit on M250/500', impact: 'high', date: '1 week ago' },
+  { type: 'Competitor', text: 'Rival ISP B drops 1 Gb to BSD 30/mo for 18 months in fibre areas — direct hit on M250/500', impact: 'high', date: '1 week ago' },
   { type: 'Regulatory', text: 'URCA consultation on automatic compensation for outages — could increase OpEx BSD 4M/yr', impact: 'medium', date: '4 days ago' },
-  { type: 'Macro', text: 'ECB rate hold at 3.25% — refinancing CapEx broadly stable', impact: 'low', date: '1 week ago' },
+  { type: 'Macro', text: 'CBOB discount rate hold at 4.00% — refinancing CapEx broadly stable', impact: 'low', date: '1 week ago' },
   { type: 'Tech', text: 'Cisco announces XGS-PON 50G card — 12-month roadmap impact', impact: 'medium', date: '2 weeks ago' },
 ]
 
@@ -329,7 +329,7 @@ const STRATEGY_PRIORITIES: Priority[] = [
 ]
 
 const STRATEGY_WATCH: WatchItem[] = [
-  { text: 'Benchmark B BSD 30/Gb promo — could accelerate churn in 500Mb tier',             level: 'high' },
+  { text: 'Rival ISP B BSD 30/Gb promo — could accelerate churn in 500Mb tier',             level: 'high' },
   { text: 'URCA compensation consultation — OpEx exposure up to BSD 4M/yr',               level: 'high' },
   { text: 'Out Islands 5G permit delays — 28 sites, ~6 wk slippage risk',                level: 'medium' },
   { text: 'B2B SD-WAN: two enterprise deals slipped to Q4 — pipeline risk',            level: 'medium' },
@@ -378,34 +378,34 @@ function ConfidenceDot({ value }: { value: number }) {
 
 // ─── Competitor Benchmark data ────────────────────────────────────────────────
 const COMPETITOR_KPI = [
-  { metric: 'EBITDA margin %',   tln: KPI.ebitdaMarginPct, btc: 36.2, voo: 34.8, orange: 35.4, digi: 22.1 },
-  { metric: 'Churn rate %',       tln: KPI.churnRatePct,    btc: 1.22, voo: 1.68, orange: 1.44, digi: 2.10 },
-  { metric: 'NPS score',          tln: KPI.nps,             btc: 34,   voo: 28,   orange: 29,   digi: 22   },
-  { metric: '5G coverage %',      tln: 89.4,                btc: 88.0, voo: 84.0, orange: 80.0, digi: 62.0 },
-  { metric: 'Revenue growth YoY', tln: 4.2,                 btc: 2.8,  voo: 6.4,  orange: 1.9,  digi: 18.4 },
+  { metric: 'EBITDA margin %',   cbl: KPI.ebitdaMarginPct, btc: 36.2, voo: 34.8, orange: 35.4, digi: 22.1 },
+  { metric: 'Churn rate %',       cbl: KPI.churnRatePct,    btc: 1.22, voo: 1.68, orange: 1.44, digi: 2.10 },
+  { metric: 'NPS score',          cbl: KPI.nps,             btc: 34,   voo: 28,   orange: 29,   digi: 22   },
+  { metric: '5G coverage %',      cbl: 89.4,                btc: 88.0, voo: 84.0, orange: 80.0, digi: 62.0 },
+  { metric: 'Revenue growth YoY', cbl: 4.2,                 btc: 2.8,  voo: 6.4,  orange: 1.9,  digi: 18.4 },
 ]
 const COMPETITOR_SPIDER = [
-  { axis: 'Network', tln: 88, btc: 86, digi: 78 },
-  { axis: 'CX/NPS',  tln: 82, btc: 74, digi: 64 },
-  { axis: 'Price',   tln: 62, btc: 58, digi: 84 },
-  { axis: 'B2B',     tln: 72, btc: 80, digi: 60 },
-  { axis: 'Digital', tln: 78, btc: 72, digi: 68 },
-  { axis: 'ESG',     tln: 86, btc: 78, digi: 58 },
+  { axis: 'Network', cbl: 88, btc: 86, digi: 78 },
+  { axis: 'CX/NPS',  cbl: 82, btc: 74, digi: 64 },
+  { axis: 'Price',   cbl: 62, btc: 58, digi: 84 },
+  { axis: 'B2B',     cbl: 72, btc: 80, digi: 60 },
+  { axis: 'Digital', cbl: 78, btc: 72, digi: 68 },
+  { axis: 'ESG',     cbl: 86, btc: 78, digi: 58 },
 ]
 const COMPETITOR_MARKET_SHARE = [
-  { q: 'Q1-25', tln: 28.4, btc: 38.2, voo: 18.4, orange: 12.2, digi: 2.8 },
-  { q: 'Q2-25', tln: 29.1, btc: 37.8, voo: 18.6, orange: 12.0, digi: 2.5 },
-  { q: 'Q3-25', tln: 29.8, btc: 37.4, voo: 18.8, orange: 11.6, digi: 2.4 },
-  { q: 'Q4-25', tln: 30.4, btc: 37.0, voo: 19.0, orange: 11.2, digi: 2.4 },
-  { q: 'Q1-26', tln: 31.2, btc: 36.6, voo: 19.2, orange: 10.8, digi: 2.2 },
-  { q: 'Q2-26', tln: 31.8, btc: 36.2, voo: 19.4, orange: 10.4, digi: 2.2 },
+  { q: 'Q1-25', cbl: 28.4, btc: 38.2, voo: 18.4, orange: 12.2, digi: 2.8 },
+  { q: 'Q2-25', cbl: 29.1, btc: 37.8, voo: 18.6, orange: 12.0, digi: 2.5 },
+  { q: 'Q3-25', cbl: 29.8, btc: 37.4, voo: 18.8, orange: 11.6, digi: 2.4 },
+  { q: 'Q4-25', cbl: 30.4, btc: 37.0, voo: 19.0, orange: 11.2, digi: 2.4 },
+  { q: 'Q1-26', cbl: 31.2, btc: 36.6, voo: 19.2, orange: 10.8, digi: 2.2 },
+  { q: 'Q2-26', cbl: 31.8, btc: 36.2, voo: 19.4, orange: 10.4, digi: 2.2 },
 ]
 const COMPETITOR_INVESTMENTS = [
   { co: 'Cable Bahamas',       capexPct: 20.4, ranBudgetM: 221, networkScore: 88 },
   { co: 'BTC',  capexPct: 22.1, ranBudgetM: 280, networkScore: 86 },
-  { co: 'Benchmark B', capexPct: 18.2, ranBudgetM: 160, networkScore: 78 },
-  { co: 'Benchmark A The Bahamas', capexPct: 17.8, ranBudgetM: 140, networkScore: 80 },
-  { co: 'Benchmark B',      capexPct: 12.4, ranBudgetM: 42,  networkScore: 62 },
+  { co: 'Rival ISP B', capexPct: 18.2, ranBudgetM: 160, networkScore: 78 },
+  { co: 'Rival ISP A The Bahamas', capexPct: 17.8, ranBudgetM: 140, networkScore: 80 },
+  { co: 'Rival ISP B',      capexPct: 12.4, ranBudgetM: 42,  networkScore: 62 },
 ]
 
 // ─── tabs ──────────────────────────────────────────────────────────────────
@@ -1005,7 +1005,7 @@ export default function StrategyPage() {
                 <tbody>
                   {[
                     { driver: 'ARPU ±5%',           up: '+BSD 22M',  dn: '-BSD 22M',  key: 'No competitor price war in fibre tiers' },
-                    { driver: 'Net-adds ±10%',       up: '+BSD 8M',   dn: '-BSD 8M',   key: 'Benchmark B promotion fades in H2' },
+                    { driver: 'Net-adds ±10%',       up: '+BSD 8M',   dn: '-BSD 8M',   key: 'Rival ISP B promotion fades in H2' },
                     { driver: 'Churn ±50 bps',       up: '+BSD 6M',   dn: '-BSD 6M',   key: 'ML retention model sustains accept rate' },
                     { driver: 'URCA intervention',   up: '—',      dn: '-BSD 14M',  key: 'Pricing cap on regulated wholesale' },
                     { driver: 'Energy cost ±15%',    up: '+BSD 2M',   dn: '-BSD 3M',   key: '80% hedged; remaining spot exposure' },
@@ -1087,7 +1087,7 @@ export default function StrategyPage() {
 
         {/* Value delivery chart */}
         <div className="mt-5">
-          <Panel title={tt('Programme value delivery — budget vs NPV (BSD M)')} insight={{ insight: 'Open RAN and DOCSIS 4.0 deliver the highest NPV multiples per euro of programme budget, while Net Zero generates long-dated returns that are strategically non-negotiable.', action: 'Protect Open RAN and DOCSIS 4.0 from H2 budget compression and ring-fence Net Zero funding as a binding ESG commitment in the capital allocation framework.', impact: 'Maintaining investment discipline in high-multiple programmes drives BSD 120M of NPV realisation and anchors the transformation value key result at the portfolio level.' }}>
+          <Panel title={tt('Programme value delivery — budget vs NPV (BSD M)')} insight={{ insight: 'Open RAN and DOCSIS 4.0 deliver the highest NPV multiples per BSD of programme budget, while Net Zero generates long-dated returns that are strategically non-negotiable.', action: 'Protect Open RAN and DOCSIS 4.0 from H2 budget compression and ring-fence Net Zero funding as a binding ESG commitment in the capital allocation framework.', impact: 'Maintaining investment discipline in high-multiple programmes drives BSD 120M of NPV realisation and anchors the transformation value key result at the portfolio level.' }}>
             <div className="h-64">
               <ResponsiveContainer>
                 <ComposedChart data={TRANSFORM_CHART}>
@@ -1128,7 +1128,7 @@ export default function StrategyPage() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
-          <Panel title={tt('Market share trend — fixed · mobile · broadband (%)')} insight={{ insight: 'Cable Bahamas has gained 3.4 percentage points of broadband share over six consecutive quarters, establishing a durable lead in a segment historically dominated by BTC.', action: 'Invest in broadband upsell campaigns targeting Benchmark B customers in the 1 Gb tier to convert price-sensitive switchers into higher-ARPU convergent customers.', impact: 'Sustained broadband share leadership anchors the convergent bundle value proposition and supports the customer lifetime value key result underpinning the CX transformation OKR.' }}>
+          <Panel title={tt('Market share trend — fixed · mobile · broadband (%)')} insight={{ insight: 'Cable Bahamas has gained 3.4 percentage points of broadband share over six consecutive quarters, establishing a durable lead in a segment historically dominated by BTC.', action: 'Invest in broadband upsell campaigns targeting Rival ISP B customers in the 1 Gb tier to convert price-sensitive switchers into higher-ARPU convergent customers.', impact: 'Sustained broadband share leadership anchors the convergent bundle value proposition and supports the customer lifetime value key result underpinning the CX transformation OKR.' }}>
             <div className="h-72">
               <ResponsiveContainer>
                 <AreaChart data={COMPETITOR_MARKET_SHARE}>
@@ -1137,20 +1137,20 @@ export default function StrategyPage() {
                   <YAxis tick={{ fontSize: 11 }} unit="%" domain={[0, 45]} />
                   <Tooltip contentStyle={tooltipStyle} formatter={(v: number) => [`${v}%`, '']} />
                   <Legend wrapperStyle={{ fontSize: 11 }} />
-                  <Area type="monotone" dataKey="tln"      name="Cable Bahamas"       stroke={BLUE}   fill={BLUE}   fillOpacity={0.3} />
+                  <Area type="monotone" dataKey="cbl"      name="Cable Bahamas"       stroke={BLUE}   fill={BLUE}   fillOpacity={0.3} />
                   <Area type="monotone" dataKey="btc" name="BTC"  stroke={NAVY}   fill={NAVY}   fillOpacity={0.15} />
-                  <Area type="monotone" dataKey="digi" name="Benchmark B" stroke={AMBER}  fill={AMBER}  fillOpacity={0.15} />
-                  <Area type="monotone" dataKey="orange"   name="Benchmark A"    stroke={PURPLE} fill={PURPLE} fillOpacity={0.10} />
-                  <Area type="monotone" dataKey="digi"     name="Benchmark B"      stroke={SLATE}  fill={SLATE}  fillOpacity={0.10} />
+                  <Area type="monotone" dataKey="digi" name="Rival ISP B" stroke={AMBER}  fill={AMBER}  fillOpacity={0.15} />
+                  <Area type="monotone" dataKey="orange"   name="Rival ISP A"    stroke={PURPLE} fill={PURPLE} fillOpacity={0.10} />
+                  <Area type="monotone" dataKey="digi"     name="Rival ISP B"      stroke={SLATE}  fill={SLATE}  fillOpacity={0.10} />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
             <div className="text-[11px] text-vfes-dark/55 mt-2">
-              {tt('Cable Bahamas gaining +3.4 pp in 6 quarters. BTC losing -2.0 pp. Benchmark B growing 1.0 pp driven by aggressive fibre pricing.')}
+              {tt('Cable Bahamas gaining +3.4 pp in 6 quarters. BTC losing -2.0 pp. Rival ISP B growing 1.0 pp driven by aggressive fibre pricing.')}
             </div>
           </Panel>
 
-          <Panel title={tt('Competitive KPI benchmark — 5 operators')} insight={{ insight: 'Cable Bahamas leads on four of five benchmark dimensions — Network, CX, ESG and EBITDA — but trails Benchmark B on price perception and lags BTC on B2B revenue positioning.', action: 'Launch a targeted B2B enterprise campaign to close the positioning gap versus BTC and develop a value-narrative campaign to counter Benchmark B price pressure without margin dilution.', impact: 'Closing the B2B positioning gap unlocks an estimated BSD 10M of enterprise revenue upside and repositions Cable Bahamas as the premium full-service operator in the FY27 market narrative.' }}>
+          <Panel title={tt('Competitive KPI benchmark — 5 operators')} insight={{ insight: 'Cable Bahamas leads on four of five benchmark dimensions — Network, CX, ESG and EBITDA — but trails Rival ISP B on price perception and lags BTC on B2B revenue positioning.', action: 'Launch a targeted B2B enterprise campaign to close the positioning gap versus BTC and develop a value-narrative campaign to counter Rival ISP B price pressure without margin dilution.', impact: 'Closing the B2B positioning gap unlocks an estimated BSD 10M of enterprise revenue upside and repositions Cable Bahamas as the premium full-service operator in the FY27 market narrative.' }}>
             <div className="h-72">
               <ResponsiveContainer>
                 <BarChart data={COMPETITOR_SPIDER}>
@@ -1159,14 +1159,14 @@ export default function StrategyPage() {
                   <YAxis tick={{ fontSize: 11 }} domain={[0, 100]} />
                   <Tooltip contentStyle={tooltipStyle} />
                   <Legend wrapperStyle={{ fontSize: 11 }} />
-                  <Bar dataKey="tln"      name="Cable Bahamas"       fill={BLUE}  radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="cbl"      name="Cable Bahamas"       fill={BLUE}  radius={[4, 4, 0, 0]} />
                   <Bar dataKey="btc" name="BTC"  fill={NAVY}  radius={[4, 4, 0, 0]} />
-                  <Bar dataKey="digi" name="Benchmark B" fill={AMBER} radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="digi" name="Rival ISP B" fill={AMBER} radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
             <div className="text-[11px] text-vfes-dark/55 mt-2">
-              {tt('Cable Bahamas leads in Network, CX and ESG. Benchmark B leads on price. Gap to close: B2B positioning vs BTC enterprise.')}
+              {tt('Cable Bahamas leads in Network, CX and ESG. Rival ISP B leads on price. Gap to close: B2B positioning vs BTC enterprise.')}
             </div>
           </Panel>
         </div>
@@ -1179,16 +1179,16 @@ export default function StrategyPage() {
                   <th className="py-2">{tt('Metric')}</th>
                   <th className="text-right">{tt('Cable Bahamas')}</th>
                   <th className="text-right">{tt('BTC')}</th>
-                  <th className="text-right">{tt('Benchmark B')}</th>
-                  <th className="text-right">{tt('Benchmark A The Bahamas')}</th>
-                  <th className="text-right">{tt('Benchmark B')}</th>
+                  <th className="text-right">{tt('Rival ISP B')}</th>
+                  <th className="text-right">{tt('Rival ISP A The Bahamas')}</th>
+                  <th className="text-right">{tt('Rival ISP B')}</th>
                 </tr>
               </thead>
               <tbody>
                 {COMPETITOR_KPI.map((r, i) => (
                   <tr key={i} className="border-t border-black/5">
                     <td className="py-2.5 font-semibold text-xs">{tt(r.metric)}</td>
-                    <td className="text-right font-bold text-emerald-600">{r.tln}</td>
+                    <td className="text-right font-bold text-emerald-600">{r.cbl}</td>
                     <td className="text-right">{r.btc}</td>
                     <td className="text-right">{r.digi}</td>
                     <td className="text-right">{r.orange}</td>
@@ -1199,12 +1199,12 @@ export default function StrategyPage() {
             </table>
           </div>
           <div className="mt-2 text-[10px] text-vfes-dark/45 uppercase tracking-widest">
-            {tt('Cable Bahamas leads on 4 of 5 metrics. Only exception: revenue growth YoY where Benchmark B (+18%) and Benchmark A (+6.4%) grow faster from a smaller base.')}
+            {tt('Cable Bahamas leads on 4 of 5 metrics. Only exception: revenue growth YoY where Rival ISP B (+18%) and Rival ISP A (+6.4%) grow faster from a smaller base.')}
           </div>
         </Panel>
 
         <div className="mt-6">
-          <Panel title={tt('Network investment intensity — CapEx % and RAN budget')} insight={{ insight: 'Cable Bahamas achieves superior 5G coverage per euro of RAN CapEx versus BTC, which spends BSD 280M on RAN but converts less efficiently to coverage and quality outcomes.', action: 'Use the capital efficiency advantage as a binding constraint in the next CapEx planning cycle, prioritising software-defined optimisation over hardware spend to maintain the lead at lower cost.', impact: 'Sustaining network CapEx efficiency improves free cash flow conversion and strengthens the investment case for Open RAN, directly supporting the infrastructure transformation OKR.' }}>
+          <Panel title={tt('Network investment intensity — CapEx % and RAN budget')} insight={{ insight: 'Cable Bahamas achieves superior 5G coverage per BSD of RAN CapEx versus BTC, which spends BSD 280M on RAN but converts less efficiently to coverage and quality outcomes.', action: 'Use the capital efficiency advantage as a binding constraint in the next CapEx planning cycle, prioritising software-defined optimisation over hardware spend to maintain the lead at lower cost.', impact: 'Sustaining network CapEx efficiency improves free cash flow conversion and strengthens the investment case for Open RAN, directly supporting the infrastructure transformation OKR.' }}>
             <div className="h-64">
               <ResponsiveContainer>
                 <ComposedChart data={COMPETITOR_INVESTMENTS}>
@@ -1220,7 +1220,7 @@ export default function StrategyPage() {
               </ResponsiveContainer>
             </div>
             <div className="text-[11px] text-vfes-dark/55 mt-2">
-              {tt('BTC invests more in RAN (BSD 280M) but Cable Bahamas has the highest network efficiency: best 5G coverage per euro of CapEx.')}
+              {tt('BTC invests more in RAN (BSD 280M) but Cable Bahamas has the highest network efficiency: best 5G coverage per BSD of CapEx.')}
             </div>
           </Panel>
         </div>

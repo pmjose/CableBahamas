@@ -11,7 +11,7 @@ const SUGGESTIONS: Record<string, string[]> = {
     'What is total revenue MTD vs. plan?',
     'Which region grew subscribers fastest this quarter?',
     'Show churn rate trend for the last 12 months',
-    'How does our 5G coverage compare to BTC and Benchmark A?',
+    'How does our 5G coverage compare to BTC and Rival ISP A?',
     'What is mobile ARPU vs. fixed ARPU this quarter?',
   ],
   operations: [
@@ -22,7 +22,7 @@ const SUGGESTIONS: Record<string, string[]> = {
   'mobile-ran': [
     'What is our 5G SA population coverage today vs. 95% target?',
     'Top 10 congested 5G cells by traffic load',
-    'Mobile NPS Cable Bahamas vs. BTC / Benchmark A / Benchmark B',
+    'Mobile NPS Cable Bahamas vs. BTC / Rival ISP A / Rival ISP B',
     'How many Island Towers (demo)-shared sites are active?',
   ],
   network: [
@@ -187,7 +187,7 @@ WHERE product = 'M500_FIBRE'
 GROUP BY drop_off_reason
 ORDER BY pct DESC
 LIMIT 3;`,
-    result: { type: 'table', columns: ['Drop-off reason', '%'], rows: [['Price concern (vs. BTC/Benchmark A)', '38%'], ['Serviceability check failed', '24%'], ['Credit check fear', '14%']] },
+    result: { type: 'table', columns: ['Drop-off reason', '%'], rows: [['Price concern (vs. BTC/Rival ISP A)', '38%'], ['Serviceability check failed', '24%'], ['Credit check fear', '14%']] },
     summary: 'Top 3 M500 checkout drop-off reasons: **Price concern (38%)**, Serviceability check failed (24%), Credit check fear (14%). Classified by Cortex AI from PEGA chat transcripts.',
   },
   pricing_elasticity: {
@@ -270,12 +270,12 @@ ORDER BY pop_coverage_pct DESC;`,
       data: [
         { mno: 'Cable Bahamas', cov: 89.4 },
         { mno: 'BTC', cov: 84.2 },
-        { mno: 'Benchmark A',   cov: 81.6 },
-        { mno: 'Benchmark B', cov: 72.4 },
+        { mno: 'Rival ISP A',   cov: 81.6 },
+        { mno: 'Rival ISP B', cov: 72.4 },
       ],
     },
-    result: { type: 'table', columns: ['MNO', '5G coverage', 'Cell sites', 'Median DL'], rows: [['Cable Bahamas', '89.4%', '220', '145 Mbps'], ['BTC', '84.2%', '21,420', '128 Mbps'], ['Benchmark A', '81.6%', '19,860', '112 Mbps'], ['Benchmark B', '72.4%', '14,200', '96 Mbps']] },
-    summary: 'The synthetic Cable Bahamas scenario leads the comparison on **5G SA population coverage at 89.4%** — 5.2 pp ahead of BTC and 7.8 pp ahead of Benchmark A. Median DL throughput of 145 Mbps is also #1.',
+    result: { type: 'table', columns: ['MNO', '5G coverage', 'Cell sites', 'Median DL'], rows: [['Cable Bahamas', '89.4%', '220', '145 Mbps'], ['BTC', '84.2%', '21,420', '128 Mbps'], ['Rival ISP A', '81.6%', '19,860', '112 Mbps'], ['Rival ISP B', '72.4%', '14,200', '96 Mbps']] },
+    summary: 'The synthetic Cable Bahamas scenario leads the comparison on **5G SA population coverage at 89.4%** — 5.2 pp ahead of BTC and 7.8 pp ahead of Rival ISP A. Median DL throughput of 145 Mbps is also #1.',
   },
   mobile_arpu: {
     reasoning: 'Detected: ARPU split, fixed vs mobile. Routing to revenue-by-lane view.',

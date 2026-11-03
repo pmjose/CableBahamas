@@ -24,12 +24,12 @@ const RED = '#EF4444'
 const PURPLE = '#7C3AED'
 const SLATE = '#94a3b8'
 
-const COMPETITORS = ['BTC', 'Benchmark A', 'Benchmark B', 'Benchmark C']
+const COMPETITORS = ['BTC', 'Rival ISP A', 'Rival ISP B', 'Rival ISP C']
 type Response = 'hold' | 'match' | 'beat'
 
 function simulate(competitor: string, cut: number, response: Response) {
   const base = { adds: 41.2, churnK: 38.0, arpu: 25 }
-  const aggression = competitor === 'Benchmark B' ? 1.4 : competitor === 'Benchmark C' ? 1.2 : 1.0
+  const aggression = competitor === 'Rival ISP B' ? 1.4 : competitor === 'Rival ISP C' ? 1.2 : 1.0
   const threat = (cut / 5) * aggression
   let addsDelta = -threat * 3.1
   let churnDelta = threat * 2.4
@@ -66,9 +66,9 @@ const GAME_TREE = [
   { node: 'BTC cut / Hold',   ebitda: -1.8, share: -0.4, arpu:  0.0 },
   { node: 'BTC cut / Match',  ebitda: -4.2, share:  0.2, arpu: -3.0 },
   { node: 'BTC cut / Beat',   ebitda: -7.1, share:  1.4, arpu: -5.5 },
-  { node: 'Benchmark B cut / Hold',       ebitda: -5.4, share: -1.8, arpu:  0.0 },
-  { node: 'Benchmark B cut / Match',      ebitda: -3.1, share:  0.6, arpu: -3.5 },
-  { node: 'Benchmark B cut / Beat',       ebitda: -8.9, share:  2.1, arpu: -6.2 },
+  { node: 'Rival ISP B cut / Hold',       ebitda: -5.4, share: -1.8, arpu:  0.0 },
+  { node: 'Rival ISP B cut / Match',      ebitda: -3.1, share:  0.6, arpu: -3.5 },
+  { node: 'Rival ISP B cut / Beat',       ebitda: -8.9, share:  2.1, arpu: -6.2 },
 ]
 
 // ─── Share / margin outcome matrix ───────────────────────────────────────────────
@@ -103,11 +103,11 @@ const SHARE_TREND = [
 // ─── Competitive intelligence register ───────────────────────────────────────────
 const COMP_INTEL = [
   { competitor: 'BTC',  move: 'BSD -2 on 1Gb fibre',         probability: 40, timeframe: 'Q3-26', threat: 'Med', tier: 'Premium' },
-  { competitor: 'Benchmark A',    move: 'BSD -3 on unlimited 5G',       probability: 28, timeframe: 'Q3-26', threat: 'Med', tier: 'Premium' },
-  { competitor: 'Benchmark B',  move: 'BSD -5 on entry mobile',      probability: 62, timeframe: 'Jul-26', threat: 'High', tier: 'Value'   },
-  { competitor: 'Benchmark B',      move: 'BSD -4 on SIM-only entry',     probability: 74, timeframe: 'Jul-26', threat: 'High', tier: 'Low-cost' },
-  { competitor: 'Benchmark B',  move: 'BSD -2 convergent bundle',    probability: 35, timeframe: 'Q4-26', threat: 'Low',  tier: 'Value'   },
-  { competitor: 'Benchmark B',      move: 'New convergent launch',     probability: 22, timeframe: 'Q4-26', threat: 'Med',  tier: 'Low-cost' },
+  { competitor: 'Rival ISP A',    move: 'BSD -3 on unlimited 5G',       probability: 28, timeframe: 'Q3-26', threat: 'Med', tier: 'Premium' },
+  { competitor: 'Rival ISP B',  move: 'BSD -5 on entry mobile',      probability: 62, timeframe: 'Jul-26', threat: 'High', tier: 'Value'   },
+  { competitor: 'Rival ISP B',      move: 'BSD -4 on SIM-only entry',     probability: 74, timeframe: 'Jul-26', threat: 'High', tier: 'Low-cost' },
+  { competitor: 'Rival ISP B',  move: 'BSD -2 convergent bundle',    probability: 35, timeframe: 'Q4-26', threat: 'Low',  tier: 'Value'   },
+  { competitor: 'Rival ISP B',      move: 'New convergent launch',     probability: 22, timeframe: 'Q4-26', threat: 'Med',  tier: 'Low-cost' },
 ]
 
 // ─── Tier sensitivity ─────────────────────────────────────────────────────────────
@@ -207,13 +207,13 @@ export default function PriceWargamePage() {
         agentSteps={[
           tt('Simulated all competitor moves across tiers and cut amounts'),
           tt('Modelled net adds, ARPU erosion and EBITDA for each response strategy'),
-          tt('Separated low-cost threats (Benchmark B/Benchmark B) from premium-tier threats'),
+          tt('Separated low-cost threats (Rival ISP B/Rival ISP B) from premium-tier threats'),
           tt('Selected the EBITDA-optimal response for the current parameter set'),
         ]}
         agentBlurb={tt('Price wars destroy industry ARPU. The war-game surfaces the response that protects the most EBITDA — which is not always the most aggressive counter-move.')}
         decision={{
-          title:   tt('Respond on value for BTC/Benchmark A; match entry tier only for Benchmark B/Benchmark B'),
-          detail:  tt('For premium competitor moves, holding and defending on network/convergent quality protects base ARPU. Matching a BTC BSD 5 cut erodes BSD 73M/yr EBITDA on the base. Only Benchmark B/Benchmark B entry-tier moves warrant a targeted match on the elastic 600Mb tier.'),
+          title:   tt('Respond on value for BTC/Rival ISP A; match entry tier only for Rival ISP B/Rival ISP B'),
+          detail:  tt('For premium competitor moves, holding and defending on network/convergent quality protects base ARPU. Matching a BTC BSD 5 cut erodes BSD 73M/yr EBITDA on the base. Only Rival ISP B/Rival ISP B entry-tier moves warrant a targeted match on the elastic 600Mb tier.'),
           impact:  tt('protects base ARPU vs reflexive price war · +BSD 40M vs match strategy'),
           risk:    tt('share loss if a low-cost move is left unanswered on the entry tier'),
           linkTo:  '#/portal/pricing-simulator',
@@ -238,7 +238,7 @@ export default function PriceWargamePage() {
             <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
             <div className="flex-1">
               <div className="font-bold text-amber-900 text-sm">
-                {tt('Benchmark B price move probability 74% by Jul-26 · Benchmark B entry-tier move 62% · combined share erosion risk')}
+                {tt('Rival ISP B price move probability 74% by Jul-26 · Rival ISP B entry-tier move 62% · combined share erosion risk')}
               </div>
               <div className="text-xs text-amber-800 mt-1">
                 {tt('Recommended response: pre-emptive value reinforcement on 600Mb tier. Do not match headline price — respond on quality and convergent stickiness.')}
@@ -413,7 +413,7 @@ export default function PriceWargamePage() {
                   <tr className="text-left text-[10px] uppercase tracking-widest text-vfes-dark/55 border-b border-black/5">
                     <th className="px-3 py-2">{tt('Tier')}</th>
                     <th className="px-3 py-2 text-right">{tt('Price BSD /mo')}</th>
-                    <th className="px-3 py-2 text-right">{tt('Premium vs Benchmark B BSD ')}</th>
+                    <th className="px-3 py-2 text-right">{tt('Premium vs Rival ISP B BSD ')}</th>
                     <th className="px-3 py-2 text-right">{tt('Customers (K)')}</th>
                     <th className="px-3 py-2 text-right">{tt('Churn %')}</th>
                     <th className="px-3 py-2 text-right">{tt('Acq elas')}</th>
@@ -449,9 +449,9 @@ export default function PriceWargamePage() {
       {tab === 'gametree' && (<>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('BTC / Hold')}   value="-BSD 1.8M" delta={tt('EBITDA impact/yr')}    trend="down" icon={Swords}      accent />
-          <KpiCard label={tt('Benchmark B / Hold')}        value="-BSD 5.4M" delta={tt('highest hold cost')}   trend="down" icon={AlertTriangle}     />
+          <KpiCard label={tt('Rival ISP B / Hold')}        value="-BSD 5.4M" delta={tt('highest hold cost')}   trend="down" icon={AlertTriangle}     />
           <KpiCard label={tt('Best BTC resp')} value="Hold"    delta={tt('least bad at -BSD 1.8M')} trend="up"   icon={Target}          />
-          <KpiCard label={tt('Best Benchmark B response')} value="Match"   delta={tt('entry tier only')}    trend="up"   icon={Target}          />
+          <KpiCard label={tt('Best Rival ISP B response')} value="Match"   delta={tt('entry tier only')}    trend="up"   icon={Target}          />
         </div>
 
         <Panel title={tt('Game-tree payoffs — EBITDA impact (BSD M/yr) by competitor move and response')}>
@@ -468,7 +468,7 @@ export default function PriceWargamePage() {
               </BarChart>
             </ResponsiveContainer>
           </div>
-          <div className="mt-2 text-xs text-vfes-dark/55">{tt('Darkest red = most destructive response. Beating Benchmark B on price is the worst outcome at -BSD 8.9M/yr.')}</div>
+          <div className="mt-2 text-xs text-vfes-dark/55">{tt('Darkest red = most destructive response. Beating Rival ISP B on price is the worst outcome at -BSD 8.9M/yr.')}</div>
         </Panel>
 
         <div className="mt-6">
@@ -531,7 +531,7 @@ export default function PriceWargamePage() {
             </ResponsiveContainer>
           </div>
           <div className="mt-2 text-xs text-vfes-dark/55">
-            {tt('Hold consistently outperforms match/beat for premium competitors. For low-cost (Benchmark B), match on entry tier only when cut ≥ BSD 5.')}
+            {tt('Hold consistently outperforms match/beat for premium competitors. For low-cost (Rival ISP B), match on entry tier only when cut ≥ BSD 5.')}
           </div>
         </Panel>
 
@@ -546,7 +546,7 @@ export default function PriceWargamePage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Cable Bahamas ARPU')} value="BSD 37.5" delta={tt('Jun 2026')}           trend="flat" icon={Activity}  accent />
           <KpiCard label={tt('BTC gap')}   value="BSD 2.7"  delta={tt('shrinking')}           trend="down" icon={TrendingDown}   />
-          <KpiCard label={tt('Benchmark B gap')}       value="BSD 22.7" delta={tt('stable low-cost')}     trend="flat" icon={TrendingUp}    />
+          <KpiCard label={tt('Rival ISP B gap')}       value="BSD 22.7" delta={tt('stable low-cost')}     trend="flat" icon={TrendingUp}    />
           <KpiCard label={tt('Price premium')}  value="+10%"  delta={tt('vs market avg')}        trend="flat" icon={Target}        />
         </div>
 
@@ -561,9 +561,9 @@ export default function PriceWargamePage() {
                 <Legend wrapperStyle={{ fontSize: 11 }} />
                 <Line type="monotone" dataKey="cablebahamas" name="Cable Bahamas"  stroke={RED}    strokeWidth={2.8} dot />
                 <Line type="monotone" dataKey="btc"  name="BTC"   stroke={BLUE}   strokeWidth={2}   dot={false} />
-                <Line type="monotone" dataKey="orange"    name="Benchmark A"     stroke={AMBER}  strokeWidth={1.8} dot={false} strokeDasharray="4 4" />
-                <Line type="monotone" dataKey="digi"  name="Benchmark B"  stroke={PURPLE} strokeWidth={1.6} dot={false} strokeDasharray="4 4" />
-                <Line type="monotone" dataKey="voo"       name="Benchmark C"        stroke={SLATE}  strokeWidth={1.4} dot={false} strokeDasharray="2 4" />
+                <Line type="monotone" dataKey="orange"    name="Rival ISP A"     stroke={AMBER}  strokeWidth={1.8} dot={false} strokeDasharray="4 4" />
+                <Line type="monotone" dataKey="digi"  name="Rival ISP B"  stroke={PURPLE} strokeWidth={1.6} dot={false} strokeDasharray="4 4" />
+                <Line type="monotone" dataKey="voo"       name="Rival ISP C"        stroke={SLATE}  strokeWidth={1.4} dot={false} strokeDasharray="2 4" />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -581,9 +581,9 @@ export default function PriceWargamePage() {
       {tab === 'share' && (<>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Cable Bahamas share')}  value="27.6%" delta={tt('Jun 2026')}              trend="down" icon={BarChart2}  accent />
-          <KpiCard label={tt('Benchmark B gaining')}      value="+1.7pp" delta={tt('YTD — watch')}         trend="down" icon={AlertTriangle}   />
+          <KpiCard label={tt('Rival ISP B gaining')}      value="+1.7pp" delta={tt('YTD — watch')}         trend="down" icon={AlertTriangle}   />
           <KpiCard label={tt('BTC share')}    value="25.6%" delta={tt('largest single rival')} trend="flat" icon={Activity}       />
-          <KpiCard label={tt('Share at risk')}     value="0.8pp" delta={tt('if Benchmark B moves unansw.')} trend="down" icon={TrendingDown}   />
+          <KpiCard label={tt('Share at risk')}     value="0.8pp" delta={tt('if Rival ISP B moves unansw.')} trend="down" icon={TrendingDown}   />
         </div>
 
         <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -609,13 +609,13 @@ export default function PriceWargamePage() {
                 <Legend wrapperStyle={{ fontSize: 11 }} />
                 <Area type="monotone" dataKey="cablebahamas" name="Cable Bahamas"  stroke={RED}    fill={RED}    fillOpacity={0.25} strokeWidth={2.8} />
                 <Area type="monotone" dataKey="btc"  name="BTC"   stroke={BLUE}   fill={BLUE}   fillOpacity={0.1}  strokeWidth={2} />
-                <Area type="monotone" dataKey="orange"    name="Benchmark A"     stroke={AMBER}  fill={AMBER}  fillOpacity={0.1}  strokeWidth={1.6} />
-                <Area type="monotone" dataKey="digi"  name="Benchmark B"  stroke={PURPLE} fill={PURPLE} fillOpacity={0.1}  strokeWidth={1.4} />
-                <Area type="monotone" dataKey="voo"       name="Benchmark C"        stroke={SLATE}  fill={SLATE}  fillOpacity={0.1}  strokeWidth={1.2} />
+                <Area type="monotone" dataKey="orange"    name="Rival ISP A"     stroke={AMBER}  fill={AMBER}  fillOpacity={0.1}  strokeWidth={1.6} />
+                <Area type="monotone" dataKey="digi"  name="Rival ISP B"  stroke={PURPLE} fill={PURPLE} fillOpacity={0.1}  strokeWidth={1.4} />
+                <Area type="monotone" dataKey="voo"       name="Rival ISP C"        stroke={SLATE}  fill={SLATE}  fillOpacity={0.1}  strokeWidth={1.2} />
               </AreaChart>
             </ResponsiveContainer>
           </div>
-          <div className="mt-2 text-xs text-vfes-dark/55">{tt('Cable Bahamas trending down 0.6pp YTD as Benchmark B gains entry-tier customers. Hold strategy needed.')}</div>
+          <div className="mt-2 text-xs text-vfes-dark/55">{tt('Cable Bahamas trending down 0.6pp YTD as Rival ISP B gains entry-tier customers. Hold strategy needed.')}</div>
         </Panel>
 
         <div className="mt-4 flex items-center gap-4 text-xs">
@@ -628,10 +628,10 @@ export default function PriceWargamePage() {
       {/* ══ INTEL ════════════════════════════════════════════════════════════ */}
       {tab === 'intel' && (<>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('High-threat moves')}  value="2"   delta={tt('Benchmark B + Benchmark B entry')}   trend="down" icon={AlertTriangle} accent />
-          <KpiCard label={tt('Medium-threat moves')} value="3"  delta={tt('BTC + Benchmark A tiers')} trend="flat" icon={Activity}          />
-          <KpiCard label={tt('Highest probability')} value="74%" delta={tt('Benchmark B SIM-only cut')}     trend="down" icon={TrendingDown}      />
-          <KpiCard label={tt('Next expected move')}  value="Jul" delta={tt('Benchmark B / Benchmark B')}       trend="flat" icon={Brain}             />
+          <KpiCard label={tt('High-threat moves')}  value="2"   delta={tt('Rival ISP B + Rival ISP B entry')}   trend="down" icon={AlertTriangle} accent />
+          <KpiCard label={tt('Medium-threat moves')} value="3"  delta={tt('BTC + Rival ISP A tiers')} trend="flat" icon={Activity}          />
+          <KpiCard label={tt('Highest probability')} value="74%" delta={tt('Rival ISP B SIM-only cut')}     trend="down" icon={TrendingDown}      />
+          <KpiCard label={tt('Next expected move')}  value="Jul" delta={tt('Rival ISP B / Rival ISP B')}       trend="flat" icon={Brain}             />
         </div>
 
         <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -712,7 +712,7 @@ export default function PriceWargamePage() {
             </div>
           </Panel>
 
-          <Panel title={tt('Price premium vs Benchmark B by tier (BSD /mo)')}>
+          <Panel title={tt('Price premium vs Rival ISP B by tier (BSD /mo)')}>
             <div className="h-56">
               <ResponsiveContainer>
                 <BarChart data={TIER_SENS}>
@@ -720,7 +720,7 @@ export default function PriceWargamePage() {
                   <XAxis dataKey="tier" tick={{ fontSize: 9 }} />
                   <YAxis tick={{ fontSize: 11 }} unit="BSD " />
                   <Tooltip contentStyle={TS} />
-                  <Bar dataKey="premium" name={tt('Premium vs Benchmark B BSD ')} radius={[4, 4, 0, 0]}>
+                  <Bar dataKey="premium" name={tt('Premium vs Rival ISP B BSD ')} radius={[4, 4, 0, 0]}>
                     {TIER_SENS.map((_, i) => <Cell key={i} fill={[GREEN, AMBER, BLUE, NAVY, PURPLE][i % 5]} />)}
                   </Bar>
                 </BarChart>
@@ -736,7 +736,7 @@ export default function PriceWargamePage() {
                 <tr className="text-left text-[10px] uppercase tracking-widest text-vfes-dark/55 border-b border-black/5">
                   <th className="px-3 py-2">{tt('Tier')}</th>
                   <th className="px-3 py-2 text-right">{tt('Price BSD /mo')}</th>
-                  <th className="px-3 py-2 text-right">{tt('Benchmark B premium BSD ')}</th>
+                  <th className="px-3 py-2 text-right">{tt('Rival ISP B premium BSD ')}</th>
                   <th className="px-3 py-2 text-right">{tt('Subs (K)')}</th>
                   <th className="px-3 py-2 text-right">{tt('Churn %')}</th>
                 </tr>
@@ -778,7 +778,7 @@ export default function PriceWargamePage() {
                   <Legend wrapperStyle={{ fontSize: 11 }} />
                   <Line type="monotone" dataKey="cablebahamas" name="Cable Bahamas" stroke={RED}   strokeWidth={2.4} dot />
                   <Line type="monotone" dataKey="btc"  name="BTC"  stroke={BLUE}  strokeWidth={1.8} dot={false} />
-                  <Line type="monotone" dataKey="digi"      name="Benchmark B"      stroke={SLATE} strokeWidth={1.4} dot={false} strokeDasharray="4 4" />
+                  <Line type="monotone" dataKey="digi"      name="Rival ISP B"      stroke={SLATE} strokeWidth={1.4} dot={false} strokeDasharray="4 4" />
                 </LineChart>
               </ResponsiveContainer>
             </div>
@@ -834,7 +834,7 @@ export default function PriceWargamePage() {
               </tbody>
             </table>
           </div>
-          <div className="mt-2 text-xs text-vfes-dark/55">{tt('Hold dominates for premium competitor moves. Match entry-only for Benchmark B ≥ BSD 5. Never beat — base ARPU erosion is too large.')}</div>
+          <div className="mt-2 text-xs text-vfes-dark/55">{tt('Hold dominates for premium competitor moves. Match entry-only for Rival ISP B ≥ BSD 5. Never beat — base ARPU erosion is too large.')}</div>
         </Panel>
       </div>
 
@@ -907,7 +907,7 @@ export default function PriceWargamePage() {
                 <Legend wrapperStyle={{ fontSize: 10 }} />
                 <Line type="monotone" dataKey="cablebahamas" name="Cable Bahamas" stroke={RED}   strokeWidth={2.4} dot />
                 <Line type="monotone" dataKey="btc"  name="BTC"  stroke={BLUE}  strokeWidth={1.8} dot={false} />
-                <Line type="monotone" dataKey="digi"      name="Benchmark B"      stroke={SLATE} strokeWidth={1.4} dot={false} strokeDasharray="4 4" />
+                <Line type="monotone" dataKey="digi"      name="Rival ISP B"      stroke={SLATE} strokeWidth={1.4} dot={false} strokeDasharray="4 4" />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -947,12 +947,12 @@ export default function PriceWargamePage() {
                 <Legend wrapperStyle={{ fontSize: 11 }} />
                 <Area type="monotone" dataKey="cablebahamas" name="Cable Bahamas" stroke={RED}   fill={RED}   fillOpacity={0.2}  strokeWidth={2.4} />
                 <Area type="monotone" dataKey="btc"  name="BTC"  stroke={BLUE}  fill={BLUE}  fillOpacity={0.1}  strokeWidth={1.8} />
-                <Area type="monotone" dataKey="digi"      name="Benchmark B"      stroke={SLATE} fill={SLATE} fillOpacity={0.1}  strokeWidth={1.2} />
-                <Area type="monotone" dataKey="voo"       name="Benchmark C"       stroke={PURPLE} fill={PURPLE} fillOpacity={0.1} strokeWidth={1.0} />
+                <Area type="monotone" dataKey="digi"      name="Rival ISP B"      stroke={SLATE} fill={SLATE} fillOpacity={0.1}  strokeWidth={1.2} />
+                <Area type="monotone" dataKey="voo"       name="Rival ISP C"       stroke={PURPLE} fill={PURPLE} fillOpacity={0.1} strokeWidth={1.0} />
               </AreaChart>
             </ResponsiveContainer>
           </div>
-          <div className="mt-2 text-xs text-vfes-dark/55">{tt('Benchmark B gaining 1.7pp YTD. Entry-tier defence required. Cable Bahamas premium brand still commands 2.7pp ARPU premium over BTC.')}</div>
+          <div className="mt-2 text-xs text-vfes-dark/55">{tt('Rival ISP B gaining 1.7pp YTD. Entry-tier defence required. Cable Bahamas premium brand still commands 2.7pp ARPU premium over BTC.')}</div>
         </Panel>
       </div>
 
@@ -980,7 +980,7 @@ export default function PriceWargamePage() {
         <div className="flex-1">
           <div className="text-xs uppercase tracking-widest font-bold text-vfes-dark mb-1">{tt('Price war-game intelligence')}</div>
           <div className="text-sm text-vfes-dark/80 mb-1">
-            {tt('Benchmark B / Benchmark B entry-tier move expected Jul-26. Recommended response: defend 600Mb on quality messaging, match only if cut ≥ BSD 5 and limited to entry tier. Do not match premium tiers.')}
+            {tt('Rival ISP B / Rival ISP B entry-tier move expected Jul-26. Recommended response: defend 600Mb on quality messaging, match only if cut ≥ BSD 5 and limited to entry tier. Do not match premium tiers.')}
           </div>
           <div className="text-xs text-vfes-dark/55">{tt('Review cadence: weekly competitor monitor · monthly war-game refresh · pre-campaign scenario run.')}</div>
         </div>
@@ -996,8 +996,8 @@ export default function PriceWargamePage() {
             <ResponsiveContainer>
               <ScatterChart margin={{ left: 10, bottom: 10 }}>
                 <CartesianGrid stroke="#eee" strokeDasharray="3 3" />
-                <XAxis type="number" dataKey="premium" name={tt('Premium vs Benchmark B BSD ')} stroke="#999" fontSize={11}
-                  label={{ value: tt('Premium vs Benchmark B BSD '), position: 'insideBottom', offset: -4, fontSize: 10 }} />
+                <XAxis type="number" dataKey="premium" name={tt('Premium vs Rival ISP B BSD ')} stroke="#999" fontSize={11}
+                  label={{ value: tt('Premium vs Rival ISP B BSD '), position: 'insideBottom', offset: -4, fontSize: 10 }} />
                 <YAxis type="number" dataKey="churnPct" name={tt('Churn %')} stroke="#999" fontSize={11}
                   label={{ value: tt('Churn %'), angle: -90, position: 'insideLeft', fontSize: 10 }} />
                 <ZAxis type="number" dataKey="custK" range={[60, 300]} />
@@ -1071,7 +1071,7 @@ export default function PriceWargamePage() {
                 <tr className="text-left text-[10px] uppercase tracking-widest text-vfes-dark/55 border-b border-black/5">
                   <th className="px-3 py-2">{tt('Tier')}</th>
                   <th className="px-3 py-2 text-right">{tt('Price BSD /mo')}</th>
-                  <th className="px-3 py-2 text-right">{tt('Benchmark B premium BSD ')}</th>
+                  <th className="px-3 py-2 text-right">{tt('Rival ISP B premium BSD ')}</th>
                   <th className="px-3 py-2 text-right">{tt('Subs K')}</th>
                   <th className="px-3 py-2 text-right">{tt('Churn %')}</th>
                   <th className="px-3 py-2 text-right">{tt('Acq elas')}</th>

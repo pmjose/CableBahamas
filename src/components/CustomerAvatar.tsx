@@ -42,9 +42,8 @@ const LIPS = ['#dc2626', '#e11d48', '#be123c', '#f43f5e']
  * Male: short hair, subtle smile.
  * A wink shows occasionally — a nod to the Cable Bahamas smiley.
  *
- * Component name kept as `LeprechaunAvatar` for backward compatibility with existing imports.
  */
-export default function LeprechaunAvatar({ seed, size = 64, className = '', female, name }: Props) {
+export default function CustomerAvatar({ seed, size = 64, className = '', female, name }: Props) {
   const h = hash(seed)
   const isFemale = female ?? detectFemale(name) ?? (h % 2 === 0)
   const hair = HAIRS[h % HAIRS.length]

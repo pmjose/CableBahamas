@@ -753,9 +753,9 @@ export default function RanEnergyPage() {
           </Panel>
 
           <div className="mt-4 p-4 rounded-xl bg-[#fafbfc] border border-black/5">
-            <div className="text-xs font-bold text-vfes-dark/70 mb-2">{tt('Regulatory context — EU Taxonomy & CSRD reporting')}</div>
+            <div className="text-xs font-bold text-vfes-dark/70 mb-2">{tt('Regulatory context — Climate resilience & sustainability reporting')}</div>
             <p className="text-xs text-vfes-dark/55 leading-relaxed">
-              {tt('Under CSRD Article 29a, the company must disclose Scope 1, 2 and 3 GHG emissions annually. The current Snowflake data pipeline automates collection from OSS, billing and logistics feeds, reducing manual effort from 6 weeks to 3 days.')}
+              {tt('Under Sustainability report Article 29a, the company must disclose Scope 1, 2 and 3 GHG emissions annually. The current Snowflake data pipeline automates collection from OSS, billing and logistics feeds, reducing manual effort from 6 weeks to 3 days.')}
             </p>
             <div className="mt-2 flex gap-2">
               <Link to="/portal/regulatory"
@@ -998,7 +998,7 @@ export default function RanEnergyPage() {
               <ul className="text-xs text-emerald-700 space-y-1 list-disc list-inside">
                 <li>{tt('MIMO deep sleep deployed on 1,240 urban 5G sites')}</li>
                 <li>{tt('Luminus Solar PPA I signed — 142 GWh/yr')}</li>
-                <li>{tt('Site rectifier optimisation on 3,800 macro sites')}</li>
+                <li>{tt('Site rectifier optimisation on 180 macro sites')}</li>
               </ul>
             </div>
             <div className="p-3 rounded-xl border border-black/5 bg-amber-50">

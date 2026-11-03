@@ -48,7 +48,7 @@ const incidents = [
   { id: 'INC-2025', region: 'Eleuthera',         type: 'DNS',               severity: 'P2', status: 'Resolved',      eta: '—',      hh: 0,    lat: 25.1962, lng: -76.2431 },
   { id: 'INC-2022', region: 'Exuma',        type: 'Wi-Fi pods · firmware', severity: 'P4', status: 'Monitoring', eta: '12h',    hh: 240,  lat: 23.5, lng: -75.7667 },
   { id: 'INC-2018', region: 'Long Island',          type: 'OLT · GPON port',   severity: 'P3', status: 'Investigating', eta: '6h',     hh: 320,  lat: 23.25, lng: -75.1 },
-  { id: 'INC-2015', region: 'Bimini',       type: 'BGP peering · Benchmark A', severity: 'P2', status: 'Mitigated',    eta: '30m',    hh: 410,  lat: 25.727, lng: -79.2972 },
+  { id: 'INC-2015', region: 'Bimini',       type: 'BGP peering · Rival ISP A', severity: 'P2', status: 'Mitigated',    eta: '30m',    hh: 410,  lat: 25.727, lng: -79.2972 },
 ]
 
 const sevColor: Record<string, string> = {
@@ -228,8 +228,8 @@ const energyTrend = [
 const compliance = [
   { metric: 'URCA outage reports filed',  value: 2,    delta: '0 breaches', good: true,  suffix: '' },
   { metric: '112 service availability', value: 100,  delta: 'illustrative',    good: true,  suffix: '%' },
-  { metric: 'NIS2 controls passing',         value: 96,   delta: '4 minor open', good: true,  suffix: '%' },
-  { metric: 'GDPR breaches in incidents',    value: 0,    delta: 'this Q',      good: true,  suffix: '' },
+  { metric: 'URCA cyber controls passing',         value: 96,   delta: '4 minor open', good: true,  suffix: '%' },
+  { metric: 'DPA breaches in incidents',    value: 0,    delta: 'this Q',      good: true,  suffix: '' },
   { metric: 'SLA credits owed (BSD )',          value: 18.2, delta: '-BSD 4.2K vs LM', good: true,  suffix: 'K' },
 ]
 
@@ -1222,7 +1222,7 @@ export default function OperationsPage() {
                   <YAxis tick={{ fontSize: 11 }} unit="%" domain={[97, 100]} />
                   <Tooltip contentStyle={tooltipStyle} />
                   <Legend wrapperStyle={{ fontSize: 11 }} />
-                  <Line type="monotone" dataKey="voo" name={tt('Benchmark C')}  stroke={RED}      strokeWidth={2} dot />
+                  <Line type="monotone" dataKey="voo" name={tt('Rival ISP C')}  stroke={RED}      strokeWidth={2} dot />
                   <Line type="monotone" dataKey="cisco" name={tt('Cisco')}  stroke="#10b981" strokeWidth={2} dot />
                   <Line type="monotone" dataKey="nokia" name={tt('Nokia')}  stroke="#f59e0b" strokeWidth={2} dot />
                   <Line type="monotone" dataKey="nttz"  name={tt('NTT')}    stroke="#7c3aed" strokeWidth={2} dot />

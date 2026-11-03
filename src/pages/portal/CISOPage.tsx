@@ -73,9 +73,9 @@ const mitreCoverage = [
 
 const threatActors = [
   { actor: 'Volt Typhoon (China)',    target: 'Telco / critical infra', activity: 'Active scanning · BGP probes',          iocsHit: 12, sev: 'High'   },
-  { actor: 'Sandworm (Russia)',       target: 'EU telco signalling',   activity: 'GTP probing observed (no entry)',       iocsHit:  4, sev: 'Medium' },
+  { actor: 'Sandworm (Russia)',       target: 'Telco signalling',   activity: 'GTP probing observed (no entry)',       iocsHit:  4, sev: 'Medium' },
   { actor: 'FIN-7',                   target: 'Billing/POS carrier',   activity: 'Spear-phish to 12 finance users',      iocsHit: 18, sev: 'High'   },
-  { actor: 'Storm-1567',              target: 'SMB telco EU',          activity: 'IRSF / Wangiri ramp',                 iocsHit: 28, sev: 'Medium' },
+  { actor: 'Storm-1567',              target: 'SMB telco US',          activity: 'IRSF / Wangiri ramp',                 iocsHit: 28, sev: 'Medium' },
 ]
 
 // ─── Vulnerabilities ──────────────────────────────────────────────────────────
@@ -182,9 +182,9 @@ const rbacTrend = [
 // ─── Compliance / Trust ───────────────────────────────────────────────────────
 
 const complianceItems = [
-  { framework: 'NIS2',        status: 'On-track',  score: 82, gap: 18, dueDate: '2025-10-17', owner: 'GRC' },
-  { framework: 'GDPR',        status: 'Compliant', score: 96, gap: 4,  dueDate: 'Ongoing',    owner: 'DPO' },
-  { framework: 'AI Act',      status: 'At-risk',   score: 64, gap: 36, dueDate: '2026-08-01', owner: 'CISO'},
+  { framework: 'URCA cyber',        status: 'On-track',  score: 82, gap: 18, dueDate: '2025-10-17', owner: 'GRC' },
+  { framework: 'DPA',        status: 'Compliant', score: 96, gap: 4,  dueDate: 'Ongoing',    owner: 'DPO' },
+  { framework: 'AI policy',      status: 'At-risk',   score: 64, gap: 36, dueDate: '2026-08-01', owner: 'CISO'},
   { framework: 'PCI-DSS 4.0', status: 'Compliant', score: 98, gap: 2,  dueDate: '2026-03-31', owner: 'GRC' },
   { framework: 'URCA (AAEE)', status: 'On-track',  score: 88, gap: 12, dueDate: '2025-12-31', owner: 'Reg' },
   { framework: 'CCB Cyber Fundamentals', status: 'Compliant', score: 94, gap: 6, dueDate: '2026-01-15', owner: 'GRC'},
@@ -236,7 +236,7 @@ const fairRisks = [
   { risk: 'Insider data exfiltration',                 lef: 0.18, minLoss: 0.8,   maxLoss:  6.0,  annualExp: 1.24, category: 'Insider'  },
   { risk: 'Supply-chain compromise (Ericsson SW)',     lef: 0.04, minLoss: 6.0,   maxLoss: 38.0,  annualExp: 1.76, category: 'Supply'   },
   { risk: 'SS7 intercept / lawful intercept audit',    lef: 0.10, minLoss: 0.4,   maxLoss:  3.0,  annualExp: 0.37, category: 'Signaling'},
-  { risk: 'GDPR enforcement action',                   lef: 0.15, minLoss: 1.2,   maxLoss: 12.0,  annualExp: 1.98, category: 'Compliance'},
+  { risk: 'DPA enforcement action',                   lef: 0.15, minLoss: 1.2,   maxLoss: 12.0,  annualExp: 1.98, category: 'Compliance'},
 ]
 
 const boardMetrics = [
@@ -252,7 +252,7 @@ const cyberInsuranceCoverage = [
   { layer: 'First-party breach response',      limit: 5.0,  premium: 0.42, deductible: 0.25, used: 0.0 },
   { layer: 'Business interruption',            limit: 20.0, premium: 0.84, deductible: 1.0,  used: 0.0 },
   { layer: 'Third-party liability',             limit: 10.0, premium: 0.36, deductible: 0.5,  used: 0.0 },
-  { layer: 'Regulatory fines (EU/URCA enforcement)',  limit: 8.0,  premium: 0.28, deductible: 0.5,  used: 0.0 },
+  { layer: 'Regulatory fines (URCA enforcement)',  limit: 8.0,  premium: 0.28, deductible: 0.5,  used: 0.0 },
 ]
 
 const riskHeatmapData = [
@@ -400,7 +400,7 @@ export default function CISOPage() {
               { to: 'rbac',          label: 'RBAC Explorer',      metric: tt('Roles · grants · least privilege'),          icon: Key          },
               { to: 'horizon',       label: 'Horizon',            metric: tt('Access history · lineage governance'),       icon: Eye          },
               { to: 'data-contracts',label: 'Data Contracts',     metric: tt('PII handling · obligations'),                icon: FileWarning  },
-              { to: 'regulatory',    label: 'Regulatory & ESG',   metric: tt('GDPR · NIS2 · URCA'),                       icon: Scale        },
+              { to: 'regulatory',    label: 'Regulatory & ESG',   metric: tt('DPA · URCA cyber · URCA'),                       icon: Scale        },
               { to: 'observability', label: 'Observability',      metric: tt('Audit logs · alerts'),                      icon: Activity     },
               { to: 'incidents',     label: 'Incidents',          metric: tt('Security incident log'),                    icon: ShieldAlert  },
             ]}
@@ -412,7 +412,7 @@ export default function CISOPage() {
             <PriorityList
               title={tt('Security priorities — FY2026')}
               items={[
-                { name: 'NIS2 compliance programme',              owner: tt('GRC · L. Rolle'),      pct: 66, status: 'on-track' },
+                { name: 'URCA cyber compliance programme',              owner: tt('GRC · L. Rolle'),      pct: 66, status: 'on-track' },
                 { name: 'Zero Trust Network Access rollout',      owner: tt('Security Engineering'), pct: 54, status: 'on-track' },
                 { name: 'Row-access policy coverage 100%',        owner: tt('Data Governance'),       pct: 82, status: 'on-track' },
                 { name: 'SIM-swap fraud controls v2',             owner: tt('Fraud'),                 pct: 88, status: 'on-track' },
@@ -436,7 +436,7 @@ export default function CISOPage() {
           items={[
             { what: tt('Daily threat stand-up'),             when: tt('09:00 daily')   },
             { what: tt('Security & risk committee'),           when: tt('Wed 9 Jul')     },
-            { what: tt('NIS2 readiness review'),               when: tt('Tue 15 Jul')    },
+            { what: tt('URCA cyber readiness review'),               when: tt('Tue 15 Jul')    },
             { what: tt('Board risk update'),                   when: tt('Tue 22 Jul')    },
           ]}
         />
@@ -471,7 +471,7 @@ export default function CISOPage() {
             </Panel>
           </div>
 
-          <Panel title={tt('NIST CSF Maturity (1-5)')} insight={{ insight: 'The NIST CSF profile shows Recover and Respond as the lowest-scoring domains, both with a visible gap against the 4.5 target.', action: 'Prioritize investment in response and recovery capabilities through tabletop exercises and incident-response playbook updates.', impact: 'Raising Recover and Respond to 4.0 will reduce estimated MTTR by 35% and strengthen the audited posture against NIS2 and ENS.' }}>
+          <Panel title={tt('NIST CSF Maturity (1-5)')} insight={{ insight: 'The NIST CSF profile shows Recover and Respond as the lowest-scoring domains, both with a visible gap against the 4.5 target.', action: 'Prioritize investment in response and recovery capabilities through tabletop exercises and incident-response playbook updates.', impact: 'Raising Recover and Respond to 4.0 will reduce estimated MTTR by 35% and strengthen the audited posture against URCA cyber and ENS.' }}>
             <div className="h-264">
               <ResponsiveContainer width="100%" height={256}>
                 <RadarChart data={nistMaturity}>
@@ -880,7 +880,7 @@ export default function CISOPage() {
             </div>
           </Panel>
 
-          <Panel title={tt('NIST CSF maturity — radar')} insight={{ insight: 'Recover (3.6) and Respond (3.8) score below 4.0 while Protect and Identify already exceed the target, revealing a clear gap in reactive capabilities.', action: 'Run two annual tabletop exercises focused on recovery and update the incident response playbook with lessons from the most recent incidents.', impact: 'Raising Recover and Respond to 4.5 will push the overall NIST score above the board threshold and strengthen the audited posture against NIS2 and ENS.' }}>
+          <Panel title={tt('NIST CSF maturity — radar')} insight={{ insight: 'Recover (3.6) and Respond (3.8) score below 4.0 while Protect and Identify already exceed the target, revealing a clear gap in reactive capabilities.', action: 'Run two annual tabletop exercises focused on recovery and update the incident response playbook with lessons from the most recent incidents.', impact: 'Raising Recover and Respond to 4.5 will push the overall NIST score above the board threshold and strengthen the audited posture against URCA cyber and ENS.' }}>
             <div className="h-64">
               <ResponsiveContainer>
                 <RadarChart data={nistMaturity}>
@@ -924,7 +924,7 @@ export default function CISOPage() {
           <KpiCard label={tt('Active incidents')}    value={`${incidentLog.filter(i => i.status !== 'Closed').length}`} delta="of 6 TTM"           trend="flat" icon={AlertOctagon} accent />
           <KpiCard label={tt('Avg MTTR')}              value="88m"                                                         delta="-22m YoY"          trend="up"   icon={Clock}        />
           <KpiCard label={tt('Critical in 30d')}      value="1"                                                           delta="resolved"          trend="up"   icon={Zap}          />
-          <KpiCard label={tt('NIS2 notifications')}   value="2"                                                           delta="within legal window" trend="up"   icon={Globe}        />
+          <KpiCard label={tt('URCA cyber notifications')}   value="2"                                                           delta="within legal window" trend="up"   icon={Globe}        />
         </div>
 
         <Panel
@@ -974,7 +974,7 @@ export default function CISOPage() {
         </Panel>
 
         <div className="mt-6">
-          <Panel title={tt('Incident trend — 6 months by severity')} insight={{ insight: 'Monthly incident total fell from 10 in January to 5 in June, with criticals and highs below 20% of the total due to improved SOC prioritization.', action: 'Drive mean MTTR below 60 minutes by activating automated playbooks for the 5 most frequent incident types identified in historical data.', impact: 'Sustaining the downward trend will reduce NIS2 notifications and lower estimated operational impact by an additional 25% in the second half.' }}>
+          <Panel title={tt('Incident trend — 6 months by severity')} insight={{ insight: 'Monthly incident total fell from 10 in January to 5 in June, with criticals and highs below 20% of the total due to improved SOC prioritization.', action: 'Drive mean MTTR below 60 minutes by activating automated playbooks for the 5 most frequent incident types identified in historical data.', impact: 'Sustaining the downward trend will reduce URCA cyber notifications and lower estimated operational impact by an additional 25% in the second half.' }}>
             <div className="h-64">
               <ResponsiveContainer>
                 <AreaChart data={incidentTrend}>

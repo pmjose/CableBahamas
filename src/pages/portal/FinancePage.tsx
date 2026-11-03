@@ -81,10 +81,10 @@ const topOverdueAR = [
 
 const apTopSuppliers = [
   { sup: 'Cable Bahamas Group · intercompany', spendQ: 12.4, dpo: 30, risk: 'Low' },
-  { sup: 'Benchmark C The Bahamas (MVNO)',          spendQ: 4.2,  dpo: 45, risk: 'Low' },
+  { sup: 'Rival ISP C The Bahamas (MVNO)',          spendQ: 4.2,  dpo: 45, risk: 'Low' },
   { sup: 'Cisco Systems',                  spendQ: 3.8,  dpo: 60, risk: 'Low' },
   { sup: 'Nokia Solutions',                spendQ: 2.6,  dpo: 60, risk: 'Low' },
-  { sup: 'Benchmark B · content',                  spendQ: 2.1,  dpo: 30, risk: 'Medium' },
+  { sup: 'Rival ISP B · content',                  spendQ: 2.1,  dpo: 30, risk: 'Medium' },
   { sup: 'Snowflake (cloud)',              spendQ: 0.9,  dpo: 30, risk: 'Low' },
   { sup: 'Civils · KN Networks',          spendQ: 1.4,  dpo: 45, risk: 'Medium' },
 ]
@@ -134,9 +134,7 @@ const covenants = [
 ]
 
 const fxIrHedges = [
-  { instr: 'BSD/USD forward · content',  notional: 12, expiry: 'Mar 27', mtm: 0.4, status: 'Active' },
-  { instr: 'BSD/USD forward · multinational ops',   notional: 8,  expiry: 'Jun 27', mtm: -0.2, status: 'Active' },
-  { instr: 'IRS · floating → fixed',     notional: 84, expiry: 'Dec 28', mtm: 1.8,  status: 'Active' },
+      { instr: 'IRS · floating → fixed',     notional: 84, expiry: 'Dec 28', mtm: 1.8,  status: 'Active' },
   { instr: 'Energy hedge · electricity', notional: 4.2, expiry: 'Dec 26', mtm: 0.2,  status: 'Active' },
 ]
 
@@ -154,7 +152,7 @@ const sensitivities = [
   { driver: 'Net adds ±10%',      upside: 1.6, downside: -1.6 },
   { driver: 'Bad debt ±50 bps',   upside: 0.3, downside: -0.3 },
   { driver: 'Energy price ±15%',  upside: 0.4, downside: -0.6 },
-  { driver: 'FX BSD/USD ±5%',     upside: 0.2, downside: -0.2 },
+  { driver: 'Hurricane outage ±1 event', upside: 0.2, downside: -2.8 },
   { driver: 'Churn ±50 bps',      upside: 1.2, downside: -1.2 },
 ]
 
@@ -167,7 +165,8 @@ const forecastAccuracy = [
 
 const riskRegister = [
   { r: 'BTC Fibre BSD 40 promo persistence',         impact: 'BSD 1.4M ARR', prob: 'High',   sev: 'High',   mit: 'Match for at-risk only' },
-  { r: 'Benchmark B content cost inflation FY27',          impact: 'BSD 2.1M GP',  prob: 'Medium', sev: 'High',   mit: 'Re-negotiate Q3' },
+  { r: 'Rival ISP B content cost inflation FY27',          impact: 'BSD 2.1M GP',  prob: 'Medium', sev: 'High',   mit: 'Re-negotiate Q3' },
+  { r: 'Hurricane season · restoration cost', impact: 'BSD 1.6M OpEx', prob: 'Medium', sev: 'High', mit: 'Catastrophe reserve' },
   { r: 'Casa CMTS EoS · migration delay',          impact: 'BSD 4.8M CapEx', prob: 'Low',  sev: 'Medium', mit: 'Cisco staged' },
   { r: 'B2B AR concentration (top 5 = 38%)',       impact: 'BSD 820K bad debt', prob: 'Low', sev: 'High',  mit: 'Credit insurance' },
   { r: 'Energy price spike',                       impact: 'BSD 640K OpEx', prob: 'Medium', sev: 'Medium', mit: 'Hedged 80% / yr' },
@@ -1101,7 +1100,7 @@ function TaxTreasuryTab() {
         <div className="grid md:grid-cols-3 gap-4">
           {[
             { label: tt('IRS notional (floating→fixed)'), value: 'BSD 84M', sub: tt('Dec 2028 · MtM +BSD 1.8M') },
-            { label: tt('BSD/USD content forward'),       value: 'BSD 12M', sub: tt('Mar 2027 · MtM +BSD 0.4M') },
+            { label: tt('Content licences paid in USD'),       value: 'BSD 12M', sub: tt('1:1 peg · no FX hedge required') },
             { label: tt('Energy hedge · electricity'),   value: 'BSD 4.2M', sub: tt('Dec 2026 · MtM +BSD 0.2M') },
           ].map((h) => (
             <div key={h.label} className="p-3 rounded-lg bg-zinc-50 border border-black/5">

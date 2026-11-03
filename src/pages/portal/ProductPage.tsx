@@ -288,7 +288,7 @@ export default function ProductPage() {
           <span className="font-bold text-vfes-dark uppercase tracking-widest text-[10px]">{tt('Competitive knobs')}</span>
           <label className="flex items-center gap-1.5">Highlight
             <select value={filters.competitor} onChange={(e) => setF({ competitor: e.target.value as any })} className="bg-white rounded px-1.5 py-0.5 font-semibold">
-              <option value="all">{tt('All')}</option><option value="btc">{tt('BTC')}</option><option value="orange">{tt('Benchmark A')}</option><option value="digi">{tt('Benchmark B')}</option><option value="voo">{tt('Benchmark C')}</option>
+              <option value="all">{tt('All')}</option><option value="btc">{tt('BTC')}</option><option value="orange">{tt('Rival ISP A')}</option><option value="digi">{tt('Rival ISP B')}</option><option value="voo">{tt('Rival ISP C')}</option>
             </select>
           </label>
         </>}
@@ -1065,7 +1065,7 @@ function CompetitiveTab({ highlight }: { highlight: string }) {
               <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-[#fafbfc] border border-black/5">
                 <span className="text-[10px] text-vfes-dark/40 uppercase tracking-widest mt-0.5">{m.date}</span>
                 <span className={`text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded ${
-                  m.who === 'Benchmark B' ? 'bg-blue-100 text-blue-800' :
+                  m.who === 'Rival ISP B' ? 'bg-blue-100 text-blue-800' :
                   m.who === 'BTC' ? 'bg-emerald-100 text-emerald-800' :
                   m.who === 'Cable Bahamas' ? 'bg-red-100 text-red-800' :
                   'bg-purple-100 text-purple-800'
@@ -1095,7 +1095,7 @@ function CompetitiveTab({ highlight }: { highlight: string }) {
               </div>
             ))}
           </div>
-          <div className="text-[10px] text-vfes-dark/55 mt-3">{tt('Cable Bahamas leads at 2 Gb+ tiers; trails Benchmark C The Bahamas on mobile-only fixed-wireless 5G.')}</div>
+          <div className="text-[10px] text-vfes-dark/55 mt-3">{tt('Cable Bahamas leads at 2 Gb+ tiers; trails Rival ISP C The Bahamas on mobile-only fixed-wireless 5G.')}</div>
         </Panel>
       </div>
     </>
@@ -1408,7 +1408,7 @@ function Sku360Tab({ code, setSku }: { code: string; setSku: (c: string) => void
             <tbody>
               {d.competitorEquiv.map((c, i) => (
                 <tr key={i} className="border-t border-black/5">
-                  <td className="py-2"><span className={`text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded ${c.competitor === 'Benchmark B' ? 'bg-blue-100 text-blue-800' : c.competitor === 'BTC' ? 'bg-emerald-100 text-emerald-800' : c.competitor === 'Cable Bahamas' ? 'bg-red-100 text-red-800' : 'bg-purple-100 text-purple-800'}`}>{c.competitor}</span></td>
+                  <td className="py-2"><span className={`text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded ${c.competitor === 'Rival ISP B' ? 'bg-blue-100 text-blue-800' : c.competitor === 'BTC' ? 'bg-emerald-100 text-emerald-800' : c.competitor === 'Cable Bahamas' ? 'bg-red-100 text-red-800' : 'bg-purple-100 text-purple-800'}`}>{c.competitor}</span></td>
                   <td className="text-xs">{c.product}</td>
                   <td className="font-bold">BSD {c.price}</td>
                   <td className={c.gap < -5 ? 'text-red-600 font-bold' : c.gap > 5 ? 'text-emerald-600 font-bold' : 'text-vfes-dark/60'}>{c.gap > 0 ? '+' : ''}BSD {c.gap}</td>

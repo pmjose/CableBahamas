@@ -873,7 +873,7 @@ export default function TrustCenterPage() {
           title={tt('Mobile / RAN compliance posture')}
           action={
             <span className="text-[10px] uppercase tracking-widest font-bold text-vfes-dark bg-vfes-red/10 rounded px-2 py-1 flex items-center gap-1">
-              <Smartphone className="w-3 h-3" />{tt('GSMA · EU · URCA · APD')}
+              <Smartphone className="w-3 h-3" />{tt('GSMA · URCA · DPA')}
             </span>
           }
         >
@@ -906,7 +906,7 @@ export default function TrustCenterPage() {
             </tbody>
           </table>
           <div className="text-[11px] text-vfes-dark/65 mt-3">
-            {tt('5 of 7 mobile controls compliant. NIS2 mobile reporting + O-RAN security profile closing Q3 2026.')}
+            {tt('5 of 7 mobile controls compliant. URCA incident reporting + O-RAN security profile closing Q3 2026.')}
           </div>
         </Panel>
       </>)}

@@ -319,7 +319,7 @@ export default function BaseManagementPage() {
                     {[
                       { lever: 'Year-1 onboarding campaign',        owner: 'CRM & Retention',      base: '2.1M',  nrrLift: '+0.3 pp', rev: 'BSD 3.2M',  status: 'Active' },
                       { lever: 'Promo roll-off → standard price',   owner: 'Pricing',              base: '840K',  nrrLift: '+0.2 pp', rev: 'BSD 2.1M',  status: 'Active' },
-                      { lever: 'Convergent Benchmark B churn risk',         owner: 'Base Mgmt + MNP',      base: '380K',  nrrLift: '+0.1 pp', rev: 'BSD 1.1M',  status: 'Planned' },
+                      { lever: 'Convergent Rival ISP B churn risk',         owner: 'Base Mgmt + MNP',      base: '380K',  nrrLift: '+0.1 pp', rev: 'BSD 1.1M',  status: 'Planned' },
                       { lever: '5G upsell for 2-5 yr cohort',        owner: 'Digital Commercial',   base: '1.2M',  nrrLift: '+0.4 pp', rev: 'BSD 4.8M',  status: 'Active' },
                       { lever: 'Win-back lapsed 12-18 months',       owner: 'Marketing & Loyalty',  base: '124K',  nrrLift: '+0.1 pp', rev: 'BSD 0.8M',  status: 'Pilot' },
                     ].map(a => (
@@ -585,7 +585,7 @@ export default function BaseManagementPage() {
                   <tbody>
                     {[
                       { camp: '5G upgrade for 2-5yr cohort',  canal: 'App + Outbound', aud: '1.2M',  conv: '152K', lift: '+BSD 8.4',  launch: 'Jul-26' },
-                      { camp: 'Convergent Benchmark B churn risk',    canal: 'Outbound + SMS', aud: '380K',  conv:  '48K', lift: '+BSD 18.6', launch: 'Jul-26' },
+                      { camp: 'Convergent Rival ISP B churn risk',    canal: 'Outbound + SMS', aud: '380K',  conv:  '48K', lift: '+BSD 18.6', launch: 'Jul-26' },
                       { camp: 'BB+TV bundle 2P',               canal: 'Retail + App',   aud: '612K',  conv:  '72K', lift: '+BSD 12.4', launch: 'Aug-26' },
                       { camp: 'Mega prepaid upgrade',           canal: 'SMS + Retail',   aud: '228K',  conv:  '28K', lift: '+BSD 24.2', launch: 'Sep-26' },
                       { camp: 'B2B Business tier SoHo',        canal: 'Phone + EDM',    aud: '94K',   conv:  '11K', lift: '+BSD 48.6', launch: 'Oct-26' },

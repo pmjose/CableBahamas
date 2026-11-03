@@ -71,7 +71,7 @@ const MASKING_POLICIES = [
   { name: 'mask_iban',         type: 'Masking',     applied: 4,  scope: 'PCI',              action: 'tokenize via FPE',          roles_exempt: 'COMPLIANCE_RO' },
   { name: 'mask_msisdn',       type: 'Masking',     applied: 8,  scope: 'PII · subscriber', action: 'hash sha-256',              roles_exempt: 'MOBILE_FRAUD_ANALYST' },
   { name: 'mask_salary',       type: 'Masking',     applied: 2,  scope: 'HR sensitive',     action: 'NULL except PEOPLE_HR_BP', roles_exempt: 'PEOPLE_HR_BP'  },
-  { name: 'rls_region_eu',     type: 'Row Access',  applied: 6,  scope: 'EU vs ROW',        action: 'region IN (USER.region_grant)', roles_exempt: 'ACCOUNTADMIN' },
+  { name: 'rls_region_eu',     type: 'Row Access',  applied: 6,  scope: 'US vs ROW',        action: 'region IN (USER.region_grant)', roles_exempt: 'ACCOUNTADMIN' },
   { name: 'rls_b2b_owner',     type: 'Row Access',  applied: 3,  scope: 'B2B sales rep',    action: 'owner_id = current_user_email', roles_exempt: 'SECURITYADMIN' },
   { name: 'auto_mask_pii',     type: 'Tag-based',   applied: 248, scope: 'tag:PII',         action: 'all PII columns auto-masked', roles_exempt: 'COMPLIANCE_RO' },
 ]
@@ -882,7 +882,7 @@ export default function RBACExplorerPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Masking policies')}    value="14"   delta={tt('5 types')}             trend="flat" icon={Eye}     accent />
           <KpiCard label={tt('Columns masked')}       value="248"  delta={tt('PII + PCI + HR')}      trend="up"   icon={Lock}   />
-          <KpiCard label={tt('Row-access policies')}  value="6"    delta={tt('EU · B2B · HR')}       trend="flat" icon={Network}/>
+          <KpiCard label={tt('Row-access policies')}  value="6"    delta={tt('Bahamas · B2B · HR')}       trend="flat" icon={Network}/>
           <KpiCard label={tt('Tag-based auto-mask')}  value="248"  delta={tt('tag:PII trigger')}     trend="up"   icon={ShieldCheck}/>
         </div>
 

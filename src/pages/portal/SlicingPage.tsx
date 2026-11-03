@@ -87,10 +87,10 @@ const MEC_CPU_TREND = [
 
 const B2B_PIPELINE = [
   { prospect: 'TotalEnergies (Energy)',        type: 'URLLC Industrial', arr: 1.2, stage: 'Negotiation', mec: 'ANT-01' },
-  { prospect: 'Delhaize (Logistics)',  type: 'mMTC Fleet',       arr: 0.8, stage: 'PoC',         mec: 'BRG-01' },
+  { prospect: 'AML Foods (demo) (Logistics)',  type: 'mMTC Fleet',       arr: 0.8, stage: 'PoC',         mec: 'BRG-01' },
   { prospect: 'SNCB (Rail)',           type: 'URLLC Basic',      arr: 0.6, stage: 'Proposal',     mec: 'ANT-01' },
   { prospect: 'Port de Freeport',      type: 'URLLC Port',       arr: 1.8, stage: 'Negotiation', mec: 'GNT-01' },
-  { prospect: 'Colruyt Group (Retail)',       type: 'mMTC IoT',         arr: 0.4, stage: 'PoC',         mec: 'n/a'    },
+  { prospect: 'Super Value Group (demo) (Retail)',       type: 'mMTC IoT',         arr: 0.4, stage: 'PoC',         mec: 'n/a'    },
   { prospect: 'Luminus (Energy)',     type: 'URLLC Industrial', arr: 1.4, stage: 'Proposal',     mec: 'LVN-01' },
 ]
 
@@ -347,7 +347,7 @@ export default function SlicingPage() {
         {/* B2B pipeline overview in the Overview tab */}
         <div className="mt-6 grid md:grid-cols-3 gap-4">
           <KpiCard label={tt('Negotiation ARR')} value="BSD 3.0M"  delta={tt('TotalEnergies + Port GNT')}     trend="up"   icon={TrendingUp} />
-          <KpiCard label={tt('PoC ARR')}         value="BSD 1.2M"  delta={tt('Delhaize + Colruyt Group')}  trend="up"   icon={Building2}  />
+          <KpiCard label={tt('PoC ARR')}         value="BSD 1.2M"  delta={tt('AML Foods (demo) + Super Value Group (demo)')}  trend="up"   icon={Building2}  />
           <KpiCard label={tt('Proposal ARR')}    value="BSD 2.0M"  delta={tt('SNCB + Luminus')}    trend="up"   icon={Activity}   />
         </div>
 

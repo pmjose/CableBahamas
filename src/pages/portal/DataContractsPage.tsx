@@ -355,13 +355,13 @@ export default function DataContractsPage() {
 
         <div className="flex items-center gap-3 text-[10px] text-vfes-dark/50 uppercase tracking-widest font-bold">
           <FileText className="w-3 h-3" />
-          {tt('source: tln-data-contracts repo · contract registry · schema diff via dbt manifest')} ·
+          {tt('source: cbl-data-contracts repo · contract registry · schema diff via dbt manifest')} ·
           <Link to="/portal/lineage" className="text-vfes-dark hover:underline">{tt('Lineage →')}</Link>
           <Link to="/portal/data-quality" className="text-vfes-dark hover:underline">{tt('Data Quality →')}</Link>
           <Link to="/portal/catalog" className="text-vfes-dark hover:underline">{tt('Catalog →')}</Link>
         </div>
         <div className="mt-2 text-[10px] text-vfes-dark/35 uppercase tracking-widest">
-          {tt('Contract registry synced from tln-data-contracts GitHub repo via Snowflake Git integration · refreshed on every PR merge · schema diffs via dbt manifest comparison')}
+          {tt('Contract registry synced from cbl-data-contracts GitHub repo via Snowflake Git integration · refreshed on every PR merge · schema diffs via dbt manifest comparison')}
         </div>
 
         <div className="mt-4">
@@ -388,7 +388,7 @@ export default function DataContractsPage() {
         </div>
 
         <div className="mt-2 rounded-xl bg-gradient-to-br from-vfes-red/5 to-transparent border border-vfes-red/10 p-3 flex items-center justify-between">
-          <div className="text-[11px] text-vfes-dark/65">{tt('New contract requests · steward approval workflow · managed in tln-data-contracts repo.')}</div>
+          <div className="text-[11px] text-vfes-dark/65">{tt('New contract requests · steward approval workflow · managed in cbl-data-contracts repo.')}</div>
           <Link to="/portal/cdo" className="text-[10px] font-bold text-vfes-dark hover:underline shrink-0 ml-4">{tt('CDO dashboard →')}</Link>
         </div>
       </>)}
@@ -472,7 +472,7 @@ export default function DataContractsPage() {
                 ))}
               </tbody>
             </table>
-            <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('CTR-MOB-006 (SIM_SWAP_REQUESTS) under review — 2 breaches in 30d due to surge after Benchmark B port-out wave.')}</div>
+            <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('CTR-MOB-006 (SIM_SWAP_REQUESTS) under review — 2 breaches in 30d due to surge after Rival ISP B port-out wave.')}</div>
           </Panel>
         </div>
 

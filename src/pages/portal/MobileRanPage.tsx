@@ -702,8 +702,8 @@ export default function MobileRanPage() {
                   <Legend wrapperStyle={{ fontSize: 11 }} />
                   <Bar dataKey="vfes"     fill={BLUE}    name={tt('Cable Bahamas')} radius={[0, 4, 4, 0]} />
                   <Bar dataKey="btc" fill="#0070C0" name={tt('BTC')} radius={[0, 4, 4, 0]} />
-                  <Bar dataKey="orange"   fill="#FF7900" name={tt('Benchmark A')} radius={[0, 4, 4, 0]} />
-                  <Bar dataKey="digi" fill="#FFD500" name={tt('Benchmark B')} radius={[0, 4, 4, 0]} />
+                  <Bar dataKey="orange"   fill="#FF7900" name={tt('Rival ISP A')} radius={[0, 4, 4, 0]} />
+                  <Bar dataKey="digi" fill="#FFD500" name={tt('Rival ISP B')} radius={[0, 4, 4, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>

@@ -31,9 +31,9 @@ const netAdds = [
 const marketShare = [
   { name: 'BTC', share: 34, color: '#6366f1' },
   { name: 'Cable Bahamas',  share: 28, color: '#FF4438' },
-  { name: 'Benchmark B',     share: 14, color: '#f59e0b' },
-  { name: 'Benchmark A',   share: 12, color: '#f97316' },
-  { name: 'Benchmark C',      share: 8,  color: '#ef4444' },
+  { name: 'Rival ISP B',     share: 14, color: '#f59e0b' },
+  { name: 'Rival ISP A',   share: 12, color: '#f97316' },
+  { name: 'Rival ISP C',      share: 8,  color: '#ef4444' },
   { name: 'Other',    share: 4,  color: '#94a3b8' },
 ]
 
@@ -52,7 +52,7 @@ const okrs = [
 ]
 
 const inbox = [
-  { p: 'P1', t: 'Approve BSD 18M Benchmark B content renewal — board pack ready', due: '2d', icon: AlertTriangle, color: 'red', to: '/portal/procurement' },
+  { p: 'P1', t: 'Approve BSD 18M Rival ISP B content renewal — board pack ready', due: '2d', icon: AlertTriangle, color: 'red', to: '/portal/procurement' },
   { p: 'P1', t: 'Q3 pricing review — BSD 5 increase on M250 (margin +BSD 2.8M)', due: '5d', icon: TrendingUp, color: 'red', to: '/portal/pricing-simulator' },
   { p: 'P2', t: 'URCA quarterly filing — sign-off required', due: '1w', icon: ShieldCheck, color: 'amber', to: '/portal/regulatory' },
   { p: 'P2', t: 'Approve REVConnect+ launch (Q1 2027)', due: '2w', icon: Sparkles, color: 'amber', to: '/portal/product' },
@@ -60,6 +60,7 @@ const inbox = [
 ]
 
 const risks = [
+  { r: 'Category 4+ hurricane · multi-island outage', impact: 'High', likely: 'Med', score: 20 },
   { r: 'Cyber attack on core network', impact: 'High', likely: 'Med', score: 16 },
   { r: 'Sports add-on · Sports package renewal break-down', impact: 'High', likely: 'Low', score: 12 },
   { r: 'Regulatory fine (URCA QoS)', impact: 'Med', likely: 'Low', score: 9 },
@@ -139,7 +140,7 @@ const multiples = [
   { co: 'KPN',     evEbitda: 5.4, evFcf: 10.8, peScore: 11.6 },
   { co: 'KPN',          evEbitda: 7.8, evFcf: 14.2, peScore: 16.4 },
   { co: 'Telia',        evEbitda: 6.4, evFcf: 11.8, peScore: 13.4 },
-  { co: 'Benchmark C',         evEbitda: 5.8, evFcf: 11.2, peScore: 12.2 },
+  { co: 'Rival ISP C',         evEbitda: 5.8, evFcf: 11.2, peScore: 12.2 },
   { co: 'DT',           evEbitda: 6.6, evFcf: 12.6, peScore: 14.0 },
   { co: 'Swisscom',      evEbitda: 6.0, evFcf: 11.4, peScore: 12.8 },
   { co: 'Iliad',        evEbitda: 7.4, evFcf: 13.8, peScore: 15.4 },
@@ -192,9 +193,9 @@ const shareEvo = [
 ]
 const winRate = [
   { vs: 'BTC',  enterprise: 0.48, smb: 0.42, consumer: 0.36 },
-  { vs: 'Benchmark B',      enterprise: 0.62, smb: 0.58, consumer: 0.46 },
-  { vs: 'Benchmark A',    enterprise: 0.72, smb: 0.66, consumer: 0.41 },
-  { vs: 'Benchmark C',       enterprise: 0.54, smb: 0.48, consumer: 0.00 },
+  { vs: 'Rival ISP B',      enterprise: 0.62, smb: 0.58, consumer: 0.46 },
+  { vs: 'Rival ISP A',    enterprise: 0.72, smb: 0.66, consumer: 0.41 },
+  { vs: 'Rival ISP C',       enterprise: 0.54, smb: 0.48, consumer: 0.00 },
   { vs: 'Pure Mobile', enterprise: 0.46, smb: 0.42, consumer: 0.38 },
 ]
 const brand = [
@@ -208,9 +209,9 @@ const brand = [
 const npsGap = [
           { co: 'Cable Bahamas',  nps:  38 },
   { co: 'BTC', nps:  18 },
-  { co: 'Benchmark B',     nps:  32 },
-  { co: 'Benchmark A',   nps:  12 },
-  { co: 'Benchmark C',      nps:  22 },
+  { co: 'Rival ISP B',     nps:  32 },
+  { co: 'Rival ISP A',   nps:  12 },
+  { co: 'Rival ISP C',      nps:  22 },
   { co: 'Colt',    nps:   8 },
 ]
 
@@ -263,11 +264,11 @@ const fxExposure = [
   { ccy: 'JPY', netM:  -12, hedgePct: 0.66 },
 ]
 const macro = [
-  { i: 'BE GDP',          v: '+1.1%', delta: '↑' },
-  { i: 'BE consumer conf.', v: '-8',   delta: '↓' },
+  { i: 'Bahamas GDP',     v: '+1.9%', delta: '↑' },
+  { i: 'Stopover arrivals', v: '+6%',  delta: '↑' },
   { i: 'CPI',              v: '+2.1%', delta: '↓' },
-  { i: 'ECB rate',         v: '2.75%', delta: '↓' },
-  { i: 'BSD/USD',          v: '1.082',  delta: '→' },
+  { i: 'CBOB discount rate', v: '4.00%', delta: '→' },
+  { i: 'BSD/USD (peg)',    v: '1.000',  delta: '→' },
   { i: 'BSD/GBP',          v: '0.842',  delta: '↓' },
   { i: 'Brent (USD/bbl)',  v: '78.2',   delta: '↑' },
   { i: 'Wholesale power BSD /MWh', v: '94', delta: '→' },
@@ -298,7 +299,7 @@ const govEngagement = [
   { who: 'Minister Comms', last: '2026-05-08', topic: 'Gigabit The Bahamas rollout', tone: 'Constructive' },
   { who: 'URCA Chair',  last: '2026-04-22', topic: 'M4 review', tone: 'Tense' },
   { who: 'VLAIO',   last: '2026-05-12', topic: 'B2B FDI',  tone: 'Warm' },
-  { who: 'EU DG-CONNECT', last: '2026-03-18', topic: 'Gigabit Act', tone: 'Constructive' },
+  { who: 'Ministry of Economic Affairs', last: '2026-03-18', topic: 'Gigabit Act', tone: 'Constructive' },
   { who: 'Dept Finance',  last: '2026-04-04', topic: 'Pre-budget', tone: 'Warm' },
 ]
 
@@ -312,15 +313,15 @@ const ceoFeed = [
   { t: '02:58', icon: Briefcase, color: 'blue', what: 'Cable Bahamas Group confirmed roadshow attendance · 28 May' },
 ]
 const decisionLog = [
-  { id: 'CEO-D-042', topic: 'Approve BSD 18M Benchmark B content renewal',  owner: 'CEO',  status: 'Awaiting CEO sign-off', due: '2d' },
+  { id: 'CEO-D-042', topic: 'Approve BSD 18M Rival ISP B content renewal',  owner: 'CEO',  status: 'Awaiting CEO sign-off', due: '2d' },
   { id: 'CEO-D-041', topic: 'M250 BSD 5 price increase',            owner: 'CFO',  status: 'Awaiting CEO sign-off', due: '5d' },
   { id: 'CEO-D-040', topic: 'CFO successor selection',           owner: 'CHRO', status: 'Interview shortlist',    due: '3w' },
   { id: 'CEO-D-039', topic: 'REVConnect+ Q1 2027 launch GA',           owner: 'CMO',  status: 'Investment paper ready', due: '2w' },
   { id: 'CEO-D-038', topic: 'Diversify Cisco — RFP authorisation',owner: 'CPO', status: 'Vendor list approved',   due: '1w' },
-  { id: 'CEO-D-037', topic: 'NIS2 attestation board sign-off',   owner: 'CISO', status: 'Final review',           due: '1w' },
+  { id: 'CEO-D-037', topic: 'URCA cyber attestation board sign-off',   owner: 'CISO', status: 'Final review',           due: '1w' },
 ]
 const weekNarrative = [
-  'Pipeline +BSD 2M and Island Bank (demo) framework win mean B2B Q is recoverable; expect +1.4% to plan if Benchmark B renewal closes.',
+  'Pipeline +BSD 2M and Island Bank (demo) framework win mean B2B Q is recoverable; expect +1.4% to plan if Rival ISP B renewal closes.',
   'Freeport outage is contained but second incident in 6 weeks — order CTO retro by Friday, brief board chair pre-meeting.',
   'URCA M4 questionnaire is the single biggest risk this quarter; response strategy on Tuesday with Reg Affairs.',
   'Sentiment up 18% on share-of-voice — tee up gigabit-leadership op-ed in IT for Monday.',
@@ -603,7 +604,7 @@ export default function ExecutivePage() {
       </div>
 
       <div className="grid lg:grid-cols-3 gap-6 mb-6">
-        <Panel title={tt('Share price · 30 days (BSD )')} insight={{ insight: 'Shares are up ~4% over 30 days, outpacing the BEL20 telco peers.', action: 'Use the window to brief two key institutional holders ahead of results.', impact: 'Tighter analyst dispersion lowers post-earnings share volatility.' }}>
+        <Panel title={tt('Share price · 30 days (BSD )')} insight={{ insight: 'Shares are up ~4% over 30 days, outpacing the BISX listed peers.', action: 'Use the window to brief two key institutional holders ahead of results.', impact: 'Tighter analyst dispersion lowers post-earnings share volatility.' }}>
           <ResponsiveContainer width="100%" height={180}>
             <AreaChart data={Array.from({ length: 30 }, (_, i) => ({ d: i + 1, p: 24.2 + Math.sin(i / 3.4) * 0.6 + i * 0.06 + (i > 22 ? 0.4 : 0) }))}>
               <defs><linearGradient id="sp" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#FF4438" stopOpacity={0.4} /><stop offset="100%" stopColor="#FF4438" stopOpacity={0} /></linearGradient></defs>
@@ -817,7 +818,7 @@ export default function ExecutivePage() {
         <Panel title={tt('Competitor Pricing — BSD /mo SVR')} action={<Link to="/portal/pricing-simulator" className="text-xs font-bold text-vfes-dark hover:underline">{tt('Open Pricing →')}</Link>}>
           <table className="w-full text-sm">
             <thead className="text-left text-vfes-dark/55 text-[10px] uppercase tracking-widest">
-              <tr><th className="py-2">{tt('SKU')}</th><th>{tt('Cable Bahamas')}</th><th>{tt('BTC')}</th><th>{tt('Benchmark A')}</th><th>{tt('Position')}</th></tr>
+              <tr><th className="py-2">{tt('SKU')}</th><th>{tt('Cable Bahamas')}</th><th>{tt('BTC')}</th><th>{tt('Rival ISP A')}</th><th>{tt('Position')}</th></tr>
             </thead>
             <tbody>
               {competitorIndex.map((c) => (
@@ -841,12 +842,12 @@ export default function ExecutivePage() {
           <div className="h-64">
             <ResponsiveContainer>
               <LineChart data={[
-                { q: 'Q4-24', "Cable Bahamas": 26.4, BTC: 35.8, "Benchmark B": 13.1, "Benchmark A": 12.6, Other: 12.1 },
-                { q: 'Q1-25', "Cable Bahamas": 26.8, BTC: 35.2, "Benchmark B": 13.0, "Benchmark A": 12.6, Other: 12.4 },
-                { q: 'Q2-25', "Cable Bahamas": 27.2, BTC: 34.9, "Benchmark B": 12.8, "Benchmark A": 12.5, Other: 12.6 },
-                { q: 'Q3-25', "Cable Bahamas": 27.6, BTC: 34.5, "Benchmark B": 12.7, "Benchmark A": 12.4, Other: 12.8 },
-                { q: 'Q4-25', "Cable Bahamas": 27.8, BTC: 34.2, "Benchmark B": 12.6, "Benchmark A": 12.3, Other: 13.1 },
-                { q: 'Q1-26', "Cable Bahamas": 28.0, BTC: 34.0, "Benchmark B": 12.5, "Benchmark A": 12.0, Other: 13.5 },
+                { q: 'Q4-24', "Cable Bahamas": 26.4, BTC: 35.8, "Rival ISP B": 13.1, "Rival ISP A": 12.6, Other: 12.1 },
+                { q: 'Q1-25', "Cable Bahamas": 26.8, BTC: 35.2, "Rival ISP B": 13.0, "Rival ISP A": 12.6, Other: 12.4 },
+                { q: 'Q2-25', "Cable Bahamas": 27.2, BTC: 34.9, "Rival ISP B": 12.8, "Rival ISP A": 12.5, Other: 12.6 },
+                { q: 'Q3-25', "Cable Bahamas": 27.6, BTC: 34.5, "Rival ISP B": 12.7, "Rival ISP A": 12.4, Other: 12.8 },
+                { q: 'Q4-25', "Cable Bahamas": 27.8, BTC: 34.2, "Rival ISP B": 12.6, "Rival ISP A": 12.3, Other: 13.1 },
+                { q: 'Q1-26', "Cable Bahamas": 28.0, BTC: 34.0, "Rival ISP B": 12.5, "Rival ISP A": 12.0, Other: 13.5 },
               ]}>
                 <CartesianGrid stroke="#f0f0f0" />
                 <XAxis dataKey="q" tick={{ fontSize: 11 }} />
@@ -855,15 +856,15 @@ export default function ExecutivePage() {
                 <Legend wrapperStyle={{ fontSize: 11 }} />
                 <Line type="monotone" dataKey="Cable Bahamas" stroke="#222128" strokeWidth={3} dot={{ r: 4 }} />
                 <Line type="monotone" dataKey="BTC" stroke="#3B82F6" strokeWidth={2} name={tt('BTC')} />
-                <Line type="monotone" dataKey="Benchmark B" stroke="#0F172A" strokeWidth={2} name={tt('Benchmark B')} />
-                <Line type="monotone" dataKey="Benchmark A" stroke="#EAB308" strokeWidth={2} name={tt('Benchmark A')} />
+                <Line type="monotone" dataKey="Rival ISP B" stroke="#0F172A" strokeWidth={2} name={tt('Rival ISP B')} />
+                <Line type="monotone" dataKey="Rival ISP A" stroke="#EAB308" strokeWidth={2} name={tt('Rival ISP A')} />
                 <Line type="monotone" dataKey="Other" stroke="#94A3B8" strokeWidth={2} strokeDasharray="3 3" />
               </LineChart>
             </ResponsiveContainer>
           </div>
           <div className="text-xs text-vfes-dark/60 mt-2 flex items-center gap-2">
             <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
-            Cable Bahamas has gained <b>{tt('+1.6 pp')}</b> in 5 quarters; BTC down −1.8 pp; Benchmark B/altnets gaining +1.4 pp
+            Cable Bahamas has gained <b>{tt('+1.6 pp')}</b> in 5 quarters; BTC down −1.8 pp; Rival ISP B/altnets gaining +1.4 pp
           </div>
         </Panel>
         </div>
@@ -873,9 +874,9 @@ export default function ExecutivePage() {
           <div className="space-y-2.5">
             {[
               { from: 'BTC',    gained: 1840, lost: 720, color: '#3B82F6' },
-              { from: 'Benchmark B',        gained: 920,  lost: 480, color: '#0F172A' },
-              { from: 'Benchmark A',      gained: 880,  lost: 560, color: '#EAB308' },
-              { from: 'Benchmark C',         gained: 410,  lost: 690, color: '#10B981' },
+              { from: 'Rival ISP B',        gained: 920,  lost: 480, color: '#0F172A' },
+              { from: 'Rival ISP A',      gained: 880,  lost: 560, color: '#EAB308' },
+              { from: 'Rival ISP C',         gained: 410,  lost: 690, color: '#10B981' },
               { from: 'Pure Mobile', gained: 280, lost: 320, color: '#94A3B8' },
             ].map((s) => {
               const net = s.gained - s.lost
@@ -915,9 +916,9 @@ export default function ExecutivePage() {
               <BarChart data={[
                 { co: 'Cable Bahamas',  fixed: 56.20, mobile: 22.40 },
                 { co: 'BTC', fixed: 51.80, mobile: 19.60 },
-                { co: 'Benchmark B',     fixed: 54.10, mobile: 0     },
-                { co: 'Benchmark A',   fixed: 49.90, mobile: 21.10 },
-                { co: 'Benchmark C',      fixed: 47.20, mobile: 0     },
+                { co: 'Rival ISP B',     fixed: 54.10, mobile: 0     },
+                { co: 'Rival ISP A',   fixed: 49.90, mobile: 21.10 },
+                { co: 'Rival ISP C',      fixed: 47.20, mobile: 0     },
               ]} layout="vertical" margin={{ left: 10 }}>
                 <CartesianGrid stroke="#f0f0f0" />
                 <XAxis type="number" tick={{ fontSize: 11 }} unit="BSD " />
@@ -937,7 +938,7 @@ export default function ExecutivePage() {
         <Panel title={tt('Brand Health Tracker (Kantar, May)')}>
           <table className="w-full text-xs">
             <thead className="text-vfes-dark/55 uppercase text-[10px] tracking-widest">
-              <tr><th className="text-left py-2">{tt('Metric')}</th><th>{tt('Cable Bahamas')}</th><th>{tt('BTC')}</th><th>{tt('Benchmark B')}</th><th>{tt('Benchmark A')}</th></tr>
+              <tr><th className="text-left py-2">{tt('Metric')}</th><th>{tt('Cable Bahamas')}</th><th>{tt('BTC')}</th><th>{tt('Rival ISP B')}</th><th>{tt('Rival ISP A')}</th></tr>
             </thead>
             <tbody>
               {[
@@ -967,9 +968,9 @@ export default function ExecutivePage() {
               <BarChart data={[
                 { co: 'Cable Bahamas',        hfc: 1.04, ftth: 0.42, total: 1.04 },
                 { co: 'BTC',        hfc: 0,    ftth: 1.92, total: 1.92 },
-                { co: 'Benchmark B',            hfc: 0,    ftth: 0.78, total: 0.78 },
+                { co: 'Rival ISP B',            hfc: 0,    ftth: 0.78, total: 0.78 },
                 { co: 'NBI',             hfc: 0,    ftth: 0.56, total: 0.56 },
-                { co: 'Benchmark A (MVNO)',   hfc: 0,    ftth: 0,    total: 0 },
+                { co: 'Rival ISP A (MVNO)',   hfc: 0,    ftth: 0,    total: 0 },
               ]}>
                 <CartesianGrid stroke="#f0f0f0" />
                 <XAxis dataKey="co" tick={{ fontSize: 10 }} />
@@ -1035,8 +1036,8 @@ export default function ExecutivePage() {
                 <Pie data={[
                 { name: 'Cable Bahamas',  v: 32, color: '#FF4438' },
                   { name: 'BTC', v: 28, color: '#3B82F6' },
-                  { name: 'Benchmark B',     v: 16, color: '#0F172A' },
-                  { name: 'Benchmark A',   v: 18, color: '#EAB308' },
+                  { name: 'Rival ISP B',     v: 16, color: '#0F172A' },
+                  { name: 'Rival ISP A',   v: 18, color: '#EAB308' },
                   { name: 'Others',   v: 6,  color: '#94A3B8' },
                 ]} dataKey="v" innerRadius={32} outerRadius={62} paddingAngle={2}>
                   {['#FF4438','#3B82F6','#0F172A','#EAB308','#94A3B8'].map((c, i) => <Cell key={i} fill={c} />)}
@@ -1193,7 +1194,7 @@ export default function ExecutivePage() {
           <div className="space-y-2.5 text-xs">
             {[
               { d: 'Jun 12', t: 'URCA M4 spectrum auction — 3.6 GHz lot', tag: 'spectrum', color: 'bg-blue-100 text-blue-700' },
-              { d: 'Jun 24', t: 'EU Roaming Reg renewal vote (impact: -BSD 3.2M ARPU)', tag: 'regulation', color: 'bg-amber-100 text-amber-700' },
+              { d: 'Jun 24', t: 'URCA retail-pricing consultation (impact: -BSD 3.2M ARPU)', tag: 'regulation', color: 'bg-amber-100 text-amber-700' },
               { d: 'Jul 01', t: 'BTC Q2 results — guidance call 09:00 CET', tag: 'competitor', color: 'bg-zinc-100 text-zinc-700' },
               { d: 'Jul 15', t: 'Sports add-on The Bahamas launch (OTT-only, BSD 25/mo)', tag: 'launch', color: 'bg-purple-100 text-purple-700' },
               { d: 'Aug 02', t: 'CCPC bundling probe deadline', tag: 'compliance', color: 'bg-rose-100 text-rose-700' },
@@ -1215,7 +1216,7 @@ export default function ExecutivePage() {
       <div className="grid lg:grid-cols-4 gap-3 mb-6">
         {[
           { icon: TrendingUp, color: 'text-emerald-600 bg-emerald-50', t: 'Premium tilt opportunity', d: 'The Bahamas willingness-to-pay +4% YoY (Kantar). Price-up to BSD 82 SVR estimated +BSD 1.4M ARR / -0.05 pp churn.' },
-          { icon: TrendingUp, color: 'text-amber-600 bg-amber-50', t: 'Sports add-on wedge', d: 'Benchmark C launches OTT-only BSD 25/mo Jul-15. Pre-emptive Bundle Lock retention offer modelled at BSD 0.6M defence cost.' },
+          { icon: TrendingUp, color: 'text-amber-600 bg-amber-50', t: 'Sports add-on wedge', d: 'Rival ISP C launches OTT-only BSD 25/mo Jul-15. Pre-emptive Bundle Lock retention offer modelled at BSD 0.6M defence cost.' },
           { icon: Zap, color: 'text-vfes-dark bg-vfes-red/10', t: 'Andros whitespace', d: '11.2% share, 58k unpassed homes. Joint-build with NBI proposed — IRR 14.2%, payback 5.8y.' },
           { icon: Activity, color: 'text-blue-600 bg-blue-50', t: 'Promo discipline holding', d: 'Market intensity 66 vs Cable Bahamas 32. Hold-the-line scenario protects BSD 4.8M EBITDA Q3 vs match-pricing.' },
         ].map((s, i) => (
@@ -1525,7 +1526,7 @@ function GeoTab({ period, m }: TabProps) {
         </div>
 
         <div className="space-y-6">
-          <Panel title={tt('ARPU vs network quality')} insight={{ insight: 'Metros with higher network-quality scores carry materially higher ARPU.', action: 'Sequence capex to the metros where the quality-ARPU link is steepest.', impact: 'Maximises revenue return per capex euro deployed.' }}>
+          <Panel title={tt('ARPU vs network quality')} insight={{ insight: 'Metros with higher network-quality scores carry materially higher ARPU.', action: 'Sequence capex to the metros where the quality-ARPU link is steepest.', impact: 'Maximises revenue return per capex BSD deployed.' }}>
             <ResponsiveContainer width="100%" height={240}>
               <ScatterChart margin={{ top: 10, right: 12, bottom: 18, left: -8 }}>
                 <CartesianGrid stroke="#eee" />
@@ -1632,7 +1633,7 @@ function ValueTab({ period, m }: TabProps) {
             <Line dataKey="vfes"  stroke={RED}    strokeWidth={3} dot={{ r: 4 }} name={tt('Cable Bahamas')} />
             <Line dataKey="peer"  stroke={GREY}   strokeWidth={2} strokeDasharray="4 4" name={tt('Peer median')} />
             <Line dataKey="BTC"   stroke="#0098D8" strokeWidth={2} name={tt('BTC')} />
-            <Line dataKey="three" stroke={AMBER}  strokeWidth={2} name={tt('Benchmark C')} />
+            <Line dataKey="three" stroke={AMBER}  strokeWidth={2} name={tt('Rival ISP C')} />
             <Line dataKey="bt"    stroke={PURPLE} strokeWidth={2} name={tt('KPN')} />
           </LineChart>
         </ResponsiveContainer>
@@ -1774,13 +1775,13 @@ function CompeteTab({ period, m }: TabProps) {
       <PeriodBanner period={period} m={m} />
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <KpiCard label={tt('Share of growth')} value="42%" delta="Cable Bahamas / total net-adds" trend="up" icon={Trophy} accent />
-        <KpiCard label={tt('NPS gap to #2')} value="+6" delta="Benchmark B next at +32" trend="up" icon={Smile} />
+        <KpiCard label={tt('NPS gap to #2')} value="+6" delta="Rival ISP B next at +32" trend="up" icon={Smile} />
         <KpiCard label={tt('Win rate B2B')} value="56%" delta="vs all rivals" trend="up" icon={Target} />
         <KpiCard label={tt('Brand consideration')} value="56" delta="peer 52" trend="up" icon={Award} />
       </div>
 
-      {/* Mobile MNO benchmark — Cable Bahamas vs BTC / Benchmark A / Benchmark B */}
-      <Panel title={tt('Mobile · MNO benchmark — Cable Bahamas vs BTC · Benchmark A · Benchmark B')} insight={{ insight: 'Mobile scores lead BTC on latency but trail on rural coverage.', action: 'Prioritise rural RAN sites in the next mobile capex wave.', impact: 'Closes the one gap competitors use against us in tenders.' }} action={<Link to="/portal/mobile-ran" className="text-xs font-bold text-vfes-dark hover:underline flex items-center gap-1"><Smartphone className="w-3 h-3" />{tt('Open Mobile RAN →')}</Link>}>
+      {/* Mobile MNO benchmark — Cable Bahamas vs BTC / Rival ISP A / Rival ISP B */}
+      <Panel title={tt('Mobile · MNO benchmark — Cable Bahamas vs BTC · Rival ISP A · Rival ISP B')} insight={{ insight: 'Mobile scores lead BTC on latency but trail on rural coverage.', action: 'Prioritise rural RAN sites in the next mobile capex wave.', impact: 'Closes the one gap competitors use against us in tenders.' }} action={<Link to="/portal/mobile-ran" className="text-xs font-bold text-vfes-dark hover:underline flex items-center gap-1"><Smartphone className="w-3 h-3" />{tt('Open Mobile RAN →')}</Link>}>
         <ResponsiveContainer width="100%" height={260}>
           <BarChart data={MNO_BENCHMARK} layout="vertical" margin={{ left: 60 }}>
             <CartesianGrid stroke="#eee" strokeDasharray="3 3" />
@@ -1790,8 +1791,8 @@ function CompeteTab({ period, m }: TabProps) {
             <Legend wrapperStyle={{ fontSize: 11 }} />
             <Bar dataKey="vfes" fill={RED} name={tt('Cable Bahamas')} radius={[0, 4, 4, 0]} />
             <Bar dataKey="btc" fill="#0070C0" name={tt('BTC')} radius={[0, 4, 4, 0]} />
-            <Bar dataKey="orange" fill="#FF7900" name={tt('Benchmark A')} radius={[0, 4, 4, 0]} />
-            <Bar dataKey="digi" fill="#FFD500" name={tt('Benchmark B')} radius={[0, 4, 4, 0]} />
+            <Bar dataKey="orange" fill="#FF7900" name={tt('Rival ISP A')} radius={[0, 4, 4, 0]} />
+            <Bar dataKey="digi" fill="#FFD500" name={tt('Rival ISP B')} radius={[0, 4, 4, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </Panel>
@@ -1806,15 +1807,15 @@ function CompeteTab({ period, m }: TabProps) {
             <Legend wrapperStyle={{ fontSize: 11 }} />
             <Area dataKey="vfes"  stackId="1" fill={RED}     stroke={RED}     name={tt('Cable Bahamas')} />
             <Area dataKey="BTC"   stackId="1" fill="#0098D8" stroke="#0098D8" name={tt('BTC')} />
-            <Area dataKey="three" stackId="1" fill={AMBER}   stroke={AMBER}   name={tt('Benchmark C')} />
-            <Area dataKey="sky"   stackId="1" fill="#001580" stroke="#001580" name={tt('Benchmark B')} />
+            <Area dataKey="three" stackId="1" fill={AMBER}   stroke={AMBER}   name={tt('Rival ISP C')} />
+            <Area dataKey="sky"   stackId="1" fill="#001580" stroke="#001580" name={tt('Rival ISP B')} />
             <Area dataKey="other" stackId="1" fill={GREY}    stroke={GREY}    name={tt('Other')} />
           </AreaChart>
         </ResponsiveContainer>
       </Panel>
 
       <div className="grid lg:grid-cols-2 gap-6 mt-6 mb-6">
-        <Panel title={tt('Win-rate vs each competitor (by segment)')} insight={{ insight: 'We win B2B convergence but lose the value-mobile segment to Benchmark B.', action: 'Defend value-mobile with a fighter brand, not core-brand discounts.', impact: 'Protects core ARPU while stemming the value-segment loss.' }}>
+        <Panel title={tt('Win-rate vs each competitor (by segment)')} insight={{ insight: 'We win B2B convergence but lose the value-mobile segment to Rival ISP B.', action: 'Defend value-mobile with a fighter brand, not core-brand discounts.', impact: 'Protects core ARPU while stemming the value-segment loss.' }}>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={winRate}>
               <CartesianGrid stroke="#eee" vertical={false} />
@@ -2125,7 +2126,7 @@ function BriefingTab({ period, m }: TabProps) {
           <div className="rounded-lg border border-black/5 p-3 bg-[#fafbfc]">
             <div className="text-[10px] uppercase tracking-widest font-bold text-vfes-dark flex items-center gap-1.5 mb-1"><BarChart3 className="w-3 h-3" />{tt('Mobile NPS')}</div>
             <div className="text-2xl font-extrabold">+38</div>
-            <div className="text-[10px] text-emerald-600">{tt('BTC +1 242 · Benchmark A +31 · Benchmark B +22')}</div>
+            <div className="text-[10px] text-emerald-600">{tt('BTC +1 242 · Rival ISP A +31 · Rival ISP B +22')}</div>
           </div>
           <div className="rounded-lg border border-black/5 p-3 bg-[#fafbfc]">
             <div className="text-[10px] uppercase tracking-widest font-bold text-vfes-dark flex items-center gap-1.5 mb-1"><ShieldCheck className="w-3 h-3" />{tt('Open RAN posture')}</div>

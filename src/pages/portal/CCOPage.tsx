@@ -64,10 +64,10 @@ const pipelineWeekly = [
 const topDeals: {
   id: string; acc: string; seg: string; valueK: number; stage: string; prob: number; owner: string
 }[] = [
-  { id: 'OPP-9001', acc: 'Belfius Bank · 48 sites',           seg: 'Enterprise',    valueK: 4800, stage: 'Negotiation', prob: 72, owner: 'A. Willems'  },
+  { id: 'OPP-9001', acc: 'Commonwealth Bank (demo) · 48 sites',           seg: 'Enterprise',    valueK: 4800, stage: 'Negotiation', prob: 72, owner: 'A. Willems'  },
   { id: 'OPP-8991', acc: 'Island Bank (demo) · SD-WAN national',             seg: 'Enterprise',    valueK: 3200, stage: 'Proposal',    prob: 48, owner: 'A. Willems'  },
   { id: 'OPP-8980', acc: 'City of Nassau',                   seg: 'Public',         valueK: 3600, stage: 'Negotiation', prob: 64, owner: 'E. Knowles'  },
-  { id: 'OPP-8974', acc: 'New Providence Airlines · IoT fleet',     seg: 'Enterprise',    valueK: 2400, stage: 'Proposal',    prob: 52, owner: 'D. Bain'     },
+  { id: 'OPP-8974', acc: 'Port Authority · IoT fleet',     seg: 'Enterprise',    valueK: 2400, stage: 'Proposal',    prob: 52, owner: 'D. Bain'     },
   { id: 'OPP-8962', acc: 'UZ Eleuthera Hospital',                seg: 'Public',         valueK: 1800, stage: 'Negotiation', prob: 70, owner: 'N. Vermeulen' },
   { id: 'OPP-8954', acc: 'BTC Enterprise · UC & mobility', seg: 'Mid-market', valueK: 2100, stage: 'Proposal',    prob: 42, owner: 'D. Bain'     },
 ]
@@ -96,9 +96,9 @@ type CompRow = { comp: string; m100: number | null; m250: number | null; m500: n
 const competitorPricing: CompRow[] = [
   { comp: 'Cable Bahamas',    m100: 26.99, m250: 34.99, m500: 44.99, m1gb: 56.99 },
   { comp: 'BTC',   m100: 28.99, m250: 36.99, m500: 46.99, m1gb: 58.99 },
-  { comp: 'Benchmark A',     m100: 24.99, m250: 31.99, m500: 39.99, m1gb: 51.99 },
-  { comp: 'Benchmark B',       m100: 19.99, m250: 27.99, m500: null,  m1gb: null  },
-  { comp: 'Benchmark C',      m100: 22.99, m250: 29.99, m500: 38.99, m1gb: 49.99 },
+  { comp: 'Rival ISP A',     m100: 24.99, m250: 31.99, m500: 39.99, m1gb: 51.99 },
+  { comp: 'Rival ISP B',       m100: 19.99, m250: 27.99, m500: null,  m1gb: null  },
+  { comp: 'Rival ISP C',      m100: 22.99, m250: 29.99, m500: 38.99, m1gb: 49.99 },
 ]
 
 const priceHistory = [
@@ -164,7 +164,7 @@ const mvnoPartners = [
   { partner: 'Lycamobile (MVNO)',  subs: 640_000, revMoM: 0.62, margin: 22, trend: 'up'   },
   { partner: 'Mobile Vikings',      subs: 480_000, revMoM: 0.48, margin: 24, trend: 'flat' },
   { partner: 'Carrefour Mobile',   subs: 280_000, revMoM: 0.28, margin: 20, trend: 'down' },
-  { partner: 'Colruyt Mobile',     subs: 120_000, revMoM: 0.12, margin: 18, trend: 'flat' },
+  { partner: 'Super Value Mobile (demo)',     subs: 120_000, revMoM: 0.12, margin: 18, trend: 'flat' },
   { partner: 'Hits Mobile',        subs: 64_000,  revMoM: 0.06, margin: 21, trend: 'up'   },
   { partner: 'Neutral B2B access', subs: 0,        revMoM: 0.04, margin: 38, trend: 'up'   },
 ]
@@ -222,18 +222,18 @@ const winRateTrend = [
   { mo: 'Jun', winRate: 32.4, targetWin: 35 },
 ]
 const competitiveThreats = [
-  { competitor: 'Benchmark B',    threat: '1Gb at BSD 30/mo — pressure on M250/M500',     severity: 'high',   segment: 'Consumer',   impact: '-BSD 2.4M ARR' },
+  { competitor: 'Rival ISP B',    threat: '1Gb at BSD 30/mo — pressure on M250/M500',     severity: 'high',   segment: 'Consumer',   impact: '-BSD 2.4M ARR' },
   { competitor: 'BTC', threat: '5G SA 90% pop expansion — mobile pressure', severity: 'high',   segment: 'Mobile',     impact: 'Churn risk 0.3%' },
-  { competitor: 'Benchmark C',      threat: 'Entry price BSD 20/mo — low-end base',          severity: 'medium', segment: 'Prepaid',    impact: '-BSD 0.8M ARR' },
-  { competitor: 'Benchmark A',   threat: 'Family bundles without TV — lite alternative', severity: 'medium', segment: 'Family',   impact: 'Attach -2pp risk' },
-  { competitor: 'Benchmark A',   threat: 'Rural fibre subsidy programme',              severity: 'low',    segment: 'Rural',      impact: 'Coverage neutral' },
+  { competitor: 'Rival ISP C',      threat: 'Entry price BSD 20/mo — low-end base',          severity: 'medium', segment: 'Prepaid',    impact: '-BSD 0.8M ARR' },
+  { competitor: 'Rival ISP A',   threat: 'Family bundles without TV — lite alternative', severity: 'medium', segment: 'Family',   impact: 'Attach -2pp risk' },
+  { competitor: 'Rival ISP A',   threat: 'Rural fibre subsidy programme',              severity: 'low',    segment: 'Rural',      impact: 'Coverage neutral' },
 ]
 const churnToCompetitor = [
-  { competitor: 'Benchmark B',  churned: 1840, recaptured: 420, color: C1 },
+  { competitor: 'Rival ISP B',  churned: 1840, recaptured: 420, color: C1 },
   { competitor: 'BTC',  churned: 1420, recaptured: 680, color: C2 },
-  { competitor: 'Benchmark B',      churned: 840,  recaptured: 120, color: C3 },
-  { competitor: 'Benchmark C',     churned: 620,  recaptured: 280, color: C4 },
-  { competitor: 'Benchmark A',    churned: 480,  recaptured: 340, color: C6 },
+  { competitor: 'Rival ISP B',      churned: 840,  recaptured: 120, color: C3 },
+  { competitor: 'Rival ISP C',     churned: 620,  recaptured: 280, color: C4 },
+  { competitor: 'Rival ISP A',    churned: 480,  recaptured: 340, color: C6 },
 ]
 
 // ─── Tabs ─────────────────────────────────────────────────────────────────────
@@ -249,7 +249,7 @@ const TABS: { id: TabId; label: string }[] = [
   { id: 'winloss',   label: 'Win/Loss & Competitive' },
 ]
 
-const fmtEur = (n: number | null) => n != null ? `BSD ${n}` : '—'
+const fmtBsd = (n: number | null) => n != null ? `BSD ${n}` : '—'
 const tierColor = (t: string) =>
   t === 'Gold' ? 'bg-yellow-100 text-yellow-700'
   : t === 'Silver' ? 'bg-zinc-100 text-zinc-600'
@@ -323,9 +323,9 @@ export default function CCOPage() {
         agentBlurb="Elasticity, propensity and pipeline scored from a single customer model — pricing decisions are simulated on the real base, not a spreadsheet."
         decision={{
           title: 'Hold M500 price and activate convergent NBO on 84K households',
-          detail: 'Elasticity shows the M500 tier is inelastic vs Benchmark B promotion, so holding price protects margin. The freed budget funds a convergent NBO push to 84K high-propensity households — the highest-ROI move.',
+          detail: 'Elasticity shows the M500 tier is inelastic vs Rival ISP B promotion, so holding price protects margin. The freed budget funds a convergent NBO push to 84K high-propensity households — the highest-ROI move.',
           impact: '+BSD 2.6M ARPU uplift · protects margin',
-          risk: 'monitor Benchmark B response weekly — review if they relaunch promotion',
+          risk: 'monitor Rival ISP B response weekly — review if they relaunch promotion',
           linkTo: '#/portal/pricing-simulator', linkLabel: 'Open Pricing Simulator',
         }}
         chart={{
@@ -399,9 +399,9 @@ export default function CCOPage() {
           <WatchList
             title={tt('On the CCO desk')}
             items={[
-              { text: tt('Benchmark B 1 Gb at BSD 30/mo — impacts M250/M500'), level: 'high'   },
+              { text: tt('Rival ISP B 1 Gb at BSD 30/mo — impacts M250/M500'), level: 'high'   },
               { text: tt('Two enterprise deals slipped to Q4 — forecast risk'),       level: 'high' },
-              { text: tt('Belfius connectivity framework signed — BSD 4.2M ACV'),        level: 'low'  },
+              { text: tt('Commonwealth Bank (demo) connectivity framework signed — BSD 4.2M ACV'),        level: 'low'  },
               { text: tt('Public sector tender delays'),                              level: 'medium'},
             ]}
           />
@@ -552,7 +552,7 @@ export default function CCOPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Fixed ARPU blend')}      value={`BSD ${KPI.arpuFixed}`}  delta="+2.1% YoY"           trend="up"   icon={Banknote}    accent />
           <KpiCard label={tt('Mobile ARPU')}            value={`BSD ${KPI.arpuMobile}`} delta="+1.2% quarterly"     trend="up"   icon={Smartphone}  />
-          <KpiCard label={tt('M500 elasticity')}        value="−0.9"                 delta="inelastic vs Benchmark B"   trend="up"   icon={Zap}         />
+          <KpiCard label={tt('M500 elasticity')}        value="−0.9"                 delta="inelastic vs Rival ISP B"   trend="up"   icon={Zap}         />
           <KpiCard label={tt('Premium vs competitor')}  value="+3.8%"                delta="maintained"          trend="up"   icon={Percent}     />
         </div>
 
@@ -652,10 +652,10 @@ export default function CCOPage() {
                 {competitorPricing.map((c) => (
                   <tr key={c.comp} className={`border-t border-black/5 ${c.comp === 'Cable Bahamas' ? 'bg-vfes-red/5' : ''}`}>
                     <td className={`py-2.5 ${c.comp === 'Cable Bahamas' ? 'font-black' : 'font-semibold'}`}>{c.comp}</td>
-                    <td className="text-right">{fmtEur(c.m100)}</td>
-                    <td className="text-right">{fmtEur(c.m250)}</td>
-                    <td className="text-right">{fmtEur(c.m500)}</td>
-                    <td className="text-right">{fmtEur(c.m1gb)}</td>
+                    <td className="text-right">{fmtBsd(c.m100)}</td>
+                    <td className="text-right">{fmtBsd(c.m250)}</td>
+                    <td className="text-right">{fmtBsd(c.m500)}</td>
+                    <td className="text-right">{fmtBsd(c.m1gb)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -985,12 +985,12 @@ export default function CCOPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Win rate QTD')}               value="32.4%"      delta={tt('+1.8 pp vs Q1')}              trend="up"   icon={Award}       accent />
           <KpiCard label={tt('Competitive wins/month')}     value="284"         delta={tt('+12% monthly')}               trend="up"   icon={TrendingUp}  />
-          <KpiCard label={tt('Net churn to competitors')}   value="−3.3K"       delta={tt('Benchmark B leads losses')}       trend="down" icon={Users}       />
-          <KpiCard label={tt('Competitive threat level')}   value={tt('High')}  delta={tt('Benchmark B + BTC')}        trend="down" icon={ShoppingCart} />
+          <KpiCard label={tt('Net churn to competitors')}   value="−3.3K"       delta={tt('Rival ISP B leads losses')}       trend="down" icon={Users}       />
+          <KpiCard label={tt('Competitive threat level')}   value={tt('High')}  delta={tt('Rival ISP B + BTC')}        trend="down" icon={ShoppingCart} />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
-          <Panel title={tt('Win/loss by reason — current month')} insight={{ insight: 'Convergent bundle and speed are the two dominant winning factors, while price is the main loss driver vs Benchmark B.', action: 'Create a competitive-price defensive bundle exclusive for retention, automatically triggered when the CRM detects price-driven cancellation intent.', impact: 'Retaining 20% of deals lost on price would add 57 monthly contracts and recover BSD 0.9M annual revenue.' }}>
+          <Panel title={tt('Win/loss by reason — current month')} insight={{ insight: 'Convergent bundle and speed are the two dominant winning factors, while price is the main loss driver vs Rival ISP B.', action: 'Create a competitive-price defensive bundle exclusive for retention, automatically triggered when the CRM detects price-driven cancellation intent.', impact: 'Retaining 20% of deals lost on price would add 57 monthly contracts and recover BSD 0.9M annual revenue.' }}>
             <div className="h-72">
               <ResponsiveContainer>
                 <BarChart data={winLossReasons} layout="vertical">
@@ -1005,7 +1005,7 @@ export default function CCOPage() {
               </ResponsiveContainer>
             </div>
             <div className="mt-2 text-[11px] text-vfes-dark/55">
-              {tt('Bundle convergent and speed are the key winning factors. Price is the main loss driver vs Benchmark B.')}
+              {tt('Bundle convergent and speed are the key winning factors. Price is the main loss driver vs Rival ISP B.')}
             </div>
           </Panel>
 
@@ -1065,7 +1065,7 @@ export default function CCOPage() {
         </Panel>
 
         <div className="mt-6">
-          <Panel title={tt('Net churn by competitor — disconnects vs recaptures (subs/month)')} insight={{ insight: 'Benchmark B generates the highest net negative flow at −1.4K subs/month, while recaptures from BTC are the main net growth vector.', action: 'Intensify the segmented win-back campaign against Benchmark B with a competitive convergent offer in the postcodes with the highest outflow rate.', impact: 'Recovering 500 monthly disconnects from Benchmark B would reduce net churn by 0.15 pp and generate BSD 3.6M annual LTV at convergent ARPU.' }}>
+          <Panel title={tt('Net churn by competitor — disconnects vs recaptures (subs/month)')} insight={{ insight: 'Rival ISP B generates the highest net negative flow at −1.4K subs/month, while recaptures from BTC are the main net growth vector.', action: 'Intensify the segmented win-back campaign against Rival ISP B with a competitive convergent offer in the postcodes with the highest outflow rate.', impact: 'Recovering 500 monthly disconnects from Rival ISP B would reduce net churn by 0.15 pp and generate BSD 3.6M annual LTV at convergent ARPU.' }}>
             <div className="h-64">
               <ResponsiveContainer>
                 <BarChart data={churnToCompetitor}>
@@ -1080,7 +1080,7 @@ export default function CCOPage() {
               </ResponsiveContainer>
             </div>
             <div className="mt-2 text-[11px] text-vfes-dark/55">
-              {tt('Benchmark B generates the highest net negative flow (−1.4K/mo). Win-back strategy active against the 3 highest-volume operators.')}
+              {tt('Rival ISP B generates the highest net negative flow (−1.4K/mo). Win-back strategy active against the 3 highest-volume operators.')}
             </div>
           </Panel>
         </div>
@@ -1089,26 +1089,26 @@ export default function CCOPage() {
           <Panel title={tt('Competitive scorecard — key metrics')}>
             <div className="grid md:grid-cols-3 gap-4">
               {([
-                { metric: tt('NPS'),           tln: '+38',                   btc: '+32',   digi: '+28',  winner: 'Cable Bahamas' },
-                { metric: tt('Win rate'),       tln: '32%',                   btc: '—',     digi: '—',    winner: 'Cable Bahamas' },
-                { metric: tt('Fixed ARPU'),     tln: `BSD ${KPI.arpuFixed}`,    btc: 'BSD 43.8', digi: 'BSD 36.4',winner: 'BTC' },
-                { metric: tt('Churn %'),        tln: `${KPI.churnRatePct}%`, btc: '1.22%', digi: '1.68%',winner: 'Cable Bahamas' },
-                { metric: tt('5G coverage'),    tln: '89%',                   btc: '88%',   digi: '84%',  winner: 'Cable Bahamas' },
-                { metric: tt('EBITDA margin'),  tln: `${KPI.ebitdaMarginPct}%`, btc: '36.2%', digi: '34.8%', winner: 'Cable Bahamas' },
+                { metric: tt('NPS'),           cbl: '+38',                   btc: '+32',   digi: '+28',  winner: 'Cable Bahamas' },
+                { metric: tt('Win rate'),       cbl: '32%',                   btc: '—',     digi: '—',    winner: 'Cable Bahamas' },
+                { metric: tt('Fixed ARPU'),     cbl: `BSD ${KPI.arpuFixed}`,    btc: 'BSD 43.8', digi: 'BSD 36.4',winner: 'BTC' },
+                { metric: tt('Churn %'),        cbl: `${KPI.churnRatePct}%`, btc: '1.22%', digi: '1.68%',winner: 'Cable Bahamas' },
+                { metric: tt('5G coverage'),    cbl: '89%',                   btc: '88%',   digi: '84%',  winner: 'Cable Bahamas' },
+                { metric: tt('EBITDA margin'),  cbl: `${KPI.ebitdaMarginPct}%`, btc: '36.2%', digi: '34.8%', winner: 'Cable Bahamas' },
               ] as const).map((r, i) => (
                 <div key={i} className="p-3 rounded-lg border border-black/5 bg-[#fafbfc]">
                   <div className="text-[10px] uppercase tracking-widest text-vfes-dark/50 font-bold mb-2">{r.metric}</div>
                   <div className="flex justify-between text-xs">
                     <div>
                       <div className="text-[9px] text-vfes-dark/40">{tt('Cable Bahamas')}</div>
-                      <div className={`font-bold ${r.winner === 'Cable Bahamas' ? 'text-emerald-600' : ''}`}>{r.tln}</div>
+                      <div className={`font-bold ${r.winner === 'Cable Bahamas' ? 'text-emerald-600' : ''}`}>{r.cbl}</div>
                     </div>
                     <div>
                       <div className="text-[9px] text-vfes-dark/40">{tt('BTC')}</div>
                       <div className="font-semibold">{r.btc}</div>
                     </div>
                     <div>
-                      <div className="text-[9px] text-vfes-dark/40">{tt('Benchmark B')}</div>
+                      <div className="text-[9px] text-vfes-dark/40">{tt('Rival ISP B')}</div>
                       <div className="font-semibold">{r.digi}</div>
                     </div>
                   </div>

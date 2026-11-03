@@ -174,7 +174,7 @@ export default function LandingPage() {
               { name: tt('Customers'),         icon: Users, accent: true, blurb: tt('A unified, ML-enriched view of every household and B2B account — from acquisition through retention.'), pages: ['Customer 360', 'CLV Explorer', 'Bundle Propensity', 'Digital Funnel', 'Customer Experience', 'Marketing', 'Sales', 'AI Insights'] },
               { name: tt('Network & Operations'), icon: Network, accent: false, blurb: tt('Real-time service health, field dispatch and coverage planning grounded in DOCSIS and FTTH telemetry.'), pages: ['Operations', 'Network & Engineering', 'Field Operations', 'Coverage Map'] },
               { name: tt('Commercial'),        icon: Wallet, accent: false, blurb: tt('Margin to the SKU, price elasticity to the cohort, B2B deal economics — all simulated, all governed.'), pages: ['Finance', 'Pricing Simulator', 'Bundle Profitability', 'Product & Content', 'B2B / Wholesale', 'Procurement'] },
-              { name: tt('Governance'),        icon: Scale, accent: false, blurb: tt('URCA, GDPR, NIS2, ESG and people governance — auditable, evidenced, board-defensible.'), pages: ['Regulatory & ESG', 'Risk & Security', 'People'] },
+              { name: tt('Governance'),        icon: Scale, accent: false, blurb: tt('URCA, DPA, URCA cyber, ESG and people governance — auditable, evidenced, board-defensible.'), pages: ['Regulatory & ESG', 'Risk & Security', 'People'] },
               { name: tt('Platform & Data'),   icon: Layers, accent: true, blurb: tt('The estate that powers it all — architecture, lineage, quality, cost, agents, models, contracts and trust.'), pages: ['Architecture', 'Catalog · Lineage · Quality', 'Cost · Observability · Incidents', 'Cortex Agents · Search · Semantic', 'ML Registry · AI guardrails', 'RBAC · Trust Center · Horizon', 'Sharing · Apps · Iceberg'] },
             ].map((s) => (
               <div key={s.name} className={`rounded-2xl p-7 flex flex-col ${s.accent ? 'bg-vfes-red text-vfes-dark shadow-2xl' : 'bg-[#fafbfc] border border-black/5'}`}>
@@ -203,7 +203,7 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { code: 'UC1', icon: SlidersHorizontal, name: tt('Price Elasticity Simulator'), body: tt('Move price sliders for any product. See acquisition, churn and migration responses by cohort. Toggle FTTH vs HFC, compare against BTC, Benchmark A and Benchmark C.'), to: '/portal/pricing-simulator' },
+              { code: 'UC1', icon: SlidersHorizontal, name: tt('Price Elasticity Simulator'), body: tt('Move price sliders for any product. See acquisition, churn and migration responses by cohort. Toggle FTTH vs HFC, compare against BTC, Rival ISP A and Rival ISP C.'), to: '/portal/pricing-simulator' },
               { code: 'UC2', icon: Boxes,             name: tt('Bundle Propensity'),          body: tt('Per-customer ML scoring across four bundles. Persuadables vs. sure-things, threshold simulator, profitability gating, one-click campaign export.'), to: '/portal/bundle-propensity' },
               { code: 'UC3', icon: Sparkles,          name: tt('Bundle Profitability'),       body: tt('True margin including network, content, CPE and install. Break-even discount depth, payback period, cohort-on-cohort comparison.'), to: '/portal/bundle-profitability' },
               { code: 'UC4', icon: Gem,               name: tt('CLV Explorer'),               body: tt('36-month customer lifetime value by tier. Churn-adjusted, scenario-driven, drillable to single household with explainable feature contributions.'), to: '/portal/clv' },
@@ -374,8 +374,8 @@ export default function LandingPage() {
                 'Amdocs CRM', 'Cisco BSS / Billing', 'CMTS DOCSIS', 'OSS / NMS',
                 'NetSuite GL', 'Salesforce B2B', 'Workday HR', 'Adobe Analytics',
                 'PEGA ADT', 'ServiceNow', 'MyREV Web', 'Ciena Blueplanet',
-                'ARC GIS (ESRI)', 'Confluent Kafka', 'Statbel', 'URCA data',
-                'OECD Telecom', 'Tomorrow.io', 'Island Bank (demo) framework', 'Statbel Open Data',
+                'ARC GIS (ESRI)', 'Confluent Kafka', 'Bahamas NSI', 'URCA data',
+                'OECD Telecom', 'Tomorrow.io', 'Island Bank (demo) framework', 'Bahamas National Statistical Institute',
               ].map((s) => (
                 <div key={s} className="bg-white/5 border border-white/10 rounded-md px-2.5 py-1.5 text-white/85 text-center font-semibold">{s}</div>
               ))}

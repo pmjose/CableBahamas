@@ -117,10 +117,8 @@ const covenants = [
 ]
 
 const fxHedges = [
-  { instr: 'BSD/USD forward · content licences',      notional:  12, expiry: 'Mar 27', mtm:  0.4, status: 'Active' },
-  { instr: 'BSD/USD forward · multinational ops',     notional:   8, expiry: 'Jun 27', mtm: -0.2, status: 'Active' },
-  { instr: 'IRS · floating → fixed (BSD 84M notes)',     notional:  84, expiry: 'Dec 28', mtm:  1.8, status: 'Active' },
-  { instr: 'Energy hedge · grid electricity (New Providence Airlines)', notional: 4.2, expiry: 'Dec 26', mtm:  0.2, status: 'Active' },
+      { instr: 'IRS · floating → fixed (BSD 84M notes)',     notional:  84, expiry: 'Dec 28', mtm:  1.8, status: 'Active' },
+  { instr: 'Fuel surcharge hedge · grid electricity (BPL)', notional: 4.2, expiry: 'Dec 26', mtm:  0.2, status: 'Active' },
 ]
 
 // ─── Forecast & scenarios ────────────────────────────────────────────────────
@@ -137,15 +135,16 @@ const sensitivities = [
   { driver: 'Net adds ±10%',   upside:  5.4, downside:  -5.4 },
   { driver: 'Churn ±50 bp',    upside:  3.8, downside:  -3.8 },
   { driver: 'Energy ±15%',     upside:  1.2, downside:  -1.8 },
-  { driver: 'FX BSD/USD ±5%',  upside:  0.6, downside:  -0.6 },
+  { driver: 'Hurricane outage ±1 event', upside:  0.6, downside:  -2.8 },
   { driver: 'Bad debt ±50 bp', upside:  0.7, downside:  -0.7 },
 ]
 
 const riskRegister = [
   { r: 'BTC Fibre BSD 40/mo promo persistence',   impact: 'BSD 5.6M ARR',      prob: 'High',   sev: 'High',   mit: 'Targeted price-match for at-risk base only' },
-  { r: 'Benchmark B content cost inflation FY27',          impact: 'BSD 8.4M GP',       prob: 'Medium', sev: 'High',   mit: 'Re-negotiate before H2 2026' },
-  { r: 'ECB rate normalisation · 2027 refinancing', impact: '+BSD 1.2M interest', prob: 'Low',   sev: 'Medium', mit: '80% fixed via IRS hedges; monitoring' },
+  { r: 'Rival ISP B content cost inflation FY27',          impact: 'BSD 8.4M GP',       prob: 'Medium', sev: 'High',   mit: 'Re-negotiate before H2 2026' },
+  { r: 'US rate normalisation · 2027 refinancing', impact: '+BSD 1.2M interest', prob: 'Low',   sev: 'Medium', mit: '80% fixed via IRS hedges; monitoring' },
   { r: 'B2B AR concentration (top 5 = 38%)',        impact: 'BSD 3.3M bad debt', prob: 'Low',    sev: 'High',   mit: 'Credit insurance in place; dunning escalated' },
+  { r: 'Hurricane season · restoration + revenue credits', impact: 'BSD 6.5M EBITDA', prob: 'Medium', sev: 'High', mit: 'Parametric cover + catastrophe reserve; pre-staged spares' },
   { r: 'URCA wholesale price intervention',         impact: 'TBD',            prob: 'Low',    sev: 'High',   mit: 'Active regulatory engagement programme' },
   { r: 'Energy price spike beyond hedge',           impact: 'BSD 2.6M OpEx',     prob: 'Medium', sev: 'Medium', mit: 'Hedged 80% · extending cover to FY27 H1' },
 ]
@@ -348,7 +347,7 @@ export default function CFOPage() {
             items={[
               { text: tt('Q2 revenue BSD 1.7M under plan — collections push covers it'),       level: 'high'   },
               { text: tt('Direct-debit failures +6% — bad-debt provision under review'),     level: 'high'   },
-              { text: tt('ECB rate hold at 3.25% — refinancing assumptions stable'),         level: 'low'    },
+              { text: tt('CBOB discount rate hold at 4.00% — refinancing assumptions stable'),         level: 'low'    },
               { text: tt('CapEx phasing: BSD 18M of fibre build slipping Q2 → Q3'),            level: 'medium' },
             ]}
           />

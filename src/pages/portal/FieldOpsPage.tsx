@@ -152,7 +152,7 @@ const utilisationTrend = Array.from({ length: 8 }, (_, i) => ({
 
 const subContractors = [
   { c: 'KN Networks',      jobs: 240, rft: 86, csat: 4.4, complaints: 4, status: 'Active' },
-  { c: 'SPIE The Bahamas',   jobs: 180, rft: 84, csat: 4.3, complaints: 6, status: 'Active' },
+  { c: 'Island Electrical (demo)',   jobs: 180, rft: 84, csat: 4.3, complaints: 6, status: 'Active' },
   { c: 'Entegro Build',    jobs: 142, rft: 88, csat: 4.5, complaints: 2, status: 'Active' },
   { c: 'Connect Civils',   jobs: 96,  rft: 78, csat: 4.0, complaints: 12, status: 'Watch' },
   { c: 'Cofely The Bahamas',        jobs: 84,  rft: 91, csat: 4.6, complaints: 1, status: 'Active' },

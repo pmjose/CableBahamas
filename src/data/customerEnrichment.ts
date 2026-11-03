@@ -356,7 +356,7 @@ export function enrichCustomer(c: Customer): EnrichedCustomer {
       uptimeHours: tvOutage ? 0 : 48 + (tvSeed % 800),
       lastActivity: past(today, 0) + ' ' + (18 + (tvSeed % 4)) + ':' + ((tvSeed % 60).toString().padStart(2, '0')),
       channelsWatched7d: 8 + (tvSeed % 18),
-      topChannel: pick(['Één', 'VTM', 'Canvas', 'Sports add-on', 'DAZN', 'Play4'], tvSeed),
+      topChannel: pick(['Één', 'VTM', 'Canvas', 'Sports add-on', 'ESPN', 'Play4'], tvSeed),
       recordings: tvSeed % 22,
       storageUsedPct: 30 + (tvSeed % 60),
       appVersion: pick(['v3.4.1', 'v3.4.2', 'v3.5.0'], tvSeed),

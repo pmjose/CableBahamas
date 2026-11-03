@@ -102,7 +102,7 @@ const audiences = [
   { seg: 'B2B SoHo',            size: 84,  cac: 124, ltv: 2210, conv: 8.4, share: 12, color: RED3 },
   { seg: 'Mover / Switcher',    size: 96,  cac: 64,  ltv: 1180, conv: 9.6, share: 14, color: RED4 },
   { seg: 'Win-back',            size: 58,  cac: 38,  ltv: 980,  conv: 11.2, share: 8, color: RED5 },
-  { seg: 'Premium TV (Benchmark B)',    size: 116, cac: 102, ltv: 1620, conv: 4.8, share: 16, color: '#ec4899' },
+  { seg: 'Premium TV (Rival ISP B)',    size: 116, cac: 102, ltv: 1620, conv: 4.8, share: 16, color: '#ec4899' },
 ]
 
 const creativeLeaderboard = [
@@ -134,9 +134,9 @@ const promoOwn = [
 const promoCompet = [
   { name: 'Sports add-on BSD 30/mo (12 mo intro)',     start: 'May 04', threat: 'High',   ourResp: '500Mb @ BSD 35 hero' },
   { name: 'BTC Fibre 1 Gb BSD 40 + BSD 100 voucher',   start: 'May 10', threat: 'High',   ourResp: 'BSD 65 Bill Credit' },
-  { name: 'Benchmark C Mobile + BB bundle BSD 70',            start: 'May 21', threat: 'Medium', ourResp: 'REVConnect repositioning' },
+  { name: 'Rival ISP C Mobile + BB bundle BSD 70',            start: 'May 21', threat: 'Medium', ourResp: 'REVConnect repositioning' },
   { name: 'Cable Bahamas Pro II at BSD 45',              start: 'Apr 28', threat: 'Medium', ourResp: 'Match via win-back' },
-  { name: 'Benchmark B Mobile add-on free 12mo',         start: 'May 18', threat: 'Low',    ourResp: 'Monitor' },
+  { name: 'Rival ISP B Mobile add-on free 12mo',         start: 'May 18', threat: 'Low',    ourResp: 'Monitor' },
 ]
 
 const calendar = [
@@ -486,7 +486,7 @@ export default function MarketingPage() {
               ))}
             </tbody>
           </table>
-          <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('MNP win-back vs BTC at 5.2× ROI is best performer — extend to Bimini and Freeport. Family plan switcher at 2.4× vs Benchmark B aggressive pricing under review.')}</div>
+          <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('MNP win-back vs BTC at 5.2× ROI is best performer — extend to Bimini and Freeport. Family plan switcher at 2.4× vs Rival ISP B aggressive pricing under review.')}</div>
         </Panel>
 
         {/* Spend vs plan + working/non-working */}
@@ -651,9 +651,9 @@ export default function MarketingPage() {
                   <PolarGrid stroke="#eee" />
                   <PolarAngleAxis dataKey="metric" tick={{ fontSize: 11 }} />
                   <PolarRadiusAxis tick={{ fontSize: 10 }} domain={[0, 100]} />
-                  <Radar name={tt('Benchmark A')} dataKey="us" stroke={RED} fill={RED} fillOpacity={0.4} />
+                  <Radar name={tt('Rival ISP A')} dataKey="us" stroke={RED} fill={RED} fillOpacity={0.4} />
                   <Radar name={tt('BTC')} dataKey="btc" stroke="#3b82f6" fill="#3b82f6" fillOpacity={0.15} />
-                  <Radar name={tt('Benchmark B')} dataKey="digi" stroke="#0ea5e9" fill="#0ea5e9" fillOpacity={0.12} />
+                  <Radar name={tt('Rival ISP B')} dataKey="digi" stroke="#0ea5e9" fill="#0ea5e9" fillOpacity={0.12} />
                   <Radar name={tt('Cable Bahamas')} dataKey="cablebahamas" stroke="#94a3b8" fill="#94a3b8" fillOpacity={0.1} />
                   <Legend wrapperStyle={{ fontSize: 11 }} />
                 </RadarChart>
@@ -670,8 +670,8 @@ export default function MarketingPage() {
                   <YAxis tick={{ fontSize: 11 }} unit="%" />
                   <Tooltip contentStyle={tooltipStyle} />
                   <Legend wrapperStyle={{ fontSize: 11 }} />
-                  <Area type="monotone" dataKey="us" stackId="1" name={tt('Benchmark A')} stroke={RED} fill={RED} fillOpacity={0.85} />
-                  <Area type="monotone" dataKey="digi" stackId="1" name={tt('Benchmark B')} stroke="#0ea5e9" fill="#0ea5e9" fillOpacity={0.7} />
+                  <Area type="monotone" dataKey="us" stackId="1" name={tt('Rival ISP A')} stroke={RED} fill={RED} fillOpacity={0.85} />
+                  <Area type="monotone" dataKey="digi" stackId="1" name={tt('Rival ISP B')} stroke="#0ea5e9" fill="#0ea5e9" fillOpacity={0.7} />
                   <Area type="monotone" dataKey="btc" stackId="1" name={tt('BTC')} stroke="#3b82f6" fill="#3b82f6" fillOpacity={0.7} />
                   <Area type="monotone" dataKey="cablebahamas" stackId="1" name={tt('Cable Bahamas')} stroke="#94a3b8" fill="#94a3b8" fillOpacity={0.7} />
                 </AreaChart>

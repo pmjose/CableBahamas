@@ -70,8 +70,8 @@ const AGENTS: Agent[] = [
     customTools: ['salesforce_lookup(account_id)', 'contract_diff(template, draft)'],
     metrics: { calls7d: 312, p95Sec: 3.6, success: 97.4, cost7d: 9.2 },
     evalScore: 0.90, guardrailHits: 1, toolCalls7d: 624,
-    promptHints: ['Brief me on Island Bank (demo) before the 10am meeting', 'Compare our SLA to the Benchmark B Group MSA', 'Generate redline for the Belfius renewal'],
-    surfaces: ['B2B page', 'Sales · account drill', 'Slack /tln-ai bot'],
+    promptHints: ['Brief me on Island Bank (demo) before the 10am meeting', 'Compare our SLA to the Rival ISP B Group MSA', 'Generate redline for the Commonwealth Bank (demo) renewal'],
+    surfaces: ['B2B page', 'Sales · account drill', 'Slack /cbl-ai bot'],
   },
   {
     name: 'People HR-BP Assistant', fqn: 'CBL_AI.AGENTS.PEOPLE_AGENT', status: 'live',
@@ -97,11 +97,11 @@ const AGENTS: Agent[] = [
   {
     name: 'Compliance Q&A', fqn: 'CBL_AI.AGENTS.COMPLIANCE_AGENT', status: 'live',
     llm: 'Claude 3.5 Sonnet', steward: 'B. De Witte',
-    description: 'Answers regulatory and compliance questions grounded in URCA, Telecom controls (scenario), GDPR, NIS2 + internal SOPs.',
+    description: 'Answers regulatory and compliance questions grounded in URCA, Telecom controls (scenario), DPA, URCA cyber + internal SOPs.',
     semanticView: 'CBL_ANALYTICS.SEMANTIC.RISK_360_SV', searchService: 'CBL_AI.SEARCH.KB_REGULATORY_FILINGS',
     metrics: { calls7d: 142, p95Sec: 3.2, success: 99.4, cost7d: 4.8 },
     evalScore: 0.95, guardrailHits: 0, toolCalls7d: 142,
-    promptHints: ["What's the URCA M4 deadline?", 'GDPR DPIA checklist for the new churn agent', 'NIS2 incident reporting timeline'],
+    promptHints: ["What's the URCA M4 deadline?", 'Privacy impact checklist for the new churn agent', 'URCA cyber incident reporting timeline'],
     surfaces: ['Risk page', 'Regulatory & ESG page', 'Snowflake Intelligence tile'],
   },
   {
@@ -949,7 +949,7 @@ export default function CortexAgentsPage() {
               </thead>
               <tbody>
                 {[
-                  { policy: 'PII masking (GDPR)',        scope: 'All agents', action: 'Redact & log', enabled: true,  hits: 57  },
+                  { policy: 'PII masking (DPA)',        scope: 'All agents', action: 'Redact & log', enabled: true,  hits: 57  },
                   { policy: 'Hallucination threshold',   scope: 'All agents', action: 'Warn user',   enabled: true,  hits: 29  },
                   { policy: 'Off-topic filter',          scope: 'All agents', action: 'Reroute',     enabled: true,  hits: 18  },
                   { policy: 'Block response (high risk)', scope: 'Customer Care AI, Fraud', action: 'Block + alert', enabled: true, hits: 8 },

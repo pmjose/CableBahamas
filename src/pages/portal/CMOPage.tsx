@@ -63,7 +63,7 @@ type FunnelRow = { stage: string; sessions: number; pct: number; dropReason: str
 const funnelData: Record<Exclude<FunnelProd, 'All'>, FunnelRow[]> = {
   'M500 BB': [
     { stage: 'Landing',       sessions: 184000, pct: 100, dropReason: '' },
-    { stage: 'Product',       sessions: 112000, pct: 61,  dropReason: 'Price vs Benchmark B' },
+    { stage: 'Product',       sessions: 112000, pct: 61,  dropReason: 'Price vs Rival ISP B' },
     { stage: 'Compare',       sessions: 72000,  pct: 39,  dropReason: 'Speed specs confusing' },
     { stage: 'Customise',     sessions: 42000,  pct: 23,  dropReason: 'No coverage checker' },
     { stage: 'Checkout',      sessions: 28000,  pct: 15,  dropReason: 'Payment friction' },
@@ -88,7 +88,7 @@ const funnelData: Record<Exclude<FunnelProd, 'All'>, FunnelRow[]> = {
   Mobile: [
     { stage: 'Landing',       sessions: 284000, pct: 100, dropReason: '' },
     { stage: 'Product',       sessions: 198000, pct: 70,  dropReason: '' },
-    { stage: 'Compare',       sessions: 128000, pct: 45,  dropReason: 'Benchmark B price' },
+    { stage: 'Compare',       sessions: 128000, pct: 45,  dropReason: 'Rival ISP B price' },
     { stage: 'Customise',     sessions: 84000,  pct: 30,  dropReason: '' },
     { stage: 'Checkout',      sessions: 56000,  pct: 20,  dropReason: 'Checkout step 2 error' },
     { stage: 'Confirmation',  sessions: 41200,  pct: 15,  dropReason: '' },
@@ -178,11 +178,11 @@ const csatJourney = [
 
 // ─── Brand competitor benchmarks ─────────────────────────────────────────────
 const brandBenchmark = [
-  { op: 'Cable Bahamas', awareness: 75, consider: 45, prefer: 32, nps: 38, color: C1 },
-  { op: 'BTC',   awareness: 86, consider: 52, prefer: 38, nps: 34, color: C4 },
-  { op: 'Benchmark B',  awareness: 68, consider: 38, prefer: 24, nps: 28, color: C6 },
-  { op: 'Benchmark B',       awareness: 54, consider: 28, prefer: 16, nps: 22, color: C5 },
-  { op: 'Benchmark C',      awareness: 61, consider: 33, prefer: 20, nps: 26, color: C3 },
+  { op: 'Cable Bahamas', awareness: 75, consider: 45, prefer: 41, nps: 38, color: C1 },
+  { op: 'BTC',   awareness: 86, consider: 52, prefer: 36, nps: 34, color: C4 },
+  { op: 'Rival ISP A',  awareness: 68, consider: 38, prefer: 24, nps: 28, color: C6 },
+  { op: 'Rival ISP B',       awareness: 54, consider: 28, prefer: 16, nps: 22, color: C5 },
+  { op: 'Rival ISP C',      awareness: 61, consider: 33, prefer: 20, nps: 26, color: C3 },
 ]
 
 const consentTrend = [
@@ -402,7 +402,7 @@ export default function CMOPage() {
             title={tt('On the CMO desk')}
             items={[
               { text: tt('M500 funnel conversion -32% last hour — defect detected'),     level: 'high'   },
-              { text: tt('Benchmark B family pricing pressuring switcher campaign'),             level: 'high'   },
+              { text: tt('Rival ISP B family pricing pressuring switcher campaign'),             level: 'high'   },
               { text: tt('Hero creative fatigue — refresh in 2 weeks'),                   level: 'medium' },
               { text: tt('Consented reachability rising after preference centre relaunch'), level: 'low'    },
             ]}

@@ -692,7 +692,7 @@ export default function MLRegistryPage() {
       {tab === 'governance' && (<>
         <div className="grid md:grid-cols-3 gap-4 mb-6">
           <KpiCard label={tt('Models with model card')} value={String(MODELS.filter(x => x.stage === 'prod').length)} delta={tt('all prod models')} trend="up" icon={ShieldCheck} accent />
-          <KpiCard label={tt('GDPR-compliant')}         value="100%"  delta={tt('PII features masked')}   trend="up"   icon={CheckCircle2} />
+          <KpiCard label={tt('DPA-compliant')}         value="100%"  delta={tt('PII features masked')}   trend="up"   icon={CheckCircle2} />
           <KpiCard label={tt('Risk review due')}        value="2"     delta={tt('Q3-26 review cycle')}    trend="flat" icon={AlertTriangle} />
         </div>
         <Panel title={tt('Model governance register')}>
@@ -702,7 +702,7 @@ export default function MLRegistryPage() {
                 <th className="text-left py-2">{tt('Model')}</th>
                 <th className="text-left">{tt('Owner')}</th>
                 <th className="text-left">{tt('Risk level')}</th>
-                <th className="text-left">{tt('GDPR basis')}</th>
+                <th className="text-left">{tt('DPA basis')}</th>
                 <th className="text-left">{tt('Last review')}</th>
                 <th className="text-left">{tt('Model card')}</th>
               </tr>
@@ -929,7 +929,7 @@ export default function MLRegistryPage() {
       {/* ── Governance extras — compliance notes ─────────────────────── */}
       {tab === 'governance' && (
         <div className="mt-6 grid lg:grid-cols-2 gap-6">
-          <Panel title={tt('GDPR & URCA compliance notes')}>
+          <Panel title={tt('DPA & URCA compliance notes')}>
             <div className="space-y-3 text-xs text-vfes-dark/70">
               <div className="p-3 rounded-lg bg-purple-50 border border-purple-200">
                 <div className="font-bold text-purple-900 mb-1">{tt('Art. 6(1)(f) — Legitimate Interest')}</div>
@@ -1042,7 +1042,7 @@ export default function MLRegistryPage() {
               {[
                 { step: 'Statistical significance confirmed (p < 0.05)', done: true  },
                 { step: 'Model card updated and reviewed',                done: true  },
-                { step: 'GDPR / DPIA sign-off (Art. 6(1)(f) refresh)',   done: true  },
+                { step: 'Privacy impact sign-off (DPA refresh)',   done: true  },
                 { step: 'Feature view compatibility check',               done: true  },
                 { step: 'UAT sign-off by Ann Vermeulen',                   done: false },
                 { step: 'Canary rollout (10%) approved',                  done: false },

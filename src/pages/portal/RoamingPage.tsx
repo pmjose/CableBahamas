@@ -1,6 +1,6 @@
 // ── RoamingPage.tsx
 // Roaming P&L: outbound/inbound revenue, IOT margins, steering, settlement, forecast
-// Domain: international roaming, RLAH regulation, wholesale IOT agreements
+// Domain: international roaming, bundled regulation, wholesale IOT agreements
 import { useState, useMemo, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
@@ -37,18 +37,18 @@ const MONTHLY = [
 ]
 
 const TOP_DEST = [
-  { country: 'Spain',       out: 19.2, margin: 33, type: 'EU' },
-  { country: 'France',      out: 16.1, margin: 30, type: 'EU' },
-  { country: 'Netherlands', out: 12.4, margin: 31, type: 'EU' },
+  { country: 'Spain',       out: 19.2, margin: 33, type: 'RoW' },
+  { country: 'France',      out: 16.1, margin: 30, type: 'RoW' },
+  { country: 'Netherlands', out: 12.4, margin: 31, type: 'RoW' },
   { country: 'Turkey',      out: 10.8, margin: 16, type: 'RoW' },
   { country: 'Morocco',     out:  9.4, margin: 15, type: 'RoW' },
-  { country: 'Italy',       out:  8.6, margin: 34, type: 'EU' },
-  { country: 'Germany',     out:  7.9, margin: 31, type: 'EU' },
+  { country: 'Italy',       out:  8.6, margin: 34, type: 'RoW' },
+  { country: 'Germany',     out:  7.9, margin: 31, type: 'RoW' },
   { country: 'UK',          out:  6.8, margin: 24, type: 'RoW' },
 ]
 
 const IOT_PARTNERS = [
-  { partner: 'Benchmark A FR',    inMargin: 0.0042, outMargin: 0.0038, status: 'renegotiate', vol: 124 },
+  { partner: 'Rival ISP A FR',    inMargin: 0.0042, outMargin: 0.0038, status: 'renegotiate', vol: 124 },
   { partner: 'TIM IT',       inMargin: 0.0051, outMargin: 0.0044, status: 'live', vol: 98 },
   { partner: 'Deutsche Tel', inMargin: 0.0048, outMargin: 0.0041, status: 'live', vol: 86 },
   { partner: 'Britcom UK',   inMargin: 0.0036, outMargin: 0.0033, status: 'renegotiate', vol: 72 },
@@ -56,7 +56,7 @@ const IOT_PARTNERS = [
 ]
 
 const STEER = [
-  { country: 'France',  current: 62, target: 80, partner: 'Benchmark A FR' },
+  { country: 'France',  current: 62, target: 80, partner: 'Rival ISP A FR' },
   { country: 'Italy',   current: 74, target: 78, partner: 'TIM IT' },
   { country: 'Germany', current: 55, target: 75, partner: 'Deutsche Tel' },
   { country: 'UK',      current: 48, target: 35, partner: 'Britcom UK' },
@@ -64,14 +64,14 @@ const STEER = [
 ]
 
 const TRAVELERS = [
-  { seg: 'Leisure (EU)',   subs: 1840000, arpu:  6.2, share: 54 },
-  { seg: 'Business (EU)',  subs:  420000, arpu: 18.4, share: 22 },
+  { seg: 'Leisure (US)',   subs: 1840000, arpu:  6.2, share: 54 },
+  { seg: 'Business (US)',  subs:  420000, arpu: 18.4, share: 22 },
   { seg: 'Leisure (RoW)', subs:  310000, arpu: 22.1, share: 14 },
   { seg: 'Business (RoW)', subs:  96000, arpu: 41.8, share: 10 },
 ]
 
 const DEALS = [
-  { partner: 'Benchmark A FR',    type: 'Discount agreement', expiry: 'Q3 2026', status: 'renegotiate', valueM: 4.8 },
+  { partner: 'Rival ISP A FR',    type: 'Discount agreement', expiry: 'Q3 2026', status: 'renegotiate', valueM: 4.8 },
   { partner: 'TIM IT',       type: 'Balanced (in=out)',  expiry: 'Q1 2027', status: 'live',        valueM: 3.2 },
   { partner: 'Deutsche Tel', type: 'Volume commitment',  expiry: 'Q4 2026', status: 'live',        valueM: 2.9 },
   { partner: 'Britcom UK',   type: 'Legacy IOT',         expiry: 'expired',  status: 'renegotiate', valueM: 2.1 },
@@ -88,7 +88,7 @@ const INBOUND_SOURCES = [
 ]
 
 const SETTLEMENT_Q2 = [
-  { partner: 'Benchmark A FR',    outPayM: 3.8, inRecM: 4.1, netM: 0.3, status: 'settled' },
+  { partner: 'Rival ISP A FR',    outPayM: 3.8, inRecM: 4.1, netM: 0.3, status: 'settled' },
   { partner: 'TIM IT',       outPayM: 2.9, inRecM: 2.7, netM: -0.2, status: 'settled' },
   { partner: 'Deutsche Tel', outPayM: 2.4, inRecM: 2.6, netM: 0.2, status: 'settled' },
   { partner: 'Britcom UK',   outPayM: 1.8, inRecM: 1.4, netM: -0.4, status: 'dispute' },
@@ -111,14 +111,14 @@ const FORECAST = [
 ]
 
 const IOT_TREND = [
-  { m: 'Jan', eu: 1.2, row: 0.6 }, { m: 'Feb', eu: 1.1, row: 0.6 },
-  { m: 'Mar', eu: 1.3, row: 0.6 }, { m: 'Apr', eu: 1.4, row: 0.6 },
-  { m: 'May', eu: 1.7, row: 0.7 }, { m: 'Jun', eu: 2.1, row: 1.0 },
-  { m: 'Jul', eu: 2.6, row: 1.2 }, { m: 'Aug', eu: 2.8, row: 1.2 },
+  { m: 'Jan', us: 1.2, row: 0.6 }, { m: 'Feb', us: 1.1, row: 0.6 },
+  { m: 'Mar', us: 1.3, row: 0.6 }, { m: 'Apr', us: 1.4, row: 0.6 },
+  { m: 'May', us: 1.7, row: 0.7 }, { m: 'Jun', us: 2.1, row: 1.0 },
+  { m: 'Jul', us: 2.6, row: 1.2 }, { m: 'Aug', us: 2.8, row: 1.2 },
 ]
 
 const ML_IOT_PRED = [
-  { partner: 'Benchmark A FR',    current: 0.0038, optimal: 0.0044 },
+  { partner: 'Rival ISP A FR',    current: 0.0038, optimal: 0.0044 },
   { partner: 'TIM IT',       current: 0.0044, optimal: 0.0044 },
   { partner: 'Deutsche Tel', current: 0.0041, optimal: 0.0046 },
   { partner: 'Britcom UK',   current: 0.0033, optimal: 0.0040 },
@@ -126,7 +126,7 @@ const ML_IOT_PRED = [
 ]
 
 const EU_ROW_MIX = [
-  { name: 'EU regulated (RLAH)', value: 71 },
+  { name: 'US/Canada bundled', value: 71 },
   { name: 'Rest-of-World',       value: 29 },
 ]
 
@@ -149,7 +149,7 @@ export default function RoamingPage() {
   // ── hooks (≥10) ────────────────────────────────────────────────────────────
   const [tab, setTab]                       = useState<TabId>('overview')
   const [partnerFilter, setPartnerFilter]   = useState<string>('all')
-  const [regionFilter, setRegionFilter]     = useState<'all' | 'EU' | 'RoW'>('all')
+  const [regionFilter, setRegionFilter]     = useState<'all' | 'US' | 'RoW'>('all')
   const [iotThreshold, setIotThreshold]     = useState<number>(0.004)
   const [destSort, setDestSort]             = useState<'rev' | 'margin'>('rev')
   const [showEuOnly, setShowEuOnly]         = useState<boolean>(false)
@@ -194,7 +194,7 @@ export default function RoamingPage() {
     <div className="p-8" key={i18n.language}>
       <PageHeader
         title={tt('Roaming P&L')}
-        subtitle={tt('Outbound vs inbound · IOT margins · EU regulated vs RoW · top destinations · wholesale settlement')}
+        subtitle={tt('Outbound vs inbound · IOT margins · US/Canada bundled vs RoW · top destinations · wholesale settlement')}
         actions={<span className="bg-vfes-red/10 text-vfes-dark px-2.5 py-1 rounded-full font-bold text-xs">BSD {(totalOut + totalIn).toFixed(0)}M {tt('YTD')}</span>}
       />
 
@@ -216,7 +216,7 @@ export default function RoamingPage() {
         ]}
         agentBlurb={tt('Routing and IOT models run in Snowflake ML. Seasonal demand forecaster trained on 4 years of CDR data. Quality guardrail model prevents SLA breaches.')}
         decision={{
-          title:    tt('Re-steer France & Germany; renegotiate Britcom UK & Benchmark A FR'),
+          title:    tt('Re-steer France & Germany; renegotiate Britcom UK & Rival ISP A FR'),
           detail:   tt('France steered at 62% vs 80% optimal — shifting share captures discount tiers and recovers BSD 0.8M. Britcom UK on expired legacy IOT — renegotiate or de-prefer.'),
           impact:   tt('~BSD 1.4M annualised IOT margin recovery'),
           risk:     tt('over-steering can breach quality SLAs — keep guardrails'),
@@ -258,7 +258,7 @@ export default function RoamingPage() {
             <KpiCard label={tt('Outbound revenue YTD')} value={`BSD ${totalOut.toFixed(1)}M`} delta={tt('+18% summer peak')} trend="up"   icon={Plane}      accent />
             <KpiCard label={tt('Inbound revenue YTD')}  value={`BSD ${totalIn.toFixed(1)}M`}  delta={tt('inbound visitors')} trend="up"   icon={Globe2} />
             <KpiCard label={tt('Blended IOT margin')}   value="28%"                         delta={tt('+1.4 pp vs plan')} trend="up"   icon={TrendingUp} />
-            <KpiCard label={tt('EU regulated share')}   value="71%"                         delta={tt('RLAH glide-path')} trend="flat" icon={Globe2} />
+            <KpiCard label={tt('US/Canada bundled share')}   value="71%"                         delta={tt('bundled glide-path')} trend="flat" icon={Globe2} />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             <KpiCard label={tt('Active IOT partners')}  value="5"      delta={tt('2 renegotiation')}   trend="flat" icon={ArrowLeftRight} />
@@ -288,7 +288,7 @@ export default function RoamingPage() {
           </Panel>
 
           <div className="grid lg:grid-cols-2 gap-4 mt-4">
-            <Panel title={tt('EU regulated vs Rest-of-World mix')}>
+            <Panel title={tt('US/Canada bundled vs Rest-of-World mix')}>
               <div className="h-56">
                 <ResponsiveContainer>
                   <PieChart>
@@ -302,11 +302,11 @@ export default function RoamingPage() {
                 </ResponsiveContainer>
               </div>
               <div className="mt-3 text-xs text-vfes-dark/55">
-                {tt('EU RLAH share at 71% — margin pressure from regulated glide-path offset by RoW premium.')}
+                {tt('US/Canada bundle share at 71% — margin pressure from regulated glide-path offset by RoW premium.')}
               </div>
             </Panel>
 
-            <Panel title={tt('IOT wholesale revenue — EU vs RoW (BSD M)')}>
+            <Panel title={tt('IOT wholesale revenue — US vs RoW (BSD M)')}>
               <div className="h-56">
                 <ResponsiveContainer>
                   <AreaChart data={IOT_TREND}>
@@ -315,7 +315,7 @@ export default function RoamingPage() {
                     <YAxis stroke="#999" fontSize={11} unit="M" />
                     <Tooltip contentStyle={{ fontSize: 12 }} formatter={(v: any, n: any) => [`BSD ${v}M`, tt(n)]} />
                     <Legend wrapperStyle={{ fontSize: 11 }} />
-                    <Area type="monotone" dataKey="eu"  stackId="1" stroke={BLUE} fill={BLUE} name={tt('EU regulated')} />
+                    <Area type="monotone" dataKey="us"  stackId="1" stroke={BLUE} fill={BLUE} name={tt('US/Canada bundled')} />
                     <Area type="monotone" dataKey="row" stackId="1" stroke={NAVY} fill={NAVY} name={tt('Rest-of-World')} />
                   </AreaChart>
                 </ResponsiveContainer>
@@ -343,14 +343,14 @@ export default function RoamingPage() {
         <>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             <KpiCard label={tt('Top destination revenue')} value="BSD 19.2M"  delta={tt('Spain')}          trend="up"   icon={Plane}      accent />
-            <KpiCard label={tt('EU destinations')}         value="5"        delta={tt('of top 8')}      trend="flat" icon={Globe2} />
-            <KpiCard label={tt('Highest margin dest.')}    value="Italy 34%"  delta={tt('EU regulated')} trend="up"   icon={TrendingUp} />
+            <KpiCard label={tt('US destinations')}         value="5"        delta={tt('of top 8')}      trend="flat" icon={Globe2} />
+            <KpiCard label={tt('Highest margin dest.')}    value="Italy 34%"  delta={tt('US/Canada bundled')} trend="up"   icon={TrendingUp} />
             <KpiCard label={tt('Lowest margin dest.')}     value="Morocco 15%" delta={tt('low-cost RoW')} trend="down" icon={AlertTriangle} />
           </div>
 
           <div className="flex items-center gap-3 mb-4">
             <span className="text-xs font-semibold text-vfes-dark/55 uppercase tracking-widest">{tt('Region:')}</span>
-            {(['all', 'EU', 'RoW'] as const).map(r => (
+            {(['all', 'US', 'RoW'] as const).map(r => (
               <button key={r} onClick={() => setRegionFilter(r)}
                 className={`px-3 py-1 rounded-full text-xs font-semibold transition ${regionFilter === r ? 'bg-vfes-red text-vfes-dark' : 'bg-black/5 text-vfes-dark/60 hover:bg-black/10'}`}>
                 {tt(r)}
@@ -366,8 +366,8 @@ export default function RoamingPage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <KpiCard label={tt('Total destinations')} value="8"       delta={tt('5 EU · 3 RoW')}       trend="flat" icon={Globe2} />
-            <KpiCard label={tt('EU RLAH countries')}  value="5"       delta={tt('regulated tariff')}   trend="flat" icon={Globe2} />
+            <KpiCard label={tt('Total destinations')} value="8"       delta={tt('5 US · 3 RoW')}       trend="flat" icon={Globe2} />
+            <KpiCard label={tt('US/Canada bundle countries')}  value="5"       delta={tt('regulated tariff')}   trend="flat" icon={Globe2} />
             <KpiCard label={tt('RoW destinations')}   value="3"       delta={tt('premium margin')}     trend="up"   icon={Plane} />
             <KpiCard label={tt('Avg out-margin')}     value="24.5%"   delta={tt('blended all dest.')}  trend="up"   icon={TrendingUp} />
           </div>
@@ -382,13 +382,13 @@ export default function RoamingPage() {
                   <Tooltip contentStyle={{ fontSize: 12 }}
                     formatter={(v: any, _n: any, p: any) => [`BSD ${v}M · ${p.payload.margin}% margin · ${p.payload.type}`, tt('Destination')]} />
                   <Bar dataKey="out" radius={[6, 6, 0, 0]}>
-                    {filteredDest.map((d, i) => <Cell key={i} fill={d.type === 'EU' ? BLUE : NAVY} />)}
+                    {filteredDest.map((d, i) => <Cell key={i} fill={d.type === 'US' ? BLUE : NAVY} />)}
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
             </div>
             <div className="mt-3 text-xs text-vfes-dark/55">
-              {tt('Blue = EU regulated (RLAH) · Navy = Rest-of-World (premium margin, higher IOT cost).')}
+              {tt('Blue = US/Canada bundled · Navy = Rest-of-World (premium margin, higher IOT cost).')}
             </div>
             <div className="mt-3 flex flex-wrap gap-4 text-xs">
               <Link to="/portal/pricing-simulator" className="text-vfes-dark font-semibold hover:underline">{tt('→ Pricing simulator')}</Link>
@@ -413,7 +413,7 @@ export default function RoamingPage() {
                     <tr key={d.country} className="border-b border-black/5 hover:bg-[#fafbfc]">
                       <td className="px-3 py-2 font-semibold">{d.country}</td>
                       <td className="px-3 py-2">
-                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${d.type === 'EU' ? 'bg-blue-50 text-blue-700' : 'bg-slate-100 text-slate-600'}`}>{d.type}</span>
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${d.type === 'US' ? 'bg-blue-50 text-blue-700' : 'bg-slate-100 text-slate-600'}`}>{d.type}</span>
                       </td>
                       <td className="px-3 py-2 text-right font-mono">BSD {d.out.toFixed(1)}M</td>
                       <td className="px-3 py-2 text-right font-mono" style={{ color: d.margin >= 25 ? GREEN : AMBER }}>{d.margin}%</td>
@@ -434,7 +434,7 @@ export default function RoamingPage() {
             <KpiCard label={tt('Partners with IOT')}    value="5"      delta={tt('live + renegotiate')} trend="flat" icon={ArrowLeftRight} accent />
             <KpiCard label={tt('Below IOT threshold')}  value={String(belowIotThreshold.length)} delta={`<BSD ${iotThreshold.toFixed(4)}/MB`} trend="down" icon={AlertTriangle} />
             <KpiCard label={tt('Total IOT volume')}     value="434 TB"  delta={tt('YTD outbound')}      trend="up"   icon={Activity} />
-            <KpiCard label={tt('Renegotiation target')} value="2"       delta={tt('Benchmark A FR, Britcom')} trend="flat" icon={Clock} />
+            <KpiCard label={tt('Renegotiation target')} value="2"       delta={tt('Rival ISP A FR, Britcom')} trend="flat" icon={Clock} />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             <KpiCard label={tt('Avg out-margin (all)')}   value="BSD 0.0036" delta={tt('blended')}          trend="flat" icon={TrendingUp} />
@@ -479,7 +479,7 @@ export default function RoamingPage() {
               </table>
             </div>
             <div className="mt-3 text-xs text-vfes-dark font-bold flex items-center gap-1">
-              <Brain className="w-3 h-3" /> {tt('Benchmark A FR & Britcom UK flagged for renegotiation — 196 TB at sub-target margin.')} <ChevronRight className="w-3 h-3" />
+              <Brain className="w-3 h-3" /> {tt('Rival ISP A FR & Britcom UK flagged for renegotiation — 196 TB at sub-target margin.')} <ChevronRight className="w-3 h-3" />
             </div>
           </Panel>
 
@@ -506,7 +506,7 @@ export default function RoamingPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
             <KpiCard label={tt('Total IOT margin gap')}   value="BSD 1.4M"   delta={tt('vs optimal rates')}  trend="down" icon={TrendingUp} />
-            <KpiCard label={tt('Benchmark A FR gap')}          value="BSD 0.8M"   delta={tt('largest gap')}       trend="down" icon={AlertTriangle} />
+            <KpiCard label={tt('Rival ISP A FR gap')}          value="BSD 0.8M"   delta={tt('largest gap')}       trend="down" icon={AlertTriangle} />
             <KpiCard label={tt('Britcom UK gap')}         value="BSD 0.5M"   delta={tt('expired deal')}      trend="down" icon={AlertTriangle} />
             <KpiCard label={tt('IOT data volume (Aug)')}  value="74 TB"   delta={tt('peak month')}        trend="up"   icon={Activity} />
           </div>
@@ -544,7 +544,7 @@ export default function RoamingPage() {
               stats: [
                 { label: tt('Outbound revenue YTD'), value: `BSD ${totalOut.toFixed(1)}M` },
                 { label: tt('Blended IOT margin'),   value: '28%' },
-                { label: tt('EU regulated share'),   value: '71%' },
+                { label: tt('US/Canada bundled share'),   value: '71%' },
                 { label: tt('Annualised recovery'),  value: 'BSD 1.4M' },
               ],
               findings: [
@@ -640,7 +640,7 @@ export default function RoamingPage() {
           </div>
 
           <div className="mt-4 p-3 bg-amber-50 rounded-lg text-xs text-amber-900 border border-amber-200">
-            <strong>{tt('Steering advisory')}</strong> — {tt('Re-weight France PLMN list: move Benchmark A FR from position 3 to position 1. Estimated monthly margin impact: +BSD 68K.')}
+            <strong>{tt('Steering advisory')}</strong> — {tt('Re-weight France PLMN list: move Rival ISP A FR from position 3 to position 1. Estimated monthly margin impact: +BSD 68K.')}
           </div>
         </>
       )}
@@ -650,13 +650,13 @@ export default function RoamingPage() {
         <>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             <KpiCard label={tt('Active IOT partners')} value="5"      delta={tt('global operators')} trend="flat" icon={Users}         accent />
-            <KpiCard label={tt('Renegotiation open')}  value="2"      delta={tt('Benchmark A FR, Britcom')} trend="flat" icon={AlertTriangle} />
+            <KpiCard label={tt('Renegotiation open')}  value="2"      delta={tt('Rival ISP A FR, Britcom')} trend="flat" icon={AlertTriangle} />
             <KpiCard label={tt('Balanced agreements')} value="1"      delta={tt('TIM IT in=out')}   trend="up"   icon={CheckCircle} />
             <KpiCard label={tt('Avg deal value')}      value="BSD 2.9M"  delta={tt('annual')}          trend="flat" icon={DollarSign} />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <KpiCard label={tt('Highest-volume partner')} value="Benchmark A FR" delta={tt('124 TB/qtr')}   trend="up"   icon={Activity} />
-            <KpiCard label={tt('Partners expiring H2 26')} value="2"        delta={tt('Benchmark A FR, DT')} trend="flat" icon={Clock} />
+            <KpiCard label={tt('Highest-volume partner')} value="Rival ISP A FR" delta={tt('124 TB/qtr')}   trend="up"   icon={Activity} />
+            <KpiCard label={tt('Partners expiring H2 26')} value="2"        delta={tt('Rival ISP A FR, DT')} trend="flat" icon={Clock} />
             <KpiCard label={tt('Total deal portfolio')}    value="BSD 14.6M"   delta={tt('annual value')}  trend="up"   icon={DollarSign} />
             <KpiCard label={tt('Last renegotiation')}      value="TIM IT"   delta={tt('Q1 2026')}       trend="flat" icon={FileText} />
           </div>
@@ -748,7 +748,7 @@ export default function RoamingPage() {
               </table>
             </div>
             <div className="mt-3 text-xs text-vfes-dark font-bold flex items-center gap-1">
-              <Brain className="w-3 h-3" /> {tt('2 deals expiring in 2026 H2 — Benchmark A FR (Q3) and Deutsche Tel (Q4). Initiate renegotiation now.')} <ChevronRight className="w-3 h-3" />
+              <Brain className="w-3 h-3" /> {tt('2 deals expiring in 2026 H2 — Rival ISP A FR (Q3) and Deutsche Tel (Q4). Initiate renegotiation now.')} <ChevronRight className="w-3 h-3" />
             </div>
           </Panel>
         </>
@@ -791,7 +791,7 @@ export default function RoamingPage() {
               </ResponsiveContainer>
             </div>
             <div className="mt-3 text-xs text-vfes-dark/55">
-              {tt('France, Germany and UK are the top 3 inbound sources — correlate with EU outbound steering share.')}
+              {tt('US, Canada and UK are the top 3 inbound sources — correlate with US outbound steering share.')}
             </div>
             <div className="mt-2 text-xs text-vfes-dark/40">
               {tt('Inbound revenue recognised on an accruals basis against IOT inbound tariff cards per partner agreement.')}
@@ -799,7 +799,7 @@ export default function RoamingPage() {
           </Panel>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-            <KpiCard label={tt('EU inbound visitors')} value="1.16M"  delta={tt('93% of total')}      trend="up"   icon={Globe2} />
+            <KpiCard label={tt('US inbound visitors')} value="1.16M"  delta={tt('93% of total')}      trend="up"   icon={Globe2} />
             <KpiCard label={tt('RoW inbound visitors')} value="82K"   delta={tt('USA dominant')}      trend="up"   icon={Plane} />
             <KpiCard label={tt('Highest ARPU source')} value="USA BSD 44" delta={tt('premium tariff')}  trend="up"   icon={TrendingUp} />
             <KpiCard label={tt('Inbound growth YoY')}  value="+14%"   delta={tt('all sources')}       trend="up"   icon={Activity} />
@@ -848,8 +848,8 @@ export default function RoamingPage() {
             <KpiCard label={tt('Q2 cycle close')}       value="Jul 15"  delta={tt('target date')}      trend="flat" icon={Clock} />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <KpiCard label={tt('Largest inflow')}       value="BSD 4.1M"   delta={tt('from Benchmark A FR')}   trend="up"   icon={TrendingUp} />
-            <KpiCard label={tt('Largest outflow')}      value="BSD 3.8M"   delta={tt('to Benchmark A FR')}     trend="flat" icon={DollarSign} />
+            <KpiCard label={tt('Largest inflow')}       value="BSD 4.1M"   delta={tt('from Rival ISP A FR')}   trend="up"   icon={TrendingUp} />
+            <KpiCard label={tt('Largest outflow')}      value="BSD 3.8M"   delta={tt('to Rival ISP A FR')}     trend="flat" icon={DollarSign} />
             <KpiCard label={tt('Pending reconciliation')} value="1"     delta={tt('AT&T US')}           trend="flat" icon={Clock} />
             <KpiCard label={tt('YTD net position')}     value="BSD 0.8M"   delta={tt('net receivable')}   trend="up"   icon={CheckCircle} />
           </div>
@@ -947,7 +947,7 @@ export default function RoamingPage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             <KpiCard label={tt('IOT rate upside')}         value="+BSD 1.8M"  delta={tt('if renegotiated early')} trend="up"   icon={TrendingUp} />
-            <KpiCard label={tt('RLAH cut downside')}       value="–BSD 2.4M"  delta={tt('if rates drop 10%')}    trend="down" icon={AlertTriangle} />
+            <KpiCard label={tt('bundled cut downside')}       value="–BSD 2.4M"  delta={tt('if rates drop 10%')}    trend="down" icon={AlertTriangle} />
             <KpiCard label={tt('Summer disruption risk')}  value="–BSD 4.1M"  delta={tt('travel delay scenario')} trend="down" icon={AlertTriangle} />
             <KpiCard label={tt('YoY growth assumption')}   value="+8%"     delta={tt('base scenario')}        trend="up"   icon={Activity} />
           </div>
@@ -988,7 +988,7 @@ export default function RoamingPage() {
               <div>
                 <div className="font-semibold text-vfes-dark/70 mb-2 text-xs uppercase tracking-widest">{tt('Risk scenarios')}</div>
                 <ul className="space-y-1 text-xs text-vfes-dark/60">
-                  <li>• {tt('EU RLAH cut: –BSD 2.4M if rates drop 10%')}</li>
+                  <li>• {tt('US/Canada bundle cut: –BSD 2.4M if rates drop 10%')}</li>
                   <li>• {tt('Summer disruption: –BSD 4.1M (travel delay)')}</li>
                   <li>• {tt('Partner exit: –BSD 2.1M Britcom UK')}</li>
                   <li>• {tt('Upside: +BSD 1.8M if IOT renegotiated early')}</li>

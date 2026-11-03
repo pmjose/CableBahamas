@@ -17,7 +17,7 @@ import {
   ClipboardList, Award, Headphones, Settings, FileWarning, Target,
 } from 'lucide-react'
 import { LineChart, Line, BarChart, Bar, AreaChart, Area, ComposedChart, ResponsiveContainer, Tooltip, XAxis, YAxis, CartesianGrid, Cell, Legend } from 'recharts'
-import LeprechaunAvatar from '../../components/LeprechaunAvatar'
+import CustomerAvatar from '../../components/CustomerAvatar'
 import RelationshipGraph from '../../components/RelationshipGraph'
 import CartoMap from '../../components/CartoMap'
 
@@ -666,7 +666,7 @@ export default function Customer360Page() {
               >
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <LeprechaunAvatar seed={x.id} name={tt(x.name)} size={36} className="shrink-0 rounded-full ring-1 ring-black/5" />
+                    <CustomerAvatar seed={x.id} name={tt(x.name)} size={36} className="shrink-0 rounded-full ring-1 ring-black/5" />
                     <div className="min-w-0">
                       <div className="font-semibold text-sm truncate">{tt(x.name)}</div>
                       <div className="text-xs text-vfes-dark/55 truncate">{x.id} · {x.city}</div>
@@ -688,7 +688,7 @@ export default function Customer360Page() {
             <div className="absolute top-0 right-0 w-72 h-72 -mr-32 -mt-32 rounded-full bg-vfes-red/5 pointer-events-none" />
             <div className="relative flex items-start gap-5 flex-wrap">
               <div className="w-20 h-20 rounded-full overflow-hidden ring-2 ring-vfes-red/20 shadow-sm shrink-0 bg-gradient-to-br from-amber-50 to-amber-100">
-                <LeprechaunAvatar seed={c.id} name={tt(c.name)} size={80} />
+                <CustomerAvatar seed={c.id} name={tt(c.name)} size={80} />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 flex-wrap">
@@ -843,7 +843,7 @@ export default function Customer360Page() {
                   </div>
                 </Panel>
 
-                <Panel title={tt('Consent & Preferences (GDPR / ePrivacy)')} action={<ShieldCheck className="w-4 h-4 text-vfes-dark/40" />}>
+                <Panel title={tt('Consent & Preferences (Data Protection Act)')} action={<ShieldCheck className="w-4 h-4 text-vfes-dark/40" />}>
                   <div className="space-y-1.5 text-sm">
                     {e.consents.map((cs, i) => (
                       <div key={i} className="flex items-center justify-between py-1.5 border-b border-black/5 last:border-0">
@@ -948,7 +948,7 @@ export default function Customer360Page() {
                   <div className="rounded-lg border border-black/5 p-3 bg-[#fafbfc]">
                     <div className="text-[10px] uppercase tracking-widest font-bold text-vfes-dark mb-1">{tt('MNP port-out risk')}</div>
                     <div className={`text-2xl font-extrabold ${((c.id?.charCodeAt(3) ?? 70) % 100) > 70 ? 'text-red-600' : ((c.id?.charCodeAt(3) ?? 70) % 100) > 40 ? 'text-amber-600' : 'text-emerald-600'}`}>{((c.id?.charCodeAt(3) ?? 70) % 100) > 70 ? tt('High') : ((c.id?.charCodeAt(3) ?? 70) % 100) > 40 ? tt('Medium') : tt('Low')}</div>
-                    <div className="text-[10px] text-vfes-dark/55">{tt('vs BTC / Benchmark A')}</div>
+                    <div className="text-[10px] text-vfes-dark/55">{tt('vs BTC / Rival ISP A')}</div>
                   </div>
                 </div>
               </Panel>
@@ -1158,7 +1158,7 @@ export default function Customer360Page() {
             <div className="space-y-6">
               <Panel title={tt('Relationship graph')} action={<Users className="w-4 h-4 text-vfes-dark/40" />}>
                 <div className="text-xs text-vfes-dark/60 mb-3">
-                  Hover any node for full details. Green dot ● indicates an Benchmark A customer — click to open their 360.
+                  Hover any node for full details. Green dot ● indicates an Rival ISP A customer — click to open their 360.
                   Built from <span className="font-mono">{tt('CRM Salesforce')}</span>, <span className="font-mono">{tt('CBL_ANALYTICS.IDENTITY.HOUSEHOLD_GRAPH')}</span> and <span className="font-mono">{tt('CBL_BUSINESS.ACCOUNTS')}</span>.
                 </div>
                 <RelationshipGraph

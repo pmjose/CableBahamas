@@ -138,9 +138,9 @@ const costPerCall = [
   { m: 'Apr', cpp: 0.054 }, { m: 'May', cpp: 0.052 }, { m: 'Jun', cpp: 0.051 },
 ]
 
-// ── Responsible AI / EU AI Act ─────────────────────────────────────────────────
+// ── Responsible AI / AI governance policy ─────────────────────────────────────────────────
 const raiChecklist = [
-  { check: 'High-risk classification completed (EU AI Act Art. 6)', status: 'Pass',   owner: 'AI Governance', due: 'Done'    },
+  { check: 'High-risk classification completed (AI policy)', status: 'Pass',   owner: 'AI Governance', due: 'Done'    },
   { check: 'Technical documentation for Tier-1 models',             status: 'Pass',   owner: 'ML Platform',   due: 'Done'    },
   { check: 'Human oversight mechanism — credit scoring',            status: 'Pass',   owner: 'Risk',          due: 'Done'    },
   { check: 'Bias & fairness audit — Churn Predictor',               status: 'Pass',   owner: 'AI Governance', due: 'Done'    },
@@ -309,7 +309,7 @@ export default function CAIOPage() {
             <Bell className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
             <div className="flex-1">
               <div className="font-bold text-amber-900 text-sm">
-                {tt('EU AI Act readiness at 88% · Debt Collection Scorer concept drift detected · NBA Recommender feature drift (PSI 0.14)')}
+                {tt('AI governance readiness at 88% · Debt Collection Scorer concept drift detected · NBA Recommender feature drift (PSI 0.14)')}
               </div>
               <div className="text-xs text-amber-800 mt-1">
                 {tt('Model cards missing for 3 Tier-1 models. Debt Collection retrain queued. Care-Assist conformity assessment due 31 Jul.')}
@@ -372,7 +372,7 @@ export default function CAIOPage() {
               title={tt('CAIO priorities — FY2026')}
               items={[
                 { name: 'Scale Care-assist agent to full contact centre',      owner: tt('Applied AI · N. Coppens'),   pct: 69, status: 'on-track' },
-                { name: 'Responsible-AI policy + EU AI Act readiness',        owner: tt('AI Governance'),           pct: 88, status: 'on-track' },
+                { name: 'Responsible-AI policy + AI governance readiness',        owner: tt('AI Governance'),           pct: 88, status: 'on-track' },
                 { name: 'Cortex spend optimisation (model routing)',          owner: tt('ML Platform'),             pct: 74, status: 'on-track' },
                 { name: 'Semantic layer coverage for self-serve analytics',   owner: tt('Analytics Engineering'),   pct: 51, status: 'at-risk'  },
                 { name: 'Model-monitoring for every Tier-1 model',            owner: tt('ML Platform'),             pct: 36, status: 'behind'   },
@@ -382,7 +382,7 @@ export default function CAIOPage() {
           <WatchList
             title={tt('On the CAIO desk')}
             items={[
-              { text: tt('EU AI Act high-risk classification review for credit scoring'), level: 'high'   },
+              { text: tt('AI governance high-risk classification review for credit scoring'), level: 'high'   },
               { text: tt('Care-assist pilot at 99.2% — ready to scale'),                  level: 'low'    },
               { text: tt('NBA Recommender showing feature drift — retrain queued'),        level: 'medium' },
               { text: tt('Cortex spend +12% MoM — routing optimisation in flight'),       level: 'medium' },
@@ -826,7 +826,7 @@ export default function CAIOPage() {
       {/* ══════════════ RESPONSIBLE AI ══════════════════════════════════════════ */}
       {tab === 'responsible' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-          <KpiCard label={tt('EU AI Act readiness')}    value="88%"  delta="target 100% Dec-26"    trend="up"   icon={ShieldCheck}  accent />
+          <KpiCard label={tt('AI governance readiness')}    value="88%"  delta="target 100% Dec-26"    trend="up"   icon={ShieldCheck}  accent />
           <KpiCard label={tt('Policies enforced')}      value="4"    delta="RAI council approved"  trend="flat" icon={FileCheck}          />
           <KpiCard label={tt('Open RAI findings')}      value="3"    delta="-5 vs prior month"      trend="up"   icon={AlertTriangle}      />
         </div>
@@ -842,7 +842,7 @@ export default function CAIOPage() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
-          <Panel title={tt('EU AI Act Readiness — quarterly trajectory (%)')} insight={{ insight: 'Readiness has risen from 58% to 84% over four quarters, but the trajectory must reach 95% before the illustrative compliance deadline.', action: 'Focus the next sprint exclusively on the six failing controls in explainability and data provenance to close the remaining gap.', impact: 'Achieving 95% ahead of deadline eliminates regulatory fine exposure and positions the company as an EU AI Act governance reference.' }}>
+          <Panel title={tt('AI Governance Readiness — quarterly trajectory (%)')} insight={{ insight: 'Readiness has risen from 58% to 84% over four quarters, but the trajectory must reach 95% before the illustrative compliance deadline.', action: 'Focus the next sprint exclusively on the six failing controls in explainability and data provenance to close the remaining gap.', impact: 'Achieving 95% ahead of deadline eliminates regulatory fine exposure and positions the company as a regional AI governance reference.' }}>
             <div className="h-56">
               <ResponsiveContainer>
                 <LineChart data={raiScore}>

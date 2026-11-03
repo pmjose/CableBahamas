@@ -161,7 +161,7 @@ const peeringTable = [
   { p: 'Local peering (Nassau IX)',   tput: 420, role: 'Peering',  cost: 0,    rpki: 100, top: 'Akamai · Google · Meta' },
   { p: 'DE-CIX Frankfurt',         tput: 180, role: 'Peering',  cost: 0,    rpki: 100, top: 'Cloudflare · Microsoft · AWS' },
   { p: 'AMS-IX Amsterdam',    tput: 110, role: 'Peering',  cost: 0,    rpki: 98,  top: 'Akamai · Steam · OVH' },
-  { p: 'DE-CIX Frankfurt',    tput: 38,  role: 'Peering',  cost: 0,    rpki: 100, top: 'EU CDN · gaming' },
+  { p: 'DE-CIX Frankfurt',    tput: 38,  role: 'Peering',  cost: 0,    rpki: 100, top: 'US CDN · gaming' },
   { p: 'Lumen Transit',       tput: 60,  role: 'Transit',  cost: 84,   rpki: 96,  top: 'Long-tail · IPv6' },
   { p: 'Cogent Transit',      tput: 40,  role: 'Transit',  cost: 48,   rpki: 88,  top: 'Long-tail · v4' },
   { p: 'Arelion Transit',     tput: 24,  role: 'Transit',  cost: 32,   rpki: 100, top: 'Backup · DDoS-clean' },
@@ -246,7 +246,7 @@ const securityKpis = [
   { metric: 'DDoS scrubbing headroom',   value: 1.2, suffix: ' Tbps', good: true, delta: 'vs peak 0.42 Tbps' },
   { metric: 'BGP hijack alerts (open)',  value: 0,  suffix: '',  good: true,  delta: 'last 30 d' },
   { metric: 'Lawful intercept SLA',      value: 100, suffix: '%', good: true,  delta: 'URCA' },
-  { metric: 'NIS2 controls passing',     value: 96, suffix: '%', good: true,  delta: '4 minor open' },
+  { metric: 'URCA cyber controls passing',     value: 96, suffix: '%', good: true,  delta: '4 minor open' },
 ]
 
 // Roadmap
@@ -829,7 +829,7 @@ export default function NetworkPage() {
 
         <div className="grid lg:grid-cols-3 gap-6 mb-6">
           <div className="lg:col-span-2">
-            <Panel title={tt('POP & Peering Map · Carto (IE + EU)')}>
+            <Panel title={tt('POP & Peering Map · Carto (Bahamas + Florida)')}>
               <CartoMap markers={popMarkers} basemap="voyager" height={420} center={[24.7, -76.5]} zoom={5} />
               <div className="mt-2 flex items-center gap-4 text-[10px] text-vfes-dark/65 uppercase tracking-widest">
                 <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full" style={{ background: RED }} />{tt('Core')}</span>
@@ -1123,7 +1123,7 @@ export default function NetworkPage() {
                 </div>
               ))}
             </div>
-            <div className="mt-3 text-[10px] text-vfes-dark/40 uppercase tracking-widest">{tt('NIS2 / DORA · URCA lawful intercept')}</div>
+            <div className="mt-3 text-[10px] text-vfes-dark/40 uppercase tracking-widest">{tt('URCA cyber guidelines · lawful intercept')}</div>
           </Panel>
         </div>
       </>)}

@@ -25,10 +25,10 @@ const CATALOGS = [
 ]
 
 const VOLUMES = [
-  { name: 'EXT_VOL_S3_CBL',       cloud: 'AWS S3',                bucket: 's3://tln-iceberg-eu-west-1/',     region: 'eu-west-1',  encryption: 'SSE-KMS', writes: true  },
-  { name: 'EXT_VOL_S3_PARTNER',    cloud: 'AWS S3',                bucket: 's3://tln-shared-eu-west-1/',      region: 'eu-west-1',  encryption: 'SSE-KMS', writes: false },
-  { name: 'EXT_VOL_AZURE_FABRIC',  cloud: 'Azure ADLS',            bucket: 'abfss://tln@onelake.…',           region: 'westeurope', encryption: 'CMK',     writes: false },
-  { name: 'EXT_VOL_GCS_BACKUP',    cloud: 'GCS',                   bucket: 'gs://tln-backup-eu/',             region: 'europe-west2',encryption:'CSEK',     writes: false },
+  { name: 'EXT_VOL_S3_CBL',       cloud: 'AWS S3',                bucket: 's3://cbl-iceberg-us-east-1/',     region: 'us-east-1',  encryption: 'SSE-KMS', writes: true  },
+  { name: 'EXT_VOL_S3_PARTNER',    cloud: 'AWS S3',                bucket: 's3://cbl-shared-us-east-1/',      region: 'us-east-1',  encryption: 'SSE-KMS', writes: false },
+  { name: 'EXT_VOL_AZURE_FABRIC',  cloud: 'Azure ADLS',            bucket: 'abfss://cbl@onelake.…',           region: 'eastus2', encryption: 'CMK',     writes: false },
+  { name: 'EXT_VOL_GCS_BACKUP',    cloud: 'GCS',                   bucket: 'gs://cbl-backup-us/',             region: 'us-east1',encryption:'CSEK',     writes: false },
 ]
 
 const ICEBERG_TABLES = [

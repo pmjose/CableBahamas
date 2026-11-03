@@ -96,9 +96,9 @@ const CHURN_BY_REASON = [
 
 const COMPETITOR_RISK = [
   { competitor: 'BTC', lostMo: 4820, regained: 1240, netLoss: 3580, avgOffer: 'BSD 25/mo 12 mo' },
-  { competitor: 'Benchmark A',   lostMo: 3140, regained:  980, netLoss: 2160, avgOffer: 'BSD 20/mo 6 mo' },
-  { competitor: 'Benchmark C',    lostMo: 1820, regained:  420, netLoss: 1400, avgOffer: 'BSD 15/mo 3 mo' },
-  { competitor: 'Benchmark B',     lostMo: 2640, regained:  210, netLoss: 2430, avgOffer: 'BSD 10/mo unlimited' },
+  { competitor: 'Rival ISP A',   lostMo: 3140, regained:  980, netLoss: 2160, avgOffer: 'BSD 20/mo 6 mo' },
+  { competitor: 'Rival ISP C',    lostMo: 1820, regained:  420, netLoss: 1400, avgOffer: 'BSD 15/mo 3 mo' },
+  { competitor: 'Rival ISP B',     lostMo: 2640, regained:  210, netLoss: 2430, avgOffer: 'BSD 10/mo unlimited' },
 ]
 
 const RECOVERY_CURVE = Array.from({ length: 12 }, (_, i) => ({
@@ -193,7 +193,7 @@ export default function ChurnRetentionPage() {
         agentBlurb="Scores the full base hourly and builds the predicted-churn book."
         decision={{
           title: 'Prioritise high-value contract-end book this week',
-          detail: '6,240 high-value lines hit contract-end in 30 days at 88% risk — loyalty offer protects most ARPU per euro.',
+          detail: '6,240 high-value lines hit contract-end in 30 days at 88% risk — loyalty offer protects most ARPU per BSD.',
           impact: '\u20ac482K/mo ARPU protected',
           risk: 'Over-discounting trains future churn — cap depth by segment',
           linkTo: '#/portal/mnp',
@@ -405,7 +405,7 @@ export default function ChurnRetentionPage() {
                 ],
                 findings: [
                   tt('6,240 high-value lines hit contract-end in 30 days at 88% risk.'),
-                  tt('A targeted loyalty offer here protects the most ARPU per euro of retention spend.'),
+                  tt('A targeted loyalty offer here protects the most ARPU per BSD of retention spend.'),
                   tt('Discount-trained cohort is the biggest \u20ac book — step-down promo beats blanket credit.'),
                 ],
                 note: tt('Over-discounting trains future churn — cap depth by segment.'),
@@ -1059,7 +1059,7 @@ export default function ChurnRetentionPage() {
               ))}
             </div>
             <div className="mt-3 text-xs text-vfes-dark/55">{tt('Source: CBL_ANALYTICS.ML_OUTPUTS.CHURN_V4_2 · SHAP values · 142 features total')}</div>
-            <div className="mt-2 text-[10px] uppercase tracking-widest text-vfes-dark/40">{tt('Powered by Snowpark ML · served from Model Registry · features from Feature Store · GDPR basis: Legitimate Interest · DPIA-2024-CHURN-07')}</div>
+            <div className="mt-2 text-[10px] uppercase tracking-widest text-vfes-dark/40">{tt('Powered by Snowpark ML · served from Model Registry · features from Feature Store · DPA basis: Legitimate Interest · DPIA-2024-CHURN-07')}</div>
           </Panel>
 
           <div className="mt-4 p-4 rounded-xl bg-[#fafbfc] border border-black/5 text-xs text-vfes-dark/65">

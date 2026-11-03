@@ -1,7 +1,7 @@
 // =============================================================================
 // Regulatory & ESG cockpit — CCO + CSO grade
-// 10 tabs · Executive-style pill nav · URCA / EU Telco / GDPR / NIS2 / AI Act
-// CSRD / Climate / Nature / Social / Governance / Cases / Regulation 360
+// 10 tabs · Executive-style pill nav · URCA / DPA / cyber / AI governance
+// Sustainability report / Climate / Nature / Social / Governance / Cases / Regulation 360
 // =============================================================================
 import { useState, useEffect, useMemo } from 'react'
 import tt from '../../i18n/tt'
@@ -41,13 +41,13 @@ const sevColor: Record<string, string> = {
 
 const tabs = [
   { id: 'overview',  label: 'Overview',         icon: Activity },
-  { id: 'comreg',    label: 'URCA & EU Telco', icon: Radio },
-  { id: 'privacy',   label: 'Privacy (GDPR)',   icon: Lock },
-  { id: 'cyber',     label: 'Cyber & NIS2',     icon: Shield },
+  { id: 'comreg',    label: 'URCA & Telecom', icon: Radio },
+  { id: 'privacy',   label: 'Privacy (DPA)',   icon: Lock },
+  { id: 'cyber',     label: 'Cyber & URCA',     icon: Shield },
   { id: 'ai',        label: 'AI Governance',    icon: Cpu },
   { id: 'climate',   label: 'ESG · Climate',    icon: Leaf },
   { id: 'nature',    label: 'ESG · Nature & Social', icon: TreePine },
-  { id: 'csrd',      label: 'CSRD & Ratings',   icon: FileText },
+  { id: 'sustainability',      label: 'Sustainability & Ratings',   icon: FileText },
   { id: 'cases',     label: 'Cases & Audits',   icon: Gavel },
   { id: 'reg360',    label: 'Regulation 360',   icon: Award },
 ] as const
@@ -66,9 +66,9 @@ const comregQos = [
   { kpi: 'Faults reported / 100 lines',          value: 4.6,   target: 6,    unit: '', dir: 'lower', status: 'Pass' },
   { kpi: 'First-call resolution',                value: 78,    target: 75,   unit: '%', dir: 'higher', status: 'Pass' },
   { kpi: 'Billing complaints / 1,000 bills',     value: 0.42,  target: 1.0,  unit: '', dir: 'lower', status: 'Pass' },
-  { kpi: 'Switching code (GP2C) success',        value: 96,    target: 95,   unit: '%', dir: 'higher', status: 'Pass' },
+  { kpi: 'Switching code (number-transfer) success',        value: 96,    target: 95,   unit: '%', dir: 'higher', status: 'Pass' },
   { kpi: 'Number portability SLA',               value: 99.4,  target: 99,   unit: '%', dir: 'higher', status: 'Pass' },
-  { kpi: '112 routing accuracy',             value: 99.98, target: 99.95, unit: '%', dir: 'higher', status: 'Pass' },
+  { kpi: '911/919 routing accuracy',             value: 99.98, target: 99.95, unit: '%', dir: 'higher', status: 'Pass' },
   { kpi: 'Mobile coverage (population %)',       value: 98.2,  target: 99,   unit: '%', dir: 'higher', status: 'Watch' },
   { kpi: 'NGA broadband coverage (premises %)',  value: 84,    target: 90,   unit: '%', dir: 'higher', status: 'Watch' },
   { kpi: 'Vulnerable-customer code adherence',   value: 100,   target: 100,  unit: '%', dir: 'higher', status: 'Pass' },
@@ -94,7 +94,7 @@ const spectrum = [
 ]
 
 const euTelcoStack = [
-  { reg: 'EECC (KB/AR transposition 2022)', status: 'Compliant',    nextDeadline: '2026-06 audit', owner: 'Reg Affairs', evidence: 'Contract summaries live' },
+  { reg: 'Communications Act 2009', status: 'Compliant',    nextDeadline: '2026-06 audit', owner: 'Reg Affairs', evidence: 'Contract summaries live' },
   { reg: 'Roam-Like-At-Home (Reg 2022/612)', status: 'Compliant',   nextDeadline: 'Ongoing',       owner: 'Reg Affairs', evidence: 'Roaming policy' },
   { reg: 'Open Internet (Reg 2015/2120)',    status: 'Compliant',   nextDeadline: '2026-12 BEREC report', owner: 'Reg Affairs', evidence: 'Annual transparency' },
   { reg: 'eIDAS 2.0 (digital identity)',     status: 'On track',    nextDeadline: '2027-05 wallet ready', owner: 'Identity team', evidence: 'POC live' },
@@ -138,7 +138,7 @@ const dpiaPipeline = [
 ]
 
 const transferPosture = [
-  { country: 'United States',    mechanism: 'EU-US DPF + SCCs', tia: 'Done', volume: 'High',   review: '2026-12' },
+  { country: 'United States',    mechanism: 'Cross-border transfer clauses', tia: 'Done', volume: 'High',   review: '2026-12' },
   { country: 'United Kingdom',   mechanism: 'Adequacy',          tia: 'N/A',  volume: 'High',   review: '2027-06' },
   { country: 'India',            mechanism: 'SCCs + supplementary', tia: 'Done', volume: 'Medium', review: '2026-10' },
   { country: 'Switzerland',      mechanism: 'Adequacy',          tia: 'N/A',  volume: 'Low',    review: '2027-06' },
@@ -260,19 +260,19 @@ const governance = {
   tax: { etr: 0.16, cbcRReady: true, taxStrategyPublished: true },
 }
 
-// CSRD / ratings
+// Sustainability report / ratings
 const csrdProgress = [
-  { standard: 'ESRS 2 (General)', datapoints: 84,  done: 84,  assured: 80 },
-  { standard: 'ESRS E1 (Climate)', datapoints: 220, done: 198, assured: 168 },
-  { standard: 'ESRS E2 (Pollution)',datapoints: 32, done: 28,  assured: 22 },
-  { standard: 'ESRS E3 (Water)',   datapoints: 38, done: 32,  assured: 28 },
-  { standard: 'ESRS E4 (Bio)',     datapoints: 64, done: 42,  assured: 30 },
-  { standard: 'ESRS E5 (Circular)',datapoints: 56, done: 46,  assured: 36 },
-  { standard: 'ESRS S1 (Workforce)',datapoints: 142, done: 132, assured: 112 },
-  { standard: 'ESRS S2 (Value chain)',datapoints: 64, done: 38, assured: 22 },
-  { standard: 'ESRS S3 (Communities)',datapoints: 28, done: 22, assured: 12 },
-  { standard: 'ESRS S4 (Consumers)',datapoints: 84, done: 72,  assured: 56 },
-  { standard: 'ESRS G1 (Conduct)', datapoints: 42, done: 38,  assured: 32 },
+  { standard: 'ISSB 2 (General)', datapoints: 84,  done: 84,  assured: 80 },
+  { standard: 'ISSB E1 (Climate)', datapoints: 220, done: 198, assured: 168 },
+  { standard: 'ISSB E2 (Pollution)',datapoints: 32, done: 28,  assured: 22 },
+  { standard: 'ISSB E3 (Water)',   datapoints: 38, done: 32,  assured: 28 },
+  { standard: 'ISSB E4 (Bio)',     datapoints: 64, done: 42,  assured: 30 },
+  { standard: 'ISSB E5 (Circular)',datapoints: 56, done: 46,  assured: 36 },
+  { standard: 'ISSB S1 (Workforce)',datapoints: 142, done: 132, assured: 112 },
+  { standard: 'ISSB S2 (Value chain)',datapoints: 64, done: 38, assured: 22 },
+  { standard: 'ISSB S3 (Communities)',datapoints: 28, done: 22, assured: 12 },
+  { standard: 'ISSB S4 (Consumers)',datapoints: 84, done: 72,  assured: 56 },
+  { standard: 'ISSB G1 (Conduct)', datapoints: 42, done: 38,  assured: 32 },
 ]
 
 const ratings = [
@@ -310,57 +310,57 @@ const doubleMateriality = [
 // Cases & audits
 const openCases = [
   { id: 'CR-26-04', body: 'URCA', title: 'Margin-squeeze test M4 leased lines', sev: 'High',   filed: '2026-03-12', target: '2026-09-30', owner: 'Reg Affairs' },
-  { id: 'APD-26-12',body: 'APD',    title: 'Cookie consent dark-pattern review',   sev: 'Medium', filed: '2026-04-02', target: '2026-08-15', owner: 'DPO' },
-  { id: 'CR-26-09', body: 'URCA', title: 'Switching code GP2C complaint volume', sev: 'Low',    filed: '2026-05-10', target: '2026-07-31', owner: 'Reg Affairs' },
-  { id: 'CCPC-26-02',body: 'BCA',  title: 'Bundle-pricing transparency review',   sev: 'Medium', filed: '2026-02-18', target: '2026-09-15', owner: 'Legal' },
-  { id: 'CCB-26-01',body: 'CCB',  title: 'NIS2 attestation evidence pack',       sev: 'Medium', filed: '2026-04-22', target: '2026-10-31', owner: 'CISO' },
+  { id: 'ODPC-26-12',body: 'ODPC',    title: 'Cookie consent dark-pattern review',   sev: 'Medium', filed: '2026-04-02', target: '2026-08-15', owner: 'DPO' },
+  { id: 'CR-26-09', body: 'URCA', title: 'Switching code number-transfer complaint volume', sev: 'Low',    filed: '2026-05-10', target: '2026-07-31', owner: 'Reg Affairs' },
+  { id: 'CCPC-26-02',body: 'URCA',  title: 'Bundle-pricing transparency review',   sev: 'Medium', filed: '2026-02-18', target: '2026-09-15', owner: 'Legal' },
+  { id: 'URCA-C-26-01',body: 'URCA',  title: 'URCA cyber attestation evidence pack',       sev: 'Medium', filed: '2026-04-22', target: '2026-10-31', owner: 'CISO' },
   { id: 'FSPO-26-03',body: 'Ombudsman',  title: 'B2B billing dispute (SMB)',            sev: 'Low',    filed: '2026-05-22', target: '2026-08-22', owner: 'Legal' },
 ]
 const finesPaid = [
   { date: '2025-09-12', body: 'URCA', amt: 0.018, reason: 'Late QoS submission' },
-  { date: '2025-11-04', body: 'APD',    amt: 0.085, reason: 'DSAR SLA breach (cohort)' },
+  { date: '2025-11-04', body: 'ODPC',    amt: 0.085, reason: 'DSAR SLA breach (cohort)' },
   { date: '2026-02-22', body: 'JEP',   amt: 0.012, reason: 'Misleading speed claim' },
-  { date: '2026-04-08', body: 'BCA',    amt: 0.024, reason: 'Auto-renewal disclosure' },
+  { date: '2026-04-08', body: 'URCA',    amt: 0.024, reason: 'Auto-renewal disclosure' },
 ]
 const audits = [
   { audit: 'ISO 27001 surveillance',   auditor: 'BSI',     date: '2026-09-14', status: 'Scheduled', findingsOpen: 2 },
   { audit: 'PCI DSS 4.0 ROC',          auditor: 'Verizon', date: '2026-10-22', status: 'In flight', findingsOpen: 6 },
-  { audit: 'CSRD limited assurance',   auditor: 'PwC',     date: '2026-12-01', status: 'In flight', findingsOpen: 18 },
+  { audit: 'Sustainability limited assurance',   auditor: 'PwC',     date: '2026-12-01', status: 'In flight', findingsOpen: 18 },
   { audit: 'SOC 2 Type II',            auditor: 'EY',      date: '2026-09-08', status: 'In flight', findingsOpen: 4 },
-  { audit: 'GDPR external review',     auditor: 'Loyens & Loeff', date: '2026-11-12', status: 'Scheduled', findingsOpen: 0 },
-  { audit: 'NIS2 readiness',           auditor: 'Deloitte',date: '2026-08-20', status: 'In flight', findingsOpen: 8 },
+  { audit: 'DPA external review',     auditor: 'Higgs & Johnson', date: '2026-11-12', status: 'Scheduled', findingsOpen: 0 },
+  { audit: 'URCA cyber readiness',           auditor: 'Deloitte',date: '2026-08-20', status: 'In flight', findingsOpen: 8 },
 ]
 
 // Reporting calendar
 const calendar = [
   { name: 'Annual Report (FY26)',          due: '2026-09-30', owner: 'IR',     status: 'On track' },
-  { name: 'Sustainability/CSRD Report',    due: '2026-09-30', owner: 'CSO',    status: 'On track' },
+  { name: 'Sustainability/Sustainability report Report',    due: '2026-09-30', owner: 'CSO',    status: 'On track' },
   { name: 'TCFD disclosures',              due: '2026-09-30', owner: 'CSO',    status: 'On track' },
   { name: 'CDP Climate response',          due: '2026-07-31', owner: 'CSO',    status: 'In flight' },
   { name: 'Gender Pay Gap (The Bahamas)',      due: '2026-12-23', owner: 'CHRO',   status: 'On track' },
   { name: 'Modern Slavery statement',      due: '2027-03-31', owner: 'Legal',  status: 'Tracking' },
   { name: 'Tax Transparency Report',       due: '2026-12-15', owner: 'CFO',    status: 'On track' },
   { name: 'URCA QoS submission',         due: '2026-07-31', owner: 'RegA',   status: 'On track' },
-  { name: 'NIS2 register update',          due: '2026-10-31', owner: 'CISO',   status: 'In flight' },
-  { name: 'EU Taxonomy alignment',         due: '2026-09-30', owner: 'CFO',    status: 'In flight' },
+  { name: 'URCA cyber register update',          due: '2026-10-31', owner: 'CISO',   status: 'In flight' },
+  { name: 'Climate-resilience capex share',         due: '2026-09-30', owner: 'CFO',    status: 'In flight' },
 ]
 
 // Regulation 360 catalog
 const regCatalog = [
-  { code: 'NIS2',  name: 'NIS2 Directive (cyber)',         body: 'CCB',   inForce: '2024-10', status: 'On track', owner: 'CISO' },
-  { code: 'CSRD',  name: 'CSRD / ESRS',                    body: 'EU/EFRAG',inForce: '2025-01', status: 'On track', owner: 'CSO' },
-  { code: 'GDPR',  name: 'GDPR / ePrivacy',                body: 'APD',    inForce: '2018-05', status: 'Compliant', owner: 'DPO' },
-  { code: 'AIACT', name: 'EU AI Act',                      body: 'EU',     inForce: '2026-08', status: 'On track', owner: 'AI Governance' },
-  { code: 'DORA',  name: 'DORA (financial customers)',     body: 'EU',     inForce: '2025-01', status: 'On track', owner: 'CISO' },
-  { code: 'EECC',  name: 'European Electronic Comms Code', body: 'URCA', inForce: '2022-06', status: 'Compliant', owner: 'Reg Affairs' },
-  { code: 'CRA',   name: 'Cyber Resilience Act (CPE)',     body: 'EU',     inForce: '2027-12', status: 'At risk',  owner: 'Product' },
-  { code: 'CER',   name: 'Critical Entities Resilience',   body: 'CCB',   inForce: '2026-10', status: 'On track', owner: 'Resilience' },
-  { code: 'TAX',   name: 'EU Taxonomy',                    body: 'EU',     inForce: '2022-01', status: 'On track', owner: 'CFO' },
-  { code: 'DATAACT',name:'Data Act (IoT)',                 body: 'EU',     inForce: '2025-09', status: 'On track', owner: 'Data team' },
+  { code: 'URCA cyber',  name: 'URCA Cybersecurity Guidelines',        body: 'URCA',   inForce: '2024-10', status: 'On track', owner: 'CISO' },
+  { code: 'Sustainability report',  name: 'ISSB / BISX',                    body: 'ISSB',inForce: '2025-01', status: 'On track', owner: 'CSO' },
+  { code: 'DPA',  name: 'Data Protection Act 2003',           body: 'ODPC',   inForce: '2003-04', status: 'Compliant', owner: 'DPO' },
+  { code: 'AIACT', name: 'AI governance policy',                      body: 'Board',     inForce: '2026-08', status: 'On track', owner: 'AI Governance' },
+  { code: 'CBOB IT risk',  name: 'CBOB IT risk guidelines (bank customers)',     body: 'CBOB',     inForce: '2025-01', status: 'On track', owner: 'CISO' },
+  { code: 'Comms Act 2009',  name: 'Communications Act 2009', body: 'URCA', inForce: '2022-06', status: 'Compliant', owner: 'Reg Affairs' },
+  { code: 'CPE',   name: 'URCA type approval (CPE)',       body: 'URCA',   inForce: '2027-12', status: 'At risk',  owner: 'Product' },
+  { code: 'NEMA',  name: 'Critical infrastructure & hurricane resilience', body: 'NEMA',   inForce: '2026-10', status: 'On track', owner: 'Resilience' },
+  { code: 'TAX',   name: 'Climate resilience',                    body: 'BISX',     inForce: '2022-01', status: 'On track', owner: 'CFO' },
+  { code: 'ETA',   name:'Electronic Communications & Transactions Act', body: 'Govt',     inForce: '2025-09', status: 'On track', owner: 'Data team' },
 ]
 
 const regControls: Record<string, { control: string; status: 'Pass' | 'Watch' | 'Fail'; evidence: string; owner: string }[]> = {
-  NIS2: [
+  'URCA cyber': [
     { control: 'Risk-management framework',       status: 'Pass',  evidence: 'ISMS 2026.1 approved', owner: 'CISO' },
     { control: 'Incident reporting <24h / <72h',  status: 'Pass',  evidence: '4/4 met YTD',        owner: 'SOC' },
     { control: 'Supply-chain security',           status: 'Watch', evidence: '38 vendors pending', owner: 'Procure' },
@@ -370,22 +370,22 @@ const regControls: Record<string, { control: string; status: 'Pass' | 'Watch' | 
     { control: 'Training & awareness',            status: 'Pass',  evidence: '94% complete',       owner: 'CISO' },
     { control: 'Board reporting',                 status: 'Pass',  evidence: 'Quarterly',          owner: 'CISO' },
   ],
-  CSRD: [
+  'Sustainability report': [
     { control: 'Double-materiality assessment',   status: 'Pass',  evidence: 'Approved 2025-12',   owner: 'CSO' },
-    { control: 'ESRS E1 datapoints (220)',        status: 'Watch', evidence: '198/220 collected',  owner: 'CSO' },
+    { control: 'ISSB E1 datapoints (220)',        status: 'Watch', evidence: '198/220 collected',  owner: 'CSO' },
     { control: 'Limited assurance (PwC)',         status: 'Watch', evidence: '18 findings open',   owner: 'CSO' },
-    { control: 'EU Taxonomy alignment',           status: 'Pass',  evidence: '62% capex aligned',  owner: 'CFO' },
+    { control: 'Climate-resilience capex share',           status: 'Pass',  evidence: '62% capex aligned',  owner: 'CFO' },
     { control: 'Climate transition plan',         status: 'Pass',  evidence: 'SBTi validated',     owner: 'CSO' },
     { control: 'Value-chain S2 data',             status: 'Watch', evidence: '38/64 datapoints',   owner: 'CSO' },
     { control: 'Digital tagging (XBRL)',          status: 'Pass',  evidence: 'Test pack ready',    owner: 'CSO' },
   ],
-  GDPR: [
+  DPA: [
     { control: 'RoPA up-to-date',                 status: 'Pass',  evidence: '2026-Q2 refresh',    owner: 'DPO' },
     { control: 'DPIA pipeline',                   status: 'Pass',  evidence: '6 in flight',        owner: 'DPO' },
     { control: 'DSAR SLA <30 days',               status: 'Watch', evidence: '3 breaches YTD',     owner: 'DPO' },
     { control: 'Breach reporting <72h',           status: 'Pass',  evidence: '4/4 met',            owner: 'DPO' },
-    { control: 'International transfers',         status: 'Pass',  evidence: 'SCC v2 + DPF',       owner: 'Legal' },
-    { control: 'Cookie/consent compliance',       status: 'Watch', evidence: 'APD review open',    owner: 'Marketing' },
+    { control: 'International transfers',         status: 'Pass',  evidence: 'Transfer clauses',       owner: 'Legal' },
+    { control: 'Cookie/consent compliance',       status: 'Watch', evidence: 'ODPC review open',    owner: 'Marketing' },
   ],
   AIACT: [
     { control: 'AI inventory & risk classification', status: 'Pass', evidence: '8 systems classified', owner: 'AI Gov' },
@@ -396,18 +396,18 @@ const regControls: Record<string, { control: string; status: 'Pass' | 'Watch' | 
     { control: 'Human oversight gates',              status: 'Pass', evidence: 'HITL on 4 systems',  owner: 'Product' },
     { control: 'Post-market monitoring',             status: 'Pass', evidence: 'Drift monitors',     owner: 'Data team' },
   ],
-  DORA: [
+  'CBOB IT risk': [
     { control: 'ICT risk-management framework',   status: 'Pass',  evidence: 'Approved Q1',        owner: 'CISO' },
     { control: 'TPP register (B2B finance)',      status: 'Pass',  evidence: '12 customers',       owner: 'CISO' },
-    { control: 'Incident classification',         status: 'Pass',  evidence: 'Aligned with NIS2',  owner: 'SOC' },
+    { control: 'Incident classification',         status: 'Pass',  evidence: 'Aligned with URCA cyber guidelines',  owner: 'SOC' },
     { control: 'Resilience testing (TLPT)',       status: 'Watch', evidence: 'Q4 scheduled',       owner: 'CISO' },
     { control: 'ICT 3rd-party register',          status: 'Pass',  evidence: 'Procurement feed',   owner: 'Procure' },
   ],
-  EECC: [
+  'Comms Act 2009': [
     { control: 'Pre-contract summaries',          status: 'Pass',  evidence: 'Live',               owner: 'Reg' },
-    { control: 'Switching transparency',          status: 'Pass',  evidence: 'GP2C 96%',           owner: 'Reg' },
+    { control: 'Switching transparency',          status: 'Pass',  evidence: 'number-transfer 96%',           owner: 'Reg' },
     { control: 'Vulnerable customer code',        status: 'Pass',  evidence: '100% adherence',     owner: 'CCO' },
-    { control: '112 routing',                 status: 'Pass',  evidence: '99.98%',             owner: 'Network' },
+    { control: '911/919 routing',                 status: 'Pass',  evidence: '99.98%',             owner: 'Network' },
   ],
   CRA: [
     { control: 'CPE security-by-default',         status: 'Watch', evidence: 'Roadmap Q3',         owner: 'Product' },
@@ -438,9 +438,9 @@ export default function RegulatoryPage() {
   })
   useEffect(() => { try { localStorage.setItem('reg-tab', tab) } catch { /* ignore */ } }, [tab])
   const [selectedReg, setSelectedReg] = useState<string>(() => {
-    if (typeof window === 'undefined') return 'NIS2'
+    if (typeof window === 'undefined') return 'URCA cyber'
     try { const raw = localStorage.getItem('reg-selected'); if (raw) return raw } catch { /* ignore */ }
-    return 'NIS2'
+    return 'URCA cyber'
   })
   useEffect(() => { try { localStorage.setItem('reg-selected', selectedReg) } catch { /* ignore */ } }, [selectedReg])
   const drillInto = (code: string) => { setSelectedReg(code); setTab('reg360') }
@@ -449,7 +449,7 @@ export default function RegulatoryPage() {
     <div className="p-8">
       <PageHeader
         title={tt('Regulatory & ESG')}
-        subtitle={tt('URCA · APD · CCB · BCA · EU stack · CSRD · 10 regulations live · CCO + CSO cockpit')}
+        subtitle={tt('URCA · ODPC · CBOB · NEMA · BISX · 10 regulations live · CCO + CSO cockpit')}
         actions={<div className="flex items-center gap-2 bg-vfes-red/5 text-vfes-dark px-3 py-2 rounded-lg text-xs font-bold uppercase tracking-widest"><Award className="w-3.5 h-3.5" />{tt('CCO + CSO')}</div>}
       />
 
@@ -495,7 +495,7 @@ export default function RegulatoryPage() {
           kind: 'bar', title: 'Predicted obligation-breach risk by area (%)', xKey: 'area', unit: '%',
           data: [
             { area: 'Rural coverage', risk: 72 }, { area: 'QoS attestation', risk: 28 },
-            { area: 'DSAR SLA', risk: 64 }, { area: '112 routing', risk: 11 }, { area: 'ESG Scope 1+2', risk: 34 },
+            { area: 'DSAR SLA', risk: 64 }, { area: '911/919 routing', risk: 11 }, { area: 'ESG Scope 1+2', risk: 34 },
           ],
           series: [{ key: 'risk', name: 'Breach risk', color: '#FF4438' }],
           colorBy: { key: 'risk', high: 60, mid: 30 },
@@ -522,7 +522,7 @@ export default function RegulatoryPage() {
       {tab === 'ai'       && <AITab />}
       {tab === 'climate'  && <ClimateTab />}
       {tab === 'nature'   && <NatureSocialTab />}
-      {tab === 'csrd'     && <CsrdTab />}
+      {tab === 'sustainability'     && <SustainabilityTab />}
       {tab === 'cases'    && <CasesTab />}
       {tab === 'reg360'   && <Reg360Tab code={selectedReg} setCode={setSelectedReg} />}
 
@@ -543,19 +543,19 @@ function OverviewTab({ drillInto }: { drillInto: (c: string) => void }) {
     <>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <KpiCard label={tt('URCA compliance')} value="13/15 KPIs Pass" delta="2 watch" trend="up" icon={Scale} accent />
-        <KpiCard label={tt('GDPR open DSARs')} value={`${dsarPipeline[0].count + dsarPipeline[1].count + dsarPipeline[2].count}`} delta="all in SLA" trend="up" icon={Lock} />
-        <KpiCard label={tt('NIS2 incidents (TTM)')} value={`${nis2Incidents.length}`} delta={`${nis2Incidents.filter((i) => i.reportable).length} reportable`} trend="flat" icon={Shield} />
+        <KpiCard label={tt('DPA open DSARs')} value={`${dsarPipeline[0].count + dsarPipeline[1].count + dsarPipeline[2].count}`} delta="all in SLA" trend="up" icon={Lock} />
+        <KpiCard label={tt('URCA cyber incidents (TTM)')} value={`${nis2Incidents.length}`} delta={`${nis2Incidents.filter((i) => i.reportable).length} reportable`} trend="flat" icon={Shield} />
         <KpiCard label={tt('AI systems registered')} value={`${aiSystems.length}`} delta={`${aiSystems.filter((a) => a.risk === 'High').length} high-risk`} trend="flat" icon={Cpu} />
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <KpiCard label={tt('GHG total (Scope 1/2/3)')} value={`${totalGhg.toFixed(0)} ktCO₂e`} delta="-12% YoY" trend="up" icon={Leaf} accent />
-        <KpiCard label={tt('CSRD datapoints')} value={`${csrdDone}/${csrdTotal}`} delta={`${((csrdDone / csrdTotal) * 100).toFixed(0)}% collected`} trend="up" icon={FileText} />
+        <KpiCard label={tt('Sustainability datapoints')} value={`${csrdDone}/${csrdTotal}`} delta={`${((csrdDone / csrdTotal) * 100).toFixed(0)}% collected`} trend="up" icon={FileText} />
         <KpiCard label={tt('Open cases')} value={`${openCases.length}`} delta={`${openCases.filter((c) => c.sev === 'High').length} high`} trend="flat" icon={Gavel} />
         <KpiCard label={tt('Fines paid YTD')} value={`BSD ${(totalFines * 1000).toFixed(0)}K`} delta={`${finesPaid.length} matters`} trend="down" icon={FileWarning} />
       </div>
 
       {/* Mobile / spectrum / Open RAN regulatory */}
-      <Panel title={tt('Mobile · spectrum · 5G · Open RAN — active obligations')} action={<span className="text-[10px] uppercase tracking-widest font-bold text-vfes-dark bg-vfes-red/10 rounded px-2 py-1 flex items-center gap-1"><Smartphone className="w-3 h-3" />{tt('URCA · EU · CCB · APD')}</span>}>
+      <Panel title={tt('Mobile · spectrum · 5G · Open RAN — active obligations')} action={<span className="text-[10px] uppercase tracking-widest font-bold text-vfes-dark bg-vfes-red/10 rounded px-2 py-1 flex items-center gap-1"><Smartphone className="w-3 h-3" />{tt('URCA · ODPC · CBOB · NEMA')}</span>}>
         <table className="w-full text-sm">
           <thead className="text-left text-vfes-dark/55 text-xs uppercase tracking-widest">
             <tr><th className="py-1.5">{tt('ID')}</th><th>{tt('Body')}</th><th>{tt('Topic')}</th><th>{tt('Due')}</th><th>{tt('Status')}</th><th>{tt('Risk')}</th></tr>
@@ -577,7 +577,7 @@ function OverviewTab({ drillInto }: { drillInto: (c: string) => void }) {
             ))}
           </tbody>
         </table>
-        <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('700 MHz indoor coverage in Rural Out Islands is the only High-risk obligation — 38 sites behind plan. EU 5G Toolbox Huawei share already at 12% (cap is 20%).')}</div>
+        <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('700 MHz indoor coverage in Rural Out Islands is the only High-risk obligation — 38 sites behind plan. high-risk vendor policy Huawei share already at 12% (cap is 20%).')}</div>
       </Panel>
 
       {/* ESG · RAN energy efficiency */}
@@ -603,7 +603,7 @@ function OverviewTab({ drillInto }: { drillInto: (c: string) => void }) {
             ))}
           </tbody>
         </table>
-        <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('RAN energy intensity −8.4% YoY — sleep-mode 4G/5G drives savings. Island Towers (demo) tower-share at 91% of 6,500-site target. Scope-2 mobile emissions tracking to 2027 net-zero RAN target.')}</div>
+        <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('RAN energy intensity −8.4% YoY — sleep-mode 4G/5G drives savings. Island Towers (demo) tower-share at 91% of 160-site target. Scope-2 mobile emissions tracking to 2027 net-zero RAN target.')}</div>
       </Panel>
 
       <div className="grid lg:grid-cols-2 gap-6 mb-6">
@@ -659,7 +659,7 @@ function OverviewTab({ drillInto }: { drillInto: (c: string) => void }) {
       </Panel>
 
       <SiPrompts prompts={[
-        'Show all CSRD datapoints not yet assured by PwC.',
+        'Show all Sustainability datapoints not yet assured by PwC.',
         'List URCA KPIs trending toward red.',
         'Forecast Scope-2 emissions if remaining DCs go renewable in Q4.',
         'Which regulations have notice deadlines in next 90 days?',
@@ -717,7 +717,7 @@ function UrcaTab() {
             </tbody>
           </table>
         </Panel>
-        <Panel title={tt('EU telco regulatory stack')}>
+        <Panel title={tt('URCA regulatory stack')}>
           <table className="w-full text-sm">
             <thead className="text-left text-vfes-dark/55 text-xs uppercase tracking-widest">
               <tr><th className="py-1.5">{tt('Regulation')}</th><th>{tt('Status')}</th><th>{tt('Next deadline')}</th></tr>
@@ -810,7 +810,7 @@ function PrivacyTab() {
       </div>
 
       <div className="grid lg:grid-cols-2 gap-6 mb-6">
-        <Panel title={tt('Breach register (APD 72h clock)')}>
+        <Panel title={tt('Breach register (ODPC 72h clock)')}>
           <table className="w-full text-sm">
             <thead className="text-left text-vfes-dark/55 text-xs uppercase tracking-widest">
               <tr><th className="py-1.5">{tt('ID')}</th><th>{tt('Date')}</th><th>{tt('Sev')}</th><th>{tt('Records')}</th><th>{tt('72h')}</th><th>{tt('Status')}</th></tr>
@@ -894,7 +894,7 @@ function CyberTab() {
         <KpiCard label={tt('ISO 27001 expiry')} value={cyberPosture.isoCert.iso27001} delta="surveillance Q3" trend="flat" icon={CheckCircle} />
       </div>
 
-      <Panel title={tt('NIS2 incident register (24h/72h reporting)')} >
+      <Panel title={tt('URCA cyber incident register (24h/72h reporting)')} >
         <table className="w-full text-sm">
           <thead className="text-left text-vfes-dark/55 text-xs uppercase tracking-widest">
             <tr><th className="py-2">{tt('ID')}</th><th>{tt('Sev')}</th><th>{tt('Service')}</th><th>{tt('Reportable')}</th><th>{tt('24h')}</th><th>{tt('72h')}</th><th>{tt('Status')}</th><th>{tt('Detail')}</th></tr>
@@ -963,15 +963,15 @@ function AITab() {
     <>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <KpiCard label={tt('AI systems registered')} value={`${aiSystems.length}`} delta={`${aiSystems.filter((a) => a.status === 'Live').length} live`} trend="up" icon={Cpu} accent />
-        <KpiCard label={tt('High-risk (AI Act)')} value={`${highRisk}`} delta="conformity in flight" trend="flat" icon={AlertTriangle} />
+        <KpiCard label={tt('High-risk (AI policy)')} value={`${highRisk}`} delta="conformity in flight" trend="flat" icon={AlertTriangle} />
         <KpiCard label={tt('Model cards')} value={`${aiSystems.filter((a) => a.card).length}/${aiSystems.length}`} delta="scenario" trend="up" icon={FileText} />
         <KpiCard label={tt('Bias tests passing')} value={`${aiSystems.filter((a) => a.bias === 'Pass').length}/${aiSystems.length}`} delta="quarterly review" trend="up" icon={CheckCircle} />
       </div>
 
-      <Panel title={tt('AI system inventory · risk classification (EU AI Act)')}>
+      <Panel title={tt('AI system inventory · risk classification (AI governance policy)')}>
         <table className="w-full text-sm">
           <thead className="text-left text-vfes-dark/55 text-xs uppercase tracking-widest">
-            <tr><th className="py-2">{tt('System')}</th><th>{tt('AI Act risk')}</th><th>{tt('Use case')}</th><th>{tt('Status')}</th><th>{tt('Drift')}</th><th>{tt('Bias')}</th><th>{tt('Card')}</th><th>{tt('Oversight')}</th></tr>
+            <tr><th className="py-2">{tt('System')}</th><th>{tt('AI policy risk')}</th><th>{tt('Use case')}</th><th>{tt('Status')}</th><th>{tt('Drift')}</th><th>{tt('Bias')}</th><th>{tt('Card')}</th><th>{tt('Oversight')}</th></tr>
           </thead>
           <tbody>
             {aiSystems.map((a) => (
@@ -1002,7 +1002,7 @@ function ClimateTab() {
         <KpiCard label={tt('GHG total')} value={`${totalGhg.toFixed(0)} kt`} delta="-12% YoY" trend="up" icon={Leaf} accent />
         <KpiCard label={tt('Renewable elec.')} value="78%" delta="100% by 2027" trend="up" icon={Zap} />
         <KpiCard label={tt('SBTi status')} value="Validated" delta="1.5°C aligned" trend="up" icon={CheckCircle} />
-        <KpiCard label={tt('EU Taxonomy capex')} value={`${(taxonomy.capex.aligned * 100).toFixed(0)}%`} delta="aligned" trend="up" icon={Target} />
+        <KpiCard label={tt('Climate-resilience capex')} value={`${(taxonomy.capex.aligned * 100).toFixed(0)}%`} delta="aligned" trend="up" icon={Target} />
       </div>
 
       <div className="grid lg:grid-cols-2 gap-6 mb-6">
@@ -1209,21 +1209,21 @@ function NatureSocialTab() {
   )
 }
 
-// ----------------------------------------------------------------------------- CSRD
-function CsrdTab() {
+// ----------------------------------------------------------------------------- Sustainability report
+function SustainabilityTab() {
   const totalDp = csrdProgress.reduce((s, x) => s + x.datapoints, 0)
   const totalDone = csrdProgress.reduce((s, x) => s + x.done, 0)
   const totalAssured = csrdProgress.reduce((s, x) => s + x.assured, 0)
   return (
     <>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-        <KpiCard label={tt('ESRS datapoints')} value={`${totalDp}`} delta="11 standards" trend="flat" icon={FileText} accent />
+        <KpiCard label={tt('ISSB datapoints')} value={`${totalDp}`} delta="11 standards" trend="flat" icon={FileText} accent />
         <KpiCard label={tt('Collected')} value={`${((totalDone / totalDp) * 100).toFixed(0)}%`} delta={`${totalDone}/${totalDp}`} trend="up" icon={CheckCircle} />
         <KpiCard label={tt('Assured (PwC)')} value={`${((totalAssured / totalDp) * 100).toFixed(0)}%`} delta="limited assurance" trend="up" icon={Award} />
         <KpiCard label={tt('Taxonomy capex aligned')} value={`${(taxonomy.capex.aligned * 100).toFixed(0)}%`} delta={`eligible ${(taxonomy.capex.eligible * 100).toFixed(0)}%`} trend="up" icon={Target} />
       </div>
 
-      <Panel title={tt('ESRS standards · datapoints / collected / assured')}>
+      <Panel title={tt('ISSB standards · datapoints / collected / assured')}>
         <ResponsiveContainer width="100%" height={320}>
           <BarChart data={csrdProgress}>
             <CartesianGrid stroke="#eef0f3" vertical={false} />
@@ -1239,7 +1239,7 @@ function CsrdTab() {
       </Panel>
 
       <div className="grid lg:grid-cols-2 gap-6 mt-6 mb-6">
-        <Panel title={tt('EU Taxonomy alignment')}>
+        <Panel title={tt('Climate-resilience capex share')}>
           <ResponsiveContainer width="100%" height={260}>
             <BarChart data={[
               { axis: 'CapEx', eligible: taxonomy.capex.eligible * 100, aligned: taxonomy.capex.aligned * 100 },

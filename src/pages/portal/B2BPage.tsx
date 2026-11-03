@@ -318,7 +318,7 @@ function OverviewTab({ filtered, drillInto }: { filtered: Account[]; drillInto: 
             ))}
           </tbody>
         </table>
-        <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('Private 5G networks (84% YoY) and M2M / IoT (22.8% YoY) drive Mobile B2B growth. MVNO wholesale (fictional partners.) is mature but defensive against Benchmark B ARPU compression in consumer.')}</div>
+        <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('Private 5G networks (84% YoY) and M2M / IoT (22.8% YoY) drive Mobile B2B growth. MVNO wholesale (fictional partners.) is mature but defensive against Rival ISP B ARPU compression in consumer.')}</div>
       </Panel>
 
       <div className="grid lg:grid-cols-3 gap-6 mb-6">
@@ -394,7 +394,7 @@ function OverviewTab({ filtered, drillInto }: { filtered: Account[]; drillInto: 
             <ReferenceLine y={100} stroke="#1f2937" strokeDasharray="3 3" />
             <Bar dataKey="cablebahamas" fill={RED} name={tt('Cable Bahamas')} />
             <Bar dataKey="btc" fill="#0a8754" name={tt('BTC')} />
-            <Bar dataKey="orange" fill="#FF4438" name={tt('Benchmark A')} />
+            <Bar dataKey="orange" fill="#FF4438" name={tt('Rival ISP A')} />
             <Bar dataKey="bt" fill={BLUE} name={tt('BT The Bahamas')} />
             <Bar dataKey="adamo" fill={PURPLE} name={tt('EDPnet')} />
           </BarChart>
