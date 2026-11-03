@@ -2047,7 +2047,7 @@ export default function PricingSimulatorPage() {
                 )
               })}
             </div>
-            <div className="mt-3 text-[10px] text-vfes-dark/40 uppercase tracking-widest">{tt('Cortex Elasticity Model · v3.4 · Bayesian hierarchical · 8yr panel · 1.04M HHs · R² 0.86 acq / 0.78 churn')}</div>
+            <div className="mt-3 text-[10px] text-vfes-dark/40 uppercase tracking-widest">{tt('Cortex Elasticity Model · v3.4 · Bayesian hierarchical · 8yr panel · 140K HHs · R² 0.86 acq / 0.78 churn')}</div>
           </Panel>
 
           <div className="grid lg:grid-cols-2 gap-6 mt-6">

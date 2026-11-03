@@ -392,7 +392,7 @@ function PortfolioTab({ skuList, drillInto }: { skuList: SKU[]; drillInto: (c: s
             ))}
           </tbody>
         </table>
-        <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('5G M (60GB) is the volume anchor at 2.68M lines. Family pack carries strongest NPS contribution. eSIM-only is the only pilot SKU — promote to live in Q2 once activation funnel hits 25K/mo.')}</div>
+        <div className="text-[11px] text-vfes-dark/65 mt-3">{tt('5G M (60GB) is the volume anchor at 52K lines. Family pack carries strongest NPS contribution. eSIM-only is the only pilot SKU — promote to live in Q2 once activation funnel hits 25K/mo.')}</div>
       </Panel>
 
       <div className="grid lg:grid-cols-2 gap-6 mb-6">

@@ -601,7 +601,7 @@ export default function BundleProfitabilityPage() {
           <span className="font-bold text-vfes-dark uppercase tracking-widest text-[10px]">{tt('Sensitivity knobs')}</span>
           <label className="flex items-center gap-1.5">Scenario
             <select value={cfg.scenario} onChange={(e) => dispatch({ type: 'SET', patch: { scenario: e.target.value as Config['scenario'] } })} className="bg-white rounded px-1.5 py-0.5 font-semibold">
-              <option value="base">{tt('Base')}</option><option value="sky_renewal">{tt('Rival ISP B renewal +15%')}</option><option value="comreg_cap">{tt('URCA cap')}</option><option value="recession">{tt('Recession')}</option><option value="comp_match">{tt('Comp match')}</option>
+              <option value="base">{tt('Base')}</option><option value="sky_renewal">{tt('Sports content renewal +15%')}</option><option value="comreg_cap">{tt('URCA cap')}</option><option value="recession">{tt('Recession')}</option><option value="comp_match">{tt('Comp match')}</option>
             </select>
           </label>
           <label className="flex items-center gap-1.5">σ mult
@@ -657,7 +657,7 @@ export default function BundleProfitabilityPage() {
       {sub === 'cohortmargin' && <CohortMarginTab b={b} engine={engine} cfg={cfg} />}
 
       <div className="mt-6 text-[10px] text-vfes-dark/40 uppercase tracking-widest text-center">
-        4 Snowpark ML cohort regressions · {b.code} · halo {cfg.haloEnabled ? 'on' : 'off'} · scenario {cfg.scenario} · WACC {(cfg.wacc * 100).toFixed(1)}% · model bundle-econ v2.1 · 8yr panel · 1.04M HHs
+        4 Snowpark ML cohort regressions · {b.code} · halo {cfg.haloEnabled ? 'on' : 'off'} · scenario {cfg.scenario} · WACC {(cfg.wacc * 100).toFixed(1)}% · model bundle-econ v2.1 · 8yr panel · 140K HHs
       </div>
     </div>
   )

@@ -68,10 +68,10 @@ const coreNodes = [
 ]
 
 const sliceHealth = [
-  { slice: 'eMBB — consumer', sst: 1, subs: '13.2M', dlPeak: '3.84 Tbps', lat: '12 ms', util: 78, status: 'Healthy' },
-  { slice: 'URLLC — B2B/IoT', sst: 2, subs: '380K',  dlPeak: '0.18 Tbps', lat: '2 ms',  util: 42, status: 'Healthy' },
-  { slice: 'MIoT — devices',  sst: 3, subs: '1.2M',  dlPeak: '0.08 Tbps', lat: '50 ms', util: 28, status: 'Healthy' },
-  { slice: 'B2B Enterprise',  sst: 4, subs: '48K',   dlPeak: '0.24 Tbps', lat: '5 ms',  util: 64, status: 'Healthy' },
+  { slice: 'eMBB — consumer', sst: 1, subs: '168K',  dlPeak: '0.42 Tbps', lat: '12 ms', util: 78, status: 'Healthy' },
+  { slice: 'URLLC — B2B/IoT', sst: 2, subs: '4.2K',  dlPeak: '0.02 Tbps', lat: '2 ms',  util: 42, status: 'Healthy' },
+  { slice: 'MIoT — devices',  sst: 3, subs: '12K',   dlPeak: '0.01 Tbps', lat: '50 ms', util: 28, status: 'Healthy' },
+  { slice: 'B2B Enterprise',  sst: 4, subs: '0.6K',  dlPeak: '0.03 Tbps', lat: '5 ms',  util: 64, status: 'Healthy' },
 ]
 
 const coreLatency = [
@@ -245,7 +245,7 @@ export default function CTOPage() {
           <div className="flex items-center gap-2">
             <span className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              {tt('Live · 3.84 Tbps · ')}{liveTime}
+              {tt('Live · 0.42 Tbps · ')}{liveTime}
             </span>
             <Link to="/portal/architecture" className="bg-vfes-red hover:bg-vfes-red-dark text-vfes-dark text-sm font-bold px-4 py-2 rounded-lg flex items-center gap-2">
               <Layers className="w-4 h-4" /> {tt('Open Architecture')}
@@ -335,7 +335,7 @@ export default function CTOPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
           <KpiCard label={tt('5G pop coverage')}   value={`${MOBILE_KPIS.cov5gPop}%`}        delta="+3.4 pp YTD"          trend="up"   icon={Signal}  accent />
           <KpiCard label={tt('Active sites')}       value={`${(NET.activeSites/1000).toFixed(1)}K`} delta={`${NET.sharedSites.toLocaleString()} ${tt('shared')}`} trend="flat" icon={Radio} />
-          <KpiCard label={tt('Core capacity')}      value={`${NET.coreCapacityTbps} Tbps`}    delta={tt('peak 3.84 Tbps')} trend="up"   icon={Cable}   />
+          <KpiCard label={tt('Core capacity')}      value={`${NET.coreCapacityTbps} Tbps`}    delta={tt('peak 0.42 Tbps')} trend="up"   icon={Cable}   />
           <KpiCard label={tt('Core uptime')}        value={`${NET.coreUptimePct}%`}            delta={tt('30-day SLA')}     trend="up"   icon={Activity} />
           <KpiCard label={tt('Renewable energy')}   value={`${NET.renewablePct}%`}             delta={tt('Net Zero 2030')}  trend="up"   icon={Leaf}    />
         </div>
@@ -571,7 +571,7 @@ export default function CTOPage() {
           <KpiCard label={tt('Core uptime')}          value={`${NET.coreUptimePct}%`} delta={tt('30-day SLA')}                 trend="up"   icon={ShieldCheck} accent />
           <KpiCard label={tt('Active sessions')}       value="14.2M"                   delta="+8% YoY"                          trend="up"   icon={Activity} />
           <KpiCard label={tt('5G slices active')}      value="4"                        delta={tt('eMBB · URLLC · MIoT · B2B')} trend="flat" icon={Layers} />
-          <KpiCard label={tt('UPF peak throughput')}   value="3.84 Tbps"               delta="+18% YoY"                         trend="up"   icon={Zap} />
+          <KpiCard label={tt('UPF peak throughput')}   value="0.42 Tbps"               delta="+18% YoY"                         trend="up"   icon={Zap} />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
@@ -684,7 +684,7 @@ export default function CTOPage() {
       {tab === 'transport' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Core capacity')}        value={`${NET.coreCapacityTbps} Tbps`} delta={tt('total installed')}   trend="up"   icon={Cable}       accent />
-          <KpiCard label={tt('Peak traffic')}          value="3.84 Tbps"                       delta="+18% YoY"               trend="up"   icon={TrendingUp}  />
+          <KpiCard label={tt('Peak traffic')}          value="0.42 Tbps"                       delta="+18% YoY"               trend="up"   icon={TrendingUp}  />
           <KpiCard label={tt('Local peering utilisation')}   value="84%"                             delta={tt('watch — threshold')} trend="down" icon={Globe}       />
           <KpiCard label={tt('RPKI ROV coverage')}     value="94%"                             delta="+6 pp YoY"               trend="up"   icon={ShieldCheck} />
         </div>

@@ -308,7 +308,7 @@ const ceoFeed = [
   { t: '07:14', icon: TrendingUp, color: 'green', what: 'Pipeline crossed BSD 40M for first time (+BSD 2M overnight)' },
   { t: '06:42', icon: AlertTriangle, color: 'red', what: 'P1 outage in Freeport (ETA restore 09:30) — comms drafted' },
   { t: '06:08', icon: Newspaper, color: 'blue', what: 'De Tijd: "Cable Bahamas leads gigabit race" — share-of-voice +18% wk' },
-  { t: '05:34', icon: Trophy, color: 'green', what: 'Won Island Bank (demo) framework — BSD 4.2M ARR · displaces BTC' },
+  { t: '05:34', icon: Trophy, color: 'green', what: 'Won Island Bank (demo) framework — BSD 0.42M ARR · displaces BTC' },
   { t: '04:12', icon: ShieldCheck, color: 'amber', what: 'URCA M4 questionnaire received · 14d response' },
   { t: '02:58', icon: Briefcase, color: 'blue', what: 'Cable Bahamas Group confirmed roadshow attendance · 28 May' },
 ]
@@ -321,7 +321,7 @@ const decisionLog = [
   { id: 'CEO-D-037', topic: 'URCA cyber attestation board sign-off',   owner: 'CISO', status: 'Final review',           due: '1w' },
 ]
 const weekNarrative = [
-  'Pipeline +BSD 2M and Island Bank (demo) framework win mean B2B Q is recoverable; expect +1.4% to plan if Rival ISP B renewal closes.',
+  'Pipeline +BSD 2M and Island Bank (demo) framework win mean B2B Q is recoverable; expect +1.4% to plan if Sports content renewal closes.',
   'Freeport outage is contained but second incident in 6 weeks — order CTO retro by Friday, brief board chair pre-meeting.',
   'URCA M4 questionnaire is the single biggest risk this quarter; response strategy on Tuesday with Reg Affairs.',
   'Sentiment up 18% on share-of-voice — tee up gigabit-leadership op-ed in IT for Monday.',
@@ -697,7 +697,7 @@ export default function ExecutivePage() {
               </AreaChart>
             </ResponsiveContainer>
             <div className="flex flex-wrap gap-3 mt-2 text-xs">
-              <span className="text-vfes-dark/55">Peak <b className="text-vfes-dark">{tt('3.84 Tbps')}</b>{tt('at 21:00 ·')}</span>
+              <span className="text-vfes-dark/55">Peak <b className="text-vfes-dark">{tt('0.42 Tbps')}</b>{tt('at 21:00 ·')}</span>
               <span className="text-vfes-dark/55">Capacity headroom <b className="text-emerald-600">42%</b> ·</span>
               <span className="text-vfes-dark/55">Freeport dip 06:42 (P1 outage) <b className="text-vfes-dark">{tt('restored 09:30')}</b></span>
             </div>
@@ -766,7 +766,7 @@ export default function ExecutivePage() {
             <li className="flex items-start gap-2 p-2 rounded bg-vfes-red/5"><Sparkles className="w-4 h-4 text-vfes-dark mt-0.5 shrink-0" /><span>{tt('Freeport churn anomaly · -28% spike — recommend retention campaign (BSD 86K opportunity)')}</span></li>
             <li className="flex items-start gap-2 p-2 rounded bg-amber-50"><Sparkles className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" /><span>{tt('Funnel conversion drop on M500 SKU last hour — page-load p95 above SLO')}</span></li>
             <li className="flex items-start gap-2 p-2 rounded bg-emerald-50"><Sparkles className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" /><span>{tt('Bundle propensity model surfaced 4,218 high-intent customers · BSD 380K MRR upside')}</span></li>
-            <li className="flex items-start gap-2 p-2 rounded bg-blue-50"><Sparkles className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" /><span>{tt('Island Bank (demo) framework win triggered B2B forecast revision · +BSD 4.2M ARR booked overnight')}</span></li>
+            <li className="flex items-start gap-2 p-2 rounded bg-blue-50"><Sparkles className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" /><span>{tt('Island Bank (demo) framework win triggered B2B forecast revision · +BSD 0.42M ARR booked overnight')}</span></li>
           </ul>
         </Panel>
       </div>

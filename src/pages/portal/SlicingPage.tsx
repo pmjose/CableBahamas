@@ -19,20 +19,20 @@ const BLUE = '#FF4438', NAVY = '#11567F', GREEN = '#10B981', AMBER = '#F59E0B', 
 const TS = { background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, fontSize: 12, color: '#111' }
 
 const SLICES = [
-  { slice: 'eMBB — Consumer',       sla: 99.5,   latency: 18, achieved: 99.7,   rev: 4.2, sst: 1, status: 'healthy', dl: '3.84 Tbps', subs: '13.2M' },
-  { slice: 'URLLC — Industry 4.0', sla: 99.999, latency:  4, achieved: 99.997, rev: 2.8, sst: 2, status: 'watch',   dl: '0.18 Tbps', subs: '380K'  },
-  { slice: 'mMTC — IoT / Metering', sla: 99.0,   latency: 50, achieved: 99.4,   rev: 1.6, sst: 3, status: 'healthy', dl: '0.08 Tbps', subs: '1.2M'  },
-  { slice: 'eMBB — Stadium/Events',  sla: 99.5,   latency: 22, achieved: 99.6,   rev: 0.9, sst: 1, status: 'healthy', dl: '0.24 Tbps', subs: '48K'   },
-  { slice: 'URLLC — Port automation', sla: 99.99, latency:  6, achieved: 99.95,  rev: 1.4, sst: 2, status: 'healthy', dl: '0.12 Tbps', subs: '12K'   },
+  { slice: 'eMBB — Consumer',       sla: 99.5,   latency: 18, achieved: 99.7,   rev: 0.6, sst: 1, status: 'healthy', dl: '220 Gbps', subs: '168K' },
+  { slice: 'URLLC — Industry 4.0', sla: 99.999, latency:  4, achieved: 99.997, rev: 0.3, sst: 2, status: 'watch',   dl: '40 Gbps', subs: '1.2K'  },
+  { slice: 'mMTC — IoT / Metering', sla: 99.0,   latency: 50, achieved: 99.4,   rev: 0.1, sst: 3, status: 'healthy', dl: '5 Gbps', subs: '9.4K'  },
+  { slice: 'eMBB — Stadium/Events',  sla: 99.5,   latency: 22, achieved: 99.6,   rev: 0.2, sst: 1, status: 'healthy', dl: '25 Gbps', subs: '1.6K'   },
+  { slice: 'URLLC — Port automation', sla: 99.99, latency:  6, achieved: 99.95,  rev: 0.2, sst: 2, status: 'healthy', dl: '10 Gbps', subs: '0.3K'   },
 ]
 
 const MEC_SITES = [
-  { site: 'MEC-ANT-01', location: 'Nassau DC',           tenants: 8, cpu: 64, mem: 58, lat: 4,  storage: 'NVMe 40TB', status: 'Healthy' },
-  { site: 'MEC-GNT-01', location: 'Freeport Port',       tenants: 5, cpu: 71, mem: 74, lat: 3,  storage: 'NVMe 20TB', status: 'Watch'   },
-  { site: 'MEC-BRG-01', location: 'Abaco Port',        tenants: 4, cpu: 52, mem: 48, lat: 5,  storage: 'NVMe 16TB', status: 'Healthy' },
-  { site: 'MEC-LVN-01', location: 'Eleuthera Industrial',   tenants: 3, cpu: 38, mem: 34, lat: 6,  storage: 'NVMe 8TB',  status: 'Healthy' },
-  { site: 'MEC-MEC-01', location: 'Bimini Smart Port',    tenants: 2, cpu: 44, mem: 40, lat: 5,  storage: 'NVMe 8TB',  status: 'Healthy' },
-  { site: 'MEC-VAL-02', location: 'Abaco Airport',     tenants: 1, cpu: 28, mem: 26, lat: 7,  storage: 'NVMe 4TB',  status: 'Healthy' },
+  { site: 'MEC-NAS-01', location: 'Nassau DC',           tenants: 8, cpu: 64, mem: 58, lat: 4,  storage: 'NVMe 40TB', status: 'Healthy' },
+  { site: 'MEC-FPO-01', location: 'Freeport Port',       tenants: 5, cpu: 71, mem: 74, lat: 3,  storage: 'NVMe 20TB', status: 'Watch'   },
+  { site: 'MEC-MHH-01', location: 'Abaco Port',        tenants: 4, cpu: 52, mem: 48, lat: 5,  storage: 'NVMe 16TB', status: 'Healthy' },
+  { site: 'MEC-ELH-01', location: 'Eleuthera Industrial',   tenants: 3, cpu: 38, mem: 34, lat: 6,  storage: 'NVMe 8TB',  status: 'Healthy' },
+  { site: 'MEC-BIM-01', location: 'Bimini Smart Port',    tenants: 2, cpu: 44, mem: 40, lat: 5,  storage: 'NVMe 8TB',  status: 'Healthy' },
+  { site: 'MEC-MHH-02', location: 'Abaco Airport',     tenants: 1, cpu: 28, mem: 26, lat: 7,  storage: 'NVMe 4TB',  status: 'Healthy' },
 ]
 
 const SLA_RADAR = [
@@ -44,12 +44,12 @@ const SLA_RADAR = [
 ]
 
 const SLICE_REVENUE_TREND = [
-  { m: 'Jun', embb: 4.1, urllc: 2.4, mmtc: 1.4, stadium: 0.7 },
-  { m: 'Jul', embb: 4.1, urllc: 2.5, mmtc: 1.5, stadium: 0.7 },
-  { m: 'Aug', embb: 4.2, urllc: 2.6, mmtc: 1.5, stadium: 0.8 },
-  { m: 'Sep', embb: 4.2, urllc: 2.7, mmtc: 1.6, stadium: 0.9 },
-  { m: 'Oct', embb: 4.2, urllc: 2.8, mmtc: 1.6, stadium: 0.9 },
-  { m: 'Nov', embb: 4.2, urllc: 2.8, mmtc: 1.6, stadium: 0.9 },
+  { m: 'Jun', embb: 0.5, urllc: 0.2, mmtc: 0.1, stadium: 0.1 },
+  { m: 'Jul', embb: 0.5, urllc: 0.2, mmtc: 0.1, stadium: 0.1 },
+  { m: 'Aug', embb: 0.5, urllc: 0.2, mmtc: 0.1, stadium: 0.1 },
+  { m: 'Sep', embb: 0.6, urllc: 0.3, mmtc: 0.1, stadium: 0.2 },
+  { m: 'Oct', embb: 0.6, urllc: 0.3, mmtc: 0.1, stadium: 0.2 },
+  { m: 'Nov', embb: 0.6, urllc: 0.3, mmtc: 0.1, stadium: 0.2 },
 ]
 
 const SLICE_CATALOG = [
@@ -86,12 +86,12 @@ const MEC_CPU_TREND = [
 ]
 
 const B2B_PIPELINE = [
-  { prospect: 'TotalEnergies (Energy)',        type: 'URLLC Industrial', arr: 1.2, stage: 'Negotiation', mec: 'ANT-01' },
-  { prospect: 'AML Foods (demo) (Logistics)',  type: 'mMTC Fleet',       arr: 0.8, stage: 'PoC',         mec: 'BRG-01' },
-  { prospect: 'SNCB (Rail)',           type: 'URLLC Basic',      arr: 0.6, stage: 'Proposal',     mec: 'ANT-01' },
-  { prospect: 'Port de Freeport',      type: 'URLLC Port',       arr: 1.8, stage: 'Negotiation', mec: 'GNT-01' },
-  { prospect: 'Super Value Group (demo) (Retail)',       type: 'mMTC IoT',         arr: 0.4, stage: 'PoC',         mec: 'n/a'    },
-  { prospect: 'Luminus (Energy)',     type: 'URLLC Industrial', arr: 1.4, stage: 'Proposal',     mec: 'LVN-01' },
+  { prospect: 'Grand Bahama Shipyard (demo) (Industry)', type: 'URLLC Industrial', arr: 0.4, stage: 'Negotiation', mec: 'FPO-01' },
+  { prospect: 'AML Foods (demo) (Logistics)',  type: 'mMTC Fleet',       arr: 0.3, stage: 'PoC',         mec: 'NAS-01' },
+  { prospect: 'Bahamasair (demo) (Aviation)', type: 'URLLC Basic',      arr: 0.2, stage: 'Proposal',     mec: 'NAS-01' },
+  { prospect: 'Freeport Container Port (demo)', type: 'URLLC Port',       arr: 0.5, stage: 'Negotiation', mec: 'FPO-01' },
+  { prospect: 'Super Value Group (demo) (Retail)',       type: 'mMTC IoT',         arr: 0.1, stage: 'PoC',         mec: 'n/a'    },
+  { prospect: 'Island Power Co. (demo) (Energy)', type: 'URLLC Industrial', arr: 0.3, stage: 'Proposal',     mec: 'ELH-01' },
 ]
 
 const LATENCY_BUDGET = [
@@ -200,10 +200,10 @@ export default function SlicingPage() {
         ]}
         agentBlurb={tt('Slice telemetry, MEC metrics, and CRM pipeline data in one lake — the SLA model auto-remediates and the revenue forecaster identifies the next best enterprise prospect.')}
         decision={{
-          title: tt('Expand GNT-01 MEC + replicate URLLC factory-slice template for 3 new prospects'),
-          detail: tt('Freeport Port MEC at 71% CPU. The URLLC factory template is the highest-margin B2B product. TotalEnergies and Port de Freeport in negotiation represent BSD 3M ARR pipeline.'),
-          impact: tt('+BSD 1.8M slice ARR · removes GNT MEC capacity bottleneck'),
-          risk: tt('GNT MEC upgrade requires co-ordination with port authority'),
+          title: tt('Expand FPO-01 MEC + replicate URLLC factory-slice template for 3 new prospects'),
+          detail: tt('Freeport Port MEC at 71% CPU. The URLLC factory template is the highest-margin B2B product. Grand Bahama Shipyard and Freeport Container Port in negotiation represent BSD 0.9M ARR pipeline.'),
+          impact: tt('+BSD 0.5M slice ARR · removes FPO MEC capacity bottleneck'),
+          risk: tt('FPO MEC upgrade requires co-ordination with port authority'),
           linkTo: '#/portal/slicing',
           linkLabel: tt('Open 5G Slicing →'),
         }}
@@ -230,10 +230,10 @@ export default function SlicingPage() {
             <Bell className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
             <div className="flex-1">
               <div className="font-bold text-amber-900 text-sm">
-                {tt('URLLC Industry-4.0 latency 3.8ms (SLA 4ms) · GNT MEC 71% CPU · BSD 3M B2B pipeline in negotiation')}
+                {tt('URLLC Industry-4.0 latency 3.8ms (SLA 4ms) · FPO MEC 71% CPU · BSD 0.9M B2B pipeline in negotiation')}
               </div>
               <div className="text-xs text-amber-800 mt-1">
-                {tt('Auto-remediation applied PRB reservation — now 3.4ms. GNT MEC expansion approval needed.')}
+                {tt('Auto-remediation applied PRB reservation — now 3.4ms. FPO MEC expansion approval needed.')}
               </div>
             </div>
             <div className="flex items-center gap-2 shrink-0">
@@ -298,15 +298,15 @@ export default function SlicingPage() {
                   <YAxis tick={{ fontSize: 11 }} unit="%" domain={[0, 90]} />
                   <Tooltip contentStyle={TS} />
                   <Legend wrapperStyle={{ fontSize: 11 }} />
-                  <Line type="monotone" dataKey="ant" name="ANT-01 (Nassau)" stroke={BLUE}  strokeWidth={2} dot />
-                  <Line type="monotone" dataKey="gnt" name="GNT-01 (Freeport)" stroke={AMBER} strokeWidth={2} dot />
-                  <Line type="monotone" dataKey="brg" name="BRG-01 (Abaco)" stroke={GREEN} strokeWidth={2} dot={false} />
-                  <Line type="monotone" dataKey="lvn" name="LVN-01 (Eleuthera)" stroke={SLATE} strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="ant" name="NAS-01 (Nassau)" stroke={BLUE}  strokeWidth={2} dot />
+                  <Line type="monotone" dataKey="gnt" name="FPO-01 (Freeport)" stroke={AMBER} strokeWidth={2} dot />
+                  <Line type="monotone" dataKey="brg" name="MHH-01 (Abaco)" stroke={GREEN} strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="lvn" name="ELH-01 (Eleuthera)" stroke={SLATE} strokeWidth={2} dot={false} />
                   <ReferenceLine y={70} stroke="#ef4444" strokeDasharray="3 3" />
                 </LineChart>
               </ResponsiveContainer>
             </div>
-            <div className="mt-2 text-[10px] text-vfes-dark/45">{tt('Red = 70% CPU watch threshold · GNT-01 at limit')}</div>
+            <div className="mt-2 text-[10px] text-vfes-dark/45">{tt('Red = 70% CPU watch threshold · FPO-01 at limit')}</div>
           </Panel>
         </div>
 
@@ -346,9 +346,9 @@ export default function SlicingPage() {
 
         {/* B2B pipeline overview in the Overview tab */}
         <div className="mt-6 grid md:grid-cols-3 gap-4">
-          <KpiCard label={tt('Negotiation ARR')} value="BSD 3.0M"  delta={tt('TotalEnergies + Port GNT')}     trend="up"   icon={TrendingUp} />
-          <KpiCard label={tt('PoC ARR')}         value="BSD 1.2M"  delta={tt('AML Foods (demo) + Super Value Group (demo)')}  trend="up"   icon={Building2}  />
-          <KpiCard label={tt('Proposal ARR')}    value="BSD 2.0M"  delta={tt('SNCB + Luminus')}    trend="up"   icon={Activity}   />
+          <KpiCard label={tt('Negotiation ARR')} value="BSD 0.9M"  delta={tt('Shipyard + Freeport Port')}     trend="up"   icon={TrendingUp} />
+          <KpiCard label={tt('PoC ARR')}         value="BSD 0.4M"  delta={tt('AML Foods (demo) + Super Value Group (demo)')}  trend="up"   icon={Building2}  />
+          <KpiCard label={tt('Proposal ARR')}    value="BSD 0.5M"  delta={tt('Bahamasair + Island Power')}    trend="up"   icon={Activity}   />
         </div>
 
         <div className="mt-4 rounded-xl bg-gradient-to-br from-vfes-red/10 to-transparent border border-vfes-red/20 p-4 flex items-center justify-between">
@@ -537,8 +537,8 @@ export default function SlicingPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('MEC sites')}         value="6"     delta={tt('2 planned 2027')}     trend="up"   icon={MapPin}      accent />
           <KpiCard label={tt('Total tenants')}      value={totalTenants} delta={tt('Q4 target 30')} trend="up"  icon={Building2}         />
-          <KpiCard label={tt('GNT-01 CPU')}         value="71%"  delta={tt('watch — expand Q3')}  trend="down" icon={AlertTriangle}      />
-          <KpiCard label={tt('Best edge latency')}  value="3 ms" delta="GNT-01 · port"             trend="up"   icon={Activity}          />
+          <KpiCard label={tt('FPO-01 CPU')}         value="71%"  delta={tt('watch — expand Q3')}  trend="down" icon={AlertTriangle}      />
+          <KpiCard label={tt('Best edge latency')}  value="3 ms" delta="FPO-01 · port"             trend="up"   icon={Activity}          />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
@@ -723,9 +723,9 @@ export default function SlicingPage() {
       {tab === 'b2b' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Pipeline ARR')}   value={`BSD ${totalPipeline.toFixed(1)}M`} delta={tt('6 prospects')}        trend="up"   icon={TrendingUp}  accent />
-          <KpiCard label={tt('In negotiation')} value="2"   delta={tt('BSD 3.0M ARR at stake')}              trend="up"   icon={Building2}         />
-          <KpiCard label={tt('In PoC')}         value="2"   delta={tt('BSD 1.2M ARR potential')}             trend="up"   icon={Activity}          />
-          <KpiCard label={tt('Avg ARR/deal')}   value="BSD 1.0M" delta={tt('URLLC leads at BSD 1.3M avg')}     trend="up"   icon={Zap}               />
+          <KpiCard label={tt('In negotiation')} value="2"   delta={tt('BSD 0.9M ARR at stake')}              trend="up"   icon={Building2}         />
+          <KpiCard label={tt('In PoC')}         value="2"   delta={tt('BSD 0.4M ARR potential')}             trend="up"   icon={Activity}          />
+          <KpiCard label={tt('Avg ARR/deal')}   value="BSD 0.3M" delta={tt('URLLC leads at BSD 0.35M avg')}     trend="up"   icon={Zap}               />
         </div>
 
         <div className="flex items-center gap-2 mb-4">
@@ -1072,8 +1072,8 @@ export default function SlicingPage() {
 
         {/* Network slice quick KPIs */}
         <div className="mt-4 grid sm:grid-cols-4 gap-3">
-          <KpiCard label={tt('Total DL capacity')} value="4.46 Tbps" delta={tt('all slices combined')} trend="flat" icon={Zap} />
-          <KpiCard label={tt('Total subscribers')} value="15.6M"      delta={tt('eMBB dominant')}      trend="up"   icon={Activity} />
+          <KpiCard label={tt('Total DL capacity')} value="300 Gbps" delta={tt('all slices combined')} trend="flat" icon={Zap} />
+          <KpiCard label={tt('Total subscribers')} value="180.5K"      delta={tt('eMBB dominant')}      trend="up"   icon={Activity} />
           <KpiCard label={tt('MEC total tenants')} value={String(totalTenants)} delta={tt('6 sites')}  trend="up"   icon={Cpu} />
           <KpiCard label={tt('Slice uptime avg')}  value="99.83%"     delta={tt('30-day rolling')}    trend="up"   icon={ShieldCheck} />
         </div>
@@ -1086,7 +1086,7 @@ export default function SlicingPage() {
           </Link>
           <Link to="/portal/b2b" className="rounded-xl border border-black/5 bg-white p-3 hover:shadow-md transition group">
             <div className="text-[10px] font-bold uppercase tracking-widest text-vfes-dark/45 mb-1 group-hover:text-vfes-dark transition">{tt('B2B Pipeline')}</div>
-            <div className="text-xs font-semibold text-vfes-dark">{tt('6 prospects · BSD 6.2M ARR pipeline')}</div>
+            <div className="text-xs font-semibold text-vfes-dark">{tt('6 prospects · BSD 1.8M ARR pipeline')}</div>
           </Link>
           <Link to="/portal/core-5g" className="rounded-xl border border-black/5 bg-white p-3 hover:shadow-md transition group">
             <div className="text-[10px] font-bold uppercase tracking-widest text-vfes-dark/45 mb-1 group-hover:text-vfes-dark transition">{tt('5G Core')}</div>

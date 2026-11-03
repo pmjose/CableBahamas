@@ -395,7 +395,7 @@ export default function NetworkPage() {
           <div className="flex items-center gap-2">
             <span className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              Live · 1.42 Tbps peak today
+              Live · 0.42 Tbps peak today
             </span>
           </div>
         }
@@ -634,7 +634,7 @@ export default function NetworkPage() {
           <KpiCard label={tt('Avg utilisation')}  value="64%" delta="+3 pp QoQ"        trend="down" icon={Activity} accent />
           <KpiCard label={tt('Augments queued')}   value={`${augQueue.length}`} delta="2 approved" trend="up"   icon={GitBranch} />
           <KpiCard label={tt('Worst exhaustion')}  value="28 d"                  delta="Abaco"     trend="down" icon={AlertTriangle} />
-          <KpiCard label={tt('5G peak Tbps')}      value="3.84 Tbps"             delta={tt('+18% YoY')} trend="up" icon={Smartphone} />
+          <KpiCard label={tt('5G peak Tbps')}      value="0.42 Tbps"             delta={tt('+18% YoY')} trend="up" icon={Smartphone} />
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Cell congestion · top 1%')}    value="78%"     delta={tt('Nassau · Freeport peak')} trend="down" icon={Smartphone} />
@@ -1033,7 +1033,7 @@ export default function NetworkPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('SLOs healthy')}        value={`${slos.filter(s=>s.status==='Healthy').length} / ${slos.length}`} delta="2 burning"          trend="down" icon={ShieldCheck} accent />
           <KpiCard label={tt('DR readiness')}         value="4 / 5"   delta="1 re-test due"    trend="flat" icon={Calendar} />
-          <KpiCard label={tt('DDoS scrubbing capacity')} value="1.2 Tbps" delta="vs peak 0.42"  trend="up"   icon={Zap} />
+          <KpiCard label={tt('DDoS scrubbing capacity')} value="800 Gbps" delta="vs peak 0.42"  trend="up"   icon={Zap} />
           <KpiCard label={tt('RPKI ROV coverage')}     value={`${headline.rpkiCoverage}%`} delta="MANRS audit passed" trend="up" icon={Globe} />
         </div>
 

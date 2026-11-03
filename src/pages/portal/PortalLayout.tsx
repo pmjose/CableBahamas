@@ -10,7 +10,7 @@ import CommandPalette from '../../components/CommandPalette'
 import NotificationsDrawer, { UNREAD_COUNT } from '../../components/NotificationsDrawer'
 import ErrorBoundary from '../../components/ErrorBoundary'
 import { GROUPS } from './_nav'
-import KPI, { fixedSubsM } from './_kpi_facts'
+import KPI from './_kpi_facts'
 
 export default function PortalLayout() {
   const { t } = useTranslation()
@@ -198,7 +198,7 @@ const TICKER_ITEMS: { label: string; value: string; up?: boolean; down?: boolean
   { label: 'BSD/USD',        value: '1.000' },
   { label: 'BSD/GBP',        value: '0.842',  down: true },
   { label: 'Brent',          value: '$78.2',  up: true },
-  { label: 'Subs',           value: `${fixedSubsM}M`,  up: true },
+  { label: 'Fixed subs',           value: '74.4K',  up: true },
   { label: 'Net adds (Q)',   value: `+${KPI.netAddsQK}K`,  up: true },
   { label: 'Churn',          value: `${KPI.churnRatePct}%`,  up: true },
   { label: 'NPS',            value: `+${KPI.nps}`,    up: true },
@@ -211,8 +211,8 @@ const TICKER_ITEMS: { label: string; value: string; up?: boolean; down?: boolean
   { label: 'P1 incidents',   value: '2',      down: true },
   { label: 'Freeport outage',    value: 'restored 09:30' },
   { label: 'Network peak',   value: `${KPI.corePeakTbps} Tbps` },
-  { label: 'Island Bank (demo) framework',  value: 'WON · BSD 4.2M ARR', up: true },
-  { label: 'Rival ISP B renewal',    value: 'BSD 18M · CEO sign-off' },
+  { label: 'Island Bank (demo) framework',  value: 'WON · BSD 0.42M ARR', up: true },
+  { label: 'Sports content renewal',    value: 'BSD 1.8M · CEO sign-off' },
   { label: 'URCA M4',      value: 'response 14d' },
   { label: 'KEV CVEs open',  value: '2 · all in SLA' },
   { label: 'Fraud loss YTD', value: 'BSD 316K',  up: true },

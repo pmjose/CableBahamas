@@ -153,7 +153,7 @@ function _Orphaned({ tab, totalPortfolioCustomers, avgPortfolioARPU }: any) {
             agentLabel="Run Segmentation Agent"
             agentRunningLabel="Classifying base…"
             agentSteps={[
-              'Classified 1.15M customers into value segments',
+              'Classified 74.4K customers into value segments',
               'Computed CLV gap by segment vs Convergent',
               'Identified 184K Mobile-only for convergent pitch',
               'Ranked high-ARPU segments for proactive NBO',
@@ -1598,7 +1598,7 @@ export default function Customer360Page() {
             agentLabel="Run Segmentation Agent"
             agentRunningLabel="Classifying base…"
             agentSteps={[
-              'Classified 1.15M customers into value segments',
+              'Classified 74.4K customers into value segments',
               'Computed CLV gap by segment vs Convergent',
               'Identified 184K Mobile-only for convergent pitch',
               'Ranked high-ARPU segments for proactive NBO',

@@ -236,7 +236,7 @@ export default function BundlePropensityPage() {
         title="Bundle propensity agent"
         label="Run Propensity Campaign" runningLabel="Building…"
         steps={[
-          'Scored 1.08M lines for bundle propensity',
+          'Scored 255K lines for bundle propensity',
           'Filtered to 298K eligible & feasible',
           'Ranked by margin-adjusted conversion',
           'Routed to best channel within contact caps',
@@ -266,14 +266,14 @@ export default function BundlePropensityPage() {
       <MlInsightSection
         heading="Bundle propensity intelligence"
         models={[
-          { name: 'Bundle Propensity XGBoost', metric: 'AUC 0.91', sub: '1.08M lines scored · 4 bundles' },
+          { name: 'Bundle Propensity XGBoost', metric: 'AUC 0.91', sub: '255K lines scored · 4 bundles' },
           { name: 'T-Learner Uplift Model', metric: '+38% lift', sub: 'causal uplift on hold-out control' },
           { name: 'Margin Waterfall Engine', metric: '44% net', sub: 'cannibalisation + promo − gross revenue' },
         ]}
         agentLabel="Run Propensity Campaign"
         agentRunningLabel="Building…"
         agentSteps={[
-          'Scored 1.08M lines for bundle propensity',
+          'Scored 255K lines for bundle propensity',
           'Filtered to 298K eligible & feasible',
           'Ranked by margin-adjusted conversion',
           'Routed to best channel within contact caps',

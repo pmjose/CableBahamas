@@ -107,6 +107,13 @@ describe('Bahamas market relevance', () => {
     }
   })
 
+  it('keeps customer counts and traffic at Bahamas scale', () => {
+    const tooBig = /\b\d+(?:\.\d+)?M (?:subs|subscribers|customers|households|HHs|lines|SIMs|IoT devices)\b|subs: '\d+(?:\.\d+)?M'|(?<![\d.])[1-9]\d*(?:\.\d+)? Tbps/
+    for (const filename of sourceFiles(resolve(root, 'src'))) {
+      expect(readFileSync(filename, 'utf8').match(tooBig), filename).toBeNull()
+    }
+  })
+
   it('keeps regional mobile sites consistent with the national site total', async () => {
     const { COVERAGE_BY_REGION, MOBILE_KPIS } = await import('../src/pages/portal/_mobile_data')
     expect(COVERAGE_BY_REGION.reduce((sum, r) => sum + r.sites, 0)).toBe(MOBILE_KPIS.activeSites)

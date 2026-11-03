@@ -28,7 +28,7 @@ export const KPI = {
 
   // Network (sourced from the network fact module)
   uptime30dPct: 99.94,
-  corePeakTbps: 3.84,
+  corePeakTbps: 0.42,
   renewablePct: NET.renewablePct,
 
   // Corp

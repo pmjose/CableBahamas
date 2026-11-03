@@ -19,22 +19,22 @@ const BLUE = '#FF4438', NAVY = '#11567F', GREEN = '#10B981', AMBER = '#F59E0B', 
 const TS = { background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, fontSize: 12, color: '#111' }
 
 const CORE_LINKS = [
-  { link: 'Nassau ↔ Freeport',    cap: '8.0 Tbps', util: 71, capGbps: 8000, type: 'DWDM',      protected: true  },
-  { link: 'Nassau ↔ Eleuthera',      cap: '4.0 Tbps', util: 58, capGbps: 4000, type: 'DWDM',      protected: true  },
-  { link: 'Freeport ↔ Abaco',  cap: '3.2 Tbps', util: 64, capGbps: 3200, type: 'DWDM',      protected: true  },
-  { link: 'Nassau ↔ Bimini',       cap: '2.4 Tbps', util: 82, capGbps: 2400, type: 'DWDM',      protected: true  },
-  { link: 'Nassau ↔ Amsterdam',       cap: '1.6 Tbps', util: 49, capGbps: 1600, type: 'DWDM',      protected: false },
-  { link: 'Freeport ↔ Paris', cap: '2.0 Tbps', util: 77, capGbps: 2000, type: 'Submarine', protected: true  },
+  { link: 'Nassau ↔ Freeport',             cap: '400G', util: 71, capGbps: 400, type: 'DWDM',      protected: true  },
+  { link: 'Nassau ↔ Eleuthera',            cap: '200G', util: 58, capGbps: 200, type: 'DWDM',      protected: true  },
+  { link: 'Freeport ↔ Abaco',              cap: '200G', util: 64, capGbps: 200, type: 'DWDM',      protected: true  },
+  { link: 'Nassau ↔ Bimini',               cap: '100G', util: 82, capGbps: 100, type: 'DWDM',      protected: true  },
+  { link: 'Freeport ↔ West Palm Beach',    cap: '200G', util: 49, capGbps: 200, type: 'Submarine', protected: false },
+  { link: 'Nassau ↔ Boca Raton (Miami)',   cap: '400G', util: 77, capGbps: 400, type: 'Submarine', protected: true  },
 ]
 
 const PEERING = [
-  { asn: 'Google (AS15169)',  gbps: 1840, type: 'PNI',     cost: 0    },
-  { asn: 'Netflix (AS2906)',  gbps: 1420, type: 'PNI',     cost: 0    },
-  { asn: 'Meta (AS32934)',    gbps:  980, type: 'PNI',     cost: 0    },
-  { asn: 'Amazon (AS16509)',  gbps:  740, type: 'IXP',     cost: 0    },
-  { asn: 'Akamai (AS20940)',  gbps:  620, type: 'PNI',     cost: 0    },
-  { asn: 'Transit (Cogent)',  gbps:  410, type: 'Transit', cost: 0.32 },
-  { asn: 'Transit (Telia)',   gbps:  380, type: 'Transit', cost: 0.38 },
+  { asn: 'Google (AS15169)',  gbps:  85, type: 'PNI',     cost: 0    },
+  { asn: 'Netflix (AS2906)',  gbps:  65, type: 'PNI',     cost: 0    },
+  { asn: 'Meta (AS32934)',    gbps:  40, type: 'PNI',     cost: 0    },
+  { asn: 'Amazon (AS16509)',  gbps:  24, type: 'IXP',     cost: 0    },
+  { asn: 'Akamai (AS20940)',  gbps:  22, type: 'PNI',     cost: 0    },
+  { asn: 'Transit (Cogent)',  gbps:  52, type: 'Transit', cost: 0.32 },
+  { asn: 'Transit (Telia)',   gbps:  48, type: 'Transit', cost: 0.38 },
 ]
 
 const TRANSIT_TREND = [
@@ -44,40 +44,41 @@ const TRANSIT_TREND = [
 ]
 
 const LATENCY_MATRIX = [
-  { route: 'Nassau → Freeport',  rtt:  12.4, jitter: 0.8, loss: 0.01, sla:  15, status: 'Green' },
-  { route: 'Nassau → Abaco',   rtt:   8.2, jitter: 0.6, loss: 0.00, sla:  10, status: 'Green' },
-  { route: 'Nassau → Bimini',     rtt:   9.8, jitter: 0.7, loss: 0.01, sla:  12, status: 'Green' },
-  { route: 'Freeport → Eleuthera', rtt:  18.6, jitter: 1.1, loss: 0.02, sla:  20, status: 'Green' },
-  { route: 'Nassau → London',     rtt:  28.4, jitter: 1.4, loss: 0.01, sla:  35, status: 'Green' },
-  { route: 'Nassau → Frankfurt',  rtt:  32.1, jitter: 1.6, loss: 0.02, sla:  40, status: 'Green' },
-  { route: 'Nassau → São Paulo',  rtt: 178.0, jitter: 4.2, loss: 0.05, sla: 200, status: 'Green' },
+  { route: 'Nassau → Freeport',     rtt:   4.2, jitter: 0.3, loss: 0.01, sla:   6, status: 'Green' },
+  { route: 'Nassau → Abaco',        rtt:   3.6, jitter: 0.3, loss: 0.00, sla:   5, status: 'Green' },
+  { route: 'Nassau → Bimini',       rtt:   5.1, jitter: 0.4, loss: 0.01, sla:   7, status: 'Green' },
+  { route: 'Freeport → Eleuthera',  rtt:   6.8, jitter: 0.5, loss: 0.02, sla:   8, status: 'Green' },
+  { route: 'Nassau → Miami',        rtt:   7.4, jitter: 0.6, loss: 0.01, sla:  10, status: 'Green' },
+  { route: 'Nassau → Ashburn',      rtt:  30.2, jitter: 1.4, loss: 0.02, sla:  35, status: 'Green' },
+  { route: 'Nassau → New York',     rtt:  34.6, jitter: 1.6, loss: 0.02, sla:  40, status: 'Green' },
+  { route: 'Nassau → São Paulo',    rtt: 128.0, jitter: 3.8, loss: 0.05, sla: 150, status: 'Green' },
 ]
 
 const LATENCY_24H = [
-  { h: '00', mad_bcn: 11.8, mad_bil:  9.2, mad_lon: 27.6 },
-  { h: '04', mad_bcn: 11.4, mad_bil:  8.8, mad_lon: 27.2 },
-  { h: '08', mad_bcn: 12.2, mad_bil:  9.4, mad_lon: 28.0 },
-  { h: '12', mad_bcn: 13.1, mad_bil: 10.2, mad_lon: 29.4 },
-  { h: '16', mad_bcn: 13.8, mad_bil: 10.8, mad_lon: 30.2 },
-  { h: '18', mad_bcn: 14.2, mad_bil: 11.2, mad_lon: 31.0 },
-  { h: '20', mad_bcn: 13.6, mad_bil: 10.6, mad_lon: 30.4 },
-  { h: '22', mad_bcn: 12.8, mad_bil: 10.0, mad_lon: 29.2 },
+  { h: '00', mad_bcn: 4.0, mad_bil: 4.9, mad_lon: 7.1 },
+  { h: '04', mad_bcn: 3.9, mad_bil: 4.8, mad_lon: 7.0 },
+  { h: '08', mad_bcn: 4.1, mad_bil: 5.0, mad_lon: 7.3 },
+  { h: '12', mad_bcn: 4.3, mad_bil: 5.2, mad_lon: 7.6 },
+  { h: '16', mad_bcn: 4.5, mad_bil: 5.4, mad_lon: 7.9 },
+  { h: '18', mad_bcn: 4.6, mad_bil: 5.5, mad_lon: 8.2 },
+  { h: '20', mad_bcn: 4.4, mad_bil: 5.3, mad_lon: 8.0 },
+  { h: '22', mad_bcn: 4.2, mad_bil: 5.1, mad_lon: 7.6 },
 ]
 
 const MPLS_TUNNELS = [
-  { te: 'TE-ANT-GNT-01', path: 'Nassau → Freeport',    bw: '400G', util: 68, rsvp: true,  cos: 'Gold'   },
-  { te: 'TE-ANT-GNT-02', path: 'Nassau → Freeport',    bw: '400G', util: 52, rsvp: true,  cos: 'Silver' },
-  { te: 'TE-ANT-LVN-01', path: 'Nassau → Eleuthera',      bw: '200G', util: 61, rsvp: true,  cos: 'Gold'   },
-  { te: 'TE-ANT-MEC-01', path: 'Nassau → Bimini',       bw: '200G', util: 84, rsvp: true,  cos: 'Gold'   },
-  { te: 'TE-GNT-BRG-01', path: 'Freeport → Abaco',  bw: '100G', util: 58, rsvp: false, cos: 'Bronze' },
-  { te: 'TE-ANT-AMS-01', path: 'Nassau → Amsterdam',       bw: '100G', util: 44, rsvp: false, cos: 'Bronze' },
-  { te: 'TE-GNT-PAR-01', path: 'Freeport → Paris', bw: '100G', util: 72, rsvp: true,  cos: 'Silver' },
+  { te: 'TE-NAS-FPO-01', path: 'Nassau → Freeport',                 bw: '200G', util: 68, rsvp: true,  cos: 'Gold'   },
+  { te: 'TE-NAS-FPO-02', path: 'Nassau → Freeport',                 bw: '100G', util: 52, rsvp: true,  cos: 'Silver' },
+  { te: 'TE-NAS-ELH-01', path: 'Nassau → Eleuthera',                bw: '100G', util: 61, rsvp: true,  cos: 'Gold'   },
+  { te: 'TE-NAS-BIM-01', path: 'Nassau → Bimini',                   bw: '100G', util: 84, rsvp: true,  cos: 'Gold'   },
+  { te: 'TE-FPO-MHH-01', path: 'Freeport → Abaco',                  bw: '100G', util: 58, rsvp: false, cos: 'Bronze' },
+  { te: 'TE-FPO-MIA-01', path: 'Freeport → Miami (via West Palm Beach)', bw: '100G', util: 44, rsvp: false, cos: 'Bronze' },
+  { te: 'TE-NAS-MIA-01', path: 'Nassau → Miami (via Boca Raton)',   bw: '200G', util: 72, rsvp: true,  cos: 'Silver' },
 ]
 
 const MPLS_TRAFFIC = [
-  { m: 'Jun', gold: 2840, silver: 1420, bronze: 680 }, { m: 'Jul', gold: 2920, silver: 1460, bronze: 710 },
-  { m: 'Aug', gold: 3040, silver: 1520, bronze: 740 }, { m: 'Sep', gold: 3180, silver: 1590, bronze: 760 },
-  { m: 'Oct', gold: 3260, silver: 1640, bronze: 790 }, { m: 'Nov', gold: 3380, silver: 1680, bronze: 820 },
+  { m: 'Jun', gold: 170, silver: 85, bronze: 41 }, { m: 'Jul', gold: 175, silver: 88, bronze: 43 },
+  { m: 'Aug', gold: 182, silver: 91, bronze: 44 }, { m: 'Sep', gold: 191, silver: 95, bronze: 46 },
+  { m: 'Oct', gold: 196, silver: 98, bronze: 47 }, { m: 'Nov', gold: 203, silver: 101, bronze: 49 },
 ]
 
 const CAPACITY_FORECAST = [
@@ -90,11 +91,11 @@ const CAPACITY_FORECAST = [
 ]
 
 const RESILIENCE_SRLG = [
-  { srlg: 'SRLG-ANT-CORE-1',  links: 2, b2bCircuits: 12, protected: true,  riskLevel: 'Low'  },
-  { srlg: 'SRLG-ANT-PEERING', links: 2, b2bCircuits:  8, protected: false, riskLevel: 'High' },
-  { srlg: 'SRLG-GNT-PORT',    links: 3, b2bCircuits: 18, protected: true,  riskLevel: 'Low'  },
-  { srlg: 'SRLG-LVN-SOUTH',   links: 2, b2bCircuits:  4, protected: false, riskLevel: 'Med'  },
-  { srlg: 'SRLG-MEC-NORTH',   links: 2, b2bCircuits:  6, protected: true,  riskLevel: 'Low'  },
+  { srlg: 'SRLG-NAS-CORE-1',  links: 2, b2bCircuits: 12, protected: true,  riskLevel: 'Low'  },
+  { srlg: 'SRLG-MIA-PEERING', links: 2, b2bCircuits:  8, protected: false, riskLevel: 'High' },
+  { srlg: 'SRLG-FPO-PORT',    links: 3, b2bCircuits: 18, protected: true,  riskLevel: 'Low'  },
+  { srlg: 'SRLG-ELH-SOUTH',   links: 2, b2bCircuits:  4, protected: false, riskLevel: 'Med'  },
+  { srlg: 'SRLG-MHH-NORTH',   links: 2, b2bCircuits:  6, protected: true,  riskLevel: 'Low'  },
 ]
 
 const RESILIENCE_AVAIL = [
@@ -104,11 +105,11 @@ const RESILIENCE_AVAIL = [
 ]
 
 const NOC_EVENTS = [
-  { id: 'EVT-001', link: 'Nassau↔Bimini',      severity: 'High', type: 'Utilisation threshold', status: 'Active'   },
-  { id: 'EVT-002', link: 'Local peering peering',     severity: 'Med',  type: 'BGP session flap',      status: 'Resolved' },
-  { id: 'EVT-003', link: 'Bcn↔Paris',       severity: 'Low',  type: 'FEC errors rising',     status: 'Watching' },
-  { id: 'EVT-004', link: 'Nassau↔Amsterdam',       severity: 'High', type: 'No path protection',    status: 'Planning' },
-  { id: 'EVT-005', link: 'DE-CIX Frankfurt peering', severity: 'Low',  type: 'Prefix count drift',    status: 'Resolved' },
+  { id: 'EVT-001', link: 'Nassau↔Bimini',                 severity: 'High', type: 'Utilisation threshold', status: 'Active'   },
+  { id: 'EVT-002', link: 'NAP of the Americas peering',   severity: 'Med',  type: 'BGP session flap',      status: 'Resolved' },
+  { id: 'EVT-003', link: 'Nassau↔Boca Raton',             severity: 'Low',  type: 'FEC errors rising',     status: 'Watching' },
+  { id: 'EVT-004', link: 'Freeport↔West Palm Beach',      severity: 'High', type: 'No path protection',    status: 'Planning' },
+  { id: 'EVT-005', link: 'Equinix Ashburn peering',       severity: 'Low',  type: 'Prefix count drift',    status: 'Resolved' },
 ]
 
 const NOC_ALARMS_7D = [
@@ -120,15 +121,15 @@ const NOC_ALARMS_7D = [
 
 const TRAFFIC_DAILY = Array.from({ length: 24 }, (_, i) => ({
   h: `${i}:00`,
-  total: 2200 + Math.round(Math.sin(i / 3.5) * 800 + (i >= 19 || i <= 2 ? 600 : 0)),
-  cdn:   1400 + Math.round(Math.sin(i / 3.5) * 480 + (i >= 19 || i <= 2 ? 380 : 0)),
-  trans:  480 + Math.round(Math.sin(i / 3.5) * 120),
+  total: 260 + Math.round(Math.sin(i / 3.5) * 95 + (i >= 19 || i <= 2 ? 70 : 0)),
+  cdn:   165 + Math.round(Math.sin(i / 3.5) * 56 + (i >= 19 || i <= 2 ? 45 : 0)),
+  trans:  56 + Math.round(Math.sin(i / 3.5) * 14),
 }))
 
 const PEERING_MONTHLY = [
-  { m: 'Jun', pni: 4820, ixp: 1240, transit: 980 }, { m: 'Jul', pni: 5040, ixp: 1320, transit: 880 },
-  { m: 'Aug', pni: 5280, ixp: 1380, transit: 820 }, { m: 'Sep', pni: 5420, ixp: 1460, transit: 760 },
-  { m: 'Oct', pni: 5680, ixp: 1520, transit: 710 }, { m: 'Nov', pni: 5920, ixp: 1580, transit: 670 },
+  { m: 'Jun', pni: 172, ixp: 19, transit: 130 }, { m: 'Jul', pni: 180, ixp: 20, transit: 118 },
+  { m: 'Aug', pni: 189, ixp: 21, transit: 110 }, { m: 'Sep', pni: 194, ixp: 22, transit: 104 },
+  { m: 'Oct', pni: 203, ixp: 23, transit: 102 }, { m: 'Nov', pni: 212, ixp: 24, transit: 100 },
 ]
 
 const DWDM_CHANNELS = [
@@ -192,8 +193,8 @@ export default function TransportPage() {
     [filteredLinks],
   )
 
-  const totalCapTbps = useMemo(
-    () => (CORE_LINKS.reduce((s, l) => s + l.capGbps, 0) / 1000).toFixed(1),
+  const totalCapGbps = useMemo(
+    () => CORE_LINKS.reduce((s, l) => s + l.capGbps, 0).toLocaleString('en-US'),
     [],
   )
 
@@ -215,7 +216,7 @@ export default function TransportPage() {
           <div className="flex items-center gap-2">
             <span className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              {tt('Live · ')}{totalCapTbps}{tt(' Tbps · ')}{liveTime}
+              {tt('Live · ')}{totalCapGbps}{tt(' Gbps · ')}{liveTime}
             </span>
             <Link to="/portal/noc-map" className="bg-vfes-red hover:bg-vfes-red-dark text-vfes-dark text-sm font-bold px-4 py-2 rounded-lg flex items-center gap-2">
               <MapPin className="w-4 h-4" /> {tt('NOC Map')}
@@ -238,13 +239,13 @@ export default function TransportPage() {
           'Forecast link utilisation on the top 3 congested routes',
           'Simulated SRLG failure on Nassau↔Bimini — 4 unprotected circuits found',
           'Ranked peering expansion candidates by traffic-to-cost ratio',
-          'Drafted 400G lambda augment order for Q3 board approval',
+          'Drafted 100G lambda augment order for Q3 board approval',
         ]}
         agentBlurb={tt('Single telemetry plane across DWDM, IP/MPLS and peering — the capacity model sees the full path, so augmentation decisions are cost-aware, not silo-driven.')}
         decision={{
-          title: tt('Augment Nassau↔Bimini and expand Local peering peering to 12×100G'),
-          detail: tt('The backbone model forecasts Nassau↔Bimini crossing 85% in Q3 at current growth. Adding a 400G lambda removes the SRLG exposure. Expanding Local peering to 12×100G saves an additional BSD 0.8M/yr in Cogent transit.'),
-          impact: tt('eliminates 4-circuit SRLG · saves BSD 0.8M/yr transit'),
+          title: tt('Augment Nassau↔Bimini and expand NAP of the Americas peering to 4×100G'),
+          detail: tt('The backbone model forecasts Nassau↔Bimini crossing 85% in Q3 at current growth. Adding a 100G lambda removes the SRLG exposure. Expanding NAP of the Americas (Miami) peering to 4×100G saves an additional BSD 0.15M/yr in Cogent transit.'),
+          impact: tt('eliminates 4-circuit SRLG · saves BSD 0.15M/yr transit'),
           risk: tt('Lambda lead-time 14 weeks — order by end of June'),
           linkTo: '#/portal/transport',
           linkLabel: tt('Open Transport →'),
@@ -267,7 +268,7 @@ export default function TransportPage() {
             <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
             <div className="flex-1">
               <div className="font-bold text-amber-900 text-sm">
-                {tt('Nassau↔Bimini 82% · Local peering peering 84% · Amsterdam ring unprotected')}
+                {tt('Nassau↔Bimini 82% · NAP of the Americas port 84% · Freeport↔West Palm Beach unprotected')}
               </div>
               <div className="text-xs text-amber-800 mt-1">
                 {tt('Active EVT-001 · lambda augment order pending board approval · 4 B2B circuits at SRLG risk')}
@@ -304,9 +305,9 @@ export default function TransportPage() {
       {/* ══ BACKBONE ══════════════════════════════════════════════════════════ */}
       {tab === 'backbone' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Total core capacity')} value={`${totalCapTbps} Tbps`}  delta={tt('DWDM + submarine')}       trend="flat" icon={Cable}        accent />
+          <KpiCard label={tt('Total core capacity')} value={`${totalCapGbps} Gbps`}  delta={tt('DWDM + submarine')}       trend="flat" icon={Cable}        accent />
           <KpiCard label={tt('Peak link util')}        value="82%"                     delta={tt('Nassau↔Bimini — watch')} trend="down" icon={AlertTriangle} />
-          <KpiCard label={tt('Protected links')}       value="5 / 6"                   delta={tt('Amsterdam single-path')}    trend="flat" icon={ShieldCheck}   />
+          <KpiCard label={tt('Protected links')}       value="5 / 6"                   delta={tt('Freeport–WPB single-path')}    trend="flat" icon={ShieldCheck}   />
           <KpiCard label={tt('Avg util (filter)')}     value={`${avgUtil}%`}           delta={tt('filtered set')}         trend="flat" icon={Gauge}         />
         </div>
 
@@ -399,10 +400,10 @@ export default function TransportPage() {
       {/* ══ PEERING ═══════════════════════════════════════════════════════════ */}
       {tab === 'peering' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Settlement-free ratio')} value="78%"       delta={tt('via PNI + IXP')}           trend="up"   icon={Globe}      accent />
-          <KpiCard label={tt('PNI capacity')}           value="5.86 Tbps" delta={tt('Google · Netflix · Meta')} trend="up"   icon={Zap}        />
-          <KpiCard label={tt('Local peering IX traffic')}     value="740 Gbps"  delta="+22% YoY"                     trend="up"   icon={Activity}   />
-          <KpiCard label={tt('Annual transit saving')} value="BSD 4.1M/yr"  delta={tt('vs. full transit')}        trend="up"   icon={TrendingUp} />
+          <KpiCard label={tt('Settlement-free ratio')} value="70%"       delta={tt('via PNI + IXP')}           trend="up"   icon={Globe}      accent />
+          <KpiCard label={tt('PNI capacity')}           value="212 Gbps" delta={tt('Google · Netflix · Meta')} trend="up"   icon={Zap}        />
+          <KpiCard label={tt('Miami IX traffic')}     value="24 Gbps"  delta="+22% YoY"                     trend="up"   icon={Activity}   />
+          <KpiCard label={tt('Annual transit saving')} value="BSD 0.5M/yr"  delta={tt('vs. full transit')}        trend="up"   icon={TrendingUp} />
         </div>
 
         <div className="flex items-center gap-2 mb-4">
@@ -477,9 +478,9 @@ export default function TransportPage() {
                 <PieChart>
                   <Pie
                     data={[
-                      { name: tt('PNI'), value: 4860 },
-                      { name: tt('IXP'), value: 1360 },
-                      { name: tt('Transit'), value: 790 },
+                      { name: tt('PNI'), value: 212 },
+                      { name: tt('IXP'), value: 24 },
+                      { name: tt('Transit'), value: 100 },
                     ]}
                     dataKey="value" innerRadius={50} outerRadius={80} paddingAngle={2}
                     label={({ name, percent }: { name: string; percent: number }) => `${name} ${(percent * 100).toFixed(0)}%`}
@@ -494,9 +495,9 @@ export default function TransportPage() {
             </div>
             <div className="flex flex-col justify-center gap-3 text-sm">
               <div className="text-xs uppercase font-bold tracking-widest text-vfes-dark/55 mb-2">{tt('Highlights')}</div>
-              <p className="text-vfes-dark/75 text-xs">{tt('78% off-net traffic via settlement-free PNI/IXP — saves BSD 4.1M/yr vs full transit.')}</p>
-              <p className="text-vfes-dark/75 text-xs">{tt('Netflix PNI handles 1.42 Tbps — largest CDN bilateral; Local peering at 84% needs 4×100G expansion.')}</p>
-              <p className="text-vfes-dark/75 text-xs">{tt('Google AS15169 PNI is the largest bilateral at 1.84 Tbps and zero settlement cost.')}</p>
+              <p className="text-vfes-dark/75 text-xs">{tt('70% of off-net traffic via settlement-free PNI/IXP — saves BSD 0.5M/yr vs full transit.')}</p>
+              <p className="text-vfes-dark/75 text-xs">{tt('Netflix cache PNI handles 65 Gbps; the NAP of the Americas port at 84% needs a 2×100G expansion.')}</p>
+              <p className="text-vfes-dark/75 text-xs">{tt('Google AS15169 PNI is the largest bilateral at 85 Gbps and zero settlement cost.')}</p>
               <Link to="/portal/network" className="mt-2 text-xs font-bold text-vfes-dark hover:underline">{tt('Network topology →')}</Link>
             </div>
           </div>
@@ -507,9 +508,9 @@ export default function TransportPage() {
       {tab === 'transit' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Transit unit cost')}  value="$0.35/Mbps" delta={tt('target $0.30 Q4')}      trend="up"   icon={Activity}  accent />
-          <KpiCard label={tt('Transit volume')}      value="790 Gbps"   delta="−23% YoY"                   trend="up"   icon={TrendingUp} />
+          <KpiCard label={tt('Transit volume')}      value="100 Gbps"   delta="−23% YoY"                   trend="up"   icon={TrendingUp} />
           <KpiCard label={tt('Cogent share')}        value="52%"        delta={tt('rebalance pending')}    trend="flat" icon={Globe}      />
-          <KpiCard label={tt('Annual transit spend')} value="BSD 3.2M/yr" delta={tt('vs BSD 5.8M FY24')}        trend="up"   icon={Zap}        />
+          <KpiCard label={tt('Annual transit spend')} value="BSD 0.4M/yr" delta={tt('vs BSD 0.6M FY24')}        trend="up"   icon={Zap}        />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
@@ -563,15 +564,15 @@ export default function TransportPage() {
       {/* ══ LATENCY ═══════════════════════════════════════════════════════════ */}
       {tab === 'latency' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Best RTT ANT↔GNT')}  value="12.4 ms" delta={tt('SLA 15 ms')}         trend="up"   icon={Gauge}      accent />
-          <KpiCard label={tt('Worst domestic RTT')} value="18.6 ms" delta={tt('GNT→LVN / SLA 20')} trend="flat" icon={Activity}         />
-          <KpiCard label={tt('Intl to London')}     value="28.4 ms" delta={tt('SLA 35 ms')}        trend="up"   icon={Globe}             />
+          <KpiCard label={tt('Best RTT NAS↔FPO')}  value="4.2 ms" delta={tt('SLA 6 ms')}         trend="up"   icon={Gauge}      accent />
+          <KpiCard label={tt('Worst domestic RTT')} value="6.8 ms" delta={tt('FPO→ELH / SLA 8')} trend="flat" icon={Activity}         />
+          <KpiCard label={tt('Intl to Miami')}     value="7.4 ms" delta={tt('SLA 10 ms')}        trend="up"   icon={Globe}             />
           <KpiCard label={tt('SLA breaches (30d)')} value="0"       delta={tt('all routes clean')} trend="up"   icon={ShieldCheck}       />
         </div>
 
         <div className="flex flex-wrap items-center gap-2 mb-4">
           <span className="text-xs font-bold uppercase tracking-widest text-vfes-dark/55">{tt('City filter:')}</span>
-          {['All', 'Nassau', 'Freeport', 'London', 'Frankfurt'].map(r => (
+          {['All', 'Nassau', 'Freeport', 'Miami', 'Ashburn'].map(r => (
             <button key={r} onClick={() => setLatencyCity(r)}
               className={`text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded ${
                 latencyCity === r ? 'bg-vfes-red text-vfes-dark' : 'bg-black/5 text-vfes-dark/65 hover:bg-black/10'
@@ -591,9 +592,9 @@ export default function TransportPage() {
                   <YAxis tick={{ fontSize: 11 }} unit=" ms" />
                   <Tooltip contentStyle={TS} />
                   <Legend wrapperStyle={{ fontSize: 11 }} />
-                  <Line type="monotone" dataKey="mad_bcn" name={tt('ANT↔GNT')} stroke={BLUE}  strokeWidth={2} dot={false} />
-                  <Line type="monotone" dataKey="mad_bil" name={tt('ANT↔MEC')} stroke={GREEN} strokeWidth={2} dot={false} />
-                  <Line type="monotone" dataKey="mad_lon" name={tt('ANT↔LON')} stroke={AMBER} strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="mad_bcn" name={tt('NAS↔FPO')} stroke={BLUE}  strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="mad_bil" name={tt('NAS↔BIM')} stroke={GREEN} strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="mad_lon" name={tt('NAS↔MIA')} stroke={AMBER} strokeWidth={2} dot={false} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
@@ -723,7 +724,7 @@ export default function TransportPage() {
         <div className="rounded-xl bg-gradient-to-br from-blue-50 to-transparent border border-blue-100 p-4 flex items-center justify-between">
           <div>
             <div className="text-xs uppercase tracking-widest font-bold text-blue-700 mb-1">{tt('Resilience review')}</div>
-            <div className="text-sm text-vfes-dark/80">{tt('SRLG remediation plan: protect ANT-PEERING ring and LVN-SOUTH — capex BSD 2.4M, eliminates 12 unprotected B2B circuits.')}</div>
+            <div className="text-sm text-vfes-dark/80">{tt('SRLG remediation plan: protect MIA-PEERING ring and ELH-SOUTH — capex BSD 2.4M, eliminates 12 unprotected B2B circuits.')}</div>
           </div>
           <Link to="/portal/capacity-capex" className="bg-vfes-red text-vfes-dark text-sm font-bold px-4 py-2 rounded-full hover:bg-vfes-red-dark flex items-center gap-2 shrink-0">
             {tt('Open Capacity & Capex →')}
@@ -737,7 +738,7 @@ export default function TransportPage() {
           <KpiCard label={tt('TE tunnels active')}    value="7"      delta={tt('RSVP-TE + SR-MPLS')}    trend="flat" icon={Network}      accent />
           <KpiCard label={tt('Gold CoS util')}         value="72%"    delta={tt('target <80%')}           trend="up"   icon={Gauge}             />
           <KpiCard label={tt('Traffic engineering')}  value="SR-MPLS" delta={tt('full national')}        trend="flat" icon={Layers}            />
-          <KpiCard label={tt('ANT↔MEC TE tunnel')}   value="84%"    delta={tt('above augment threshold')} trend="down" icon={AlertTriangle}   />
+          <KpiCard label={tt('NAS↔BIM TE tunnel')}   value="84%"    delta={tt('above augment threshold')} trend="down" icon={AlertTriangle}   />
         </div>
 
         <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -837,7 +838,7 @@ export default function TransportPage() {
           <KpiCard label={tt('Q2-27 forecast util')} value="87%"      delta={tt('above 85% threshold')}   trend="down" icon={AlertTriangle} accent />
           <KpiCard label={tt('Current avg util')}     value="68%"      delta={tt('all backbone links')}   trend="flat" icon={Gauge}               />
           <KpiCard label={tt('Headroom today')}       value="32%"      delta={tt('Q2-27 only 13%')}       trend="down" icon={TrendingUp}           />
-          <KpiCard label={tt('400G lambda order')}    value={tt('Pending')} delta={tt('board approval Q2')} trend="flat" icon={Zap}             />
+          <KpiCard label={tt('100G lambda order')}    value={tt('Pending')} delta={tt('board approval Q2')} trend="flat" icon={Zap}             />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
@@ -882,7 +883,7 @@ export default function TransportPage() {
         <div className="rounded-xl bg-gradient-to-br from-vfes-red/10 to-transparent border border-vfes-red/20 p-4 flex items-center justify-between">
           <div>
             <div className="text-xs uppercase tracking-widest font-bold text-vfes-dark mb-1">{tt('Capacity & CapEx')}</div>
-            <div className="text-sm text-vfes-dark/80">{tt('Full augmentation queue, NPV model, 400G lambda order workflow and board approval deck.')}</div>
+            <div className="text-sm text-vfes-dark/80">{tt('Full augmentation queue, NPV model, 100G lambda order workflow and board approval deck.')}</div>
           </div>
           <Link to="/portal/capacity-capex" className="bg-vfes-red text-vfes-dark text-sm font-bold px-4 py-2 rounded-full hover:bg-vfes-red-dark flex items-center gap-2 shrink-0">
             {tt('Open Capacity & CapEx →')}
@@ -981,7 +982,7 @@ export default function TransportPage() {
       {/* ── Always-visible quick links section ──────────────────────────────── */}
       <div className="mt-10 border-t border-black/5 pt-6">
         <div className="text-xs uppercase font-bold tracking-widest text-vfes-dark/45 mb-1">{tt('Transport domain — related pages')}</div>
-        <p className="text-xs text-vfes-dark/55 mb-4">{tt('Cable Bahamas transport covers the national IP/MPLS & DWDM backbone, international peering at Local peering & LINX, and the transit cost optimisation programme.')}</p>
+        <p className="text-xs text-vfes-dark/55 mb-4">{tt('Cable Bahamas transport covers the national IP/MPLS & DWDM backbone, international peering at NAP of the Americas (Miami) & Equinix Ashburn over Florida submarine cables, and the transit cost optimisation programme.')}</p>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
           <Link to="/portal/network" className="rounded-xl border border-black/5 bg-white p-3 hover:shadow-md transition group">
             <div className="text-[10px] font-bold uppercase tracking-widest text-vfes-dark/45 mb-1 group-hover:text-vfes-dark transition">{tt('Network')}</div>
@@ -1019,9 +1020,9 @@ export default function TransportPage() {
 
         {/* Backbone KPI mini summary */}
         <div className="mt-4 grid sm:grid-cols-3 gap-3">
-          <KpiCard label={tt('Domestic routes clean')} value="7 / 7"    delta={tt('all within SLA')}        trend="up"   icon={ShieldCheck} />
-          <KpiCard label={tt('Total installed Tbps')}  value={`${totalCapTbps} Tbps`} delta={tt('DWDM + submarine')} trend="flat" icon={Cable}      />
-          <KpiCard label={tt('Peering ratio')}          value="78%"       delta={tt('settlement-free')}       trend="up"   icon={Globe}       />
+          <KpiCard label={tt('Domestic routes clean')} value="8 / 8"    delta={tt('all within SLA')}        trend="up"   icon={ShieldCheck} />
+          <KpiCard label={tt('Total installed Gbps')}  value={`${totalCapGbps} Gbps`} delta={tt('DWDM + submarine')} trend="flat" icon={Cable}      />
+          <KpiCard label={tt('Peering ratio')}          value="70%"       delta={tt('settlement-free')}       trend="up"   icon={Globe}       />
         </div>
 
         {/* Backbone health summary table */}

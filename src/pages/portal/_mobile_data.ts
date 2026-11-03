@@ -483,7 +483,7 @@ export const MOBILE_COST = [
 // Sharing & Marketplace · mobile data shares
 export const MOBILE_SHARES = [
   { name: 'Island Towers (demo)_SITE_PORTFOLIO',   direction: 'Outbound', consumer: 'Island Towers (demo) (regional TowerCo)', records: '146 sites',  refresh: 'Daily',   lastSync: '2h ago', status: 'live' },
-  { name: 'MVNO_USAGE_FEED',        direction: 'Outbound', consumer: 'Mobile Vikings · Scarlet · 4 MVNOs', records: '0.84M lines', refresh: 'Hourly', lastSync: '38m ago',status: 'live' },
+  { name: 'MVNO_USAGE_FEED',        direction: 'Outbound', consumer: 'Mobile Vikings · Scarlet · 4 MVNOs', records: '18K lines', refresh: 'Hourly', lastSync: '38m ago',status: 'live' },
   { name: 'URCA_REGULATORY_FEED',   direction: 'Outbound', consumer: 'URCA',                      records: 'KPI rollups',  refresh: 'Monthly',lastSync: '5d ago', status: 'live' },
   { name: 'GROUP_5G_BENCHMARK',     direction: 'Inbound',  consumer: 'Cable Bahamas Group',            records: '5G KPIs (12 OpCos)', refresh: 'Weekly', lastSync: '2d ago', status: 'live' },
   { name: 'OPEN_RAN_LAB_DATA',      direction: 'Outbound', consumer: 'O-RAN Alliance test bench', records: 'lab telemetry',refresh: 'Daily',  lastSync: '6h ago', status: 'pilot' },
@@ -515,7 +515,7 @@ export const MOBILE_ICEBERG = [
 
 // Architecture · mobile data flow stages
 export const MOBILE_ARCHITECTURE = [
-  { stage: 'Sources',     description: '220 cell-sites · 1.24M IoT devices · MNP CDC · SIM-swap events', tech: 'Ericsson ENM · Nokia NetAct · Kafka · MNP gateway' },
+  { stage: 'Sources',     description: '220 cell-sites · 24K IoT devices · MNP CDC · SIM-swap events', tech: 'Ericsson ENM · Nokia NetAct · Kafka · MNP gateway' },
   { stage: 'Ingest',      description: 'Snowpipe Streaming (12.4B rows/day RAN) + Openflow CDC',            tech: 'Snowpipe Streaming · Openflow · Kafka Connect' },
   { stage: 'Lakehouse',   description: '312 TB Iceberg (RAW_RAN_TELEMETRY · MOBILE_LOCATION_EVENTS · IoT)',  tech: 'Iceberg + Polaris + AWS Glue' },
   { stage: 'Transform',   description: 'Dynamic Tables · 12 mobile lanes · 3-min TARGET_LAG',                tech: 'Dynamic Tables · Snowpark Python · dbt' },

@@ -37,21 +37,21 @@ const HEADROOM = [
 ]
 
 const FORECAST = [
-  { m: 'Q1',   traffic: 412, ceiling: 560 },
-  { m: 'Q2',   traffic: 448, ceiling: 560 },
-  { m: 'Q3',   traffic: 496, ceiling: 560 },
-  { m: 'Q4',   traffic: 538, ceiling: 560 },
-  { m: 'Q1+1', traffic: 581, ceiling: 560 },
-  { m: 'Q2+1', traffic: 624, ceiling: 680 },
+  { m: 'Q1',   traffic: 56, ceiling: 76 },
+  { m: 'Q2',   traffic: 61, ceiling: 76 },
+  { m: 'Q3',   traffic: 67, ceiling: 76 },
+  { m: 'Q4',   traffic: 73, ceiling: 76 },
+  { m: 'Q1+1', traffic: 78, ceiling: 76 },
+  { m: 'Q2+1', traffic: 84, ceiling: 92 },
 ]
 
 const PROGRAMMES = [
-  { name: '5G SA densification',       capexM: 64, roi: 22, npvM: 118, priority: 'go'      },
-  { name: 'Backbone 400G upgrade',     capexM: 38, roi: 28, npvM: 96,  priority: 'go'      },
-  { name: 'PON FTTH expansion',        capexM: 52, roi: 17, npvM: 71,  priority: 'go'      },
-  { name: 'Edge/MEC build-out',        capexM: 24, roi: 9,  npvM: 12,  priority: 'hold'    },
-  { name: 'Legacy 3G refarm',          capexM: 11, roi: 31, npvM: 44,  priority: 'go'      },
-  { name: 'Rural coverage obligation', capexM: 29, roi: 6,  npvM: -4,  priority: 'mandate' },
+  { name: '5G SA densification',       capexM: 7, roi: 22, npvM: 13, priority: 'go'      },
+  { name: 'Backbone 400G upgrade',     capexM: 4.2, roi: 28, npvM: 11,  priority: 'go'      },
+  { name: 'PON FTTH expansion',        capexM: 5.7, roi: 17, npvM: 7.8,  priority: 'go'      },
+  { name: 'Edge/MEC build-out',        capexM: 2.6, roi: 9,  npvM: 1.3,  priority: 'hold'    },
+  { name: 'Legacy 3G refarm',          capexM: 1.2, roi: 31, npvM: 4.8,  priority: 'go'      },
+  { name: 'Rural coverage obligation', capexM: 3.2, roi: 6,  npvM: -0.4,  priority: 'mandate' },
 ]
 
 const prioColor = (p: string) =>
@@ -64,24 +64,24 @@ const prioColor = (p: string) =>
 // ROI gate thresholds — per policy & scenario
 const ROI_THRESHOLD = 15   // default hurdle rate %
 const ROI_GATE_DETAILS = [
-  { programme: '5G SA densification',       capexM: 64,  roiBase: 22, roiStress: 16, paybackYr: 4.2, strategic: true  },
-  { programme: 'Backbone 400G upgrade',     capexM: 38,  roiBase: 28, roiStress: 21, paybackYr: 3.4, strategic: true  },
-  { programme: 'PON FTTH expansion',        capexM: 52,  roiBase: 17, roiStress: 11, paybackYr: 5.6, strategic: false },
-  { programme: 'Edge/MEC build-out',        capexM: 24,  roiBase: 9,  roiStress: 4,  paybackYr: 9.8, strategic: false },
-  { programme: 'Legacy 3G refarm',          capexM: 11,  roiBase: 31, roiStress: 26, paybackYr: 3.0, strategic: true  },
-  { programme: 'Rural coverage obligation', capexM: 29,  roiBase: 6,  roiStress: 1,  paybackYr: null, strategic: false },
+  { programme: '5G SA densification',       capexM: 7,  roiBase: 22, roiStress: 16, paybackYr: 4.2, strategic: true  },
+  { programme: 'Backbone 400G upgrade',     capexM: 4.2,  roiBase: 28, roiStress: 21, paybackYr: 3.4, strategic: true  },
+  { programme: 'PON FTTH expansion',        capexM: 5.7,  roiBase: 17, roiStress: 11, paybackYr: 5.6, strategic: false },
+  { programme: 'Edge/MEC build-out',        capexM: 2.6,  roiBase: 9,  roiStress: 4,  paybackYr: 9.8, strategic: false },
+  { programme: 'Legacy 3G refarm',          capexM: 1.2,  roiBase: 31, roiStress: 26, paybackYr: 3.0, strategic: true  },
+  { programme: 'Rural coverage obligation', capexM: 3.2,  roiBase: 6,  roiStress: 1,  paybackYr: null, strategic: false },
 ]
 
 // Scenario analysis — traffic growth rates
 const SCENARIO_DATA = [
-  { m: 'Q1',   base: 412, bull: 412,  bear: 412  },
-  { m: 'Q2',   base: 448, bull: 468,  bear: 430  },
-  { m: 'Q3',   base: 496, bull: 528,  bear: 468  },
-  { m: 'Q4',   base: 538, bull: 582,  bear: 502  },
-  { m: 'Q1+1', base: 581, bull: 648,  bear: 524  },
-  { m: 'Q2+1', base: 624, bull: 712,  bear: 548  },
-  { m: 'Q3+1', base: 672, bull: 784,  bear: 574  },
-  { m: 'Q4+1', base: 724, bull: 864,  bear: 598  },
+  { m: 'Q1',   base: 56, bull: 56,  bear: 56  },
+  { m: 'Q2',   base: 61, bull: 63,  bear: 58  },
+  { m: 'Q3',   base: 67, bull: 71,  bear: 63  },
+  { m: 'Q4',   base: 73, bull: 79,  bear: 68  },
+  { m: 'Q1+1', base: 78, bull: 87,  bear: 71  },
+  { m: 'Q2+1', base: 84, bull: 96,  bear: 74  },
+  { m: 'Q3+1', base: 91, bull: 106, bear: 77  },
+  { m: 'Q4+1', base: 98, bull: 117, bear: 81  },
 ]
 
 // Utilisation trend over 6 quarters per domain
@@ -107,22 +107,22 @@ const DEMAND_SIGNALS = [
 
 // Build vs demand milestones
 const BUILD_PLAN = [
-  { milestone: '400G backbone ring — Nassau↔Freeport', qTarget: 'Q2 24', capexM: 22, domain: 'Transport',  status: 'funded'    },
-  { milestone: '5G SA core expansion — +30% capacity',  qTarget: 'Q1 24', capexM: 18, domain: '5G Core',    status: 'funded'    },
-  { milestone: 'Peering upgrade — +2 Tbps CDN PIX',     qTarget: 'Q3 24', capexM: 8,  domain: 'CDN/Peering',status: 'pending'   },
-  { milestone: 'RAN densification — 480 new small cells',qTarget: 'Q3 24', capexM: 24, domain: 'RAN',        status: 'funded'    },
-  { milestone: 'FTTH passings +420K homes',              qTarget: 'Q4 24', capexM: 32, domain: 'Fixed',      status: 'pending'   },
-  { milestone: 'Edge MEC pilot — 4 cities',              qTarget: 'Q4 25', capexM: 8,  domain: 'Edge/MEC',   status: 'hold'      },
-  { milestone: 'Rural coverage Phase 2 — 180 sites',    qTarget: 'Q4 24', capexM: 14, domain: 'RAN Rural',  status: 'mandate'   },
+  { milestone: '400G backbone ring — Nassau↔Freeport', qTarget: 'Q2 27', capexM: 2.4, domain: 'Transport',  status: 'funded'    },
+  { milestone: '5G SA core expansion — +30% capacity',  qTarget: 'Q1 27', capexM: 2, domain: '5G Core',    status: 'funded'    },
+  { milestone: 'Peering upgrade — +200G CDN cache',     qTarget: 'Q3 27', capexM: 0.9,  domain: 'CDN/Peering',status: 'pending'   },
+  { milestone: 'RAN densification — 24 new small cells',qTarget: 'Q3 27', capexM: 2.6, domain: 'RAN',        status: 'funded'    },
+  { milestone: 'FTTH passings +18K homes',              qTarget: 'Q4 27', capexM: 3.5, domain: 'Fixed',      status: 'pending'   },
+  { milestone: 'Edge MEC pilot — 4 islands',              qTarget: 'Q4 28', capexM: 0.9,  domain: 'Edge/MEC',   status: 'hold'      },
+  { milestone: 'Rural coverage Phase 2 — 12 Family Island sites',    qTarget: 'Q4 27', capexM: 1.5, domain: 'RAN Rural',  status: 'mandate'   },
 ]
 
 // Capex envelope vs spend
 const CAPEX_ENVELOPE = [
-  { y: '2020', budget: 148, spent: 142 },
-  { y: '2021', budget: 162, spent: 158 },
-  { y: '2022', budget: 188, spent: 184 },
-  { y: '2023', budget: 218, spent: 201 },
-  { y: '2024', budget: 226, spent: null as number | null },
+  { y: '2022', budget: 16, spent: 15.6 },
+  { y: '2023', budget: 18, spent: 17.4 },
+  { y: '2024', budget: 21, spent: 20.2 },
+  { y: '2025', budget: 24, spent: 22.1 },
+  { y: '2026', budget: 25, spent: null as number | null },
 ]
 
 type TabId = 'headroom' | 'forecast' | 'capex' | 'roi' | 'scenario' | 'utilisation' | 'demand' | 'build'
@@ -196,7 +196,7 @@ export default function CapacityCapexPage() {
       {/* ─── Top KPIs ────────────────────────────────────────────── */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <KpiCard label={tt('Tightest domain')}  value={tightest.domain}        delta={`${tightest.headroom}% ${tt('headroom')}`} trend="down" icon={AlertTriangle} accent />
-        <KpiCard label={tt('Core capacity')}    value={`${NET.coreCapacityTbps} Tbps`} delta={tt('backbone')}              trend="flat" icon={Layers} />
+        <KpiCard label={tt('Core capacity')}    value="1,500 Gbps" delta={tt('backbone')}              trend="flat" icon={Layers} />
         <KpiCard label={tt('Capex plan')}       value={`BSD ${totalCapex}M`}      delta={`BSD ${goCapex}M ${tt('high-ROI')}`}  trend="flat" icon={Banknote} />
         <KpiCard label={tt('Forecast breach')}  value={breach ? breach.m : '—'} delta={tt('traffic > ceiling')}          trend="down" icon={TrendingUp} />
       </div>
@@ -207,7 +207,7 @@ export default function CapacityCapexPage() {
         models={[
           { name: 'Traffic Demand Forecaster',    metric: 'MAPE 4.1%', sub: tt('domain-level 6-month forecast')     },
           { name: 'Congestion Risk Classifier',   metric: 'F1 0.89',   sub: tt('site-cluster congestion early-warn') },
-          { name: 'Capex ROI Scorer',             metric: '+BSD 14M NPV', sub: tt('programme ranking vs hurdle rate')  },
+          { name: 'Capex ROI Scorer',             metric: '+BSD 1.5M NPV', sub: tt('programme ranking vs hurdle rate')  },
         ]}
         agentLabel={tt('Run Capacity Planner')}
         agentRunningLabel={tt('Modelling…')}
@@ -275,8 +275,8 @@ export default function CapacityCapexPage() {
             headline: tt('Fund backbone 400G & 5G densification now; hold Edge/MEC'),
             stats: [
               { label: tt('Tightest domain'), value: 'Peering/CDN 14%' },
-              { label: tt('Capex plan'),       value: 'BSD 218M'           },
-              { label: tt('High-ROI approved'),value: 'BSD 165M'           },
+              { label: tt('Capex plan'),       value: 'BSD 24M'           },
+              { label: tt('High-ROI approved'),value: 'BSD 18M'           },
               { label: tt('Forecast breach'),  value: 'Q1+1'            },
             ],
             findings: [
@@ -312,10 +312,10 @@ export default function CapacityCapexPage() {
 
       {/* ─── Network capacity summary strip ─────────────────────── */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-        <KpiCard label={tt('Backbone capacity')}  value={`${NET.coreCapacityTbps} Tbps`} delta={tt('400G core ring')}       trend="flat" icon={Layers}       accent />
+        <KpiCard label={tt('Backbone capacity')}  value="1,500 Gbps" delta={tt('400G core ring')}       trend="flat" icon={Layers}       accent />
         <KpiCard label={tt('5G NR active sites')} value={NET.activeSites.toLocaleString('en-BS')} delta={tt('of total RAN')} trend="up"   icon={Gauge} />
         <KpiCard label={tt('Active spectrum MHz')} value="680 MHz"                        delta={tt('700–3500 bands')}       trend="flat" icon={BarChart2} />
-        <KpiCard label={tt('Peak traffic (Tbps)')} value="0.71"                           delta={tt('Tbps peak hour')}       trend="up"   icon={TrendingUp} />
+        <KpiCard label={tt('Peak traffic (Gbps)')} value="420"                           delta={tt('Gbps peak hour')}       trend="up"   icon={TrendingUp} />
       </div>
       {tab === 'headroom' && (
         <>
@@ -415,7 +415,7 @@ export default function CapacityCapexPage() {
             </div>
             <div className="p-3 rounded-xl border border-black/5 bg-[#fafbfc]">
               <div className="text-[10px] font-bold uppercase text-vfes-dark/45 mb-1">{tt('400G lift')}</div>
-              <div className="text-xl font-extrabold text-blue-600">+120 PB</div>
+              <div className="text-xl font-extrabold text-blue-600">+16 PB</div>
               <div className="text-[11px] text-vfes-dark/55">{tt('buys 14 months runway at current growth')}</div>
             </div>
             <div className="p-3 rounded-xl border border-black/5 bg-[#fafbfc]">
@@ -662,7 +662,7 @@ export default function CapacityCapexPage() {
             <div className="p-4 rounded-xl bg-blue-50 border border-blue-100">
               <div className="text-xs font-bold text-blue-800 mb-2">{tt('Bull case (+20% CAGR)')}</div>
               <p className="text-xs text-blue-700 leading-relaxed">
-                {tt('If streaming and IoT exceed consensus, Peering/CDN saturates at Q4 this year. Risk mitigation: pre-order 2 Tbps CDN PIX now and lock a contingency slot at Local peering to add capacity in under 60 days.')}
+                {tt('If streaming and IoT exceed consensus, Peering/CDN saturates at Q4 this year. Risk mitigation: pre-order 200G of CDN cache capacity now and lock a contingency port at NAP of the Americas (Miami) to add capacity in under 60 days.')}
               </p>
             </div>
             <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-100">
@@ -687,9 +687,9 @@ export default function CapacityCapexPage() {
                 </thead>
                 <tbody>
                   {[
-                    { sc: 'Bull (+20%)', cagr: '+20%', breach: 'Q4 23', capex: 'BSD 248M', action: 'Pre-order CDN PIX; accelerate densification' },
-                    { sc: 'Base (+22%)', cagr: '+22%', breach: 'Q1+1',  capex: 'BSD 218M', action: 'Fund 400G and 5G densification'              },
-                    { sc: 'Bear (-15%)', cagr: '+15%', breach: 'Q3+1',  capex: 'BSD 184M', action: 'Milestone-gate FTTH; hold Edge/MEC'          },
+                    { sc: 'Bull (+20%)', cagr: '+20%', breach: 'Q4 26', capex: 'BSD 27M', action: 'Pre-order CDN cache; accelerate densification' },
+                    { sc: 'Base (+22%)', cagr: '+22%', breach: 'Q1+1',  capex: 'BSD 24M', action: 'Fund 400G and 5G densification'              },
+                    { sc: 'Bear (-15%)', cagr: '+15%', breach: 'Q3+1',  capex: 'BSD 20M', action: 'Milestone-gate FTTH; hold Edge/MEC'          },
                   ].map((s) => (
                     <tr key={s.sc} className="border-b border-black/5 hover:bg-[#fafbfc]">
                       <td className="px-3 py-2 font-bold">{tt(s.sc)}</td>
@@ -751,7 +751,7 @@ export default function CapacityCapexPage() {
                 </thead>
                 <tbody>
                   {[
-                    { domain: 'Peering / CDN',      util: 86, threshold: 85, mths: 0,  prog: 'CDN PIX +2 Tbps'          },
+                    { domain: 'Peering / CDN',      util: 86, threshold: 85, mths: 0,  prog: 'CDN cache +200G'          },
                     { domain: 'Transport/backbone', util: 81, threshold: 85, mths: 5,  prog: '400G ring programme'       },
                     { domain: 'RAN (mobile)',       util: 78, threshold: 85, mths: 9,  prog: '5G SA densification'       },
                     { domain: 'Fixed access',       util: 69, threshold: 85, mths: 18, prog: 'PON FTTH expansion'        },
@@ -951,8 +951,8 @@ export default function CapacityCapexPage() {
           <div className="grid md:grid-cols-4 gap-4 mb-4">
             <KpiCard label={tt('NPV per BSD 1 capex')}      value="BSD 1.84"  delta={tt('go programmes only')}      trend="up"   icon={Target}   accent />
             <KpiCard label={tt('Avg payback (go progs)')} value="3.9 yr" delta={tt('vs hurdle 5yr max')}       trend="up"   icon={Banknote} />
-            <KpiCard label={tt('Mandated / non-ROI')}    value="BSD 29M"   delta={tt('13% of total envelope')}   trend="flat" icon={AlertTriangle} />
-            <KpiCard label={tt('Underspend vs budget')}  value="BSD 17M"   delta={tt('in 2023 — review gating')} trend="flat" icon={Sliders} />
+            <KpiCard label={tt('Mandated / non-ROI')}    value="BSD 3.2M"   delta={tt('13% of total envelope')}   trend="flat" icon={AlertTriangle} />
+            <KpiCard label={tt('Underspend vs budget')}  value="BSD 1.9M"   delta={tt('in 2025 — review gating')} trend="flat" icon={Sliders} />
           </div>
           <div className="text-xs text-vfes-dark/55 leading-relaxed">
             {tt('The capex ROI scoring model runs on Snowflake Cortex — each programme is scored monthly against the latest demand forecast. Hurdle rate is configurable via the slider on the ROI gates tab. Rural mandates are tracked separately as a regulatory obligation line.')}
@@ -988,7 +988,7 @@ export default function CapacityCapexPage() {
               <ul className="text-xs text-vfes-dark/55 space-y-1 list-disc list-inside">
                 <li>{tt('Traffic demand forecaster — MAPE 4.1%')}</li>
                 <li>{tt('Congestion risk classifier — F1 0.89')}</li>
-                <li>{tt('Capex ROI scorer — +BSD 14M NPV lift')}</li>
+                <li>{tt('Capex ROI scorer — +BSD 1.5M NPV lift')}</li>
               </ul>
             </div>
             <div className="p-3 rounded-xl border border-black/5 bg-[#fafbfc]">

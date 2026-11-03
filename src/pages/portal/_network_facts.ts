@@ -21,7 +21,7 @@ export const NET_FACTS = {
   spectrumMmwaveMhz: 400,
 
   // Transport
-  coreCapacityTbps: 21.2,
+  coreCapacityTbps: 1.5,
 
   // Energy
   kwhPerGb: 0.101,

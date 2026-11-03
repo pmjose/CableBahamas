@@ -106,7 +106,7 @@ export default function LandingPage() {
                   {tt('"Walk me into the morning — what changed overnight?"')}
                 </div>
                 <div className="bg-vfes-red rounded-2xl rounded-tr-md p-3 text-[13px] shadow-lg">
-                  {tt('Pipeline crossed BSD 40M for the first time. Island Bank (demo) framework signed — BSD 4.2M ARR. Freeport churn anomaly spike — retention play queued.')} <span className="underline">{tt('Open exec briefing →')}</span>
+                  {tt('Pipeline crossed BSD 40M for the first time. Island Bank (demo) framework signed — BSD 0.42M ARR. Freeport churn anomaly spike — retention play queued.')} <span className="underline">{tt('Open exec briefing →')}</span>
                 </div>
                 <div className="bg-white/10 rounded-2xl rounded-tl-md p-3 text-[13px] border border-white/10">
                   {tt('"Who\'s at risk in Freeport this week?"')}
