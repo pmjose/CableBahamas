@@ -7,6 +7,8 @@ import {
   GitBranch, Layers, Clock, Settings,
 } from 'lucide-react'
 import { Panel, PageHeader } from '../../components/Panel'
+import AgentWorkflow from '../../components/AgentWorkflow'
+import { flowById } from './_agent_flows'
 import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
 import AgentDecision from '../../components/AgentDecision'
@@ -171,6 +173,8 @@ export default function ChurnRetentionPage() {
           </div>
         }
       />
+
+      <div className="mb-6"><AgentWorkflow flow={flowById('save-desk')} compact /></div>
 
       {/* ─────────────────────────────────────────────────────── */}
 

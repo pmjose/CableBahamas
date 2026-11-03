@@ -154,6 +154,7 @@ export const GROUPS: NavGroup[] = [
   {
     name: 'AI & ML',
     items: [
+      { to: 'agentic-workflows', label: 'Agentic Workflows', icon: Workflow, highlight: true },
       { to: 'agents', label: 'Cortex Agents', icon: Bot },
       { to: 'cortex-search', label: 'Cortex Search', icon: SearchIcon },
       { to: 'ml-registry', label: 'ML Registry', icon: Brain },

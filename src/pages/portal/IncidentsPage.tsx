@@ -5,6 +5,8 @@ import {
   Activity, Wrench, TrendingDown, TrendingUp, Radio, Brain, Zap,
 } from 'lucide-react'
 import { PageHeader, Panel } from '../../components/Panel'
+import AgentWorkflow from '../../components/AgentWorkflow'
+import { flowById } from './_agent_flows'
 import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
 import tt from '../../i18n/tt'
@@ -174,6 +176,8 @@ export default function IncidentsPage() {
           </div>
         }
       />
+
+      <div className="mb-6"><AgentWorkflow flow={flowById('outage')} compact /></div>
 
       {/* ── ML Intelligence ───────────────────────────────────────────────── */}
       <MlInsightSection

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import tt from '../../i18n/tt'
 import MlInsightSection from '../../components/MlInsightSection'
 import { PageHeader, Panel } from '../../components/Panel'
+import AgentWorkflow from '../../components/AgentWorkflow'
+import { flowById } from './_agent_flows'
 import KpiCard from '../../components/KpiCard'
 import {
   Siren, AlertTriangle, Zap, Users, ShieldAlert, Phone, ChevronRight, BookOpen, MapPin,
@@ -487,6 +489,8 @@ export default function WarRoomPage() {
           </div>
         }
       />
+
+      <div className="mb-6"><AgentWorkflow flow={flowById('multi-agent')} compact /></div>
 
       <MlInsightSection
         heading="Incident intelligence"

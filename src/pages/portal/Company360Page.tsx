@@ -3,6 +3,8 @@ import MlInsightSection from '../../components/MlInsightSection'
 import { Link, useSearchParams } from 'react-router-dom'
 import { accounts, buildAccountDetails, Account } from './_b2b_data'
 import { PageHeader, Panel } from '../../components/Panel'
+import AgentWorkflow from '../../components/AgentWorkflow'
+import { flowById } from './_agent_flows'
 import KpiCard from '../../components/KpiCard'
 import AgentAction from '../../components/AgentAction'
 import tt from '../../i18n/tt'
@@ -171,6 +173,8 @@ export default function Company360Page() {
         subtitle={tt('Unified enterprise account view across ARR, network, service, relationships & expansion signals.')}
         actions={<Link to="/portal/b2b" className="text-xs font-bold text-vfes-dark hover:underline flex items-center gap-1"><Building2 className="w-3 h-3" />{tt('Open B2B cockpit →')}</Link>}
       />
+
+      <div className="mb-6"><AgentWorkflow flow={flowById('b2b-quote')} compact /></div>
 
       {/* Cortex expansion-plan agent */}
       <div className="mb-6 rounded-2xl border border-vfes-red/20 bg-gradient-to-br from-vfes-red/5 to-white p-5">

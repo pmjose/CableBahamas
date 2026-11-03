@@ -2,6 +2,8 @@ import { useState, useMemo, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ShieldCheck, FileText, GitCompareArrows, TrendingDown, Brain, ChevronRight, CheckCircle2, Activity, TrendingUp, AlertTriangle, Gauge } from 'lucide-react'
 import { Panel, PageHeader } from '../../components/Panel'
+import AgentWorkflow from '../../components/AgentWorkflow'
+import { flowById } from './_agent_flows'
 import { Link } from 'react-router-dom'
 import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
@@ -173,6 +175,8 @@ export default function RevenueAssurancePage() {
           </div>
         }
       />
+
+      <div className="mb-6"><AgentWorkflow flow={flowById('revenue-assurance')} compact /></div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <KpiCard label={tt('Revenue leakage rate')} value="1.3%" delta={tt('-0.8 pp YoY · below 2% benchmark')} trend="up" icon={TrendingDown} accent />

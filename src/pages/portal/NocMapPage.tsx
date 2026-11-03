@@ -1,6 +1,8 @@
 import { useMemo, useState, useEffect, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { PageHeader, Panel } from '../../components/Panel'
+import AgentWorkflow from '../../components/AgentWorkflow'
+import { flowById } from './_agent_flows'
 import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
 import AgentAction from '../../components/AgentAction'
@@ -310,6 +312,8 @@ export default function NocMapPage() {
           </div>
         }
       />
+
+      <div className="mb-6"><AgentWorkflow flow={flowById('hurricane')} compact /></div>
 
       {/* ── ML Insight Section ───────────────────────────────────────────────── */}
       <MlInsightSection

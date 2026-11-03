@@ -6,6 +6,8 @@ import {
   Activity, BarChart2, List, Globe, AlertTriangle, Zap, Lock,
 } from 'lucide-react'
 import { Panel, PageHeader } from '../../components/Panel'
+import AgentWorkflow from '../../components/AgentWorkflow'
+import { flowById } from './_agent_flows'
 import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
 import AskTheData from '../../components/AskTheData'
@@ -212,6 +214,8 @@ export default function UrcaPackPage() {
           </div>
         }
       />
+
+      <div className="mb-6"><AgentWorkflow flow={flowById('urca-pack')} compact /></div>
 
       {/* ── ML Intelligence ────────────────────────────────────────────────── */}
       <MlInsightSection

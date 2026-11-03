@@ -35,6 +35,7 @@ const PricingSimulatorPage = lazy(() => import('./pages/portal/PricingSimulatorP
 const BundleProfitabilityPage = lazy(() => import('./pages/portal/BundleProfitabilityPage'))
 const PlatformArchitecturePage = lazy(() => import('./pages/portal/PlatformArchitecturePage'))
 const DataCatalogPage = lazy(() => import('./pages/portal/DataCatalogPage'))
+const AgenticWorkflowsPage = lazy(() => import('./pages/portal/AgenticWorkflowsPage'))
 const CortexAgentsPage = lazy(() => import('./pages/portal/CortexAgentsPage'))
 const DataEngineeringPage = lazy(() => import('./pages/portal/DataEngineeringPage'))
 const LineagePage = lazy(() => import('./pages/portal/LineagePage'))
@@ -177,6 +178,7 @@ export default function App() {
             {/* Platform & Data */}
             <Route path="architecture" element={<PlatformArchitecturePage />} />
             <Route path="catalog" element={<DataCatalogPage />} />
+            <Route path="agentic-workflows" element={<AgenticWorkflowsPage />} />
             <Route path="agents" element={<CortexAgentsPage />} />
             <Route path="data-engineering" element={<DataEngineeringPage />} />
             <Route path="lineage" element={<LineagePage />} />
