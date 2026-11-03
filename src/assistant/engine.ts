@@ -9,6 +9,7 @@ import CUST from '../pages/portal/_customer_facts'
 import NET from '../pages/portal/_network_facts'
 import { accounts, arAging } from '../pages/portal/_b2b_data'
 import { AGENT_FLOWS } from '../pages/portal/_agent_flows'
+import { DATA_PRODUCTS, DATA_PRODUCT_ARR, DATA_PRODUCT_PIPELINE, DATA_PRODUCT_SHARE_OF_REVENUE, ML_INSIGHTS, PRIVACY_CONTROLS, K_ANON_MIN } from '../data/bahamas_market'
 
 export type Block =
   | { kind: 'kpis'; items: { label: string; value: string; note?: string }[] }
@@ -104,6 +105,59 @@ const exportCsv = (label = 'Export result to CSV'): Action => ({ label, kind: 'e
 const draft = (label: string, detail: string): Action => ({ label, kind: 'draft', detail })
 
 const INTENTS: Intent[] = [
+  {
+    id: 'data_products',
+    kw: [[/data product|monetis|monetiz|sell (our )?data|marketplace|cross.?industr|tourism data|cruise|visitor|footfall|insurer|insurance|catchment|real estate|nema|inclusion|data revenue/, 4]],
+    run: e => {
+      const lc = e.q.toLowerCase()
+      const pick = /cruise|footfall|bay street/.test(lc) ? 'cruise' : /tourism|visitor|hotel|stopover/.test(lc) ? 'tourism' : /nema|evacuat|storm mobility|relief/.test(lc) ? 'hurricane' : /insur|risk index|bank/.test(lc) ? 'insurance' : /catchment|retail|real estate|site selection/.test(lc) ? 'catchment' : /inclusion|sand dollar|urca fund/.test(lc) ? 'inclusion' : undefined
+      const p = pick ? DATA_PRODUCTS.find(x => x.id === pick) : undefined
+      return {
+        title: p ? `Data product · ${p.name}` : 'Bahamas data products & monetisation',
+        reasoning: p ? `Product = ${p.name} · buyers, pricing, privacy and current revenue.` : 'Listing cross-industry data products with ARR, pipeline and buyers.',
+        sources: ['CABLEBAHAMAS_DEMO.DATA_PRODUCTS.CATALOG', SV.network, SV.customer],
+        sql: `SELECT product, industry, status, customers, arr_bsd, pipeline_bsd\nFROM CABLEBAHAMAS_DEMO.DATA_PRODUCTS.CATALOG${p ? `\nWHERE product_id = '${p.id}'` : ''}\nORDER BY arr_bsd DESC;`,
+        blocks: p
+          ? [{ kind: 'kpis', items: [{ label: 'ARR', value: `BSD ${n(p.arrBsd)}` }, { label: 'Pipeline', value: `BSD ${n(p.pipelineBsd)}` }, { label: 'Customers', value: String(p.customers) }, { label: 'Status', value: p.status }] },
+            { kind: 'table', columns: ['Detail', 'Value'], rows: [['Buyers', p.buyers.join(', ')], ['Pricing', p.pricing], ['Delivery', p.delivery], ['Refresh', p.refresh], ['Minimum cell', `${p.minCell} devices / households`]] }]
+          : [{ kind: 'kpis', items: [{ label: 'Products', value: String(DATA_PRODUCTS.length) }, { label: 'ARR', value: `BSD ${n(DATA_PRODUCT_ARR)}` }, { label: 'Pipeline', value: `BSD ${n(DATA_PRODUCT_PIPELINE)}` }, { label: 'Share of revenue', value: `${DATA_PRODUCT_SHARE_OF_REVENUE}%` }] },
+            { kind: 'table', columns: ['Product', 'Industry', 'Status', 'ARR'], rows: DATA_PRODUCTS.map(x => [x.name, x.industry, x.status, `BSD ${n(x.arrBsd)}`]) }],
+        summary: p
+          ? `**${p.name}** (${p.status}) earns **BSD ${n(p.arrBsd)} a year** from ${p.customers} customers, with BSD ${n(p.pipelineBsd)} in pipeline. ${p.sample} Every figure is aggregated to at least ${p.minCell} devices or households.`
+          : `Six privacy-safe data products earn **BSD ${n(DATA_PRODUCT_ARR)} ARR** (${DATA_PRODUCT_SHARE_OF_REVENUE}% of revenue) with **BSD ${n(DATA_PRODUCT_PIPELINE)}** in pipeline. Visitor Flows and Cruise-Day Footfall lead; Storm Mobility is free to NEMA and paid for insurers.`,
+        actions: [go('Open Bahamas ML & Data Products', 'bahamas-data'), go('Open Sharing & Marketplace', 'sharing'), exportCsv()],
+        followUps: ['Tell me about the cruise footfall product', 'What ML insights do we have?', 'How do we protect privacy in data products?'],
+      }
+    },
+  },
+  {
+    id: 'ml_insights',
+    kw: [[/machine learning|\bml\b|\bmodels?\b|anomal|ml insights?|ai insights?|predictive/, 4]],
+    run: () => ({
+      title: 'Machine-learning insights in production',
+      reasoning: 'Listing production models with their latest finding, confidence and estimated impact.',
+      sources: ['CABLEBAHAMAS_DEMO.ML.INSIGHTS', SV.network, SV.customer],
+      sql: `SELECT model, finding, confidence, impact_bsd\nFROM CABLEBAHAMAS_DEMO.ML.INSIGHTS\nWHERE as_of = '2026-10-31'\nORDER BY impact_bsd DESC;`,
+      blocks: [{ kind: 'table', columns: ['Insight', 'Result', 'Confidence', 'Impact / yr'], rows: [...ML_INSIGHTS].sort((a, b) => b.impactBsd - a.impactBsd).map(i => [i.title, `${i.value} ${i.valueLabel}`, `${Math.round(i.confidence * 100)}%`, `BSD ${n(i.impactBsd)}`]) }],
+      summary: `${ML_INSIGHTS.length} models are in production, worth about **BSD ${n(ML_INSIGHTS.reduce((s, i) => s + i.impactBsd, 0))} a year**. The biggest is **churn drivers in Grand Bahama**: two outages in 90 days triples churn odds. The storm model predicts Abaco takes **2.4×** longer to recover than Grand Bahama.`,
+      actions: [go('Open Bahamas ML & Data Products', 'bahamas-data'), flow('save-desk', 'Act on churn drivers with the save-desk agent'), flow('hurricane', 'Use the recovery model in the hurricane agent')],
+      followUps: ['What is driving churn in Grand Bahama?', 'Tell me about the cruise footfall product', 'Are we ready for hurricane season?'],
+    }),
+  },
+  {
+    id: 'privacy',
+    kw: [[/privacy|anonymi|k.?anonym|data protection|consent|personal data/, 4]],
+    run: () => ({
+      title: 'Privacy controls for data products',
+      reasoning: 'Listing the controls that apply before any data leaves Cable Bahamas.',
+      sources: ['CABLEBAHAMAS_DEMO.DATA_PRODUCTS.POLICIES'],
+      sql: '-- Policy lookup, no customer data queried.',
+      blocks: [{ kind: 'table', columns: ['Control', 'How it works'], rows: PRIVACY_CONTROLS.map(c => [c.control, c.detail]) }],
+      summary: `Only aggregates leave Cable Bahamas, never below **${K_ANON_MIN} devices or households**. Consent under the Data Protection Act is respected, partners join data in a clean room, and every partner query is logged for the Data Protection Officer.`,
+      actions: [go('Open Data Clean Rooms', 'clean-rooms'), go('Open Regulatory & ESG', 'regulatory')],
+      followUps: ['What data products do we sell?', 'What is our URCA filing status?'],
+    }),
+  },
   {
     id: 'variance',
     kw: [[/driv|why|gap to plan|variance|behind plan|below plan|miss|explain/, 4]],
@@ -695,6 +749,8 @@ export function answer(q: string, ctx: Context = {}): Reply {
   else if (/(top|best|most valuable|highest).*(customer|clv|lifetime|value)|(customer|clv|lifetime).*(top|best|highest)/.test(lc) && !/churn/.test(lc)) best = (forced = true, scored.find(x => x.i.id === 'top_customers')!)
   else if (/revconnect|revhome|bundle/.test(lc) && /margin|profit|payback|worth/.test(lc)) best = (forced = true, scored.find(x => x.i.id === 'bundle_margin')!)
   else if (/(service line|lane|mix|split)/.test(lc) && /revenue|sales/.test(lc)) best = (forced = true, scored.find(x => x.i.id === 'revenue_mix')!)
+  else if (/privacy|anonymi|personal data/.test(lc)) best = (forced = true, scored.find(x => x.i.id === 'privacy')!)
+  else if (/data product|monetis|monetiz|sell (our )?data|cruise|footfall|visitor flow|catchment|insurer|inclusion/.test(lc)) best = (forced = true, scored.find(x => x.i.id === 'data_products')!)
   else if (/churn|leav|cancel/.test(lc)) best = (forced = true, scored.find(x => x.i.id === 'churn')!)
   else if (/hurricane|storm/.test(lc)) best = (forced = true, scored.find(x => x.i.id === 'hurricane')!)
 
@@ -755,6 +811,7 @@ const S: Record<string, string[]> = {
   'debt-collections': ['How much debt is overdue 60+ days?', 'Is there any billing leakage?'],
   marketing: ['Which channel has the best CAC?', 'How do we compare with BTC?', 'What were gross and net adds last month?'],
   'mobile-ran': ['How many mobile subscribers do we have?', 'Which islands have the weakest 5G coverage?'],
+  'bahamas-data': ['What data products do we sell?', 'What ML insights do we have?', 'Tell me about the cruise footfall product', 'How do we protect privacy in data products?'],
   'agentic-workflows': ['What can you do?', 'Are we ready for hurricane season?', 'Are there any outages right now?'],
   default: ['What was revenue this quarter?', 'How many customers do we have by island?', 'Which island has the highest churn?', 'Are we ready for hurricane season?'],
 }

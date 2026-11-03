@@ -22,7 +22,7 @@ const TS = { background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, f
 const OUTBOUND = [
   { name: 'CBL_NETWORK_INTEL_LISTING', typeKey: 'paid',   type: 'Marketplace · paid', consumers: 14,  regions: 'US/Canada', mrr: 42000, mrrFmt: 'BSD 42K', sla: '99.9%',      status: 'live'  },
   { name: 'CBL_AGGREGATED_FOOTFALL',   typeKey: 'paid',   type: 'Marketplace · paid', consumers: 8,   regions: 'US-East',    mrr: 18000, mrrFmt: 'BSD 18K', sla: '99.5%',      status: 'live'  },
-  { name: 'CBL_PRIVATE_ISLAND_BANK',     typeKey: 'direct', type: 'Direct share · 1:1', consumers: 1,   regions: 'BE',    mrr: 0,     mrrFmt: '—',    sla: 'best-effort', status: 'live'  },
+  { name: 'CBL_PRIVATE_ISLAND_BANK',     typeKey: 'direct', type: 'Direct share · 1:1', consumers: 1,   regions: 'Bahamas',    mrr: 0,     mrrFmt: '—',    sla: 'best-effort', status: 'live'  },
   { name: 'CBL_OPEN_DATA_ESG',         typeKey: 'free',   type: 'Marketplace · free', consumers: 184, regions: 'global',mrr: 0,     mrrFmt: '—',    sla: 'best-effort', status: 'live'  },
   { name: 'CBL_DEMOGRAPHIC_LISTING',   typeKey: 'paid',   type: 'Marketplace · paid', consumers: 0,   regions: 'US/Canada', mrr: 0,     mrrFmt: '—',    sla: 'pending',     status: 'draft' },
 ]

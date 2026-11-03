@@ -15,6 +15,9 @@ describe('Cable Bahamas Intelligence assistant', () => {
       ['what offers work to save customers', 'retention_offers'], ['URCA filing', 'regulatory'], ['fraud this month', 'fraud'],
       ['best marketing channel', 'marketing'], ['net adds', 'adds'], ['headcount', 'people'], ['solar energy', 'energy'],
       ['what can you do', 'agents'],
+      ['What data products do we sell?', 'data_products'], ['Tell me about the cruise footfall product', 'data_products'],
+      ['What ML insights do we have?', 'ml_insights'], ['How do we protect privacy in data products?', 'privacy'],
+      ['What is the revenue forecast?', 'revenue'],
     ]
     for (const [q, intent] of cases) expect(answer(q).intent, q).toBe(intent)
   })
