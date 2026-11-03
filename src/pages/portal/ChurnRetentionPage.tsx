@@ -13,7 +13,6 @@ import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
 import AgentDecision from '../../components/AgentDecision'
 import AgentAction from '../../components/AgentAction'
-import AskTheData from '../../components/AskTheData'
 import tt from '../../i18n/tt'
 import CUST_FACTS from './_customer_facts'
 import {
@@ -1076,8 +1075,6 @@ export default function ChurnRetentionPage() {
           </div>
         </>
       )}
-
-      <AskTheData />
       {/* ── Churn & Retention · end of page ─ */}
     </div>
   )

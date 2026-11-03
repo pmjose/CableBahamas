@@ -75,7 +75,7 @@ describe('Cable Bahamas identity', () => {
     for (const filename of sourceFiles(resolve(root, 'src'))) {
       expect(readFileSync(filename, 'utf8').match(stale), filename).toBeNull()
     }
-    const answers = readFileSync(resolve(root, 'src/components/AskTheData.tsx'), 'utf8')
+    const answers = readFileSync(resolve(root, 'src/assistant/engine.ts'), 'utf8')
     expect(answers).toContain("bundle IN ('REVConnect', 'BB_ONLY')")
     expect(answers).toContain('REVConnect customers')
     const answer = pickAnswer('Average true margin for REVConnect customers vs. broadband-only first 12 months')

@@ -97,7 +97,7 @@ const REDEMPTION_BY_TIER = [
 const PARTNERS = [
   { partner: 'Kinepolis Cinemas',        category: 'Entertainment', ptsRequired:  500, take: 8.4, margin: 'High', status: 'Active'   },
   { partner: 'MediaMarkt',               category: 'Retail',        ptsRequired: 1000, take: 6.2, margin: 'High', status: 'Active'   },
-  { partner: 'SNCB (Bahamian Rail)',      category: 'Travel',        ptsRequired: 2000, take: 4.8, margin: 'Med',  status: 'Active'   },
+  { partner: 'Bahamasair (demo)',      category: 'Travel',        ptsRequired: 2000, take: 4.8, margin: 'Med',  status: 'Active'   },
   { partner: 'Amazon Premium',           category: 'Digital',       ptsRequired:  800, take: 9.1, margin: 'Med',  status: 'Active'   },
   { partner: 'Q8 Fuel',                  category: 'Fuel',          ptsRequired:  300, take: 3.6, margin: 'Low',  status: 'Active'   },
   { partner: 'Streaming add-on',      category: 'Streaming',     ptsRequired:  600, take: 5.2, margin: 'High', status: 'Planning' },
@@ -108,7 +108,7 @@ const PARTNER_PERF = [
   { partner: 'Amazon Premium',     redemptions: 91_400, costM: 0.73 },
   { partner: 'Kinepolis Cinemas',  redemptions: 84_200, costM: 0.42 },
   { partner: 'MediaMarkt',         redemptions: 62_100, costM: 0.62 },
-  { partner: 'SNCB (Bahamian Rail)',redemptions: 48_200, costM: 0.48 },
+  { partner: 'Bahamasair (demo)',redemptions: 48_200, costM: 0.48 },
   { partner: 'Q8 Fuel',            redemptions: 36_100, costM: 0.18 },
 ]
 

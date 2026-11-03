@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
 import AgentDecision from '../../components/AgentDecision'
-import AskTheData from '../../components/AskTheData'
 import tt from '../../i18n/tt'
 import {
   Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer,
@@ -1008,8 +1007,6 @@ export default function BillingChargingPage() {
           </div>
         </Panel>
       </div>
-
-      <AskTheData />
 
       {/* ── Billing performance summary table ─────────────────────────── */}
       <div className="mt-6">

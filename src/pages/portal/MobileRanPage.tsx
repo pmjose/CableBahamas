@@ -12,7 +12,6 @@ import MlInsightSection from '../../components/MlInsightSection'
 import AgentDecision from '../../components/AgentDecision'
 import AgentAction from '../../components/AgentAction'
 import CartoMap from '../../components/CartoMap'
-import AskTheData from '../../components/AskTheData'
 import tt from '../../i18n/tt'
 import {
   Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer,
@@ -976,8 +975,6 @@ export default function MobileRanPage() {
           </Panel>
         </>
       )}
-
-      <AskTheData />
 
       {/* ── Footer quick-nav ─────────────────────────────────────────────── */}
       <div className="mt-8 border-t border-black/5 pt-6">

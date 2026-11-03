@@ -11,7 +11,6 @@ import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
 import AgentAction from '../../components/AgentAction'
 import AgentDecision from '../../components/AgentDecision'
-import AskTheData from '../../components/AskTheData'
 import tt from '../../i18n/tt'
 import {
   CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer,
@@ -936,8 +935,6 @@ export default function Core5GPage() {
         {' '}{tt('All metrics 30-day rolling averages unless noted. NF health checks run every 30 s.')}
       </div>
 
-      <AskTheData />
-
       {/* ── Footer quick-nav ─────────────────────────────────────────────── */}
       <div className="mt-8 border-t border-black/5 pt-6">
         <div className="text-xs uppercase tracking-widest font-bold text-vfes-dark/55 mb-3">{tt('Related dashboards')}</div>
@@ -1091,8 +1088,6 @@ export default function Core5GPage() {
         <Link to="/portal/inventory"  className="font-bold text-vfes-dark hover:underline">{tt('Site Inventory →')}</Link>
         <Link to="/portal/ai-insights" className="font-bold text-vfes-dark hover:underline">{tt('AI Insights →')}</Link>
       </div>
-
-      <AskTheData />
     </div>
   )
 }

@@ -8,7 +8,6 @@ import {
 import { Panel, PageHeader } from '../../components/Panel'
 import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
-import AskTheData from '../../components/AskTheData'
 import tt from '../../i18n/tt'
 import {
   Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer,
@@ -1073,8 +1072,6 @@ export default function ChannelDealersPage() {
           <Brain className="w-4 h-4" />{tt('Open AI Insights →')}
         </Link>
       </div>
-
-      <AskTheData />
     </div>
   )
 }

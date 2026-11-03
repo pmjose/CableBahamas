@@ -163,7 +163,7 @@ const dealerScorecard = [
 const mvnoPartners = [
   { partner: 'Lycamobile (MVNO)',  subs: 640_000, revMoM: 0.62, margin: 22, trend: 'up'   },
   { partner: 'Mobile Vikings',      subs: 480_000, revMoM: 0.48, margin: 24, trend: 'flat' },
-  { partner: 'Carrefour Mobile',   subs: 280_000, revMoM: 0.28, margin: 20, trend: 'down' },
+  { partner: 'Island Retail (demo) Mobile',   subs: 280_000, revMoM: 0.28, margin: 20, trend: 'down' },
   { partner: 'Super Value Mobile (demo)',     subs: 120_000, revMoM: 0.12, margin: 18, trend: 'flat' },
   { partner: 'Hits Mobile',        subs: 64_000,  revMoM: 0.06, margin: 21, trend: 'up'   },
   { partner: 'Neutral B2B access', subs: 0,        revMoM: 0.04, margin: 38, trend: 'up'   },

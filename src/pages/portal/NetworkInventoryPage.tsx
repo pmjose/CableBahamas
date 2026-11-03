@@ -9,7 +9,6 @@ import { Panel, PageHeader } from '../../components/Panel'
 import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
 import AgentDecision from '../../components/AgentDecision'
-import AskTheData from '../../components/AskTheData'
 import NET from './_network_facts'
 import tt from '../../i18n/tt'
 import {
@@ -1088,8 +1087,6 @@ export default function NetworkInventoryPage() {
           </Link>
         </div>
       </div>
-
-      <AskTheData />
     </div>
   )
 }

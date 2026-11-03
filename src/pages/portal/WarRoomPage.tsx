@@ -186,7 +186,7 @@ const incidents: Incident[] = [
     revenuePerMin: 220,
     rootCause: 'Island utility (demo) MV grid trip — 28 macro sites on battery (avg 2h autonomy)',
     runbookUrl: 'RUNBOOK-RAN-POWER-014',
-    vendorEscalation: 'Fluvius NOC ticket END-2026-44182',
+    vendorEscalation: 'Grand Bahama Power (demo) NOC ticket END-2026-44182',
     nextStep: 'Generators dispatched (ETA 35 min) · Island Towers (demo) shared sites prioritised',
     publicStatusPage: 'visible',
   },

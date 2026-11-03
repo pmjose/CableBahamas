@@ -5,7 +5,6 @@ import { ShieldCheck, Users, Brain, ChevronRight, Lock, TrendingUp, AlertTriangl
 import { Panel, PageHeader } from '../../components/Panel'
 import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
-import AskTheData from '../../components/AskTheData'
 import tt from '../../i18n/tt'
 import {
   Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
@@ -1106,8 +1105,6 @@ export default function CleanRoomsPage() {
           </Link>
         </div>
       </>)}
-
-      <AskTheData />
     </div>
   )
 }

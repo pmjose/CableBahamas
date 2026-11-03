@@ -28,6 +28,7 @@ describe('canonical scenario reconciliation', () => {
     expect(pickAnswer('how many mobile subscribers').result.value).toBe('180,500')
     expect(pickAnswer('top lifetime value in Freeport').summary).toContain('Jordan Knowles')
     expect(pickAnswer('unsupported question').result.value).toBe('No scripted answer')
+    expect(pickAnswer('total revenue this quarter').sql).toContain('FINANCE_ANALYTICS')
   })
   it('keeps retention survival bounded and CPE cash charged once', () => {
     expect(survival(12, 0, 0, 0.85).every(row => row.S === 1 && row.h === 0)).toBe(true)

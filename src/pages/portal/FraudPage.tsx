@@ -8,7 +8,6 @@ import {
 import { Panel, PageHeader } from '../../components/Panel'
 import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
-import AskTheData from '../../components/AskTheData'
 import tt from '../../i18n/tt'
 import {
   Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer,
@@ -1087,8 +1086,6 @@ export default function FraudPage() {
           <Link to="/portal/ai-insights"      className="text-xs font-bold text-vfes-dark hover:underline">{tt('AI Insights →')}</Link>
         </div>
       </>)}
-
-      <AskTheData />
     </div>
   )
 }

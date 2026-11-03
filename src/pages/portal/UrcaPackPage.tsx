@@ -10,7 +10,6 @@ import AgentWorkflow from '../../components/AgentWorkflow'
 import { flowById } from './_agent_flows'
 import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
-import AskTheData from '../../components/AskTheData'
 import tt from '../../i18n/tt'
 import {
   Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
@@ -1079,8 +1078,6 @@ export default function UrcaPackPage() {
           <Link to="/portal/ciso"         className="text-xs font-bold text-vfes-dark hover:underline">{tt('CISO →')}</Link>
         </div>
       </>)}
-
-      <AskTheData />
     </div>
   )
 }

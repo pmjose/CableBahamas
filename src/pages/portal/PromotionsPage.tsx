@@ -8,7 +8,6 @@ import {
 import { Panel, PageHeader } from '../../components/Panel'
 import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
-import AskTheData from '../../components/AskTheData'
 import tt from '../../i18n/tt'
 import {
   Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer,
@@ -1073,8 +1072,6 @@ export default function PromotionsPage() {
           <Link to="/portal/company-360"       className="text-vfes-dark hover:underline flex items-center gap-1"><ChevronRight className="w-3.5 h-3.5" />{tt('Company 360')}</Link>
         </div>
       </div>
-
-      <AskTheData />
     </div>
   )
 }

@@ -12,7 +12,6 @@ import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
 import AgentDecision from '../../components/AgentDecision'
 import AgentAction from '../../components/AgentAction'
-import AskTheData from '../../components/AskTheData'
 import tt from '../../i18n/tt'
 import CUST_FACTS from './_customer_facts'
 import {
@@ -1075,8 +1074,6 @@ export default function BaseManagementPage() {
       <div className="mt-4 text-[10px] text-vfes-dark/35 uppercase tracking-widest border-t border-black/5 pt-3">
         {tt('Data updated daily \u00b7 Primary source:')} <span className="font-mono">CBL_ANALYTICS.BASE_MGMT</span> \u00b7 {tt('Models in Snowflake Model Registry')}
       </div>
-
-      <AskTheData />
     </div>
   )
 }

@@ -10,7 +10,6 @@ import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
 import AgentAction from '../../components/AgentAction'
 import AgentDecision from '../../components/AgentDecision'
-import AskTheData from '../../components/AskTheData'
 import tt from '../../i18n/tt'
 import {
   Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer,
@@ -1092,8 +1091,6 @@ export default function SpectrumPage() {
         <Link to="/portal/mobile-ran"  className="font-bold text-vfes-dark hover:underline">{tt('Mobile RAN →')}</Link>
         <Link to="/portal/core-5g"     className="font-bold text-vfes-dark hover:underline">{tt('5G Core →')}</Link>
       </div>
-
-      <AskTheData />
     </div>
   )
 }

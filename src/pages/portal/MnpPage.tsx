@@ -11,7 +11,6 @@ import { Panel, PageHeader } from '../../components/Panel'
 import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
 import AgentDecision from '../../components/AgentDecision'
-import AskTheData from '../../components/AskTheData'
 import tt from '../../i18n/tt'
 import {
   Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer,
@@ -1076,7 +1075,6 @@ export default function MnpPage() {
       {/* MNP page uses Snowflake Cortex AI for call classification, CLV scoring, and save-desk offer selection. */}
       {/* Semantic view: CBL_ANALYTICS.MNP.PORTABILITY_V3 — refreshed daily via Snowflake task chain. */}
       {/* For methodology see: portal/ai-insights */}
-      <AskTheData />
     </div>
   )
 }

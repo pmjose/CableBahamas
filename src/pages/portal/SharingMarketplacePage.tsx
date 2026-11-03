@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next'
 import { PageHeader, Panel } from '../../components/Panel'
 import KpiCard from '../../components/KpiCard'
 import MlInsightSection from '../../components/MlInsightSection'
-import AskTheData from '../../components/AskTheData'
 import tt from '../../i18n/tt'
 import {
   Globe2, ArrowDownCircle, ArrowUpCircle, Smartphone,
@@ -1150,8 +1149,6 @@ export default function SharingMarketplacePage() {
           </Link>
         </div>
       </>)}
-
-      <AskTheData />
     </div>
   )
 }

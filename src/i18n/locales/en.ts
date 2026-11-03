@@ -9044,7 +9044,7 @@ const en = {
   'Achieve 70% gigabit availability': 'Achieve 70% gigabit availability',
   'Network NPS > +45': 'Network NPS > +45',
   'Civils contractor delay in Freeport (2 weeks)': 'Civils contractor delay in Freeport (2 weeks)',
-  'ESB pole access permits — Rum Cay': 'ESB pole access permits — Rum Cay',
+  'BPL pole access permits — Rum Cay': 'BPL pole access permits — Rum Cay',
   'Cisco optical hardware delivery (Q3)': 'Cisco optical hardware delivery (Q3)',
   'Abaco planning approvals': 'Abaco planning approvals',
   'NET2': 'NET2',
