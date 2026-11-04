@@ -5,7 +5,7 @@ import { Navigate, useLocation } from 'react-router-dom'
 // authenticated the user, so the demo password gate is skipped.
 const LIVE = import.meta.env.VITE_CHAT_MODE === 'live'
 
-const PASSWORD = 'CableBahamas2026'
+const PASSWORD = 'Snow2026'
 const KEY = 'cablebahamas_authed'
 
 type AuthCtx = {

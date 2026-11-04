@@ -72,7 +72,7 @@ npm ci
 npm run dev -- --host 127.0.0.1
 ```
 
-Open the local development link in the Links table. Enter **`CableBahamas2026`** at the demo gate.
+Open the local development link in the Links table. Enter **`Snow2026`** at the demo gate.
 
 Run the checks and production preview:
 

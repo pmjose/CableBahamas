@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useAuth } from '../auth/AuthContext'
 import { ArrowRight, Lock } from 'lucide-react'
+import BahamasSkyline from '../components/BahamasSkyline'
 
 // Animated particle-network canvas — nodes drift, lines connect nearby ones.
 // Evokes a high-speed connectivity grid without any brand reference.
@@ -197,6 +198,9 @@ export default function GatePage() {
     <div className="relative min-h-screen overflow-hidden mesh-bg animate-gradient-shift flex items-center justify-center px-4">
       {/* Animated particle network */}
       <ParticleNetwork />
+
+      {/* Bahamas landmarks skyline */}
+      <BahamasSkyline />
 
       {/* Floating orbs */}
       <div className="pointer-events-none absolute inset-0">
