@@ -765,7 +765,7 @@ export default function InvestorRelationsPage() {
                 ))}
               </div>
               <div className="mt-3 text-[10px] text-vfes-dark/40 uppercase tracking-widest">
-                {tt('Last updated: Nov 2026 · Next MSCI review: Q2 2027')}
+                {tt('Last updated: Oct 2026 · Next MSCI review: Q2 2027')}
               </div>
             </Panel>
 

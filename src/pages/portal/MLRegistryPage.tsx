@@ -22,8 +22,8 @@ const BLUE = '#FF4438', NAVY = '#11567F', GREEN = '#10B981', AMBER = '#F59E0B', 
 const TS = { background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, fontSize: 12 }
 
 const MODELS = [
-  { name: 'churn_xgb',          versions: 12, prod: 'v3.1', target: 'WAREHOUSE', task: 'classification', auc: 0.86,  drift_psi: 0.06, last_train: '2025-10-20', owner: 'Ann Vermeulen',  stage: 'prod',    inferences_day: 1200000, framework: 'XGBoost'    },
-  { name: 'clv_lgbm',           versions:  8, prod: 'v2.4', target: 'WAREHOUSE', task: 'regression',     mape: 0.084,drift_psi: 0.04, last_train: '2025-10-14', owner: 'Ann Vermeulen',  stage: 'prod',    inferences_day:  840000, framework: 'LightGBM'   },
+  { name: 'churn_xgb',          versions: 12, prod: 'v3.1', target: 'WAREHOUSE', task: 'classification', auc: 0.86,  drift_psi: 0.06, last_train: '2025-10-20', owner: 'Ann Rolle',  stage: 'prod',    inferences_day: 1200000, framework: 'XGBoost'    },
+  { name: 'clv_lgbm',           versions:  8, prod: 'v2.4', target: 'WAREHOUSE', task: 'regression',     mape: 0.084,drift_psi: 0.04, last_train: '2025-10-14', owner: 'Ann Rolle',  stage: 'prod',    inferences_day:  840000, framework: 'LightGBM'   },
   { name: 'bundle_lgbm',        versions:  6, prod: 'v1.6', target: 'WAREHOUSE', task: 'multiclass',     auc: 0.82,  drift_psi: 0.08, last_train: '2025-10-12', owner: 'Niels Bodart',   stage: 'prod',    inferences_day:  620000, framework: 'LightGBM'   },
   { name: 'nbo_ranker',         versions:  4, prod: 'v1.2', target: 'SPCS',      task: 'ranking',        ndcg: 0.74, drift_psi: 0.05, last_train: '2025-10-08', owner: 'Niels Bodart',   stage: 'prod',    inferences_day:  380000, framework: 'XGBoost'    },
   { name: 'fraud_detect_iso',   versions:  3, prod: 'v0.9', target: 'WAREHOUSE', task: 'anomaly',        auc: 0.91,  drift_psi: 0.12, last_train: '2025-10-22', owner: 'Lars Bethel',     stage: 'staging', inferences_day:  240000, framework: 'IsolForest' },
@@ -32,7 +32,7 @@ const MODELS = [
   { name: 'doc_extract_arctic', versions:  4, prod: 'v2.1', target: 'WAREHOUSE', task: 'extraction',     f1: 0.93,   drift_psi: 0.04, last_train: '2025-09-30', owner: 'Pieter Knowles',    stage: 'prod',    inferences_day:   84000, framework: 'Snowflake'  },
   { name: 'agent_eval_judge',   versions:  2, prod: 'v1.0', target: 'WAREHOUSE', task: 'llm-judge',      faithfulness: 0.88, drift_psi: 0.02, last_train: '2025-10-02', owner: 'AI platform', stage: 'prod', inferences_day: 24820, framework: 'Snowflake' },
   { name: 'sentiment_arctic',   versions:  3, prod: 'v1.1', target: 'WAREHOUSE', task: 'classification', f1: 0.89,   drift_psi: 0.03, last_train: '2025-10-09', owner: 'CX DS',         stage: 'prod',    inferences_day:   62000, framework: 'Snowflake'  },
-  { name: 'churn_xgb_next',     versions:  1, prod: '—',    target: '—',         task: 'classification', auc: 0.88,  drift_psi: 0.00, last_train: '2025-10-22', owner: 'Ann Vermeulen',  stage: 'shadow',  inferences_day:   12000, framework: 'XGBoost'    },
+  { name: 'churn_xgb_next',     versions:  1, prod: '—',    target: '—',         task: 'classification', auc: 0.88,  drift_psi: 0.00, last_train: '2025-10-22', owner: 'Ann Rolle',  stage: 'shadow',  inferences_day:   12000, framework: 'XGBoost'    },
   { name: 'pricing_elasticity', versions:  6, prod: 'v3.2', target: 'WAREHOUSE', task: 'regression',     mape: 0.071,drift_psi: 0.05, last_train: '2025-10-12', owner: 'Pricing DS',    stage: 'prod',    inferences_day:   48000, framework: 'LightGBM'   },
   { name: 'voice_intent_nlu',   versions:  2, prod: 'v0.8', target: 'SPCS',      task: 'classification', f1: 0.91,   drift_psi: 0.06, last_train: '2025-10-04', owner: 'CX DS',         stage: 'prod',    inferences_day:   96000, framework: 'sklearn'    },
   { name: 'b2b_propensity',     versions:  4, prod: 'v1.3', target: 'WAREHOUSE', task: 'classification', auc: 0.79,  drift_psi: 0.09, last_train: '2025-10-15', owner: 'B2B DS',        stage: 'prod',    inferences_day:   36000, framework: 'XGBoost'    },
@@ -958,7 +958,7 @@ export default function MLRegistryPage() {
               </thead>
               <tbody>
                 {[
-                  { d: '2026-11-24', model: 'churn_xgb',        action: 'Version v3.1 registered',  by: 'Ann Vermeulen'  },
+                  { d: '2026-10-24', model: 'churn_xgb',        action: 'Version v3.1 registered',  by: 'Ann Rolle'  },
                   { d: '2026-11-22', model: 'fraud_detect_iso',  action: 'Drift alert raised',       by: 'Model Monitor' },
                   { d: '2026-11-20', model: 'bundle_lgbm',       action: 'Deployed to production',   by: 'Niels Bodart'   },
                   { d: '2026-11-18', model: 'doc_extract_arctic',action: 'Model card updated',       by: 'Pieter Knowles'    },
@@ -1044,7 +1044,7 @@ export default function MLRegistryPage() {
                 { step: 'Model card updated and reviewed',                done: true  },
                 { step: 'Privacy impact sign-off (DPA refresh)',   done: true  },
                 { step: 'Feature view compatibility check',               done: true  },
-                { step: 'UAT sign-off by Ann Vermeulen',                   done: false },
+                { step: 'UAT sign-off by Ann Rolle',                   done: false },
                 { step: 'Canary rollout (10%) approved',                  done: false },
                 { step: 'Full production promotion',                      done: false },
               ].map(s => (

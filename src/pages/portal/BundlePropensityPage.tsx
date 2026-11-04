@@ -138,7 +138,7 @@ const actionQueue = [
   { id: 'VM-101203', name: 'Marie Knowles', region: 'Abaco',    current: '500 Mb only',   best: 'BB_TV',  score: 0.78, marginLift:  72, why: 'Family of 4 · Netflix + Disney+ stacked',                  play: 'BB+TV bundle, no contract change',channel: 'App',     eligible: true,  tier: 'Persuadable' },
   { id: 'VM-101977', name: 'Daan Adderley',      region: 'Eleuthera',  current: '500 Mb + Mobile',best:'REVConnect',   score: 0.91, marginLift: -42, why: 'High propensity but DILUTIVE — already has both products',  play: 'Suppress (sleeping-dog risk)', channel: '—',     eligible: false, tier: 'Sleeping dog' },
   { id: 'VM-102540', name: 'Anke Bain',   region: 'Exuma', current: 'BB + TV',       best: 'ONE_TOTAL',   score: 0.62, marginLift:  88, why: 'Mobile-only on competitor · contract expiring',                 play: 'REVConnect+TV migration offer',   channel: 'Outbound', eligible: true,  tier: 'Persuadable' },
-  { id: 'VM-104088', name: 'Wout Vermeulen', region: 'Bimini',     current: '500 Mb only',   best: 'REVConnect',   score: 0.84, marginLift:  64, why: 'No FTTH yet · Q3 lighting up — defer',                     play: 'Hold for Q3 FTTH wave',    channel: 'Email',    eligible: false, tier: 'Persuadable' },
+  { id: 'VM-104088', name: 'Wout Rolle', region: 'Bimini',     current: '500 Mb only',   best: 'REVConnect',   score: 0.84, marginLift:  64, why: 'No FTTH yet · Q3 lighting up — defer',                     play: 'Hold for Q3 FTTH wave',    channel: 'Email',    eligible: false, tier: 'Persuadable' },
 ]
 
 // ---------------------------- Helpers ---------------------------- //

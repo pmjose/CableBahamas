@@ -75,7 +75,7 @@ const MAJOR_INCIDENTS = [
 const ONCALL_TEAMS = [
   { team: 'NOC bridge',     oncall: 'L. Knowles',  escalation: 'M. Willems',   incidents30d: 6, mttd: 3,  mttr: 28 },
   { team: 'RAN ops',        oncall: 'A. Ferguson',   escalation: 'F. Rolle',   incidents30d: 4, mttd: 8,  mttr: 48 },
-  { team: 'Core ops',       oncall: 'P. Vermeulen', escalation: 'C. Bethel',      incidents30d: 3, mttd: 5,  mttr: 38 },
+  { team: 'Core ops',       oncall: 'P. Rolle', escalation: 'C. Bethel',      incidents30d: 3, mttd: 5,  mttr: 38 },
   { team: 'Transport ops',  oncall: 'R. Adderley',   escalation: 'B. Knowles',  incidents30d: 2, mttd: 12, mttr: 62 },
   { team: 'Data platform',  oncall: 'J. Ferguson',   escalation: 'I. Rolle',   incidents30d: 5, mttd: 6,  mttr: 42 },
 ]

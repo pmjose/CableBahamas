@@ -95,10 +95,10 @@ const COMPLIANCE_ITEMS = [
 ]
 
 const AUCTION_HISTORY = [
-  { year: '2011', bands: '800/900/1800/2100/2600 MHz', spend: 'BSD 1.17B', MHz: 310 },
-  { year: '2016', bands: '700 MHz (20 MHz)',           spend: 'BSD 0.41B', MHz: 20  },
-  { year: '2018', bands: '3.5 GHz (110 MHz)',          spend: 'BSD 0.61B', MHz: 110 },
-  { year: '2022', bands: '26 GHz (400 MHz)',           spend: 'BSD 0.18B', MHz: 400 },
+  { year: '2011', bands: '800/900/1800/2100/2600 MHz', spend: 'BSD 24M', MHz: 310 },
+  { year: '2016', bands: '700 MHz (20 MHz)',           spend: 'BSD 8M', MHz: 20  },
+  { year: '2018', bands: '3.5 GHz (110 MHz)',          spend: 'BSD 12M', MHz: 110 },
+  { year: '2022', bands: '26 GHz (400 MHz)',           spend: 'BSD 4M', MHz: 400 },
 ]
 
 // ─── Spectrum roadmap ─────────────────────────────────────────────────────────
@@ -606,7 +606,7 @@ export default function SpectrumPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             <KpiCard label={tt('Sub-1 GHz BSD /MHz-pop')} value="BSD 0.55"  delta={tt('700+800 weighted avg')} trend="flat" icon={Globe} accent />
             <KpiCard label={tt('3.5 GHz BSD /MHz-pop')}   value="BSD 0.11"  delta={tt('market comparable')} trend="flat" icon={Signal} />
-            <KpiCard label={tt('Total portfolio value')} value="~BSD 2.8B" delta={tt('sub-6 GHz book est.')} trend="up" icon={TrendingUp} />
+            <KpiCard label={tt('Total portfolio value')} value="~BSD 95M" delta={tt('sub-6 GHz book est.')} trend="up" icon={TrendingUp} />
             <KpiCard label={tt('mmWave utilised')}       value="22%"    delta={tt('FWA upside potential')} trend="up" icon={Zap} />
           </div>
 
@@ -656,7 +656,7 @@ export default function SpectrumPage() {
         <>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             <KpiCard label={tt('Total auction spend')} value="BSD 48M" delta={tt('since 2011')} trend="flat" icon={Globe} accent />
-            <KpiCard label={tt('Largest single auction')} value="BSD 1.17B" delta={tt('2011 multi-band')} trend="flat" icon={TrendingUp} />
+            <KpiCard label={tt('Largest single auction')} value="BSD 24M" delta={tt('2011 multi-band')} trend="flat" icon={TrendingUp} />
             <KpiCard label={tt('Total MHz acquired')} value="840 MHz" delta={tt('sub-6 GHz + mmWave')} trend="up" icon={Radio} />
             <KpiCard label={tt('Next renewal window')} value="2030" delta={tt('120 MHz capacity block')} trend="flat" icon={Calendar} />
           </div>

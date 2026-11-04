@@ -32,19 +32,19 @@ export const accounts: Account[] = [
   { code: 'SN',     name: 'Atlantis Resort Group',  segment: 'Enterprise',        vertical: 'Travel',        region: 'New Providence',  mrr: 85200, arr: 1022400, sites: 18,  circuits: 64,  contractEnd: '2027-02', wault: 4,  status: 'Renewal',  nps: 31, health: 64, ownerAE: 'Daan Bethel',    vertId: 2, exec: 'Wout Rolle'   },
   { code: 'PRIM',    name: 'Super Value Group (demo)',            segment: 'Enterprise',        vertical: 'Retail',        region: 'National',  mrr: 57600,  arr: 691200, sites: 38,  circuits: 76,  contractEnd: '2028-04', wault: 30, status: 'Healthy',  nps: 52, health: 82, ownerAE: 'Sofie Knowles', vertId: 3, exec: 'Wout Rolle'   },
   { code: 'SNS',     name: 'Bahamas Post Office (demo)',                   segment: 'Enterprise',        vertical: 'Public',        region: 'National',  mrr: 46800,  arr: 561600,  sites: 240, circuits: 380, contractEnd: '2026-11', wault: 1,  status: 'Renewal',  nps: 12, health: 48, ownerAE: 'Public Team',  vertId: 4, exec: 'Wout Rolle'  },
-  { code: 'TCD',     name: 'Eleuthera Campus (demo)',               segment: 'Mid-Market',        vertical: 'Education',     region: 'Eleuthera',    mrr: 37200,  arr: 446400,  sites: 12,  circuits: 28,  contractEnd: '2029-01', wault: 39, status: 'Healthy',  nps: 56, health: 90, ownerAE: 'Lars Vermeulen', vertId: 5, exec: 'Thomas Knowles'  },
+  { code: 'TCD',     name: 'Eleuthera Campus (demo)',               segment: 'Mid-Market',        vertical: 'Education',     region: 'Eleuthera',    mrr: 37200,  arr: 446400,  sites: 12,  circuits: 28,  contractEnd: '2029-01', wault: 39, status: 'Healthy',  nps: 56, health: 90, ownerAE: 'Lars Rolle', vertId: 5, exec: 'Thomas Knowles'  },
   { code: 'CRH',     name: 'Island Construction Group (demo)',             segment: 'Enterprise',        vertical: 'Manufacturing', region: 'Nassau',   mrr: 28800,  arr: 345600,  sites: 28,  circuits: 56,  contractEnd: '2027-01', wault: 3,  status: 'At Risk',  nps: -8, health: 38, ownerAE: 'Daan Bethel',    vertId: 6, exec: 'Wout Rolle'   },
   { code: 'Island Bank (demo)',     name: 'Island Bank (demo) Bank',                segment: 'Enterprise',        vertical: 'Banking',       region: 'Nassau',   mrr: 93600, arr: 1123200, sites: 280, circuits: 360, contractEnd: '2027-06', wault: 20, status: 'Healthy',  nps: 44, health: 84, ownerAE: 'Femke Adderley',  vertId: 1, exec: 'Wout Rolle'   },
   { code: 'Island Bank (demo)_OLD', name: 'Scotiabank Bahamas (demo)',      segment: 'Mid-Market',        vertical: 'Banking',       region: 'New Providence',  mrr: 13200,  arr: 158400,  sites: 14,  circuits: 24,  contractEnd: '2026-05', wault: -5, status: 'Churned',  nps: -22, health: 12, ownerAE: 'Femke Adderley', vertId: 1, exec: 'Wout Rolle'   },
   { code: 'SUPERV',  name: 'AML Foods (demo)',          segment: 'Enterprise',        vertical: 'Retail',        region: 'Freeport',     mrr: 52800,  arr: 633600, sites: 220, circuits: 240, contractEnd: '2027-10', wault: 24, status: 'Healthy',  nps: 39, health: 78, ownerAE: 'Sofie Knowles', vertId: 3, exec: 'Thomas Knowles'  },
   { code: 'DUNNES',  name: 'Island Retail Group (demo)',       segment: 'Enterprise',        vertical: 'Retail',        region: 'Nassau',   mrr: 38400,  arr: 460800,  sites: 142, circuits: 158, contractEnd: '2027-04', wault: 6,  status: 'Watch',    nps: 21, health: 60, ownerAE: 'Sofie Knowles', vertId: 3, exec: 'Thomas Knowles'  },
-  { code: 'INTEL',   name: 'Island Manufacturing (demo)',              segment: 'Enterprise',        vertical: 'Tech',          region: 'Andros',  mrr: 132000, arr: 1584000, sites: 4,   circuits: 48,  contractEnd: '2028-07', wault: 33, status: 'Healthy',  nps: 61, health: 92, ownerAE: 'Lars Vermeulen', vertId: 10, exec: 'Wout Rolle'  },
-  { code: 'PFIZER',  name: 'Grand Bahama Pharma (demo)',              segment: 'Enterprise',        vertical: 'Healthcare',    region: 'Freeport',     mrr: 66000, arr: 792000, sites: 6,   circuits: 32,  contractEnd: '2028-03', wault: 29, status: 'Healthy',  nps: 49, health: 86, ownerAE: 'Lars Vermeulen', vertId: 7, exec: 'Wout Rolle'   },
+  { code: 'INTEL',   name: 'Island Manufacturing (demo)',              segment: 'Enterprise',        vertical: 'Tech',          region: 'Andros',  mrr: 132000, arr: 1584000, sites: 4,   circuits: 48,  contractEnd: '2028-07', wault: 33, status: 'Healthy',  nps: 61, health: 92, ownerAE: 'Lars Rolle', vertId: 10, exec: 'Wout Rolle'  },
+  { code: 'PFIZER',  name: 'Grand Bahama Pharma (demo)',              segment: 'Enterprise',        vertical: 'Healthcare',    region: 'Freeport',     mrr: 66000, arr: 792000, sites: 6,   circuits: 32,  contractEnd: '2028-03', wault: 29, status: 'Healthy',  nps: 49, health: 86, ownerAE: 'Lars Rolle', vertId: 7, exec: 'Wout Rolle'   },
   { code: 'ESB',     name: 'Grand Bahama Power (demo)',                 segment: 'Enterprise',        vertical: 'Public',        region: 'Freeport',     mrr: 79200, arr: 950400, sites: 86,  circuits: 142, contractEnd: '2027-05', wault: 7,  status: 'Renewal',  nps: 28, health: 70, ownerAE: 'Public Team',  vertId: 4, exec: 'Wout Rolle'  },
   { code: 'IBEC',    name: 'Bahamas Chamber of Commerce (demo)',                 segment: 'Mid-Market',        vertical: 'Public',        region: 'New Providence',  mrr: 10800,  arr: 129600,  sites: 6,   circuits: 12,  contractEnd: '2027-09', wault: 23, status: 'Healthy',  nps: 51, health: 82, ownerAE: 'Public Team',  vertId: 4, exec: 'Thomas Knowles' },
   { code: 'JURYS',   name: 'Cable Beach Hotel (demo)',    segment: 'Mid-Market',        vertical: 'Hospitality',   region: 'Nassau',   mrr: 21600,  arr: 259200,  sites: 22,  circuits: 28,  contractEnd: '2027-03', wault: 5,  status: 'Watch',    nps: 18, health: 58, ownerAE: 'Daan Bethel',    vertId: 8, exec: 'Thomas Knowles'  },
-  { code: 'RTE',     name: 'Local broadcaster',                     segment: 'Enterprise',        vertical: 'Media',         region: 'New Providence',  mrr: 34800,  arr: 417600,  sites: 8,   circuits: 22,  contractEnd: '2027-12', wault: 26, status: 'Healthy',  nps: 42, health: 80, ownerAE: 'Lars Vermeulen', vertId: 9, exec: 'Thomas Knowles'  },
-  { code: 'VHI',     name: 'Family Guardian (demo)',       segment: 'Enterprise',        vertical: 'Healthcare',    region: 'New Providence',  mrr: 43200,  arr: 518400,  sites: 9,   circuits: 24,  contractEnd: '2026-12', wault: 2,  status: 'At Risk',  nps: -3, health: 42, ownerAE: 'Lars Vermeulen', vertId: 7, exec: 'Wout Rolle'   },
+  { code: 'RTE',     name: 'Local broadcaster',                     segment: 'Enterprise',        vertical: 'Media',         region: 'New Providence',  mrr: 34800,  arr: 417600,  sites: 8,   circuits: 22,  contractEnd: '2027-12', wault: 26, status: 'Healthy',  nps: 42, health: 80, ownerAE: 'Lars Rolle', vertId: 9, exec: 'Thomas Knowles'  },
+  { code: 'VHI',     name: 'Family Guardian (demo)',       segment: 'Enterprise',        vertical: 'Healthcare',    region: 'New Providence',  mrr: 43200,  arr: 518400,  sites: 9,   circuits: 24,  contractEnd: '2026-12', wault: 2,  status: 'At Risk',  nps: -3, health: 42, ownerAE: 'Lars Rolle', vertId: 7, exec: 'Wout Rolle'   },
   { code: 'EIR_W',   name: 'BTC (wholesale)',    segment: 'Wholesale-Carrier', vertical: 'Tech',          region: 'National',  mrr: 144000, arr: 1728000, sites: 0,   circuits: 1820, contractEnd: '2028-05', wault: 31, status: 'Healthy', nps: 22, health: 72, ownerAE: 'Wholesale Desk', vertId: 10, exec: 'Anke Ferguson' },
   { code: 'BT_W',    name: 'Rival ISP A The Bahamas (wholesale)', segment: 'Wholesale-Carrier', vertical: 'Tech',       region: 'National',  mrr: 100800, arr: 1209600, sites: 0,   circuits: 920,  contractEnd: '2027-05', wault: 7,  status: 'Renewal', nps: 18, health: 68, ownerAE: 'Wholesale Desk', vertId: 10, exec: 'Anke Ferguson' },
   { code: 'DGI_W',   name: 'Rival ISP B (wholesale)',         segment: 'Wholesale-Carrier', vertical: 'Media',         region: 'National',  mrr: 79200, arr: 950400, sites: 0,   circuits: 640,  contractEnd: '2027-11', wault: 25, status: 'Healthy', nps: 31, health: 76, ownerAE: 'Wholesale Desk', vertId: 9, exec: 'Anke Ferguson' },
@@ -152,9 +152,9 @@ export const transitSeries = Array.from({ length: 12 }, (_, i) => ({
 // IX presence
 export const ixPresence = [
   { ix: 'Local peering (Nassau)',  ports: 8, capacityG: 800, peers: 142, util: 0.62 },
-  { ix: 'LINX (London)',  ports: 4, capacityG: 400, peers:  86, util: 0.58 },
-  { ix: 'AMS-IX',         ports: 2, capacityG: 200, peers:  64, util: 0.48 },
-  { ix: 'DE-CIX (Frankfurt)', ports: 2, capacityG: 200, peers: 58, util: 0.42 },
+  { ix: 'NAP of the Americas (Miami)',  ports: 4, capacityG: 400, peers:  86, util: 0.58 },
+  { ix: 'FL-IX (Miami)',         ports: 2, capacityG: 200, peers:  64, util: 0.48 },
+  { ix: 'Equinix MI1 (Miami)', ports: 2, capacityG: 200, peers: 58, util: 0.42 },
 ]
 
 // Dark fibre / duct & pole inventory
@@ -169,11 +169,10 @@ export const fibreInventory = [
 
 // Terrestrial / transit capacity
 export const subseaCapacity = [
-  { cable: 'BE↔UK (BT)',              capacityTbps: 20, soldTbps: 14.2, route: 'BE → UK',  liveDate: '2022-08' },
-  { cable: 'BE↔NL (Eurofiber)',       capacityTbps: 40, soldTbps: 28.6, route: 'BE → NL',  liveDate: '2021-11' },
-  { cable: 'BE↔DE (DE-CIX Frankfurt)',capacityTbps: 30, soldTbps: 18.4, route: 'BE → DE',  liveDate: '2021-04' },
-  { cable: 'BE↔FR (Paris)',           capacityTbps: 24, soldTbps: 12.8, route: 'BE → FR',  liveDate: '2022-02' },
-  { cable: 'BE↔UK backup',            capacityTbps: 10, soldTbps:  4.2, route: 'BE → UK',  liveDate: '2023-10' },
+  { cable: 'Caribbean Bahamas Highway (CBH)', capacityTbps: 4.0, soldTbps: 1.6, route: 'Nassau → Florida', liveDate: '2022-08' },
+  { cable: 'BDSNi domestic ring',          capacityTbps: 2.4, soldTbps: 1.1, route: 'Nassau → Family Islands', liveDate: '2021-11' },
+  { cable: 'ARCOS-1 (Nassau landing)',     capacityTbps: 1.2, soldTbps: 0.5, route: 'Nassau → Caribbean', liveDate: '2021-04' },
+  { cable: 'GBI–Florida backup',           capacityTbps: 0.8, soldTbps: 0.2, route: 'Freeport → Florida', liveDate: '2023-10' },
 ]
 
 // DC / colo

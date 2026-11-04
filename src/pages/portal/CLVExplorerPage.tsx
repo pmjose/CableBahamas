@@ -240,7 +240,7 @@ export default function CLVExplorerPage() {
         result={{
           headline: 'Shift acquisition spend toward high-CLV channels & convergent',
           stats: [
-            { label: 'Portfolio CLV (36m)', value: 'BSD 1.91B' },
+            { label: 'Portfolio CLV (36m)', value: 'BSD 248M' },
             { label: 'CLV : CAC', value: '6.7×' },
             { label: 'CAC payback', value: '9.4 mo' },
             { label: 'Lever', value: 'Budget reallocation' },
@@ -321,8 +321,8 @@ export default function CLVExplorerPage() {
       {tab === 'overview' && (<>
       {/* ============== Row 1 — Headline KPIs ============== */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-        <KpiCard label={tt('Portfolio CLV (36m, NPV)')} value="BSD 1.91B" delta="+4.8% MoM" trend="up" icon={TrendingUp} accent />
-        <KpiCard label={tt('Avg CLV / Customer')}        value="BSD 1,840" delta="+BSD 42 MoM" trend="up" icon={Sparkles} />
+        <KpiCard label={tt('Portfolio CLV (36m, NPV)')} value="BSD 248M" delta="+4.8% MoM" trend="up" icon={TrendingUp} accent />
+        <KpiCard label={tt('Avg CLV / Customer')}        value="BSD 1,150" delta="+BSD 42 MoM" trend="up" icon={Sparkles} />
         <KpiCard label={tt('CLV-at-Risk (90d)')}         value={`BSD ${totalAtRiskM}M`} delta={`${(totalAtRiskM*100/1910).toFixed(1)}% of portfolio`} trend="down" icon={AlertTriangle} />
         <KpiCard label={tt('CLV : CAC ratio')}           value="6.7×" delta="Best-in-class > 3×" trend="up" icon={Target} />
       </div>
@@ -581,9 +581,9 @@ export default function CLVExplorerPage() {
             </ResponsiveContainer>
           </div>
           <div className="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-black/5">
-            <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Top 10%')}</div><div className="font-bold">{tt('BSD 726M CLV')}</div></div>
-            <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Top 30%')}</div><div className="font-bold">{tt('BSD 1.30B CLV')}</div></div>
-            <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Bottom 50%')}</div><div className="font-bold">{tt('BSD 405M CLV')}</div></div>
+            <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Top 10%')}</div><div className="font-bold">{tt('BSD 94M CLV')}</div></div>
+            <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Top 30%')}</div><div className="font-bold">{tt('BSD 169M CLV')}</div></div>
+            <div><div className="text-[10px] uppercase tracking-widest text-vfes-dark/55">{tt('Bottom 50%')}</div><div className="font-bold">{tt('BSD 52M CLV')}</div></div>
           </div>
         </Panel>
 

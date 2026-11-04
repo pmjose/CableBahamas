@@ -391,7 +391,7 @@ export function FlowsRoadmapTab() {
         <div className="text-[11px] text-vfes-dark/55">{tt('Fixed accounts billed: 74.4K in October · aliv postpaid billed on 4 cycles.')}</div>
       </Panel>
       <Panel title={tt('Vendor contracts & renewals')}>
-        <table className="w-full text-xs">
+        <div className="overflow-x-auto"><table className="w-full text-xs">
           <thead><tr className="text-left text-vfes-dark/55 border-b border-black/10">
             {['Vendor', 'Scope', 'Annual', 'Renewal', 'Lever'].map(h => <th key={h} className="py-1.5 pr-2 font-bold">{tt(h)}</th>)}
           </tr></thead>
@@ -402,7 +402,7 @@ export function FlowsRoadmapTab() {
               <td className="py-1.5 pr-2 text-vfes-dark/60">{tt(c.note)}</td>
             </tr>))}
           </tbody>
-        </table>
+        </table></div>
       </Panel>
     </div>
 

@@ -123,7 +123,7 @@ const AGENTS = [
   { name: 'Daan Ferguson',    aht: 4.8, fcr: 79, sat: 4.6, contacts: 130, cortexUse: 86, skill: 'Retention' },
   { name: 'Lore Adderley',    aht: 5.0, fcr: 78, sat: 4.5, contacts: 128, cortexUse: 82, skill: 'Technical' },
   { name: 'Jonas Willems',   aht: 5.2, fcr: 76, sat: 4.4, contacts: 124, cortexUse: 79, skill: 'Sales'     },
-  { name: 'Marie Vermeulen', aht: 5.4, fcr: 75, sat: 4.4, contacts: 120, cortexUse: 76, skill: 'Billing'   },
+  { name: 'Marie Rolle', aht: 5.4, fcr: 75, sat: 4.4, contacts: 120, cortexUse: 76, skill: 'Billing'   },
   { name: 'Thomas Bain',    aht: 5.8, fcr: 72, sat: 4.2, contacts: 115, cortexUse: 68, skill: 'Technical' },
 ]
 
@@ -147,7 +147,7 @@ const QA_SCORES = [
 
 const COACHING_PIPELINE = [
   { agent: 'Thomas Bain',    issue: 'AHT above team median',  priority: 'High',   status: 'In coaching' },
-  { agent: 'Marie Vermeulen', issue: 'FCR declining 3 weeks',  priority: 'High',   status: 'Scheduled'   },
+  { agent: 'Marie Rolle', issue: 'FCR declining 3 weeks',  priority: 'High',   status: 'Scheduled'   },
   { agent: 'Jonas Willems',   issue: 'Low Cortex adoption',    priority: 'Medium', status: 'Scheduled'   },
   { agent: 'Lore Adderley',    issue: 'Empathy score drop',     priority: 'Medium', status: 'Notified'    },
 ]

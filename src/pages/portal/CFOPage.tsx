@@ -215,10 +215,10 @@ export default function CFOPage() {
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }) }, [tab])
 
   return (
-    <div className="p-8">
+    <div className="p-4 md:p-8">
       <PageHeader
         title={tt('Chief Financial Officer')}
-        subtitle={tt('Office of the CFO · Camille Vermeulen · FY2026 Q2 · last board pack 17 Nov 2026')}
+        subtitle={tt('Office of the CFO · Camille Rolle · FY2026 Q3 · last board pack 28 Oct 2026')}
         actions={
           <Link to="/portal/finance" className="bg-vfes-red hover:bg-vfes-red-dark text-vfes-dark text-sm font-bold px-4 py-2 rounded-lg flex items-center gap-2">
             <Wallet className="w-4 h-4" /> {tt('Open Finance Detail')}
@@ -328,7 +328,7 @@ export default function CFOPage() {
             <PriorityList
               title={tt('CFO priorities — FY2026')}
               items={[
-                { name: tt('Cost-out BSD 15M run-rate'),                         owner: tt('Finance Transformation · M. Vermeulen'), pct: 41,  status: 'at-risk'  },
+                { name: tt('Cost-out BSD 15M run-rate'),                         owner: tt('Finance Transformation · M. Rolle'), pct: 41,  status: 'at-risk'  },
                 { name: tt('Power BI → Snowflake migration (licence exit)'),  owner: tt('Data Platform · Pieter Knowles'),           pct: 72,  status: 'on-track' },
                 { name: tt('Revenue assurance — close billing gaps'),         owner: tt('Revenue Assurance'),                    pct: 81,  status: 'on-track' },
                 { name: tt('Refinance 2027 bond maturity'),                   owner: tt('Treasury'),                             pct: 38,  status: 'on-track' },

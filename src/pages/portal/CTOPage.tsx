@@ -93,7 +93,7 @@ const backboneLinks = [
   { link: 'Nassau Core ↔ Freeport (4×400G)', util: 72, cap: 1600, type: 'Backbone' },
   { link: 'Nassau Core ↔ Abaco (2×400G)',  util: 64, cap: 800,  type: 'Backbone' },
   { link: 'Nassau ↔ Local peering (8×100G)',        util: 84, cap: 800,  type: 'Peering'  },
-  { link: 'Nassau ↔ DE-CIX Frankfurt (2×100G)',    util: 68, cap: 200,  type: 'Intl'     },
+  { link: 'Nassau ↔ NAP of the Americas Miami (2×100G)',    util: 68, cap: 200,  type: 'Intl'     },
   { link: 'Freeport ↔ Eleuthera (2×100G)',     util: 56, cap: 200,  type: 'Backbone' },
   { link: 'Abaco ↔ Eleuthera (2×100G)',      util: 48, cap: 200,  type: 'Backbone' },
   { link: 'Nassau ↔ AMS-IX (1×100G)',         util: 62, cap: 100,  type: 'Peering'  },
@@ -237,7 +237,7 @@ export default function CTOPage() {
   )
 
   return (
-    <div className="p-8">
+    <div className="p-4 md:p-8">
       <PageHeader
         title={tt('Chief Technology Officer')}
         subtitle={tt('Office of the CTO · Jonas Adderley · network & technology roadmap · FY2026')}

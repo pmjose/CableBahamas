@@ -104,7 +104,7 @@ const okrs: OKR[] = [
       { kr: 'Reduce URCA complaints 20%', baseline: '184', current: '162', target: '147', pct: 60, trend: [10,20,28,36,44,50,56,60] },
     ],
     initiatives: [
-      { name: 'Agent assist (Cortex AI)', pct: 64, budget: 2.8, spent: 1.8, status: 'on-track', owner: 'Anke Vermeulen'  },
+      { name: 'Agent assist (Cortex AI)', pct: 64, budget: 2.8, spent: 1.8, status: 'on-track', owner: 'Anke Rolle'  },
       { name: 'WhatsApp Business deployment', pct: 92, budget: 1.2, spent: 1.1, status: 'on-track', owner: 'Jonas Adderley'  },
       { name: 'Self-service portal redesign', pct: 38, budget: 3.6, spent: 1.4, status: 'at-risk', owner: 'Britt Rolle'  },
     ],

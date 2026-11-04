@@ -258,7 +258,7 @@ export default function COOPage() {
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }) }, [tab])
 
   return (
-    <div className="p-8">
+    <div className="p-4 md:p-8">
       <PageHeader
         title={tt('Chief Operating Officer')}
         subtitle={tt('Office of the COO · Sofie Knowles · live operational view · refreshed 4 min ago')}

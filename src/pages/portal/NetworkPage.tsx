@@ -159,9 +159,9 @@ const pops = [
 
 const peeringTable = [
   { p: 'Local peering (Nassau IX)',   tput: 420, role: 'Peering',  cost: 0,    rpki: 100, top: 'Akamai · Google · Meta' },
-  { p: 'DE-CIX Frankfurt',         tput: 180, role: 'Peering',  cost: 0,    rpki: 100, top: 'Cloudflare · Microsoft · AWS' },
-  { p: 'AMS-IX Amsterdam',    tput: 110, role: 'Peering',  cost: 0,    rpki: 98,  top: 'Akamai · Steam · OVH' },
-  { p: 'DE-CIX Frankfurt',    tput: 38,  role: 'Peering',  cost: 0,    rpki: 100, top: 'US CDN · gaming' },
+  { p: 'NAP of the Americas (Miami)', tput: 180, role: 'Peering',  cost: 0,    rpki: 100, top: 'Cloudflare · Microsoft · AWS' },
+  { p: 'FL-IX Miami',    tput: 110, role: 'Peering',  cost: 0,    rpki: 98,  top: 'Akamai · Steam · OVH' },
+  { p: 'Equinix MI1 Miami',   tput: 38,  role: 'Peering',  cost: 0,    rpki: 100, top: 'US CDN · gaming' },
   { p: 'Lumen Transit',       tput: 60,  role: 'Transit',  cost: 84,   rpki: 96,  top: 'Long-tail · IPv6' },
   { p: 'Cogent Transit',      tput: 40,  role: 'Transit',  cost: 48,   rpki: 88,  top: 'Long-tail · v4' },
   { p: 'Arelion Transit',     tput: 24,  role: 'Transit',  cost: 32,   rpki: 100, top: 'Backup · DDoS-clean' },

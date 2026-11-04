@@ -68,7 +68,7 @@ const topDeals: {
   { id: 'OPP-8991', acc: 'Island Bank (demo) · SD-WAN national',             seg: 'Enterprise',    valueK: 3200, stage: 'Proposal',    prob: 48, owner: 'A. Willems'  },
   { id: 'OPP-8980', acc: 'City of Nassau',                   seg: 'Public',         valueK: 3600, stage: 'Negotiation', prob: 64, owner: 'E. Knowles'  },
   { id: 'OPP-8974', acc: 'Port Authority · IoT fleet',     seg: 'Enterprise',    valueK: 2400, stage: 'Proposal',    prob: 52, owner: 'D. Bain'     },
-  { id: 'OPP-8962', acc: 'UZ Eleuthera Hospital',                seg: 'Public',         valueK: 1800, stage: 'Negotiation', prob: 70, owner: 'N. Vermeulen' },
+  { id: 'OPP-8962', acc: 'Eleuthera Community Hospital',                seg: 'Public',         valueK: 1800, stage: 'Negotiation', prob: 70, owner: 'N. Rolle' },
   { id: 'OPP-8954', acc: 'BTC Enterprise · UC & mobility', seg: 'Mid-market', valueK: 2100, stage: 'Proposal',    prob: 42, owner: 'D. Bain'     },
 ]
 

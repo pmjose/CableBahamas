@@ -242,7 +242,7 @@ export default function CIOPage() {
   }, [])
 
   return (
-    <div className="p-8">
+    <div className="p-4 md:p-8">
       <PageHeader
         title={tt('Chief Information Officer')}
         subtitle={tt('Office of the CIO · Emma Bain · platform, IT & cloud · FY2026')}

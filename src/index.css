@@ -34,9 +34,13 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 
 /* Board-pack print: hide chrome, expand content for PDF export */
 @media print {
-  aside, header, .no-print, .animate-ticker { display: none !important; }
-  .board-pack { padding: 0 !important; }
+  @page { size: A4 landscape; margin: 12mm; }
+  aside, header, button, .no-print, .animate-ticker, [role="dialog"] { display: none !important; }
+  html, body, #root, .portal-root { height: auto !important; overflow: visible !important; }
+  .portal-root { display: block !important; background: #fff !important; }
   main { overflow: visible !important; }
-  body { background: #fff !important; }
-  .board-pack .grid { break-inside: avoid; }
+  body { background: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .board-pack { padding: 0 !important; }
+  .board-pack .rounded-xl, .board-pack .grid > *, .board-pack table, .board-pack svg { break-inside: avoid; page-break-inside: avoid; }
+  .overflow-x-auto { overflow: visible !important; }
 }

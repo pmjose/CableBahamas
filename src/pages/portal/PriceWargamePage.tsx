@@ -543,13 +543,13 @@ export default function PriceWargamePage() {
       {/* ══ HISTORY ═══════════════════════════════════════════════════════════ */}
       {tab === 'history' && (<>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Cable Bahamas ARPU')} value="BSD 37.5" delta={tt('Nov 2026')}           trend="flat" icon={Activity}  accent />
+          <KpiCard label={tt('Cable Bahamas ARPU')} value="BSD 37.5" delta={tt('Oct 2026')}           trend="flat" icon={Activity}  accent />
           <KpiCard label={tt('BTC gap')}   value="BSD 2.7"  delta={tt('shrinking')}           trend="down" icon={TrendingDown}   />
           <KpiCard label={tt('Rival ISP B gap')}       value="BSD 22.7" delta={tt('stable low-cost')}     trend="flat" icon={TrendingUp}    />
           <KpiCard label={tt('Price premium')}  value="+10%"  delta={tt('vs market avg')}        trend="flat" icon={Target}        />
         </div>
 
-        <Panel title={tt('Competitor average ARPU trend — Jan–Nov 2026 (BSD /mo)')}>
+        <Panel title={tt('Competitor average ARPU trend — Jan–Oct 2026 (BSD /mo)')}>
           <div className="h-64">
             <ResponsiveContainer>
               <LineChart data={PRICE_HISTORY}>
@@ -579,7 +579,7 @@ export default function PriceWargamePage() {
       {/* ══ SHARE ════════════════════════════════════════════════════════════ */}
       {tab === 'share' && (<>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <KpiCard label={tt('Cable Bahamas share')}  value="27.6%" delta={tt('Nov 2026')}              trend="down" icon={BarChart2}  accent />
+          <KpiCard label={tt('Cable Bahamas share')}  value="27.6%" delta={tt('Oct 2026')}              trend="down" icon={BarChart2}  accent />
           <KpiCard label={tt('Rival ISP B gaining')}      value="+1.7pp" delta={tt('YTD — watch')}         trend="down" icon={AlertTriangle}   />
           <KpiCard label={tt('BTC share')}    value="25.6%" delta={tt('largest single rival')} trend="flat" icon={Activity}       />
           <KpiCard label={tt('Share at risk')}     value="0.8pp" delta={tt('if Rival ISP B moves unansw.')} trend="down" icon={TrendingDown}   />
@@ -597,7 +597,7 @@ export default function PriceWargamePage() {
           ))}
         </div>
 
-        <Panel title={tt('Market share trend — all operators (Jan–Nov 2026 %)')}>
+        <Panel title={tt('Market share trend — all operators (Jan–Oct 2026 %)')}>
           <div className="h-64">
             <ResponsiveContainer>
               <AreaChart data={SHARE_TREND}>
@@ -895,7 +895,7 @@ export default function PriceWargamePage() {
           </div>
         </Panel>
 
-        <Panel title={tt('Competitor ARPU trend — Jan–Nov 2026 (BSD /mo)')}>
+        <Panel title={tt('Competitor ARPU trend — Jan–Oct 2026 (BSD /mo)')}>
           <div className="h-48">
             <ResponsiveContainer>
               <LineChart data={PRICE_HISTORY}>
@@ -935,7 +935,7 @@ export default function PriceWargamePage() {
 
       {/* ── Market share area chart ─────────────────────────────────────────── */}
       <div className="mt-6">
-        <Panel title={tt('Market share trend — Cable Bahamas vs peers (Jan–Nov 2026 %)')}>
+        <Panel title={tt('Market share trend — Cable Bahamas vs peers (Jan–Oct 2026 %)')}>
           <div className="h-48">
             <ResponsiveContainer>
               <AreaChart data={SHARE_TREND}>

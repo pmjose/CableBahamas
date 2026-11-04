@@ -132,7 +132,7 @@ const dpiaPipeline = [
   { dpia: 'AI Agent Assist (Customer Care)', risk: 'High', stage: 'Mitigations agreed',  owner: 'Emma Rolle' },
   { dpia: 'Churn-risk model (Snowpark ML)',  risk: 'Medium', stage: 'Review',             owner: 'Sofie Bain' },
   { dpia: 'Fibre install drone imaging',     risk: 'Medium', stage: 'Draft',              owner: 'Lars Adderley' },
-  { dpia: 'Smart-home IoT ingestion',        risk: 'High', stage: 'Mitigations agreed',  owner: 'Britt Vermeulen' },
+  { dpia: 'Smart-home IoT ingestion',        risk: 'High', stage: 'Mitigations agreed',  owner: 'Britt Rolle' },
   { dpia: 'Cookie consent re-platforming',   risk: 'Low',  stage: 'Approved',            owner: 'Emma Rolle' },
   { dpia: 'Programmatic ad re-targeting',    risk: 'Medium', stage: 'Draft',             owner: 'Femke Ferguson' },
 ]

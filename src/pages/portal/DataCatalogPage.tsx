@@ -799,7 +799,7 @@ export default function DataCatalogPage() {
                 { name: "Emma Rolle",   domain: 'Customer',    objects: 'CUSTOMER_360, CHURN_LIST_DAILY',    count: 18, products: 2 },
                 { name: 'Niels Bodart',      domain: 'Product',     objects: 'PRODUCT_360, PRICING_ELASTICITY',   count: 8,  products: 1 },
                 { name: 'L. Claeys',      domain: 'B2B',         objects: 'B2B_360, B2B_PIPELINE_FACT',        count: 6,  products: 1 },
-                { name: 'D. Vermeulen',     domain: 'People',      objects: 'PEOPLE_360, FLIGHT_RISK_DAILY',     count: 4,  products: 1 },
+                { name: 'D. Rolle',     domain: 'People',      objects: 'PEOPLE_360, FLIGHT_RISK_DAILY',     count: 4,  products: 1 },
                 { name: 'B. De Witte',       domain: 'Risk',        objects: 'RISK_360, REG_ESG_360',             count: 6,  products: 0 },
                 { name: 'P. Jose',          domain: 'Executive',   objects: 'EXEC_360, CEO_BRIEFING_DAILY',      count: 4,  products: 1 },
                 { name: 'Thomas Knowles',  domain: 'Finance',     objects: 'FINANCE_LEDGER, AUDIT tables',      count: 8,  products: 1 },

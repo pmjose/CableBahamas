@@ -38,7 +38,7 @@ export default function PortalLayout() {
   }, [])
 
   return (
-    <div className="flex h-screen bg-[#f6f7fb] text-vfes-dark">
+    <div className="portal-root flex h-screen bg-[#f6f7fb] text-vfes-dark">
       {sidebarOpen && (
         <div
           className="fixed inset-0 z-30 bg-black/40 md:hidden"
@@ -139,7 +139,7 @@ export default function PortalLayout() {
             aria-label={tt('Search or jump to any page…')}
           >
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-vfes-dark/40" />
-            <span className="block w-full bg-[#f3f4f7] group-hover:bg-white border border-transparent group-hover:border-vfes-red/30 rounded-lg pl-9 pr-16 py-2 text-sm text-vfes-dark/40 transition">
+            <span className="block w-full bg-[#f3f4f7] group-hover:bg-white border border-transparent group-hover:border-vfes-red/30 rounded-lg pl-9 pr-16 py-2 text-sm text-vfes-dark/40 transition truncate whitespace-nowrap">
               {t('Search or jump to any page…')}
             </span>
             <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] bg-white border border-black/10 px-1.5 py-0.5 rounded font-mono text-vfes-dark/50">{tt('⌘K')}</span>
@@ -186,7 +186,7 @@ export default function PortalLayout() {
         <Ticker />
       </div>
 
-      <AskTheData />
+      <div className="no-print print:hidden"><AskTheData /></div>
       <CommandPalette />
       <NotificationsDrawer />
     </div>
@@ -228,7 +228,7 @@ const TICKER_ITEMS: { label: string; value: string; up?: boolean; down?: boolean
 
 function Ticker() {
   return (
-    <div className="h-9 bg-vfes-dark text-white border-t border-black/10 flex items-center overflow-hidden relative" aria-hidden="true">
+    <div className="no-print print:hidden h-9 bg-vfes-dark text-white border-t border-black/10 flex items-center overflow-hidden relative" aria-hidden="true">
       <div className="flex animate-ticker whitespace-nowrap motion-reduce:animate-none hover:[animation-play-state:paused]">
         {[...TICKER_ITEMS, ...TICKER_ITEMS].map((t, i) => (
           <div key={i} className="flex items-center gap-2 px-5 text-xs">

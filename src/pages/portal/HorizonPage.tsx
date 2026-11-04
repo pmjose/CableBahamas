@@ -38,7 +38,7 @@ const TAGS = [
   { name: 'CONFIDENTIAL',      applied: 412, owner: 'CDO',    steward: "Anna Knowles" },
   { name: 'COST_CENTRE',       applied: 612, owner: 'Finance', steward: 'Thomas Knowles' },
   { name: 'BUSINESS_CRITICAL', applied: 38,  owner: 'CTO',    steward: 'Pieter Knowles'      },
-  { name: 'DPA_SUBJECT',      applied: 248, owner: 'DPO',    steward: 'Ann Vermeulen'    },
+  { name: 'DPA_SUBJECT',      applied: 248, owner: 'DPO',    steward: 'Ann Rolle'    },
   { name: 'CYBER_SCOPE',        applied: 24,  owner: 'CISO',   steward: 'Lars Bethel'       },
   { name: 'DATA_PRODUCT_OWNER',applied: 14,  owner: 'CDO',    steward: "Anna Knowles" },
 ]

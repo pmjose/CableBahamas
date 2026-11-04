@@ -361,10 +361,10 @@ export default function ExecutivePage() {
   const totalChurn = netAdds.reduce((s, x) => s + x.churn, 0)
 
   return (
-    <div className="p-8 board-pack">
+    <div className="p-4 md:p-8 board-pack">
       <PageHeader
         title={tt('CEO Dashboard')}
-        subtitle={`Synthetic baseline at 31 October 2026 · ${period} · QTD covers April–May`}
+        subtitle={`Synthetic baseline at 31 October 2026 · ${period} · QTD covers October`}
         actions={
           <div className="flex items-center gap-3">
             <div className="flex bg-[#f3f4f7] rounded-lg p-1">
@@ -383,10 +383,11 @@ export default function ExecutivePage() {
             </button>
             <button
               onClick={() => window.print()}
-              className="no-print flex items-center gap-2 bg-vfes-red hover:bg-vfes-red-dark text-vfes-dark font-bold px-3 py-2 rounded-lg text-xs"
-              title={tt('Export board pack as PDF (print)')}
+              className="no-print print:hidden flex items-center gap-2 bg-vfes-red hover:bg-vfes-red-dark text-vfes-dark font-bold px-3 py-2 rounded-lg text-xs"
+              title={tt('Print executive summary')}
+              aria-label={tt('Print executive summary')}
             >
-              <FileDown className="w-4 h-4" /> {tt('Export board pack')}
+              <FileDown className="w-4 h-4" /> {tt('Print executive summary')}
             </button>
           </div>
         }
@@ -560,7 +561,7 @@ export default function ExecutivePage() {
         </div>
 
         <Panel title={tt('Plan vs. Actual — Top KPIs')} action={<Link to="/portal/finance" className="text-xs font-bold text-vfes-dark hover:underline">{tt('Open Finance →')}</Link>}>
-          <table className="w-full text-sm">
+          <div className="overflow-x-auto"><table className="w-full text-sm">
             <thead className="text-left text-vfes-dark/55 text-[10px] uppercase tracking-widest">
               <tr><th className="py-2">{tt('Metric')}</th><th>{tt('Actual')}</th><th>{tt('Plan')}</th><th>Δ</th></tr>
             </thead>
@@ -581,7 +582,7 @@ export default function ExecutivePage() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
         </Panel>
       </div>
 
@@ -816,7 +817,7 @@ export default function ExecutivePage() {
         </Panel>
 
         <Panel title={tt('Competitor Pricing — BSD /mo SVR')} action={<Link to="/portal/pricing-simulator" className="text-xs font-bold text-vfes-dark hover:underline">{tt('Open Pricing →')}</Link>}>
-          <table className="w-full text-sm">
+          <div className="overflow-x-auto"><table className="w-full text-sm">
             <thead className="text-left text-vfes-dark/55 text-[10px] uppercase tracking-widest">
               <tr><th className="py-2">{tt('SKU')}</th><th>{tt('Cable Bahamas')}</th><th>{tt('BTC')}</th><th>{tt('Rival ISP A')}</th><th>{tt('Position')}</th></tr>
             </thead>
@@ -831,7 +832,7 @@ export default function ExecutivePage() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
         </Panel>
       </div>
 
@@ -936,7 +937,7 @@ export default function ExecutivePage() {
         </Panel>
 
         <Panel title={tt('Brand Health Tracker (Kantar, May)')}>
-          <table className="w-full text-xs">
+          <div className="overflow-x-auto"><table className="w-full text-xs">
             <thead className="text-vfes-dark/55 uppercase text-[10px] tracking-widest">
               <tr><th className="text-left py-2">{tt('Metric')}</th><th>{tt('Cable Bahamas')}</th><th>{tt('BTC')}</th><th>{tt('Rival ISP B')}</th><th>{tt('Rival ISP A')}</th></tr>
             </thead>
@@ -958,7 +959,7 @@ export default function ExecutivePage() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
           <div className="text-[10px] text-vfes-dark/50 mt-2">{tt('n=1,800 · age 18-65 · weighted')}</div>
         </Panel>
 
@@ -1349,7 +1350,7 @@ export default function ExecutivePage() {
               </LineChart>
             </ResponsiveContainer>
           </div>
-          <div className="grid grid-cols-3 gap-2 mt-3 text-center text-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-3 text-center text-xs">
             <div>
               <div className="font-bold text-emerald-600">78%</div>
               <div className="text-vfes-dark/55">{tt('Renewable')}</div>
@@ -1715,7 +1716,7 @@ function InvestorTab({ period, m }: TabProps) {
           </ResponsiveContainer>
         </Panel>
         <Panel title={tt('Top shareholders')}>
-          <table className="w-full text-sm">
+          <div className="overflow-x-auto"><table className="w-full text-sm">
             <thead className="text-left text-vfes-dark/55 text-xs uppercase tracking-widest">
               <tr><th className="py-1.5">{tt('Holder')}</th><th>{tt('Class')}</th><th className="text-right">%</th></tr>
             </thead>
@@ -1728,14 +1729,14 @@ function InvestorTab({ period, m }: TabProps) {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
           <div className="text-[10px] text-vfes-dark/55 mt-3">{tt('Activist watchlist: 0 active · BlackRock voted with mgmt at AGM')}</div>
         </Panel>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-6 mb-6">
         <Panel title={tt('Credit ratings')}>
-          <table className="w-full text-sm">
+          <div className="overflow-x-auto"><table className="w-full text-sm">
             <thead className="text-left text-vfes-dark/55 text-xs uppercase tracking-widest">
               <tr><th className="py-1.5">{tt('Agency')}</th><th>{tt('Rating')}</th><th>{tt('Outlook')}</th><th>{tt('Cov. headroom')}</th></tr>
             </thead>
@@ -1749,7 +1750,7 @@ function InvestorTab({ period, m }: TabProps) {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
         </Panel>
         <Panel title={tt('Board commitments — last meeting')}>
           <div className="space-y-2 text-sm">
@@ -1905,7 +1906,7 @@ function InnovateTab({ period, m }: TabProps) {
       </div>
 
       <Panel title={tt('Strategic partnerships scoreboard')}>
-        <table className="w-full text-sm">
+        <div className="overflow-x-auto"><table className="w-full text-sm">
           <thead className="text-left text-vfes-dark/55 text-xs uppercase tracking-widest">
             <tr><th className="py-2">{tt('Partner')}</th><th>{tt('Type')}</th><th>{tt('Joint ARR')}</th><th>{tt('Health')}</th></tr>
           </thead>
@@ -1919,7 +1920,7 @@ function InnovateTab({ period, m }: TabProps) {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table></div>
       </Panel>
     </>
   )
@@ -1987,7 +1988,7 @@ function CapitalTab({ period, m }: TabProps) {
           <div className="text-[10px] text-vfes-dark/55 text-center mt-1">{tt('2028 wall BSD 320M — refinancing window opens Q1-28')}</div>
         </Panel>
         <Panel title={tt('FX exposure (BSD M net · hedge %)')}>
-          <table className="w-full text-sm">
+          <div className="overflow-x-auto"><table className="w-full text-sm">
             <thead className="text-left text-vfes-dark/55 text-xs uppercase tracking-widest">
               <tr><th className="py-1.5">{tt('Ccy')}</th><th>{tt('Net BSD M')}</th><th>{tt('Hedge %')}</th></tr>
             </thead>
@@ -2005,7 +2006,7 @@ function CapitalTab({ period, m }: TabProps) {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
         </Panel>
       </div>
 
@@ -2036,7 +2037,7 @@ function StakeTab({ period, m }: TabProps) {
       </div>
 
       <Panel title={tt('Stakeholder health · 8 groups')}>
-        <table className="w-full text-sm">
+        <div className="overflow-x-auto"><table className="w-full text-sm">
           <thead className="text-left text-vfes-dark/55 text-xs uppercase tracking-widest">
             <tr><th className="py-2">{tt('Group')}</th><th>{tt('Health')}</th><th>{tt('Trend')}</th><th>{tt('Top risk')}</th></tr>
           </thead>
@@ -2055,7 +2056,7 @@ function StakeTab({ period, m }: TabProps) {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table></div>
       </Panel>
 
       <div className="grid lg:grid-cols-2 gap-6 mt-6 mb-6">
@@ -2074,7 +2075,7 @@ function StakeTab({ period, m }: TabProps) {
           </ResponsiveContainer>
         </Panel>
         <Panel title={tt('Government / regulator engagement log')}>
-          <table className="w-full text-sm">
+          <div className="overflow-x-auto"><table className="w-full text-sm">
             <thead className="text-left text-vfes-dark/55 text-xs uppercase tracking-widest">
               <tr><th className="py-1.5">{tt('Counterparty')}</th><th>{tt('Last')}</th><th>{tt('Topic')}</th><th>{tt('Tone')}</th></tr>
             </thead>
@@ -2088,7 +2089,7 @@ function StakeTab({ period, m }: TabProps) {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
         </Panel>
       </div>
     </>
@@ -2152,7 +2153,7 @@ function BriefingTab({ period, m }: TabProps) {
           </div>
         </Panel>
         <Panel title={tt('Decision log — open items')}>
-          <table className="w-full text-sm">
+          <div className="overflow-x-auto"><table className="w-full text-sm">
             <thead className="text-left text-vfes-dark/55 text-xs uppercase tracking-widest">
               <tr><th className="py-1.5">{tt('ID')}</th><th>{tt('Decision')}</th><th>{tt('Status')}</th><th>{tt('Due')}</th></tr>
             </thead>
@@ -2166,7 +2167,7 @@ function BriefingTab({ period, m }: TabProps) {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
         </Panel>
       </div>
 

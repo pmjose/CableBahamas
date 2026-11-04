@@ -336,7 +336,7 @@ export default function UrcaPackPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Market reviews active')} value="3"     delta={tt('M2 · M3 · M4')}           trend="flat" icon={BarChart2} />
           <KpiCard label={tt('Wholesale obligations')} value="8"     delta={tt('1 non-compliant')}         trend="flat" icon={Scale}    />
-          <KpiCard label={tt('Portability net gain')}  value="+960"  delta={tt('Nov 2026')}                trend="up"   icon={Phone}   />
+          <KpiCard label={tt('Portability net gain')}  value="+960"  delta={tt('Oct 2026')}                trend="up"   icon={Phone}   />
           <KpiCard label={tt('Compliance score')}      value="95/100" delta={tt('+1 pt QoQ')}              trend="up"   icon={Activity}/>
         </div>
 
