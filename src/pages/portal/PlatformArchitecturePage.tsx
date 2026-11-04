@@ -17,7 +17,7 @@ const TS = { background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, f
 const lanes: { name: string; sub: string; color: string; nodes: { n: string; meta: string; icon: any }[] }[] = [
   { name: 'Sources', sub: '38 source systems · 6 regions', color: 'from-slate-100 to-slate-50 border-slate-300', nodes: [
     { n: 'Amdocs CRM',          meta: 'Oracle 19c · 24 tbl · CDC',     icon: Database },
-    { n: 'Cisco BSS / Billing', meta: 'PostgreSQL · 18 tbl · CDC',     icon: Database },
+    { n: 'Cerillion BSS / Billing', meta: 'PostgreSQL · 18 tbl · CDC',     icon: Database },
     { n: 'CMTS / DOCSIS telemetry', meta: 'Kafka · 4.2M ev/min',       icon: Activity },
     { n: 'OSS / Optical (NMS)', meta: 'Kafka · 1.8M ev/min',           icon: Activity },
     { n: 'NetSuite GL',         meta: 'REST · hourly · 22 tbl',        icon: Cloud },
@@ -380,7 +380,7 @@ export default function PlatformArchitecturePage() {
               <Row k={tt('Object contacts')}         v="100% prod tables"        icon={ShieldCheck} />
               <Row k={tt('Trust Center scanners')}   v="22 enabled · all green"  icon={ShieldCheck} />
               <Row k={tt('Network policy')}          v="CBL_CORP_VPN + EU_BUSINESS" icon={ShieldCheck} />
-              <Row k={tt('MFA / SSO')}               v="100% / Okta SAML"        icon={ShieldCheck} />
+              <Row k={tt('MFA / SSO')}               v="100% / Entra ID SAML"        icon={ShieldCheck} />
               <Row k={tt('Periodic rekeying')}       v="Enabled · last 14d ago"  icon={ShieldCheck} />
             </div>
             <div className="mt-4 flex gap-2 flex-wrap">
@@ -983,7 +983,7 @@ export default function PlatformArchitecturePage() {
               <Row k={tt('Object contacts')}           v="100% prod tables"       icon={ShieldCheck} />
               <Row k={tt('Trust Center scanners')}     v="22 enabled · all green" icon={ShieldCheck} />
               <Row k={tt('Network policy')}            v="CBL_CORP_VPN + Bahamas"      icon={Lock} />
-              <Row k={tt('MFA / SSO')}                 v="100% / Okta SAML"       icon={ShieldCheck} />
+              <Row k={tt('MFA / SSO')}                 v="100% / Entra ID SAML"       icon={ShieldCheck} />
               <Row k={tt('Periodic rekeying')}         v="Enabled"                icon={Lock} />
             </div>
             <div className="mt-3 flex gap-3 flex-wrap">

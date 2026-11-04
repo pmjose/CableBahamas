@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import tt from '../../i18n/tt'
 import { PageHeader, Panel } from '../../components/Panel'
 import KpiCard from '../../components/KpiCard'
+import { BssLandscapeTab, IntegrationsTab, FlowsRoadmapTab } from './_cio_bss'
 import MlInsightSection from '../../components/MlInsightSection'
 import { DomainGrid, PriorityList, WatchList, AgendaList } from '../../components/ExecCockpit'
 import {
@@ -200,10 +201,13 @@ const networkAclTrend = [
 ]
 
 // ─── Tabs ─────────────────────────────────────────────────────────────────────
-type TabId = 'overview' | 'architecture' | 'environments' | 'observability' | 'data-eng' | 'apps' | 'cost' | 'secid'
+type TabId = 'overview' | 'bss' | 'integrations' | 'flows' | 'architecture' | 'environments' | 'observability' | 'data-eng' | 'apps' | 'cost' | 'secid'
 const TABS: { id: TabId; label: string; icon: typeof Activity }[] = [
   { id: 'overview',      label: 'Overview',          icon: Gauge      },
-  { id: 'architecture',  label: 'Architecture',      icon: Layers     },
+  { id: 'bss',           label: 'BSS / OSS Landscape', icon: Server   },
+  { id: 'integrations',  label: 'Integrations',      icon: Zap        },
+  { id: 'flows',         label: 'Flows & Roadmap',   icon: Workflow   },
+  { id: 'architecture',  label: 'Data Platform',     icon: Layers     },
   { id: 'environments',  label: 'Environments',      icon: GitBranch  },
   { id: 'observability', label: 'Observability',     icon: Activity   },
   { id: 'data-eng',      label: 'Data Engineering',  icon: Workflow   },
@@ -397,6 +401,10 @@ export default function CIOPage() {
       </>)}
 
       {/* ══════════════ ARCHITECTURE ══════════════════════════════════════════ */}
+      {tab === 'bss' && <BssLandscapeTab />}
+      {tab === 'integrations' && <IntegrationsTab />}
+      {tab === 'flows' && <FlowsRoadmapTab />}
+
       {tab === 'architecture' && (<>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <KpiCard label={tt('Data platform layers')}  value="6"      delta={tt('end-to-end')}             trend="flat" icon={Layers}    accent />

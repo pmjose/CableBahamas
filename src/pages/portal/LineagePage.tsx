@@ -23,7 +23,7 @@ type Node = { id: string; label: string; type: 'src' | 'raw' | 'core' | 'mart' |
 
 const NODES: Node[] = [
   { id: 'CRM',      label: 'Amdocs CRM',                type: 'src',   meta: 'Oracle 19c · 24 tbl'    },
-  { id: 'BILL',     label: 'Cisco BSS / Billing',        type: 'src',   meta: 'PostgreSQL · 18 tbl'    },
+  { id: 'BILL',     label: 'Cerillion BSS / Billing',        type: 'src',   meta: 'PostgreSQL · 18 tbl'    },
   { id: 'NMS',      label: 'CMTS / NMS telemetry',       type: 'src',   meta: 'Kafka · 4.2M ev/min'   },
   { id: 'WD',       label: 'Workday HR',                 type: 'src',   meta: 'RaaS · daily'           },
   { id: 'RAW.CRM',  label: 'CBL_RAW.CRM',               type: 'raw',   meta: '24 tbl · 412 GB'        },

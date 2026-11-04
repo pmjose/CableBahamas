@@ -79,7 +79,7 @@ const DBS: Db[] = [
         { name: 'INTERACTIONS_RAW', type: 'table', rows: '64,221,184', size: '412 GB', last: '2 min ago', cluster: '(INTERACTION_DATE)', owner: 'INGEST_SVC' },
         { name: 'TICKETS_RAW',      type: 'table', rows: '4,884,920', size: '38 GB', last: '2 min ago', owner: 'INGEST_SVC' },
       ]},
-      { name: 'BILLING', desc: 'Cisco BSS billing CDC', objects: [
+      { name: 'BILLING', desc: 'Cerillion BSS billing CDC', objects: [
         { name: 'INVOICES_RAW',      type: 'table', rows: '14,884,202', size: '184 GB', last: '4 min ago', cluster: '(BILL_PERIOD)', tags: ['SOURCE:BSS', 'FINANCIAL'] },
         { name: 'PAYMENTS_RAW',      type: 'table', rows: '12,212,884', size: '92 GB',  last: '4 min ago' },
         { name: 'SUBSCRIPTIONS_RAW', type: 'table', rows: '1,602,884',  size: '24 GB'  },

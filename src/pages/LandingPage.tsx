@@ -371,7 +371,7 @@ export default function LandingPage() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 text-[12px]">
               {[
-                'Amdocs CRM', 'Cisco BSS / Billing', 'CMTS DOCSIS', 'OSS / NMS',
+                'Amdocs CRM', 'Cerillion BSS / Billing', 'CMTS DOCSIS', 'OSS / NMS',
                 'NetSuite GL', 'Salesforce B2B', 'Workday HR', 'Adobe Analytics',
                 'PEGA ADT', 'ServiceNow', 'MyREV Web', 'Ciena Blueplanet',
                 'ARC GIS (ESRI)', 'Confluent Kafka', 'Bahamas NSI', 'URCA data',
